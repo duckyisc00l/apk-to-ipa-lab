@@ -13,7 +13,7 @@ public class DefaultSingSceneDataProvider : MonoBehaviour, IDefaultSceneDataProv
 
 	public SceneData GetDefaultSceneData()
 	{
-		PlayerProfile defaultPlayerProfile;
+		PlayerProfile defaultPlayerProfile = GetDefaultPlayerProfile();
 		return new SingSceneData
 		{
 			SelectedSongMeta = GetDefaultSongMeta(),

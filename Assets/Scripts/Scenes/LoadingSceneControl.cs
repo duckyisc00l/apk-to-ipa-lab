@@ -70,6 +70,7 @@ public class LoadingSceneControl : MonoBehaviour, INeedInjection
 		Log.Logger.Information("started loading songs.");
 		AndroidStreamingAssets.Extract();
 		TranslationManager.Instance.ReloadTranslationsAndUpdateScene();
+#if UNITY_ANDROID
 		if (PlatformUtils.IsAndroid)
 		{
 			if (AndroidRuntimePermissions.CheckPermission("android.permission.RECORD_AUDIO") == AndroidRuntimePermissions.Permission.ShouldAsk)
@@ -81,6 +82,7 @@ public class LoadingSceneControl : MonoBehaviour, INeedInjection
 				AndroidRuntimePermissions.RequestPermission("android.permission.CAMERA");
 			}
 		}
+#endif
 		FinishScene();
 	}
 
