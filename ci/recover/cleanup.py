@@ -143,6 +143,20 @@ def main(proj, unity_version, bundle_id, product):
         elif ANDROID_ONLY.search(folder):
             shutil.rmtree(path)
             android.append(folder)
+    # Classes Unity's own source generators add at build time come back decompiled, and Unity
+    # generates them again when it compiles: delete the decompiled copies (else CS0101/CS0111).
+    generated = []
+    for d, _, files in os.walk(os.path.join(proj, "Assets")):
+        for f in files:
+            if f.endswith(".cs"):
+                fp = os.path.join(d, f)
+                txt = open(fp, encoding="utf-8", errors="replace").read()
+                if re.search(r"\bclass\s+UnitySourceGenerated\w*", txt):
+                    os.remove(fp)
+                    meta = fp + ".meta"
+                    if os.path.exists(meta):
+                        os.remove(meta)
+                    generated.append(os.path.relpath(fp, proj))
     for sub in ("Assets/Plugins/Android",):
         p = os.path.join(proj, sub)
         if os.path.isdir(p):
@@ -163,6 +177,7 @@ def main(proj, unity_version, bundle_id, product):
     left = sorted(os.listdir(scripts)) if os.path.isdir(scripts) else []
     report += ["", "## Removed Unity package scripts", *[f"- {r}" for r in removed],
                "", "## Packages added to manifest.json", *[f"- {k}: {v}" for k, v in added.items()],
+               "", "## Unity-generated classes removed (Unity makes them again)", *[f"- {g}" for g in generated or ['none']],
                "", "## Android-only removed (calls to these must be stubbed)", *[f"- {a}" for a in android or ['none']],
                "", "## Script folders kept (game code and third-party libraries)",
                *[f"- {d}: {sum(len(f) for _, _, f in os.walk(os.path.join(scripts, d)))} files" for d in left]]
