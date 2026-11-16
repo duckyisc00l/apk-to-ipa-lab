@@ -20,7 +20,7 @@ chmod +x "$BIN"
 "$BIN" --help > ../out/ripper-help.txt 2>&1 || true
 cd ..
 PORT=8999
-"$BIN" --port $PORT --launch-browser false > out/ripper-server.log 2>&1 &
+"$BIN" --port $PORT --headless > out/ripper-server.log 2>&1 &
 SRV=$!
 for i in $(seq 60); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && break; sleep 2; done
 curl -s "http://127.0.0.1:$PORT/" | head -c 400 > out/ripper-home.txt
