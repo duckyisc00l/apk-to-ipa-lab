@@ -1,0 +1,16 @@
+# Open-source Unity games (OSI licence on the repo). One owner/repo per line.
+imengyu/Ballance
+UltraStar-Deluxe/Play
+oussamabonnor1/ChasingPlanes_Unity3D
+oussamabonnor1/Catcheep
+outfrost/deckswipe
+Walkator/Kailius
+AnimaRain/ShootAR
+Szaroslav/block-puzzle
+NicolasPCouts/FlappyBirdClone-UnityGame
+geraked/game-tiptop
+computationalcore/libot-adventure
+deep110/Splitter
+flo-wolf/Flip-Fall
+Ordyns/MakeNewWay
+Reinisch/Darkest-Dungeon-Unity

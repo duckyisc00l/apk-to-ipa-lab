@@ -1,0 +1,33 @@
+name: unity-scout
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["ci/**", ".github/workflows/unity-scout.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: unity-scout
+  cancel-in-progress: true
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find open-source Unity games with APKs
+        run: python3 ci/scout.py
+      - name: Detect engine, backend and Unity version (skill step 1 + U1)
+        run: python3 ci/detect.py dl work
+      - name: Recover projects with AssetRipper (skill step U2)
+        continue-on-error: true
+        run: bash ci/ripper.sh
+      - name: Publish results to branch r-scout
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp -r out/. /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-scout && git rm -rfq . && rm -rf ci dl work export tools out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "scout results ${{ github.run_number }}" && git push -f origin r-scout
