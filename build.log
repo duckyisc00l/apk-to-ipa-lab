@@ -1,0 +1,80 @@
+   59 |   return __builtin___memset_chk (__dest, __ch, __len,
+      |          ^
+In function 'af_face_globals_new':
+lto1: note: destination object is likely at address zero
+In function 'init_decimation_info_2d',
+    inlined from 'construct_dt_entry_2d' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:753:25,
+    inlined from 'construct_block_size_descriptor_2d.constprop' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:917:26:
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:341:63: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  341 |                         di.texel_weight_contribs_int_tr[j][i] = 0;
+      |                                                               ^
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h: In function 'construct_block_size_descriptor_2d.constprop':
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h:382:33: note: at offset [1944, 55727] into destination object 'texel_weight_contribs_int_tr' of size 864
+  382 |         ASTCENC_ALIGNAS uint8_t texel_weight_contribs_int_tr[4][BLOCK_MAX_TEXELS];
+      |                                 ^
+In function 'init_decimation_info_2d',
+    inlined from 'construct_dt_entry_2d' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:753:25,
+    inlined from 'construct_block_size_descriptor_2d.constprop' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:917:26:
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:343:51: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  343 |                         di.texel_weights_tr[j][i] = 0;
+      |                                                   ^
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h: In function 'construct_block_size_descriptor_2d.constprop':
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h:376:33: note: at offset [1944, 55727] into destination object 'texel_weights_tr' of size 864
+  376 |         ASTCENC_ALIGNAS uint8_t texel_weights_tr[4][BLOCK_MAX_TEXELS];
+      |                                 ^
+[202/230] Generating ../generated/texture/draw-background-pattern.png
+[203/230] Generating ../generated/texture/features-background-pattern.png
+[204/230] Generating ../generated/texture/gifts-background-pattern.png
+[205/230] Generating ../generated/texture/loading.png
+[206/230] Generating ../generated/texture/defeat-background-pattern.png
+[207/230] Generating ../generated/texture/menu-background-pattern.png
+[208/230] Generating ../generated/texture/squares.png
+[209/230] Generating ../generated/texture/stars.png
+[210/230] Generating ../generated/texture/search-background-pattern.png
+[211/230] Generating ../generated/i18n/br.mo
+[212/230] Generating ../generated/i18n/de.mo
+[213/230] Generating ../generated/texture/victory-background-pattern.png
+[214/230] Generating ../generated/i18n/en.mo
+[215/230] Generating ../generated/i18n/es.mo
+[216/230] Generating ../generated/i18n/kab.mo
+[217/230] Generating ../generated/i18n/fr.mo
+[218/230] Generating ../generated/i18n/ko.mo
+[219/230] Generating ../generated/i18n/oc.mo
+[220/230] Generating ../generated/i18n/pt.mo
+[221/230] Generating ../generated/i18n/pt_BR.mo
+[222/230] Generating ../generated/i18n/ru.mo
+[223/230] Generating ../generated/i18n/ta.mo
+[224/230] Generating ../generated/texture/popup-background-pattern.png
+[225/230] Generating ../generated/i18n/tr.mo
+[226/230] Generating ../generated/i18n/uk.mo
+[227/230] Generating ../generated/i18n/zh_Hans.mo
+[228/230] Linking CXX executable apps/player/bim-player
+[229/230] Linking CXX executable apps/server/bim-server
+[230/230] Linking CXX executable apps/linux/bim
+In function 'init_decimation_info_2d',
+    inlined from 'construct_dt_entry_2d' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:753:25,
+    inlined from 'construct_block_size_descriptor_2d.constprop' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:917:26:
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:341:63: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  341 |                         di.texel_weight_contribs_int_tr[j][i] = 0;
+      |                                                               ^
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h: In function 'construct_block_size_descriptor_2d.constprop':
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h:382:33: note: at offset [1944, 55727] into destination object 'texel_weight_contribs_int_tr' of size 864
+  382 |         ASTCENC_ALIGNAS uint8_t texel_weight_contribs_int_tr[4][BLOCK_MAX_TEXELS];
+      |                                 ^
+In function 'init_decimation_info_2d',
+    inlined from 'construct_dt_entry_2d' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:753:25,
+    inlined from 'construct_block_size_descriptor_2d.constprop' at /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:917:26:
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_block_sizes.cpp:343:51: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+  343 |                         di.texel_weights_tr[j][i] = 0;
+      |                                                   ^
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h: In function 'construct_block_size_descriptor_2d.constprop':
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/3rdparty/astcenc/astcenc_internal.h:376:33: note: at offset [1944, 55727] into destination object 'texel_weights_tr' of size 864
+  376 |         ASTCENC_ALIGNAS uint8_t texel_weights_tr[4][BLOCK_MAX_TEXELS];
+      |                                 ^
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/modules/bim/core/main/include/bim/table_2d.impl.hpp: In member function 'operator=.isra':
+/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/modules/bim/core/main/include/bim/table_2d.impl.hpp:59:18: warning: argument 1 value '18446744073709551615' exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+   59 |     m_data.reset(new T[that.m_width * that.m_height]);
+      |                  ^
+/usr/include/c++/15/new:140:26: note: in a call to allocation function 'operator new []' declared here
+  140 | _GLIBCXX_NODISCARD void* operator new[](std::size_t)
+      |                          ^

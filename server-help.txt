@@ -1,0 +1,118 @@
+Usage: bim/build/linux/release/apps/server/bim-server OPTIONS
+
+Options:
+  --console-log                         Display logs in the terminal.
+  -h [ --help ]                         Display this information.
+  --log-file arg                        The file into which to append the logs.
+  --config arg                          Load the server config from this file.
+  --version                             Display the version number and exit.
+
+General config options:
+  --port arg (=23899)                   The port to listen on.
+  --name arg                            The name of the server, as sent to the 
+                                        clients.
+  --host arg                            The public address of the device 
+                                        hosting this server, without the port.
+  --enable-business                     Register to and work with the business 
+                                        server.
+  --business-token arg                  Token to pass to the business server 
+                                        for authenticated requests.
+  --business-registration-pulse-seconds arg
+                                        How long to wait between two 
+                                        registration attempts when we can't get
+                                        the delay from the business server.
+
+Statistics config options:
+  --enable-statistics-log               Whether or not we dump statistics about
+                                        the players and the games.
+  --enable-rolling-statistics           Whether or not we should enable the 
+                                        statistics on a rolling window.
+  --statistics-dump-delay arg           How long we wait after a stat is 
+                                        changed to record it in the logs.
+  --statistics-log-file arg             Path to the folder where to store the 
+                                        server stats.
+
+Session management config options:
+  --session-clean-up-interval arg       Time interval at which we check and 
+                                        remove inactive sessions.
+  --session-removal-delay arg           Inactivity delay after which a session 
+                                        becomes eligible for removal.
+
+Karma config options:
+  --enable-karma                        Whether or not we should enable the 
+                                        karma service to filter incoming 
+                                        connections.
+  --karma-blacklisting-duration arg     How many minutes IPs with negative 
+                                        karma are blacklisted.
+  --karma-review-interval arg           The interval in minutes between two 
+                                        reviews of the blacklisted IPs.
+  --initial-karma-value arg             Karma value assigned to new 
+                                        connections.
+  --disconnection-karma-adjustment arg  Value added to the karma when a player 
+                                        is disconnected.
+  --short-game-karma-adjustment arg     Value added to the karma when a player 
+                                        dies in a short game.
+  --good-behavior-karma-adjustment arg  Value added to the karma when a player 
+                                        behaves correctly.
+
+Geolocation config options:
+  --enable-geolocation                  Whether or not we use IP geolocation.
+  --geolocation-clean-up-interval arg   How many seconds after the last request
+                                        for a given IP to be removed from the 
+                                        geolocation service. The IP will 
+                                        receive a new ID on the next request.
+  --geolocation-update-interval arg     Interval in seconds at which we reopen 
+                                        the GeoIP database, to get fresh data.
+  --geolocation-database-path arg       The path to the GeoIP database.
+
+Matchmaking config options:
+  --enable-bots                         Whether or not we use bots as opponents
+                                        for players who cannot be matched.
+  --matchmaking-clean-up-interval arg   Time interval in seconds at which we 
+                                        remove the encounters from the 
+                                        matchmaking.
+  --matchmaking-delay-for-bot arg       How long to wait before proposing a bot
+                                        in a random opopnent request.
+  --matchmaking-delay-for-release arg   How long to wait before removing a 
+                                        player for an opponent request if they 
+                                        don't tell us that they are ready.
+  --random-game-auto-start-delay arg    How long to wait for the players to be 
+                                        ready before automatically launching a 
+                                        random game, in seconds.
+  --enable-discord-matchmaking-notifications 
+                                        Whether or not we send notifications to
+                                        a Discord channel when players are 
+                                        waiting for a random opponent.
+  --discord-matchmaking-notification-interval arg
+                                        Interval in seconds between two 
+                                        messages sent to --discord-matchmaking-
+                                        notification-url.
+  --discord-matchmaking-notification-url arg
+                                        Discord endpoint where to send a 
+                                        message when a player is waiting for a 
+                                        random opponent
+
+Game config options:
+  --game-service-clean-up_interval arg  Time interval at which we remove the 
+                                        games for which no activity has been 
+                                        observed, in seconds.
+  --game-service-disconnection-lateness-threshold-in-ticks arg
+                                        How many ticks behind the second 
+                                        slowest client can the slowest client 
+                                        be before being disconnected.
+  --game-service-disconnection-earliness-threshold-in-ticks arg
+                                        How many ticks ahead of the second 
+                                        fastest client can the fastest client 
+                                        be before being disconnected.
+  --game-service-disconnection-inactivity-delay arg
+                                        How many seconds of inactivity (i.e. no
+                                        message from the client) do we tolerate
+                                        before disconnecting a client.
+  --game-service-max-duration-for-short-game arg
+                                        The duration in seconds under which the
+                                        game over makes a short game.
+  --enable-contest-timeline-recording   Tells if we record the games played in 
+                                        this server. The games are saved in 
+                                        --contest-timeline-folder.
+  --contest-timeline-folder arg         Path to the folder where to store the 
+                                        contest timelines.

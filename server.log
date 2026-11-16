@@ -1,0 +1,8 @@
+[1m[I][0m[34m[server][0m Stack trace dumper is [31m'/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/release/apps/server/bim-stack-dump'[0m.
+[1m[I][0m[34m[server][0m Bim! 18.
+[1m[I][0m[34m[server][0m Business is https://bim-prod.jorge.st.
+[1m[I][0m[34m[server][0m Running on port 23899.
+[1m[I][0m[34m[business_registration_service][0m Disabled.
+[1m[I][0m[34m[discord_publisher_service][0m Disabled.
+[1m[I][0m[34m[server][0m Server is up on port 23899.
+[1m[I][0m[34m[server][0m Protocol version is 14.
