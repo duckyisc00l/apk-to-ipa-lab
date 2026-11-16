@@ -84,6 +84,11 @@ jobs:
           cd "$SDK"
           ./renpy.sh launcher ios_create "$GITHUB_WORKSPACE/proj" "$GITHUB_WORKSPACE/xcode" 2>&1 | tail -40 | tee -a $GITHUB_WORKSPACE/out/renpy.md
           ls "$GITHUB_WORKSPACE/xcode" | tee -a $GITHUB_WORKSPACE/out/renpy.md
+      - name: What renios ships (libraries)
+        run: |
+          { echo "## libraries in the Xcode project"; find xcode -name '*.a' -o -name '*.xcframework' -maxdepth 4 | sed 's#^xcode/##' | head -60
+            echo "## python libs anywhere in renios"; find "$SDK/renios" -iname '*python*' -maxdepth 6 | sed "s#$SDK/##" | head -30
+            echo "## LIBRARY_SEARCH_PATHS"; grep -h "LIBRARY_SEARCH_PATHS" -A4 xcode/*.xcodeproj/project.pbxproj | head -20; } 2>&1 | tee -a out/renpy.md
       - name: xcodebuild (unsigned) -> IPA
         run: |
           cd xcode; P=$(ls -d *.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
