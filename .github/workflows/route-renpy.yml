@@ -93,9 +93,13 @@ jobs:
         run: |
           # Ren'Py 7.8.x renios ships libpython2.7.a, but its Xcode template asks for python3.9: use what's there
           have=$(ls xcode/prebuilt/release/ | grep -oE 'libpython[0-9.]+\.a' | head -1 | sed -E 's/^lib(.*)\.a$/\1/')
-          want=$(grep -oE 'python[0-9]\.[0-9]+' xcode/*.xcodeproj/project.pbxproj | sort -u | head -1)
-          echo "ships $have, project wants $want" | tee -a out/renpy.md
-          [ -n "$have" ] && [ -n "$want" ] && [ "$have" != "$want" ] && sed -i '' "s/-l$want/-l$have/g; s/lib$want\.a/lib$have.a/g" xcode/*.xcodeproj/project.pbxproj || true
+          # every build file (pbxproj, xcconfig) that names another python version
+          for f in $(grep -rlE --include='*.pbxproj' --include='*.xcconfig' 'python[0-9]\.[0-9]+' xcode | grep -v '/base/'); do
+            grep -oE 'python[0-9]\.[0-9]+' "$f" | sort -u | grep -vx "$have" | while read want; do
+              echo "$f: $want -> $have" | tee -a out/renpy.md
+              sed -i '' "s/$want/$have/g" "$f"
+            done
+          done
       - name: xcodebuild (unsigned) -> IPA
         run: |
           cd xcode; P=$(ls -d *.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
