@@ -40,23 +40,19 @@ public static class JsonConverter
 
 	private static string FormatJson(string json)
 	{
+		// Rewritten by hand: the decompiler could not rebuild the original LINQ query (it used 'let').
+		// Same steps, same order, for each character.
 		int indentation = 0;
 		int quoteCount = 0;
-		return string.Concat((from ch in json
-			let quotes = (ch == '"') ? quoteCount++ : quoteCount
-			let lineBreak = (ch == ',' && quotes % 2 == 0) ? string.Concat(ch.ToString(), Environment.NewLine, string.Concat(Enumerable.Repeat("    ", indentation))) : null
-			let openChar = (ch == '{' || ch == '[') ? string.Concat(ch.ToString(), Environment.NewLine, string.Concat(Enumerable.Repeat("    ", ++indentation))) : ch.ToString()
-			select new
-			{
-				_003C_003Eh__TransparentIdentifier2 = _003C_003Eh__TransparentIdentifier2,
-				closeChar = ((ch == '}' || ch == ']') ? string.Concat(Environment.NewLine, string.Concat(Enumerable.Repeat("    ", --indentation)), ch.ToString()) : ch.ToString())
-			}).Select(_003C_003Eh__TransparentIdentifier3 =>
+		var sb = new System.Text.StringBuilder();
+		foreach (char ch in json)
 		{
-			if (_003C_003Eh__TransparentIdentifier3._003C_003Eh__TransparentIdentifier2._003C_003Eh__TransparentIdentifier1.lineBreak != null)
-			{
-				return _003C_003Eh__TransparentIdentifier3._003C_003Eh__TransparentIdentifier2._003C_003Eh__TransparentIdentifier1.lineBreak;
-			}
-			return (_003C_003Eh__TransparentIdentifier3._003C_003Eh__TransparentIdentifier2.openChar.Length <= 1) ? _003C_003Eh__TransparentIdentifier3.closeChar : _003C_003Eh__TransparentIdentifier3._003C_003Eh__TransparentIdentifier2.openChar;
-		}));
+			int quotes = (ch == '"') ? quoteCount++ : quoteCount;
+			string lineBreak = (ch == ',' && quotes % 2 == 0) ? string.Concat(ch.ToString(), Environment.NewLine, string.Concat(Enumerable.Repeat("    ", indentation))) : null;
+			string openChar = (ch == '{' || ch == '[') ? string.Concat(ch.ToString(), Environment.NewLine, string.Concat(Enumerable.Repeat("    ", ++indentation))) : ch.ToString();
+			string closeChar = (ch == '}' || ch == ']') ? string.Concat(Environment.NewLine, string.Concat(Enumerable.Repeat("    ", --indentation)), ch.ToString()) : ch.ToString();
+			sb.Append(lineBreak ?? ((openChar.Length <= 1) ? closeChar : openChar));
+		}
+		return sb.ToString();
 	}
 }

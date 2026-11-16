@@ -89,7 +89,7 @@ public static class InputUtils
 
 	public static bool AnyTouchscreenPressed()
 	{
-		return Touch.activeTouches.Count > 0;
+		return UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count > 0;
 	}
 
 	public static bool IsKeyboardShiftPressed()

@@ -78,7 +78,7 @@ public class ContextMenuControl : INeedInjection, IInjectionFinishedListener, ID
 
 	protected virtual void CheckOpenContextMenuFromInputAction(InputAction.CallbackContext context)
 	{
-		if (Pointer.current != null && context.ReadValueAsButton() && Touch.activeTouches.Count < 2 && !isDrag)
+		if (Pointer.current != null && context.ReadValueAsButton() && UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count < 2 && !isDrag)
 		{
 			Vector2 pointerPositionInPanelCoordinates = InputUtils.GetPointerPositionInPanelCoordinates(panelHelper, invertY: true);
 			if (targetVisualElement.worldBound.Contains(pointerPositionInPanelCoordinates))
