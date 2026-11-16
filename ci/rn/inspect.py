@@ -42,6 +42,35 @@ else:  # Hermes keeps numbers out of the string table; native libs carry it some
             if mm:
                 info["rn_version"] = mm.group(1).decode()
                 break
+if "rn_version" not in info:  # Java side: com.facebook.react.modules.systeminfo.ReactNativeVersion.<clinit> puts major/minor/patch
+    try:
+        from androguard.core.dex import DEX
+        for f in sorted(os.listdir(src)):
+            if not re.match(r"classes\d*\.dex$", f):
+                continue
+            dex = DEX(open(os.path.join(src, f), "rb").read())
+            for c in dex.get_classes():
+                if c.get_name() != "Lcom/facebook/react/modules/systeminfo/ReactNativeVersion;":
+                    continue
+                for meth in c.get_methods():
+                    if meth.get_name() != "<clinit>":
+                        continue
+                    seq = []
+                    for ins in meth.get_instructions():
+                        op, out_ = ins.get_name(), ins.get_output()
+                        if op.startswith("const-string"):
+                            seq.append(out_.split(",", 1)[1].strip().strip("'\""))
+                        elif op.startswith("const/") or op == "const":
+                            seq.append(int(out_.split(",")[-1].strip()))
+                    vals = {}
+                    for i, x in enumerate(seq[:-1]):
+                        if x in ("major", "minor", "patch") and isinstance(seq[i + 1], int):
+                            vals[x] = seq[i + 1]
+                    if {"major", "minor", "patch"} <= vals.keys():
+                        info["rn_version"] = f"{vals['major']}.{vals['minor']}.{vals['patch']}"
+                        info["rn_version_from"] = "dex ReactNativeVersion"
+    except Exception as e:
+        info["rn_version_error"] = str(e)[:200]
 libs = sorted({f for _, _, fs in os.walk(os.path.join(src, "lib")) for f in fs})
 m = re.search(r"registerComponent\(\s*[\"']([^\"']+)", text)
 info["app_name"] = m.group(1) if m else None   # the host must launch this exact name
@@ -81,9 +110,10 @@ if not regs:  # property order differs between versions: parse each registration
 density = {0.75: "ldpi", 1: "mdpi", 1.5: "hdpi", 2: "xhdpi", 3: "xxhdpi", 4: "xxxhdpi"}
 copied = missing = 0
 for loc, scales, name, typ in regs:
-    loc = loc.lstrip("/")
-    base = (loc.replace("assets/", "", 1) if loc.startswith("assets/") else loc)
-    android = re.sub(r"[^a-z0-9_]", "", (base.replace("/", "_") + "_" + name).lower()).lstrip("_")
+    # React Native's own rule (assetPathUtils.getAndroidResourceIdentifier)
+    android = (loc.lstrip("/") + "/" + name).lower().replace("/", "_")
+    android = re.sub(r"[^a-z0-9_]", "", android)
+    android = re.sub(r"^assets_", "", android)
     for sc in [float(x) for x in scales.split(",") if x.strip()]:
         dens = density.get(sc, "mdpi")
         found = None
@@ -92,14 +122,15 @@ for loc, scales, name, typ in regs:
             if os.path.exists(p):
                 found = p
                 break
-        if not found:  # aapt2 may have shortened res paths: look anywhere in res/ and assets/
-            for d, _, fs in os.walk(src):
-                if f"{android}.{typ}" in fs:
+        if not found:
+            for d, _, fs in os.walk(os.path.join(src, "res")):
+                if f"{android}.{typ}" in fs and dens in d:
                     found = os.path.join(d, f"{android}.{typ}")
                     break
+        # iOS looks next to main.jsbundle at <httpServerLocation without leading />/<name>@<scale>x.<type>
         suffix = "" if sc == 1 else f"@{sc:g}x"
-        dest = os.path.join(out, "assets", loc, f"{name}{suffix}.{typ}")
-        if found:
+        dest = os.path.normpath(os.path.join(out, "app", loc.lstrip("/"), f"{name}{suffix}.{typ}"))
+        if found and dest.startswith(os.path.join(out, "app")):
             os.makedirs(os.path.dirname(dest), exist_ok=True)
             shutil.copy(found, dest)
             copied += 1

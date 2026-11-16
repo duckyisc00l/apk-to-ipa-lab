@@ -32,6 +32,7 @@ jobs:
           asset=$(gh api "repos/${{ inputs.repo }}/releases/tags/$tag" --jq '[.assets[]|select(.name|test("\\.apk$"))]|sort_by(.size)|.[0].name')
           echo "${{ inputs.repo }} $tag $asset" | tee out/picked.txt
           gh release download "$tag" -R "${{ inputs.repo }}" -p "$asset" -D dl
+          pip install -q androguard
           python3 -I ci/unpack.py "dl/$asset" work > out/unpack.json
           python3 -I ci/rn/inspect.py work/all rn | tee out/rn.md; cp rn/rn.json out/
           cp work/all/$(python3 -c "import json;print(json.load(open('rn/rn.json'))['bundle'])") rn/main.jsbundle
@@ -94,7 +95,7 @@ jobs:
         run: |
           app=$(find Host/ios/build/Build/Products -maxdepth 2 -name '*.app' | head -1)
           cp rn/main.jsbundle "$app/main.jsbundle"
-          [ -d rn/assets ] && cp -R rn/assets "$app/"
+          [ -d rn/app ] && cp -R rn/app/. "$app/"
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry RN.ipa Payload && ls -la RN.ipa | tee -a out/ipa.md
           gh release create "rn-${{ github.run_number }}" RN.ipa -R ${{ github.repository }} --prerelease --notes "React Native host route test (unsigned)" || true
         env: { GH_TOKEN: "${{ github.token }}" }
