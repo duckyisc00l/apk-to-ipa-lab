@@ -71,8 +71,11 @@ jobs:
         run: |
           mkdir -p out; v="${GODOT%.stable}"; tag="${v}-stable"; echo "Godot $tag" | tee out/ipa.md
           base="https://github.com/godotengine/godot-builds/releases/download/$tag"
-          curl -sSLf -o godot.zip "$base/Godot_v${tag}_macos.universal.zip" && unzip -q godot.zip
-          curl -sSLf -o tpz.zip "$base/Godot_v${tag}_export_templates.tpz"
+          # Godot 4 names the Mac build _macos, Godot 3 _osx
+          curl -sSLf -o godot.zip "$base/Godot_v${tag}_macos.universal.zip" || curl -sSLf -o godot.zip "$base/Godot_v${tag}_osx.universal.zip"
+          unzip -q godot.zip; ls -d *.app | tee -a out/ipa.md
+          app=$(ls -d *.app | head -1); [ "$app" = Godot.app ] || mv "$app" Godot.app
+          curl -sSLf -o tpz.zip "$base/Godot_v${tag}_export_templates.tpz" || { echo "no export templates for $tag" | tee -a out/ipa.md; exit 1; }
           major=${v%%.*}
           if [ "$major" = 4 ]; then tdir="$HOME/Library/Application Support/Godot/export_templates/${v}.stable"; else tdir="$HOME/Library/Application Support/Godot/templates/${v}.stable"; fi
           mkdir -p "$tdir" && unzip -q tpz.zip -d /tmp/tpz && cp -R /tmp/tpz/templates/. "$tdir/"
