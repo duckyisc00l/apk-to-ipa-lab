@@ -37,6 +37,10 @@ for name in ("private.mp3", "private.zip"):
                     version = m and m.group(1)
         except zipfile.BadZipFile:
             pass
+sv = os.path.join(out, "game", "script_version.txt")  # written by the Ren'Py that built the game: (7, 3, 5, 606)
+if os.path.exists(sv) and not version:
+    nums = re.findall(r"\d+", open(sv, errors="replace").read())
+    version = ".".join(nums[:3]) if len(nums) >= 3 else None
 libs = {f for _, _, fs in os.walk(os.path.join(src, "lib")) for f in fs}
 major = "8" if any("python3" in l for l in libs) else "7" if any("python2" in l for l in libs) else None
 game = os.path.join(out, "game")

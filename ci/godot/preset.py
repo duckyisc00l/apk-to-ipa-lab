@@ -64,5 +64,22 @@ application/version="1"
 application/targeted_device_family=2
 architectures/arm64=true
 '''
+# iOS (and Godot 3's exporter) refuse a transparent App Store icon: flatten the project icon onto black
+icon_opt = ""
+try:
+    from PIL import Image
+    cfg = open(os.path.join(proj, "project.godot"), errors="replace").read()
+    m = re.search(r'config/icon\s*=\s*"res://([^"]+)"', cfg)
+    src = os.path.join(proj, m.group(1)) if m else os.path.join(proj, "icon.png")
+    if os.path.exists(src):
+        im = Image.open(src).convert("RGBA")
+        bg = Image.new("RGBA", im.size, (0, 0, 0, 255))
+        bg.alpha_composite(im)
+        bg.convert("RGB").resize((1024, 1024), Image.LANCZOS).save(os.path.join(proj, "_ios_icon_1024.png"))
+        icon_opt = 'icons/app_store_1024x1024="res://_ios_icon_1024.png"\nicons/icon_1024x1024="res://_ios_icon_1024.png"\n'
+        print("opaque 1024 icon made from", os.path.relpath(src, proj))
+except Exception as e:  # no PIL or odd icon: Godot falls back to its own
+    print("icon not made:", e)
+opts += icon_opt
 open(path, "w").write("".join(out) + ("\n" if out else "") + common + opts)
 print(f"iOS preset added as preset.{n} (Godot {major}), bundle {bundle}")

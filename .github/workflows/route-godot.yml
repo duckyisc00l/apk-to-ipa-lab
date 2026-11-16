@@ -82,7 +82,9 @@ jobs:
           ls "$tdir" | grep -i ios | tee -a out/ipa.md
           echo "GODOT_BIN=$PWD/Godot.app/Contents/MacOS/Godot" >> $GITHUB_ENV; echo "MAJOR=$major" >> $GITHUB_ENV
       - name: Add an iOS export preset (Xcode project only, unsigned)
-        run: python3 ci/godot/preset.py proj "$MAJOR" "com.duckyisc00l.$(echo $NAME | tr -cd 'a-zA-Z0-9' | tr A-Z a-z)" "$NAME" | tee -a out/ipa.md
+        run: |
+          python3 -m pip install -q --break-system-packages pillow 2>/dev/null || python3 -m pip install -q pillow || true
+          python3 ci/godot/preset.py proj "$MAJOR" "com.duckyisc00l.$(echo $NAME | tr -cd 'a-zA-Z0-9' | tr A-Z a-z)" "$NAME" | tee -a out/ipa.md
       - name: Export the Xcode project
         run: |
           set +e
