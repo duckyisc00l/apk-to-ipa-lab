@@ -32,6 +32,12 @@ final class LocalSchemeHandler: NSObject, WKURLSchemeHandler {
         } else {
             let file = root.appendingPathComponent(path).standardizedFileURL
             if file.path.hasPrefix(root.path + "/") { data = try? Data(contentsOf: file) }   // no escaping the www folder
+            // Apps with a page router (Ionic, Angular, React, Vue) use paths like /home that aren't files.
+            // After a reload iOS asks for them directly: answer with the start page, as their web server would.
+            if data == nil && (path as NSString).pathExtension.isEmpty {
+                data = try? Data(contentsOf: root.appendingPathComponent(AppConfig.startPage))
+                path = AppConfig.startPage
+            }
         }
         let ext = (path as NSString).pathExtension.lowercased()
         var type = Self.mime[ext] ?? "application/octet-stream"

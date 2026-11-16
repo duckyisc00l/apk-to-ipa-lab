@@ -48,6 +48,8 @@ def handle(route):
     if kind == "cordova" and path.endswith("cordova_plugins.js"):
         return route.fulfill(status=200, body="cordova.define('cordova/plugin_list',function(r,e,m){m.exports=[];});", content_type="text/javascript")
     f = os.path.normpath(os.path.join(www, path))
+    if not os.path.isfile(f) and "." not in os.path.basename(path):  # page-router path: serve the start page, like the app
+        f = os.path.join(www, "index.html")
     if not f.startswith(www + os.sep) or not os.path.isfile(f):
         report["missing"].append(path)
         return route.fulfill(status=404, body="")
