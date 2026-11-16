@@ -74,7 +74,7 @@ jobs:
           echo "C# errors: $(wc -l < out/cs-errors.txt)" | tee -a out/summary.txt
           grep -oE "error CS[0-9]+" out/cs-errors.txt | sort | uniq -c | sort -rn | head -20 | tee -a out/summary.txt
           grep -E "CI (BUILD|COMPILE) RESULT|Scripts have compiler errors|No valid Unity Editor license" out/unity.log | head -5 | tee -a out/summary.txt
-          grep -A4 "CI BUILD ERROR" out/unity.log | head -120 | tee -a out/summary.txt || true
+          grep -A25 "CI BUILD ERROR" out/unity.log | grep -vE "StackTraceUtility|DebugLogHandler|UnityEngine.Logger|UnityEngine.Debug:" | head -200 | tee -a out/summary.txt || true
           # every error line with 3 lines after it (the log is too long to keep whole)
           grep -nE -A3 "(^|[^a-z])(Error|error|Exception|BuildFailedException)([^a-z]|$)|Building .* failed" out/unity.log \
             | grep -vE "Debug.LogError|UnityEngine.StackTraceUtility|^--$|Unloading|ALLOC_" | head -150 > out/build-errors.txt || true
