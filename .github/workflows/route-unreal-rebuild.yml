@@ -1,0 +1,107 @@
+name: route-unreal-rebuild
+# Skill steps X4/X5 on Wanderer VR (UE 4.16): CUE4Parse (ci/unreal/ue2godot) turns the level into glTF
+# meshes + a JSON of where each one sits; Godot 4 rebuilds the level (ci/unreal/godot), the Linux lab
+# screenshots it, and a Mac exports and builds the iPhone app. Results to branch r-unreal-rebuild.
+# The game's license isn't stated, so the IPA is kept as a run artifact, not a public release.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: route-unreal-rebuild
+  cancel-in-progress: true
+env:
+  REPO: ankitpassi141/Wanderer-VR
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      godot: ${{ steps.godot.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: APK -> paks (X1)
+        run: |
+          mkdir -p out; echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
+          python3 ci/detect.py dl work > /dev/null
+          find work -name '*.pak' | tee out/paks.txt
+          P=$(dirname "$(head -1 out/paks.txt)"); echo "PAKS=$P" >> $GITHUB_ENV; echo "paks in $P" | tee -a out/rebuild.md
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: "10.0.x" }
+      - name: Level -> glTF meshes + placement JSON (X4, CUE4Parse)
+        run: |
+          git clone -q --depth 1 https://github.com/FabianFG/CUE4Parse c4p
+          echo "CUE4Parse $(git -C c4p log -1 --format='%h %ad' --date=short)" | tee -a out/rebuild.md
+          set -o pipefail
+          dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" GAME_UE4_16 export 2>&1 | grep -vE "^\s*$" | tail -60 | tee out/ue2godot.log
+          ls export/levels | tee -a out/rebuild.md; find export/meshes -name '*.glb' | wc -l | sed 's/^/glb files: /' | tee -a out/rebuild.md
+          cat export/summary.txt >> out/rebuild.md
+      - name: Godot 4 (newest stable) and templates
+        id: godot
+        run: |
+          tag=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/godotengine/godot-builds/releases/latest | python3 -c "import json,sys;print(json.load(sys.stdin)['tag_name'])")
+          echo "tag=$tag" >> $GITHUB_OUTPUT; echo "Godot $tag" | tee -a out/rebuild.md
+          base=https://github.com/godotengine/godot-builds/releases/download/$tag
+          curl -sSLf -o g.zip "$base/Godot_v${tag}_linux.x86_64.zip" && unzip -q g.zip && mv Godot_v*_linux.x86_64 godot && chmod +x godot
+      - name: Build the level scene in Godot, screenshot it (X4 + lab)
+        run: |
+          P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes
+          ./godot --headless --path $P --import > out/import.log 2>&1 || true
+          L=$(ls export/levels/*.json | xargs -n1 basename | grep -viE "editor|test|transition" | head -1); echo "level: $L" | tee -a out/rebuild.md
+          ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR" | head -20 | tee -a out/rebuild.md
+          printf '\n[autoload]\nShot="*res://shot.gd"\n' >> $P/project.godot
+          sudo apt-get install -y -qq xvfb > /dev/null
+          SHOT=$GITHUB_WORKSPACE/out/level.png timeout 120 xvfb-run -a -s "-screen 0 1280x720x24" ./godot --path $P --rendering-driver opengl3 2>&1 | grep -E "SHOT|ERROR" | head -10 | tee -a out/rebuild.md || true
+          sed -i '/^\[autoload\]/,$d' $P/project.godot
+      - uses: actions/upload-artifact@v4
+        with: { name: godot-project, path: proj, retention-days: 3 }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: rebuild-logs, path: out }
+  ipa:
+    needs: rebuild
+    runs-on: macos-15-intel
+    timeout-minutes: 60
+    env:
+      TAG: ${{ needs.rebuild.outputs.godot }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: godot-project, path: proj }
+      - name: Godot + iOS templates, export the Xcode project (X5)
+        run: |
+          mkdir -p out export; base=https://github.com/godotengine/godot-builds/releases/download/$TAG
+          curl -sSLf -o g.zip "$base/Godot_v${TAG}_macos.universal.zip" && unzip -q g.zip
+          curl -sSLf -o t.tpz "$base/Godot_v${TAG}_export_templates.tpz" && unzip -q t.tpz -d tpz
+          v=${TAG%-stable}; d="$HOME/Library/Application Support/Godot/export_templates/$v.stable"; mkdir -p "$d"; cp -R tpz/templates/. "$d/"
+          G=$PWD/Godot.app/Contents/MacOS/Godot
+          python3 -m pip install -q --break-system-packages pillow 2>/dev/null || python3 -m pip install -q pillow || true
+          python3 ci/godot/preset.py proj 4 com.duckyisc00l.wanderer Wanderer | tee -a out/ipa.md
+          "$G" --headless --path proj --import > out/import.log 2>&1 || true
+          "$G" --headless --path proj --export-release "iOS" "$PWD/export/Wanderer.ipa" > out/export.log 2>&1; echo "export exit $?" | tee -a out/ipa.md
+          grep -E "ERROR" out/export.log | head -10 | tee -a out/ipa.md; ls export | tee -a out/ipa.md
+      - name: xcodebuild (unsigned) -> IPA
+        run: |
+          proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1); echo "xcodeproj: $proj" | tee -a out/ipa.md; [ -n "$proj" ] || exit 1
+          set +e
+          xcodebuild -project "$proj" -scheme "$(basename "$proj" .xcodeproj)" -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > out/xcodebuild.log 2>&1; xc=$?
+          grep -E "error:|\*\* BUILD" out/xcodebuild.log | head -20 | tee -a out/ipa.md; [ "$xc" = 0 ] || exit 1
+          app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1); mkdir -p Payload && cp -R "$app" Payload/ && zip -qry Wanderer.ipa Payload && ls -la Wanderer.ipa | tee -a out/ipa.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: ipa-logs, path: out }
+      - uses: actions/upload-artifact@v4
+        with: { name: Wanderer-ipa, path: Wanderer.ipa, retention-days: 3 }
+  publish:
+    needs: [rebuild, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: art, pattern: "*-logs" }
+      - run: |
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.png) cp "$f" "$d";; *) tail -200 "$f" > "$d";; esac; done
+          cd /tmp/r && git init -q -b r-unreal-rebuild && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "unreal rebuild ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-unreal-rebuild
