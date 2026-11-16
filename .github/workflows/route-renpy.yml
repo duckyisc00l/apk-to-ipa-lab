@@ -70,6 +70,13 @@ jobs:
           curl -fsSL -o sdk.tar.bz2 "https://www.renpy.org/dl/$V/renpy-$V-sdk.tar.bz2" || curl -fsSL -o sdk.tar.bz2 "https://www.renpy.org/dl/$V/renpy-$V-sdk.tar.bz2"
           [ -s sdk.tar.bz2 ] || { echo "no SDK for $V" | tee -a out/renpy.md; curl -sSL "https://www.renpy.org/dl/$V/" | grep -oE 'href="[^"]+"' | head -30 | tee -a out/renpy.md; exit 1; }
           tar xjf sdk.tar.bz2; SDK=$(ls -d renpy-*-sdk | head -1); echo "SDK=$PWD/$SDK" >> $GITHUB_ENV
+          if ! grep -q 'register_command("ios_create"' "$SDK/launcher/game/ios.rpy" 2>/dev/null; then
+            # too old for command-line iOS (6.99 has no ios_create): newer Ren'Py of the same Python generation runs old games
+            V=$(curl -sSL https://www.renpy.org/dl/ | grep -oE "href=\"$M\.[0-9]+\.[0-9]+/\"" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | sort -V | tail -1)
+            echo "no command-line iOS in this version; using Ren'Py $V" | tee -a out/renpy.md
+            rm -rf "$SDK" sdk.tar.bz2; curl -fsSL -o sdk.tar.bz2 "https://www.renpy.org/dl/$V/renpy-$V-sdk.tar.bz2"
+            tar xjf sdk.tar.bz2; SDK=$(ls -d renpy-*-sdk | head -1); echo "SDK=$PWD/$SDK" >> $GITHUB_ENV
+          fi
           curl -fsSL -o renios.zip "https://www.renpy.org/dl/$V/renpy-$V-renios.zip" && unzip -q renios.zip -d "$SDK" || echo "no renios zip for $V" | tee -a out/renpy.md
           ls "$SDK" | tee -a out/renpy.md
       - name: ios_create (command line, no GUI)
