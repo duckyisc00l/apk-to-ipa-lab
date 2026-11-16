@@ -5,7 +5,8 @@ name: unity-build
 on:
   workflow_dispatch:
     inputs:
-      recover_run: { description: "Run id of the recover workflow that holds recovered-project", required: true }
+      branch: { description: "Branch holding the Unity project (e.g. project-Play)", default: "" }
+      recover_run: { description: "Or: run id of a recover run (artifact recovered-project)", default: "" }
       mode: { description: "compile or ipa", default: "compile" }
       name: { description: "Short name for the IPA", default: "Game" }
       bundle_id: { default: "com.duckyisc00l.game" }
@@ -24,7 +25,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Free disk space
         run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL; df -h / | tail -1
-      - name: Get the recovered project
+      - name: Get the project (branch)
+        if: inputs.branch != ''
+        uses: actions/checkout@v4
+        with: { ref: "${{ inputs.branch }}", path: proj, lfs: true }
+      - name: Get the project (recover artifact)
+        if: inputs.branch == ''
         uses: actions/download-artifact@v4
         with:
           name: recovered-project

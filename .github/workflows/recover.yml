@@ -54,6 +54,16 @@ jobs:
           python3 ci/recover/compare.py "$PROJ/Assets/Scripts" "src/$SOURCE_DIR/Assets" | tee out/compare.md
           echo "" >> out/compare.md; echo "Real manifest.json dependencies:" >> out/compare.md
           python3 -c "import json,sys;d=json.load(open(sys.argv[1]))['dependencies'];[print(f'- {k}: {v}') for k,v in d.items()]" "src/$SOURCE_DIR/Packages/manifest.json" >> out/compare.md 2>&1 || true
+      - name: Commit the cleaned project to its own branch (project-<repo name>)
+        run: |
+          br="project-$(echo "$REPO" | cut -d/ -f2 | tr -cd 'A-Za-z0-9-')"; echo "BRANCH=$br" >> $GITHUB_ENV
+          cp -r "$PROJ" /tmp/project
+          cd /tmp/project && git init -q -b "$br" && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          printf 'Library/\nTemp/\nObj/\nBuild/\nbuild/\nLogs/\nUserSettings/\n*.csproj\n*.sln\n' > .gitignore
+          find . -type f -size +95M -printf '%P\n' > /tmp/big.txt; [ -s /tmp/big.txt ] && { echo "files over 95 MB (need LFS):"; cat /tmp/big.txt; }
+          git add -A && git commit -qm "Recovered project for $REPO (AssetRipper + cleanup)"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$br"
+          echo "project branch: $br" | tee -a "$GITHUB_WORKSPACE/out/cleanup.md"
       - name: Keep the cleaned project for the build
         uses: actions/upload-artifact@v4
         with:
