@@ -48,6 +48,10 @@ except Exception as e:  # noqa: BLE001
     name, vname, vcode, xml, icon_path = "App", "1.0", "1", "", None
 m = re.search(r'screenOrientation="(\w+)"', xml)
 orient = m.group(1) if m else "unspecified"
+# androguard often gives the number Android stores, not the name
+NUM = {"0": "landscape", "1": "portrait", "6": "sensorLandscape", "7": "sensorPortrait", "8": "reverseLandscape",
+       "9": "reversePortrait", "11": "userLandscape", "12": "userPortrait", "-1": "unspecified", "4": "sensor", "10": "fullSensor"}
+orient = NUM.get(orient, orient)
 if "landscape" in orient.lower():
     o = ["UIInterfaceOrientationLandscapeLeft", "UIInterfaceOrientationLandscapeRight"]
 elif "portrait" in orient.lower():

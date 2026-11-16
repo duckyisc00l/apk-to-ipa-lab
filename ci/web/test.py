@@ -11,7 +11,7 @@ from playwright.sync_api import sync_playwright
 
 proj, out = sys.argv[1:3]
 os.makedirs(out, exist_ok=True)
-www = os.path.join(proj, "App", "www")
+www = os.path.abspath(os.path.join(proj, "App", "www"))
 swift = open(os.path.join(proj, "App", "BridgeScript.swift")).read()
 parts = re.findall(r'#"""\n(.*?)\n"""#', swift, re.S)
 common, cordova = parts[0], parts[1]
@@ -48,7 +48,7 @@ def handle(route):
     if kind == "cordova" and path.endswith("cordova_plugins.js"):
         return route.fulfill(status=200, body="cordova.define('cordova/plugin_list',function(r,e,m){m.exports=[];});", content_type="text/javascript")
     f = os.path.normpath(os.path.join(www, path))
-    if not f.startswith(os.path.abspath(www)) or not os.path.isfile(f):
+    if not f.startswith(www + os.sep) or not os.path.isfile(f):
         report["missing"].append(path)
         return route.fulfill(status=404, body="")
     return route.fulfill(status=200, body=open(f, "rb").read(), content_type=MIME.get(f.rsplit(".", 1)[-1].lower(), "application/octet-stream"))
