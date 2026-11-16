@@ -1,0 +1,72 @@
+name: route-unreal
+# Skill step X1-X3 on an open-source Unreal APK: engine version, find the .pak data,
+# unpack it, export models/textures, and read blueprint bytecode. Reports to r-unreal.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "ankitpassi141/Wanderer-VR" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-unreal.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-unreal
+  cancel-in-progress: true
+env:
+  REPO: ${{ inputs.repo || 'ankitpassi141/Wanderer-VR' }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download, unpack, find engine version and data (X1)
+        run: |
+          echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+          root=$(ls -d work/* | head -1); echo "ROOT=$root" >> $GITHUB_ENV
+          so=$(find "$root" -name 'libUE4.so' -o -name 'libUnreal.so' | head -1)
+          echo "engine library: $so ($(du -h "$so" | cut -f1))" | tee -a out/unreal.md
+          strings -n 6 "$so" | grep -oE '\+\+UE[45]\+Release-[0-9]\.[0-9]+' | sort | uniq -c | sort -rn | head -3 | tee -a out/unreal.md
+          strings -n 6 "$so" | grep -oE '^[45]\.[0-9]+\.[0-9]+-[0-9]+\+\+\+UE[45]' | head -2 | tee -a out/unreal.md
+          # data: .pak / .utoc / .ucas directly, or inside an .obb (often main.<ver>.<pkg>.obb, a zip)
+          find "$root" -type f \( -name '*.pak' -o -name '*.utoc' -o -name '*.ucas' -o -name '*.obb' \) -exec ls -la {} \; | tee -a out/unreal.md
+          for o in $(find "$root" -name '*.obb'); do mkdir -p obb && unzip -qo "$o" -d obb 2>/dev/null && echo "unzipped $o" | tee -a out/unreal.md; done
+          find "$root" obb -type f \( -name '*.pak' -o -name '*.utoc' -o -name '*.ucas' \) 2>/dev/null | tee paks.txt | tee -a out/unreal.md
+      - name: Unpack the .pak files with repak (X2)
+        continue-on-error: true
+        run: |
+          url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/trumank/repak/releases/latest \
+            | python3 -c "import json,sys;r=json.load(sys.stdin);print(r['tag_name'],file=sys.stderr);print([a['browser_download_url'] for a in r['assets'] if 'x86_64-unknown-linux' in a['name']][0])")
+          echo "repak: $url" | tee -a out/unreal.md
+          curl -sSL "$url" | tar -xJ 2>/dev/null || { curl -sSL -o repak.tgz "$url"; tar -xf repak.tgz; }
+          R=$(find . -maxdepth 3 -type f -name repak | head -1); chmod +x "$R"
+          mkdir -p unpacked
+          while read p; do
+            case "$p" in *.pak) "$R" info "$p" 2>&1 | head -12 | tee -a out/unreal.md
+              "$R" unpack "$p" -o "unpacked/$(basename "$p" .pak)" > /dev/null 2>> out/repak-errors.txt; echo "unpack $p exit $?" | tee -a out/unreal.md;; esac
+          done < paks.txt
+          echo "files: $(find unpacked -type f | wc -l); maps (.umap): $(find unpacked -name '*.umap' | wc -l); assets (.uasset): $(find unpacked -name '*.uasset' | wc -l)" | tee -a out/unreal.md
+          find unpacked -name '*.uasset' | sed 's#.*/Content/#Content/#' | cut -d/ -f1-3 | sort | uniq -c | sort -rn | head -20 | tee -a out/unreal.md
+          find unpacked -iname 'BP_*.uasset' -o -iname '*_BP.uasset' | head -20 | tee -a out/unreal.md
+      - name: Read blueprint bytecode with kismet-analyzer (X3)
+        continue-on-error: true
+        run: |
+          url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/trumank/kismet-analyzer/releases/latest \
+            | python3 -c "import json,sys;r=json.load(sys.stdin);print(r['tag_name'],file=sys.stderr);print([a['browser_download_url'] for a in r['assets'] if 'linux' in a['name'].lower()][0])")
+          echo "kismet-analyzer: $url" | tee -a out/unreal.md
+          curl -sSL -o ka.pkg "$url"; (tar -xf ka.pkg 2>/dev/null || unzip -qo ka.pkg 2>/dev/null || true)
+          K=$(find . -maxdepth 3 -type f -name 'kismet-analyzer*' ! -name '*.pkg' | head -1); chmod +x "$K"
+          "$K" --help 2>&1 | head -20 | tee -a out/unreal.md
+          bp=$(find unpacked -iname 'BP_*.uasset' | head -1); echo "sample blueprint: $bp" | tee -a out/unreal.md
+          [ -n "$bp" ] && "$K" to-json "$bp" > out/bp-sample.json 2> out/ka-errors.txt; echo "to-json exit $?" | tee -a out/unreal.md
+          head -c 3000 out/bp-sample.json >> out/unreal.md 2>/dev/null || true
+      - name: Publish to branch r-unreal
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md out/*.txt /tmp/r/ 2>/dev/null || true; head -c 200000 out/bp-sample.json > /tmp/r/bp-sample.json 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-unreal && git rm -rfq . && rm -rf ci dl work out obb unpacked repak* ka.pkg kismet* paks.txt
+          cp -r /tmp/r/. . && git add -A && git commit -qm "unreal ${{ github.run_number }}" && git push -f origin r-unreal
