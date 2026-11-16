@@ -28,7 +28,7 @@ jobs:
           grep -n "game_server(\"" -A2 modules/bim/app/main/src/bim/app/config.cpp | head -6 | tee -a ../out/online.md
           grep -n "BIM_BUSINESS_SERVER_URL" -A4 cmake/bim-configuration.cmake | head -10 | tee -a ../out/online.md
       - name: Install build environment (Bim's own script)
-        run: cd bim && ./setup/install-minimal-environment.sh --compiler g++ --target-platform linux > ../out/env.log 2>&1; echo "env exit $?" | tee -a out/online.md
+        run: cd bim && ./setup/install-minimal-environment.sh --compiler g++ --target-platform linux > ../out/env.log 2>&1; echo "env exit $?" | tee -a ../out/online.md
       - name: Build (Bim's own script)
         run: |
           cd bim

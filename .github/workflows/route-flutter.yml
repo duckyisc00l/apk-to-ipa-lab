@@ -30,16 +30,18 @@ jobs:
           git clone -q --depth 1 --branch "$tag" "https://github.com/$REPO" app
           # the Flutter version the project wants (pubspec environment or .fvmrc), else stable
           grep -A3 '^environment:' app/pubspec.yaml | tee -a out/flutter.md
+          # Dart 2 apps (sdk upper bound below 3.0) need Flutter 3.7.12, the last release with Dart 2
+          if grep -A3 '^environment:' app/pubspec.yaml | grep -qE "<\s*3\.0\.0"; then echo "FLUTTER_VERSION=3.7.12" >> $GITHUB_ENV; echo "Dart 2 app: using Flutter 3.7.12" | tee -a out/flutter.md; else echo "FLUTTER_VERSION=" >> $GITHUB_ENV; fi
           ls app/ios > /dev/null 2>&1 && echo "has ios/ folder" | tee -a out/flutter.md || echo "NO ios/ folder: create it with flutter create --platforms=ios ." | tee -a out/flutter.md
       - uses: subosito/flutter-action@v2
-        with: { channel: stable, cache: true }
+        with: { channel: stable, cache: true, flutter-version: "${{ env.FLUTTER_VERSION }}" }
       - name: Build for iOS without signing
         run: |
           cd app
           [ -d ios ] || flutter create --platforms=ios --org com.duckyisc00l . > ../out/create.log 2>&1
           flutter --version | head -1 | tee -a ../out/flutter.md
-          flutter pub get > ../out/pubget.log 2>&1; echo "pub get exit $?" | tee -a ../out/flutter.md
           set +e
+          flutter pub get > ../out/pubget.log 2>&1; echo "pub get exit $?" | tee -a ../out/flutter.md
           TERM=dumb flutter build ios --release --no-codesign > ../out/build.log 2>&1
           b=$?; echo "flutter build exit $b" | tee -a ../out/flutter.md
           grep -E "Error|error:|Failed|Built " ../out/build.log | head -20 | tee -a ../out/flutter.md
