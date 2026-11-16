@@ -1,7 +1,7 @@
 name: unity-smoke
 # Tests the Unity route end to end on an empty project: install the editor,
-# activate a Personal license from two secrets (no PC needed), export for iOS,
-# build an unsigned IPA. Results go to branch r-smoke.
+# activate a Personal license from two secrets (no PC needed), export for iOS on
+# Linux, build an unsigned IPA on a Mac. Results go to branch r-smoke.
 on:
   workflow_dispatch:
   push:
@@ -15,18 +15,14 @@ concurrency:
 env:
   UNITY_VERSION: 2022.2.4f1
 jobs:
-  smoke:
-    runs-on: macos-latest
+  export:
+    runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - name: Check secrets exist
-        run: |
-          mkdir -p out
-          [ -n "${{ secrets.UNITY_EMAIL }}" ] && echo "UNITY_EMAIL set" | tee -a out/log.txt || echo "UNITY_EMAIL MISSING" | tee -a out/log.txt
-          [ -n "${{ secrets.UNITY_PASSWORD }}" ] && echo "UNITY_PASSWORD set" | tee -a out/log.txt || echo "UNITY_PASSWORD MISSING" | tee -a out/log.txt
+      - name: Free disk space
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL; df -h / | tail -1
       - name: Install Unity
-        id: setup
         uses: RageAgainstThePixel/unity-setup@v2
         with:
           unity-version: ${{ env.UNITY_VERSION }}
@@ -40,32 +36,72 @@ jobs:
           password: ${{ secrets.UNITY_PASSWORD }}
       - name: Create empty project and export for iOS
         run: |
+          mkdir -p out
           echo "editor: $UNITY_EDITOR_PATH" | tee -a out/log.txt
-          "$UNITY_EDITOR_PATH" -batchmode -quit -nographics -createProject "$PWD/proj" -logFile out/create.log || true
+          xvfb-run -a "$UNITY_EDITOR_PATH" -batchmode -quit -nographics -createProject "$PWD/proj" -logFile out/create.log || echo "create exit $?" | tee -a out/log.txt
           mkdir -p proj/Assets/Editor && cp ci/unity-smoke/LabBuild.cs proj/Assets/Editor/
-          "$UNITY_EDITOR_PATH" -batchmode -nographics -projectPath "$PWD/proj" -buildTarget iOS \
+          set +e
+          xvfb-run -a "$UNITY_EDITOR_PATH" -batchmode -nographics -projectPath "$PWD/proj" -buildTarget iOS \
             -executeMethod LabBuild.iOS -logFile out/build.log
           echo "unity exit $?" | tee -a out/log.txt
           ls proj/build/ios | tee -a out/log.txt
+          test -d proj/build/ios/Unity-iPhone.xcodeproj
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xcode-project
+          path: proj/build/ios
+      - name: Keep logs for the results branch
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: export-logs
+          path: out
+  ipa:
+    needs: export
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: xcode-project
+          path: ios
       - name: Build unsigned IPA
         run: |
-          cd proj/build/ios
+          mkdir -p out
+          xcodebuild -version | tee -a out/log.txt
+          cd ios && chmod -R u+x .
+          set +e
           xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
             -destination 'generic/platform=iOS' -derivedDataPath dd \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../../../out/xcodebuild.log 2>&1
-          echo "xcodebuild exit $?" | tee -a ../../../out/log.txt
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../out/xcodebuild.log 2>&1
+          echo "xcodebuild exit $?" | tee -a ../out/log.txt
           app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1)
-          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry ../../../LabTest.ipa Payload
-          cd ../../.. && ls -la LabTest.ipa | tee -a out/log.txt
-          file Payload 2>/dev/null; file "proj/build/ios/$app"/* 2>/dev/null | grep -m3 Mach-O | tee -a out/log.txt
-      - name: Publish results to branch r-smoke
+          echo "app: $app" | tee -a ../out/log.txt
+          [ -n "$app" ] || exit 1
+          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry ../LabTest.ipa Payload
+          cd .. && ls -la LabTest.ipa | tee -a out/log.txt
+      - uses: actions/upload-artifact@v4
         if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
+        with:
+          name: ipa-out
+          path: |
+            out
+            LabTest.ipa
+  publish:
+    needs: [export, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: art
+          pattern: "*-*"
+      - name: Publish results to branch r-smoke
         run: |
-          mkdir -p /tmp/r && cp -r out/. /tmp/r/ 2>/dev/null || true
-          for f in /tmp/r/*.log; do [ -f "$f" ] && tail -300 "$f" > "$f.tail" && mv "$f.tail" "$f"; done
-          [ -f LabTest.ipa ] && cp LabTest.ipa /tmp/r/
+          mkdir -p /tmp/r
+          for f in $(find art -name '*.log' -o -name '*.txt'); do d=/tmp/r/$(echo "${f#art/}" | tr / -); tail -300 "$f" > "$d"; done
+          cp art/ipa-out/LabTest.ipa /tmp/r/ 2>/dev/null || true
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          git checkout --orphan r-smoke && git rm -rfq . && rm -rf proj out ci
+          git checkout --orphan r-smoke && git rm -rfq . && rm -rf art ci
           cp -r /tmp/r/. . && git add -A && git commit -qm "smoke ${{ github.run_number }}" && git push -f origin r-smoke
