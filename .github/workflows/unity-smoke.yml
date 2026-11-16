@@ -28,6 +28,9 @@ jobs:
           unity-version: ${{ env.UNITY_VERSION }}
           build-targets: iOS
           version-file: None
+          # Unity Hub 4.0 moved its install folder and unity-setup@v2 can't find it yet.
+          hub-version: 3.12.1
+          auto-update-hub: false
       - name: Activate Unity Personal license
         uses: RageAgainstThePixel/activate-unity-license@v2
         with:
