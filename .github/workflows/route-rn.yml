@@ -44,7 +44,7 @@ jobs:
         with: { name: inspect-logs, path: out }
   ipa:
     needs: inspect
-    runs-on: macos-15
+    runs-on: macos-15-intel   # Intel Macs: often free when the Apple-chip ones are busy
     timeout-minutes: 90
     env:
       V: ${{ needs.inspect.outputs.rn_version }}
