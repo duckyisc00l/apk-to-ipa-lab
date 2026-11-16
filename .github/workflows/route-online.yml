@@ -1,0 +1,54 @@
+name: route-online
+# Skill step O, "the server is open source" case, on Bim! (AGPLv3, game + server open source):
+# build the game server from source the way Bim's own CI does, start it, check it listens,
+# and record where the client's server address is set. Reports to branch r-online.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-online.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-online
+  cancel-in-progress: true
+jobs:
+  server:
+    runs-on: ubuntu-latest
+    container: ubuntu:26.04
+    timeout-minutes: 150
+    steps:
+      - name: Tools
+        run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps > /dev/null
+      - name: Get Bim's source
+        run: git clone -q --depth 1 https://github.com/j-jorge/bim bim && mkdir -p out && echo "bim $(git -C bim log -1 --format='%h %ad' --date=short)" | tee out/online.md
+      - name: Where the client's servers are set (build-time defaults and remote config)
+        run: |
+          cd bim
+          grep -n "game_server(\"" -A2 modules/bim/app/main/src/bim/app/config.cpp | head -6 | tee -a ../out/online.md
+          grep -n "BIM_BUSINESS_SERVER_URL" -A4 cmake/bim-configuration.cmake | head -10 | tee -a ../out/online.md
+      - name: Install build environment (Bim's own script)
+        run: cd bim && ./setup/install-minimal-environment.sh --compiler g++ --target-platform linux > ../out/env.log 2>&1; echo "env exit $?" | tee -a out/online.md
+      - name: Build (Bim's own script)
+        run: |
+          cd bim
+          set +e
+          ./setup.sh --target-platform linux --build-type release --build-steps dependencies configure build > ../out/build.log 2>&1
+          echo "build exit $?" | tee -a ../out/online.md
+          find build -type f -name 'bim-server' -o -type f -name 'bim' | head | tee -a ../out/online.md
+      - name: Start the server and check it listens
+        run: |
+          S=$(find bim/build -type f -name bim-server | head -1)
+          "$S" --help > out/server-help.txt 2>&1 || true
+          printf 'port = 23899\n' > server.cfg
+          ("$S" --console-log --config server.cfg > out/server.log 2>&1 &) ; sleep 8
+          ss -lunp 2>/dev/null | grep -E '23899' | tee -a out/online.md || true
+          ss -ltnp 2>/dev/null | grep -E '23899' | tee -a out/online.md || true
+          pgrep -a bim-server | tee -a out/online.md
+          head -30 out/server.log >> out/online.md
+      - name: Publish to branch r-online
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md out/*.txt /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -80 "$f" > /tmp/r/$(basename "$f"); done
+          cd /tmp/r && git init -q -b r-online && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "online ${{ github.run_number }}" && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-online
