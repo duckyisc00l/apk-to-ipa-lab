@@ -1,0 +1,46 @@
+name: route-formats
+# Step 1 on real package formats: a real AAB (with bundletool, and by hand without it), run through ci/unpack.py.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["ci/unpack.py", ".github/workflows/route-formats.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-formats
+  cancel-in-progress: true
+jobs:
+  formats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get a real AAB (15-Puzzle, Apache-2.0) and bundletool
+        run: |
+          mkdir -p out dl
+          url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/AChep/15puzzle/releases/latest \
+            | python3 -c "import json,sys;print([a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if a['name'].endswith('.aab')][0])")
+          curl -sSL -o dl/15puzzle.aab "$url"; ls -la dl | tee -a out/formats.md
+          bt=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/google/bundletool/releases/latest \
+            | python3 -c "import json,sys;print([a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if a['name'].endswith('.jar')][0])")
+          curl -sSL -o bundletool.jar "$bt"; echo "bundletool: $bt" | tee -a out/formats.md
+      - name: AAB with bundletool
+        run: |
+          BUNDLETOOL=$PWD/bundletool.jar python3 -I ci/unpack.py dl/15puzzle.aab out/with-bt | tee out/with-bundletool.json
+          java -jar bundletool.jar dump manifest --bundle=dl/15puzzle.aab | head -20 | tee -a out/formats.md
+      - name: AAB without bundletool (by hand)
+        run: python3 -I ci/unpack.py dl/15puzzle.aab out/by-hand | tee out/by-hand.json
+      - name: Detect both
+        run: |
+          mkdir -p d1/bt d1/hand && cp dl/15puzzle.aab d1/hand/ && python3 ci/detect.py d1 work1 > /dev/null; cp out/detect.md out/detect-by-hand.md
+          echo "with bundletool: libs $(python3 -c "import json;print(json.load(open('out/with-bundletool.json'))['libs'])")" | tee -a out/formats.md
+          echo "by hand: libs $(python3 -c "import json;print(json.load(open('out/by-hand.json'))['libs'])")" | tee -a out/formats.md
+      - name: Publish to branch r-formats
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md out/*.json /tmp/r/ 2>/dev/null || true
+          cd /tmp/r && git init -q -b r-formats && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "formats ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-formats

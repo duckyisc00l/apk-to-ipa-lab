@@ -9,39 +9,22 @@ VER = re.compile(rb"(20[1-9][0-9]|6000)\.[0-9]+\.[0-9]+[abfp][0-9]+")
 
 
 def merge(path, dest):
-    """Unpack an APK or a bundle (XAPK/APKM/APKS) into dest. Returns notes."""
-    notes = []
-    os.makedirs(dest, exist_ok=True)
+    """Unpack any package format with ci/unpack.py, then flatten its merged all/ folder into dest."""
+    import subprocess, shutil
+    tmp = dest + "_unpack"
+    r = subprocess.run([sys.executable, "-I", os.path.join(os.path.dirname(os.path.abspath(__file__)), "unpack.py"), path, tmp],
+                       capture_output=True, text=True)
     try:
-        z = zipfile.ZipFile(path)
-    except zipfile.BadZipFile as e:
-        return [f"not a readable zip: {e}"]
-    names = z.namelist()
-    inner = [n for n in names if n.lower().endswith(".apk")]
-    if "AndroidManifest.xml" in names:
-        z.extractall(dest)
-        notes.append("plain APK")
-    elif inner:
-        notes.append(f"bundle with {len(inner)} APKs")
-        for n in inner:
-            tmp = os.path.join(dest, "_" + os.path.basename(n))
-            with open(tmp, "wb") as f:
-                f.write(z.read(n))
-            try:
-                zipfile.ZipFile(tmp).extractall(dest)
-            except zipfile.BadZipFile:
-                notes.append(f"{n}: broken")
-            os.remove(tmp)
-        for n in names:
-            if n.lower().endswith(".obb"):
-                notes.append(f"obb: {n}")
-                ob = os.path.join(dest, "obb", os.path.basename(n))
-                os.makedirs(os.path.dirname(ob), exist_ok=True)
-                with open(ob, "wb") as f:
-                    f.write(z.read(n))
-    else:
-        notes.append("zip without AndroidManifest.xml or APKs")
-    return notes
+        rep = json.loads(r.stdout)
+    except ValueError:
+        return [f"unpack failed: {r.stderr.strip()[-300:]}"]
+    if os.path.isdir(os.path.join(tmp, "all")):
+        shutil.copytree(os.path.join(tmp, "all"), dest, dirs_exist_ok=True)
+    if os.path.exists(os.path.join(tmp, "base.apk")):
+        shutil.copy(os.path.join(tmp, "base.apk"), dest + ".base.apk")
+    shutil.rmtree(tmp, ignore_errors=True)
+    notes = rep.get("notes", []) or [f"{len(rep.get('apks', []))} APK(s)"]
+    return notes + [f"PROTECTED/ENCRYPTED: {w}" for w in rep.get("protected_or_encrypted", [])]
 
 
 def unity_version(root):
