@@ -252,7 +252,7 @@ public class EditorNoteControl : INeedInjection, IInjectionFinishedListener
 
 	public void OnPointerClick(IPointerEvent ped)
 	{
-		if (Vector2.Distance(pointerDownPosition, ped.position) > 5f || (ped.button != 0 && Touch.activeTouches.Count == 0))
+		if (Vector2.Distance(pointerDownPosition, ped.position) > 5f || (ped.button != 0 && UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count == 0))
 		{
 			return;
 		}

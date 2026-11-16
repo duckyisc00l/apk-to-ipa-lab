@@ -386,17 +386,17 @@ public class SongEditorSceneInputControl : MonoBehaviour, INeedInjection
 			return;
 		}
 		bool flag = zoomStartTouchPositions != null;
-		if (Touch.activeFingers.Count < 2)
+		if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeFingers.Count < 2)
 		{
 			if (flag)
 			{
 				zoomStartTouchPositions = null;
 			}
 		}
-		else if (Touch.activeFingers.Count == 2)
+		else if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeFingers.Count == 2)
 		{
-			Finger finger = Touch.activeFingers[0];
-			Finger finger2 = Touch.activeFingers[1];
+			Finger finger = UnityEngine.InputSystem.EnhancedTouch.Touch.activeFingers[0];
+			Finger finger2 = UnityEngine.InputSystem.EnhancedTouch.Touch.activeFingers[1];
 			if (flag)
 			{
 				UpdateTouchInputForZoomContinuedGesture(finger, finger2);

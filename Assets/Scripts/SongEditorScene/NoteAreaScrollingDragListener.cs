@@ -29,7 +29,7 @@ public class NoteAreaScrollingDragListener : INeedInjection, IInjectionFinishedL
 	public void OnBeginDrag(NoteAreaDragEvent dragEvent)
 	{
 		isCanceled = false;
-		if (dragEvent.GeneralDragEvent.InputButton != 2 && Touch.activeTouches.Count == 0)
+		if (dragEvent.GeneralDragEvent.InputButton != 2 && UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count == 0)
 		{
 			CancelDrag();
 			return;
@@ -41,17 +41,17 @@ public class NoteAreaScrollingDragListener : INeedInjection, IInjectionFinishedL
 
 	public void OnDrag(NoteAreaDragEvent dragEvent)
 	{
-		if (dragEvent.GeneralDragEvent.InputButton != 2 && Touch.activeTouches.Count < 2)
+		if (dragEvent.GeneralDragEvent.InputButton != 2 && UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count < 2)
 		{
 			return;
 		}
-		if (Touch.activeTouches.Count == 2)
+		if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count == 2)
 		{
 			if (twoFingerGestureStartDistance < 0f)
 			{
-				twoFingerGestureStartDistance = Vector2.Distance(Touch.activeTouches[0].screenPosition, Touch.activeTouches[1].screenPosition);
+				twoFingerGestureStartDistance = Vector2.Distance(UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches[0].screenPosition, UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches[1].screenPosition);
 			}
-			else if (Math.Abs(Vector2.Distance(Touch.activeTouches[0].screenPosition, Touch.activeTouches[1].screenPosition) - twoFingerGestureStartDistance) > 100f)
+			else if (Math.Abs(Vector2.Distance(UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches[0].screenPosition, UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches[1].screenPosition) - twoFingerGestureStartDistance) > 100f)
 			{
 				CancelDrag();
 				return;

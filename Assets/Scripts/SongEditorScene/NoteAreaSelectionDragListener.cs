@@ -81,7 +81,7 @@ public class NoteAreaSelectionDragListener : INeedInjection, IInjectionFinishedL
 		UpdateSelectionFrame(dragEvent);
 		UpdateSelection(dragEvent);
 		UpdateScrollAmount(dragEvent);
-		if (Touch.activeTouches.Count > 1)
+		if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count > 1)
 		{
 			CancelDrag();
 		}

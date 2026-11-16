@@ -92,7 +92,7 @@ public class UltraStarPlayInputManager : InputManager, INeedInjection
 		{
 			InputDeviceEnum = EInputDevice.Gamepad;
 		}
-		if (Touch.activeTouches.Count > 0)
+		if (UnityEngine.InputSystem.EnhancedTouch.Touch.activeTouches.Count > 0)
 		{
 			InputDeviceEnum = EInputDevice.Touch;
 		}
