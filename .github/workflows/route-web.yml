@@ -1,0 +1,86 @@
+name: route-web
+# Skill steps 2-5 on real open-source web APKs (Cordova and Capacitor): make the iOS
+# project from the template, test it in a phone-sized browser, build an unsigned IPA.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["ci/web/**", ".github/workflows/route-web.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-web
+  cancel-in-progress: true
+jobs:
+  make:
+    strategy:
+      fail-fast: false
+      matrix:
+        app:
+          - { repo: "VarunS2002/Ionic-Tic-Tac-Toe", name: "TicTacToe" }
+          - { repo: "jupiutrera/open-chess", name: "OpenChess" }
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and unpack
+        run: |
+          echo "${{ matrix.app.repo }}" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work; cp "$(find dl -name '*.apk' | head -1)" app.apk
+      - name: Make the iOS project (steps 2-3)
+        run: |
+          pip install -q --break-system-packages androguard pillow playwright 2>&1 | tail -1
+          python3 ci/web/make.py app.apk "$(ls -d work/* | head -1)" proj "com.duckyisc00l.$(echo ${{ matrix.app.name }} | tr A-Z a-z)" | tee out/make.md
+      - name: Test in a phone-sized browser (step 5)
+        continue-on-error: true
+        run: |
+          python3 -m playwright install --with-deps chromium > /dev/null 2>&1
+          python3 ci/web/test.py proj out/test | tee out/test.txt
+      - uses: actions/upload-artifact@v4
+        with: { name: "proj-${{ matrix.app.name }}", path: proj }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "make-logs-${{ matrix.app.name }}", path: out }
+  ipa:
+    needs: make
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [TicTacToe, OpenChess]
+    runs-on: macos-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: "proj-${{ matrix.name }}", path: proj }
+      - name: Build unsigned IPA
+        run: |
+          mkdir -p out; brew install xcodegen > /dev/null 2>&1; cd proj && xcodegen generate > ../out/xcodegen.log 2>&1
+          set +e
+          TERM=dumb xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../out/xcodebuild.log 2>&1
+          xc=$?; echo "xcodebuild exit $xc" | tee ../out/ipa.md
+          grep -E "error:|\*\* BUILD" ../out/xcodebuild.log | head -30 | tee -a ../out/ipa.md
+          [ "$xc" = 0 ] || exit 1
+          mkdir -p Payload && cp -R dd/Build/Products/Release-iphoneos/App.app Payload/ && zip -qry "../${{ matrix.name }}.ipa" Payload
+          cd .. && ls -la *.ipa | tee -a out/ipa.md
+          gh release create "${{ matrix.name }}-web-${{ github.run_number }}" "${{ matrix.name }}.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the web route)."
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "ipa-logs-${{ matrix.name }}", path: out }
+  publish:
+    needs: [make, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: art, pattern: "*-logs-*" }
+      - run: |
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.log) tail -150 "$f" > "$d";; *) cp "$f" "$d";; esac; done
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-web && git rm -rfq . && rm -rf art ci
+          cp -r /tmp/r/. . && git add -A && git commit -qm "web ${{ github.run_number }}" && git push -f origin r-web

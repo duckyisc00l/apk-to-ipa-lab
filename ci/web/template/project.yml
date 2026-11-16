@@ -1,0 +1,30 @@
+name: App
+options:
+  bundleIdPrefix: com.duckyisc00l
+  deploymentTarget: { iOS: "15.0" }
+targets:
+  App:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+        excludes: ["www/**", "Info.plist"]
+      - path: App/www
+        type: folder
+        buildPhase: resources
+    scheme: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: __BUNDLE__
+        PRODUCT_NAME: App
+        INFOPLIST_FILE: App/Info.plist
+        INFOPLIST_OUTPUT_FORMAT: XML
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "__VERSION__"
+        CURRENT_PROJECT_VERSION: "__BUILD__"
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGN_IDENTITY: ""
+        LD_RUNPATH_SEARCH_PATHS: ["$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks"]
