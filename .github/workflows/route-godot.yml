@@ -1,0 +1,121 @@
+name: route-godot
+# Skill step E (Godot) end to end on an open-source Godot APK:
+# recover the project with GDRE Tools, export it for iOS with the same Godot version,
+# build an unsigned IPA. Reports to branch r-godot; IPA as a prerelease.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "HarmonyHoney/ROTA" }
+      name: { default: "ROTA" }
+  push:
+    branches: [main]
+    paths: ["ci/godot/**", ".github/workflows/route-godot.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-godot
+  cancel-in-progress: true
+env:
+  REPO: ${{ inputs.repo || 'HarmonyHoney/ROTA' }}
+  NAME: ${{ inputs.name || 'ROTA' }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      godot: ${{ steps.ver.outputs.godot }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and detect
+        run: |
+          echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work; cp $(find dl -name '*.apk' | head -1) game.apk
+      - name: Godot version (from the engine library)
+        id: ver
+        run: |
+          so=$(find work -name libgodot_android.so | head -1)
+          v=$(strings -n 5 "$so" | grep -oE '^[234]\.[0-9]+(\.[0-9]+)?\.(stable|rc[0-9]*|beta[0-9]*)' | head -1)
+          [ -n "$v" ] || v=$(strings -n 5 "$so" | grep -oE '[234]\.[0-9]+(\.[0-9]+)?\.stable' | head -1)
+          echo "godot=$v" >> $GITHUB_OUTPUT; echo "Godot version: $v" | tee -a out/godot.md
+      - name: Recover the project with GDRE Tools
+        run: |
+          url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/GDRETools/gdsdecomp/releases/latest \
+            | python3 -c "import json,sys;r=json.load(sys.stdin);print(r['tag_name'],file=sys.stderr);print([a['browser_download_url'] for a in r['assets'] if 'linux' in a['name'].lower() and a['name'].endswith('.zip')][0])")
+          echo "GDRE: $url" | tee -a out/godot.md
+          curl -sSL -o gdre.zip "$url" && unzip -qo gdre.zip -d gdre
+          bin=$(find gdre -type f \( -name 'gdre_tools*x86_64' -o -name 'gdre_tools.x86_64' \) | head -1); chmod +x "$bin"
+          set +e
+          "$bin" --headless --recover=game.apk --output="$PWD/proj" > out/gdre.log 2>&1
+          echo "gdre exit $?" | tee -a out/godot.md
+          tail -40 out/gdre.log >> out/godot.md
+          echo "files: $(find proj -type f | wc -l); scripts: $(find proj -name '*.gd' | wc -l); scenes: $(find proj -name '*.tscn' | wc -l)" | tee -a out/godot.md
+          ls proj | head -30 | tee -a out/godot.md
+          grep -E 'config/features|config/name|run/main_scene|renderer' proj/project.godot | tee -a out/godot.md
+      - uses: actions/upload-artifact@v4
+        with: { name: godot-project, path: proj, retention-days: 14 }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: recover-logs, path: out }
+  ipa:
+    needs: recover
+    runs-on: macos-latest
+    timeout-minutes: 60
+    env:
+      GODOT: ${{ needs.recover.outputs.godot }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: godot-project, path: proj }
+      - name: Get the same Godot version and its export templates
+        run: |
+          mkdir -p out; v="${GODOT%.stable}"; tag="${v}-stable"; echo "Godot $tag" | tee out/ipa.md
+          base="https://github.com/godotengine/godot-builds/releases/download/$tag"
+          curl -sSLf -o godot.zip "$base/Godot_v${tag}_macos.universal.zip" && unzip -q godot.zip
+          curl -sSLf -o tpz.zip "$base/Godot_v${tag}_export_templates.tpz"
+          major=${v%%.*}
+          if [ "$major" = 4 ]; then tdir="$HOME/Library/Application Support/Godot/export_templates/${v}.stable"; else tdir="$HOME/Library/Application Support/Godot/templates/${v}.stable"; fi
+          mkdir -p "$tdir" && unzip -q tpz.zip -d /tmp/tpz && cp -R /tmp/tpz/templates/. "$tdir/"
+          ls "$tdir" | grep -i ios | tee -a out/ipa.md
+          echo "GODOT_BIN=$PWD/Godot.app/Contents/MacOS/Godot" >> $GITHUB_ENV; echo "MAJOR=$major" >> $GITHUB_ENV
+      - name: Add an iOS export preset (Xcode project only, unsigned)
+        run: python3 ci/godot/preset.py proj "$MAJOR" "com.duckyisc00l.$(echo $NAME | tr -cd 'a-zA-Z0-9' | tr A-Z a-z)" "$NAME" | tee -a out/ipa.md
+      - name: Export the Xcode project
+        run: |
+          set +e
+          cd proj
+          "$GODOT_BIN" --headless --import > ../out/import.log 2>&1 || true
+          if [ "$MAJOR" = 4 ]; then "$GODOT_BIN" --headless --export-release "iOS" ../export/$NAME.ipa > ../out/export.log 2>&1
+          else "$GODOT_BIN" --no-window --export "iOS" ../export/$NAME.ipa > ../out/export.log 2>&1; fi
+          echo "export exit $?" | tee -a ../out/ipa.md; cd ..
+          tail -30 out/export.log >> out/ipa.md; ls -la export | tee -a out/ipa.md
+      - name: Build unsigned IPA
+        run: |
+          proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1); echo "xcodeproj: $proj" | tee -a out/ipa.md
+          [ -n "$proj" ] || exit 1
+          scheme=$(basename "$proj" .xcodeproj)
+          set +e
+          TERM=dumb xcodebuild -project "$proj" -scheme "$scheme" -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > out/xcodebuild.log 2>&1
+          xc=$?; echo "xcodebuild exit $xc" | tee -a out/ipa.md
+          grep -E "error:|\*\* BUILD" out/xcodebuild.log | head -30 | tee -a out/ipa.md
+          [ "$xc" = 0 ] || exit 1
+          app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1)
+          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "$NAME.ipa" Payload && ls -la "$NAME.ipa" | tee -a out/ipa.md
+          gh release create "$NAME-godot-${{ github.run_number }}" "$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the Godot route)."
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: ipa-logs, path: out }
+  publish:
+    needs: [recover, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: art, pattern: "*-logs" }
+      - run: |
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); tail -300 "$f" > "$d"; done
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-godot && git rm -rfq . && rm -rf art ci
+          cp -r /tmp/r/. . && git add -A && git commit -qm "godot ${{ github.run_number }}" && git push -f origin r-godot

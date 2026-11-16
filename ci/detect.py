@@ -87,16 +87,34 @@ def classify(root):
         r["data_unity3d"] = has("assets/bin/Data/data.unity3d")
     elif "libyoyo.so" in libs:
         r["engine"] = "GameMaker"
+    elif "libgm8emulator.so" in libs:
+        r["engine"] = "GameMaker 8 (through an emulator)"
     elif libs & {"libUE4.so", "libUnreal.so"}:
         r["engine"] = "Unreal"
     elif any(l.startswith("libgodot") for l in libs):
         r["engine"] = "Godot"
+    elif "liblove.so" in libs:
+        r["engine"] = "LOVE"
+    elif "librenpython.so" in libs or {"libpymodules.so", "libpython2.7.so"} <= libs:
+        r["engine"] = "Ren'Py"
     elif "libflutter.so" in libs:
         r["engine"] = "Flutter"
+    elif any(l in libs for l in ("libhermes.so", "libjsc.so", "libreactnativejni.so")) or has("assets/index.android.bundle"):
+        r["engine"] = "React Native"
+    elif any(l in libs for l in ("libgdx.so",)):
+        r["engine"] = "libGDX"
+    elif any(l in libs for l in ("libmonodroid.so", "libxamarin-app.so")):
+        r["engine"] = "Xamarin/.NET"
+    elif any(l.startswith("libcocos") for l in libs):
+        r["engine"] = "Cocos2d-x"
+    elif has("assets/capacitor.config.json"):   # check before Cordova: Capacitor apps also ship cordova.js
+        r["engine"] = "Web (Capacitor)"
     elif has("assets/www/index.html"):
         r["engine"] = "Web (Cordova)"
+    elif libs - {"libc++_shared.so", "libandroidx.graphics.path.so", "libdatastore_shared_counter.so"}:
+        r["engine"] = "native C/C++ (own engine)"
     else:
-        r["engine"] = "native/other"
+        r["engine"] = "native (Java/Kotlin only)"
     libdir = os.path.join(root, "lib")
     r["arches"] = sorted(os.listdir(libdir)) if os.path.isdir(libdir) else []
     r["arm64"] = "arm64-v8a" in r["arches"]
