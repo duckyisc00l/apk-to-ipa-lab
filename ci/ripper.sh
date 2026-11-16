@@ -32,13 +32,26 @@ for r in json.load(open("out/detect.json")):
         print(r["game"], r["root"], r.get("backend", ""))
 E
 
+# AssetRipper's web API takes a form field "Path"; try url-encoded form first, then JSON.
+post() {
+  local label=$1 ep=$2 val=$3 tmo=$4 code
+  code=$(curl -s -o /tmp/resp -w "%{http_code}" -X POST --data-urlencode "Path=$val" "http://127.0.0.1:$PORT/$ep" --max-time "$tmo")
+  if [ "$code" = "415" ] || [ "$code" = "400" ]; then
+    code=$(curl -s -o /tmp/resp -w "%{http_code}" -X POST -H 'Content-Type: application/json' \
+      --data "{\"path\":\"$val\"}" "http://127.0.0.1:$PORT/$ep" --max-time "$tmo")
+    echo "$label $code (json) $(head -c 200 /tmp/resp)"
+  else
+    echo "$label $code (form) $(head -c 200 /tmp/resp)"
+  fi
+}
+
 while read -r game root backend; do
   [ -z "$game" ] && continue
   dest="$PWD/export/$game"
   rm -rf "$dest"; mkdir -p "$dest"
   t0=$(date +%s)
-  curl -s -o /dev/null -w "load %{http_code}\n" -X POST -F "Path=$PWD/$root" "http://127.0.0.1:$PORT/LoadFolder" --max-time 1800 >> "out/ripper-$game.txt"
-  curl -s -o /dev/null -w "export %{http_code}\n" -X POST -F "Path=$dest" "http://127.0.0.1:$PORT/Export/UnityProject" --max-time 3600 >> "out/ripper-$game.txt"
+  post load LoadFolder "$PWD/$root" 1800 >> "out/ripper-$game.txt"
+  post export Export/UnityProject "$dest" 3600 >> "out/ripper-$game.txt"
   t1=$(date +%s)
   {
     echo "backend: $backend"
