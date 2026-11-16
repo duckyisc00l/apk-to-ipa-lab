@@ -15,7 +15,7 @@ concurrency:
   group: unity-smoke
   cancel-in-progress: true
 env:
-  UNITY_VERSION: 2022.2.4f1
+  UNITY_VERSION: 2022.3.x
 jobs:
   export:
     if: inputs.reuse_run == ''
