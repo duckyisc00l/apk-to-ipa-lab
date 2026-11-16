@@ -86,6 +86,8 @@ jobs:
           sed -i '' -E "s/:hermes_enabled => [^,)]+/:hermes_enabled => $H/" Podfile || true
           sed -i '' -E 's/^([[:space:]]*use_flipper!)/# \1/; s/^([[:space:]]*flipper_post_install)/# \1/' Podfile   # debug-only tool; old Flipper pods break on new Xcode
           [ "$H" = false ] && export USE_HERMES=0
+          # RN <0.66 builds glog for 32-bit armv7, which Xcode 14+ can't target: switch it to arm64
+          g=../node_modules/react-native/scripts/ios-configure-glog.sh; [ -f "$g" ] && sed -i '' 's/armv7/arm64/g' "$g" && echo "glog script patched to arm64" | tee -a ../../out/ipa.md
           gem list cocoapods | head -1 | tee -a ../../out/ipa.md
           (bundle install 2>/dev/null && bundle exec pod install || pod install) 2>&1 | tail -15 | tee -a ../../out/ipa.md
       - name: Launch the APK's own app name
