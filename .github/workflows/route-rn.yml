@@ -98,12 +98,17 @@ jobs:
           grep -n "$APPNAME" "$f" | head -3 | tee -a ../../out/ipa.md
       - name: Build (unsigned, no bundling of the host's own JS)
         run: |
+          # old RN on new Xcode: Yoga's "hadOverflow() |" fails -Werror (RN <0.66); old Boost uses std::unary_function
+          y=Host/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp; [ -f "$y" ] && sed -i '' -E 's/(hadOverflow\(\)) \|$/\1 ||/' "$y"
+          [ -f "$y" ] && cp "$y" Host/ios/Pods/Yoga/yoga/Yoga.cpp 2>/dev/null || true
           cd Host/ios; ws=$(ls -d *.xcworkspace | head -1)
           set +e
           SKIP_BUNDLING=1 xcodebuild -workspace "$ws" -scheme Host -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
-            -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../../out/xcodebuild.log 2>&1
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            GCC_PREPROCESSOR_DEFINITIONS='$(inherited) _LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1' \
+            build > ../../out/xcodebuild.log 2>&1
           xc=$?; echo "xcodebuild exit $xc" | tee -a ../../out/ipa.md
-          grep -E "error:|\*\* BUILD" ../../out/xcodebuild.log | sort -u | head -30 | tee -a ../../out/ipa.md
+          grep -E "error:|\*\* BUILD|Undefined symbols" ../../out/xcodebuild.log | sort -u | head -40 | tee -a ../../out/ipa.md
           [ "$xc" = 0 ]
       - name: Put the APK's bundle and images into the app, make the IPA
         run: |
