@@ -49,26 +49,33 @@ if "rn_version" not in info:  # Java side: com.facebook.react.modules.systeminfo
             if not re.match(r"classes\d*\.dex$", f):
                 continue
             dex = DEX(open(os.path.join(src, f), "rb").read())
+            if b"prerelease" not in open(os.path.join(src, f), "rb").read():
+                continue
+            # the class may be renamed by R8, so look at every method that names major/minor/patch/prerelease
             for c in dex.get_classes():
-                if c.get_name() != "Lcom/facebook/react/modules/systeminfo/ReactNativeVersion;":
-                    continue
                 for meth in c.get_methods():
-                    if meth.get_name() != "<clinit>":
-                        continue
                     seq = []
-                    for ins in meth.get_instructions():
-                        op, out_ = ins.get_name(), ins.get_output()
-                        if op.startswith("const-string"):
-                            seq.append(out_.split(",", 1)[1].strip().strip("'\""))
-                        elif op.startswith("const/") or op == "const":
-                            seq.append(int(out_.split(",")[-1].strip()))
+                    try:
+                        for ins in meth.get_instructions():
+                            op, out_ = ins.get_name(), ins.get_output()
+                            if op.startswith("const-string"):
+                                seq.append(out_.split(",", 1)[1].strip().strip("'\""))
+                            elif op.startswith("const/") or op == "const":
+                                seq.append(int(out_.split(",")[-1].strip(), 0))
+                    except Exception:
+                        continue
+                    if "prerelease" not in seq or "minor" not in seq:
+                        continue
                     vals = {}
-                    for i, x in enumerate(seq[:-1]):
-                        if x in ("major", "minor", "patch") and isinstance(seq[i + 1], int):
-                            vals[x] = seq[i + 1]
-                    if {"major", "minor", "patch"} <= vals.keys():
+                    for k, x in enumerate(seq):
+                        if x in ("major", "minor", "patch"):  # value is the nearest int before or after the key
+                            near = [y for y in seq[k + 1:k + 3] if isinstance(y, int)] or [y for y in seq[max(0, k - 2):k] if isinstance(y, int)]
+                            if near:
+                                vals[x] = near[0]
+                    if {"major", "minor", "patch"} <= vals.keys() and "rn_version" not in info:
                         info["rn_version"] = f"{vals['major']}.{vals['minor']}.{vals['patch']}"
-                        info["rn_version_from"] = "dex ReactNativeVersion"
+                        info["rn_version_from"] = f"dex {c.get_name()}"
+                    info.setdefault("debug_dex_seq", seq[:24])
     except Exception as e:
         info["rn_version_error"] = str(e)[:200]
 libs = sorted({f for _, _, fs in os.walk(os.path.join(src, "lib")) for f in fs})
