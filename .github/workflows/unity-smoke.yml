@@ -1,0 +1,71 @@
+name: unity-smoke
+# Tests the Unity route end to end on an empty project: install the editor,
+# activate a Personal license from two secrets (no PC needed), export for iOS,
+# build an unsigned IPA. Results go to branch r-smoke.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["ci/unity-smoke/**", ".github/workflows/unity-smoke.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: unity-smoke
+  cancel-in-progress: true
+env:
+  UNITY_VERSION: 2022.2.4f1
+jobs:
+  smoke:
+    runs-on: macos-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check secrets exist
+        run: |
+          mkdir -p out
+          [ -n "${{ secrets.UNITY_EMAIL }}" ] && echo "UNITY_EMAIL set" | tee -a out/log.txt || echo "UNITY_EMAIL MISSING" | tee -a out/log.txt
+          [ -n "${{ secrets.UNITY_PASSWORD }}" ] && echo "UNITY_PASSWORD set" | tee -a out/log.txt || echo "UNITY_PASSWORD MISSING" | tee -a out/log.txt
+      - name: Install Unity
+        id: setup
+        uses: RageAgainstThePixel/unity-setup@v2
+        with:
+          unity-version: ${{ env.UNITY_VERSION }}
+          build-targets: iOS
+          version-file: None
+      - name: Activate Unity Personal license
+        uses: RageAgainstThePixel/activate-unity-license@v2
+        with:
+          license: personal
+          username: ${{ secrets.UNITY_EMAIL }}
+          password: ${{ secrets.UNITY_PASSWORD }}
+      - name: Create empty project and export for iOS
+        run: |
+          echo "editor: $UNITY_EDITOR_PATH" | tee -a out/log.txt
+          "$UNITY_EDITOR_PATH" -batchmode -quit -nographics -createProject "$PWD/proj" -logFile out/create.log || true
+          mkdir -p proj/Assets/Editor && cp ci/unity-smoke/LabBuild.cs proj/Assets/Editor/
+          "$UNITY_EDITOR_PATH" -batchmode -nographics -projectPath "$PWD/proj" -buildTarget iOS \
+            -executeMethod LabBuild.iOS -logFile out/build.log
+          echo "unity exit $?" | tee -a out/log.txt
+          ls proj/build/ios | tee -a out/log.txt
+      - name: Build unsigned IPA
+        run: |
+          cd proj/build/ios
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
+            -destination 'generic/platform=iOS' -derivedDataPath dd \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../../../out/xcodebuild.log 2>&1
+          echo "xcodebuild exit $?" | tee -a ../../../out/log.txt
+          app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1)
+          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry ../../../LabTest.ipa Payload
+          cd ../../.. && ls -la LabTest.ipa | tee -a out/log.txt
+          file Payload 2>/dev/null; file "proj/build/ios/$app"/* 2>/dev/null | grep -m3 Mach-O | tee -a out/log.txt
+      - name: Publish results to branch r-smoke
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/r && cp -r out/. /tmp/r/ 2>/dev/null || true
+          for f in /tmp/r/*.log; do [ -f "$f" ] && tail -300 "$f" > "$f.tail" && mv "$f.tail" "$f"; done
+          [ -f LabTest.ipa ] && cp LabTest.ipa /tmp/r/
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-smoke && git rm -rfq . && rm -rf proj out ci
+          cp -r /tmp/r/. . && git add -A && git commit -qm "smoke ${{ github.run_number }}" && git push -f origin r-smoke

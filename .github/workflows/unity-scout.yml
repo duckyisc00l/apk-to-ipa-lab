@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["ci/**", ".github/workflows/unity-scout.yml"]
+    paths: ["ci/*.py", "ci/*.sh", "ci/candidates.txt", ".github/workflows/unity-scout.yml"]
 permissions:
   contents: write
 concurrency:
