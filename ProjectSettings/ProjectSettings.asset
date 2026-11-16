@@ -298,9 +298,9 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 0
   enableCrashReportAPI: 0
-  cameraUsageDescription:
-  locationUsageDescription:
-  microphoneUsageDescription:
+  cameraUsageDescription: Used for the game's camera features.
+  locationUsageDescription: Used for the game's location features.
+  microphoneUsageDescription: Used to sing along: the game scores your voice.
   bluetoothUsageDescription:
   macOSTargetOSVersion:
   switchNMETAOverride:
