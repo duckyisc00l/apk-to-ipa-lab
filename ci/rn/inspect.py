@@ -64,7 +64,7 @@ if "rn_version" not in info:  # Java side: com.facebook.react.modules.systeminfo
                                 seq.append(int(out_.split(",")[-1].strip(), 0))
                     except Exception:
                         continue
-                    if "prerelease" not in seq or "minor" not in seq:
+                    if "minor" not in seq:
                         continue
                     vals = {}
                     for k, x in enumerate(seq):
@@ -75,7 +75,7 @@ if "rn_version" not in info:  # Java side: com.facebook.react.modules.systeminfo
                     if {"major", "minor", "patch"} <= vals.keys() and "rn_version" not in info:
                         info["rn_version"] = f"{vals['major']}.{vals['minor']}.{vals['patch']}"
                         info["rn_version_from"] = f"dex {c.get_name()}"
-                    info.setdefault("debug_dex_seq", seq[:24])
+                    info.setdefault("debug_dex_seqs", []).append([c.get_name() + "->" + meth.get_name()] + seq[:30])
     except Exception as e:
         info["rn_version_error"] = str(e)[:200]
 libs = sorted({f for _, _, fs in os.walk(os.path.join(src, "lib")) for f in fs})
