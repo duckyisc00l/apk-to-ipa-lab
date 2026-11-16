@@ -8,9 +8,10 @@ import json, os, time, urllib.parse, urllib.request
 TOKEN = os.environ["GH_TOKEN"]
 QUERIES = {
     "godot": ["topic:godot topic:android", "godot game android apk", "topic:godot-engine topic:game"],
-    "renpy": ["renpy android", "topic:renpy", "ren'py visual novel android"],
+    "renpy": ["renpy android", "topic:renpy", "ren'py visual novel android", "topic:renpy-visual-novel", "topic:visual-novel topic:renpy"],
     "love2d": ["love2d android", "topic:love2d topic:game", "love2d game apk"],
-    "react-native": ["topic:react-native topic:game", "react-native game android apk"],
+    "react-native": ["topic:react-native topic:game", "react-native game android apk", "topic:react-native topic:android",
+                     "topic:expo topic:android", "topic:react-native-app"],
     "flutter": ["topic:flutter topic:game", "flutter game android apk", "topic:flame-engine"],
     "capacitor": ["topic:capacitor topic:ionic android", "capacitor game android", "topic:capacitorjs"],
     "cordova": ["topic:cordova topic:game", "cordova game android apk"],
