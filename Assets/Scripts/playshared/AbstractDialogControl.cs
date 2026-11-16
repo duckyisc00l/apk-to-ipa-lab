@@ -1,0 +1,20 @@
+using System;
+using UniInject;
+using UniRx;
+using UnityEngine.UIElements;
+
+public abstract class AbstractDialogControl : IDialogControl, INeedInjection
+{
+	[Inject(Key = "rootVisualElement")]
+	protected VisualElement dialogRootVisualElement;
+
+	private readonly Subject<bool> dialogClosedEventStream = new Subject<bool>();
+
+	public IObservable<bool> DialogClosedEventStream => dialogClosedEventStream;
+
+	public virtual void CloseDialog()
+	{
+		dialogRootVisualElement.RemoveFromHierarchy();
+		dialogClosedEventStream.OnNext(value: true);
+	}
+}

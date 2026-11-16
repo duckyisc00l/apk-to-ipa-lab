@@ -1,0 +1,7 @@
+{
+  "name": "Plugins",
+  "references": [
+    "UnityEngine.UI"
+  ],
+  "allowUnsafeCode": true
+}

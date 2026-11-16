@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+[Serializable]
+public class StatisticEntries
+{
+	public SortedSet<SongStatistic> SongStatistics { get; private set; }
+
+	public StatisticEntries()
+	{
+		SongStatistics = new SortedSet<SongStatistic>(new CompareBySongScoreDescending());
+	}
+
+	public void AddRecord(SongStatistic record)
+	{
+		SongStatistics.Add(record);
+	}
+
+	public void RemoveRecord(SongStatistic record)
+	{
+		SongStatistics.Remove(record);
+	}
+
+	public List<SongStatistic> GetTopScores(int count)
+	{
+		if (SongStatistics.IsNullOrEmpty())
+		{
+			return new List<SongStatistic>();
+		}
+		return SongStatistics.Take(count).ToList();
+	}
+}

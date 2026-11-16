@@ -1,0 +1,105 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class PlayerProfileImagePickerControl : PicturedItemPickerControl<string>
+{
+	private readonly int playerProfileIndex;
+
+	private readonly UiManager uiManager;
+
+	private readonly WebCamManager webCamManager;
+
+	private readonly Button takeWebCamImageButton;
+
+	private readonly Button removeWebCamImageButton;
+
+	public PlayerProfileImagePickerControl(ItemPicker itemPicker, int playerProfileIndex, UiManager uiManager, WebCamManager webCamManager)
+		: base(itemPicker, uiManager.GetRelativePlayerProfileImagePaths(includeWebCamImages: false).Union(new List<string> { "WEBCAM" }).ToList())
+	{
+		this.playerProfileIndex = playerProfileIndex;
+		this.uiManager = uiManager;
+		this.webCamManager = webCamManager;
+		takeWebCamImageButton = base.ItemPicker.Q<Button>("takeWebCamImageButton");
+		removeWebCamImageButton = base.ItemPicker.Q<Button>("removeWebCamImageButton");
+		takeWebCamImageButton.RegisterCallbackButtonTriggered(() =>
+		{
+			TakeWebCamImage();
+		});
+		removeWebCamImageButton.RegisterCallbackButtonTriggered(() =>
+		{
+			RemoveWebCamImage();
+		});
+		UpdateImageElement(base.SelectedItem);
+	}
+
+	public override void UpdateImageElement(string imagePath)
+	{
+		base.UpdateImageElement(imagePath);
+		base.ItemPicker.ItemImage.image = null;
+		if (uiManager == null)
+		{
+			return;
+		}
+		if (imagePath == "WEBCAM" && webCamManager != null)
+		{
+			string webCamImagePath = GetWebCamImagePath();
+			if (File.Exists(webCamImagePath))
+			{
+				takeWebCamImageButton.HideByDisplay();
+				removeWebCamImageButton.ShowByDisplay();
+				uiManager.LoadPlayerProfileImage(webCamImagePath, (Sprite loadedSprite) =>
+				{
+					base.ItemPicker.ItemLabel.style.backgroundImage = new StyleBackground(loadedSprite);
+				});
+			}
+			else
+			{
+				takeWebCamImageButton.ShowByDisplay();
+				removeWebCamImageButton.HideByDisplay();
+				WebCamTexture image = webCamManager.StartSelectedWebCam();
+				base.ItemPicker.ItemImage.image = image;
+			}
+		}
+		else
+		{
+			takeWebCamImageButton.HideByDisplay();
+			removeWebCamImageButton.HideByDisplay();
+			uiManager.LoadPlayerProfileImage(imagePath, (Sprite loadedSprite) =>
+			{
+				base.ItemPicker.ItemLabel.style.backgroundImage = new StyleBackground(loadedSprite);
+			});
+		}
+	}
+
+	protected override StyleBackground GetBackgroundImageValue(string item)
+	{
+		return default;
+	}
+
+	private void TakeWebCamImage()
+	{
+		string webCamImagePath = GetWebCamImagePath();
+		webCamManager.SaveSnapshot(webCamImagePath);
+		uiManager.UpdatePlayerProfileImagePaths();
+		ImageManager.RemoveUnusedSpritesFromCache();
+		UpdateImageElement(base.SelectedItem);
+	}
+
+	private void RemoveWebCamImage()
+	{
+		string webCamImagePath = GetWebCamImagePath();
+		if (File.Exists(webCamImagePath))
+		{
+			File.Delete(webCamImagePath);
+		}
+		UpdateImageElement(base.SelectedItem);
+	}
+
+	private string GetWebCamImagePath()
+	{
+		return PlayerProfileUtils.GetAbsoluteWebCamImagePath(playerProfileIndex);
+	}
+}
