@@ -63,6 +63,8 @@ while read -r game root backend; do
       echo "scenes: $(find "$proj/Assets" -name '*.unity' | wc -l)"
       echo "textures: $(find "$proj/Assets" -iname '*.png' | wc -l)"
       echo "audio: $(find "$proj/Assets" \( -iname '*.ogg' -o -iname '*.wav' -o -iname '*.mp3' \) | wc -l)"
+      echo "all .cs by folder:"; find "$proj/Assets" -name '*.cs' | sed "s#$proj/Assets/##" | cut -d/ -f1-2 | sort | uniq -c | sort -rn | head -15
+      echo "all .dll: $(find "$proj" -name '*.dll' | wc -l) $(find "$proj" -name '*.dll' | head -8 | xargs -n1 basename 2>/dev/null | tr '\n' ' ')"
       echo "game scripts (.cs under Assets/Scripts): $(find "$proj/Assets/Scripts" -name '*.cs' 2>/dev/null | wc -l)"
       echo "script folders: $(ls "$proj/Assets/Scripts" 2>/dev/null | tr '\n' ' ')"
       echo "stub bodies (throw null / NotImplemented): $(grep -rhoE 'throw null|NotImplementedException' "$proj/Assets/Scripts" 2>/dev/null | wc -l)"
@@ -74,6 +76,8 @@ while read -r game root backend; do
       [ -n "$big" ] && { echo "$big"; head -60 "$big"; }
     fi
   } >> "out/ripper-$game.txt"
+  { echo "--- server log lines for this game (errors, warnings, scripting)"; sed -n "$(cat /tmp/logmark 2>/dev/null || echo 1),\$p" out/ripper-server.log | grep -iE "error|warn|exception|il2cpp|mono|script|assembl|metadata" | head -40; } >> "out/ripper-$game.txt"
+  wc -l < out/ripper-server.log > /tmp/logmark
   curl -s -o /dev/null -X POST "http://127.0.0.1:$PORT/Reset" || true
 done < out/unity-games.txt
 
