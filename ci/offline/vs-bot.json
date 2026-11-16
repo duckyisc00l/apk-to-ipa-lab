@@ -1,0 +1,10 @@
+{
+  "actions": [
+    { "kind": "wait", "event": "loaded" },
+    { "kind": "capture", "file": "1-lobby-offline.png" },
+    { "kind": "click", "node": "main/screen-wheel/lobby/play_button", "event": "players-ready-2" },
+    { "kind": "capture", "file": "2-matched-with-bot.png" },
+    { "kind": "click", "node": "main/screen-wheel/matchmaking/ready_button", "event": "end-game-ready" },
+    { "kind": "capture", "file": "3-game-over.png" }
+  ]
+}

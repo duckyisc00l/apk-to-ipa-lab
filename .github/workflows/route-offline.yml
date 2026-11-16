@@ -1,0 +1,62 @@
+name: route-offline
+# Skill step O proved on Bim! (AGPLv3, client + server open source): the game plays a full match with the
+# network cut off. Its own server runs on the same machine with computer players on; the client is patched
+# (ci/offline/bim_offline.py) to use it and to go on without the sign-in server. Screenshots to r-offline.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: route-offline
+  cancel-in-progress: true
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:26.04
+      options: --cap-add=NET_ADMIN
+    timeout-minutes: 180
+    steps:
+      - name: Tools
+        run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps iptables xvfb xauth curl python3 > /dev/null
+      - uses: actions/checkout@v4
+        with: { path: lab }
+      - name: Get Bim's source and patch it for offline
+        run: |
+          mkdir -p out; git clone -q --depth 1 https://github.com/j-jorge/bim bim
+          echo "bim $(git -C bim log -1 --format='%h %ad' --date=short)" | tee out/offline.md
+          python3 -I lab/ci/offline/bim_offline.py bim 23899 | tee -a out/offline.md
+      - name: Build environment and build (Bim's own scripts)
+        run: |
+          cd bim
+          ./setup/install-minimal-environment.sh --compiler g++ --target-platform linux > ../out/env.log 2>&1; echo "env exit $?" | tee -a ../out/offline.md
+          set +e
+          ./setup.sh --target-platform linux --build-type release --build-steps dependencies configure build > ../out/build.log 2>&1
+          echo "build exit $?" | tee -a ../out/offline.md
+          B=$(dirname "$(dirname "$(find build -type f -path '*apps/linux/bim' | head -1)")"); echo "B=$PWD/$B" >> $GITHUB_ENV; echo "build dir $B" | tee -a ../out/offline.md
+      - name: Cut the network (only this machine itself stays reachable)
+        run: |
+          iptables -P OUTPUT DROP; iptables -A OUTPUT -o lo -j ACCEPT
+          if curl -sS -m 8 https://github.com > /dev/null 2>&1; then echo "network still up!" | tee -a out/offline.md; exit 1; else echo "internet: cut (curl to github.com fails)" | tee -a out/offline.md; fi
+      - name: Server with computer players, on this machine
+        run: |
+          printf '{"port": 23899, "enable_bots": true, "matchmaking_delay_for_bot": 2}\n' > server.cfg
+          ("$B/apps/server/bim-server" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
+          grep -E "up on port|bots|Bot" out/server.log | head | tee -a out/offline.md
+      - name: Play a match against a bot (scripted taps, screenshots)
+        run: |
+          mkdir -p shots app; cd shots
+          set +e
+          timeout 900 xvfb-run -a -s "-screen 0 1080x1920x24" "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
+            --console-log --script "$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json" --script-step-timeout 300 --app-dir "$GITHUB_WORKSPACE/app" > ../out/client.log 2>&1
+          echo "client exit $?" | tee -a ../out/offline.md
+          ls -la | tee -a ../out/offline.md
+          grep -iE "game server|connect|matchmak|bot|script|error|offline" ../out/client.log | head -40 >> ../out/offline.md
+          tail -20 ../out/server.log >> ../out/offline.md
+      - name: Publish to branch r-offline
+        if: always()
+        run: |
+          iptables -P OUTPUT ACCEPT || true
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp shots/*.png /tmp/r/ 2>/dev/null; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
+          cd /tmp/r && git init -q -b r-offline && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "offline ${{ github.run_number }}" && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-offline
