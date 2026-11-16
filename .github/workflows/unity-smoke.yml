@@ -22,7 +22,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Free disk space
         run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL; df -h / | tail -1
-      - name: Install Unity
+      - name: Install Unity (first try; Hub often crashes on its first start)
+        continue-on-error: true
+        timeout-minutes: 8
+        uses: RageAgainstThePixel/unity-setup@v2
+        with:
+          unity-version: ${{ env.UNITY_VERSION }}
+          build-targets: iOS
+          version-file: None
+          # Unity Hub 4.0 moved its install folder and unity-setup@v2 can't find it yet.
+          hub-version: 3.12.1
+          auto-update-hub: false
+      - name: Install Unity (retry)
         uses: RageAgainstThePixel/unity-setup@v2
         with:
           unity-version: ${{ env.UNITY_VERSION }}
