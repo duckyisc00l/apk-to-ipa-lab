@@ -56,7 +56,7 @@ jobs:
         with: { name: rn, path: rn }
       - name: Node version for this React Native
         run: |
-          minor=$(echo "$V" | cut -d. -f2); node=20; [ "$minor" -lt 73 ] && node=18; [ "$minor" -lt 70 ] && node=16
+          minor=$(echo "$V" | cut -d. -f2); node=20; [ "$minor" -lt 73 ] && node=18   # 18 is the floor: today's helper packages need it
           echo "NODE_MAJOR=$node" >> $GITHUB_ENV; mkdir -p out; echo "RN $V ($KIND), app '$APPNAME', node $node" | tee out/ipa.md
       - uses: actions/setup-node@v4
         with: { node-version: "${{ env.NODE_MAJOR }}" }
@@ -67,7 +67,16 @@ jobs:
           # newest stable patch of the same minor (the native bridge is stable within a minor; an rc bundle runs on it)
           V=$(npm view "react-native@~0.$minor.0" version | tail -1 | sed -E "s/.*'([0-9.]+)'.*/\1/; s/^react-native@[^ ]* //"); echo "host React Native $V" | tee -a out/ipa.md
           if [ "$minor" -ge 75 ]; then npx -y @react-native-community/cli@latest init Host --version "$V" --skip-install --skip-git-init --pm npm 2>&1 | tail -15 | tee -a out/ipa.md
-          else npx -y react-native@"$V" init Host --version "$V" --skip-install 2>&1 | tail -15 | tee -a out/ipa.md; fi
+          else
+            # up to 0.74 the app template ships inside the react-native package itself, with pinned versions:
+            # use it instead of "init", which pulls the newest (incompatible) helper packages
+            npm pack -q "react-native@$V" && tar xzf react-native-$V.tgz && cp -R package/template Host
+            [ -f Host/_gitignore ] && mv Host/_gitignore Host/.gitignore
+            # rename HelloWorld -> Host in file contents, then in file and folder names (deepest first)
+            grep -rlI HelloWorld Host | xargs sed -i '' 's/HelloWorld/Host/g'
+            find Host -depth -name '*HelloWorld*' | while read f; do mv "$f" "$(dirname "$f")/$(basename "$f" | sed 's/HelloWorld/Host/g')"; done
+            ls Host Host/ios | tee -a out/ipa.md
+          fi
           cd Host && npm install --legacy-peer-deps 2>&1 | tail -5 | tee -a ../out/ipa.md
       - name: Same JS engine as the APK, then pods
         run: |
