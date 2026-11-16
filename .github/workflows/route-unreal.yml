@@ -32,8 +32,10 @@ jobs:
           strings -n 6 "$so" | grep -oE '\+\+UE[45]\+Release-[0-9]\.[0-9]+' | sort | uniq -c | sort -rn | head -3 | tee -a out/unreal.md
           strings -n 6 "$so" | grep -oE '^[45]\.[0-9]+\.[0-9]+-[0-9]+\+\+\+UE[45]' | head -2 | tee -a out/unreal.md
           # data: .pak / .utoc / .ucas directly, or inside an .obb (often main.<ver>.<pkg>.obb, a zip)
-          find "$root" -type f \( -name '*.pak' -o -name '*.utoc' -o -name '*.ucas' -o -name '*.obb' \) -exec ls -la {} \; | tee -a out/unreal.md
-          for o in $(find "$root" -name '*.obb'); do mkdir -p obb && unzip -qo "$o" -d obb 2>/dev/null && echo "unzipped $o" | tee -a out/unreal.md; done
+          # UE4 "data inside APK" builds hide the OBB as assets/main.obb.png (so Android won't compress it)
+          find "$root" -type f \( -name '*.pak' -o -name '*.utoc' -o -name '*.ucas' -o -name '*.obb' -o -name '*.obb.png' \) -exec ls -la {} \; | tee -a out/unreal.md
+          find "$root" -type f -size +5M -exec ls -la {} \; | sort -k5 -rn | head -10 | tee -a out/unreal.md
+          for o in $(find "$root" -name '*.obb' -o -name '*.obb.png'); do mkdir -p obb && unzip -qo "$o" -d obb 2>/dev/null && echo "unzipped $o" | tee -a out/unreal.md; done
           find "$root" obb -type f \( -name '*.pak' -o -name '*.utoc' -o -name '*.ucas' \) 2>/dev/null | tee paks.txt | tee -a out/unreal.md
       - name: Unpack the .pak files with repak (X2)
         continue-on-error: true
