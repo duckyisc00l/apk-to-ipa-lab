@@ -33,6 +33,7 @@ jobs:
           # Unity Hub 4.0 moved its install folder and unity-setup@v2 can't find it yet.
           hub-version: 3.12.1
           auto-update-hub: false
+          cache-installation: true
       - name: Install Unity (retry)
         uses: RageAgainstThePixel/unity-setup@v2
         with:
@@ -42,6 +43,7 @@ jobs:
           # Unity Hub 4.0 moved its install folder and unity-setup@v2 can't find it yet.
           hub-version: 3.12.1
           auto-update-hub: false
+          cache-installation: true
       - name: Activate Unity Personal license
         uses: RageAgainstThePixel/activate-unity-license@v2
         with:
@@ -52,10 +54,10 @@ jobs:
         run: |
           mkdir -p out
           echo "editor: $UNITY_EDITOR_PATH" | tee -a out/log.txt
-          xvfb-run -a "$UNITY_EDITOR_PATH" -batchmode -quit -nographics -createProject "$PWD/proj" -logFile out/create.log || echo "create exit $?" | tee -a out/log.txt
+          "$UNITY_EDITOR_PATH" -batchmode -quit -nographics -createProject "$PWD/proj" -logFile out/create.log || echo "create exit $?" | tee -a out/log.txt
           mkdir -p proj/Assets/Editor && cp ci/unity-smoke/LabBuild.cs proj/Assets/Editor/
           set +e
-          xvfb-run -a "$UNITY_EDITOR_PATH" -batchmode -nographics -projectPath "$PWD/proj" -buildTarget iOS \
+          "$UNITY_EDITOR_PATH" -batchmode -nographics -projectPath "$PWD/proj" -buildTarget iOS \
             -executeMethod LabBuild.iOS -logFile out/build.log
           echo "unity exit $?" | tee -a out/log.txt
           ls proj/build/ios | tee -a out/log.txt
