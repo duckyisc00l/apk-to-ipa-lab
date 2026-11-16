@@ -1,0 +1,72 @@
+using System.Collections.Generic;
+using ProTrans;
+using UnityEngine;
+
+public class SongRating
+{
+	public enum ESongRating
+	{
+		ToneDeaf = 0,
+		Amateur = 1,
+		Wannabe = 2,
+		Hopeful = 3,
+		RisingStar = 4,
+		LeadSinger = 5,
+		Superstar = 6,
+		Ultrastar = 7
+	}
+
+	public static readonly SongRating ToneDeaf = new SongRating(ESongRating.ToneDeaf, 0.0, R.Messages.rating_song_toneDeaf);
+
+	public static readonly SongRating Amateur = new SongRating(ESongRating.Amateur, 2000.0, R.Messages.rating_song_amateur);
+
+	public static readonly SongRating Wannabe = new SongRating(ESongRating.Wannabe, 4000.0, R.Messages.rating_song_wannabe);
+
+	public static readonly SongRating Hopeful = new SongRating(ESongRating.Hopeful, 5000.0, R.Messages.rating_song_hopeful);
+
+	public static readonly SongRating RisingStar = new SongRating(ESongRating.RisingStar, 6000.0, R.Messages.rating_song_risingStar);
+
+	public static readonly SongRating LeadSinger = new SongRating(ESongRating.LeadSinger, 7500.0, R.Messages.rating_song_leadSinger);
+
+	public static readonly SongRating Superstar = new SongRating(ESongRating.Superstar, 8500.0, R.Messages.rating_song_superStar);
+
+	public static readonly SongRating Ultrastar = new SongRating(ESongRating.Ultrastar, 9000.0, R.Messages.rating_song_ultraStar);
+
+	private readonly string i18nCode;
+
+	private static List<SongRating> values;
+
+	public ESongRating EnumValue { get; private set; }
+
+	public double ScoreThreshold { get; private set; }
+
+	public string Text => TranslationManager.GetTranslation(i18nCode);
+
+	public Color BackgroundColor { get; private set; }
+
+	public static List<SongRating> Values
+	{
+		get
+		{
+			if (values == null)
+			{
+				values = new List<SongRating>();
+				values.Add(Ultrastar);
+				values.Add(Superstar);
+				values.Add(RisingStar);
+				values.Add(Hopeful);
+				values.Add(Wannabe);
+				values.Add(Amateur);
+				values.Add(ToneDeaf);
+			}
+			return values;
+		}
+	}
+
+	private SongRating(ESongRating eSongRating, double scoreThreshold, string i18nCode)
+	{
+		EnumValue = eSongRating;
+		ScoreThreshold = scoreThreshold;
+		this.i18nCode = i18nCode;
+	}
+}
