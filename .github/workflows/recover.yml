@@ -1,0 +1,68 @@
+name: recover
+# Skill step U2 end to end for one game: download its APK on the runner, recover the
+# Unity project with AssetRipper, clean it up for iOS, and (for open-source games)
+# measure the recovery against the real source. The cleaned project is kept as an
+# artifact for the build; only reports go to branch r-recover.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { description: "Game repo with an APK in its releases", default: "UltraStar-Deluxe/Play" }
+      source_dir: { description: "Unity project folder inside the repo, for the comparison (blank = skip)", default: "UltraStar Play" }
+      bundle_id: { default: "com.duckyisc00l.ultrastarplay" }
+      product: { default: "UltraStar Play" }
+  push:
+    branches: [main]
+    paths: ["ci/recover/**", ".github/workflows/recover.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: recover
+  cancel-in-progress: true
+env:
+  REPO: ${{ inputs.repo || 'UltraStar-Deluxe/Play' }}
+  SOURCE_DIR: ${{ github.event_name == 'workflow_dispatch' && inputs.source_dir || 'UltraStar Play' }}
+  BUNDLE_ID: ${{ inputs.bundle_id || 'com.duckyisc00l.ultrastarplay' }}
+  PRODUCT: ${{ inputs.product || 'UltraStar Play' }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and detect (U1)
+        run: |
+          echo "$REPO" > /tmp/one.txt
+          CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+      - name: Recover with AssetRipper (U2)
+        run: bash ci/ripper.sh
+      - name: Clean up for iOS (U2 cleanup)
+        run: |
+          game=$(ls export | head -1); proj="export/$game/ExportedProject"
+          ver=$(python3 -c "import json;print(json.load(open('out/detect.json'))[0]['unity_version'])")
+          echo "PROJ=$proj" >> $GITHUB_ENV
+          python3 ci/recover/cleanup.py "$proj" "$ver" "$BUNDLE_ID" "$PRODUCT" | tee out/cleanup.md
+          echo "files after cleanup: $(find "$proj" -type f | wc -l), size: $(du -sh "$proj" | cut -f1)" | tee -a out/cleanup.md
+      - name: Compare with the real source (open-source games only)
+        if: env.SOURCE_DIR != ''
+        continue-on-error: true
+        run: |
+          GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 --filter=blob:limit=1m "https://github.com/$REPO" src
+          python3 ci/recover/compare.py "$PROJ/Assets/Scripts" "src/$SOURCE_DIR/Assets" | tee out/compare.md
+          echo "" >> out/compare.md; echo "Real manifest.json dependencies:" >> out/compare.md
+          python3 -c "import json,sys;d=json.load(open(sys.argv[1]))['dependencies'];[print(f'- {k}: {v}') for k,v in d.items()]" "src/$SOURCE_DIR/Packages/manifest.json" >> out/compare.md 2>&1 || true
+      - name: Keep the cleaned project for the build
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovered-project
+          path: ${{ env.PROJ }}
+          retention-days: 14
+      - name: Publish reports to branch r-recover
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp out/*.md out/ripper-*.txt /tmp/r/ 2>/dev/null || true
+          echo "run: ${{ github.run_id }}" > /tmp/r/run.txt
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-recover && git rm -rfq . && rm -rf ci dl work export tools out src
+          cp -r /tmp/r/. . && git add -A && git commit -qm "recover ${{ github.run_number }}" && git push -f origin r-recover

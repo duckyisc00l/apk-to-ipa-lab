@@ -24,7 +24,7 @@ def main():
     os.makedirs("dl", exist_ok=True)
     lines = ["# Scout", "", "| repo | licence | release | asset | MB |", "|---|---|---|---|---|"]
     picked = []
-    for repo in open("ci/candidates.txt"):
+    for repo in open(os.environ.get("CANDIDATES", "ci/candidates.txt")):
         repo = repo.strip()
         if not repo or repo.startswith("#"):
             continue
