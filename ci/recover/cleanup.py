@@ -171,6 +171,11 @@ def main(proj, unity_version, bundle_id, product):
         s = re.sub(r"(\n  productName: ).*", r"\g<1>" + product, s, count=1)
         s = re.sub(r"(\n    iPhone: )[^\n]*", r"\g<1>" + bundle_id, s, count=1)
         s = re.sub(r"(\n  iOSTargetOSVersionString: ).*", r"\g<1>15.0", s, count=1)
+        # iOS kills an app that opens the mic/camera/location with no reason text: always fill them
+        for key, text in (("microphone", "Used for the game's voice and sound features."),
+                          ("camera", "Used for the game's camera features."),
+                          ("location", "Used for the game's location features.")):
+            s = re.sub(rf"(\n  {key}UsageDescription:)[ \t]*\n", rf"\g<1> {text}\n", s, count=1)
         open(ps, "w", encoding="utf-8").write(s)
         report.append(f"iOS settings: product `{product}`, bundle id `{bundle_id}`, iOS 15.0")
 

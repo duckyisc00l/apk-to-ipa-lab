@@ -10,6 +10,7 @@ on:
       mode: { description: "compile or ipa", default: "compile" }
       name: { description: "Short name for the IPA", default: "Game" }
       bundle_id: { default: "com.duckyisc00l.game" }
+      unity_version: { description: "Blank = the project's own. Use 2022.3.x when Xcode crashes in System.ConsolePal (IL2CPP) on 2021/2022.1-2022.2", default: "" }
 permissions:
   contents: write
   actions: read
@@ -40,6 +41,7 @@ jobs:
       - name: Project's Unity version
         run: |
           v=$(grep m_EditorVersion: proj/ProjectSettings/ProjectVersion.txt | awk '{print $2}' | sed 's/c[0-9]*$//')
+          if [ -n "${{ inputs.unity_version }}" ]; then echo "upgrading $v -> ${{ inputs.unity_version }}"; v="${{ inputs.unity_version }}"; fi
           echo "UNITY_VERSION=$v" >> $GITHUB_ENV; echo "Unity $v"
           mkdir -p proj/Assets/Editor/CI out && cp ci/unity/Build.cs proj/Assets/Editor/CI/
       - name: Cache Unity's import cache (Library)
