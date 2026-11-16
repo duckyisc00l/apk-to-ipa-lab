@@ -1,0 +1,18 @@
+{
+  "name": "Scenes",
+  "references": [
+    "com.achimmihca.uniinject",
+    "com.achimmihca.protrans",
+    "Common",
+    "Unity.InputSystem",
+    "playshared",
+    "UnityEngine.UI",
+    "Plugins",
+    "com.achimmihca.simplehttpserverforunity",
+    "UniRx",
+    "com.achimmihca.primeinputactions",
+    "Serilog",
+    "AndroidRuntimePermissions.Runtime"
+  ],
+  "allowUnsafeCode": true
+}

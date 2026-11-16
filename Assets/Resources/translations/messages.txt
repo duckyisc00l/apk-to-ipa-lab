@@ -1,0 +1,376 @@
+# General
+yes=Yes
+no=No
+ok=OK
+back=Back
+cancel=Cancel
+exit=Exit
+close=Close
+open=Open
+new=New
+save=Save
+load=Load
+loading=Loading...
+quit=Quit
+start=Start
+options=Options
+add=Add
+delete=Delete
+warning=Warning
+continue=Continue
+active=Active
+enabled=Enabled
+submit=Submit
+menu=Menu
+language=Language
+devMode=Developer Mode
+refresh=Refresh
+viewMore=View More
+androidInternalStorage=Internal Storage
+androidSdCardStorage=SD Card
+
+# Difficulty
+difficulty=Difficulty
+difficulty_easy=Easy
+difficulty_medium=Medium
+difficulty_hard=Hard
+
+# Scores for completed sentence
+rating_sentence_perfect=perfect!
+rating_sentence_cool=cool!
+rating_sentence_great=great!
+rating_sentence_good=good!
+rating_sentence_notBad=ok!
+rating_sentence_bad=bad!
+rating_sentence_poor=poor!
+rating_sentence_awful=awful
+
+# Scores for completed song
+rating_song_toneDeaf=Tone Deaf
+rating_song_amateur=Amateur
+rating_song_wannabe=Wannabe
+rating_song_hopeful=Hopeful
+rating_song_risingStar=Rising Star
+rating_song_leadSinger=Lead Singer
+rating_song_superStar=Superstar
+rating_song_ultraStar=Ultrastar
+
+# ScoreMode
+enum_scoreMode_none=None
+enum_scoreMode_individual=Individual
+enum_scoreMode_commonAverage=Average
+
+# Loading scene
+loadingScene_unexpectedErrorMessage=Oops! Something went wrong. Please check the log file for details in \n{path}.\nClick or tap to try to continue anyway.
+
+# Song Select Scene
+songSelectScene_title=Song Select
+songSelectScene_subTitle=Choose your song
+
+songSelectScene_stats_localBest=Local Best
+songSelectScene_stats_webBest=Web Best
+songSelectScene_stats_startedFinished=Started/Finished
+
+songSelectScene_noSongsFound=No songs found.\nDownload the demo song archive\nor manually add a song folder in the settings.
+songSelectScene_noSongsFound_downloadSongsButton=Download Songs
+songSelectScene_noSongsFound_addSongFolderButton=Add Song Folder
+songSelectScene_noMicsFound=No microphones found.\nCheck the recording options.
+songSelectScene_noPlayerSelected_title=No player selected
+songSelectScene_noPlayerSelected_message=Select a player profile for singing.\n New player profiles can be create in the settings.
+
+songSelectScene_timesClearedInfo=Cleared: {value}
+songSelectScene_timesCanceledInfo=Canceled: {value}
+songSelectScene_localTopScoresTitle=Local Best
+songSelectScene_onlineTopScoresTitle=Online Best
+songSelectScene_searchTextFieldHint=Search {properties}
+songSelectScene_duetLegendLabel=Duet
+songSelectScene_videoLegendLabel=With video
+songSelectScene_toggleSongDetailsButton=Song Details
+songSelectScene_editPlaylistButton=Edit Playlist
+songSelectScene_createPlaylistButton=Create Playlist
+
+songSelectScene_songMenu_openSongFolder=Song Folder
+songSelectScene_songMenu_openSongEditor=Song Editor
+songSelectScene_songMenu_startButton=Sing
+songSelectScene_playlistDropdownTitle=Select playlist:
+songSelectScene_searchPropertyDropdownTitle=Search in:
+
+songSelectScene_searchExpressionInfo=You can use C# expressions to search songs, for example\n• Genre == "Rock"\n• 1990 <= Year && Year <= 1999 and Genre == "Rock"\n• Video != null\n• Title.ToLower().Contains("summer")
+songSelectScene_searchExpressionInfo_syntaxTips=Note that C# syntax rules apply.\n• Uppercase/lowercase is relevant. For example, title.contains("something") must be written as Title.Contains("something").\n• Year = 1990 is an assignment, you need to use Year == 1990.\n• AND is written as &&, OR is written as ||.\n• strings must be quoted.\n• etc.
+songSelectScene_searchExpressionError=An error occurred with the search expression.\nCheck the syntax and try again.\nError message:\n{errorDetails}
+
+songProperty_artist=Artist
+songProperty_title=Title
+songProperty_genre=Genre
+songProperty_year=Year
+songProperty_language=Language
+songProperty_edition=Edition
+songProperty_lyrics=Lyrics
+
+playlistName_allSongs=All Songs
+playlistName_favorites=Favorites
+
+order=Order
+order_Artist=Artist
+order_Title=Title
+order_Genre=Genre
+order_Language=Language
+order_Folder=Folder
+order_Year=Year
+order_CountFinished=Count Finished
+order_CountCanceled=Count Canceled
+
+action_reloadSong=Reload song
+action_openSongFolder=Open song folder
+action_openSongEditor=Open song editor
+action_addToPlaylist=Add to '{playlist}'
+action_removeFromPlaylist=Remove from '{playlist}'
+action_togglePlayers=Toggle players
+action_toggleFavorites=Toggle favorites
+action_randomSong=Random song
+action_openSongMenu=Open song menu
+action_longPress=Press and hold
+action_doubleTap=Double tap
+action_navigateRight=Navigate right
+action_openContextMenu=Open context menu
+
+# Sing Scene
+timeUppercase=TIME
+
+singScene_missingMicrophones_title=Missing microphones
+singScene_missingMicrophones_message=No microphone for player(s): {playerNameCsv}
+
+action_togglePause=Pause/Continue
+action_restart=Restart
+action_skipToNextLyrics=Skip to next lyrics
+action_exitSong=Exit song
+action_webcamOnOff=Webcam on/off
+
+# Singing Results Scene
+singingResultsScene_title=Song Scores
+
+score_notes=Notes
+score_goldenNotes=Golden Notes
+score_phraseBonus=Phrase Bonus
+score_total=Total
+
+graph_button_label=Graph
+graph_legend_perfect=Perfect
+graph_legend_good=Good
+graph_legend_missed=Missed
+
+# Highscore Scene
+highscoreScene_title=Highscores
+
+# Main Scene
+mainScene_title=Main Menu
+mainScene_button_sing_label=Sing
+mainScene_button_sing_description=Sing a song
+mainScene_button_party_label=Party
+mainScene_button_jukebox_label=Jukebox
+mainScene_button_settings_label=Settings
+mainScene_button_settings_description=Edit the options
+mainScene_button_description_noImplementation=Not yet implemented
+mainScene_button_about_label=About
+mainScene_button_about_description=About this game
+mainScene_button_credits_description=Credits and special thanks
+mainScene_button_quit_label=Quit
+mainScene_button_quit_description=End the game
+mainScene_button_newSong_label=Create song
+mainScene_button_newSong_description=Create a new song from template
+mainScene_quitDialog_title=Quit
+mainScene_quitDialog_message=Really quit UltraStar Play?
+
+newVersionAvailableDialog_title=New Version Available
+newVersionAvailableDialog_message=UltraStar Play {remoteRelease} has been released.\nFor more information visit\n<color="red">{websiteLink}</color>
+newVersionAvailableDialog_ignoreThisVersion=Ignore this release
+newVersionAvailableDialog_ignoreAllFutureVersions=Ignore all future releases
+
+# About Scene
+aboutScene_title=About
+
+# Demo scene
+i18nDemoScene_hello=Hello {name},
+i18nDemoScene_love=I love you!
+i18nDemoScene_multiline=He\nShe\nIt
+
+# Options
+options_sound_title=Sound Options
+options_sound_button=Sound Options
+options_backgroundMusicEnabled=Background Music
+options_previewVolume=Preview Volume
+options_volume=Volume
+
+options_game_title=Game Options
+options_game_button=Game
+options_scoreMode=Score
+
+options_graphics_title=Graphic Options
+options_graphics_button=Graphics
+options_resolution=Resolution
+options_targetFps=Frames per Second (FPS)
+options_fullscreenMode=Fullscreen
+
+options_design_title=Design Options
+options_design_button=Design
+options_design_theme=Theme
+options_design_helpDialog_title=Design and Theme Configuration
+options_design_helpDialog_customThemes_title=Custom Themes
+options_design_helpDialog_customThemes=You can add custom themes.\nTherefor, place the theme files in '{path}'.
+
+options_noteDisplayMode=Note Display Mode
+options_noteDisplayMode_sentenceBySentence=Static
+options_noteDisplayMode_scrollingNoteStream=Streaming
+options_noteDisplayMode_none=None
+options_showLyricsOnNotes=Show Lyrics on Notes
+options_showStaticLyrics=Show Lyrics in Box
+options_showPitchIndicator=Show Pitch Indicator
+options_useImageAsCursor=Use Image as Cursor
+
+options_development_title=Development Options
+options_development_button=Develop
+options_showFps=Show FPS
+options_pitchDetectionAlgorithm=Pitch Detection Algorithm
+options_analyzeBeatsWithoutTargetNote=Analyze Beats Without Target Note
+options_ipAddress=IP Address: {value}
+options_httpServerPortWithExampleUri=HTTP Server Port: {port}\nExample: http://{host}:{port}/api/rest/songs
+options_httpServerNotSupported=HTTP server not supported on this platform.
+
+options_companionApp_title=Companion Apps
+options_companionApp_button=Apps
+options_connectedClientCount=Connected: {count}
+
+options_internet_title=Internet Options
+options_internet_button=Internet
+
+options_songLibrary_title=Song Library
+options_songLibrary_button=Songs
+options_songLibrary_androidFolderHint=Android requires songs to be stored in the folder {androidAppSpecificStorageRelativePath}
+options_songLibrary_addSdCardSongFolder=Add SD Card Folder
+options_songLibrary_addInternalSongFolder=Add Internal Folder
+options_songLibrary_noSongFoldersFoundInfo=There are no song folders yet.\nAdd a song folder here manually or download the demo song package.
+options_songLibrary_songFolder_duplicate=Duplicate
+options_songLibrary_songFolder_subfolderOfOtherFolder=Duplicate: Subfolder of {parentFolder}
+options_songLibrary_songFolder_missingValue=Enter the path to a song folder
+options_songLibrary_songFolder_noFolder=Not a folder
+options_songLibrary_songFolder_doesNotExist=Folder does not exist
+options_songLibrary_helpDialog_title=UltraStar Song Info
+options_songLibrary_helpDialog_songFormatInfo_title=UltraStar Song Format
+options_songLibrary_helpDialog_songFormatInfo=An UltraStar song consists of\n• an audio file (mp3, ogg, etc.)\n• a txt file (plain text file) with information about the song (title, lyrics, notes, path to audio file, etc.)\n• other files are optional (cover image, background video, etc.)
+options_songLibrary_helpDialog_addSongInfo_title=Adding UltraStar Songs
+options_songLibrary_helpDialog_addSongInfo=If you have all files of an UltraStar song, you can\n• add a new song folder here that points to your UltraStar song\n• or add your UltraStar song to an existing song folder
+options_songLibrary_helpDialog_createSongInfo_title=Creating UltraStar Songs
+options_songLibrary_helpDialog_createSongInfo=You can create your own UltraStar songs.\nTherefor, you can use the integrated song editor of UltraStar Play.
+options_songLibrary_helpDialog_downloadSongInfo_title=Downloading UltraStar Songs
+options_songLibrary_helpDialog_downloadSongInfo=There are some demo songs under Creative Commons license that can be downloaded in-game.\nHowever, there is no official platform yet to share UltraStar songs.
+options_songLibrary_helpDialog_androidSongFolders_title=Song Folders on Android
+options_songLibrary_helpDialog_androidSongFolders=Android limits file access for security reasons. Thus, songs must be stored in the folder {androidAppSpecificStorageRelativePath}.
+options_songLibrary_songIssueDialog_title=Song Issues
+options_songLibrary_songIssueDialog_errors=Errors
+options_songLibrary_songIssueDialog_warnings=Warnings
+options_songLibrary_songIssueDialog_noIssues=No issues found
+options_songLibrary_androidInternalStorage=Internal
+options_songLibrary_androidSdCardStorage=SD Card
+options_songLibrary_androidOtherStorage=Other
+
+options_downloadSongs_title=Downloads
+options_downloadSongs_button=Download Songs
+
+options_playerProfiles_title=Player Profiles
+options_playerProfiles_button=Players
+options_playerProfiles_helpDialog_title=Player Profile Configuration
+options_playerProfiles_helpDialog_activateProfile_title=Active Profiles
+options_playerProfiles_helpDialog_activateProfile=Configure the players who are singing today.\nActivated player profiles will be available during song select.
+options_playerProfiles_helpDialog_difficulty_title=Difficulty
+options_playerProfiles_helpDialog_difficulty=The difficulty specifies how accurately you have to hit a note for points.
+options_playerProfiles_helpDialog_webcamProfileImages_title=Profile Image From Webcam
+options_playerProfiles_helpDialog_webcamProfileImages=You can add a profile image using a webcam or integrated camera of your device.\nTherefor, select the the very last profile image in the list and take a snapshot.
+options_playerProfiles_helpDialog_customProfileImages_title=Custom Profile Images
+options_playerProfiles_helpDialog_customProfileImages=You can add custom profile images.\nTherefor, place image files (PNG or JPG) in '{path}'. An app restart is required afterwards.
+
+options_recording_title=Recording Device
+options_recording_button=Recording
+options_recording_helpDialog_title=Recording Device Configuration
+options_recording_helpDialog_micDelay_title=Delay
+options_recording_helpDialog_micDelay=Adjust the delay until the timing of the note recording matches your singing.\nThe delay should be as low as possible.\nTypical values for UltraStar Play are between 120ms and 400ms.\nThe delay corresponds to the time that the music needs to reach you, plus the time for your singing reaching the game and processing that audio signal.
+options_recording_helpDialog_micDelayCalibration_title=Delay Calibration
+options_recording_helpDialog_micDelayCalibration=For automatic calibration, hold your microphone to the speaker and click the calibration button.\nFor manual calibration, you can hold the <i>shift</i> key to increase the stepping amount.
+options_recording_helpDialog_amplification_title=Amplification
+options_recording_helpDialog_amplification=Use Amplification until the device accepts input from you in normal voice volume. The amplification should be as low as possible.
+options_recording_helpDialog_noiseSuppression_title=Noise Suppression
+options_recording_helpDialog_noiseSuppression=Use Noise Suppression if the device is mistaken ambient noise for singing.
+options_recording_helpDialog_sampleRate_title=Sample Rate
+options_recording_helpDialog_sampleRate=The sample rate defines the resolution of the recording.\nHigher values are better but need more processing power.\nTypical values are 44100Hz for average and 22050Hz for low resolution.\nBut not every device supports every sample rate. Thus change this setting only if you know what you are doing.
+
+options_note=Note: {value}
+options_useForSinging=Use for Singing
+options_color=Color
+options_delay=Delay
+options_delay_calibrate=Calibrate
+options_delay_calibrate_timeout=Calibration timed out
+options_amplification=Amplification
+options_noiseSuppression=Volume Threshold
+options_sampleRate=Sample Rate
+options_sampleRate_auto=Auto
+options_deviceNotConnected=Device not connected
+
+options_webcam_title=Webcam Options
+options_webcam_button=Webcam
+options_webcam_device=Webcam device
+options_webcam_useAsBackGroundInSingingScene=Use webcam as background when singing
+options_webcam_noWebcamsAvailable=no webcams available
+
+# Content Download
+contentDownloadScene_title=Song Download
+contentDownloadScene_archiveUrlLabel=Archive URL
+contentDownloadScene_startDownloadButton=Start Download
+contentDownloadScene_cancelDownloadButton=Cancel Download
+contentDownloadScene_status_finished=Finished
+contentDownloadScene_status_canceled=Canceled
+contentDownloadScene_status_failed=Failed
+contentDownloadScene_helpDialog_title=UltraStar Song Download
+contentDownloadScene_helpDialog_demoSongPackage_title=Demo Songs
+contentDownloadScene_helpDialog_demoSongPackage=There is an archive with demo songs that can be downloaded in-game.\nMost of these songs are under Creative Commons license.
+contentDownloadScene_helpDialog_archiveDownload_title=Download archives
+contentDownloadScene_helpDialog_archiveDownload=Any ZIP and TAR file can be downloaded and extracted in-game.\nThis is done when downloading the demo songs.
+contentDownloadScene_helpDialog_thirdPartyDownloads_title=Third Party Downloads
+contentDownloadScene_helpDialog_thirdPartyDownloads=UltraStar Play itself does not include any songs.\nHowever, you may find third party offers on the internet to download songs.
+
+# Settings problems
+settingsProblem_noSongFolders=Add a song folder
+settingsProblem_songFolderDoesNotExist=At least one song folder does not exist
+settingsProblem_noMicProfiles=Select a recording device for singing
+settingsProblem_noConnectedAndEnabledMicProfile=Reconnect a recording device\nor select another one for singing
+settingsProblem_noPlayerProfile=Add a player profile for singing
+settingsProblem_noEnabledPlayerProfile=Select a player profile for singing
+settingsProblem_thereAreSongIssues=Fix issues in song files
+settingsProblem_songFolderIsSubfolderOfOtherSongFolder=Fix song folder hierarchy
+settingsProblem_duplicateSongFolders=Remove duplicate song folders
+
+# Version
+version=Version: {value}
+buildTimeStamp=Build timestamp: {value}
+commit=Commit: {value}
+
+# URIs
+uri_howToAddAndCreateSongs=https://github.com/UltraStar-Deluxe/Play/wiki/Songs#adding-songs
+uri_howToConfigureMicsAndSpeaker=https://github.com/UltraStar-Deluxe/Play/wiki/Audio-Configuration
+uri_howToDownloadSongs=https://github.com/UltraStar-Deluxe/Play/wiki/Songs#downloading-archives
+uri_howToAddCustomThemes=https://github.com/UltraStar-Deluxe/Play/wiki/Themes
+uri_logFiles=https://github.com/UltraStar-Deluxe/Play/wiki/Log-Files
+
+# Companion App
+companionApp_title=UltraStar Play Companion
+companionApp_visualizeMicInput=Visualize audio
+companionApp_connectedTo=Connected To {remote}
+companionApp_connecting=Connecting...
+companionApp_connectingWithFailedAttempts=Connecting...\n(attempt {count} failed)
+companionApp_troubleShootingHints=<u>Troubleshooting hints:</u>\n• Check main game is running\n\n• Check main game and Companion app use the same WLAN\n\n• Try to temporarily disable firewall (on Windows)
+companionApp_songList_error_general=Ups, something went wrong getting the song list.
+companionApp_songList_error_noSongsFound=No songs loaded yet
+companionApp_songList_error_notConnected=Ups, something went wrong getting the song list.
+companionApp_songList_hide=Hide song list
+companionApp_songList_loading=Loading songs...
+companionApp_songList_show=Show song list
+companionApp_button_showMicrophone=Microphone
+companionApp_button_showSongs=Songs

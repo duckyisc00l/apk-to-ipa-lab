@@ -1,0 +1,17 @@
+{
+  "name": "Common",
+  "references": [
+    "playshared",
+    "com.achimmihca.uniinject",
+    "Plugins",
+    "UniRx",
+    "IngameDebugConsole.Runtime",
+    "UnityEngine.UI",
+    "Unity.InputSystem",
+    "com.achimmihca.primeinputactions",
+    "com.achimmihca.simplehttpserverforunity",
+    "Serilog",
+    "com.achimmihca.protrans"
+  ],
+  "allowUnsafeCode": true
+}
