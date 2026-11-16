@@ -88,11 +88,13 @@ jobs:
           mkdir -p out; xcodebuild -version | tee out/log.txt
           cd ios
           set +e
-          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
+          # TERM=dumb: Unity's IL2CPP tool (.NET) crashes in System.ConsolePal ("Array dimensions exceeded") with the runner's TERM.
+          TERM=dumb xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
             -destination 'generic/platform=iOS' -derivedDataPath dd \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../out/xcodebuild.log 2>&1
-          echo "xcodebuild exit $?" | tee -a ../out/log.txt
+          xc=$?; echo "xcodebuild exit $xc" | tee -a ../out/log.txt
           grep -E "error:|\*\* BUILD" ../out/xcodebuild.log | head -40 | tee -a ../out/log.txt
+          [ "$xc" = 0 ] || { grep -E "error:|Exception|failed" ../out/xcodebuild.log | head -20; exit 1; }
           app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1); [ -n "$app" ] || exit 1
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "../${{ inputs.name }}.ipa" Payload
           cd .. && ls -la *.ipa | tee -a out/log.txt
