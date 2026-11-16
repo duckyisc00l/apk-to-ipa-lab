@@ -89,6 +89,13 @@ jobs:
           { echo "## libraries in the Xcode project"; find xcode -name '*.a' -o -name '*.xcframework' -maxdepth 4 | sed 's#^xcode/##' | head -60
             echo "## python libs anywhere in renios"; find "$SDK/renios" -iname '*python*' -maxdepth 6 | sed "s#$SDK/##" | head -30
             echo "## LIBRARY_SEARCH_PATHS"; grep -h "LIBRARY_SEARCH_PATHS" -A4 xcode/*.xcodeproj/project.pbxproj | head -20; } 2>&1 | tee -a out/renpy.md
+      - name: Link the Python library renios actually ships
+        run: |
+          # Ren'Py 7.8.x renios ships libpython2.7.a, but its Xcode template asks for python3.9: use what's there
+          have=$(ls xcode/prebuilt/release/ | grep -oE 'libpython[0-9.]+\.a' | head -1 | sed -E 's/^lib(.*)\.a$/\1/')
+          want=$(grep -oE 'python[0-9]\.[0-9]+' xcode/*.xcodeproj/project.pbxproj | sort -u | head -1)
+          echo "ships $have, project wants $want" | tee -a out/renpy.md
+          [ -n "$have" ] && [ -n "$want" ] && [ "$have" != "$want" ] && sed -i '' "s/-l$want/-l$have/g; s/lib$want\.a/lib$have.a/g" xcode/*.xcodeproj/project.pbxproj || true
       - name: xcodebuild (unsigned) -> IPA
         run: |
           cd xcode; P=$(ls -d *.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
