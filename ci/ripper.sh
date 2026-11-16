@@ -25,6 +25,10 @@ SRV=$!
 for i in $(seq 60); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && break; sleep 2; done
 curl -s "http://127.0.0.1:$PORT/" | head -c 400 > out/ripper-home.txt
 
+# Hybrid (the default) only decompiles Assembly-CSharp; games split into their own
+# assemblies come back as DLLs. Ask for full decompiling.
+curl -s -o /dev/null -w "settings %{http_code}\n" -X POST --data-urlencode "ScriptExportMode=Decompiled" \
+  "http://127.0.0.1:$PORT/Settings/Update" | tee out/ripper-settings.txt
 python3 - <<'E' > out/unity-games.txt
 import json
 for r in json.load(open("out/detect.json")):
