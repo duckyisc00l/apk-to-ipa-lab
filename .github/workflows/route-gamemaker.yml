@@ -1,0 +1,72 @@
+name: route-gamemaker
+# Skill step G1 on a second, unrelated GameMaker APK: read the data file's version,
+# run it on the open-source Butterscotch runner (Linux, headless), take screenshots.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "Ahmadrezadl/legendary-chess" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-gamemaker.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-gamemaker
+  cancel-in-progress: true
+env:
+  REPO: ${{ inputs.repo || 'Ahmadrezadl/legendary-chess' }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  g1:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and find the data file
+        run: |
+          echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+          data=$(find work -name game.droid -o -name data.win | head -1); echo "DATA=$data" >> $GITHUB_ENV
+          python3 - "$data" <<'E' | tee -a out/gamemaker.md
+          import struct, sys
+          d = open(sys.argv[1], "rb").read()
+          assert d[:4] == b"FORM", "not a GameMaker data file"
+          i = 8
+          while i < len(d):
+              name, size = d[i:i+4].decode("latin1"), struct.unpack("<I", d[i+4:i+8])[0]
+              if name == "GEN8":
+                  g = d[i+8:i+8+size]
+                  print("bytecode version:", g[1])
+                  major, minor, release, build = struct.unpack("<4I", g[44:60])
+                  print(f"GameMaker version field: {major}.{minor}.{release}.{build}")
+                  break
+              i += 8 + size
+          print("data file MB:", round(len(d) / 1048576, 1))
+          E
+      - name: Build the Butterscotch runner (Linux, SDL2)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq cmake libsdl2-dev libopenal-dev libgl1-mesa-dev libgl1-mesa-dri xvfb >/dev/null
+          git clone -q --depth 1 --recurse-submodules https://github.com/ButterscotchRunner/Butterscotch engine
+          echo "engine: $(git -C engine log -1 --format='%h %ad' --date=short)" | tee -a out/gamemaker.md
+          cmake -S engine -B engine/build -DBACKEND=sdl2 -DCMAKE_BUILD_TYPE=Release > out/cmake.log 2>&1
+          cmake --build engine/build -j4 > out/build.log 2>&1; echo "build exit $?" | tee -a out/gamemaker.md
+          find engine/build -maxdepth 2 -type f -perm -u+x -name 'butterscotch*' | tee -a out/gamemaker.md
+      - name: Run the game and take screenshots
+        run: |
+          BIN=$(find engine/build -maxdepth 2 -type f -perm -u+x -name 'butterscotch*' | head -1)
+          "$BIN" --help > out/help.txt 2>&1 || true
+          "$BIN" --print-unknown-functions "$DATA" > out/unknown-functions.txt 2>&1 || true
+          for f in 60 300 900; do
+            SDL_AUDIODRIVER=dummy ALSOFT_DRIVERS=null timeout 240 xvfb-run -a -s "-screen 0 1280x960x24" "$BIN" \
+              --screenshot out/frame-$f.png --screenshot-at-frame $f --exit-at-frame $((f+1)) "$DATA" > out/run-$f.log 2>&1
+            echo "frame $f exit $?" | tee -a out/gamemaker.md
+          done
+          echo "unknown functions: $(grep -c . out/unknown-functions.txt)" | tee -a out/gamemaker.md
+          ls -la out/*.png 2>/dev/null | tee -a out/gamemaker.md
+      - name: Publish to branch r-gamemaker
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp out/*.md out/*.txt out/*.png /tmp/r/ 2>/dev/null; for f in out/*.log; do tail -80 "$f" > /tmp/r/$(basename "$f"); done
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-gamemaker && git rm -rfq . && rm -rf ci dl work out engine
+          cp -r /tmp/r/. . && git add -A && git commit -qm "gamemaker ${{ github.run_number }}" && git push -f origin r-gamemaker
