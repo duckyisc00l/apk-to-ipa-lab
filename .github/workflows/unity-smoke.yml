@@ -4,6 +4,8 @@ name: unity-smoke
 # Linux, build an unsigned IPA on a Mac. Results go to branch r-smoke.
 on:
   workflow_dispatch:
+    inputs:
+      reuse_run: { description: "Skip the Unity export and reuse the Xcode project from this run id", default: "" }
   push:
     branches: [main]
     paths: ["ci/unity-smoke/**", ".github/workflows/unity-smoke.yml"]
@@ -16,6 +18,7 @@ env:
   UNITY_VERSION: 2022.2.4f1
 jobs:
   export:
+    if: inputs.reuse_run == ''
     # ubuntu-latest is Ubuntu 26.04, which dropped libxml2.so.2; Unity 2022 won't start there (exit 127).
     runs-on: ubuntu-24.04
     timeout-minutes: 120
@@ -75,6 +78,7 @@ jobs:
           path: out
   ipa:
     needs: export
+    if: always() && (needs.export.result == 'success' || inputs.reuse_run != '')
     runs-on: macos-latest
     timeout-minutes: 60
     steps:
@@ -82,14 +86,17 @@ jobs:
         with:
           name: xcode-project
           path: ios
+          run-id: ${{ inputs.reuse_run || github.run_id }}
+          github-token: ${{ github.token }}
       - name: Build unsigned IPA
         run: |
           mkdir -p out
           xcodebuild -version | tee -a out/log.txt
           cd ios && chmod -R u+x .
           set +e
-          # TERM=dumb: Unity's IL2CPP tool (.NET) crashes in System.ConsolePal ("Array dimensions exceeded") with the runner's TERM.
-          TERM=dumb xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
+          # No TERM at all: Unity's IL2CPP tool (.NET) crashes in System.ConsolePal ("Array dimensions exceeded")
+          # while reading macOS 26's terminfo database, and TERM=dumb still makes it read one.
+          env -u TERM TERMINFO=/nonexistent xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
             -destination 'generic/platform=iOS' -derivedDataPath dd \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../out/xcodebuild.log 2>&1
           xc=$?; echo "xcodebuild exit $xc" | tee -a ../out/log.txt
