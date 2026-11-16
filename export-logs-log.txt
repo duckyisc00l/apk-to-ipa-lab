@@ -1,0 +1,18 @@
+editor: /home/runner/Unity/Hub/Editor/2022.3.62f3/Editor/Unity
+unity exit 0
+Classes
+Data
+Il2CppOutputProject
+Info.plist
+LaunchScreen-iPad.png
+LaunchScreen-iPad.storyboard
+LaunchScreen-iPhone.storyboard
+LaunchScreen-iPhoneLandscape.png
+LaunchScreen-iPhonePortrait.png
+Libraries
+MainApp
+Unity-iPhone
+Unity-iPhone Tests
+Unity-iPhone.xcodeproj
+UnityFramework
+process_symbols.sh

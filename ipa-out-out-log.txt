@@ -1,0 +1,5 @@
+Xcode 16.4
+Build version 16F6
+xcodebuild exit 0
+app: dd/Build/Products/Release-iphoneos/LabTest.app
+-rw-r--r--  1 runner  staff  8672297 Nov 16 20:03 LabTest.ipa
