@@ -84,7 +84,8 @@ jobs:
   ipa:
     needs: export
     if: inputs.mode == 'ipa'
-    runs-on: macos-latest
+    # Older Unity versions' IL2CPP crashes on macOS 26 (System.ConsolePal "Array dimensions exceeded"): use macOS 15.
+    runs-on: macos-15
     timeout-minutes: 90
     steps:
       - uses: actions/download-artifact@v4
