@@ -88,7 +88,7 @@ jobs:
         run: |
           cd xcode; P=$(ls -d *.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
           echo "project $P scheme $S" | tee -a ../out/renpy.md
-          set -o pipefail
+          set +e   # keep going after a failed build so the errors get saved
           xcodebuild -project "$P" -scheme "$S" -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../out/xcodebuild.log 2>&1; xc=$?
           grep -E -A12 "Undefined symbols|^ld: |error:" ../out/xcodebuild.log | grep -vE "^\s+/Applications" | head -80 | tee -a ../out/renpy.md
