@@ -39,12 +39,13 @@ def stub_ratio(root):
 def main(recovered, original):
     rec = classes(recovered)
     # the original's own game code lives under Assets/ (skip Editor-only folders: they never ship in an APK)
-    orig = classes(original, skip=("Editor",))
+    # Editor, Tests and StreamingAssets code never ships compiled in an APK
+    orig = classes(original, skip=("Editor", "Tests", "StreamingAssets"))
     common = set(rec) & set(orig)
     only_orig = sorted(set(orig) - set(rec))
     total, stubs = stub_ratio(recovered)
     print("# Recovery vs real source", "")
-    print(f"- classes in real source (no Editor folders): {len(orig)}")
+    print(f"- classes in real source (no Editor, Tests or StreamingAssets folders): {len(orig)}")
     print(f"- classes recovered: {len(rec)}")
     print(f"- real classes found in recovery: {len(common)} ({100 * len(common) // max(1, len(orig))}%)")
     print(f"- methods in recovery: {total}, empty/stub bodies: {stubs} ({100 * stubs // max(1, total)}%)")

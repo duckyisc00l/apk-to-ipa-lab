@@ -48,7 +48,9 @@ jobs:
         if: env.SOURCE_DIR != ''
         continue-on-error: true
         run: |
-          GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 --filter=blob:limit=1m "https://github.com/$REPO" src
+          # compare with the source of the exact release the APK came from, not the newest code
+          tag=$(awk '{print $2}' out/picked.txt | head -1); echo "source tag: $tag" | tee out/compare-tag.txt
+          GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 --branch "$tag" --filter=blob:limit=1m "https://github.com/$REPO" src
           python3 ci/recover/compare.py "$PROJ/Assets/Scripts" "src/$SOURCE_DIR/Assets" | tee out/compare.md
           echo "" >> out/compare.md; echo "Real manifest.json dependencies:" >> out/compare.md
           python3 -c "import json,sys;d=json.load(open(sys.argv[1]))['dependencies'];[print(f'- {k}: {v}') for k,v in d.items()]" "src/$SOURCE_DIR/Packages/manifest.json" >> out/compare.md 2>&1 || true
@@ -61,7 +63,7 @@ jobs:
       - name: Publish reports to branch r-recover
         if: always()
         run: |
-          mkdir -p /tmp/r && cp out/*.md out/ripper-*.txt /tmp/r/ 2>/dev/null || true
+          mkdir -p /tmp/r && cp out/*.md out/*.txt /tmp/r/ 2>/dev/null || true
           echo "run: ${{ github.run_id }}" > /tmp/r/run.txt
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-recover && git rm -rfq . && rm -rf ci dl work export tools out src

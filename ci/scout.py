@@ -48,11 +48,15 @@ def main():
             lines.append(f"| {repo} | {lic} | no APK in releases | | |")
             continue
         tag, a = found
+        a["_tag"] = tag
         mb = round(a["size"] / 1048576, 1)
         ok = lic not in ("none", "NOASSERTION")
         lines.append(f"| {repo} | {lic} | {tag} | {a['name']} | {mb} |" + ("" if ok else " (skipped: no licence)"))
         if ok and len(picked) < MAX_GAMES:
             picked.append((repo, a))
+    with open("out/picked.txt", "w") as pf:
+        for repo, a in picked:
+            pf.write(f"{repo} {a['_tag']} {a['name']}\n")
     for repo, a in picked:
         d = os.path.join("dl", repo.replace("/", "__"))
         os.makedirs(d, exist_ok=True)

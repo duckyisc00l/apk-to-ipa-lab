@@ -47,8 +47,14 @@ def unity_tuple(v):
     return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
 
 
+# Packages built into the editor: not versioned in the registry the normal way.
+BUILT_IN = {"com.unity.ugui": "1.0.0"}
+
+
 def best_version(pkg, unity_version):
     """Newest release of pkg whose 'unity' field is <= the game's Unity version."""
+    if pkg in BUILT_IN:
+        return BUILT_IN[pkg], "built into the editor"
     try:
         with urllib.request.urlopen(f"https://packages.unity.com/{pkg}", timeout=60) as r:
             data = json.load(r)
