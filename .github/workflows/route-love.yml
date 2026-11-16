@@ -1,0 +1,79 @@
+name: route-love
+# Skill step E (LÖVE) end to end: take game.love from the APK, build LÖVE's own iOS app
+# at the same version, put game.love inside it, package an unsigned IPA.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "LIKO-12/LIKO-12" }
+      name: { default: "LIKO12" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-love.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-love
+  cancel-in-progress: true
+env:
+  REPO: ${{ inputs.repo || 'LIKO-12/LIKO-12' }}
+  NAME: ${{ inputs.name || 'LIKO12' }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK, find game.love and the LÖVE version
+        run: |
+          echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+          love=$(find work -name '*.love' | head -1)
+          if [ -z "$love" ]; then
+            # Some builds keep the game as loose files in assets/ instead of one .love: zip them up.
+            root=$(dirname "$(find work -path '*assets*' -name main.lua | head -1)")
+            [ -n "$root" ] && (cd "$root" && zip -qr "$OLDPWD/game.love" .) && love=game.love
+          fi
+          cp "$love" game.love; ls -la game.love | tee -a out/love.md
+          so=$(find work -name liblove.so | head -1)
+          v=$(strings "$so" | grep -oE '^(0\.10\.[0-9]|11\.[0-9])$' | head -1)
+          [ -n "$v" ] || v=$(strings "$so" | grep -oE 'LOVE (0\.10\.[0-9]|11\.[0-9])' | head -1 | awk '{print $2}')
+          echo "LOVE_VERSION=$v" >> $GITHUB_ENV; echo "LÖVE version: $v" | tee -a out/love.md
+      - name: Get LÖVE's source and its Apple libraries at that version
+        run: |
+          git clone -q --depth 1 --branch "$LOVE_VERSION" https://github.com/love2d/love love 2>&1 | tail -1
+          libs=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/love2d/love/releases/tags/$LOVE_VERSION" \
+            | python3 -c "import json,sys;print([a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if 'apple-libraries' in a['name']][0])")
+          echo "apple libraries: $libs" | tee -a out/love.md
+          curl -sSL -o apple.zip "$libs" && unzip -qo apple.zip -d applelibs
+          find applelibs -maxdepth 3 -type d | head -20 | tee -a out/love.md
+          # The zip holds iOS/libraries and macOS/Frameworks; LÖVE's Xcode project expects them under platform/xcode
+          src=$(find applelibs -maxdepth 3 -type d -path '*iOS/libraries' | head -1)
+          mkdir -p love/platform/xcode/ios && cp -R "$src" love/platform/xcode/ios/
+          ls love/platform/xcode/ios/libraries | head | tee -a out/love.md
+      - name: Build LÖVE for iOS (unsigned)
+        run: |
+          mkdir -p out; cd love/platform/xcode
+          xcodebuild -list -project love.xcodeproj | tee -a ../../../out/love.md
+          set +e
+          TERM=dumb xcodebuild -project love.xcodeproj -scheme love-ios -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            GCC_TREAT_WARNINGS_AS_ERRORS=NO build > ../../../out/xcodebuild.log 2>&1
+          xc=$?; echo "xcodebuild exit $xc" | tee -a ../../../out/love.md
+          grep -E "error:|\*\* BUILD" ../../../out/xcodebuild.log | head -30 | tee -a ../../../out/love.md
+          [ "$xc" = 0 ] || exit 1
+      - name: Put game.love inside the app and package the IPA
+        run: |
+          app=$(find love/platform/xcode/dd/Build/Products -maxdepth 2 -name '*.app' | head -1); echo "app: $app" | tee -a out/love.md
+          cp game.love "$app/"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $NAME" "$app/Info.plist" 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :CFBundleDisplayName string $NAME" "$app/Info.plist"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$app/Info.plist"
+          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "$NAME.ipa" Payload && ls -la "$NAME.ipa" | tee -a out/love.md
+          gh release create "$NAME-love-${{ github.run_number }}" "$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the LÖVE route)."
+      - name: Publish to branch r-love
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp out/*.md /tmp/r/ 2>/dev/null; tail -200 out/xcodebuild.log > /tmp/r/xcodebuild.log 2>/dev/null
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-love && git rm -rfq . && rm -rf ci dl work out love applelibs Payload *.zip *.love *.ipa
+          cp -r /tmp/r/. . && git add -A && git commit -qm "love ${{ github.run_number }}" && git push -f origin r-love
