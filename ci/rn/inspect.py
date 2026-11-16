@@ -66,15 +66,21 @@ if "rn_version" not in info:  # Java side: com.facebook.react.modules.systeminfo
                         continue
                     if "minor" not in seq:
                         continue
-                    vals = {}
-                    for k, x in enumerate(seq):
-                        if x in ("major", "minor", "patch"):  # value is the nearest int before or after the key
-                            near = [y for y in seq[k + 1:k + 3] if isinstance(y, int)] or [y for y in seq[max(0, k - 2):k] if isinstance(y, int)]
-                            if near:
-                                vals[x] = near[0]
-                    if {"major", "minor", "patch"} <= vals.keys() and "rn_version" not in info:
-                        info["rn_version"] = f"{vals['major']}.{vals['minor']}.{vals['patch']}"
-                        info["rn_version_from"] = f"dex {c.get_name()}"
+                    if not c.get_name().endswith("ReactNativeVersion;") and "prerelease" not in seq:
+                        continue
+                    ints = [x for x in seq if isinstance(x, int)]
+                    if "major" in seq and ints and "rn_version" not in info:
+                        # Dalvik loads each distinct number once and reuses the register, so the list is the
+                        # distinct values in any order: major is 0, minor is the big one, patch the rest (or 0)
+                        minor = max(ints)
+                        rest = [x for x in ints if x not in (0, minor)]
+                        patch = rest[0] if rest else 0
+                        k = seq.index("prerelease") if "prerelease" in seq else -1
+                        pre = seq[k + 1] if 0 <= k < len(seq) - 1 and isinstance(seq[k + 1], str) else None
+                        if 40 <= minor <= 200:
+                            info["rn_version"] = f"0.{minor}.{patch}"
+                            info["rn_prerelease"] = pre
+                            info["rn_version_from"] = f"dex {c.get_name()}"
                     info.setdefault("debug_dex_seqs", []).append([c.get_name() + "->" + meth.get_name()] + seq[:30])
     except Exception as e:
         info["rn_version_error"] = str(e)[:200]

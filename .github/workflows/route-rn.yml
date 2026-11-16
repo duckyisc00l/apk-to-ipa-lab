@@ -64,6 +64,8 @@ jobs:
         run: |
           set -o pipefail
           minor=$(echo "$V" | cut -d. -f2)
+          # newest stable patch of the same minor (the native bridge is stable within a minor; an rc bundle runs on it)
+          V=$(npm view "react-native@~0.$minor.0" version | tail -1 | sed -E "s/.*'([0-9.]+)'.*/\1/; s/^react-native@[^ ]* //"); echo "host React Native $V" | tee -a out/ipa.md
           if [ "$minor" -ge 75 ]; then npx -y @react-native-community/cli@latest init Host --version "$V" --skip-install --skip-git-init --pm npm 2>&1 | tail -15 | tee -a out/ipa.md
           else npx -y react-native@"$V" init Host --version "$V" --skip-install 2>&1 | tail -15 | tee -a out/ipa.md; fi
           cd Host && npm install --legacy-peer-deps 2>&1 | tail -5 | tee -a ../out/ipa.md
@@ -73,6 +75,7 @@ jobs:
           if [ "$KIND" = hermes ]; then H=true; else H=false; fi
           # RN 0.64-0.69: Podfile option; 0.70+: hermes is default on, turned off with USE_HERMES=0
           sed -i '' -E "s/:hermes_enabled => [^,)]+/:hermes_enabled => $H/" Podfile || true
+          sed -i '' -E 's/^([[:space:]]*use_flipper!)/# \1/; s/^([[:space:]]*flipper_post_install)/# \1/' Podfile   # debug-only tool; old Flipper pods break on new Xcode
           [ "$H" = false ] && export USE_HERMES=0
           gem list cocoapods | head -1 | tee -a ../../out/ipa.md
           (bundle install 2>/dev/null && bundle exec pod install || pod install) 2>&1 | tail -15 | tee -a ../../out/ipa.md
