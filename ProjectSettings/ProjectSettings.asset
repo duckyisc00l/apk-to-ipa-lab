@@ -300,7 +300,7 @@ PlayerSettings:
   enableCrashReportAPI: 0
   cameraUsageDescription: Used for the game's camera features.
   locationUsageDescription: Used for the game's location features.
-  microphoneUsageDescription: Used to sing along: the game scores your voice.
+  microphoneUsageDescription: Used to sing along so the game can score your voice.
   bluetoothUsageDescription:
   macOSTargetOSVersion:
   switchNMETAOverride:
