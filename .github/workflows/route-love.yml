@@ -39,15 +39,27 @@ jobs:
           v=$(strings "$so" | grep -oE '^(0\.10\.[0-9]|11\.[0-9])$' | head -1)
           [ -n "$v" ] || v=$(strings "$so" | grep -oE 'LOVE (0\.10\.[0-9]|11\.[0-9])' | head -1 | awk '{print $2}')
           echo "LOVE_VERSION=$v" >> $GITHUB_ENV; echo "LÖVE version: $v" | tee -a out/love.md
-      - name: Get LÖVE's source and its Apple libraries at that version
+      - name: Get LÖVE's source and its Apple libraries (same version, or the newest of the same major series)
         run: |
-          git clone -q --depth 1 --branch "$LOVE_VERSION" https://github.com/love2d/love love 2>&1 | tail -1
-          libs=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/love2d/love/releases/tags/$LOVE_VERSION" \
-            | python3 -c "import json,sys;print([a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if 'apple-libraries' in a['name']][0])")
-          echo "apple libraries: $libs" | tee -a out/love.md
+          # Older LÖVE releases (11.0-11.3) have no ready-made iOS libraries. Every 11.x runs the same games,
+          # so fall back to the newest release of the same major series that has them.
+          major=${LOVE_VERSION%%.*}
+          curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/love2d/love/releases?per_page=50" > rels.json
+          read tag libs < <(python3 - "$LOVE_VERSION" "$major" <<'P'
+          import json, sys
+          want, major = sys.argv[1], sys.argv[2]
+          rels = json.load(open("rels.json"))
+          def libs(r): return [a["browser_download_url"] for a in r["assets"] if "apple-libraries" in a["name"]]
+          exact = [r for r in rels if r["tag_name"] == want and libs(r)]
+          same = [r for r in rels if r["tag_name"].split(".")[0] == major and libs(r) and not r["prerelease"]]
+          r = (exact or same)[0]
+          print(r["tag_name"], libs(r)[0])
+          P
+          )
+          echo "LÖVE used: $tag (game made with $LOVE_VERSION)"; echo "LÖVE used: $tag (game made with $LOVE_VERSION); libraries $libs" >> out/love.md
+          git clone -q --depth 1 --branch "$tag" https://github.com/love2d/love love 2>&1 | tail -1
           curl -sSL -o apple.zip "$libs" && unzip -qo apple.zip -d applelibs
           find applelibs -maxdepth 3 -type d | head -20 | tee -a out/love.md
-          # The zip holds iOS/libraries and macOS/Frameworks; LÖVE's Xcode project expects them under platform/xcode
           src=$(find applelibs -maxdepth 3 -type d -path '*iOS/libraries' | head -1)
           mkdir -p love/platform/xcode/ios && cp -R "$src" love/platform/xcode/ios/
           ls love/platform/xcode/ios/libraries | head | tee -a out/love.md
@@ -73,7 +85,7 @@ jobs:
       - name: Publish to branch r-love
         if: always()
         run: |
-          mkdir -p /tmp/r && cp out/*.md /tmp/r/ 2>/dev/null; tail -200 out/xcodebuild.log > /tmp/r/xcodebuild.log 2>/dev/null
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; tail -200 out/xcodebuild.log > /tmp/r/xcodebuild.log 2>/dev/null || true
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-love && git rm -rfq . && rm -rf ci dl work out love applelibs Payload *.zip *.love *.ipa
           cp -r /tmp/r/. . && git add -A && git commit -qm "love ${{ github.run_number }}" && git push -f origin r-love
