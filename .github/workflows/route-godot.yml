@@ -86,12 +86,13 @@ jobs:
       - name: Export the Xcode project
         run: |
           set +e
+          mkdir -p export   # Godot 3 doesn't create the output folder and fails without saying why
           cd proj
           "$GODOT_BIN" --headless --import > ../out/import.log 2>&1 || true
-          if [ "$MAJOR" = 4 ]; then "$GODOT_BIN" --headless --export-release "iOS" ../export/$NAME.ipa > ../out/export.log 2>&1
-          else "$GODOT_BIN" --no-window --export "iOS" ../export/$NAME.ipa > ../out/export.log 2>&1; fi
+          if [ "$MAJOR" = 4 ]; then "$GODOT_BIN" --headless --export-release "iOS" "$GITHUB_WORKSPACE/export/$NAME.ipa" > ../out/export.log 2>&1
+          else "$GODOT_BIN" --no-window --export "iOS" "$GITHUB_WORKSPACE/export/$NAME.ipa" > ../out/export.log 2>&1; fi
           echo "export exit $?" | tee -a ../out/ipa.md; cd ..
-          tail -30 out/export.log >> out/ipa.md; ls -la export | tee -a out/ipa.md
+          grep -viE 'reimport: step' out/export.log | tail -40 >> out/ipa.md; ls -la export | tee -a out/ipa.md
       - name: Build unsigned IPA
         run: |
           proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1); echo "xcodeproj: $proj" | tee -a out/ipa.md
