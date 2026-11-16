@@ -1,0 +1,576 @@
+{
+ "godot": [
+  {
+   "repo": "HarmonyHoney/ROTA",
+   "license": "MIT",
+   "stars": 341,
+   "tag": "2026.03.12",
+   "asset": "ROTA.apk",
+   "mb": 63.4,
+   "url": "https://github.com/HarmonyHoney/ROTA/releases/download/2026.03.12/ROTA.apk",
+   "lang": "GDScript"
+  },
+  {
+   "repo": "arshiyabarjaste-eng/PixelFist",
+   "license": "MIT",
+   "stars": 0,
+   "tag": "v1.0.0",
+   "asset": "PixelFist_v1.0.0_Myket.apk",
+   "mb": 132.1,
+   "url": "https://github.com/arshiyabarjaste-eng/PixelFist/releases/download/v1.0.0/PixelFist_v1.0.0_Myket.apk",
+   "lang": "GDScript"
+  }
+ ],
+ "renpy": [
+  {
+   "repo": "Weiss-UltimateSavior/Tyranor-Next",
+   "license": "GPL-2.0",
+   "stars": 881,
+   "tag": "beta-1.66",
+   "asset": "app-release.apk",
+   "mb": 95.0,
+   "url": "https://github.com/Weiss-UltimateSavior/Tyranor-Next/releases/download/beta-1.66/app-release.apk",
+   "lang": "Kotlin"
+  },
+  {
+   "repo": "MewX/cross-channel_chinese-localization_project",
+   "license": "Apache-2.0",
+   "stars": 284,
+   "tag": "moved.v1.01.basedon.v0.99",
+   "asset": "crosschannel-1.01-android.apk",
+   "mb": 7.3,
+   "url": "https://github.com/MewX/cross-channel_chinese-localization_project/releases/download/moved.v1.01.basedon.v0.99/crosschannel-1.01-android.apk",
+   "lang": "Ren'Py"
+  },
+  {
+   "repo": "JXZ666/slgking",
+   "license": "GPL-3.0",
+   "stars": 180,
+   "tag": "v0.29.0",
+   "asset": "slgking-android-0.29.0.apk",
+   "mb": 40.6,
+   "url": "https://github.com/JXZ666/slgking/releases/download/v0.29.0/slgking-android-0.29.0.apk",
+   "lang": "Python"
+  },
+  {
+   "repo": "fleetingheart/ksre",
+   "license": "MPL-2.0",
+   "stars": 127,
+   "tag": "v2.0.5",
+   "asset": "sh.fhs.ksre-release.apk",
+   "mb": 1433.5,
+   "url": "https://github.com/fleetingheart/ksre/releases/download/v2.0.5/sh.fhs.ksre-release.apk",
+   "lang": "Ren'Py"
+  },
+  {
+   "repo": "AimesSoft/SakiEngine",
+   "license": "MIT",
+   "stars": 70,
+   "tag": "v1.0.23",
+   "asset": "SoraNoUta-1.0.23-Android-arm64-release.apk",
+   "mb": 389.6,
+   "url": "https://github.com/AimesSoft/SakiEngine/releases/download/v1.0.23/SoraNoUta-1.0.23-Android-arm64-release.apk",
+   "lang": "Dart"
+  },
+  {
+   "repo": "Reset171/RenPlay",
+   "license": "GPL-3.0",
+   "stars": 9,
+   "tag": "0.3.1",
+   "asset": "app-arm64-v8a-release.apk",
+   "mb": 27.7,
+   "url": "https://github.com/Reset171/RenPlay/releases/download/0.3.1/app-arm64-v8a-release.apk",
+   "lang": "Kotlin"
+  },
+  {
+   "repo": "playferry/PlayFerryApp",
+   "license": "GPL-3.0",
+   "stars": 3,
+   "tag": "v0.0.1-alpha",
+   "asset": "PlayFerry-alpha-v0.0.1.apk",
+   "mb": 103.8,
+   "url": "https://github.com/playferry/PlayFerryApp/releases/download/v0.0.1-alpha/PlayFerry-alpha-v0.0.1.apk",
+   "lang": "Kotlin"
+  }
+ ],
+ "love2d": [
+  {
+   "repo": "LIKO-12/LIKO-12",
+   "license": "MIT",
+   "stars": 1181,
+   "tag": "1.0.1",
+   "asset": "LIKO-12_V1.0.1_Android.apk",
+   "mb": 10.6,
+   "url": "https://github.com/LIKO-12/LIKO-12/releases/download/1.0.1/LIKO-12_V1.0.1_Android.apk",
+   "lang": "Lua"
+  },
+  {
+   "repo": "Oval-Tutu/bootstrap-love2d-project",
+   "license": "MIT",
+   "stars": 187,
+   "tag": "0.1.2",
+   "asset": "Template-0.1.2-release.apk",
+   "mb": 9.4,
+   "url": "https://github.com/Oval-Tutu/bootstrap-love2d-project/releases/download/0.1.2/Template-0.1.2-release.apk",
+   "lang": "Lua"
+  },
+  {
+   "repo": "kazwtto/KristalLauncher",
+   "license": "MIT",
+   "stars": 10,
+   "tag": "v0.18",
+   "asset": "KristalLauncher-v0.18-release.apk",
+   "mb": 13.2,
+   "url": "https://github.com/kazwtto/KristalLauncher/releases/download/v0.18/KristalLauncher-v0.18-release.apk",
+   "lang": "Lua"
+  }
+ ],
+ "react-native": [
+  {
+   "repo": "lyswhut/lx-music-mobile",
+   "license": "Apache-2.0",
+   "stars": 19395,
+   "tag": "v1.9.2",
+   "asset": "lx-music-mobile-v1.9.2-arm64-v8a.apk",
+   "mb": 13.2,
+   "url": "https://github.com/lyswhut/lx-music-mobile/releases/download/v1.9.2/lx-music-mobile-v1.9.2-arm64-v8a.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "devhubapp/devhub",
+   "license": "AGPL-3.0",
+   "stars": 10158,
+   "tag": "v0.102.0",
+   "asset": "DevHub-0.102.0.apk",
+   "mb": 30.4,
+   "url": "https://github.com/devhubapp/devhub/releases/download/v0.102.0/DevHub-0.102.0.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "margelo/react-native-vision-camera",
+   "license": "MIT",
+   "stars": 9663,
+   "tag": "v5.2.4",
+   "asset": "app-release.apk",
+   "mb": 174.6,
+   "url": "https://github.com/margelo/react-native-vision-camera/releases/download/v5.2.4/app-release.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "czy0729/Bangumi",
+   "license": "MIT",
+   "stars": 6248,
+   "tag": "8.42.0",
+   "asset": "bangumi_v8.42.0_arm64-v8a.apk",
+   "mb": 34.0,
+   "url": "https://github.com/czy0729/Bangumi/releases/download/8.42.0/bangumi_v8.42.0_arm64-v8a.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "tiajinsha/JKVideo",
+   "license": "MIT",
+   "stars": 4998,
+   "tag": "v1.0.19",
+   "asset": "app-release.apk",
+   "mb": 97.4,
+   "url": "https://github.com/tiajinsha/JKVideo/releases/download/v1.0.19/app-release.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "CherryHQ/cherry-studio-app",
+   "license": "AGPL-3.0",
+   "stars": 4080,
+   "tag": "v0.5.5",
+   "asset": "cherry-studio-0.5.5-android.apk",
+   "mb": 105.4,
+   "url": "https://github.com/CherryHQ/cherry-studio-app/releases/download/v0.5.5/cherry-studio-0.5.5-android.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "status-im/status-legacy",
+   "license": "MPL-2.0",
+   "stars": 4024,
+   "tag": "2.34.4",
+   "asset": "StatusIm-Mobile-v2.34.4-2de761-arm64-v8a.apk",
+   "mb": 75.4,
+   "url": "https://github.com/status-im/status-legacy/releases/download/2.34.4/StatusIm-Mobile-v2.34.4-2de761-arm64-v8a.apk",
+   "lang": "Clojure"
+  },
+  {
+   "repo": "BlackHatDevX/openspot-music-app",
+   "license": "MIT",
+   "stars": 3011,
+   "tag": "v3.1.5",
+   "asset": "OpenSpot-3.1.5-release.apk",
+   "mb": 78.3,
+   "url": "https://github.com/BlackHatDevX/openspot-music-app/releases/download/v3.1.5/OpenSpot-3.1.5-release.apk",
+   "lang": "TypeScript"
+  }
+ ],
+ "flutter": [
+  {
+   "repo": "ComicSparks/pikapika",
+   "license": "MIT",
+   "stars": 8408,
+   "tag": "v1.8.26",
+   "asset": "pikapika-v1.8.26-android-arm64-flutter_3.38.4.apk",
+   "mb": 33.1,
+   "url": "https://github.com/ComicSparks/pikapika/releases/download/v1.8.26/pikapika-v1.8.26-android-arm64-flutter_3.38.4.apk",
+   "lang": "Dart"
+  },
+  {
+   "repo": "mantou132/nesbox",
+   "license": "MIT",
+   "stars": 465,
+   "tag": "v1.0.8",
+   "asset": "nesbox.apk",
+   "mb": 16.7,
+   "url": "https://github.com/mantou132/nesbox/releases/download/v1.0.8/nesbox.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "sidhant947/Puzzle",
+   "license": "GPL-3.0",
+   "stars": 282,
+   "tag": "V2.0.6",
+   "asset": "app-arm64-v8a-release.apk",
+   "mb": 12.2,
+   "url": "https://github.com/sidhant947/Puzzle/releases/download/V2.0.6/app-arm64-v8a-release.apk",
+   "lang": "Dart"
+  },
+  {
+   "repo": "AChep/15puzzle",
+   "license": "Apache-2.0",
+   "stars": 251,
+   "tag": "v2.2.2",
+   "asset": "15puzzle-android-v2.2.2.aab",
+   "mb": 17.7,
+   "url": "https://github.com/AChep/15puzzle/releases/download/v2.2.2/15puzzle-android-v2.2.2.aab",
+   "lang": "Dart"
+  },
+  {
+   "repo": "adil192/ricochlime",
+   "license": "AGPL-3.0",
+   "stars": 166,
+   "tag": "v1.14.0",
+   "asset": "Ricochlime_FOSS_v1.14.0.apk",
+   "mb": 56.7,
+   "url": "https://github.com/adil192/ricochlime/releases/download/v1.14.0/Ricochlime_FOSS_v1.14.0.apk",
+   "lang": "Dart"
+  },
+  {
+   "repo": "shenmareparas/Chess",
+   "license": "GPL-3.0",
+   "stars": 36,
+   "tag": "v1.0.7",
+   "asset": "Chess-v1.0.7.apk",
+   "mb": 37.5,
+   "url": "https://github.com/shenmareparas/Chess/releases/download/v1.0.7/Chess-v1.0.7.apk",
+   "lang": "Dart"
+  }
+ ],
+ "capacitor": [
+  {
+   "repo": "6c65726f79/Transmissionic",
+   "license": "MIT",
+   "stars": 528,
+   "tag": "v1.8.0",
+   "asset": "Transmissionic-android-v1.8.0.apk",
+   "mb": 3.3,
+   "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-android-v1.8.0.apk",
+   "lang": "Vue"
+  },
+  {
+   "repo": "thenaim/ionic-tk-social-network",
+   "license": "MIT",
+   "stars": 164,
+   "tag": "v2.2.0",
+   "asset": "app-release.apk",
+   "mb": 3.4,
+   "url": "https://github.com/thenaim/ionic-tk-social-network/releases/download/v2.2.0/app-release.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "Beaver-Notes/Beaver-pocket",
+   "license": "MIT",
+   "stars": 108,
+   "tag": "1.6.0",
+   "asset": "app-release.apk",
+   "mb": 19.7,
+   "url": "https://github.com/Beaver-Notes/Beaver-pocket/releases/download/1.6.0/app-release.apk",
+   "lang": "TypeScript"
+  },
+  {
+   "repo": "anime-vsub/app",
+   "license": "GPL-3.0",
+   "stars": 81,
+   "tag": "v2.14.1",
+   "asset": "app-release-unsigned-signed.apk",
+   "mb": 33.9,
+   "url": "https://github.com/anime-vsub/app/releases/download/v2.14.1/app-release-unsigned-signed.apk",
+   "lang": "Kotlin"
+  },
+  {
+   "repo": "nikhilmwarrier/anthology",
+   "license": "AGPL-3.0",
+   "stars": 53,
+   "tag": "v1.0.8",
+   "asset": "Anthology-v1.0.8.apk",
+   "mb": 4.4,
+   "url": "https://github.com/nikhilmwarrier/anthology/releases/download/v1.0.8/Anthology-v1.0.8.apk",
+   "lang": "Svelte"
+  },
+  {
+   "repo": "pferreirafabricio/ionic-vue-boilerplate",
+   "license": "MIT",
+   "stars": 30,
+   "tag": "v2.0.0",
+   "asset": "ionic-vue-boilerplate.apk",
+   "mb": 9.8,
+   "url": "https://github.com/pferreirafabricio/ionic-vue-boilerplate/releases/download/v2.0.0/ionic-vue-boilerplate.apk",
+   "lang": "Vue"
+  },
+  {
+   "repo": "manga-raiku/raiku-app",
+   "license": "GPL-3.0",
+   "stars": 27,
+   "tag": "android@1.0.35#39",
+   "asset": "apk-release-signed.apk",
+   "mb": 23.1,
+   "url": "https://github.com/manga-raiku/raiku-app/releases/download/android%401.0.35%2339/apk-release-signed.apk",
+   "lang": "Vue"
+  },
+  {
+   "repo": "jupiutrera/open-chess",
+   "license": "GPL-3.0",
+   "stars": 6,
+   "tag": "v0.9.0",
+   "asset": "open-chess-v0.9.0.apk",
+   "mb": 12.9,
+   "url": "https://github.com/jupiutrera/open-chess/releases/download/v0.9.0/open-chess-v0.9.0.apk",
+   "lang": "TypeScript"
+  }
+ ],
+ "cordova": [
+  {
+   "repo": "VarunS2002/Ionic-Tic-Tac-Toe",
+   "license": "GPL-3.0",
+   "stars": 5,
+   "tag": "1.1.1",
+   "asset": "Tic-Tac-Toe-1.1.1.apk",
+   "mb": 7.2,
+   "url": "https://github.com/VarunS2002/Ionic-Tic-Tac-Toe/releases/download/1.1.1/Tic-Tac-Toe-1.1.1.apk",
+   "lang": "HTML"
+  }
+ ],
+ "unreal": [
+  {
+   "repo": "ankitpassi141/Wanderer-VR",
+   "license": "GPL-3.0",
+   "stars": 4,
+   "tag": "v1.0",
+   "asset": "MadTitans_WandererVR.apk",
+   "mb": 195.1,
+   "url": "https://github.com/ankitpassi141/Wanderer-VR/releases/download/v1.0/MadTitans_WandererVR.apk",
+   "lang": null
+  }
+ ],
+ "unity-il2cpp": [
+  {
+   "repo": "imengyu/Ballance",
+   "license": "GPL-3.0",
+   "stars": 319,
+   "tag": "v1.0.7",
+   "asset": "Ballance-1.0.7-android.apk",
+   "mb": 64.4,
+   "url": "https://github.com/imengyu/Ballance/releases/download/v1.0.7/Ballance-1.0.7-android.apk",
+   "lang": "C#"
+  },
+  {
+   "repo": "PenguinAndy/il2Fusion",
+   "license": "MIT",
+   "stars": 91,
+   "tag": "v0.0.3",
+   "asset": "il2Fusion-0.0.3-arm64-v8a-release.apk",
+   "mb": 46.0,
+   "url": "https://github.com/PenguinAndy/il2Fusion/releases/download/v0.0.3/il2Fusion-0.0.3-arm64-v8a-release.apk",
+   "lang": "C"
+  },
+  {
+   "repo": "AnimaRain/ShootAR",
+   "license": "MIT",
+   "stars": 77,
+   "tag": "v0.5.0",
+   "asset": "shootar_0.5.0.5.apk",
+   "mb": 20.5,
+   "url": "https://github.com/AnimaRain/ShootAR/releases/download/v0.5.0/shootar_0.5.0.5.apk",
+   "lang": "C#"
+  }
+ ],
+ "gamemaker": [
+  {
+   "repo": "Klisee/pokemon-reloaded-android",
+   "license": "GPL-2.0",
+   "stars": 80,
+   "tag": "v0.4.2",
+   "asset": "pokemon-reloaded-0.4.2-arm64-v8a.apk",
+   "mb": 27.5,
+   "url": "https://github.com/Klisee/pokemon-reloaded-android/releases/download/v0.4.2/pokemon-reloaded-0.4.2-arm64-v8a.apk",
+   "lang": "Rust"
+  },
+  {
+   "repo": "Ahmadrezadl/legendary-chess",
+   "license": "MIT",
+   "stars": 3,
+   "tag": "v1.3.1",
+   "asset": "LegendaryChess_Android.apk",
+   "mb": 7.2,
+   "url": "https://github.com/Ahmadrezadl/legendary-chess/releases/download/v1.3.1/LegendaryChess_Android.apk",
+   "lang": "Yacc"
+  }
+ ],
+ "libgdx": [
+  {
+   "repo": "yairm210/Unciv",
+   "license": "MPL-2.0",
+   "stars": 11591,
+   "tag": "5.0.0",
+   "asset": "Unciv-signed.apk",
+   "mb": 26.3,
+   "url": "https://github.com/yairm210/Unciv/releases/download/5.0.0/Unciv-signed.apk",
+   "lang": "Kotlin"
+  },
+  {
+   "repo": "00-Evan/shattered-pixel-dungeon",
+   "license": "GPL-3.0",
+   "stars": 6810,
+   "tag": "4.0.3-beta",
+   "asset": "ShatteredPD-v4.0.3-BETA-2-Android.apk",
+   "mb": 29.1,
+   "url": "https://github.com/00-Evan/shattered-pixel-dungeon/releases/download/4.0.3-beta/ShatteredPD-v4.0.3-BETA-2-Android.apk",
+   "lang": "Java"
+  },
+  {
+   "repo": "MovingBlocks/DestinationSol",
+   "license": "Apache-2.0",
+   "stars": 352,
+   "tag": "v2.1.0",
+   "asset": "android-release.apk",
+   "mb": 69.5,
+   "url": "https://github.com/MovingBlocks/DestinationSol/releases/download/v2.1.0/android-release.apk",
+   "lang": "Java"
+  },
+  {
+   "repo": "retrowars/retrowars",
+   "license": "GPL-3.0",
+   "stars": 239,
+   "tag": "0.32.1",
+   "asset": "com.serwylo.retrowars_66.apk",
+   "mb": 14.7,
+   "url": "https://github.com/retrowars/retrowars/releases/download/0.32.1/com.serwylo.retrowars_66.apk",
+   "lang": "Kotlin"
+  },
+  {
+   "repo": "LingASDJ/Magic_Ling_Pixel_Dungeon",
+   "license": "GPL-3.0",
+   "stars": 96,
+   "tag": "0.9.7.2",
+   "asset": "V0.9.7.2.APK",
+   "mb": 122.0,
+   "url": "https://github.com/LingASDJ/Magic_Ling_Pixel_Dungeon/releases/download/0.9.7.2/V0.9.7.2.APK",
+   "lang": "Java"
+  },
+  {
+   "repo": "danirod/rectball",
+   "license": "GPL-3.0",
+   "stars": 68,
+   "tag": "v0.5.436",
+   "asset": "rectball-0.5.436-android.apk",
+   "mb": 6.6,
+   "url": "https://github.com/danirod/rectball/releases/download/v0.5.436/rectball-0.5.436-android.apk",
+   "lang": "Kotlin"
+  }
+ ],
+ "online": [
+  {
+   "repo": "j-jorge/bim",
+   "license": "AGPL-3.0",
+   "stars": 90,
+   "tag": "v17",
+   "asset": "bim-17.apk",
+   "mb": 62.3,
+   "url": "https://github.com/j-jorge/bim/releases/download/v17/bim-17.apk",
+   "lang": "C++"
+  },
+  {
+   "repo": "ictrobot/Cubes",
+   "license": "MIT",
+   "stars": 33,
+   "tag": "v0.0.6",
+   "asset": "android-0.0.6.apk",
+   "mb": 4.3,
+   "url": "https://github.com/ictrobot/Cubes/releases/download/v0.0.6/android-0.0.6.apk",
+   "lang": "Java"
+  },
+  {
+   "repo": "javierfoe/PimPamPum",
+   "license": "GPL-3.0",
+   "stars": 18,
+   "tag": "pre-0.3.1",
+   "asset": "PimPamPum.apk",
+   "mb": 17.5,
+   "url": "https://github.com/javierfoe/PimPamPum/releases/download/pre-0.3.1/PimPamPum.apk",
+   "lang": "C#"
+  },
+  {
+   "repo": "davidchilin/werewolves_game",
+   "license": "GPL-3.0",
+   "stars": 17,
+   "tag": "v5.2.6.3",
+   "asset": "app-release-v5.2.6.3.apk",
+   "mb": 22.0,
+   "url": "https://github.com/davidchilin/werewolves_game/releases/download/v5.2.6.3/app-release-v5.2.6.3.apk",
+   "lang": "Python"
+  },
+  {
+   "repo": "alexcmgit/ttt",
+   "license": "MIT",
+   "stars": 11,
+   "tag": "v0.1.1",
+   "asset": "ttt-v0.1.1.apk",
+   "mb": 17.5,
+   "url": "https://github.com/alexcmgit/ttt/releases/download/v0.1.1/ttt-v0.1.1.apk",
+   "lang": "Dart"
+  },
+  {
+   "repo": "Volplayed/friendly-rpg-game",
+   "license": "MIT",
+   "stars": 6,
+   "tag": "v1.2.1",
+   "asset": "FriendlyRpg.apk",
+   "mb": 24.2,
+   "url": "https://github.com/Volplayed/friendly-rpg-game/releases/download/v1.2.1/FriendlyRpg.apk",
+   "lang": "C#"
+  },
+  {
+   "repo": "ProHussain/SnapshotScramble-PuzzleGame",
+   "license": "MIT",
+   "stars": 2,
+   "tag": "v1.0.1",
+   "asset": "SnapShot.Scramble.apk",
+   "mb": 58.5,
+   "url": "https://github.com/ProHussain/SnapshotScramble-PuzzleGame/releases/download/v1.0.1/SnapShot.Scramble.apk",
+   "lang": "Java"
+  },
+  {
+   "repo": "SHSLabs/Heroes-Arena",
+   "license": "MIT",
+   "stars": 2,
+   "tag": "v1.0.0",
+   "asset": "HeroesArena-v1.0.0-armv7a.apk",
+   "mb": 6.0,
+   "url": "https://github.com/SHSLabs/Heroes-Arena/releases/download/v1.0.0/HeroesArena-v1.0.0-armv7a.apk",
+   "lang": "Kotlin"
+  }
+ ]
+}

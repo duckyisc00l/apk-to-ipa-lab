@@ -1,0 +1,527 @@
+[
+ {
+  "libs": [],
+  "engine": "Web (Capacitor)",
+  "arches": [],
+  "arm64": false,
+  "game": "capacitor__6c65726f79__Transmissionic",
+  "file": "Transmissionic-android-v1.8.0.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/capacitor__6c65726f79__Transmissionic"
+ },
+ {
+  "libs": [],
+  "engine": "Web (Capacitor)",
+  "arches": [],
+  "arm64": false,
+  "game": "capacitor__thenaim__ionic-tk-social-network",
+  "file": "app-release.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/capacitor__thenaim__ionic-tk-social-network"
+ },
+ {
+  "libs": [
+   "libsqlc-native-driver.so"
+  ],
+  "engine": "Web (Cordova)",
+  "arches": [
+   "arm64-v8a",
+   "armeabi",
+   "armeabi-v7a",
+   "x86",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "cordova__VarunS2002__Ionic-Tic-Tac-Toe",
+  "file": "Tic-Tac-Toe-1.1.1.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/cordova__VarunS2002__Ionic-Tic-Tac-Toe"
+ },
+ {
+  "libs": [
+   "libapp.so",
+   "libdatastore_shared_counter.so",
+   "libflutter.so",
+   "librust_lib_pikapika.so"
+  ],
+  "engine": "Flutter",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "flutter__ComicSparks__pikapika",
+  "file": "pikapika-v1.8.26-android-arm64-flutter_3.38.4.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/flutter__ComicSparks__pikapika"
+ },
+ {
+  "libs": [
+   "libapp.so",
+   "libflutter.so"
+  ],
+  "engine": "Flutter",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "flutter__mantou132__nesbox",
+  "file": "nesbox.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/flutter__mantou132__nesbox"
+ },
+ {
+  "libs": [
+   "libyoyo.so"
+  ],
+  "engine": "GameMaker",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "gamemaker__Ahmadrezadl__legendary-chess",
+  "file": "LegendaryChess_Android.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/gamemaker__Ahmadrezadl__legendary-chess"
+ },
+ {
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libgm8emulator.so"
+  ],
+  "engine": "GameMaker 8 (through an emulator)",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "gamemaker__Klisee__pokemon-reloaded-android",
+  "file": "pokemon-reloaded-0.4.2-arm64-v8a.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/gamemaker__Klisee__pokemon-reloaded-android"
+ },
+ {
+  "libs": [
+   "libc++_shared.so",
+   "libgodot_android.so"
+  ],
+  "engine": "Godot",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a"
+  ],
+  "arm64": true,
+  "game": "godot__HarmonyHoney__ROTA",
+  "file": "ROTA.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/godot__HarmonyHoney__ROTA"
+ },
+ {
+  "libs": [
+   "libc++_shared.so",
+   "libgodot_android.so"
+  ],
+  "engine": "Godot",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a"
+  ],
+  "arm64": true,
+  "game": "godot__arshiyabarjaste-eng__PixelFist",
+  "file": "PixelFist_v1.0.0_Myket.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/godot__arshiyabarjaste-eng__PixelFist"
+ },
+ {
+  "libs": [
+   "libgdx-freetype.so",
+   "libgdx.so"
+  ],
+  "engine": "libGDX",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a",
+   "x86",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "libgdx__00-Evan__shattered-pixel-dungeon",
+  "file": "ShatteredPD-v4.0.3-BETA-2-Android.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/libgdx__00-Evan__shattered-pixel-dungeon"
+ },
+ {
+  "libs": [
+   "libgdx.so"
+  ],
+  "engine": "libGDX",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a",
+   "x86",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "libgdx__yairm210__Unciv",
+  "file": "Unciv-signed.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/libgdx__yairm210__Unciv"
+ },
+ {
+  "libs": [
+   "libSDL2.so",
+   "libc++_shared.so",
+   "liblove.so",
+   "libmpg123.so",
+   "libopenal.so"
+  ],
+  "engine": "LOVE",
+  "arches": [
+   "armeabi-v7a",
+   "x86"
+  ],
+  "arm64": false,
+  "game": "love2d__LIKO-12__LIKO-12",
+  "file": "LIKO-12_V1.0.1_Android.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/love2d__LIKO-12__LIKO-12"
+ },
+ {
+  "libs": [
+   "https.so",
+   "libc++_shared.so",
+   "liblove.so",
+   "libmpg123.so",
+   "libopenal.so"
+  ],
+  "engine": "LOVE",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a"
+  ],
+  "arm64": true,
+  "game": "love2d__Oval-Tutu__bootstrap-love2d-project",
+  "file": "Template-0.1.2-release.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/love2d__Oval-Tutu__bootstrap-love2d-project"
+ },
+ {
+  "libs": [
+   "libgdx-freetype.so",
+   "libgdx.so"
+  ],
+  "engine": "libGDX",
+  "arches": [
+   "armeabi",
+   "armeabi-v7a",
+   "x86"
+  ],
+  "arm64": false,
+  "game": "online__ictrobot__Cubes",
+  "file": "android-0.0.6.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/online__ictrobot__Cubes"
+ },
+ {
+  "libs": [
+   "libbim.so"
+  ],
+  "engine": "native C/C++ (own engine)",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "online__j-jorge__bim",
+  "file": "bim-17.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/online__j-jorge__bim"
+ },
+ {
+  "libs": [
+   "libbugsnag-ndk.so",
+   "libbugsnag-plugin-android-anr.so",
+   "libc++_shared.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_futures.so",
+   "libfolly_json.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes-executor-common-debug.so",
+   "libhermes-executor-common-release.so",
+   "libhermes-executor-debug.so",
+   "libhermes-executor-release.so",
+   "libhermes-inspector.so",
+   "libimagepipeline.so",
+   "libjsc.so",
+   "libjscexecutor.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_reactandroidspec.so",
+   "libreact_nativemodule_core.so",
+   "libreactnativeblob.so",
+   "libreactnativejni.so",
+   "libreactnativeutilsjni.so",
+   "libreactperfloggerjni.so",
+   "libturbomodulejsijni.so",
+   "libyoga.so"
+  ],
+  "engine": "React Native",
+  "arches": [
+   "arm64-v8a",
+   "armeabi",
+   "armeabi-v7a",
+   "x86",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "react-native__devhubapp__devhub",
+  "file": "DevHub-0.102.0.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/react-native__devhubapp__devhub"
+ },
+ {
+  "libs": [
+   "libc++_shared.so",
+   "libfabricjni.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_runtime.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes.so",
+   "libhermes_executor.so",
+   "libhermesinstancejni.so",
+   "libimagepipeline.so",
+   "libjscinstance.so",
+   "libjserrorhandler.so",
+   "libjsi.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "liblogger.so",
+   "libmapbufferjni.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libquickbase64.so",
+   "libquickjs-android-wrapper.so",
+   "libquickmd5.so",
+   "libreact_codegen_rncore.so",
+   "libreact_config.so",
+   "libreact_debug.so",
+   "libreact_nativemodule_core.so",
+   "libreact_newarchdefaults.so",
+   "libreact_render_animations.so",
+   "libreact_render_attributedstring.so",
+   "libreact_render_componentregistry.so",
+   "libreact_render_core.so",
+   "libreact_render_debug.so",
+   "libreact_render_graphics.so",
+   "libreact_render_imagemanager.so",
+   "libreact_render_leakchecker.so",
+   "libreact_render_mapbuffer.so",
+   "libreact_render_mounting.so",
+   "libreact_render_runtimescheduler.so",
+   "libreact_render_scheduler.so",
+   "libreact_render_telemetry.so",
+   "libreact_render_templateprocessor.so",
+   "libreact_render_textlayoutmanager.so",
+   "libreact_render_uimanager.so",
+   "libreact_utils.so",
+   "libreactnativeblob.so",
+   "libreactnativejni.so",
+   "libreactperfloggerjni.so",
+   "librninstance.so",
+   "librrc_image.so",
+   "librrc_legacyviewmanagerinterop.so",
+   "librrc_native.so",
+   "librrc_root.so",
+   "librrc_scrollview.so",
+   "librrc_text.so",
+   "librrc_textinput.so",
+   "librrc_unimplementedview.so",
+   "librrc_view.so",
+   "libruntimeexecutor.so",
+   "libturbomodulejsijni.so",
+   "libuimanagerjni.so",
+   "libyoga.so"
+  ],
+  "engine": "React Native",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "react-native__lyswhut__lx-music-mobile",
+  "file": "lx-music-mobile-v1.9.2-arm64-v8a.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/react-native__lyswhut__lx-music-mobile"
+ },
+ {
+  "libs": [
+   "libSDL2.so",
+   "libSDL2_gfx.so",
+   "libSDL2_image.so",
+   "libSDL2_ttf.so",
+   "libmain.so",
+   "libpng16.so",
+   "libpymodules.so",
+   "libpython2.7.so"
+  ],
+  "engine": "Ren'Py",
+  "arches": [
+   "armeabi"
+  ],
+  "arm64": false,
+  "game": "renpy__MewX__cross-channel_chinese-localization_project",
+  "file": "crosschannel-1.01-android.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/renpy__MewX__cross-channel_chinese-localization_project"
+ },
+ {
+  "libs": [
+   "libONSPatch.so",
+   "libSDL2_mixer_xs35.so",
+   "libSDL3.so",
+   "libandroidx.graphics.path.so",
+   "libarchive_xp3_core.so",
+   "libartemis_audio_bridge.so",
+   "libartemis_loader.so",
+   "libcmvs_loader.so",
+   "libethornell_bridge.so",
+   "libgames_bridge.so",
+   "libgraphics_timer.so",
+   "libkrkr_bridge_v2.so",
+   "libkrkrsdl3_graphics_bridge.so",
+   "librfvp_bridge.so",
+   "libsiglus_bridge.so"
+  ],
+  "engine": "native C/C++ (own engine)",
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a",
+   "x86",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "renpy__Weiss-UltimateSavior__Tyranor-Next",
+  "file": "app-release.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/renpy__Weiss-UltimateSavior__Tyranor-Next"
+ },
+ {
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libdatastore_shared_counter.so",
+   "libnative_hook.so"
+  ],
+  "engine": "native C/C++ (own engine)",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "unity-il2cpp__PenguinAndy__il2Fusion",
+  "file": "il2Fusion-0.0.3-arm64-v8a-release.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/unity-il2cpp__PenguinAndy__il2Fusion"
+ },
+ {
+  "libs": [
+   "libMonoPosixHelper.so",
+   "libbphysics.so",
+   "libmain.so",
+   "libmono-native.so",
+   "libmonobdwgc-2.0.so",
+   "libunity.so"
+  ],
+  "engine": "Unity",
+  "backend": "Mono",
+  "game_dlls": [
+   "Assembly-CSharp-firstpass.dll",
+   "Assembly-CSharp.dll",
+   "ICSharpCode.SharpZipLib.dll",
+   "Newtonsoft.Json.dll",
+   "RuntimeInspector.Runtime.dll",
+   "SimpleFileBrowser.Runtime.dll",
+   "Tayx.Graphy.dll",
+   "mod.invlife.dll",
+   "mod.selfkill.dll",
+   "mod.speedball.dll"
+  ],
+  "dlls_where": "Managed/",
+  "unity_version": "2021.3.33f1",
+  "version_from": "assets/bin/Data/data.unity3d",
+  "data_unity3d": true,
+  "arches": [
+   "armeabi-v7a"
+  ],
+  "arm64": false,
+  "game": "unity-il2cpp__imengyu__Ballance",
+  "file": "Ballance-1.0.7-android.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/unity-il2cpp__imengyu__Ballance"
+ },
+ {
+  "libs": [
+   "gdbserver",
+   "libUE4.so",
+   "libgnustl_shared.so",
+   "libgvr.so"
+  ],
+  "engine": "Unreal",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "unreal__ankitpassi141__Wanderer-VR",
+  "file": "MadTitans_WandererVR.apk",
+  "notes": [
+   "plain APK"
+  ],
+  "root": "work/unreal__ankitpassi141__Wanderer-VR"
+ }
+]
