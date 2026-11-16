@@ -62,7 +62,11 @@ jobs:
           printf 'Library/\nTemp/\nObj/\nBuild/\nbuild/\nLogs/\nUserSettings/\n*.csproj\n*.sln\n' > .gitignore
           find . -type f -size +95M -printf '%P\n' > /tmp/big.txt; [ -s /tmp/big.txt ] && { echo "files over 95 MB (need LFS):"; cat /tmp/big.txt; }
           git add -A && git commit -qm "Recovered project for $REPO (AssetRipper + cleanup)"
-          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$br"
+          # Never overwrite a project branch: it may already hold hand fixes. Push a new, numbered one instead.
+          if git ls-remote --exit-code "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "refs/heads/$br" >/dev/null; then
+            br="$br-${{ github.run_number }}"; git branch -m "$br"; echo "BRANCH=$br" >> $GITHUB_ENV
+          fi
+          git push -q "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$br"
           echo "project branch: $br" | tee -a "$GITHUB_WORKSPACE/out/cleanup.md"
       - name: Keep the cleaned project for the build
         uses: actions/upload-artifact@v4
