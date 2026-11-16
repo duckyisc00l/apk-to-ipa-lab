@@ -33,7 +33,7 @@ jobs:
           echo "${{ inputs.repo }} $tag $asset" | tee out/picked.txt
           gh release download "$tag" -R "${{ inputs.repo }}" -p "$asset" -D dl
           python3 -I ci/unpack.py "dl/$asset" work > out/unpack.json
-          python3 -I ci/rn/inspect.py work/all rn | tee out/rn.md
+          python3 -I ci/rn/inspect.py work/all rn | tee out/rn.md; cp rn/rn.json out/
           cp work/all/$(python3 -c "import json;print(json.load(open('rn/rn.json'))['bundle'])") rn/main.jsbundle
           cat rn/env >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4

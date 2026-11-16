@@ -106,6 +106,9 @@ for loc, scales, name, typ in regs:
         else:
             missing += 1
 info["images"] = {"registrations": len(regs), "copied": copied, "missing": missing}
+# debug samples (kept short): where the version and image registrations sit in this bundle
+info["debug_version_ctx"] = [text[max(0, m.start() - 120):m.end() + 60] for m in re.finditer(r"prerelease", text)][:3]
+info["debug_asset_ctx"] = [text[max(0, m.start() - 160):m.end() + 200] for m in re.finditer(r"__packager_asset", text)][:2]
 json.dump(info, open(os.path.join(out, "rn.json"), "w"), indent=1)
 md = [f"- {k}: {v}" for k, v in info.items()]
 open(os.path.join(out, "rn.md"), "w").write("\n".join(md) + "\n")
