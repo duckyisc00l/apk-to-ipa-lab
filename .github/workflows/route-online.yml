@@ -40,7 +40,7 @@ jobs:
         run: |
           S=$(find bim/build -type f -name bim-server | head -1)
           "$S" --help > out/server-help.txt 2>&1 || true
-          printf 'port = 23899\n' > server.cfg
+          printf '{"port": 23899}\n' > server.cfg   # Bim's server config is JSON
           ("$S" --console-log --config server.cfg > out/server.log 2>&1 &) ; sleep 8
           ss -lunp 2>/dev/null | grep -E '23899' | tee -a out/online.md || true
           ss -ltnp 2>/dev/null | grep -E '23899' | tee -a out/online.md || true
