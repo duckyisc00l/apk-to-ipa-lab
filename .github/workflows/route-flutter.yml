@@ -1,0 +1,55 @@
+name: route-flutter
+# "Open source -> build from its real source" on a Flutter app (the APK's compiled Dart can't be recovered).
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "AChep/15puzzle" }
+      name: { default: "Puzzle15" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-flutter.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-flutter
+  cancel-in-progress: true
+env:
+  REPO: ${{ inputs.repo || 'AChep/15puzzle' }}
+  NAME: ${{ inputs.name || 'Puzzle15' }}
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  ipa:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - name: Get the source at the release the APK came from
+        run: |
+          mkdir -p out
+          tag=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/$REPO/releases/latest" | python3 -c "import json,sys;print(json.load(sys.stdin)['tag_name'])")
+          echo "release: $tag" | tee out/flutter.md
+          git clone -q --depth 1 --branch "$tag" "https://github.com/$REPO" app
+          # the Flutter version the project wants (pubspec environment or .fvmrc), else stable
+          grep -A3 '^environment:' app/pubspec.yaml | tee -a out/flutter.md
+          ls app/ios > /dev/null 2>&1 && echo "has ios/ folder" | tee -a out/flutter.md || echo "NO ios/ folder: create it with flutter create --platforms=ios ." | tee -a out/flutter.md
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - name: Build for iOS without signing
+        run: |
+          cd app
+          [ -d ios ] || flutter create --platforms=ios --org com.duckyisc00l . > ../out/create.log 2>&1
+          flutter --version | head -1 | tee -a ../out/flutter.md
+          flutter pub get > ../out/pubget.log 2>&1; echo "pub get exit $?" | tee -a ../out/flutter.md
+          set +e
+          TERM=dumb flutter build ios --release --no-codesign > ../out/build.log 2>&1
+          b=$?; echo "flutter build exit $b" | tee -a ../out/flutter.md
+          grep -E "Error|error:|Failed|Built " ../out/build.log | head -20 | tee -a ../out/flutter.md
+          [ "$b" = 0 ] || exit 1
+          cd build/ios/iphoneos && mkdir -p Payload && cp -R Runner.app Payload/ && zip -qry "$GITHUB_WORKSPACE/$NAME.ipa" Payload
+          ls -la "$GITHUB_WORKSPACE/$NAME.ipa" | tee -a "$GITHUB_WORKSPACE/out/flutter.md"
+          gh release create "$NAME-flutter-${{ github.run_number }}" "$GITHUB_WORKSPACE/$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test: Flutter built from source)."
+      - name: Publish to branch r-flutter
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -80 "$f" > /tmp/r/$(basename "$f"); done
+          cd /tmp/r && git init -q -b r-flutter && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "flutter ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-flutter
