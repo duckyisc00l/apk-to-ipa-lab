@@ -8,6 +8,9 @@ import os, re, sys
 proj, major, bundle, name = sys.argv[1:5]
 path = os.path.join(proj, "export_presets.cfg")
 text = open(path).read() if os.path.exists(path) else ""
+# Godot 3 calls the bundle id application/identifier, Godot 4 application/bundle_identifier.
+# Both refuse to export without a team id, even unsigned: any 10 letters work.
+# Desktop-only native libraries (Steam etc.) are left out of the iPhone export.
 # drop any existing iOS preset (it would carry the original developer's signing settings)
 blocks = re.split(r"(?=^\[preset\.\d+\]\s*$)", text, flags=re.M)
 kept = []
@@ -34,7 +37,7 @@ runnable=true
 custom_features=""
 export_filter="all_resources"
 include_filter=""
-exclude_filter=""
+exclude_filter="*.dll, *.dylib, *.so, *.exe"
 export_path=""
 
 [preset.{n}.options]
@@ -54,10 +57,11 @@ capabilities/access_wifi=false
 else:
     opts = f'''application/app_store_team_id="AAAAAAAAAA"
 application/export_project_only=true
-application/bundle_identifier="{bundle}"
+application/identifier="{bundle}"
 application/name="{name}"
 application/short_version="1.0"
 application/version="1"
+application/targeted_device_family=2
 architectures/arm64=true
 '''
 open(path, "w").write("".join(out) + ("\n" if out else "") + common + opts)

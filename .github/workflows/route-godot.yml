@@ -88,7 +88,7 @@ jobs:
           set +e
           mkdir -p export   # Godot 3 doesn't create the output folder and fails without saying why
           cd proj
-          "$GODOT_BIN" --headless --import > ../out/import.log 2>&1 || true
+          [ "$MAJOR" = 4 ] && { "$GODOT_BIN" --headless --import > ../out/import.log 2>&1 || true; }   # Godot 3 has no --headless/--import; its --export imports first
           if [ "$MAJOR" = 4 ]; then "$GODOT_BIN" --headless --export-release "iOS" "$GITHUB_WORKSPACE/export/$NAME.ipa" > ../out/export.log 2>&1
           else "$GODOT_BIN" --no-window --export "iOS" "$GITHUB_WORKSPACE/export/$NAME.ipa" > ../out/export.log 2>&1; fi
           echo "export exit $?" | tee -a ../out/ipa.md; cd ..
