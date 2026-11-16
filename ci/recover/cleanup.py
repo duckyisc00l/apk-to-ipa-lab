@@ -51,8 +51,44 @@ def unity_tuple(v):
 BUILT_IN = {"com.unity.ugui": "1.0.0"}
 
 
+VERSION_IN_CODE = [
+    re.compile(r'new\s+Version\("(\d+\.\d+\.\d+)"\)'),
+    re.compile(r'(?:k?[Vv]ersion|VersionString|PackageVersion)\s*=\s*"(\d+\.\d+\.\d+(?:-[\w.]+)?)"'),
+]
+
+
+def version_in_code(folder):
+    """Some packages carry their own version as a constant (Input System does)."""
+    for d, _, files in os.walk(folder):
+        for f in files:
+            if f.endswith(".cs"):
+                s = open(os.path.join(d, f), encoding="utf-8", errors="replace").read()
+                for rx in VERSION_IN_CODE:
+                    m = rx.search(s)
+                    if m:
+                        return m.group(1), os.path.relpath(os.path.join(d, f), folder)
+    return None, None
+
+
+_EDITOR_DATE = {}
+
+
+def editor_release_date(unity_version):
+    if unity_version not in _EDITOR_DATE:
+        try:
+            with urllib.request.urlopen("https://services.api.unity.com/unity/editor/release/v1/releases?version="
+                                        + unity_version, timeout=60) as r:
+                d = json.load(r)
+            rel = d["results"][0] if "results" in d else d
+            _EDITOR_DATE[unity_version] = rel.get("releaseDate", "")[:10]
+        except Exception:  # noqa: BLE001
+            _EDITOR_DATE[unity_version] = ""
+    return _EDITOR_DATE[unity_version]
+
+
 def best_version(pkg, unity_version):
-    """Newest release of pkg whose 'unity' field is <= the game's Unity version."""
+    """Newest release of pkg that supports the game's Unity version and came out
+    before that Unity version did (projects rarely use packages newer than their editor)."""
     if pkg in BUILT_IN:
         return BUILT_IN[pkg], "built into the editor"
     try:
@@ -61,15 +97,19 @@ def best_version(pkg, unity_version):
     except Exception as e:  # noqa: BLE001
         return None, f"registry error: {e}"
     want = unity_tuple(unity_version)
+    cutoff = editor_release_date(unity_version) or "9999"
+    times = data.get("time", {})
     ok = []
     for ver, meta in data.get("versions", {}).items():
+        if times.get(ver, "0000")[:10] > cutoff:
+            continue
         if re.search(r"-(pre|exp|preview)", ver) and not pkg.endswith("vectorgraphics"):
             continue
         if unity_tuple(meta.get("unity", "0.0")) <= want:
             ok.append(ver)
     def key(v):
         return [int(x) if x.isdigit() else -1 for x in re.split(r"[.\-]", v)]
-    return (sorted(ok, key=key)[-1] if ok else None), f"{len(ok)} compatible versions"
+    return (sorted(ok, key=key)[-1] if ok else None), f"by date (before {cutoff})"
 
 
 def main(proj, unity_version, bundle_id, product):
@@ -84,13 +124,17 @@ def main(proj, unity_version, bundle_id, product):
         pkg = next((p for prefix, p in UNITY_PACKAGES if folder == prefix or folder.startswith(prefix + ".")), "NOMATCH")
         if pkg != "NOMATCH":
             n = sum(len(f) for _, _, f in os.walk(path))
+            code_ver, where = version_in_code(path) if pkg else (None, None)
             shutil.rmtree(path)
             removed.append(f"{folder} ({n} files)")
             if pkg and pkg not in deps and pkg not in added:
-                ver, note = best_version(pkg, unity_version)
+                if code_ver:
+                    ver, note = code_ver, f"from the package's own code ({where})"
+                else:
+                    ver, note = best_version(pkg, unity_version)
                 if ver:
                     deps[pkg] = ver
-                    added[pkg] = ver
+                    added[pkg] = f"{ver}  ({note})"
                 else:
                     added[pkg] = f"NOT ADDED ({note})"
         elif DELETE_ONLY.match(folder):
