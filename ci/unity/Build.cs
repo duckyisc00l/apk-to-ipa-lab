@@ -43,6 +43,10 @@ namespace CI
                 target = BuildTarget.iOS,
                 options = BuildOptions.None,
             });
+            foreach (var step in report.steps)
+                foreach (var m in step.messages)
+                    if (m.type == LogType.Error || m.type == LogType.Exception)
+                        Debug.Log("CI BUILD ERROR [" + step.name + "]: " + m.content);
             Debug.Log("CI BUILD RESULT: " + report.summary.result + " errors=" + report.summary.totalErrors);
             EditorApplication.Exit(report.summary.result == BuildResult.Succeeded ? 0 : 1);
         }
