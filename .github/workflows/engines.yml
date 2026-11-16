@@ -1,0 +1,46 @@
+name: engines
+# Find open-source apps per engine with APKs in their releases (for testing every route).
+# Then download the top pick per engine and run the skill's step 1 detection on it.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["ci/engines/**", ".github/workflows/engines.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: engines
+  cancel-in-progress: true
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search GitHub per engine
+        run: python3 ci/engines/find.py
+      - name: Download the top APK per engine (max 300 MB) and detect
+        run: |
+          mkdir -p dl
+          python3 - <<'E'
+          import json, os, subprocess
+          r = json.load(open("out/engines.json"))
+          for engine, hits in r.items():
+              for h in hits[:2]:
+                  if h["mb"] > 300 or not h["asset"].lower().endswith((".apk", ".xapk", ".apkm")):
+                      continue
+                  d = os.path.join("dl", engine + "__" + h["repo"].replace("/", "__"))
+                  os.makedirs(d, exist_ok=True)
+                  subprocess.run(["curl", "-sSL", "--fail", "-o", os.path.join(d, h["asset"]), h["url"]])
+          E
+          python3 ci/detect.py dl work || true
+          python3 ci/engines/inspect.py work | tee out/inspect.md
+      - name: Publish to branch r-engines
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp out/*.md out/*.json /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-engines && git rm -rfq . && rm -rf ci dl work out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "engines ${{ github.run_number }}" && git push -f origin r-engines
