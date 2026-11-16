@@ -7,8 +7,15 @@ cd tools
 url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/AssetRipper/AssetRipper/releases/latest \
   | python3 -c "import json,sys; r=json.load(sys.stdin); print(r['tag_name'], file=sys.stderr); print([a['browser_download_url'] for a in r['assets'] if 'linux_x64' in a['name'].lower()][0])")
 echo "AssetRipper: $url" | tee ../out/ripper-version.txt
-curl -sSL -o ar.zip "$url" && unzip -qo ar.zip -d ar
-BIN=$(find "$PWD/ar" -maxdepth 2 -type f -name 'AssetRipper.GUI.Free' | head -1)
+# Releases have been .zip and, from 2.0, .tar.xz.
+mkdir -p ar
+case "$url" in
+  *.zip) curl -sSL -o ar.pkg "$url" && unzip -qo ar.pkg -d ar ;;
+  *.tar.*|*.tgz) curl -sSL "$url" | tar -xJ -C ar 2>/dev/null || { curl -sSL -o ar.pkg "$url" && tar -xf ar.pkg -C ar; } ;;
+esac
+find ar -maxdepth 3 -type f ! -name '*.dll' ! -name '*.so' ! -name '*.json' ! -name '*.pdb' | head -20 > ../out/ripper-files.txt
+BIN=$(find "$PWD/ar" -maxdepth 3 -type f -name 'AssetRipper*' ! -name '*.dll' ! -name '*.json' ! -name '*.pdb' ! -name '*.so' | head -1)
+echo "binary: $BIN" >> ../out/ripper-version.txt
 chmod +x "$BIN"
 "$BIN" --help > ../out/ripper-help.txt 2>&1 || true
 cd ..
@@ -50,7 +57,7 @@ while read -r game root backend; do
       echo "packages: $(python3 -c "import json;print(' '.join(json.load(open('$proj/Packages/manifest.json'))['dependencies']))" 2>/dev/null)"
       echo "android plugins: $(ls "$proj/Assets/Plugins/Android" 2>/dev/null | tr '\n' ' ')"
       echo "--- sample script (first 60 lines of the biggest game script)"
-      big=$(find "$proj/Assets/Scripts/Assembly-CSharp" -name '*.cs' -printf '%s %p\n' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
+      big=$(find "$proj/Assets/Scripts" -path "*Unity*" -prune -o -name '*.cs' -printf '%s %p\n' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
       [ -n "$big" ] && { echo "$big"; head -60 "$big"; }
     fi
   } >> "out/ripper-$game.txt"

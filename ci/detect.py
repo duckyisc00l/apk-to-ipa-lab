@@ -70,13 +70,19 @@ def classify(root):
     if "libunity.so" in libs:
         r["engine"] = "Unity"
         managed = os.path.join(root, "assets/bin/Data/Managed")
-        if os.path.isdir(managed) and has("assets/bin/Data/Managed/Assembly-CSharp.dll"):
+        dlls = sorted(f for f in os.listdir(managed) if f.endswith(".dll")) if os.path.isdir(managed) else []
+        # The scripting runtime decides it, not Assembly-CSharp.dll: projects that use
+        # assembly definitions ship their code in their own DLL names, and compressed
+        # builds keep the DLLs inside data.unity3d.
+        if "libmonobdwgc-2.0.so" in libs or "libmono.so" in libs:
             r["backend"] = "Mono"
-            r["dlls"] = len([f for f in os.listdir(managed) if f.endswith(".dll")])
         elif "libil2cpp.so" in libs or has("assets/bin/Data/Managed/Metadata/global-metadata.dat"):
             r["backend"] = "IL2CPP"
         else:
             r["backend"] = "unknown"
+        unity_dlls = re.compile(r"^(Unity|UnityEngine|UnityEditor|System|mscorlib|Mono\.|netstandard|Microsoft\.|nunit)")
+        r["game_dlls"] = [d for d in dlls if not unity_dlls.match(d)]
+        r["dlls_where"] = "Managed/" if dlls else ("inside data.unity3d" if has("assets/bin/Data/data.unity3d") else "not found")
         r["unity_version"], r["version_from"] = unity_version(root)
         r["data_unity3d"] = has("assets/bin/Data/data.unity3d")
     elif "libyoyo.so" in libs:
@@ -91,13 +97,15 @@ def classify(root):
         r["engine"] = "Web (Cordova)"
     else:
         r["engine"] = "native/other"
-    r["arm64"] = any(os.path.isdir(os.path.join(root, "lib", a)) for a in ("arm64-v8a",))
+    libdir = os.path.join(root, "lib")
+    r["arches"] = sorted(os.listdir(libdir)) if os.path.isdir(libdir) else []
+    r["arm64"] = "arm64-v8a" in r["arches"]
     return r
 
 
 def main(dl, work):
     out = []
-    md = ["# Detect", "", "| game | file | unpack | engine | backend | Unity | arm64 |", "|---|---|---|---|---|---|---|"]
+    md = ["# Detect", "", "| game | file | unpack | engine | backend | Unity | arches | game DLLs |", "|---|---|---|---|---|---|---|---|"]
     for game in sorted(os.listdir(dl)):
         for f in sorted(os.listdir(os.path.join(dl, game))):
             path = os.path.join(dl, game, f)
@@ -107,7 +115,8 @@ def main(dl, work):
             r.update(game=game, file=f, notes=notes, root=root)
             out.append(r)
             md.append(f"| {game} | {f} | {'; '.join(notes)} | {r['engine']} | {r.get('backend','')} | "
-                      f"{r.get('unity_version') or ''} | {r['arm64']} |")
+                      f"{r.get('unity_version') or ''} | {' '.join(r['arches'])} | "
+                      f"{' '.join(r.get('game_dlls', [])) or r.get('dlls_where', '')} |")
     os.makedirs("out", exist_ok=True)
     json.dump(out, open("out/detect.json", "w"), indent=1)
     open("out/detect.md", "w").write("\n".join(md) + "\n")
