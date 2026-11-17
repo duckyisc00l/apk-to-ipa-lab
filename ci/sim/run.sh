@@ -54,24 +54,36 @@ for t in 5 $(( WAIT / 2 )) $WAIT; do
   xcrun simctl io "$UDID" screenshot "$OUT/sim-${t}s.png" > /dev/null 2>&1
 done
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
-  if ! command -v idb > /dev/null; then   # at most 8 minutes; without it the steps are skipped
-    # newer Homebrew refuses taps it doesn't trust yet, and Homebrew's Python refuses system-wide pip installs
-    timeout 420 bash -c 'brew tap facebook/fb && { brew trust facebook/fb 2>/dev/null || brew trust --formula facebook/fb/idb-companion 2>/dev/null || true; } && brew install facebook/fb/idb-companion' > "$OUT/idb-install.log" 2>&1
-    timeout 180 bash -c 'python3 -m venv /tmp/idbv && /tmp/idbv/bin/pip install -q fb-idb' >> "$OUT/idb-install.log" 2>&1
-    export PATH="$PATH:/tmp/idbv/bin"
-    command -v idb > /dev/null || { echo "idb install failed:" >> "$OUT/sim.md"; tail -8 "$OUT/idb-install.log" >> "$OUT/sim.md"; }
+  # input: AXe (cameroncooke/AXe, one ready-built program); idb only as a fallback, since its companion
+  # has no ready-made build for older Macs and needs the newest Xcode to compile
+  if ! command -v axe > /dev/null; then
+    timeout 300 bash -c 'brew tap cameroncooke/axe && { brew trust cameroncooke/axe 2>/dev/null || true; } && brew install cameroncooke/axe/axe' > "$OUT/input-install.log" 2>&1
   fi
-  command -v idb > /dev/null || echo "idb not available: input steps skipped" >> "$OUT/sim.md"
-  timeout 60 idb connect "$UDID" >> "$OUT/idb-install.log" 2>&1 || echo "idb connect failed (see idb-install.log)" >> "$OUT/sim.md"
+  if command -v axe > /dev/null; then
+    TAP() { axe tap -x "$1" -y "$2" --udid "$UDID"; }
+    SWIPE() { axe swipe --start-x "$1" --start-y "$2" --end-x "$3" --end-y "$4" --duration 0.2 --udid "$UDID"; }
+    echo "input tool: axe $(axe --version 2>/dev/null | head -1)" >> "$OUT/sim.md"
+  else
+    if ! command -v idb > /dev/null; then
+      timeout 420 bash -c 'brew tap facebook/fb && { brew trust facebook/fb 2>/dev/null || true; } && brew install facebook/fb/idb-companion' >> "$OUT/input-install.log" 2>&1
+      timeout 180 bash -c 'python3 -m venv /tmp/idbv && /tmp/idbv/bin/pip install -q fb-idb' >> "$OUT/input-install.log" 2>&1
+      export PATH="$PATH:/tmp/idbv/bin"
+    fi
+    timeout 60 idb connect "$UDID" >> "$OUT/input-install.log" 2>&1
+    TAP() { idb ui tap --udid "$UDID" "$1" "$2"; }
+    SWIPE() { idb ui swipe --udid "$UDID" "$1" "$2" "$3" "$4" --duration 0.2; }
+    echo "input tool: idb (AXe didn't install; see input-install.log)" >> "$OUT/sim.md"
+  fi
   echo "## input steps" >> "$OUT/sim.md"
   while read -r cmd a b c d; do
     case "$cmd" in
-      tap) if timeout 30 idb ui tap --udid "$UDID" "$a" "$b" >> "$OUT/idb-install.log" 2>&1; then echo "tap $a $b" >> "$OUT/sim.md"; else echo "tap $a $b FAILED" >> "$OUT/sim.md"; fi;;
-      swipe) if timeout 30 idb ui swipe --udid "$UDID" "$a" "$b" "$c" "$d" --duration 0.2 >> "$OUT/idb-install.log" 2>&1; then echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md"; else echo "swipe $a,$b -> $c,$d FAILED" >> "$OUT/sim.md"; fi;;
+      tap) if timeout 30 bash -c "$(declare -f TAP); UDID=$UDID TAP $a $b" >> "$OUT/input-install.log" 2>&1; then echo "tap $a $b" >> "$OUT/sim.md"; else echo "tap $a $b FAILED" >> "$OUT/sim.md"; fi;;
+      swipe) if timeout 30 bash -c "$(declare -f SWIPE); UDID=$UDID SWIPE $a $b $c $d" >> "$OUT/input-install.log" 2>&1; then echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md"; else echo "swipe $a,$b -> $c,$d FAILED" >> "$OUT/sim.md"; fi;;
       wait) sleep "$a";;
       shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
     esac
   done < "$STEPS"
+  [ "$(grep -c FAILED "$OUT/sim.md")" -gt 0 ] && { echo "## input errors (last lines)" >> "$OUT/sim.md"; tail -8 "$OUT/input-install.log" >> "$OUT/sim.md"; }
 fi
 if xcrun simctl spawn "$UDID" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID"; then
   echo "RESULT: still running after ${WAIT}s" | tee -a "$OUT/sim.md"; ok=0
