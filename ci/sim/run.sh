@@ -27,6 +27,7 @@ NAME=$(xcrun simctl list devices | grep "$UDID" | head -1 | sed 's/ (.*//' | xar
 find "$APP" -depth \( -name '*.framework' -o -name '*.dylib' -o -name '*.appex' \) -exec codesign --force --sign - --timestamp=none {} \; 2>/dev/null
 codesign --force --sign - --timestamp=none "$APP" 2>&1 | tail -1
 xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null
+export SIMCTL_CHILD_NSUnbufferedIO=YES   # passed to the app: Foundation output not held back
 sleep 15   # let the home screen finish starting, or the first launch is refused too
 xcrun simctl install "$UDID" "$APP" || { echo "INSTALL FAILED" | tee -a "$OUT/sim.md"; exit 1; }
 before=$(date +%s)
@@ -43,8 +44,9 @@ for try in 1 2 3; do
       --predicate "eventMessage CONTAINS[c] '$BID' OR eventMessage CONTAINS[c] '$EXE'" 2>/dev/null | grep -viE "^Timestamp" | tail -40 >> "$OUT/sim.md"
   fi
 done
-for t in 5 $WAIT; do
-  sleep $(( t == 5 ? 5 : WAIT - 5 ))
+prev=0   # screenshots at 5 s, halfway and at the end
+for t in 5 $(( WAIT / 2 )) $WAIT; do
+  [ "$t" -gt "$prev" ] || continue; sleep $(( t - prev )); prev=$t
   xcrun simctl io "$UDID" screenshot "$OUT/sim-${t}s.png" > /dev/null 2>&1
 done
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
@@ -89,4 +91,8 @@ except Exception as x: print('could not read report:',x)
 P
 done
 tail -40 "$OUT/sim-console.log" >> "$OUT/sim.md" 2>/dev/null
+# engines that log through Apple's system log (Godot, Unity, SDL) don't show in the console file: save that log too
+timeout 120 xcrun simctl spawn "$UDID" log show --start "$(date -r "$before" '+%Y-%m-%d %H:%M:%S')" --style compact \
+  --predicate "process == '$EXE'" 2>/dev/null | grep -viE '^Timestamp|restoration' | tail -300 > "$OUT/sim-applog.log"
+echo "## app's system log (last lines, full in sim-applog.log)" >> "$OUT/sim.md"; tail -25 "$OUT/sim-applog.log" >> "$OUT/sim.md"
 exit $ok

@@ -127,7 +127,7 @@ jobs:
       - name: Publish results to branch r-smoke
         run: |
           mkdir -p /tmp/r
-          for f in $(find art -name '*.log' -o -name '*.txt'); do d=/tmp/r/$(echo "${f#art/}" | tr / -); tail -300 "$f" > "$d"; done
+          for f in $(find art -name '*.log' -o -name '*.txt'); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.png|*.jpg|*.ips) cp "$f" "$d";; *) tail -300 "$f" > "$d";; esac; done
           cp art/ipa-out/LabTest.ipa /tmp/r/ 2>/dev/null || true
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-smoke && git rm -rfq . && rm -rf art ci

@@ -145,6 +145,6 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { path: art, pattern: "*-logs" }
       - run: |
-          mkdir -p /tmp/r; for f in $(find art -type f); do tail -200 "$f" > /tmp/r/$(echo "${f#art/}" | tr / -); done
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.png|*.jpg|*.ips) cp "$f" "$d";; *) tail -200 "$f" > "$d";; esac; done
           cd /tmp/r && git init -q -b r-rn && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git add -A && git commit -qm "rn ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rn
