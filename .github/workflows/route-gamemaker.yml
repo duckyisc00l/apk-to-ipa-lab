@@ -1,13 +1,17 @@
 name: route-gamemaker
 # Skill step G1 on a second, unrelated GameMaker APK: read the data file's version,
 # run it on the open-source Butterscotch runner (Linux, headless), take screenshots.
+# Job "ios" (step G2 + S): the same data file, unchanged, on Butterscotch built for iPhone (ci/gamemaker/ios:
+# OpenGL ES 3 through EAGL, miniaudio, Objective-C app shell) -> unsigned IPA, plus a Simulator run with taps.
 on:
   workflow_dispatch:
     inputs:
       repo: { default: "Ahmadrezadl/legendary-chess" }
+      jobs: { default: "ios", description: "linux, ios or both" }
+      taps: { default: "", description: "Simulator steps in game pixels, ';'-separated (empty = the chess moves below)" }
   push:
     branches: [main]
-    paths: [".github/workflows/route-gamemaker.yml"]
+    paths: [".github/workflows/route-gamemaker.yml", "ci/gamemaker/**"]
 permissions:
   contents: write
 concurrency:
@@ -18,6 +22,7 @@ env:
   GH_TOKEN: ${{ github.token }}
 jobs:
   g1:
+    if: github.event_name == 'push' || contains(inputs.jobs, 'linux') || contains(inputs.jobs, 'both')
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
@@ -70,3 +75,107 @@ jobs:
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-gamemaker && git rm -rfq . && rm -rf ci dl work out engine
           cp -r /tmp/r/. . && git add -A && git commit -qm "gamemaker ${{ github.run_number }}" && git push -f origin r-gamemaker
+
+  ios:
+    if: github.event_name == 'push' || contains(inputs.jobs, 'ios') || contains(inputs.jobs, 'both')
+    runs-on: macos-15-intel
+    timeout-minutes: 75
+    env:
+      BS_COMMIT: ad34ff419de41bed2fa91b1d2ebd3ecfa586ff89
+      TAPS: ${{ inputs.taps }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and find the data file
+        run: |
+          echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
+          python3 ci/detect.py dl work > /dev/null
+          data=$(find work -name game.droid -o -name data.win | head -1); echo "DATA=$data" >> $GITHUB_ENV
+          mkdir -p out/sim; echo "data file: $data ($(du -h "$data" | cut -f1))" | tee out/ios.md
+      - name: Build Butterscotch for iPhone and for the Simulator (static library, PLATFORM=ios)
+        run: |
+          mkdir engine && cd engine && git init -q && git fetch -q --depth 1 https://github.com/ButterscotchRunner/Butterscotch $BS_COMMIT && git checkout -q FETCH_HEAD && cd ..
+          python3 -I ci/gamemaker/ios/patch_engine.py engine | tee -a out/ios.md
+          common="-DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY -DCMAKE_BUILD_TYPE=Release
+            -DPLATFORM=ios -DENABLE_MODERN_GL=ON -DENABLE_LEGACY_GL=OFF -DAUDIO_BACKEND=miniaudio -DVIDEO_BACKEND=none"
+          for kind in device sim; do
+            if [ $kind = device ]; then sys="-DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64"
+            else sys="-DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=x86_64"; fi
+            cmake -S engine -B build-$kind $common $sys > out/cmake-$kind.log 2>&1
+            cmake --build build-$kind -j4 > out/build-$kind.log 2>&1; echo "engine build ($kind) exit $?" | tee -a out/ios.md
+            grep -E "error:" out/build-$kind.log | sort -u | head -15 | tee -a out/ios.md
+            ls build-$kind/*.a | tee -a out/ios.md
+          done
+      - name: Assemble the apps (unsigned IPA for iPhone, .app for the Simulator)
+        run: |
+          read GW GH < <(python3 - "$DATA" <<'E'
+          import struct, sys
+          d = open(sys.argv[1], "rb").read(); i = 8
+          while i < len(d):
+              n, s = d[i:i+4], struct.unpack("<I", d[i+4:i+8])[0]
+              if n == b"GEN8":
+                  g = d[i+8:i+8+s]; print(*struct.unpack("<2I", g[60:68])); break
+              i += 8 + s
+          E
+          )
+          echo "game window $GW x $GH" | tee -a out/ios.md; echo "GW=$GW" >> $GITHUB_ENV; echo "GH=$GH" >> $GITHUB_ENV
+          NAME=$(basename "$REPO"); BID="lab.gamemaker.$(echo "$NAME" | tr -cd 'a-zA-Z0-9')"
+          for kind in device sim; do
+            if [ $kind = device ]; then sdk=iphoneos; target=arm64-apple-ios15.0; plat=iPhoneOS
+            else sdk=iphonesimulator; target=x86_64-apple-ios15.0-simulator; plat=iPhoneSimulator; fi
+            APP=app-$kind/Payload/App.app; mkdir -p "$APP"
+            cp -R "$(dirname "$DATA")" "$APP/game"     # the data file and the files next to it (sounds, included files), unchanged
+            xcrun -sdk $sdk clang -target $target -isysroot "$(xcrun --sdk $sdk --show-sdk-path)" -fobjc-arc -O2 \
+              -Ici/gamemaker/ios ci/gamemaker/ios/main.m -Wl,-all_load $(find build-$kind -name '*.a') -lc++ \
+              -framework UIKit -framework Foundation -framework QuartzCore -framework OpenGLES -framework CoreGraphics \
+              -framework AVFoundation -framework AudioToolbox -framework CoreAudio -o "$APP/App" > out/link-$kind.log 2>&1
+            echo "link ($kind) exit $?" | tee -a out/ios.md; grep -E "error|Undefined" out/link-$kind.log | head -20 | tee -a out/ios.md
+            python3 - "$APP/Info.plist" "$NAME" "$BID" "$plat" "$GW" "$GH" <<'E'
+          import plistlib, sys
+          out, name, bid, plat, w, h = sys.argv[1:]
+          o = ["UIInterfaceOrientationPortrait"] if int(h) > int(w) else ["UIInterfaceOrientationLandscapeLeft", "UIInterfaceOrientationLandscapeRight"]
+          plistlib.dump({"CFBundleDisplayName": name, "CFBundleName": name[:15], "CFBundleExecutable": "App", "CFBundleIdentifier": bid,
+              "CFBundlePackageType": "APPL", "CFBundleShortVersionString": "1.0", "CFBundleVersion": "1", "CFBundleSupportedPlatforms": [plat],
+              "LSRequiresIPhoneOS": True, "MinimumOSVersion": "15.0", "UIDeviceFamily": [1, 2], "UILaunchScreen": {}, "UIRequiresFullScreen": True,
+              "UIStatusBarHidden": True, "UISupportedInterfaceOrientations": o, "UISupportedInterfaceOrientations~ipad": o,
+              "UIFileSharingEnabled": True, "LSSupportsOpeningDocumentsInPlace": True}, open(out, "wb"))
+          E
+          done
+          (cd app-device && zip -qry ../out/$NAME-unsigned.ipa Payload); ls -la out/*.ipa | tee -a out/ios.md; file app-*/Payload/App.app/App | tee -a out/ios.md
+      - name: Run in the iPhone Simulator, tap through, take screenshots
+        run: |
+          # tap targets are in game pixels; turn them into simulator points (the runner fits the game to the screen, centred)
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json,sys,re
+          d=json.load(sys.stdin)['devices']
+          rts=sorted([k for k in d if 'iOS' in k], key=lambda k:[int(x) for x in re.findall(r'\d+',k)])
+          for rt in reversed(rts):
+              ph=[x for x in d[rt] if x['name'].startswith('iPhone')]
+              if ph: print(ph[-1]['udid']); break")
+          xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null
+          xcrun simctl io "$UDID" screenshot /tmp/home.png > /dev/null 2>&1
+          # Legendary Chess default: wait past the splash, then move the white e-pawn e2-e4 and the black e-pawn e7-e5.
+          # Board: 8 squares of 128 px from (28,568) in a 1080x2160 game.
+          [ -n "$TAPS" ] || TAPS="wait 6;shot board;tap 604 1400;wait 1;shot selected;tap 604 1144;wait 2;shot e4;tap 604 760;wait 1;tap 604 1016;wait 2;shot e5;tap 120 1700;wait 2;shot reset"
+          python3 - /tmp/home.png "$GW" "$GH" "$TAPS" > out/sim/steps.txt <<'E'
+          import struct, sys
+          png, gw, gh, taps = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
+          W, H = struct.unpack(">2I", open(png, "rb").read()[16:24])
+          if (H > W) != (gh > gw): W, H = H, W     # the app turns the screen to the game's orientation
+          s = min(W / gw, H / gh); ox, oy = (W - gw * s) / 2, (H - gh * s) / 2
+          for step in taps.split(";"):
+              p = step.split()
+              if p and p[0] == "tap":
+                  print("tap", round((ox + int(p[1]) * s) / 3), round((oy + int(p[2]) * s) / 3))   # @3x iPhones
+              else:
+                  print(step.strip())
+          print(f"# screen {W}x{H} px, scale {s:.3f}, offset {ox:.0f},{oy:.0f}", file=sys.stderr)
+          E
+          cat out/sim/steps.txt | tee -a out/ios.md
+          ci/sim/run.sh app-sim/Payload/App.app out/sim 20 out/sim/steps.txt; echo "sim exit $?" | tee -a out/ios.md
+      - name: Publish to branch r-gamemaker-ios
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp -R out/. /tmp/r/; for f in out/*.log; do tail -120 "$f" > /tmp/r/$(basename "$f"); done
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout -q --orphan r-gamemaker-ios && git rm -rfq . && rm -rf ci dl work out engine build-* app-*
+          cp -R /tmp/r/. . && git add -A && git commit -qm "gamemaker ios ${{ github.run_number }}" && git push -qf origin r-gamemaker-ios
