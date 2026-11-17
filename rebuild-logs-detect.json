@@ -1,0 +1,21 @@
+[
+ {
+  "libs": [
+   "gdbserver",
+   "libUE4.so",
+   "libgnustl_shared.so",
+   "libgvr.so"
+  ],
+  "engine": "Unreal",
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "ankitpassi141__Wanderer-VR",
+  "file": "MadTitans_WandererVR.apk",
+  "notes": [
+   "OBB main.obb.png: zip, unpacked to all/obb/"
+  ],
+  "root": "work/ankitpassi141__Wanderer-VR"
+ }
+]

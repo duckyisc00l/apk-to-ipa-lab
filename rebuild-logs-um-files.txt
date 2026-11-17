@@ -1,0 +1,129 @@
+## UE Viewer files
+Game/Meshes/Rocks/Rocks3/large4.gltf
+Game/Meshes/Rocks/Rocks3/texture_large.tga
+Game/Meshes/Rocks/Rocks3/texture_large_Mat.mat
+Game/Meshes/Rocks/Rocks3/rock11-nrm.tga
+Game/Meshes/Rocks/Rocks3/texture_large_Mat.props.txt
+Game/Meshes/Rocks/Rocks3/large4.bin
+Game/Meshes/Rocks/RockSamples/large_rock1.bin
+Game/Meshes/Rocks/RockSamples/smal_rock_2_Mat.mat
+Game/Meshes/Rocks/RockSamples/small_rock_0.tga
+Game/Meshes/Rocks/RockSamples/small_rock_2.gltf
+Game/Meshes/Rocks/RockSamples/small_rock_Mat.props.txt
+Game/Meshes/Rocks/RockSamples/large_rock2.tga
+Game/Meshes/Rocks/RockSamples/large_rock_2.bin
+Game/Meshes/Rocks/RockSamples/largerock-nrm.tga
+Game/Meshes/Rocks/RockSamples/largerock2-nrm.tga
+Game/Meshes/Rocks/RockSamples/smal_rock_2_Mat.props.txt
+Game/Meshes/Rocks/RockSamples/large_rock2_Mat.mat
+Game/Meshes/Rocks/RockSamples/large_rock1.gltf
+Game/Meshes/Rocks/RockSamples/small_rock.gltf
+Game/Meshes/Rocks/RockSamples/small_rock_2.bin
+Game/Meshes/Rocks/RockSamples/small_rock_Mat.mat
+Game/Meshes/Rocks/RockSamples/Screenshot__172__Mat.props.txt
+Game/Meshes/Rocks/RockSamples/large_rock2_Mat.props.txt
+Game/Meshes/Rocks/RockSamples/Screenshot__172_.tga
+Game/Meshes/Rocks/RockSamples/small_rock.bin
+Game/Meshes/Rocks/RockSamples/smallrock1-nrm.tga
+Game/Meshes/Rocks/RockSamples/smal_rock_2.tga
+Game/Meshes/Rocks/RockSamples/Screenshot__172__Mat.mat
+Game/Meshes/Rocks/RockSamples/large_rock_2.gltf
+Game/Meshes/Rocks/RockSamples/smallrock2-nrm.tga
+Game/Meshes/Rocks/Rock2/small_rock_0.tga
+Game/Meshes/Rocks/Rock2/small_rock_Mat.props.txt
+Game/Meshes/Rocks/Rock2/small_rock.gltf
+Game/Meshes/Rocks/Rock2/small_rock_Mat.mat
+Game/Meshes/Rocks/Rock2/small_rock.bin
+Game/Meshes/Rocks/Rock1/rock1-nrm.tga
+Game/Meshes/Rocks/Rock1/ROCK.gltf
+Game/Meshes/Rocks/Rock1/ROCK.bin
+Game/Meshes/Rocks/HealthProp/health-nrm.tga
+Game/Meshes/Rocks/HealthProp/health-nrm2.tga
+Game/Meshes/Rocks/HealthProp/TexturesCom_Cliffs0464_7_seamless_S.tga
+Game/Meshes/Rocks/HealthProp/TexturesCom_Cliffs0464_7_seamless_S_Mat.props.txt
+Game/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.bin
+Game/Meshes/Rocks/HealthProp/healthprop-nrm.tga
+Game/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.gltf
+Game/Meshes/Rocks/HealthProp/health-alpha.tga
+Game/Meshes/Rocks/HealthProp/TexturesCom_Cliffs0464_7_seamless_S_Mat.mat
+Game/Meshes/Mountains/MountainBG/mountain_2.gltf
+Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M.tga
+Game/Meshes/Mountains/MountainBG/mountain_1.bin
+Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M_Mat.mat
+Game/Meshes/Mountains/MountainBG/mountain_1.gltf
+Game/Meshes/Mountains/MountainBG/mountain_2.bin
+Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M_Mat.props.txt
+Engine/EngineMaterials/T_Default_Material_Grid_N.tga
+Engine/EngineMaterials/T_Default_Material_Grid_M.tga
+Engine/EngineMaterials/WorldGridMaterial.props.txt
+Engine/EngineMaterials/WorldGridMaterial.mat
+## export/um/Game/Meshes/Mountains/MountainBG/mountain_1.gltf materials/images/textures
+{'materials': [{'name': 'TexturesCom_LandscapeCanyon0017_2_M_Mat', 'pbrMetallicRoughness': {'baseColorFactor': [0.3, 0.3, 0.3, 1.0], 'metallicFactor': 0.1, 'roughnessFactor': 0.5}}], 'images': None, 'textures': None, 'samplers': None}
+## export/um/Game/Meshes/Rocks/Rocks3/texture_large_Mat.mat
+Diffuse=texture_large
+Other[0]=rock11-nrm
+## export/um/Game/Meshes/Rocks/Rocks3/texture_large_Mat.props.txt
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[2] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/Meshes/Rocks/Rocks3/texture_large.texture_large'
+    ReferencedTextures[1] = Texture2D'/Game/Meshes/Rocks/Rocks3/rock11-nrm.rock11-nrm'
+}
+Expressions[5] =
+{
+    Expressions[2] = MaterialExpressionTextureSample'/Game/Meshes/Rocks/Rocks3/texture_large_Mat.MaterialExpressionTextureSample_0'
+    Expressions[4] = MaterialExpressionTextureSample'/Game/Meshes/Rocks/Rocks3/texture_large_Mat.MaterialExpressionTextureSample_7'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}
+## export/um/Game/Meshes/Rocks/RockSamples/smal_rock_2_Mat.mat
+Diffuse=smal_rock_2
+Other[0]=smallrock2-nrm
+## export/um/Game/Meshes/Rocks/RockSamples/small_rock_Mat.props.txt
+TwoSided = false
+bDisableDepthTest = false
+bIsMasked = false
+ReferencedTextures[2] =
+{
+    ReferencedTextures[0] = Texture2D'/Game/Meshes/Rocks/RockSamples/small_rock.small_rock_0'
+    ReferencedTextures[1] = Texture2D'/Game/Meshes/Rocks/RockSamples/smallrock1-nrm.smallrock1-nrm'
+}
+Expressions[5] =
+{
+    Expressions[2] = MaterialExpressionTextureSample'/Game/Meshes/Rocks/RockSamples/small_rock_Mat.MaterialExpressionTextureSample_0'
+    Expressions[4] = MaterialExpressionTextureSample'/Game/Meshes/Rocks/RockSamples/small_rock_Mat.MaterialExpressionTextureSample_11'
+}
+CachedExpressionData =
+{
+    Parameters =
+    {
+        Entries[5] =
+        {
+            Entries[0] = { ParameterInfos[0]={} }
+            Entries[1] = { ParameterInfos[0]={} }
+            Entries[2] = { ParameterInfos[0]={} }
+            Entries[3] = { ParameterInfos[0]={} }
+            Entries[4] = { ParameterInfos[0]={} }
+        }
+        ScalarValues[0] = {}
+        VectorValues[0] = {}
+        TextureValues[0] = {}
+    }
+    ReferencedTextures[0] = {}

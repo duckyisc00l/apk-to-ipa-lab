@@ -1,0 +1,57 @@
+Pak ./work/ankitpassi141__Wanderer-VR/obb/main.obb/MyProject2/Content/Paks/MyProject2-Android_ETC1.pak: 1553 files, version 4
+Found 1552 game files (0 skipped) in 157 folders at path "./work/ankitpassi141__Wanderer-VR/obb/main.obb/MyProject2/Content/Paks"
+Scanned game directory in 0.0 sec, 1532 allocs, 0.29 MBytes serialized in 2 calls.
+Loading package: /Game/Meshes/Mountains/MountainBG/mountain_1.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 62 Exports: 3 Imports: 9 Game: 1000100
+Loaded in 0.0 sec, 24 allocs, 0.00 MBytes serialized in 1 calls.
+Loading StaticMesh4 mountain_1 from package /Game/Meshes/Mountains/MountainBG/mountain_1.uasset
+Loading package: /Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M_Mat.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 96 Exports: 2 Imports: 7 Game: 1000100
+Loading Material3 TexturesCom_LandscapeCanyon0017_2_M_Mat from package /Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M_Mat.uasset
+StructProperty: unknown UMaterial3 BaseColor
+Loading package: /Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 17 Exports: 1 Imports: 3 Game: 1000100
+Loading Texture2D TexturesCom_LandscapeCanyon0017_2_M from package /Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M.uasset
+Exporting objects ...
+Exporting StaticMesh4 mountain_1 to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Mountains/MountainBG/mountain_1.gltf
+Exporting Material3 TexturesCom_LandscapeCanyon0017_2_M_Mat to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M_Mat.mat
+Exporting Texture2D TexturesCom_LandscapeCanyon0017_2_M to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Mountains/MountainBG/TexturesCom_LandscapeCanyon0017_2_M.tga
+Memory: allocated 7503561 bytes in 1577 blocks
+Exported 3/3 objects in 0.1 sec
+Pak ./work/ankitpassi141__Wanderer-VR/obb/main.obb/MyProject2/Content/Paks/MyProject2-Android_ETC1.pak: 1553 files, version 4
+Found 1552 game files (0 skipped) in 157 folders at path "./work/ankitpassi141__Wanderer-VR/obb/main.obb/MyProject2/Content/Paks"
+Scanned game directory in 0.0 sec, 1532 allocs, 0.29 MBytes serialized in 2 calls.
+Loading package: /Game/Meshes/Rocks/Rock2/small_rock.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 70 Exports: 4 Imports: 11 Game: 1000100
+Loaded in 0.0 sec, 24 allocs, 0.00 MBytes serialized in 1 calls.
+Loading StaticMesh4 small_rock from package /Game/Meshes/Rocks/Rock2/small_rock.uasset
+Loading package: /Game/Meshes/Rocks/Rock2/small_rock_Mat.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 119 Exports: 3 Imports: 9 Game: 1000100
+Loading Texture2D small_rock_0 from package /Game/Meshes/Rocks/Rock2/small_rock.uasset
+Loading Material3 small_rock_Mat from package /Game/Meshes/Rocks/Rock2/small_rock_Mat.uasset
+StructProperty: unknown UMaterial3 BaseColor
+StructProperty: unknown UMaterial3 Roughness
+Loading package: /Game/Meshes/Rocks/Rock1/rock1-nrm.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 25 Exports: 1 Imports: 3 Game: 1000100
+Loading Texture2D rock1-nrm from package /Game/Meshes/Rocks/Rock1/rock1-nrm.uasset
+Exporting objects ...
+Exporting StaticMesh4 small_rock to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/Rock2/small_rock.gltf
+Exporting Texture2D small_rock_0 to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/Rock2/small_rock_0.tga
+Exporting Material3 small_rock_Mat to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/Rock2/small_rock_Mat.mat
+Exporting Texture2D rock1-nrm to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/Rock1/rock1-nrm.tga
+Memory: allocated 9070737 bytes in 1585 blocks
+Exported 4/4 objects in 0.0 sec
+Pak ./work/ankitpassi141__Wanderer-VR/obb/main.obb/MyProject2/Content/Paks/MyProject2-Android_ETC1.pak: 1553 files, version 4
+Found 1552 game files (0 skipped) in 157 folders at path "./work/ankitpassi141__Wanderer-VR/obb/main.obb/MyProject2/Content/Paks"
+Scanned game directory in 0.0 sec, 1532 allocs, 0.29 MBytes serialized in 2 calls.
+Loading package: /Game/Meshes/Rocks/RockSamples/small_rock.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 70 Exports: 4 Imports: 11 Game: 1000100
+Loaded in 0.0 sec, 28 allocs, 0.00 MBytes serialized in 1 calls.
+Loading StaticMesh4 small_rock from package /Game/Meshes/Rocks/RockSamples/small_rock.uasset
+Loading package: /Game/Meshes/Rocks/RockSamples/small_rock_Mat.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 108 Exports: 3 Imports: 9 Game: 1000100
+Loading Texture2D small_rock_0 from package /Game/Meshes/Rocks/RockSamples/small_rock.uasset
+Loading Material3 small_rock_Mat from package /Game/Meshes/Rocks/RockSamples/small_rock_Mat.uasset
+StructProperty: unknown UMaterial3 BaseColor
+StructProperty: unknown UMaterial3 Roughness
+Loading package: /Game/Meshes/Rocks/RockSamples/smallrock1-nrm.uasset Ver: 513/0 Engine: 0 [Unversioned] Names: 25 Exports: 1 Imports: 3 Game: 1000100
+Loading Texture2D smallrock1-nrm from package /Game/Meshes/Rocks/RockSamples/smallrock1-nrm.uasset
+Exporting objects ...
+Exporting StaticMesh4 small_rock to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/RockSamples/small_rock.gltf
+Exporting Texture2D small_rock_0 to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/RockSamples/small_rock_0.tga
+Exporting Material3 small_rock_Mat to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/RockSamples/small_rock_Mat.mat
+Exporting Texture2D smallrock1-nrm to /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/um/Game/Meshes/Rocks/RockSamples/smallrock1-nrm.tga
+Memory: allocated 9070666 bytes in 1585 blocks
+Exported 4/4 objects in 0.0 sec

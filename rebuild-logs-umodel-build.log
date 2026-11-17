@@ -1,0 +1,200 @@
+Unreal/Shaders/../Shaders.h does not exists, creating ...
+Generating makefile from UmodelTool/umodel.project ...
+./libs/oodle/lib/Linux/liboo2corelinux64.a doesn't exist
+Export3D.cpp
+Exporters.cpp
+ExportGLTF.cpp
+ExportMaterial.cpp
+ExportMd5.cpp
+ExportPsk.cpp
+ExportSound.cpp
+ExportTexture.cpp
+ExportThirdParty.cpp
+GameDatabase.cpp
+TypeInfo.cpp
+UnCore.cpp
+UnCoreCompression.cpp
+UnCoreDecrypt.cpp
+UnCoreSerialize.cpp
+UnObject.cpp
+UnObject4.cpp
+UnRenderer.cpp
+FileSystemUtils.cpp
+GameFileSystem.cpp
+GameFileSystemGears4.cpp
+IOStoreFileSystem.cpp
+UnArchivePak.cpp
+UnHavok.cpp
+UnMeshBatman.cpp
+UnMeshBioshock.cpp
+UnMeshRune.cpp
+UnUbisoft.cpp
+MeshCommon.cpp
+SkeletalMesh.cpp
+UnTexture.cpp
+UnTexture2.cpp
+UnTexture3.cpp
+UnTexture4.cpp
+UnAnim2.cpp
+UnAnim3.cpp
+UnAnim4.cpp
+UnMesh1.cpp
+UnMesh2.cpp
+UnMesh3.cpp
+UnMesh4.cpp
+PackageUtils.cpp
+UnPackage.cpp
+UnPackage2.cpp
+Unreal/UnrealPackage/UnPackage.cpp: In destructor ‘virtual UnPackage::~UnPackage()’:
+Unreal/UnrealPackage/UnPackage.cpp:618:9: warning: possible problem detected in invocation of operator ‘delete []’ [-Wdelete-incomplete]
+  618 |         delete[] ExportIndices_IOS;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Unreal/UnrealPackage/UnPackage.cpp:618:18: warning: invalid use of incomplete type ‘struct FPackageObjectIndex’
+  618 |         delete[] ExportIndices_IOS;
+      |                  ^~~~~~~~~~~~~~~~~
+In file included from Unreal/UnrealPackage/UnPackage.cpp:5:
+Unreal/UnrealPackage/UnPackage.h:254:16: note: forward declaration of ‘struct FPackageObjectIndex’
+  254 |         struct FPackageObjectIndex* ExportIndices_IOS;
+      |                ^~~~~~~~~~~~~~~~~~~
+Unreal/UnrealPackage/UnPackage.cpp:618:9: note: neither the destructor nor the class-specific operator ‘delete []’ will be called, even if they are declared when the class is defined
+  618 |         delete[] ExportIndices_IOS;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+UnPackage3.cpp
+UnPackage4.cpp
+UnPackageReader.cpp
+TextureNVTT.cpp
+TexturePNG.cpp
+MaterialViewer.cpp
+MeshViewer.cpp
+ObjectViewer.cpp
+SkelMeshViewer.cpp
+StatMeshViewer.cpp
+VertMeshViewer.cpp
+MeshInstance.cpp
+SkelMeshInstance.cpp
+StatMeshInstance.cpp
+VertMeshInstance.cpp
+Core.cpp
+CoreGL.cpp
+CoreWin32.cpp
+GLBind.cpp
+GLText.cpp
+GlWindow.cpp
+Math3D.cpp
+Memory.cpp
+Parallel.cpp
+TextContainer.cpp
+Main.cpp
+MiscStrings.cpp
+PackageDialog.cpp
+PackageScanDialog.cpp
+ProgressDialog.cpp
+SettingsDialog.cpp
+StartupDialog.cpp
+UmodelApp.cpp
+UmodelCommands.cpp
+UmodelSettings.cpp
+lzo_init.c
+lzo1x_d2.c
+lzxd.c
+lz4.c
+rijndael.c
+bits.cpp
+bptc-tables.cpp
+clamp.cpp
+convert.cpp
+dds.cpp
+decompress-bptc-float.cpp
+decompress-bptc.cpp
+decompress-eac.cpp
+decompress-etc.cpp
+file-info.cpp
+half-float.cpp
+misc.cpp
+texture.cpp
+BlockDXT.cpp
+ColorBlock.cpp
+In file included from ./libs/nvtt/nvcore/Containers.h:20,
+                 from ./libs/nvtt/nvmath/Vector.h:7,
+                 from ./libs/nvtt/nvmath/Color.h:7,
+                 from ./libs/nvtt/nvimage/ColorBlock.h:6,
+                 from ./libs/nvtt/nvimage/BlockDXT.cpp:26:
+./libs/nvtt/nvcore/Memory.h:72:18: warning: declaration of ‘void operator delete(void*)’ has a different exception specifier
+   72 | FORCEINLINE void operator delete (void *p) //throw()
+      |                  ^~~~~~~~
+In file included from ./libs/nvtt/nvcore/Memory.h:11:
+/usr/include/c++/15/new:143:6: note: from previous declaration ‘void operator delete(void*) noexcept’
+  143 | void operator delete(void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+./libs/nvtt/nvcore/Memory.h:90:18: warning: declaration of ‘void operator delete [](void*)’ has a different exception specifier
+   90 | FORCEINLINE void operator delete [] (void * p) //throw()
+      |                  ^~~~~~~~
+/usr/include/c++/15/new:145:6: note: from previous declaration ‘void operator delete [](void*) noexcept’
+  145 | void operator delete[](void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+In file included from ./libs/nvtt/nvcore/Containers.h:20,
+                 from ./libs/nvtt/nvmath/Vector.h:7,
+                 from ./libs/nvtt/nvmath/Color.h:7,
+                 from ./libs/nvtt/nvimage/ColorBlock.h:6,
+                 from ./libs/nvtt/nvimage/ColorBlock.cpp:4:
+./libs/nvtt/nvcore/Memory.h:72:18: warning: declaration of ‘void operator delete(void*)’ has a different exception specifier
+   72 | FORCEINLINE void operator delete (void *p) //throw()
+      |                  ^~~~~~~~
+In file included from ./libs/nvtt/nvcore/Memory.h:11:
+/usr/include/c++/15/new:143:6: note: from previous declaration ‘void operator delete(void*) noexcept’
+  143 | void operator delete(void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+./libs/nvtt/nvcore/Memory.h:90:18: warning: declaration of ‘void operator delete [](void*)’ has a different exception specifier
+   90 | FORCEINLINE void operator delete [] (void * p) //throw()
+      |                  ^~~~~~~~
+/usr/include/c++/15/new:145:6: note: from previous declaration ‘void operator delete [](void*) noexcept’
+  145 | void operator delete[](void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+DirectDrawSurface.cpp
+In file included from ./libs/nvtt/nvcore/Containers.h:20,
+                 from ./libs/nvtt/nvimage/DirectDrawSurface.cpp:25:
+./libs/nvtt/nvcore/Memory.h:72:18: warning: declaration of ‘void operator delete(void*)’ has a different exception specifier
+   72 | FORCEINLINE void operator delete (void *p) //throw()
+      |                  ^~~~~~~~
+In file included from ./libs/nvtt/nvcore/Memory.h:11:
+/usr/include/c++/15/new:143:6: note: from previous declaration ‘void operator delete(void*) noexcept’
+  143 | void operator delete(void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+./libs/nvtt/nvcore/Memory.h:90:18: warning: declaration of ‘void operator delete [](void*)’ has a different exception specifier
+   90 | FORCEINLINE void operator delete [] (void * p) //throw()
+      |                  ^~~~~~~~
+/usr/include/c++/15/new:145:6: note: from previous declaration ‘void operator delete [](void*) noexcept’
+  145 | void operator delete[](void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+Image.cpp
+In file included from ./libs/nvtt/nvcore/Containers.h:20,
+                 from ./libs/nvtt/nvmath/Vector.h:7,
+                 from ./libs/nvtt/nvmath/Color.h:7,
+                 from ./libs/nvtt/nvimage/Image.cpp:6:
+./libs/nvtt/nvcore/Memory.h:72:18: warning: declaration of ‘void operator delete(void*)’ has a different exception specifier
+   72 | FORCEINLINE void operator delete (void *p) //throw()
+      |                  ^~~~~~~~
+In file included from ./libs/nvtt/nvcore/Memory.h:11:
+/usr/include/c++/15/new:143:6: note: from previous declaration ‘void operator delete(void*) noexcept’
+  143 | void operator delete(void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+./libs/nvtt/nvcore/Memory.h:90:18: warning: declaration of ‘void operator delete [](void*)’ has a different exception specifier
+   90 | FORCEINLINE void operator delete [] (void * p) //throw()
+      |                  ^~~~~~~~
+/usr/include/c++/15/new:145:6: note: from previous declaration ‘void operator delete [](void*) noexcept’
+  145 | void operator delete[](void*) _GLIBCXX_TXN_SAFE _GLIBCXX_USE_NOEXCEPT
+      |      ^~~~~~~~
+PVRTDecompress.cpp
+astc_block_sizes2.cpp
+astc_color_unquantize.cpp
+astc_decompress_symbolic.cpp
+astc_image_load_store.cpp
+astc_integer_sequence.cpp
+astc_misc.cpp
+astc_partition_tables.cpp
+astc_percentile_tables.cpp
+astc_quantization.cpp
+astc_symbolic_physical.cpp
+astc_weight_quant_xfer_tables.cpp
+softfloat.cpp
+Linking umodel

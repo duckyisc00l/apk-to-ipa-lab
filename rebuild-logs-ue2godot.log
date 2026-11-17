@@ -1,0 +1,200 @@
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 ERR] Failed to export
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 ERR] Failed to export
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 ERR] Failed to export
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 ERR] Failed to export
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 ERR] Failed to export
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 ERR] Failed to export
+System.ArgumentNullException: Value cannot be null. (Parameter 'Mesh has no LOD data')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at CUE4Parse_Conversion.Dto.StaticMeshDto..ctor(UStaticMesh mesh, ExportOptions options, USplineMeshComponent spline) in /_/CUE4Parse-Conversion/Dto/MeshDto.cs:line 239
+   at CUE4Parse_Conversion.Exporters.StaticMeshExporter.BuildFiles(UStaticMesh originalMesh, IMeshExportFormat format) in /_/CUE4Parse-Conversion/Exporters/StaticMeshExporter.cs:line 17
+   at CUE4Parse_Conversion.Exporters.MeshExporter`1.BuildExportFiles(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/MeshExporter.cs:line 31
+   at CUE4Parse_Conversion.Exporters.ExporterBase.ExportAsync(CancellationToken ct) in /_/CUE4Parse-Conversion/Exporters/ExporterBase.cs:line 73
+[06:10:18 WRN] Incorrect type conversion from 0 (FloatProperty) to CUE4Parse.UE4.Objects.Engine.FPerPlatformFloat
+[06:10:19 ERR] Could not read StaticMesh named mountain_1 correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Mountains/MountainBG/mountain_1.uexp | Pos:2151749 Length:3296591 (65.3% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named mountain_2 correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Mountains/MountainBG/mountain_2.uexp | Pos:2050760 Length:3068146 (66.8% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named SPACE_SHUTTLE correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.uexp | Pos:28263 Length:44737 (63.2% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named small_rock correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/Rock2/small_rock.uexp | Pos:7337 Length:2803083 (0.3% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named large_rock1 correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/RockSamples/large_rock1.uexp | Pos:19657 Length:27147 (72.4% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named large_rock_2 correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/RockSamples/large_rock_2.uexp | Pos:37557 Length:47423 (79.2% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named small_rock correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/RockSamples/small_rock.uexp | Pos:7409 Length:2803155 (0.3% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:19 ERR] Could not read StaticMesh named small_rock_2 correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/RockSamples/small_rock_2.uexp | Pos:10606 Length:15600 (68.0% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:20 WRN] Incorrect type conversion from 0 (FloatProperty) to CUE4Parse.UE4.Objects.Engine.FPerPlatformFloat
+[06:10:20 ERR] Could not read StaticMesh named ROCK correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/Rock1/ROCK.uexp | Pos:39883 Length:54589 (73.1% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+[06:10:20 ERR] Could not read StaticMesh named large4 correctly
+CUE4Parse.UE4.Exceptions.VersionException: Read size is bigger than remaining archive length.
+FByteArchive Info: MyProject2/Content/Meshes/Rocks/Rocks3/large4.uexp | Pos:55483 Length:88557 (62.7% done)
+   at CUE4Parse.UE4.Readers.FArchive.CheckReadSize(Int32 length) in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 780
+   at CUE4Parse.UE4.Readers.FArchive.ReadBulkArray[T]() in /_/CUE4Parse/UE4/Readers/FArchive.cs:line 232
+   at CUE4Parse.UE4.Objects.Meshes.FPositionVertexBuffer..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Objects/Meshes/FPositionVertexBuffer.cs:line 90
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources.SerializeBuffersLegacy(FArchive Ar, FStripDataFlags stripDataFlags) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 202
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshLODResources..ctor(FArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshLODResources.cs:line 82
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData.<>c__DisplayClass8_0.<.ctor>b__0() in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.FStaticMeshRenderData..ctor(FAssetArchive Ar) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/FStaticMeshRenderData.cs:line 63
+   at CUE4Parse.UE4.Assets.Exports.StaticMesh.UStaticMesh.Deserialize(FAssetArchive Ar, Int64 validPos) in /_/CUE4Parse/UE4/Assets/Exports/StaticMesh/UStaticMesh.cs:line 201
+   at CUE4Parse.UE4.Assets.AbstractUePackage.DeserializeObject(UObject obj, FAssetArchive Ar, Int64 serialSize) in /_/CUE4Parse/UE4/Assets/AbstractUePackage.cs:line 90
+files: 1553
+maps: MyProject2/Content/Levels/Level01-Actual.umap, MyProject2/Content/Levels/Level01.umap, MyProject2/Content/Levels/Level02-Actual.umap
+MyProject2/Content/Levels/Level01-Actual.umap: 68 actors, 43 placed meshes, 1 lights
+MyProject2/Content/Levels/Level01.umap: 12 actors, 1 placed meshes, 0 lights
+MyProject2/Content/Levels/Level02-Actual.umap: 90 actors, 68 placed meshes, 1 lights
+OK   Engine/Content/BasicShapes/Cube.Cube: flags=PKG_FilterEditorOnly ue4ver=513 licensee=LIC_NONE bCooked=True engine=0.0.0-0
+FAIL MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.SPACE_SHUTTLE: flags=PKG_FilterEditorOnly ue4ver=513 licensee=LIC_NONE bCooked=True engine=0.0.0-0
+no LODs in MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.SPACE_SHUTTLE: RenderData=null
+{"Type":"StaticMesh","Name":"SPACE_SHUTTLE","Flags":"RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted","Class":"UScriptClass'StaticMesh'","Package":"MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE","Properties":{"StaticMaterials":[{"MaterialSlotName":"Material","UVChannelData":{"bInitialized":true,"bOverrideDensities":false,"LocalUVDensities":1002.1436,"LocalUVDensities[1]":878.83215,"LocalUVDensities[2]":0.0,"LocalUVDensities[3]":0.0}}],"LightmapUVDensity":878.83215,"LightMapResolution":64,"LightMapCoordinateIndex":1,"ExtendedBounds":{"Origin":{"X":6.029846,"Y":-39.981544,"Z":218.57715},"BoxExtent":{"X":131.83621,"Y":120.23705,"Z":271.18048},"SphereRadius":313.51224}},"BodySetup":{"ObjectName":"BodySetup'SPACE_SHUTTLE:BodySetup_0'","ObjectPath":"MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.0"},"NavCollision":{"ObjectName":"NavCollision'SPACE_SHUTTLE:NavCollision_3'","ObjectPath":"MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.1"},"LightingGuid":"8B9914F0-4D97113D-71FC63A1-3C0AC0DF","RenderData":null}
+meshes exported: 2 of 12
+  failed MyProject2/Content/Meshes/Rocks/RockSamples/large_rock_2.large_rock_2: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Mountains/MountainBG/mountain_2.mountain_2: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/RockSamples/large_rock1.large_rock1: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Mountains/MountainBG/mountain_1.mountain_1: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/HealthProp/SPACE_SHUTTLE.SPACE_SHUTTLE: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/RockSamples/small_rock_2.small_rock_2: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/RockSamples/small_rock.small_rock: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/Rock2/small_rock.small_rock: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/Rocks3/large4.large4: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  failed MyProject2/Content/Meshes/Rocks/Rock1/ROCK.ROCK: Value cannot be null. (Parameter 'Mesh has no LOD data')
+  ok Engine/Content/BasicShapes/Cylinder.Cylinder -> /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/meshes/Engine/Content/BasicShapes/Cylinder.glb
+  ok Engine/Content/BasicShapes/Cube.Cube -> /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/meshes/Engine/Content/BasicShapes/Cube.glb
+textures exported: 403 of 403
