@@ -116,7 +116,7 @@
       if (k in cache) return cache[k];
       var m = real ? real[k] : undefined, out;
       if (m != null) out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
-      if (m != null && g.__RN_TRACE) out = traced(k, out);
+      if (m != null && g.__RN_TRACE && k === 'UIManager') out = traced(k, out);   // not ExceptionsManager: logging an error reports one
       else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
       else if (STUBS.indexOf(k) >= 0 || STUB_RE.test(k)) out = stub(k);
       else return m;
