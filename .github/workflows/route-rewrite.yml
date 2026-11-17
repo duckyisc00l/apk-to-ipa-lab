@@ -61,6 +61,7 @@ jobs:
           curl -sSLf -o jadx.zip "$j" && unzip -q jadx.zip -d jadx
           jadx/bin/jadx -d dec --no-src dl/app.apk > out/jadx.log 2>&1 || true
           python3 -m pip install -q --break-system-packages pillow 2>/dev/null || python3 -m pip install -q pillow
+          set -o pipefail
           python3 -I $R/extract.py dec $R/App/AppAssets $R/App/Assets.xcassets | tee out/extract.json
       - name: Build the SwiftUI rewrite (unsigned) -> IPA
         run: |

@@ -36,7 +36,7 @@ for f in glob.glob(f"{res}/drawable*/cell_rectangle_*.xml"):
     n = re.search(r"cell_rectangle_(\d+)\.xml$", f)
     if n:
         cells[n.group(1)] = drawable_colour(f"cell_rectangle_{n.group(1)}")
-big = sorted((int(k) for k in cells), default=[2048])
+big = sorted(int(k) for k in cells) or [2048]
 cells["super"] = cells.get(str(big[-1]))   # beyond the last drawable the APK reuses the last colour
 palette = {k: resolve(colors.get(k, "#000000")) for k in ("background", "text_black", "text_white", "text_brown", "status_background")}
 palette.update(cells=cells, board=drawable_colour("background_rectangle") or "#bbada0", empty=drawable_colour("cell_rectangle") or "#cdc1b4")
