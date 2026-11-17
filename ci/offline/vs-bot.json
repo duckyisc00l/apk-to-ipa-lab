@@ -4,7 +4,11 @@
     { "kind": "capture", "file": "1-lobby-offline.png" },
     { "kind": "click", "node": "main/screen-wheel/lobby/play_button", "event": "players-ready-2" },
     { "kind": "capture", "file": "2-matched-with-bot.png" },
-    { "kind": "click", "node": "main/screen-wheel/matchmaking/ready_button", "event": "end-game-ready" },
-    { "kind": "capture", "file": "3-game-over.png" }
+    { "kind": "click", "node": "main/screen-wheel/matchmaking/ready_button", "event": "game-started" },
+    { "kind": "capture", "file": "3-in-game.png" },
+    { "kind": "click", "node": "main/screen-wheel/online_game/bomb_button", "event": "end-game-ready" },
+    { "kind": "capture", "file": "4-game-over.png" },
+    { "kind": "click", "node": "main/screen-wheel/end_game/quit_button", "event": "lobby-ready" },
+    { "kind": "capture", "file": "5-back-in-lobby.png" }
   ]
 }

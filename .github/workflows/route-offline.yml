@@ -2,6 +2,8 @@ name: route-offline
 # Skill step O proved on Bim! (AGPLv3, client + server open source): the game plays a full match with the
 # network cut off. Its own server runs on the same machine with computer players on; the client is patched
 # (ci/offline/bim_offline.py) to use it and to go on without the sign-in server. Screenshots to r-offline.
+# Job asan: the same game built with AddressSanitizer, first without the scheduler fix (shows the upstream
+# use-after-free behind the old crash), then with it (a clean match). Results to r-offline-asan.
 on:
   workflow_dispatch:
 permissions:
@@ -11,6 +13,10 @@ concurrency:
   cancel-in-progress: true
 jobs:
   offline:
+    strategy:
+      fail-fast: false
+      matrix:
+        type: [release, asan]
     runs-on: ubuntu-latest
     container:
       image: ubuntu:26.04
@@ -19,69 +25,84 @@ jobs:
     defaults:
       run:
         shell: bash   # the container's default is sh -e
+    env:
+      T: ${{ matrix.type }}
     steps:
-      - name: Tools
-        run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps iptables xvfb xauth curl python3 gdb > /dev/null
+      - name: Tools (all of them before the network is cut)
+        run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps iptables xvfb xauth curl python3 gdb x11-apps imagemagick > /dev/null
       - uses: actions/checkout@v4
         with: { path: lab }
       - name: Get Bim's source and patch it for offline
         run: |
           mkdir -p out; git clone -q --depth 1 https://github.com/j-jorge/bim bim
-          echo "bim $(git -C bim log -1 --format='%h %ad' --date=short)" | tee out/offline.md
-          python3 -I lab/ci/offline/bim_offline.py bim 23899 | tee -a out/offline.md
+          echo "bim $(git -C bim log -1 --format='%h %ad' --date=short), build $T" | tee out/offline.md
+          K=""; [ "$T" = asan ] && K="--keep-crash"
+          python3 -I lab/ci/offline/bim_offline.py bim 23899 $K | tee -a out/offline.md
       - name: Cache Bim's build (40 minutes from scratch)
         uses: actions/cache@v4
         with:
           path: |
             bim/build
             bim/.backroom
-          key: bim-build-${{ hashFiles('lab/ci/offline/bim_offline.py') }}-v1
+          key: bim-build-${{ matrix.type }}-${{ hashFiles('lab/ci/offline/bim_offline.py') }}-v2
       - name: Build environment and build (Bim's own scripts)
         run: |
           cd bim
           ./setup/install-minimal-environment.sh --compiler g++ --target-platform linux > ../out/env.log 2>&1; echo "env exit $?" | tee -a ../out/offline.md
           set +e
-          ./setup.sh --target-platform linux --build-type release --build-steps dependencies configure build > ../out/build.log 2>&1
+          ./setup.sh --target-platform linux --build-type $T --build-steps dependencies configure build > ../out/build.log 2>&1
           echo "build exit $?" | tee -a ../out/offline.md
-          B=$(dirname "$(dirname "$(dirname "$(find build -type f -path '*apps/linux/bim' | head -1)")")")   # .../release; echo "B=$PWD/$B" >> $GITHUB_ENV; echo "build dir $B" | tee -a ../out/offline.md
+          echo "B=$PWD/build/linux/$T" >> $GITHUB_ENV; ls build/linux/$T/apps/linux/bim build/linux/$T/apps/server/bim-server | tee -a ../out/offline.md
       - name: Cut the network (only this machine itself stays reachable)
         run: |
+          # The game's own hosts point at this machine (nothing listens there), and everything else is refused
+          # at once, so no request leaves and no request hangs.
+          printf '127.0.0.2 bim-prod.jorge.st\n127.0.0.2 bim.jorge.st\n' >> /etc/hosts
           iptables -P OUTPUT DROP; iptables -A OUTPUT -o lo -j ACCEPT
+          iptables -A OUTPUT -p tcp -j REJECT --reject-with tcp-reset; iptables -A OUTPUT -j REJECT
           if curl -sS -m 8 https://github.com > /dev/null 2>&1; then echo "network still up!" | tee -a out/offline.md; exit 1; else echo "internet: cut (curl to github.com fails)" | tee -a out/offline.md; fi
       - name: Server with computer players, on this machine
         run: |
           printf '{"port": 23899, "enable_bots": true, "matchmaking_delay_for_bot": 2}\n' > server.cfg
-          (S=$(find "$GITHUB_WORKSPACE/bim/build" -type f -name bim-server | head -1); echo "server $S" | tee -a out/offline.md; "$S" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
-          grep -E "up on port|bots|Bot" out/server.log | head | tee -a out/offline.md; tail -5 out/server.log | tee -a out/offline.md
-      - name: Play a match against a bot (scripted taps, screenshots)
+          ("$B/apps/server/bim-server" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
+          grep -E "up on port" out/server.log | head -1 | tee -a out/offline.md
+      - name: Play a match against a bot (Bim's own UI script runner, screenshots)
         run: |
-          C=$(find "$GITHUB_WORKSPACE/bim/build" -type f -perm -u+x -path '*apps/linux/bim' | head -1); B=$(dirname "$(dirname "$(dirname "$C")")")
-          echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
-          # 0 = plain start, no scripted taps (does the game run headless at all?), screenshot after 20 s
-          apt-get install -y -qq x11-apps imagemagick > /dev/null 2>&1 || true
-          ( export BIM_OFFLINE=1; xvfb-run -a -n 77 -s "-screen 0 1080x1920x24" bash -c "
-              '$B/apps/linux/bim' --assets '$GITHUB_WORKSPACE/bim/static-assets/' '$B/assets/generated/' --console-log --app-dir '$GITHUB_WORKSPACE/app-0' > out/client-0.log 2>&1 &
-              sleep 20; import -window root out/plain-start.png; sleep 2; kill %1 2>/dev/null" ) || true
-          echo "## run 0 (no script, BIM_OFFLINE=1): $(grep -c 'Segmentation\|SIGSEGV' out/client-0.log) crash(es), last lines:" | tee -a out/offline.md
-          tail -6 out/client-0.log | tee -a out/offline.md
+          set +e
+          export ASAN_OPTIONS=detect_leaks=0:abort_on_error=1 UBSAN_OPTIONS=print_stacktrace=1
+          [ "$T" = asan ] && export NO_GDB=1
+          P=lab/ci/offline/bim_play.sh; S=$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json; O=$GITHUB_WORKSPACE/out
+          C() { sed 's/\x1b\[[0-9;]*m//g' "$O/client-$1.log"; }
+          # 1. no script, 25 s, screenshot of the X screen
+          ( export BIM_OFFLINE=1; xvfb-run -a -s "-screen 0 1080x2220x24" bash -c "
+              '$B/apps/linux/bim' --assets '$PWD/bim/static-assets/' '$B/assets/generated/' --console-log --app-dir /tmp/app-plain > '$O/client-plain.log' 2>&1 &
+              sleep 22; import -window root '$O/plain-start.png'; kill %1" ) || true
+          echo "## plain start (no script): last lines" >> out/offline.md; C plain | grep -E "^\[|ERROR|SUMMARY" | tail -8 >> out/offline.md
+          if [ "$T" = asan ]; then
+            # 2. ASan, upstream scheduler bridge: expect a use-after-free report
+            ( export BIM_OFFLINE=1; $P "$PWD/bim" "$B" "$O" asan-upstream "$S" ); echo "asan-upstream exit $?" | tee -a out/offline.md
+            C asan-upstream | grep -A30 "ERROR: AddressSanitizer\|runtime error" | head -60 >> out/offline.md
+            # rebuild with the fix (only bridge.cpp changes) and play again
+            python3 -I - bim <<'PY'
+          import sys; p = sys.argv[1] + "/modules/axmol/schedule/main/src/bim/axmol/schedule/bridge.cpp"
+          s = open(p).read(); open(p, "w").write(s.replace("[&f](float)", "[f](float)"))
+          PY
+            (cd bim && ./setup.sh --target-platform linux --build-type asan --build-steps build > ../out/build-fix.log 2>&1); echo "fix rebuild exit $?" | tee -a out/offline.md
+          fi
           # A = the game's original behaviour with no internet; B = with the offline change switched on
           for mode in A B; do
-            mkdir -p "shots-$mode" "app-$mode"; cd "shots-$mode"
             [ "$mode" = B ] && export BIM_OFFLINE=1 || unset BIM_OFFLINE
-            set +e
-            timeout 600 xvfb-run -a -s "-screen 0 1080x1920x24" gdb -batch -ex run -ex bt -ex "frame 1" -ex 'info symbol $pc' -ex 'info line *$pc' -ex "frame 2" -ex 'info symbol $pc' -ex "frame 0" -ex 'x/4gx $rdi' \
-              --args "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
-              --console-log --script "$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json" --script-step-timeout 240 --app-dir "$GITHUB_WORKSPACE/app-$mode" > "../out/client-$mode.log" 2>&1
-            echo "## run $mode (BIM_OFFLINE=${BIM_OFFLINE:-unset}): $(grep -c 'signal SIG' ../out/client-$mode.log) crash(es); screenshots: $(ls *.png 2>/dev/null | tr '\n' ' ')" | tee -a ../out/offline.md
-            grep -iE "StartUp|business|game server|connect|matchmak|bot|script|offline|error" "../out/client-$mode.log" | grep -v "^\[36" | tail -25 >> ../out/offline.md
-            grep -A40 "signal SIG" "../out/client-$mode.log" | grep -vE "Saved registers|at 0x7ff" | head -45 >> ../out/offline.md || true
-            cd ..; mkdir -p shots; for f in shots-$mode/*.png; do [ -f "$f" ] && cp "$f" "shots/$mode-$(basename "$f")"; done
+            $P "$PWD/bim" "$B" "$O" $mode "$S" | tee -a out/offline.md
+            echo "## run $mode (BIM_OFFLINE=${BIM_OFFLINE:-unset})" >> out/offline.md
+            C $mode | grep -iE "main_task|business|game server|matchmak|script|offline|error|SUMMARY|signal SIG" | tail -25 >> out/offline.md
+            C $mode | grep -A25 "signal SIG\|ERROR: AddressSanitizer\|runtime error" | head -40 >> out/offline.md || true
           done
-          tail -20 out/server.log >> out/offline.md
-      - name: Publish to branch r-offline
+          echo "## server" >> out/offline.md; sed 's/\x1b\[[0-9;]*m//g' out/server.log | grep -iE "bot|game|session|encounter" | tail -25 >> out/offline.md
+      - name: Publish to branch r-offline / r-offline-asan
         if: always()
         run: |
           iptables -P OUTPUT ACCEPT || true; iptables -F OUTPUT || true
-          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp out/*.png /tmp/r/ 2>/dev/null || true; cp shots/*.png /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
-          cd /tmp/r && git init -q -b r-offline && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          git config --global --add safe.directory '*'; git add -A && git commit -qm "offline ${{ github.run_number }}" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-offline
+          R=r-offline; [ "$T" = asan ] && R=r-offline-asan
+          mkdir -p /tmp/r; cp out/*.md out/*.png /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -300 "$f" > /tmp/r/$(basename "$f"); done
+          cd /tmp/r && git init -q -b $R && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git config --global --add safe.directory '*'; git add -A && git commit -qm "offline $T ${{ github.run_number }}" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" $R
