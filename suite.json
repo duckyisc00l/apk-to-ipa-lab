@@ -1,0 +1,2797 @@
+[
+ {
+  "repo": "VarunS2002/Ionic-Tic-Tac-Toe",
+  "expected": [
+   "web-cordova",
+   "ionic"
+  ],
+  "tag": "1.1.1",
+  "asset": "Tic-Tac-Toe-1.1.1.apk",
+  "url": "https://github.com/VarunS2002/Ionic-Tic-Tac-Toe/releases/download/1.1.1/Tic-Tac-Toe-1.1.1.apk",
+  "mb": 7.5,
+  "engine": "Web (Cordova)",
+  "tags": [
+   "web-cordova",
+   "web",
+   "ionic"
+  ],
+  "variant": "ionic",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/www in a Swift web view"
+  },
+  "evidence": [
+   "assets/www/index.html",
+   "assets/www/cordova.js"
+  ],
+  "protection": [],
+  "libs": [
+   "libsqlc-native-driver.so"
+  ],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "6c65726f79/Transmissionic",
+  "expected": [
+   "web-capacitor"
+  ],
+  "tag": "v1.8.0",
+  "asset": "Transmissionic-android-v1.8.0.apk",
+  "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-android-v1.8.0.apk",
+  "mb": 3.5,
+  "engine": "Web (Capacitor)",
+  "tags": [
+   "web-capacitor",
+   "web",
+   "ionic"
+  ],
+  "variant": "ionic",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/public in a Swift web view"
+  },
+  "evidence": [
+   "assets/capacitor.config.json"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "jupiutrera/open-chess",
+  "expected": [
+   "web-capacitor"
+  ],
+  "tag": "v0.9.1",
+  "asset": "open-chess-v0.9.1.apk",
+  "url": "https://github.com/jupiutrera/open-chess/releases/download/v0.9.1/open-chess-v0.9.1.apk",
+  "mb": 13.5,
+  "engine": "Web (Capacitor)",
+  "tags": [
+   "web-capacitor",
+   "web"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/public in a Swift web view"
+  },
+  "evidence": [
+   "assets/capacitor.config.json"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "tomfong/simple-qr",
+  "expected": [
+   "web-capacitor",
+   "ionic"
+  ],
+  "tag": "v5.1.1",
+  "asset": "com.tomfong.simpleqr-50101-release.apk",
+  "url": "https://github.com/tomfong/simple-qr/releases/download/v5.1.1/com.tomfong.simpleqr-50101-release.apk",
+  "mb": 30.3,
+  "engine": "Web (Capacitor)",
+  "tags": [
+   "web-capacitor",
+   "web",
+   "ionic"
+  ],
+  "variant": "ionic",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/public in a Swift web view"
+  },
+  "evidence": [
+   "assets/capacitor.config.json"
+  ],
+  "protection": [],
+  "libs": [
+   "libbarhopper_v3.so",
+   "libimage_processing_util_jni.so",
+   "libsurface_util_jni.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "thenaim/ionic-tk-social-network",
+  "expected": [
+   "web-capacitor",
+   "ionic"
+  ],
+  "tag": "v2.2.0",
+  "asset": "app-release.apk",
+  "url": "https://github.com/thenaim/ionic-tk-social-network/releases/download/v2.2.0/app-release.apk",
+  "mb": 3.6,
+  "engine": "Web (Capacitor)",
+  "tags": [
+   "web-capacitor",
+   "web",
+   "ionic"
+  ],
+  "variant": "ionic",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/public in a Swift web view"
+  },
+  "evidence": [
+   "assets/capacitor.config.json"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "Ahmadrezadl/legendary-chess",
+  "expected": [
+   "gamemaker"
+  ],
+  "tag": "v1.3.1",
+  "asset": "LegendaryChess_Android.apk",
+  "url": "https://github.com/Ahmadrezadl/legendary-chess/releases/download/v1.3.1/LegendaryChess_Android.apk",
+  "mb": 7.5,
+  "engine": "GameMaker",
+  "tags": [
+   "gamemaker"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "G",
+   "what": "game.droid on an open-source GameMaker runner"
+  },
+  "evidence": [
+   "libyoyo.so",
+   "assets/game.droid"
+  ],
+  "protection": [],
+  "libs": [
+   "libyoyo.so"
+  ],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "Klisee/pokemon-reloaded-android",
+  "expected": [
+   "gm8"
+  ],
+  "tag": "v0.4.2",
+  "asset": "pokemon-reloaded-0.4.2-arm64-v8a.apk",
+  "url": "https://github.com/Klisee/pokemon-reloaded-android/releases/download/v0.4.2/pokemon-reloaded-0.4.2-arm64-v8a.apk",
+  "mb": 28.8,
+  "engine": "GameMaker 8 (through an emulator)",
+  "tags": [
+   "gm8",
+   "gamemaker"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "G",
+   "what": "GameMaker 8 data (runs through an emulator on Android)"
+  },
+  "evidence": [
+   "libgm8emulator.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libgm8emulator.so"
+  ],
+  "seconds": 0.8,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "UltraStar-Deluxe/Play",
+  "expected": [
+   "unity-mono"
+  ],
+  "tag": "v0.9.0",
+  "asset": "UltraStarPlay-v0.9.0-Android.apk",
+  "url": "https://github.com/UltraStar-Deluxe/Play/releases/download/v0.9.0/UltraStarPlay-v0.9.0-Android.apk",
+  "mb": 33.2,
+  "engine": "Unity",
+  "tags": [
+   "unity",
+   "unity-mono"
+  ],
+  "variant": "Mono 2022.2.4f1",
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "evidence": [
+   "libunity.so",
+   "libmonobdwgc-2.0.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libMonoPosixHelper.so",
+   "libmain.so",
+   "libmono-native.so",
+   "libmonobdwgc-2.0.so",
+   "libunity.so"
+  ],
+  "seconds": 0.5,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": "2022.2.4f1",
+  "backend": "Mono",
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "UltraStar-Deluxe/Play",
+  "expected": [
+   "unity-il2cpp"
+  ],
+  "tag": "v0.9.0",
+  "asset": "UltraStarPlayCompanion-v0.9.0-Android.apk",
+  "url": "https://github.com/UltraStar-Deluxe/Play/releases/download/v0.9.0/UltraStarPlayCompanion-v0.9.0-Android.apk",
+  "mb": 21.0,
+  "engine": "Unity",
+  "tags": [
+   "unity",
+   "unity-il2cpp"
+  ],
+  "variant": "IL2CPP 2022.2.4f1",
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "evidence": [
+   "libunity.so",
+   "libil2cpp.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libil2cpp.so",
+   "libmain.so",
+   "libunity.so"
+  ],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": "2022.2.4f1",
+  "backend": "IL2CPP",
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "imengyu/Ballance",
+  "expected": [
+   "unity-mono"
+  ],
+  "tag": "v1.0.7",
+  "asset": "Ballance-1.0.7-android.apk",
+  "url": "https://github.com/imengyu/Ballance/releases/download/v1.0.7/Ballance-1.0.7-android.apk",
+  "mb": 67.5,
+  "engine": "Unity",
+  "tags": [
+   "unity",
+   "unity-mono"
+  ],
+  "variant": "Mono 2021.3.33f1",
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "evidence": [
+   "libunity.so",
+   "libmonobdwgc-2.0.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libMonoPosixHelper.so",
+   "libbphysics.so",
+   "libmain.so",
+   "libmono-native.so",
+   "libmonobdwgc-2.0.so",
+   "libunity.so"
+  ],
+  "seconds": 0.5,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": "2021.3.33f1",
+  "backend": "Mono",
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "AnimaRain/ShootAR",
+  "expected": [
+   "unity-il2cpp"
+  ],
+  "tag": "v0.5.0",
+  "asset": "shootar_0.5.0.5.apk",
+  "url": "https://github.com/AnimaRain/ShootAR/releases/download/v0.5.0/shootar_0.5.0.5.apk",
+  "mb": 21.5,
+  "engine": "Unity",
+  "tags": [
+   "unity",
+   "unity-il2cpp"
+  ],
+  "variant": "IL2CPP 2018.2.11f1",
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "evidence": [
+   "libunity.so",
+   "libil2cpp.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libil2cpp.so",
+   "libmain.so",
+   "libunity.so"
+  ],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": "2018.2.11f1",
+  "backend": "IL2CPP",
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "ankitpassi141/Wanderer-VR",
+  "expected": [
+   "unreal"
+  ],
+  "tag": "v1.0",
+  "asset": "MadTitans_WandererVR.apk",
+  "url": "https://github.com/ankitpassi141/Wanderer-VR/releases/download/v1.0/MadTitans_WandererVR.apk",
+  "mb": 204.5,
+  "engine": "Unreal",
+  "tags": [
+   "unreal",
+   "ue4"
+  ],
+  "variant": "UE4",
+  "route": {
+   "kind": "rewrite",
+   "step": "X",
+   "what": "rebuild in Godot with the game's own assets"
+  },
+  "evidence": [
+   "libUE4.so"
+  ],
+  "protection": [],
+  "libs": [
+   "gdbserver",
+   "libUE4.so",
+   "libgnustl_shared.so",
+   "libgvr.so"
+  ],
+  "seconds": 1.0,
+  "notes": [
+   "OBB main.obb.png: zip, unpacked to all/obb/"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "HarmonyHoney/ROTA",
+  "expected": [
+   "godot3"
+  ],
+  "tag": "2026.03.12",
+  "asset": "ROTA.apk",
+  "url": "https://github.com/HarmonyHoney/ROTA/releases/download/2026.03.12/ROTA.apk",
+  "mb": 66.5,
+  "engine": "Godot",
+  "tags": [
+   "godot",
+   "godot3"
+  ],
+  "variant": "Godot 3.6.1.stable",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "GDRE Tools recovers the project; export with the same Godot for iOS"
+  },
+  "evidence": [
+   "libgodot_android.so",
+   "version 3.6.1.stable"
+  ],
+  "protection": [],
+  "libs": [
+   "libc++_shared.so",
+   "libgodot_android.so"
+  ],
+  "seconds": 0.8,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "arshiyabarjaste-eng/PixelFist",
+  "expected": [
+   "godot"
+  ],
+  "tag": "v1.0.0",
+  "asset": "PixelFist_v1.0.0_Myket.apk",
+  "url": "https://github.com/arshiyabarjaste-eng/PixelFist/releases/download/v1.0.0/PixelFist_v1.0.0_Myket.apk",
+  "mb": 138.5,
+  "engine": "Godot",
+  "tags": [
+   "godot",
+   "godot4"
+  ],
+  "variant": "Godot 4.3.stable",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "GDRE Tools recovers the project; export with the same Godot for iOS"
+  },
+  "evidence": [
+   "libgodot_android.so",
+   "version 4.3.stable"
+  ],
+  "protection": [],
+  "libs": [
+   "libc++_shared.so",
+   "libgodot_android.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "saber-nyan/ddlc-android",
+  "expected": [
+   "renpy"
+  ],
+  "tag": "v0.0.5",
+  "asset": "DokiDokiLiteratureClub-0.0.5-release.apk",
+  "url": "https://github.com/saber-nyan/ddlc-android/releases/download/v0.0.5/DokiDokiLiteratureClub-0.0.5-release.apk",
+  "mb": 249.8,
+  "engine": "Ren'Py",
+  "tags": [
+   "renpy",
+   "renpy-old"
+  ],
+  "variant": "old (libpython2.7 + libpymodules) (6, 99, 14)",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "game/ files on Ren'Py's iOS build (renios)"
+  },
+  "evidence": [
+   "libpymodules.so",
+   "libpython2.7.so",
+   "assets/x-game/x-script_version.txt"
+  ],
+  "protection": [],
+  "libs": [
+   "libSDL2.so",
+   "libSDL2_gfx.so",
+   "libSDL2_image.so",
+   "libSDL2_mixer.so",
+   "libSDL2_ttf.so",
+   "libmain.so",
+   "libpng16.so",
+   "libpymodules.so",
+   "libpython2.7.so"
+  ],
+  "seconds": 0.8,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "saber-nyan/test-renpy-vn",
+  "expected": [
+   "renpy"
+  ],
+  "tag": "v1.0.0",
+  "asset": "testrenpyvn-1.0.0-release.apk",
+  "url": "https://github.com/saber-nyan/test-renpy-vn/releases/download/v1.0.0/testrenpyvn-1.0.0-release.apk",
+  "mb": 25.0,
+  "engine": "Ren'Py",
+  "tags": [
+   "renpy",
+   "renpy-old"
+  ],
+  "variant": "old (libpython2.7 + libpymodules) (6, 99, 13)",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "game/ files on Ren'Py's iOS build (renios)"
+  },
+  "evidence": [
+   "libpymodules.so",
+   "libpython2.7.so",
+   "assets/x-game/x-script_version.txt"
+  ],
+  "protection": [],
+  "libs": [
+   "libSDL2.so",
+   "libSDL2_gfx.so",
+   "libSDL2_image.so",
+   "libSDL2_mixer.so",
+   "libSDL2_ttf.so",
+   "libmain.so",
+   "libpng16.so",
+   "libpymodules.so",
+   "libpython2.7.so"
+  ],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "MewX/cross-channel_chinese-localization_project",
+  "expected": [
+   "renpy"
+  ],
+  "tag": "moved.v1.01.basedon.v0.99",
+  "asset": "crosschannel-1.01-android.apk",
+  "url": "https://github.com/MewX/cross-channel_chinese-localization_project/releases/download/moved.v1.01.basedon.v0.99/crosschannel-1.01-android.apk",
+  "mb": 7.7,
+  "engine": "Ren'Py",
+  "tags": [
+   "renpy",
+   "renpy-old"
+  ],
+  "variant": "old (libpython2.7 + libpymodules)",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "game/ files on Ren'Py's iOS build (renios)"
+  },
+  "evidence": [
+   "libpymodules.so",
+   "libpython2.7.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSDL2.so",
+   "libSDL2_gfx.so",
+   "libSDL2_image.so",
+   "libSDL2_ttf.so",
+   "libmain.so",
+   "libpng16.so",
+   "libpymodules.so",
+   "libpython2.7.so"
+  ],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "LIKO-12/LIKO-12",
+  "expected": [
+   "love"
+  ],
+  "tag": "1.0.1",
+  "asset": "LIKO-12_V1.0.1_Android.apk",
+  "url": "https://github.com/LIKO-12/LIKO-12/releases/download/1.0.1/LIKO-12_V1.0.1_Android.apk",
+  "mb": 11.1,
+  "engine": "LOVE",
+  "tags": [
+   "love"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "game.love on LOVE's iOS build"
+  },
+  "evidence": [
+   "liblove.so",
+   "assets/game.love"
+  ],
+  "protection": [],
+  "libs": [
+   "libSDL2.so",
+   "libc++_shared.so",
+   "liblove.so",
+   "libmpg123.so",
+   "libopenal.so"
+  ],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "Oval-Tutu/bootstrap-love2d-project",
+  "expected": [
+   "love"
+  ],
+  "tag": "0.1.2",
+  "asset": "Template-0.1.2-release.apk",
+  "url": "https://github.com/Oval-Tutu/bootstrap-love2d-project/releases/download/0.1.2/Template-0.1.2-release.apk",
+  "mb": 9.9,
+  "engine": "LOVE",
+  "tags": [
+   "love"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "game.love on LOVE's iOS build"
+  },
+  "evidence": [
+   "liblove.so"
+  ],
+  "protection": [],
+  "libs": [
+   "https.so",
+   "libc++_shared.so",
+   "liblove.so",
+   "libmpg123.so",
+   "libopenal.so"
+  ],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "devhubapp/devhub",
+  "expected": [
+   "rn-plain"
+  ],
+  "tag": "v0.102.0",
+  "asset": "DevHub-0.102.0.apk",
+  "url": "https://github.com/devhubapp/devhub/releases/download/v0.102.0/DevHub-0.102.0.apk",
+  "mb": 31.9,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-plain"
+  ],
+  "variant": "plain JS",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version"
+  },
+  "evidence": [
+   "libjsc.so",
+   "libreactnativejni.so",
+   "assets/index.android.bundle"
+  ],
+  "protection": [],
+  "libs": [
+   "libbugsnag-ndk.so",
+   "libbugsnag-plugin-android-anr.so",
+   "libc++_shared.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_futures.so",
+   "libfolly_json.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes-executor-common-debug.so",
+   "libhermes-executor-common-release.so",
+   "libhermes-executor-debug.so",
+   "libhermes-executor-release.so",
+   "libhermes-inspector.so",
+   "libimagepipeline.so",
+   "libjsc.so",
+   "libjscexecutor.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_reactandroidspec.so",
+   "libreact_nativemodule_core.so",
+   "libreactnativeblob.so",
+   "libreactnativejni.so",
+   "libreactnativeutilsjni.so",
+   "libreactperfloggerjni.so",
+   "libturbomodulejsijni.so",
+   "libyoga.so"
+  ],
+  "seconds": 0.7,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "alekseynemiro/multi-duper-stopwatch",
+  "expected": [
+   "rn-hermes"
+  ],
+  "tag": "v1.2",
+  "asset": "ru.nemiro.apps.multiduperstopwatch.apk",
+  "url": "https://github.com/alekseynemiro/multi-duper-stopwatch/releases/download/v1.2/ru.nemiro.apps.multiduperstopwatch.apk",
+  "mb": 25.6,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-hermes"
+  ],
+  "variant": "Hermes bytecode",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version (Hermes: the host must use the exact matching Hermes version)"
+  },
+  "evidence": [
+   "libhermes.so",
+   "libreactnativejni.so",
+   "assets/index.android.bundle"
+  ],
+  "protection": [],
+  "libs": [
+   "libc++_shared.so",
+   "libcxxcomponents.so",
+   "libfabricjni.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_runtime.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes.so",
+   "libhermes_executor.so",
+   "libimagepipeline.so",
+   "libjsi.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "liblogger.so",
+   "libmapbufferjni.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_rncore.so",
+   "libreact_config.so",
+   "libreact_debug.so",
+   "libreact_nativemodule_core.so",
+   "libreact_newarchdefaults.so",
+   "libreact_render_animations.so",
+   "libreact_render_attributedstring.so",
+   "libreact_render_componentregistry.so",
+   "libreact_render_core.so",
+   "libreact_render_debug.so",
+   "libreact_render_graphics.so",
+   "libreact_render_imagemanager.so",
+   "libreact_render_leakchecker.so",
+   "libreact_render_mapbuffer.so",
+   "libreact_render_mounting.so",
+   "libreact_render_runtimescheduler.so",
+   "libreact_render_scheduler.so",
+   "libreact_render_telemetry.so",
+   "libreact_render_templateprocessor.so",
+   "libreact_render_textlayoutmanager.so",
+   "libreact_render_uimanager.so",
+   "libreact_utils.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "sikelio/plexmanager",
+  "expected": [
+   "rn-hermes"
+  ],
+  "tag": "0.0.4-beta",
+  "asset": "app-arm64-v8a-release.apk",
+  "url": "https://github.com/sikelio/plexmanager/releases/download/0.0.4-beta/app-arm64-v8a-release.apk",
+  "mb": 11.1,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-hermes"
+  ],
+  "variant": "Hermes bytecode",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version (Hermes: the host must use the exact matching Hermes version)"
+  },
+  "evidence": [
+   "libhermes.so",
+   "libreactnativejni.so",
+   "assets/index.android.bundle"
+  ],
+  "protection": [],
+  "libs": [
+   "libc++_shared.so",
+   "libcxxcomponents.so",
+   "libfabricjni.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_runtime.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes.so",
+   "libhermes_executor.so",
+   "libimagepipeline.so",
+   "libjsi.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "liblogger.so",
+   "libmapbufferjni.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_rncore.so",
+   "libreact_config.so",
+   "libreact_debug.so",
+   "libreact_nativemodule_core.so",
+   "libreact_newarchdefaults.so",
+   "libreact_render_animations.so",
+   "libreact_render_attributedstring.so",
+   "libreact_render_componentregistry.so",
+   "libreact_render_core.so",
+   "libreact_render_debug.so",
+   "libreact_render_graphics.so",
+   "libreact_render_imagemanager.so",
+   "libreact_render_leakchecker.so",
+   "libreact_render_mapbuffer.so",
+   "libreact_render_mounting.so",
+   "libreact_render_runtimescheduler.so",
+   "libreact_render_scheduler.so",
+   "libreact_render_telemetry.so",
+   "libreact_render_templateprocessor.so",
+   "libreact_render_textlayoutmanager.so",
+   "libreact_render_uimanager.so",
+   "libreact_utils.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "roshang1t/NetPrime",
+  "expected": [
+   "rn",
+   "expo"
+  ],
+  "tag": "v3.0.0",
+  "asset": "app-release.apk",
+  "url": "https://github.com/roshang1t/NetPrime/releases/download/v3.0.0/app-release.apk",
+  "mb": 35.0,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-hermes",
+   "expo"
+  ],
+  "variant": "Hermes bytecode, Expo",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version (Hermes: the host must use the exact matching Hermes version)"
+  },
+  "evidence": [
+   "libreactnative.so",
+   "libhermes.so",
+   "assets/index.android.bundle",
+   "libexpo-modules-core.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libNitroMmkv.so",
+   "libNitroModules.so",
+   "libanimation-decoder-gif.so",
+   "libappmodules.so",
+   "libavif_android.so",
+   "libc++_shared.so",
+   "libexpo-modules-core.so",
+   "libfbjni.so",
+   "libgesturehandler.so",
+   "libgifimage.so",
+   "libhermes.so",
+   "libhermestooling.so",
+   "libimagepipeline.so",
+   "libjsi.so",
+   "libmmkv.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_rnscreens.so",
+   "libreact_codegen_safeareacontext.so",
+   "libreactnative.so",
+   "libreanimated.so",
+   "librnscreens.so",
+   "libstatic-webp.so",
+   "libworklets.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "e18lab/NHApp",
+  "expected": [
+   "rn",
+   "expo"
+  ],
+  "tag": "1.3.1",
+  "asset": "NHApp-Android-Setup-1.3.1.apk",
+  "url": "https://github.com/e18lab/NHApp/releases/download/1.3.1/NHApp-Android-Setup-1.3.1.apk",
+  "mb": 39.8,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-hermes",
+   "expo"
+  ],
+  "variant": "Hermes bytecode, Expo",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version (Hermes: the host must use the exact matching Hermes version)"
+  },
+  "evidence": [
+   "libreactnative.so",
+   "libhermesvm.so",
+   "assets/index.android.bundle",
+   "libexpo-modules-core.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libanimation-decoder-gif.so",
+   "libappmodules.so",
+   "libavif_android.so",
+   "libc++_shared.so",
+   "libdatastore_shared_counter.so",
+   "libexpo-modules-core.so",
+   "libfbjni.so",
+   "libgesturehandler.so",
+   "libgifimage.so",
+   "libhermestooling.so",
+   "libhermesvm.so",
+   "libimagepipeline.so",
+   "libjsi.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_RNCSlider.so",
+   "libreact_codegen_rnpicker.so",
+   "libreact_codegen_rnscreens.so",
+   "libreact_codegen_rnsvg.so",
+   "libreact_codegen_safeareacontext.so",
+   "libreactnative.so",
+   "libreanimated.so",
+   "librnscreens.so",
+   "libstatic-webp.so",
+   "libworklets.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "adil192/ricochlime",
+  "expected": [
+   "flutter"
+  ],
+  "tag": "v1.14.0",
+  "asset": "Ricochlime_FOSS_v1.14.0.apk",
+  "url": "https://github.com/adil192/ricochlime/releases/download/v1.14.0/Ricochlime_FOSS_v1.14.0.apk",
+  "mb": 59.4,
+  "engine": "Flutter",
+  "tags": [
+   "flutter"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source if open source; else rewrite (step R) with flutter_assets"
+  },
+  "evidence": [
+   "libapp.so",
+   "libflutter.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libapp.so",
+   "libdartjni.so",
+   "libdatastore_shared_counter.so",
+   "libflutter.so",
+   "libflutter_soloud_plugin.so"
+  ],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "mantou132/nesbox",
+  "expected": [
+   "flutter"
+  ],
+  "tag": "v1.0.8",
+  "asset": "nesbox.apk",
+  "url": "https://github.com/mantou132/nesbox/releases/download/v1.0.8/nesbox.apk",
+  "mb": 17.5,
+  "engine": "Flutter",
+  "tags": [
+   "flutter"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source if open source; else rewrite (step R) with flutter_assets"
+  },
+  "evidence": [
+   "libflutter.so",
+   "libapp.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libapp.so",
+   "libflutter.so"
+  ],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "lswiderski/mi-scale-exporter",
+  "expected": [
+   "xamarin",
+   "maui"
+  ],
+  "tag": "v2.3.1",
+  "asset": "com.lukaszswiderski.MiScaleExporter.apk",
+  "url": "https://github.com/lswiderski/mi-scale-exporter/releases/download/v2.3.1/com.lukaszswiderski.MiScaleExporter.apk",
+  "mb": 40.3,
+  "engine": "Xamarin/.NET",
+  "tags": [
+   "xamarin",
+   "maui"
+  ],
+  "variant": "MAUI",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "recover the C# (ILSpy); shared screens rebuild for iOS, Android-only screens are the spec for step R"
+  },
+  "evidence": [
+   "libmonodroid.so",
+   "libmonosgen-2.0.so",
+   "libxamarin-app.so",
+   "libassemblies.arm64-v8a.blob.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSystem.Globalization.Native.so",
+   "libSystem.IO.Compression.Native.so",
+   "libSystem.Native.so",
+   "libSystem.Security.Cryptography.Native.Android.so",
+   "libaot-Autofac.Extras.CommonServiceLocator.dll.so",
+   "libaot-Autofac.dll.so",
+   "libaot-BouncyCastle.Crypto.dll.so",
+   "libaot-CommonServiceLocator.dll.so",
+   "libaot-CommunityToolkit.Maui.Core.dll.so",
+   "libaot-CommunityToolkit.Maui.dll.so",
+   "libaot-Fit.dll.so",
+   "libaot-Flurl.Http.dll.so",
+   "libaot-Flurl.dll.so",
+   "libaot-Java.Interop.dll.so",
+   "libaot-MiScaleBodyComposition.dll.so",
+   "libaot-MiScaleExporter.MAUI.dll.so",
+   "libaot-Microsoft.CSharp.dll.so",
+   "libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Configuration.dll.so",
+   "libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.DependencyInjection.dll.so",
+   "libaot-Microsoft.Extensions.Logging.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Logging.dll.so",
+   "libaot-Microsoft.Extensions.Options.dll.so",
+   "libaot-Microsoft.Extensions.Primitives.dll.so",
+   "libaot-Microsoft.Maui.Controls.Xaml.dll.so",
+   "libaot-Microsoft.Maui.Controls.dll.so",
+   "libaot-Microsoft.Maui.Essentials.dll.so",
+   "libaot-Microsoft.Maui.Graphics.dll.so",
+   "libaot-Microsoft.Maui.dll.so",
+   "libaot-Mono.Android.Runtime.dll.so",
+   "libaot-Mono.Android.dll.so",
+   "libaot-NLog.Extensions.Logging.dll.so",
+   "libaot-NLog.dll.so",
+   "libaot-Newtonsoft.Json.dll.so",
+   "libaot-OAuth.dll.so",
+   "libaot-Plugin.AdMob.dll.so",
+   "libaot-Plugin.BLE.dll.so",
+   "libaot-System.Collections.Concurrent.dll.so",
+   "libaot-System.Collections.Immutable.dll.so"
+  ],
+  "seconds": 0.8,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "stratumauth/app",
+  "expected": [
+   "xamarin"
+  ],
+  "tag": "v1.7.0",
+  "asset": "com.stratumauth.app-arm64-v8a.fdroid.apk",
+  "url": "https://github.com/stratumauth/app/releases/download/v1.7.0/com.stratumauth.app-arm64-v8a.fdroid.apk",
+  "mb": 38.4,
+  "engine": "Xamarin/.NET",
+  "tags": [
+   "xamarin",
+   "dotnet-android"
+  ],
+  "variant": ".NET Android (screens Android-only)",
+  "route": {
+   "kind": "rewrite",
+   "step": "E",
+   "what": "Android-only screens: the recovered C# (ILSpy) is the exact spec for step R"
+  },
+  "evidence": [
+   "libmonodroid.so",
+   "libxamarin-app.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSystem.Globalization.Native.so",
+   "libSystem.IO.Compression.Native.so",
+   "libSystem.Native.so",
+   "libSystem.Security.Cryptography.Native.Android.so",
+   "libZXing.so",
+   "libassembly-store.so",
+   "libclrjit.so",
+   "libcoreclr.so",
+   "libimage_processing_util_jni.so",
+   "libmonodroid.so",
+   "libsqlcipher.so",
+   "libsurface_util_jni.so",
+   "libxamarin-app.so"
+  ],
+  "seconds": 1.1,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "bitwarden/mobile",
+  "expected": [
+   "xamarin",
+   "maui"
+  ],
+  "tag": "v2024.10.0",
+  "asset": "com.x8bit.bitwarden-fdroid.apk",
+  "url": "https://github.com/bitwarden/mobile/releases/download/v2024.10.0/com.x8bit.bitwarden-fdroid.apk",
+  "mb": 70.1,
+  "engine": "Xamarin/.NET",
+  "tags": [
+   "xamarin",
+   "maui"
+  ],
+  "variant": "MAUI",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "recover the C# (ILSpy); shared screens rebuild for iOS, Android-only screens are the spec for step R"
+  },
+  "evidence": [
+   "libmonodroid.so",
+   "libmonosgen-2.0.so",
+   "libxamarin-app.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSkiaSharp.so",
+   "libSystem.IO.Compression.Native.so",
+   "libSystem.Native.so",
+   "libSystem.Security.Cryptography.Native.Android.so",
+   "libaot-App.dll.so",
+   "libaot-AsyncAwaitBestPractices.MVVM.dll.so",
+   "libaot-AsyncAwaitBestPractices.dll.so",
+   "libaot-BouncyCastle.Crypto.dll.so",
+   "libaot-Camera.MAUI.dll.so",
+   "libaot-CommunityToolkit.Maui.Core.dll.so",
+   "libaot-CommunityToolkit.Maui.dll.so",
+   "libaot-CommunityToolkit.Mvvm.dll.so",
+   "libaot-Core.dll.so",
+   "libaot-CsvHelper.dll.so",
+   "libaot-FFImageLoading.Compat.Maui.dll.so",
+   "libaot-FFImageLoading.Compat.Transformations.dll.so",
+   "libaot-FFImageLoading.Compat.dll.so",
+   "libaot-Java.Interop.dll.so",
+   "libaot-LiteDB.dll.so",
+   "libaot-MessagePack.Annotations.dll.so",
+   "libaot-MessagePack.dll.so",
+   "libaot-Microsoft.CSharp.dll.so",
+   "libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Configuration.dll.so",
+   "libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.DependencyInjection.dll.so",
+   "libaot-Microsoft.Extensions.Logging.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Logging.dll.so",
+   "libaot-Microsoft.Extensions.Options.dll.so",
+   "libaot-Microsoft.Extensions.Primitives.dll.so",
+   "libaot-Microsoft.Maui.Controls.Compatibility.dll.so",
+   "libaot-Microsoft.Maui.Controls.Xaml.dll.so",
+   "libaot-Microsoft.Maui.Controls.dll.so",
+   "libaot-Microsoft.Maui.Essentials.dll.so",
+   "libaot-Microsoft.Maui.Graphics.dll.so",
+   "libaot-Microsoft.Maui.dll.so",
+   "libaot-Microsoft.NET.StringTools.dll.so",
+   "libaot-Microsoft.VisualStudio.Validation.dll.so",
+   "libaot-Mono.Android.Export.dll.so",
+   "libaot-Mono.Android.Runtime.dll.so"
+  ],
+  "seconds": 1.0,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "yairm210/Unciv",
+  "expected": [
+   "libgdx"
+  ],
+  "tag": "5.0.1",
+  "asset": "Unciv-signed.apk",
+  "url": "https://github.com/yairm210/Unciv/releases/download/5.0.1/Unciv-signed.apk",
+  "mb": 27.6,
+  "engine": "libGDX",
+  "tags": [
+   "libgdx"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "decompiled Java is the spec; art and sound drop in (open source: libGDX's iOS backend)"
+  },
+  "evidence": [
+   "libgdx.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libgdx.so"
+  ],
+  "seconds": 0.5,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "00-Evan/shattered-pixel-dungeon",
+  "expected": [
+   "libgdx"
+  ],
+  "tag": "4.0.3-beta",
+  "asset": "ShatteredPD-v4.0.3-BETA-2-Android.apk",
+  "url": "https://github.com/00-Evan/shattered-pixel-dungeon/releases/download/4.0.3-beta/ShatteredPD-v4.0.3-BETA-2-Android.apk",
+  "mb": 30.5,
+  "engine": "libGDX",
+  "tags": [
+   "libgdx"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "decompiled Java is the spec; art and sound drop in (open source: libGDX's iOS backend)"
+  },
+  "evidence": [
+   "libgdx.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libgdx-freetype.so",
+   "libgdx.so"
+  ],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "j-jorge/bim",
+  "expected": [
+   "native-cpp"
+  ],
+  "tag": "v17",
+  "asset": "bim-17.apk",
+  "url": "https://github.com/j-jorge/bim/releases/download/v17/bim-17.apk",
+  "mb": 65.3,
+  "engine": "native C/C++ (own engine)",
+  "tags": [
+   "native-cpp"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "own C/C++ engine compiled in; rewrite with its assets (open source: build its iOS port)"
+  },
+  "evidence": [
+   "libbim.so",
+   "NativeActivity in manifest"
+  ],
+  "protection": [],
+  "libs": [
+   "libbim.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "TeamNewPipe/NewPipe",
+  "expected": [
+   "native"
+  ],
+  "tag": "v0.29.3",
+  "asset": "NewPipe_v0.29.3.apk",
+  "url": "https://github.com/TeamNewPipe/NewPipe/releases/download/v0.29.3/NewPipe_v0.29.3.apk",
+  "mb": 17.0,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native-compose",
+   "native",
+   "compose",
+   "kotlin"
+  ],
+  "variant": "Kotlin + Jetpack Compose, helper libs: libandroidx.graphics.path.so libsqliteJni.so",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Kotlin + Jetpack Compose: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "META-INF/androidx.compose.*",
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libsqliteJni.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "Kunzisoft/KeePassDX",
+  "expected": [
+   "native"
+  ],
+  "tag": "4.5.8",
+  "asset": "KeePassDX-4.5.8-libre.apk",
+  "url": "https://github.com/Kunzisoft/KeePassDX/releases/download/4.5.8/KeePassDX-4.5.8-libre.apk",
+  "mb": 16.8,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native",
+   "kotlin"
+  ],
+  "variant": "Kotlin (Views), helper libs: libaes.so libargon2.so",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Java/Kotlin app: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [
+   "libaes.so",
+   "libargon2.so"
+  ],
+  "seconds": 0.8,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "Ashinch/ReadYou",
+  "expected": [
+   "native-compose"
+  ],
+  "tag": "0.16.2",
+  "asset": "ReadYou-0.16.2-091c9207-signed.apk",
+  "url": "https://github.com/ReadYouApp/ReadYou/releases/download/0.16.2/ReadYou-0.16.2-091c9207-signed.apk",
+  "mb": 11.2,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native-compose",
+   "native",
+   "compose",
+   "kotlin"
+  ],
+  "variant": "Kotlin + Jetpack Compose, helper libs: libandroidx.graphics.path.so libdatastore_shared_counter.so",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Kotlin + Jetpack Compose: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "META-INF/androidx.compose.*",
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libdatastore_shared_counter.so"
+  ],
+  "seconds": 0.5,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "maxrave-dev/SimpMusic",
+  "expected": [
+   "native-compose"
+  ],
+  "tag": "v2.6.0",
+  "asset": "SimpMusic-foss-arm64-v8a-release.apk",
+  "url": "https://github.com/maxrave-dev/SimpMusic/releases/download/v2.6.0/SimpMusic-foss-arm64-v8a-release.apk",
+  "mb": 28.7,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native-compose",
+   "native",
+   "compose",
+   "kotlin"
+  ],
+  "variant": "Kotlin + Jetpack Compose, helper libs: libandroidx.graphics.path.so libavcodec.so libavdevice.so libavfilter.so libavformat.so libavutil.so",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Kotlin + Jetpack Compose: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "META-INF/androidx.compose.*",
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libavcodec.so",
+   "libavdevice.so",
+   "libavfilter.so",
+   "libavformat.so",
+   "libavutil.so",
+   "libc++_shared.so",
+   "libdatastore_shared_counter.so",
+   "libffmpegkit.so",
+   "libffmpegkit_abidetect.so",
+   "libimage_processing_util_jni.so",
+   "libquickjs.so",
+   "libsqliteJni.so",
+   "libsurface_util_jni.so",
+   "libswresample.so",
+   "libswscale.so"
+  ],
+  "seconds": 0.8,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "wh201906/SerialTest",
+  "expected": [
+   "qt"
+  ],
+  "tag": "V0.3.5",
+  "asset": "V0.3.5-android.apk",
+  "url": "https://github.com/wh201906/SerialTest/releases/download/V0.3.5/V0.3.5-android.apk",
+  "mb": 40.9,
+  "engine": "Qt",
+  "tags": [
+   "qt",
+   "qt5"
+  ],
+  "variant": "Qt 5 Widgets",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source with Qt for iOS if open source; else rewrite (step R)"
+  },
+  "evidence": [
+   "libQt5Core_arm64-v8a.so",
+   "libQt5Core_armeabi-v7a.so",
+   "libQt5Core_x86.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libQt5AndroidExtras_arm64-v8a.so",
+   "libQt5AndroidExtras_armeabi-v7a.so",
+   "libQt5AndroidExtras_x86.so",
+   "libQt5AndroidExtras_x86_64.so",
+   "libQt5Bluetooth_arm64-v8a.so",
+   "libQt5Bluetooth_armeabi-v7a.so",
+   "libQt5Bluetooth_x86.so",
+   "libQt5Bluetooth_x86_64.so",
+   "libQt5Core_arm64-v8a.so",
+   "libQt5Core_armeabi-v7a.so",
+   "libQt5Core_x86.so",
+   "libQt5Core_x86_64.so",
+   "libQt5Gui_arm64-v8a.so",
+   "libQt5Gui_armeabi-v7a.so",
+   "libQt5Gui_x86.so",
+   "libQt5Gui_x86_64.so",
+   "libQt5Network_arm64-v8a.so",
+   "libQt5Network_armeabi-v7a.so",
+   "libQt5Network_x86.so",
+   "libQt5Network_x86_64.so",
+   "libQt5PrintSupport_arm64-v8a.so",
+   "libQt5PrintSupport_armeabi-v7a.so",
+   "libQt5PrintSupport_x86.so",
+   "libQt5PrintSupport_x86_64.so",
+   "libQt5SerialPort_arm64-v8a.so",
+   "libQt5SerialPort_armeabi-v7a.so",
+   "libQt5SerialPort_x86.so",
+   "libQt5SerialPort_x86_64.so",
+   "libQt5Widgets_arm64-v8a.so",
+   "libQt5Widgets_armeabi-v7a.so",
+   "libQt5Widgets_x86.so",
+   "libQt5Widgets_x86_64.so",
+   "libSerialTest_arm64-v8a.so",
+   "libSerialTest_armeabi-v7a.so",
+   "libSerialTest_x86.so",
+   "libSerialTest_x86_64.so",
+   "libc++_shared.so",
+   "libplugins_bearer_qandroidbearer_arm64-v8a.so",
+   "libplugins_bearer_qandroidbearer_armeabi-v7a.so",
+   "libplugins_bearer_qandroidbearer_x86.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "nspire-emus/firebird",
+  "expected": [
+   "qt"
+  ],
+  "tag": "v1.6",
+  "asset": "firebird-android.apk",
+  "url": "https://github.com/nspire-emus/firebird/releases/download/v1.6/firebird-android.apk",
+  "mb": 28.8,
+  "engine": "Qt",
+  "tags": [
+   "qt",
+   "qt5"
+  ],
+  "variant": "Qt 5 Quick/QML",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source with Qt for iOS if open source; else rewrite (step R)"
+  },
+  "evidence": [
+   "libQt5Core_arm64-v8a.so",
+   "libQt5Core_armeabi-v7a.so",
+   "libQt5QuickWidgets_arm64-v8a.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libQt5AndroidExtras_arm64-v8a.so",
+   "libQt5AndroidExtras_armeabi-v7a.so",
+   "libQt5Core_arm64-v8a.so",
+   "libQt5Core_armeabi-v7a.so",
+   "libQt5Gui_arm64-v8a.so",
+   "libQt5Gui_armeabi-v7a.so",
+   "libQt5Network_arm64-v8a.so",
+   "libQt5Network_armeabi-v7a.so",
+   "libQt5QmlModels_arm64-v8a.so",
+   "libQt5QmlModels_armeabi-v7a.so",
+   "libQt5QmlWorkerScript_arm64-v8a.so",
+   "libQt5QmlWorkerScript_armeabi-v7a.so",
+   "libQt5Qml_arm64-v8a.so",
+   "libQt5Qml_armeabi-v7a.so",
+   "libQt5QuickWidgets_arm64-v8a.so",
+   "libQt5QuickWidgets_armeabi-v7a.so",
+   "libQt5Quick_arm64-v8a.so",
+   "libQt5Quick_armeabi-v7a.so",
+   "libQt5RemoteObjects_arm64-v8a.so",
+   "libQt5RemoteObjects_armeabi-v7a.so",
+   "libQt5Widgets_arm64-v8a.so",
+   "libQt5Widgets_armeabi-v7a.so",
+   "libc++_shared.so",
+   "libfirebird-emu_arm64-v8a.so",
+   "libfirebird-emu_armeabi-v7a.so",
+   "libplugins_bearer_qandroidbearer_arm64-v8a.so",
+   "libplugins_bearer_qandroidbearer_armeabi-v7a.so",
+   "libplugins_imageformats_qgif_arm64-v8a.so",
+   "libplugins_imageformats_qgif_armeabi-v7a.so",
+   "libplugins_imageformats_qicns_arm64-v8a.so",
+   "libplugins_imageformats_qicns_armeabi-v7a.so",
+   "libplugins_imageformats_qico_arm64-v8a.so",
+   "libplugins_imageformats_qico_armeabi-v7a.so",
+   "libplugins_imageformats_qjpeg_arm64-v8a.so",
+   "libplugins_imageformats_qjpeg_armeabi-v7a.so",
+   "libplugins_imageformats_qtga_arm64-v8a.so",
+   "libplugins_imageformats_qtga_armeabi-v7a.so",
+   "libplugins_imageformats_qtiff_arm64-v8a.so",
+   "libplugins_imageformats_qtiff_armeabi-v7a.so",
+   "libplugins_imageformats_qwbmp_arm64-v8a.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "GVCoder09/NoDPI4Android",
+  "expected": [
+   "native-compose"
+  ],
+  "tag": "v2.0",
+  "asset": "NoDPI-2.0.apk",
+  "url": "https://github.com/GVCoder09/NoDPI4Android/releases/download/v2.0/NoDPI-2.0.apk",
+  "mb": 1.9,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native-compose",
+   "native",
+   "compose",
+   "kotlin"
+  ],
+  "variant": "Kotlin + Jetpack Compose, helper libs: libandroidx.graphics.path.so libdatastore_shared_counter.so",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Kotlin + Jetpack Compose: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "META-INF/androidx.compose.*",
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libdatastore_shared_counter.so"
+  ],
+  "seconds": 0.1,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "Aarav2709/FR1-Replayed",
+  "expected": [
+   "solar2d"
+  ],
+  "tag": "v1.0.1",
+  "asset": "FR1R.apk",
+  "url": "https://github.com/Aarav2709/FR1-Replayed/releases/download/v1.0.1/FR1R.apk",
+  "mb": 46.4,
+  "engine": "Solar2D (Corona)",
+  "tags": [
+   "solar2d"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "resource.car (compiled Lua) on Solar2D's iOS template of the same build (untested)"
+  },
+  "evidence": [
+   "libcorona.so",
+   "assets/resource.car"
+  ],
+  "protection": [],
+  "libs": [
+   "libads.so",
+   "libalmixer.so",
+   "libanalytics.so",
+   "libcorona.so",
+   "libgameNetwork.so",
+   "libjnlua5.1.so",
+   "liblicensing.so",
+   "liblua.so",
+   "libmpg123.so",
+   "libopenal.so"
+  ],
+  "seconds": 0.7,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "HelloZeroNet/ZeroNet-kivy",
+  "expected": [
+   "kivy"
+  ],
+  "tag": "v0.6.5.2",
+  "asset": "zeronet-0.6.5.2-release-stable-arm64-v8a.apk",
+  "url": "https://github.com/HelloZeroNet/ZeroNet-kivy/releases/download/v0.6.5.2/zeronet-0.6.5.2-release-stable-arm64-v8a.apk",
+  "mb": 18.5,
+  "engine": "Kivy (Python)",
+  "tags": [
+   "kivy",
+   "python"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the app's Python files on kivy-ios (untested)"
+  },
+  "evidence": [
+   "libSDL2.so",
+   "libSDL2_image.so",
+   "libSDL2_mixer.so",
+   "libSDL2_ttf.so",
+   "kivy/ in the Python bundle"
+  ],
+  "protection": [],
+  "libs": [
+   "libSDL2.so",
+   "libSDL2_image.so",
+   "libSDL2_mixer.so",
+   "libSDL2_ttf.so",
+   "libcrypto1.1.so",
+   "libhidapi.so",
+   "libmain.so",
+   "libpython2.7.so",
+   "libsqlite3.so",
+   "libssl1.1.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "AndreMiras/PyWallet",
+  "expected": [
+   "kivy"
+  ],
+  "tag": "v20200524",
+  "asset": "pywallet-2020.0524-arm64-v8a-release.apk",
+  "url": "https://github.com/AndreMiras/PyWallet/releases/download/v20200524/pywallet-2020.0524-arm64-v8a-release.apk",
+  "mb": 26.7,
+  "engine": "Kivy (Python)",
+  "tags": [
+   "kivy",
+   "python"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the app's Python files on kivy-ios (untested)"
+  },
+  "evidence": [
+   "libSDL2.so",
+   "libSDL2_image.so",
+   "libSDL2_mixer.so",
+   "libSDL2_ttf.so",
+   "kivy/ in the Python bundle"
+  ],
+  "protection": [],
+  "libs": [
+   "libSDL2.so",
+   "libSDL2_image.so",
+   "libSDL2_mixer.so",
+   "libSDL2_ttf.so",
+   "libcrypto1.1.so",
+   "libffi.so",
+   "libfreetype.so",
+   "libhidapi.so",
+   "libiconv.so",
+   "libmain.so",
+   "libpng16.so",
+   "libpython3.8m.so",
+   "libsqlite3.so",
+   "libssl1.1.so",
+   "libzbar.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "opengisch/QField",
+  "expected": [
+   "qt",
+   "qt6"
+  ],
+  "tag": "v4.3.8",
+  "asset": "qfield-v4.3.8-android-arm64.apk",
+  "url": "https://github.com/opengisch/QField/releases/download/v4.3.8/qfield-v4.3.8-android-arm64.apk",
+  "mb": 107.4,
+  "engine": "Qt",
+  "tags": [
+   "qt",
+   "qt6"
+  ],
+  "variant": "Qt 6 Quick/QML",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source with Qt for iOS if open source; else rewrite (step R)"
+  },
+  "evidence": [
+   "libQt6Core5Compat_arm64-v8a.so",
+   "libQt6Core_arm64-v8a.so",
+   "libQt6Quick3DAssetImport_arm64-v8a.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libLerc.so",
+   "libQt6Bluetooth_arm64-v8a.so",
+   "libQt6ChartsQml_arm64-v8a.so",
+   "libQt6Charts_arm64-v8a.so",
+   "libQt6Concurrent_arm64-v8a.so",
+   "libQt6Core5Compat_arm64-v8a.so",
+   "libQt6Core_arm64-v8a.so",
+   "libQt6Gui_arm64-v8a.so",
+   "libQt6LabsFolderListModel_arm64-v8a.so",
+   "libQt6MultimediaQuick_arm64-v8a.so",
+   "libQt6Multimedia_arm64-v8a.so",
+   "libQt6Network_arm64-v8a.so",
+   "libQt6Nfc_arm64-v8a.so",
+   "libQt6OpenGLWidgets_arm64-v8a.so",
+   "libQt6OpenGL_arm64-v8a.so",
+   "libQt6Positioning_arm64-v8a.so",
+   "libQt6PrintSupport_arm64-v8a.so",
+   "libQt6QmlCore_arm64-v8a.so",
+   "libQt6QmlMeta_arm64-v8a.so",
+   "libQt6QmlModels_arm64-v8a.so",
+   "libQt6QmlWorkerScript_arm64-v8a.so",
+   "libQt6Qml_arm64-v8a.so",
+   "libQt6Quick3DAssetImport_arm64-v8a.so",
+   "libQt6Quick3DAssetUtils_arm64-v8a.so",
+   "libQt6Quick3DHelpersImpl_arm64-v8a.so",
+   "libQt6Quick3DHelpers_arm64-v8a.so",
+   "libQt6Quick3DParticles_arm64-v8a.so",
+   "libQt6Quick3DRuntimeRender_arm64-v8a.so",
+   "libQt6Quick3DUtils_arm64-v8a.so",
+   "libQt6Quick3D_arm64-v8a.so",
+   "libQt6QuickControls2BasicStyleImpl_arm64-v8a.so",
+   "libQt6QuickControls2Basic_arm64-v8a.so",
+   "libQt6QuickControls2Impl_arm64-v8a.so",
+   "libQt6QuickControls2MaterialStyleImpl_arm64-v8a.so",
+   "libQt6QuickControls2Material_arm64-v8a.so",
+   "libQt6QuickControls2_arm64-v8a.so",
+   "libQt6QuickDialogs2QuickImpl_arm64-v8a.so",
+   "libQt6QuickDialogs2Utils_arm64-v8a.so",
+   "libQt6QuickDialogs2_arm64-v8a.so",
+   "libQt6QuickEffects_arm64-v8a.so"
+  ],
+  "seconds": 1.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "OlivierLDff/Qaterial",
+  "expected": [
+   "qt",
+   "qt5"
+  ],
+  "tag": "v1.2.1",
+  "asset": "QaterialGallery-armeabi-v7a-release-signed.apk",
+  "url": "https://github.com/OlivierLDff/Qaterial/releases/download/v1.2.1/QaterialGallery-armeabi-v7a-release-signed.apk",
+  "mb": 17.0,
+  "engine": "Qt",
+  "tags": [
+   "qt",
+   "qt5"
+  ],
+  "variant": "Qt 5 Quick/QML",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source with Qt for iOS if open source; else rewrite (step R)"
+  },
+  "evidence": [
+   "libQt5Core.so",
+   "libQt5Quick.so",
+   "libQt5QuickControls2.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libQaterialGallery.so",
+   "libQt5Core.so",
+   "libQt5Gui.so",
+   "libQt5Network.so",
+   "libQt5Qml.so",
+   "libQt5Quick.so",
+   "libQt5QuickControls2.so",
+   "libQt5QuickParticles.so",
+   "libQt5QuickTemplates2.so",
+   "libQt5Svg.so",
+   "libQt5Widgets.so",
+   "libQt5Xml.so",
+   "libc++_shared.so",
+   "libplugins_bearer_libqandroidbearer.so",
+   "libplugins_iconengines_libqsvgicon.so",
+   "libplugins_imageformats_libqgif.so",
+   "libplugins_imageformats_libqicns.so",
+   "libplugins_imageformats_libqico.so",
+   "libplugins_imageformats_libqjpeg.so",
+   "libplugins_imageformats_libqsvg.so",
+   "libplugins_imageformats_libqtga.so",
+   "libplugins_imageformats_libqtiff.so",
+   "libplugins_imageformats_libqwbmp.so",
+   "libplugins_imageformats_libqwebp.so",
+   "libplugins_platforms_android_libqtforandroid.so",
+   "libplugins_qmltooling_libqmldbg_debugger.so",
+   "libplugins_qmltooling_libqmldbg_inspector.so",
+   "libplugins_qmltooling_libqmldbg_local.so",
+   "libplugins_qmltooling_libqmldbg_messages.so",
+   "libplugins_qmltooling_libqmldbg_native.so",
+   "libplugins_qmltooling_libqmldbg_nativedebugger.so",
+   "libplugins_qmltooling_libqmldbg_preview.so",
+   "libplugins_qmltooling_libqmldbg_profiler.so",
+   "libplugins_qmltooling_libqmldbg_quickprofiler.so",
+   "libplugins_qmltooling_libqmldbg_server.so",
+   "libplugins_qmltooling_libqmldbg_tcp.so",
+   "libplugins_styles_libqandroidstyle.so",
+   "libqml_QtGraphicalEffects_libqtgraphicaleffectsplugin.so",
+   "libqml_QtGraphicalEffects_private_libqtgraphicaleffectsprivate.so",
+   "libqml_QtQml_Models.2_libmodelsplugin.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "ossappscollective/oss-weather",
+  "expected": [
+   "nativescript"
+  ],
+  "tag": "android/github/4.01.1/196",
+  "asset": "app-arm64-v8a-release.apk",
+  "url": "https://github.com/ossappscollective/oss-weather/releases/download/android/github/4.01.1/196/app-arm64-v8a-release.apk",
+  "mb": 11.3,
+  "engine": "NativeScript",
+  "tags": [
+   "nativescript"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source for iOS if open source; else its JS (assets/app) is the spec for step R"
+  },
+  "evidence": [
+   "libNativeScript.so",
+   "assets/app/447.js"
+  ],
+  "protection": [],
+  "libs": [
+   "libNativeScript.so",
+   "libandroidx.graphics.path.so",
+   "libc++_shared.so",
+   "libimagepipeline.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so"
+  ],
+  "seconds": 0.5,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "yumin-chen/arkaflow",
+  "expected": [
+   "cocos-cpp"
+  ],
+  "tag": "v1.2",
+  "asset": "com.CharmySoft.CCPP.apk",
+  "url": "https://github.com/yumin-chen/arkaflow/releases/download/v1.2/com.CharmySoft.CCPP.apk",
+  "mb": 3.9,
+  "engine": "Cocos2d-x",
+  "tags": [
+   "cocos2dx",
+   "cocos",
+   "cocos-cpp"
+  ],
+  "variant": "C++ (game compiled in)",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "C++ game compiled into the engine library: rewrite with its assets"
+  },
+  "evidence": [
+   "libcocos2dcpp.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libcocos2dcpp.so"
+  ],
+  "seconds": 0.1,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "re-esper/dream-avg",
+  "expected": [
+   "cocos-lua"
+  ],
+  "tag": "0.1",
+  "asset": "Sakumai-release-signed.apk",
+  "url": "https://github.com/re-esper/dream-avg/releases/download/0.1/Sakumai-release-signed.apk",
+  "mb": 30.0,
+  "engine": "Cocos2d-x",
+  "tags": [
+   "cocos2dx",
+   "cocos",
+   "cocos-lua"
+  ],
+  "variant": "Lua",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "readable scripts on the engine's iOS build; compiled-in C++ games are rewritten"
+  },
+  "evidence": [
+   "libcocos2dlua.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libcocos2dlua.so"
+  ],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "yoimerdr/ludens",
+  "expected": [
+   "web-html5",
+   "rpgmaker-mv"
+  ],
+  "tag": "0.4.0",
+  "asset": "ludens-0.4.0-sample.apk.apk",
+  "url": "https://github.com/yoimerdr/ludens/releases/download/0.4.0/ludens-0.4.0-sample.apk.apk",
+  "mb": 29.8,
+  "engine": "Web (own web view)",
+  "tags": [
+   "web-html5",
+   "web",
+   "rpgmaker-mv"
+  ],
+  "variant": "rpgmaker-mv",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "HTML5 export in a Swift web view"
+  },
+  "evidence": [
+   "assets/composeResources/ludens.composeapp.generated.resources/files/www/index.html"
+  ],
+  "protection": [],
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libdatastore_shared_counter.so"
+  ],
+  "seconds": 0.4,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "lochidev/Expandroid",
+  "expected": [
+   "xamarin",
+   "maui"
+  ],
+  "tag": "v7.3.1",
+  "asset": "com.dingleinc.texttoolspro-arm64-v8a.apk",
+  "url": "https://github.com/lochidev/Expandroid/releases/download/v7.3.1/com.dingleinc.texttoolspro-arm64-v8a.apk",
+  "mb": 20.1,
+  "engine": "Xamarin/.NET",
+  "tags": [
+   "xamarin",
+   "maui"
+  ],
+  "variant": "MAUI",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "recover the C# (ILSpy); shared screens rebuild for iOS, Android-only screens are the spec for step R"
+  },
+  "evidence": [
+   "libmonodroid.so",
+   "libmonosgen-2.0.so",
+   "libxamarin-app.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSystem.Globalization.Native.so",
+   "libSystem.IO.Compression.Native.so",
+   "libSystem.Native.so",
+   "libSystem.Security.Cryptography.Native.Android.so",
+   "libaot-CommunityToolkit.Maui.Core.dll.so",
+   "libaot-CommunityToolkit.Maui.dll.so",
+   "libaot-CommunityToolkit.Mvvm.dll.so",
+   "libaot-Expandroid.dll.so",
+   "libaot-Java.Interop.dll.so",
+   "libaot-Microsoft.AspNetCore.Components.Forms.dll.so",
+   "libaot-Microsoft.AspNetCore.Components.Web.dll.so",
+   "libaot-Microsoft.AspNetCore.Components.WebView.Maui.dll.so",
+   "libaot-Microsoft.AspNetCore.Components.WebView.dll.so",
+   "libaot-Microsoft.AspNetCore.Components.dll.so",
+   "libaot-Microsoft.Extensions.Configuration.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Configuration.dll.so",
+   "libaot-Microsoft.Extensions.DependencyInjection.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.DependencyInjection.dll.so",
+   "libaot-Microsoft.Extensions.Diagnostics.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.FileProviders.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.FileProviders.Composite.dll.so",
+   "libaot-Microsoft.Extensions.FileProviders.Physical.dll.so",
+   "libaot-Microsoft.Extensions.FileSystemGlobbing.dll.so",
+   "libaot-Microsoft.Extensions.Hosting.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Localization.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Localization.dll.so",
+   "libaot-Microsoft.Extensions.Logging.Abstractions.dll.so",
+   "libaot-Microsoft.Extensions.Logging.dll.so",
+   "libaot-Microsoft.Extensions.Options.dll.so",
+   "libaot-Microsoft.Extensions.Primitives.dll.so",
+   "libaot-Microsoft.JSInterop.dll.so",
+   "libaot-Microsoft.Maui.Controls.Xaml.dll.so",
+   "libaot-Microsoft.Maui.Controls.dll.so",
+   "libaot-Microsoft.Maui.Essentials.dll.so",
+   "libaot-Microsoft.Maui.Graphics.dll.so",
+   "libaot-Microsoft.Maui.dll.so",
+   "libaot-Mono.Android.Export.dll.so",
+   "libaot-Mono.Android.Runtime.dll.so",
+   "libaot-Mono.Android.dll.so",
+   "libaot-MudBlazor.dll.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "mykola-dev/Tetris",
+  "expected": [
+   "native-compose"
+  ],
+  "tag": "v1.0.18",
+  "asset": "tetris-release.apk",
+  "url": "https://github.com/mykola-dev/Tetris/releases/download/v1.0.18/tetris-release.apk",
+  "mb": 2.3,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native-compose",
+   "native",
+   "compose",
+   "kotlin"
+  ],
+  "variant": "Kotlin + Jetpack Compose",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Kotlin + Jetpack Compose: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "META-INF/androidx.compose.*",
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.1,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "jayasuryat/minesweeper-j-compose",
+  "expected": [
+   "native-compose"
+  ],
+  "tag": "v1.0.1",
+  "asset": "Minesweeper-jc-v1.0.1.apk",
+  "url": "https://github.com/jayasuryat/minesweeper-j-compose/releases/download/v1.0.1/Minesweeper-jc-v1.0.1.apk",
+  "mb": 3.2,
+  "engine": "native (Java/Kotlin only)",
+  "tags": [
+   "native-compose",
+   "native",
+   "compose",
+   "kotlin"
+  ],
+  "variant": "Kotlin + Jetpack Compose",
+  "route": {
+   "kind": "rewrite",
+   "step": "R",
+   "what": "Kotlin + Jetpack Compose: rewrite in SwiftUI"
+  },
+  "evidence": [
+   "META-INF/androidx.compose.*",
+   "Kotlin"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "pedropfsf/tic-tac-toe-game",
+  "expected": [
+   "rn",
+   "expo"
+  ],
+  "tag": "v1.0.0",
+  "asset": "Tic-Tac-Toe-Game-v1-0-0.apk",
+  "url": "https://github.com/pedropfsf/tic-tac-toe-game/releases/download/v1.0.0/Tic-Tac-Toe-Game-v1-0-0.apk",
+  "mb": 33.9,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-plain",
+   "expo"
+  ],
+  "variant": "plain JS, Expo",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version"
+  },
+  "evidence": [
+   "libjsc.so",
+   "libreactnativejni.so",
+   "assets/index.android.bundle",
+   "Expo markers"
+  ],
+  "protection": [],
+  "libs": [
+   "libc++_shared.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_futures.so",
+   "libfolly_json.so",
+   "libgifimage.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes-executor-common-debug.so",
+   "libhermes-executor-common-release.so",
+   "libhermes-executor-debug.so",
+   "libhermes-executor-release.so",
+   "libhermes-inspector.so",
+   "libimagepipeline.so",
+   "libjsc.so",
+   "libjscexecutor.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreact_codegen_reactandroidspec.so",
+   "libreact_nativemodule_core.so",
+   "libreactnativeblob.so",
+   "libreactnativejni.so",
+   "libreactnativeutilsjni.so",
+   "libreactperfloggerjni.so",
+   "libstatic-webp.so",
+   "libturbomodulejsijni.so",
+   "libyoga.so"
+  ],
+  "seconds": 0.7,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "nunogois/game-search-expo",
+  "expected": [
+   "rn",
+   "expo"
+  ],
+  "tag": "v1.1",
+  "asset": "game-search-expo.apk",
+  "url": "https://github.com/nunogois/game-search-expo/releases/download/v1.1/game-search-expo.apk",
+  "mb": 61.0,
+  "engine": "React Native",
+  "tags": [
+   "rn",
+   "rn-plain",
+   "expo"
+  ],
+  "variant": "plain JS, Expo",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "the JS bundle on an iPhone host app of the same React Native version"
+  },
+  "evidence": [
+   "libjsc.so",
+   "libreactnativejni.so",
+   "assets/app.bundle",
+   "libexpo-gl.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libc++_shared.so",
+   "libexpo-gl.so",
+   "libface_detector_v2_jni.so",
+   "libfb.so",
+   "libfbjni.so",
+   "libfolly_futures.so",
+   "libfolly_json.so",
+   "libgifimage.so",
+   "libglog.so",
+   "libglog_init.so",
+   "libhermes-executor-debug.so",
+   "libhermes-executor-release.so",
+   "libhermes-inspector.so",
+   "libimagepipeline.so",
+   "libjsc.so",
+   "libjscexecutor.so",
+   "libjsijniprofiler.so",
+   "libjsinspector.so",
+   "libnative-filters.so",
+   "libnative-imagetranscoder.so",
+   "libreactnativeblob.so",
+   "libreactnativejni.so",
+   "libreanimated.so",
+   "libstatic-webp.so",
+   "libturbomodulejsijni.so",
+   "libyoga.so"
+  ],
+  "seconds": 1.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "asetsiya/wateru",
+  "expected": [
+   "defold"
+  ],
+  "tag": "1.11",
+  "asset": "Wateru.apk",
+  "url": "https://github.com/asetsiya/wateru/releases/download/1.11/Wateru.apk",
+  "mb": 10.7,
+  "engine": "Defold",
+  "tags": [
+   "defold"
+  ],
+  "variant": "",
+  "route": {
+   "kind": "run unchanged",
+   "step": "E",
+   "what": "game.arcd/arci/dmanifest/projectc on the same Defold version's iOS engine (untested)"
+  },
+  "evidence": [
+   "assets/game.projectc",
+   "assets/game.dmanifest",
+   "assets/game.arcd"
+  ],
+  "protection": [],
+  "libs": [
+   "libWateru.so"
+  ],
+  "seconds": 0.1,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "killflex/flappybird-c3",
+  "expected": [
+   "web-cordova",
+   "construct3"
+  ],
+  "tag": "v0.1.0",
+  "asset": "flappybird-release.apk",
+  "url": "https://github.com/killflex/flappybird-c3/releases/download/v0.1.0/flappybird-release.apk",
+  "mb": 2.9,
+  "engine": "Web (Cordova)",
+  "tags": [
+   "web-cordova",
+   "web",
+   "construct3"
+  ],
+  "variant": "construct3",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/www in a Swift web view"
+  },
+  "evidence": [
+   "assets/www/index.html",
+   "assets/www/cordova.js"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.2,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "aria0939/shadow-runner-pixel-adventure",
+  "expected": [
+   "web-capacitor",
+   "phaser"
+  ],
+  "tag": "v1.1",
+  "asset": "shadow-runner-v1.1-debug.apk",
+  "url": "https://github.com/aria0939/shadow-runner-pixel-adventure/releases/download/v1.1/shadow-runner-v1.1-debug.apk",
+  "mb": 21.8,
+  "engine": "Web (Capacitor)",
+  "tags": [
+   "web-capacitor",
+   "web",
+   "phaser"
+  ],
+  "variant": "phaser",
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/public in a Swift web view"
+  },
+  "evidence": [
+   "assets/capacitor.config.json"
+  ],
+  "protection": [],
+  "libs": [],
+  "seconds": 0.3,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "maxim-saplin/CrossPlatformDiskTest",
+  "expected": [
+   "xamarin",
+   "xamarin-forms"
+  ],
+  "tag": "2.4.0",
+  "asset": "com.Saplin.CPDT.apk",
+  "url": "https://github.com/maxim-saplin/CrossPlatformDiskTest/releases/download/2.4.0/com.Saplin.CPDT.apk",
+  "mb": 34.7,
+  "engine": "Xamarin/.NET",
+  "tags": [
+   "xamarin",
+   "xamarin-forms"
+  ],
+  "variant": "Xamarin.Forms",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "recover the C# (ILSpy); shared screens rebuild for iOS, Android-only screens are the spec for step R"
+  },
+  "evidence": [
+   "libmonodroid.so",
+   "libxamarin-app.so",
+   "libmonosgen-2.0.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSkiaSharp.so",
+   "libmono-btls-shared.so",
+   "libmono-native.so",
+   "libmonodroid.so",
+   "libmonosgen-2.0.so",
+   "libxa-internal-api.so",
+   "libxamarin-app.so"
+  ],
+  "seconds": 0.6,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ },
+ {
+  "repo": "o1298098/Xamarin-CloudMusic",
+  "expected": [
+   "xamarin",
+   "xamarin-forms"
+  ],
+  "tag": "v0.0.1",
+  "asset": "CloudMusic.apk",
+  "url": "https://github.com/o1298098/Xamarin-CloudMusic/releases/download/v0.0.1/CloudMusic.apk",
+  "mb": 45.0,
+  "engine": "Xamarin/.NET",
+  "tags": [
+   "xamarin",
+   "xamarin-forms"
+  ],
+  "variant": "Xamarin.Forms",
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "recover the C# (ILSpy); shared screens rebuild for iOS, Android-only screens are the spec for step R"
+  },
+  "evidence": [
+   "libmonodroid.so",
+   "libmonosgen-2.0.so"
+  ],
+  "protection": [],
+  "libs": [
+   "libSkiaSharp.so",
+   "libmono-btls-shared.so",
+   "libmono-profiler-log.so",
+   "libmonodroid.so",
+   "libmonosgen-2.0.so",
+   "libsophix.so"
+  ],
+  "seconds": 0.5,
+  "notes": [
+   "1 APK(s)"
+  ],
+  "unity_version": null,
+  "backend": null,
+  "engine_pass": true,
+  "protection_fp": false
+ }
+]
