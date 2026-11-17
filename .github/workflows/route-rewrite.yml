@@ -46,3 +46,36 @@ jobs:
         run: |
           cd out && git init -q -b r-rewrite && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git add -A && git commit -qm "rewrite spec ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rewrite
+  build:
+    needs: spec
+    runs-on: macos-15-intel
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: APK -> decoded resources (jadx) -> the app's own colours, texts, font, icons
+        run: |
+          mkdir -p out dl; R=ci/rewrite/${{ inputs.name }}
+          a=$(gh api "repos/${{ inputs.repo }}/releases?per_page=10" --jq '[.[].assets[]|select(.name|test("\\.apk$"))][0].browser_download_url')
+          curl -sSLf -o dl/app.apk "$a"
+          j=$(gh api repos/skylot/jadx/releases/latest --jq '[.assets[]|select(.name|test("^jadx-[0-9.]+\\.zip$"))][0].browser_download_url')
+          curl -sSLf -o jadx.zip "$j" && unzip -q jadx.zip -d jadx
+          jadx/bin/jadx -d dec --no-src dl/app.apk > out/jadx.log 2>&1 || true
+          python3 -m pip install -q --break-system-packages pillow 2>/dev/null || python3 -m pip install -q pillow
+          python3 -I $R/extract.py dec $R/App/AppAssets $R/App/Assets.xcassets | tee out/extract.json
+      - name: Build the SwiftUI rewrite (unsigned) -> IPA
+        run: |
+          cd ci/rewrite/${{ inputs.name }}; brew install xcodegen > /dev/null 2>&1 || true; xcodegen generate > /dev/null
+          set +e
+          xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../../../out/xcodebuild.log 2>&1; xc=$?
+          grep -E "error:|\*\* BUILD" ../../../out/xcodebuild.log | head -30 | tee ../../../out/build.md; [ "$xc" = 0 ] || exit 1
+          mkdir -p Payload && cp -R build/Build/Products/Release-iphoneos/App.app Payload/ && zip -qry ../../../${{ inputs.name }}.ipa Payload
+          cd ../../..; ls -la ${{ inputs.name }}.ipa | tee -a out/build.md; unzip -l ${{ inputs.name }}.ipa | grep -E "AppAssets/|App$" | head -20 | tee -a out/build.md
+          gh release create "rewrite-${{ inputs.name }}-${{ github.run_number }}" ${{ inputs.name }}.ipa -R ${{ github.repository }} --prerelease \
+            --notes "Step R test: SwiftUI rewrite of ${{ inputs.repo }} (MIT) from its decompiled APK, using the APK's own colours, texts, font and icons. Unsigned." || true
+      - name: Publish build log
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md out/*.json /tmp/r/ 2>/dev/null; tail -100 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
+          cd /tmp/r && git init -q -b r-rewrite-build && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "rewrite build ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rewrite-build
