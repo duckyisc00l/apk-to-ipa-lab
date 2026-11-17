@@ -69,11 +69,11 @@ jobs:
           cd .. && ls -la *.ipa | tee -a out/ipa.md
           gh release create "${{ matrix.name }}-web-${{ github.run_number }}" "${{ matrix.name }}.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the web route)."
       - uses: actions/checkout@v4
-        with: { path: lab, sparse-checkout: ci/sim }
+        with: { path: lab, sparse-checkout: ci/sim }   # ci/sim/steps/<name>.txt: what to tap and type
       - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
         continue-on-error: true
         run: |
-          lab/ci/sim/build-and-run.sh proj/App.xcodeproj App out/sim 30
+          lab/ci/sim/build-and-run.sh proj/App.xcodeproj App out/sim 30 "lab/ci/sim/steps/${{ matrix.name }}.txt"
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: "ipa-logs-${{ matrix.name }}", path: out }

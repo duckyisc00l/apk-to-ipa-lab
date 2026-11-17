@@ -1,0 +1,13 @@
+# LIKO-12 (LÖVE route): dismiss iOS's one-time keyboard tip, type commands at the D:/> prompt
+shot 0-prompt
+ui prompt
+tapon Continue
+wait 1
+type help
+key return
+wait 3
+shot 1-help
+type dir
+key return
+wait 3
+shot 2-dir

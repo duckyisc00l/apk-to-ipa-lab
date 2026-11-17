@@ -1,0 +1,8 @@
+# OpenChess (web route): home screen, then open a puzzle
+shot 0-home
+ui home
+expect Play a bot
+tapon Solve puzzles
+wait 4
+shot 1-puzzle
+ui puzzle

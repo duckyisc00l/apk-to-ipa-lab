@@ -87,7 +87,7 @@ jobs:
         run: |
           export NAME
           SIM_PRE_RUN='cp game.love "$APP/"; /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$APP/Info.plist"' \
-            ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/sim 30
+            ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/sim 30 "ci/sim/steps/$NAME.txt"
       - name: Publish to branch r-love
         if: always()
         run: |

@@ -1,24 +1,29 @@
 #!/bin/bash
 # Run an iPhone app in Apple's iPhone Simulator on a GitHub Mac (there are no real iPhones on GitHub).
-# Usage: ci/sim/run.sh <path to .app built for the simulator> <out dir> [seconds to wait, default 25] [input script]
-# The optional input script has one step per line, coordinates in points on the simulated phone:
-#   tap X Y | swipe X1 Y1 X2 Y2 | wait SECONDS | shot NAME      (uses Meta's idb, installed when needed)
-# Writes <out>/sim.md (launched? still running? crash?), <out>/sim-<n>s.png screenshots, <out>/sim-console.log,
-# and any crash report. Exit 0 only if the app is still running at the end.
+# Usage: ci/sim/run.sh <path to .app built for the simulator> <out dir> [seconds to wait, default 25] [input steps]
+# The optional steps file has one step per line (AXe does the input; X and Y in points, or as a % of the screen):
+#   tap X Y | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | key NAME (return, escape,
+#   backspace, tab, space, up/down/left/right, a letter, or a HID number) | wait SECONDS | shot NAME |
+#   ui NAME (save the accessibility tree, list its texts) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
+# Writes <out>/sim.md (a summary line first; then launched? still running? crash? each step), <out>/sim-<n>s.png
+# screenshots, sim-console.log, sim-applog.log, crash reports, and for steps a recording (sim-steps.mov/.gif,
+# sim-sheet.png). Exit 0 only if the app is still running at the end and every step and expect passed.
+# Env: SIM_DEVICE="iPhone 16" picks that simulator (name contains it) instead of the last iPhone on the newest iOS.
 set -u
 # macOS may not have GNU timeout: fall back to perl's alarm (same "timeout SECONDS command..." usage)
 command -v timeout > /dev/null || timeout() { local s="$1"; shift; perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"; }
+HERE="$(cd "$(dirname "$0")" && pwd)"
 APP="$1"; OUT="$2"; WAIT="${3:-25}"; STEPS="${4:-}"
 mkdir -p "$OUT"; OUT=$(cd "$OUT" && pwd)   # absolute: the simulator opens --stdout paths from its own folder
 BID=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Info.plist")
 EXE=$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP/Info.plist")
 # newest iOS runtime, first iPhone on it
-UDID=$(xcrun simctl list devices available -j | python3 -c "
-import json,sys,re
-d=json.load(sys.stdin)['devices']
+UDID=$(xcrun simctl list devices available -j | SIM_DEVICE="${SIM_DEVICE:-}" python3 -c "
+import json,os,sys,re
+d=json.load(sys.stdin)['devices']; want=os.environ['SIM_DEVICE']
 rts=sorted([k for k in d if 'iOS' in k], key=lambda k:[int(x) for x in re.findall(r'\d+',k)])
 for rt in reversed(rts):
-    ph=[x for x in d[rt] if x['name'].startswith('iPhone')]
+    ph=[x for x in d[rt] if x['name'].startswith('iPhone') and want in x['name']]
     if ph: print(ph[-1]['udid']); break")
 NAME=$(xcrun simctl list devices | grep "$UDID" | head -1 | sed 's/ (.*//' | xargs)
 { echo "app: $BID ($EXE)"; echo "simulator: $NAME $UDID"; file "$APP/$EXE" | sed 's/.*: //'; } | tee "$OUT/sim.md"
@@ -53,37 +58,90 @@ for t in 5 $(( WAIT / 2 )) $WAIT; do
   [ "$t" -gt "$prev" ] || continue; sleep $(( t - prev )); prev=$t
   xcrun simctl io "$UDID" screenshot "$OUT/sim-${t}s.png" > /dev/null 2>&1
 done
+SN=0; SF=0; EP=0; EF=0   # steps done / failed, expects passed / failed
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
-  # input: AXe (cameroncooke/AXe, one ready-built program); idb only as a fallback, since its companion
-  # has no ready-made build for older Macs and needs the newest Xcode to compile
+  # input: AXe (cameroncooke/AXe, one ready-built program). Meta's idb is not used: no build for older Macs.
   if ! command -v axe > /dev/null; then
     timeout 300 bash -c 'brew tap cameroncooke/axe && { brew trust cameroncooke/axe 2>/dev/null || true; } && brew install cameroncooke/axe/axe' > "$OUT/input-install.log" 2>&1
   fi
-  if command -v axe > /dev/null; then
-    TAP() { axe tap -x "$1" -y "$2" --udid "$UDID"; }
-    SWIPE() { axe swipe --start-x "$1" --start-y "$2" --end-x "$3" --end-y "$4" --duration 0.2 --udid "$UDID"; }
-    echo "input tool: axe $(axe --version 2>/dev/null | head -1)" >> "$OUT/sim.md"
-  else
-    if ! command -v idb > /dev/null; then
-      timeout 420 bash -c 'brew tap facebook/fb && { brew trust facebook/fb 2>/dev/null || true; } && brew install facebook/fb/idb-companion' >> "$OUT/input-install.log" 2>&1
-      timeout 180 bash -c 'python3 -m venv /tmp/idbv && /tmp/idbv/bin/pip install -q fb-idb' >> "$OUT/input-install.log" 2>&1
-      export PATH="$PATH:/tmp/idbv/bin"
-    fi
-    timeout 60 idb connect "$UDID" >> "$OUT/input-install.log" 2>&1
-    TAP() { idb ui tap --udid "$UDID" "$1" "$2"; }
-    SWIPE() { idb ui swipe --udid "$UDID" "$1" "$2" "$3" "$4" --duration 0.2; }
-    echo "input tool: idb (AXe didn't install; see input-install.log)" >> "$OUT/sim.md"
-  fi
   echo "## input steps" >> "$OUT/sim.md"
-  while read -r cmd a b c d; do
-    case "$cmd" in
-      tap) if timeout 30 bash -c "$(declare -f TAP); UDID=$UDID TAP $a $b" >> "$OUT/input-install.log" 2>&1; then echo "tap $a $b" >> "$OUT/sim.md"; else echo "tap $a $b FAILED" >> "$OUT/sim.md"; fi;;
-      swipe) if timeout 30 bash -c "$(declare -f SWIPE); UDID=$UDID SWIPE $a $b $c $d" >> "$OUT/input-install.log" 2>&1; then echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md"; else echo "swipe $a,$b -> $c,$d FAILED" >> "$OUT/sim.md"; fi;;
-      wait) sleep "$a";;
-      shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
-    esac
-  done < "$STEPS"
-  [ "$(grep -c FAILED "$OUT/sim.md")" -gt 0 ] && { echo "## input errors (last lines)" >> "$OUT/sim.md"; tail -8 "$OUT/input-install.log" >> "$OUT/sim.md"; }
+  if ! command -v axe > /dev/null; then
+    echo "AXe didn't install (see input-install.log): steps skipped" >> "$OUT/sim.md"; SF=1
+  else
+    echo "input tool: axe $(axe --version 2>/dev/null | head -1)" >> "$OUT/sim.md"
+    UI() { timeout 60 axe describe-ui --udid "$UDID" > "$1" 2>> "$OUT/input.log" < /dev/null; }
+    UI "$OUT/ui-start.json"
+    read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "390 844")
+    echo "screen: ${SW}x${SH} points (steps may give X and Y in points or as 50%)" >> "$OUT/sim.md"
+    P() { case "$1" in *%) awk -v v="${1%\%}" -v t="$2" 'BEGIN{printf "%d", v*t/100}';; *) echo "$1";; esac; }
+    # one line per step in sim.md; a failed step gets FAILED and its error
+    RUN() { local what="$1"; shift
+      if timeout 40 "$@" >> "$OUT/input.log" 2>&1 < /dev/null; then echo "$what" >> "$OUT/sim.md"; SN=$((SN+1))
+      else echo "$what FAILED: $(tail -1 "$OUT/input.log")" >> "$OUT/sim.md"; SF=$((SF+1)); fi; }
+    KEY() { case "$(echo "$1" | tr A-Z a-z)" in
+      return|enter) echo 40;; escape|esc) echo 41;; backspace|delete) echo 42;; tab) echo 43;; space) echo 44;;
+      right) echo 79;; left) echo 80;; down) echo 81;; up) echo 82;;
+      [a-z]) printf '%d' $(( $(printf '%d' "'$(echo "$1" | tr A-Z a-z)") - 93 ));;
+      *) echo "$1";; esac; }   # HID usage codes; a number is sent as it is
+    # a short screen recording of the steps (turned into a GIF and a contact sheet at the end)
+    xcrun simctl io "$UDID" recordVideo --codec=h264 --force "$OUT/sim-steps.mov" > "$OUT/record.log" 2>&1 & REC=$!
+    sleep 2
+    while IFS= read -r line <&3 || [ -n "$line" ]; do
+      line="${line%$'\r'}"; cmd="${line%% *}"; arg="${line#"$cmd"}"; arg="${arg# }"
+      read -r a b c d <<< "$arg"
+      case "$cmd" in
+        tap) RUN "tap $a $b" axe tap -x "$(P "$a" "$SW")" -y "$(P "$b" "$SH")" --udid "$UDID";;
+        swipe) RUN "swipe $a,$b -> $c,$d" axe swipe --start-x "$(P "$a" "$SW")" --start-y "$(P "$b" "$SH")" \
+                 --end-x "$(P "$c" "$SW")" --end-y "$(P "$d" "$SH")" --duration 0.2 --udid "$UDID";;
+        tapon)   # by accessibility label; if AXe refuses (none, or several), tap the first match's centre
+          if timeout 40 axe tap --label "$arg" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null; then
+            echo "tapon \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
+          else
+            UI "$OUT/ui-now.json"
+            if xy=$(python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$arg"); then
+              RUN "tapon \"$arg\" (at $xy)" axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID"
+            else echo "tapon \"$arg\" FAILED: not on screen. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; SF=$((SF+1)); fi
+          fi;;
+        type) RUN "type \"$arg\"" axe type "$arg" --udid "$UDID";;
+        key) RUN "key $arg" axe key "$(KEY "$a")" --udid "$UDID";;
+        wait) sleep "$a";;
+        shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
+        ui) UI "$OUT/ui-$a.json"; echo "ui $a: $(python3 "$HERE/ui.py" labels "$OUT/ui-$a.json")" >> "$OUT/sim.md";;
+        expect)   # the text must be in the accessibility tree; retried for up to ~8 s while the screen settles
+          hit=1; for i in 1 2 3 4; do UI "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && { hit=0; break; }; sleep 2; done
+          if [ $hit = 0 ]; then echo "expect \"$arg\": PASS" >> "$OUT/sim.md"; EP=$((EP+1))
+          else echo "expect \"$arg\": FAIL. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; EF=$((EF+1)); fi;;
+        ''|'#'*) ;;
+        *) echo "unknown step: $line" >> "$OUT/sim.md"; SF=$((SF+1));;
+      esac
+    done 3< "$STEPS"
+    sleep 1; kill -INT $REC 2>/dev/null; wait $REC 2>/dev/null; rm -f "$OUT/ui-now.json"
+    # recording -> small GIF + one-picture contact sheet (ffmpeg if the Mac has it, else Pillow from the shots)
+    if [ -s "$OUT/sim-steps.mov" ] && command -v ffmpeg > /dev/null; then
+      dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT/sim-steps.mov" 2>/dev/null | cut -d. -f1)
+      [ "${dur:-0}" -gt 0 ] || dur=12
+      ffmpeg -v error -y -i "$OUT/sim-steps.mov" -vf "fps=2,scale=240:-2:flags=lanczos" -loop 0 "$OUT/sim-steps.gif"
+      ffmpeg -v error -y -i "$OUT/sim-steps.mov" -vf "fps=12/$dur,scale=200:-2,tile=6x2:padding=4" -frames:v 1 "$OUT/sim-sheet.png"
+    else
+      python3 -m venv /tmp/pilv > /dev/null 2>&1 && timeout 120 /tmp/pilv/bin/pip install -q pillow > /dev/null 2>&1
+      /tmp/pilv/bin/python - "$OUT" <<'PY' 2>> "$OUT/record.log"
+import glob, os, sys
+from PIL import Image
+out = sys.argv[1]; fs = sorted(glob.glob(out + "/sim-*.png"), key=os.path.getmtime)
+fs = [f for f in fs if not f.endswith("sim-sheet.png")][:12]
+ims = [Image.open(f).convert("RGB") for f in fs]
+ims = [i.resize((200, int(200 * i.height / i.width))) for i in ims]
+if ims:
+    h = max(i.height for i in ims); cols = min(6, len(ims)); rows = (len(ims) + cols - 1) // cols
+    sheet = Image.new("RGB", (cols * 204, rows * (h + 4)), "white")
+    for n, i in enumerate(ims): sheet.paste(i, ((n % cols) * 204, (n // cols) * (h + 4)))
+    sheet.save(out + "/sim-sheet.png")
+    ims[0].save(out + "/sim-steps.gif", save_all=True, append_images=ims[1:], duration=800, loop=0)
+PY
+    fi
+    [ -s "$OUT/sim-sheet.png" ] && echo "recording: sim-steps.mov, sim-steps.gif, sim-sheet.png (contact sheet)" >> "$OUT/sim.md"
+  fi
+  [ "$SF" -gt 0 ] && { echo "## input errors (last lines)" >> "$OUT/sim.md"; tail -8 "$OUT/input.log" >> "$OUT/sim.md" 2>/dev/null; }
 fi
 if xcrun simctl spawn "$UDID" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID"; then
   echo "RESULT: still running after ${WAIT}s" | tee -a "$OUT/sim.md"; ok=0
@@ -107,14 +165,21 @@ try:
 except Exception as x: print('could not read report:',x)
 P
 done
-# the first distinct errors (with the line after each) say more than the last ones, which often just repeat
-echo "## first distinct errors in the app's output" >> "$OUT/sim.md"
-grep -n -iE 'exception|error|fail|missing|not found|could not|unable' "$OUT/sim-console.log" 2>/dev/null | grep -viE 'restoration' \
-  | awk -F: '{k=$0; sub(/^[0-9]+:/,"",k); if(!(k in s)){s[k]=1; print; if(++n>=25) exit}}' >> "$OUT/sim.md"
-echo "## last lines of the app's output" >> "$OUT/sim.md"
-tail -40 "$OUT/sim-console.log" >> "$OUT/sim.md" 2>/dev/null
 # engines that log through Apple's system log (Godot, Unity, SDL) don't show in the console file: save that log too
 timeout 120 xcrun simctl spawn "$UDID" log show --start "$(date -r "$before" '+%Y-%m-%d %H:%M:%S')" --style compact \
   --predicate "process == '$EXE'" 2>/dev/null | grep -viE '^Timestamp|restoration' | tail -300 > "$OUT/sim-applog.log"
+# the first distinct errors say more than the last ones, which often just repeat; the same error with
+# another object name, number or address counts once, with how many times it came
+echo "## first distinct errors (app output, then system log)" >> "$OUT/sim.md"
+python3 "$HERE/ui.py" errors "$OUT/sim-console.log" "$OUT/sim-applog.log" >> "$OUT/sim.md"
+echo "## last lines of the app's output" >> "$OUT/sim.md"
+tail -40 "$OUT/sim-console.log" >> "$OUT/sim.md" 2>/dev/null
 echo "## app's system log (last lines, full in sim-applog.log)" >> "$OUT/sim.md"; tail -25 "$OUT/sim-applog.log" >> "$OUT/sim.md"
+# one summary line at the top of sim.md
+crashes=$(grep -c '^## crash report' "$OUT/sim.md")
+running=$( [ "$ok" = 0 ] && echo 'still running' || echo 'NOT running')
+[ "$ok" = 0 ] && [ "$SF" = 0 ] && [ "$EF" = 0 ] && verdict=PASS || { verdict=FAIL; ok=1; }
+sum="SUMMARY: $verdict. $(grep -q '^launched' "$OUT/sim.md" && echo launched || echo 'NOT launched'), $running, crash reports $crashes"
+[ -n "$STEPS" ] && sum="$sum, steps $SN ok / $SF failed, expects $EP passed / $EF failed"
+{ echo "$sum"; echo; cat "$OUT/sim.md"; } > "$OUT/sim.md.new" && mv "$OUT/sim.md.new" "$OUT/sim.md"; echo "$sum"
 exit $ok

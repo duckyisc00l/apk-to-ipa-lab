@@ -1,4 +1,6 @@
+# 2048 rewrite on the iPhone SE simulator (375x667 points)
 shot 0-start
+expect Swipe to move
 swipe 200 500 200 750
 wait 1
 shot 1-after-down
@@ -9,3 +11,25 @@ wait 1
 swipe 80 600 320 600
 wait 1
 shot 2-after-four-swipes
+swipe 200 450 200 750
+wait 1
+swipe 320 600 80 600
+wait 1
+swipe 200 750 200 450
+wait 1
+swipe 80 600 320 600
+wait 1
+shot 3-after-eight-swipes
+ui board
+expect SCORE
+# the new-game button (top right, above the board) asks first; Cancel keeps the game
+tap 345 162
+wait 1
+expect Reset game?
+shot 4-reset-dialog
+tapon Cancel
+wait 1
+expect HIGH SCORE
+# deliberately wrong, to prove a failed expect is reported (remove after the first run)
+expect You Win!
+shot 5-end

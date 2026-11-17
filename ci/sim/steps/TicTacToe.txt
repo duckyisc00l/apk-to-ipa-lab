@@ -1,0 +1,14 @@
+# Ionic Tic-Tac-Toe (web route), 402x874-point iPhone: Start, then X in the centre and two corners
+shot 0-start
+ui start
+tapon Start
+wait 1
+tap 203 434
+wait 2
+shot 1-centre
+tap 128 357
+wait 2
+tap 280 511
+wait 2
+shot 2-three-moves
+ui board
