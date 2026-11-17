@@ -32,6 +32,7 @@ def main(path):
                 if name < len(resmap) and resmap[name] == SCREEN_ORIENTATION:
                     found.append(val)
         i += size
+    print(f"screenOrientation values in the manifest: {found}", file=sys.stderr)
     for v in found:
         if v in PORTRAIT:
             return "portrait"

@@ -124,7 +124,7 @@ jobs:
           echo "game window in the data file: $GW x $GH" | tee -a out/ios.md
           # which way to hold the phone: the APK's manifest says; the data file's window size is only a fallback
           man=$(find work -maxdepth 3 -name AndroidManifest.xml | head -1)
-          if [ "$ORIENT" = auto ] && [ -n "$man" ]; then ORIENT=$(python3 -I ci/gamemaker/orientation.py "$man"); fi
+          if [ "$ORIENT" = auto ] && [ -n "$man" ]; then ORIENT=$(python3 -I ci/gamemaker/orientation.py "$man" 2>> out/ios.md); fi
           if [ "$ORIENT" != portrait ] && [ "$ORIENT" != landscape ]; then ORIENT=$([ "$GH" -gt "$GW" ] && echo portrait || echo landscape); fi
           echo "orientation: $ORIENT (manifest: ${man:-none})" | tee -a out/ios.md
           NAME=$(basename "$REPO"); BID="lab.gamemaker.$(echo "$NAME" | tr -cd 'a-zA-Z0-9')"
@@ -151,6 +151,7 @@ jobs:
           done
           (cd app-device && zip -qry ../out/$NAME-unsigned.ipa Payload); ls -la out/*.ipa | tee -a out/ios.md; file app-*/Payload/App.app/App | tee -a out/ios.md
       - name: Run in the iPhone Simulator, tap through, take screenshots
+        timeout-minutes: 30
         run: |
           # tap targets are in game pixels; turn them into simulator points (the runner fits the game to the screen, centred)
           UDID=$(xcrun simctl list devices available -j | python3 -c "
@@ -160,7 +161,7 @@ jobs:
           for rt in reversed(rts):
               ph=[x for x in d[rt] if x['name'].startswith('iPhone')]
               if ph: print(ph[-1]['udid']); break")
-          xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null
+          xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null || true
           xcrun simctl io "$UDID" screenshot /tmp/home.png > /dev/null 2>&1
           # Legendary Chess default: wait past the splash, then move the white e-pawn e2-e4 and the black e-pawn e7-e5.
           # Board: 8 squares of 128 px from (28,568) in a 1080x2160 game.
