@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../../c4p/CUE4Parse-Conversion/CUE4Parse-Conversion.csproj" />
