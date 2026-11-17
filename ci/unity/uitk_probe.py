@@ -21,8 +21,6 @@ except Exception as x:
     gen = None
     rep["generator"] = f"failed: {x!r}"[:300]
 env = UnityPy.load(data)
-if gen is not None:
-    env.typetree_generator = gen
 kinds = {}
 samples = {}
 hist = {}; fails = []; types = {}
@@ -31,9 +29,9 @@ for obj in env.objects:
     if obj.type.name != "MonoBehaviour":
         continue
     try:
-        mb = obj.parse_as_object() if hasattr(obj, "parse_as_object") else obj.read(check_read=False)
-        ptr = getattr(mb, "m_Script", None)
-        scr = ptr.deref_parse_as_object() if hasattr(ptr, "deref_parse_as_object") else ptr.read()
+        # base MonoBehaviour fields only (no generator here: wrong guesses for game scripts break every read)
+        mb = obj.read(check_read=False)
+        scr = mb.m_Script.read()
         cls = scr.m_ClassName
     except Exception as x:
         if len(fails) < 5: fails.append(traceback.format_exc()[-400:])
@@ -45,7 +43,8 @@ for obj in env.objects:
     if kinds[cls] > 3:
         continue
     try:
-        tt = obj.read_typetree()
+        nodes = gen.get_nodes_up(scr.m_AssemblyName, (scr.m_Namespace + "." if scr.m_Namespace else "") + cls)
+        tt = obj.read_typetree(nodes, check_read=False)
         s = {"name": tt.get("m_Name"), "keys": list(tt.keys())[:40]}
         if cls == "VisualTreeAsset":
             els = tt.get("m_VisualElementAssets", [])
