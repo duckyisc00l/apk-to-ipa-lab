@@ -21,7 +21,7 @@ jobs:
         shell: bash   # the container's default is sh -e
     steps:
       - name: Tools
-        run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps iptables xvfb xauth curl python3 > /dev/null
+        run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps iptables xvfb xauth curl python3 gdb > /dev/null
       - uses: actions/checkout@v4
         with: { path: lab }
       - name: Get Bim's source and patch it for offline
@@ -29,6 +29,13 @@ jobs:
           mkdir -p out; git clone -q --depth 1 https://github.com/j-jorge/bim bim
           echo "bim $(git -C bim log -1 --format='%h %ad' --date=short)" | tee out/offline.md
           python3 -I lab/ci/offline/bim_offline.py bim 23899 | tee -a out/offline.md
+      - name: Cache Bim's build (40 minutes from scratch)
+        uses: actions/cache@v4
+        with:
+          path: |
+            bim/build
+            bim/.backroom
+          key: bim-build-${{ hashFiles('lab/ci/offline/bim_offline.py') }}-v1
       - name: Build environment and build (Bim's own scripts)
         run: |
           cd bim
@@ -52,11 +59,12 @@ jobs:
           echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
           mkdir -p shots app; cd shots
           set +e
-          timeout 900 xvfb-run -a -s "-screen 0 1080x1920x24" "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
+          timeout 900 xvfb-run -a -s "-screen 0 1080x1920x24" gdb -batch -ex run -ex bt --args "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
             --console-log --script "$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json" --script-step-timeout 300 --app-dir "$GITHUB_WORKSPACE/app" > ../out/client.log 2>&1
           echo "client exit $?" | tee -a ../out/offline.md
           ls -la | tee -a ../out/offline.md
           grep -iE "game server|connect|matchmak|bot|script|error|offline" ../out/client.log | head -40 >> ../out/offline.md
+          grep -A25 "SIGSEGV\|signal SIG" ../out/client.log | head -40 >> ../out/offline.md || true
           tail -20 ../out/server.log >> ../out/offline.md
       - name: Publish to branch r-offline
         if: always()

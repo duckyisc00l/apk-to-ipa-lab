@@ -23,9 +23,14 @@ func _init():
 		inst.transform = Transform3D(Basis(Quaternion(r[0], r[1], r[2], r[3]).normalized()).scaled(Vector3(s[0], s[1], s[2])), Vector3(p[0], p[1], p[2]))
 		inst.name = str(m["name"]).validate_node_name()
 		root.add_child(inst)
+		inst.owner = root   # without this the placed model isn't saved into level.tscn
 		for mi in inst.find_children("*", "MeshInstance3D", true, false):
+			var before = mi.get_child_count()
 			mi.create_trimesh_collision()   # so the player can stand on the level
-		_own(inst, root); placed += 1; centre += inst.position
+			for k in range(before, mi.get_child_count()):   # the new collision nodes belong to the level too
+				var body = mi.get_child(k); body.owner = root
+				for c in body.get_children(): c.owner = root
+		placed += 1; centre += inst.position
 	# the Unreal level's own sun if it had one, else a default; plus sky, so it's never pitch black
 	var sun = DirectionalLight3D.new(); sun.name = "Sun"; sun.shadow_enabled = true
 	sun.rotation_degrees = Vector3(-50, -30, 0)
