@@ -21,8 +21,8 @@ var prefix = args.Length > 3 ? args[3] : null;
 Serilog.Log.Logger = new Serilog.LoggerConfiguration().MinimumLevel.Warning().WriteTo.Console().CreateLogger();
 CUE4Parse.CUE4ParseLog.UseLogger(Serilog.Log.Logger);
 await ZlibHelper.InitializeAsync();
+var provider = new DefaultFileProvider(paks, SearchOption.AllDirectories,
     new VersionContainer(Enum.Parse<EGame>(gameName)), StringComparer.OrdinalIgnoreCase);
-    new VersionContainer(Enum.Parse<EGame>(gameName), ETexturePlatform.Mobile), StringComparer.OrdinalIgnoreCase);   // Android build: mobile-cooked meshes and textures
 provider.Initialize();
 provider.Mount();
 provider.PostMount();
