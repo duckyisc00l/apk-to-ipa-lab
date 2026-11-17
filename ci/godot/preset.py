@@ -64,21 +64,29 @@ application/version="1"
 application/targeted_device_family=2
 architectures/arm64=true
 '''
-# iOS (and Godot 3's exporter) refuse a transparent App Store icon: flatten the project icon onto black
+# iOS (and Godot 3's exporter) refuse a transparent App Store icon: flatten the project icon onto black.
+# Godot 4.7 also fails on any empty icon slot, so every slot gets the same 1024 icon (Godot resizes it).
+ICON_KEYS = ["app_store_1024x1024", "icon_1024x1024", "iphone_120x120", "iphone_180x180", "ipad_76x76", "ipad_152x152",
+             "ipad_167x167", "spotlight_40x40", "spotlight_80x80", "settings_58x58", "settings_87x87",
+             "notification_40x40", "notification_60x60"]
 icon_opt = ""
 try:
     from PIL import Image
     cfg = open(os.path.join(proj, "project.godot"), errors="replace").read()
     m = re.search(r'config/icon\s*=\s*"res://([^"]+)"', cfg)
     src = os.path.join(proj, m.group(1)) if m else os.path.join(proj, "icon.png")
-    if os.path.exists(src):
+    if os.path.exists(src) and not src.endswith(".svg"):
         im = Image.open(src).convert("RGBA")
         bg = Image.new("RGBA", im.size, (0, 0, 0, 255))
         bg.alpha_composite(im)
-        bg.convert("RGB").resize((1024, 1024), Image.LANCZOS).save(os.path.join(proj, "_ios_icon_1024.png"))
-        icon_opt = 'icons/app_store_1024x1024="res://_ios_icon_1024.png"\nicons/icon_1024x1024="res://_ios_icon_1024.png"\n'
+        out = bg.convert("RGB").resize((1024, 1024), Image.LANCZOS)
         print("opaque 1024 icon made from", os.path.relpath(src, proj))
-except Exception as e:  # no PIL or odd icon: Godot falls back to its own
+    else:
+        out = Image.new("RGB", (1024, 1024), (40, 40, 48))   # no usable project icon: a plain one
+        print("no project icon: plain 1024 icon made")
+    out.save(os.path.join(proj, "_ios_icon_1024.png"))
+    icon_opt = "".join(f'icons/{k}="res://_ios_icon_1024.png"\n' for k in ICON_KEYS)
+except Exception as e:  # no PIL: Godot uses its own
     print("icon not made:", e)
 opts += icon_opt
 open(path, "w").write("".join(out) + ("\n" if out else "") + common + opts)

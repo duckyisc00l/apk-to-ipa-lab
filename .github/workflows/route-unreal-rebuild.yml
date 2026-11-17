@@ -46,10 +46,10 @@ jobs:
           while read m; do
             if [ -f "export/meshes/$m" ]; then continue; fi
             pkg="${m%.glb}"; name=$(basename "$pkg")
-            for arg in "$pkg.uasset" "$name"; do   # UE Viewer's names: try the full file name, then the short one
-              ./uev/umodel -path="$PAKS" -game=ue4.16 -export -gltf -out="export/um/$(dirname "$pkg")" "$arg" >> out/umodel.log 2>&1 && break
-            done
-            f=$(find "export/um/$(dirname "$pkg")" -iname "$name.gltf" | head -1)
+            game="/Game/${pkg#*/Content/}"   # UE Viewer names packages /Game/<path under Content>
+            # -out must be absolute: a relative one is taken from the home folder
+            ./uev/umodel -path="$PAKS" -game=ue4.16 -export -gltf -out="$GITHUB_WORKSPACE/export/um" "$game" >> out/umodel.log 2>&1 || true
+            f=$(find export/um -ipath "*${game#/}.gltf" | head -1)
             if [ -n "$f" ]; then echo "\"$m\": \"${f#export/}\"," >> export/umodel_map.json; echo "umodel: $m -> ${f#export/}" | tee -a out/rebuild.md; fi
           done < meshes.txt
           echo '"": ""}' >> export/umodel_map.json
