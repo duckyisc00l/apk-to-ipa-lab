@@ -1,0 +1,45 @@
+name: unity-uitk-extract
+# Read a Unity game's UI Toolkit layouts (UXML), style sheets (USS/TSS) straight from its APK. See ci/unity/uitk_extract.py.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { description: "Game repo with an APK in its releases", default: "UltraStar-Deluxe/Play" }
+      dump: { description: "also publish raw object bytes (open-source games only)", default: "false" }
+      compare_tag: { description: "open-source games: source tag to measure accuracy against (empty = skip)", default: "v0.9.0" }
+      compare_dir: { description: "Unity project folder in the source repo", default: "UltraStar Play" }
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and detect
+        run: |
+          echo "${{ inputs.repo }}" > /tmp/one.txt
+          CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+      - name: Extract
+        continue-on-error: true
+        run: |
+          pip install -q UnityPy 2>&1 | tail -2
+          mkdir -p out
+          managed=$(find work -type d -name Managed | head -1); data=$(dirname "$managed")
+          [ -n "$managed" ] || data=$(find work -type f \( -name globalgamemanagers -o -name data.unity3d \) | head -1 | xargs dirname)
+          if [ "${{ inputs.dump }}" = "true" ]; then python3 ci/unity/uitk_dump.py "$data" out/dump.json; fi
+          if [ -f ci/unity/uitk_extract.py ]; then python3 ci/unity/uitk_extract.py "$data" out/uitk > out/extract.log 2>&1; tail -20 out/extract.log; fi
+      - name: Compare with the source
+        if: inputs.compare_tag != ''
+        continue-on-error: true
+        run: |
+          GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 --branch "${{ inputs.compare_tag }}" "https://github.com/${{ inputs.repo }}" src
+          python3 ci/unity/uitk_compare.py out/uitk "src/${{ inputs.compare_dir }}" > out/compare.txt 2>&1; tail -40 out/compare.txt
+      - name: Publish to branch r-uitkx
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp -r out/. /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-uitkx && git rm -rfq . && rm -rf dl work ci out src
+          cp -r /tmp/r/. . && git add -A && git commit -qm "uitk extract" && git push -f origin r-uitkx
