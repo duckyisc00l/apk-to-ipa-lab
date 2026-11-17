@@ -1,0 +1,1 @@
+sikelio/plexmanager 0.0.4-beta app-armeabi-v7a-release.apk
