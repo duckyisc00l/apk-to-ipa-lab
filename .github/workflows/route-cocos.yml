@@ -80,6 +80,11 @@ jobs:
             for f in $C/*.cpp; do b=$(basename $f); [ $b = AppDelegate.cpp ] || echo "#include \"$b\"" >> $C/AppDelegate.cpp; done
             echo "- native: the game's own C++ added ($(ls $C | tr '\n' ' ')); Live2D left out" | tee -a out/cocos.md
           else echo "- native: stock engine" | tee -a out/cocos.md; fi
+          # Xcode 16 clang: bullet's SSE shuffle masks must fit in 8 bits (bt_splat_ps(y, 0x80) gives 10880); older clang cut them down silently
+          find proj/frameworks/cocos2d-x/external/bullet -name '*.h' -exec sed -i '' -E 's/^#define BT_SHUFFLE\(x,y,z,w\) \(\(w\)<<6 \| \(z\)<<4 \| \(y\)<<2 \| \(x\)\)/#define BT_SHUFFLE(x,y,z,w) (((w)<<6 | (z)<<4 | (y)<<2 | (x)) \& 0xff)/' {} +
+          grep -rh '^#define BT_SHUFFLE' proj/frameworks/cocos2d-x/external/bullet | sort -u | tee -a out/cocos.md
+          # the game's patched UIRichText.cpp calls bind() unqualified; Xcode 16's libc++ needs std::bind
+          sed -i '' -E 's/([^:a-z_])bind\(&RichText/\1std::bind(\&RichText/' proj/frameworks/cocos2d-x/cocos/ui/UIRichText.cpp
           # Xcode 16 refuses iOS 6-8 deployment targets
           find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
           xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
