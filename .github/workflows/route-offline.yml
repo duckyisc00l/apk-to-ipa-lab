@@ -58,18 +58,16 @@ jobs:
           C=$(find "$GITHUB_WORKSPACE/bim/build" -type f -perm -u+x -path '*apps/linux/bim' | head -1); B=$(dirname "$(dirname "$(dirname "$C")")")
           echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
           # A = the game's original behaviour with no internet; B = with the offline change switched on
-          # no sound card in the container: point OpenAL Soft (axmol's audio on Linux) at its silent "null" device
-          export ALSOFT_DRIVERS=null
           for mode in A B; do
             mkdir -p "shots-$mode" "app-$mode"; cd "shots-$mode"
             [ "$mode" = B ] && export BIM_OFFLINE=1 || unset BIM_OFFLINE
             set +e
-            timeout 600 xvfb-run -a -s "-screen 0 1080x1920x24" gdb -batch -ex run -ex bt -ex "frame 1" -ex "info frame" -ex "frame 2" -ex "info locals" \
+            timeout 600 xvfb-run -a -s "-screen 0 1080x1920x24" gdb -batch -ex run -ex bt -ex "frame 1" -ex 'info symbol $pc' -ex 'info line *$pc' -ex "frame 2" -ex 'info symbol $pc' -ex "frame 0" -ex 'x/4gx $rdi' \
               --args "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
               --console-log --script "$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json" --script-step-timeout 240 --app-dir "$GITHUB_WORKSPACE/app-$mode" > "../out/client-$mode.log" 2>&1
             echo "## run $mode (BIM_OFFLINE=${BIM_OFFLINE:-unset}): $(grep -c 'signal SIG' ../out/client-$mode.log) crash(es); screenshots: $(ls *.png 2>/dev/null | tr '\n' ' ')" | tee -a ../out/offline.md
             grep -iE "StartUp|business|game server|connect|matchmak|bot|script|offline|error" "../out/client-$mode.log" | grep -v "^\[36" | tail -25 >> ../out/offline.md
-            grep -A30 "signal SIG" "../out/client-$mode.log" | head -45 >> ../out/offline.md || true
+            grep -A40 "signal SIG" "../out/client-$mode.log" | grep -vE "Saved registers|at 0x7ff" | head -45 >> ../out/offline.md || true
             cd ..; mkdir -p shots; for f in shots-$mode/*.png; do [ -f "$f" ] && cp "$f" "shots/$mode-$(basename "$f")"; done
           done
           tail -20 out/server.log >> out/offline.md
