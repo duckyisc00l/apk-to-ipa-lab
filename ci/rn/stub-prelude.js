@@ -34,12 +34,78 @@
     } });
   }
   var cache = {};
+  var noop = function () { var cb = arguments[arguments.length - 1]; if (typeof cb === 'function') { try { cb(null); } catch (e) {} } return Promise.resolve(null); };
+
+  // ---- An Android bundle on an iPhone host --------------------------------------------------------
+  // Metro builds the APK's bundle for Android only (Platform.OS is fixed to 'android', *.android.js files
+  // are picked), so it asks for Android screen components and Android-only modules. Map each to iOS.
+  var VIEW = { AndroidTextInput: 'RCTMultilineTextInputView', AndroidHorizontalScrollView: 'RCTScrollView',
+    AndroidHorizontalScrollContentView: 'RCTScrollContentView', AndroidProgressBar: 'RCTActivityIndicatorView',
+    AndroidSwitch: 'RCTSwitch', AndroidSwipeRefreshLayout: 'RCTView', AndroidDrawerLayout: 'RCTView',
+    AndroidDropdownPicker: 'RCTView', AndroidDialogPicker: 'RCTView', RCTTextInlineImage: 'RCTView', AndroidViewPager: 'RCTView' };
+  function iosView(n) { return VIEW[n] || n; }
+  function fixProps(cls, p) {
+    if (!p) return p;
+    if (cls === 'RCTImageView' && p.src && !p.source) p = Object.assign({}, p, { source: p.src });   // Android Image sends src
+    if (cls === 'AndroidProgressBar') p = Object.assign({ animating: true }, p);
+    return p;
+  }
+  function uiManager(real) {
+    var consts = null, names = {};
+    function C() { return consts || (consts = (real.getConstants ? real.getConstants() : null) || {}); }
+    var extra = {
+      // Android looks each component up one by one; iOS lists them all in its constants
+      getConstantsForViewManager: function (n) { return C()[iosView(n)] || null; },
+      getDefaultEventTypes: function () { return { bubblingEventTypes: C().genericBubblingEventTypes || {}, directEventTypes: C().genericDirectEventTypes || {} }; },
+      createView: function (tag, cls, root, props) {
+        var n = cls === 'AndroidTextInput' && !(props && props.multiline) ? 'RCTSinglelineTextInputView' : iosView(cls);
+        names[tag] = n; return real.createView(tag, n, root, fixProps(cls, props));
+      },
+      updateView: function (tag, cls, props) { return real.updateView(tag, names[tag] || iosView(cls), fixProps(cls, props)); }
+    };
+    return extra;
+  }
+  function alertDialog(alertManager) {   // Alert.alert on Android goes through DialogManagerAndroid
+    return { getConstants: function () { return { buttonClicked: 'buttonClicked', dismissed: 'dismissed', buttonPositive: -1, buttonNegative: -2, buttonNeutral: -3 }; },
+      showAlert: function (cfg, onError, onAction) {
+        var buttons = [], ids = [];
+        [['buttonNegative', -2], ['buttonNeutral', -3], ['buttonPositive', -1]].forEach(function (b, i) {
+          if (cfg[b[0]]) { var o = {}; o[String(i)] = cfg[b[0]]; buttons.push(o); ids[i] = b[1]; } });
+        if (!buttons.length) { buttons.push({ 0: 'OK' }); ids[0] = -1; }
+        alertManager.alertWithArgs({ title: cfg.title || '', message: cfg.message || '', buttons: buttons },
+          function (id) { onAction && onAction('buttonClicked', ids[Number(id)]); });
+      } };
+  }
+  var ANDROID = {   // Android-only module -> iOS module that does the same job, or a small stand-in
+    IntentAndroid: function (r) { return r.LinkingManager; },
+    DialogManagerAndroid: function (r) { return r.AlertManager ? alertDialog(r.AlertManager) : null; },
+    ToastAndroid: function () { return { getConstants: function () { return { SHORT: 0, LONG: 1, TOP: 0, BOTTOM: 1, CENTER: 2 }; } }; },
+    PermissionsAndroid: function () { return { checkPermission: function () { return Promise.resolve(true); },
+      requestPermission: function () { return Promise.resolve('granted'); },
+      requestMultiplePermissions: function (ps) { var o = {}; (ps || []).forEach(function (k) { o[k] = 'granted'; }); return Promise.resolve(o); },
+      shouldShowRequestPermissionRationale: function () { return Promise.resolve(false); } }; },
+    DeviceEventManager: function () { return {}; }, FrescoModule: function () { return {}; },
+    AccessibilityInfo: function () { return {}; }, HeadlessJsTaskSupport: function () { return {}; }
+  };
+  // a real module with Android-only methods missing: those answer "nothing" instead of crashing
+  function lenient(real, extra) {
+    return new Proxy(real, { get: function (t, k) {
+      if (extra && k in extra) return extra[k];
+      var v = t[k];
+      if (v !== undefined || typeof k !== 'string' || k === 'then' || !/^[a-z]/.test(k)) return v;
+      return noop;
+    } });
+  }
   function wrap(real) {
     return new Proxy({}, { get: function (t, k) {
-      var m = real ? real[k] : undefined;
-      if (m != null) return m;
-      if (typeof k === 'string' && (STUBS.indexOf(k) >= 0 || STUB_RE.test(k))) return cache[k] || (cache[k] = stub(k));
-      return m;
+      if (typeof k !== 'string') return undefined;
+      if (k in cache) return cache[k];
+      var m = real ? real[k] : undefined, out;
+      if (m != null) out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
+      else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
+      else if (STUBS.indexOf(k) >= 0 || STUB_RE.test(k)) out = stub(k);
+      else return m;
+      return (cache[k] = out);
     } });
   }
   try { if (g.nativeModuleProxy) g.nativeModuleProxy = wrap(g.nativeModuleProxy); } catch (e) {}
