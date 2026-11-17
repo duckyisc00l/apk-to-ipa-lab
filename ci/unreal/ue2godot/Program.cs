@@ -34,6 +34,11 @@ provider.Mount();
 provider.PostMount();
 provider.LoadVirtualPaths();
 var summary = new List<string> { $"files: {provider.Files.Count}" };
+// what got mounted (IoStore .utoc needs its matching .ucas and global.utoc; an encrypted one stays unloaded)
+foreach (var v in provider.MountedVfs) summary.Add($"mounted {v.Name}: {v.FileCount} files, encrypted index {v.IsEncrypted}");
+foreach (var v in provider.UnloadedVfs) summary.Add($"NOT mounted {v.Name}: encrypted index {v.IsEncrypted}");
+summary.Add("by type: " + string.Join(" ", provider.Files.Keys.GroupBy(k => Path.GetExtension(k).ToLowerInvariant()).OrderByDescending(g => g.Count()).Take(12).Select(g => $"{g.Key}={g.Count()}")));
+summary.Add("top folders: " + string.Join(" ", provider.Files.Keys.GroupBy(k => string.Join('/', k.Split('/').Take(3))).OrderByDescending(g => g.Count()).Take(10).Select(g => $"{g.Key}={g.Count()}")));
 
 bool IsGame(string p) => prefix is null
     ? !p.StartsWith("Engine/", StringComparison.OrdinalIgnoreCase)
@@ -51,7 +56,18 @@ foreach (var map in maps)
     var objPath = map[..^5] + "." + Path.GetFileNameWithoutExtension(map);
     UWorld world;
     try { world = provider.LoadPackageObject<UWorld>(objPath); }
-    catch (Exception e) { summary.Add($"{map}: can't load ({e.Message})"); continue; }
+    catch (Exception e)
+    {
+        summary.Add($"{map}: can't load ({e.Message})");
+        if (e is CUE4Parse.UE4.Exceptions.MappingException && summary.Count(x => x.StartsWith("  classes")) < 3)
+            try
+            {
+                var pkg = (CUE4Parse.UE4.Assets.IoPackage)provider.LoadPackage(map);
+                summary.Add("  classes in it: " + string.Join(" ", pkg.ExportMap.Select(x => pkg.ResolveObjectIndex(x.ClassIndex)?.Name.Text ?? "?").GroupBy(n => n).OrderByDescending(g => g.Count()).Take(25).Select(g => $"{g.Key}={g.Count()}")));
+            }
+            catch (Exception e2) { summary.Add("  classes: " + e2.Message); }
+        continue;
+    }
     WorldDto dto;
     try { dto = new WorldDto(world); }
     catch (Exception e) { summary.Add($"{map}: can't read level ({e.Message})"); continue; }

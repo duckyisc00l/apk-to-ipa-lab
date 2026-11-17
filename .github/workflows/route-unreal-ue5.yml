@@ -57,7 +57,7 @@ jobs:
           git clone -q --depth 1 https://github.com/FabianFG/CUE4Parse c4p
           echo "CUE4Parse $(git -C c4p log -1 --format='%h %ad' --date=short)" | tee -a out/rebuild.md
           set -o pipefail
-          dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" "$EGAME" export 2>&1 | grep -vE "^\s*$" | tail -300 | tee out/ue2godot.log || true
+          dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" "$EGAME" export 2>&1 | grep -vE "^\s*$|warning (CS|CA)" | tail -300 | tee out/ue2godot.log || true
           cat export/summary.txt >> out/rebuild.md || true
           find export/meshes -name '*.glb' -o -name '*.gltf' | wc -l | sed 's/^/mesh files: /' | tee -a out/rebuild.md
           find export/tex -name '*.png' | wc -l | sed 's/^/texture PNGs: /' | tee -a out/rebuild.md
