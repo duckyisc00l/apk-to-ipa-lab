@@ -57,8 +57,6 @@ def main():
     nmax = int(sys.argv[1]) if len(sys.argv) > 1 else 8
     os.makedirs("out", exist_ok=True); os.makedirs("dl/cocos", exist_ok=True)
     repos = {}
-    for l in open(os.path.join(HERE, "candidates.txt")):
-        if l.strip(): repos[l.strip()] = 0
     for q in QUERIES:
         for page in (1, 2):
             r = api("search/repositories?" + urllib.parse.urlencode({"q": q, "sort": "stars", "per_page": 100, "page": page})) or {}
@@ -67,7 +65,10 @@ def main():
             time.sleep(3)
     hits = []
     for repo in repos:
-        rels = api(f"repos/{repo}/releases?per_page=15") or []
+        try:
+            rels = api(f"repos/{repo}/releases?per_page=15") or []
+        except Exception:  # noqa: BLE001
+            continue
         for rel in rels:
             a = next((a for a in rel.get("assets", []) if a["name"].lower().endswith(".apk") and a["size"] < 300e6), None)
             if a:
