@@ -1,0 +1,49 @@
+name: route-libgdx
+# Skill step E (libGDX) end to end: keep the game's own Java. classes.dex -> Java bytecode (dex2jar),
+# drop the Android side, add a libGDX iOS launcher, compile it all for iPhone with MobiVM (RoboVM),
+# run it in the iPhone Simulator and package an unsigned IPA.
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { default: "scout", description: "scout (list libGDX games with APKs) or build" }
+      repo: { default: "" }
+      name: { default: "" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-libgdx.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: route-libgdx
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scout:
+    if: ${{ (inputs.mode || 'scout') == 'scout' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find libGDX games with APKs, split each one's Java
+        run: |
+          CANDIDATES=ci/libgdx/candidates.txt MAX_GAMES=25 python3 ci/scout.py | tail -40
+          python3 ci/detect.py dl work | tail -30
+          for g in $(python3 -c "import json;[print(r['game']) for r in json.load(open('out/detect.json')) if r['engine']=='libGDX']"); do
+            echo "## $g" >> out/split.md
+            ci/libgdx/dex2jar.sh work/$g /tmp/$g.jar >> out/split.md 2>&1 || { echo "dex2jar failed" >> out/split.md; continue; }
+            python3 ci/libgdx/split.py report /tmp/$g.jar /tmp/$g.md > /dev/null; cat /tmp/$g.md >> out/split.md
+            ls -la work/$g/lib/*/ 2>/dev/null | grep '\.so' | awk '{print $5, $9}' | sort -u -k2 >> out/split.md
+            du -sh work/$g/assets >> out/split.md 2>/dev/null
+            # what the Android launcher passes to the game
+            for c in $(sed -n 's/^- \(.*\) extends .*/\1/p' /tmp/$g.md | head -3); do
+              echo '```' >> out/split.md; javap -c -p -cp /tmp/$g.jar "${c//\//.}" 2>&1 | grep -E "class |new |invokespecial|initialize" | head -20 >> out/split.md; echo '```' >> out/split.md
+            done
+          done
+      - name: Publish to branch r-libgdx
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-libgdx && git rm -rfq . && rm -rf ci dl work out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "libgdx scout ${{ github.run_number }}" && git push -f origin r-libgdx
