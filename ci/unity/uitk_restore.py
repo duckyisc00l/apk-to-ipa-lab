@@ -135,6 +135,16 @@ def fix_refs(text):
     text = re.sub(r"guid[:=] ?([0-9a-f]{32})", sub, text)
     return text
 
+by_base = {}
+for f in glob.glob(os.path.join(proj, "Assets", "**", "*.*ss"), recursive=True):
+    by_base.setdefault(os.path.basename(f).lower(), []).append("/" + os.path.relpath(f, proj).replace(os.sep, "/"))
+
+def plain_path(u):
+    if os.path.isfile(os.path.join(proj, u.lstrip("/"))):
+        return u
+    hits = by_base.get(os.path.basename(u).lower(), [])
+    return hits[0] if len(hits) == 1 else u
+
 unresolved = Counter()
 for f in glob.glob(os.path.join(proj, "Assets", "**", "*"), recursive=True):
     if not f.endswith((".uxml", ".uss", ".tss")) and not (f.endswith(".asset") and os.path.basename(f)[:-6] in real):
@@ -143,6 +153,9 @@ for f in glob.glob(os.path.join(proj, "Assets", "**", "*"), recursive=True):
         continue
     t = open(f, errors="ignore").read()
     nt = fix_refs(t)
+    # plain-path imports (@import url("/Packages/PlayShared/.../X.uss")) break when the file now lives elsewhere:
+    # Unity says "Invalid asset path" and the theme loses those styles. Point them at the recovered file by name.
+    nt = re.sub(r'url\("(/?(?:Assets|Packages)/[^"?#]+\.(?:uss|tss))"\)', lambda m: 'url("%s")' % plain_path(m.group(1)), nt)
     for g in re.findall(r"guid[:=] ?([0-9a-f]{32})", nt):
         if g in src_guid_name and g not in remap.values() and g not in rec_name_guid.values() and g not in rec_imgs:
             unresolved[src_guid_name[g]] += 1
