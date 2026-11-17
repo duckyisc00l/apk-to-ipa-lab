@@ -89,7 +89,10 @@ jobs:
           inst=$(grep '^INSTALL=' ../out/addons.txt | cut -d= -f2-)
           [ -n "$inst" ] && npm install --legacy-peer-deps $inst 2>&1 | tail -3 | tee -a ../out/ipa.md
           stubs=$(grep '^STUB=' ../out/addons.txt | cut -d= -f2- | python3 -c "import json,sys;print(json.dumps(sys.stdin.read().split()))")
-          sed "s/__STUBS__/$stubs/" ../ci/rn/stub-prelude.js > ../rn/prelude.js
+          # every method name the bundle calls on a native wrapper ("this.native.X", "NativeModules.Y.X"): stubs get all of them
+          methods=$(python3 -c "import re,json,sys;t=open(sys.argv[1],errors='ignore').read();print(json.dumps(sorted(set(re.findall(r'\.native\.([A-Za-z_]\w*)\(',t))|set(re.findall(r'NativeModules\.\w+\.([A-Za-z_]\w*)\(',t)))))" ../rn/main.jsbundle)
+          echo "stub methods: $(echo "$methods" | python3 -c 'import json,sys;print(len(json.load(sys.stdin)))')" | tee -a ../out/ipa.md
+          python3 -c "import sys;s=open(sys.argv[1]).read().replace('__STUBS__',sys.argv[2]).replace('__METHODS__',sys.argv[3]);open(sys.argv[4],'w').write(s)" ../ci/rn/stub-prelude.js "$stubs" "$methods" ../rn/prelude.js
       - name: Same JS engine as the APK, then pods
         run: |
           cd Host/ios
