@@ -174,7 +174,7 @@ PlayerSettings:
   StripUnusedMeshComponents: 0
   VertexChannelCompressionMask: 0
   iPhoneSdkVersion: 0
-  iOSTargetOSVersionString:
+  iOSTargetOSVersionString: 15.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString:
@@ -280,9 +280,9 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 0
   enableCrashReportAPI: 0
-  cameraUsageDescription:
-  locationUsageDescription:
-  microphoneUsageDescription:
+  cameraUsageDescription: Shows the camera view behind the game, so enemies appear in your room.
+  locationUsageDescription: Used for the game's location features.
+  microphoneUsageDescription: Used for the game's sound features.
   switchNetLibKey:
   switchSocketMemoryPoolSize: 0
   switchSocketAllocatorPoolSize: 0
