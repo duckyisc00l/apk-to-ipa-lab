@@ -17,7 +17,10 @@
   };
   function stub(name) {
     var fn = function () { var cb = arguments[arguments.length - 1]; if (typeof cb === 'function') { try { cb(null); } catch (e) {} } return Promise.resolve(null); };
-    return new Proxy({}, { get: function (t, k) {
+    // the settings are real own properties: some libraries copy a module with Object.keys()
+    var base = Object.assign({}, CONSTANTS[name] || {});
+    return new Proxy(base, { get: function (t, k) {
+      if (k in t) return t[k];
       if (k === 'getConstants') return function () { return CONSTANTS[name] || {}; };
       if (CONSTANTS[name] && k in CONSTANTS[name]) return CONSTANTS[name][k];
       if (k === 'then' || typeof k === 'symbol') return undefined;

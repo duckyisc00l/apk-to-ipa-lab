@@ -17,4 +17,12 @@ fi
 # the app's own identity instead of the template's "Host" (safe after the build: the IPA is unsigned)
 [ -n "${5:-}" ] && plutil -replace CFBundleIdentifier -string "$5" "$app/Info.plist"
 [ -n "${6:-}" ] && plutil -replace CFBundleDisplayName -string "$6" "$app/Info.plist"
+# the APK's launcher icon as loose icon files (iOS still reads CFBundleIconFiles)
+if [ -f "$rn/icon.png" ] && command -v sips > /dev/null; then
+  sips -z 120 120 "$rn/icon.png" --out "$app/AppIcon60x60@2x.png" > /dev/null
+  sips -z 180 180 "$rn/icon.png" --out "$app/AppIcon60x60@3x.png" > /dev/null
+  plutil -remove CFBundleIcons "$app/Info.plist" 2>/dev/null || true
+  plutil -insert CFBundleIcons -json '{"CFBundlePrimaryIcon":{"CFBundleIconFiles":["AppIcon60x60"],"CFBundleIconName":"AppIcon60x60"}}' "$app/Info.plist"
+  echo "icon from the APK"
+fi
 echo "filled $app (${5:-template id}, ${6:-template name})"

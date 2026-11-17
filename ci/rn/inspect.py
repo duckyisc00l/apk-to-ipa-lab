@@ -154,6 +154,14 @@ info["images"] = {"registrations": len(regs), "copied": copied, "missing": missi
 info["debug_version_ctx"] = [text[max(0, m.start() - 120):m.end() + 60] for m in re.finditer(r"prerelease", text)][:3]
 info["debug_fb_ctx"] = [text[max(0, m.start() - 300):m.end() + 300] for m in re.finditer(r"NATIVE_FIREBASE_APPS|No Firebase App", text)][:4]
 info["debug_asset_ctx"] = [text[max(0, m.start() - 160):m.end() + 200] for m in re.finditer(r"__packager_asset", text)][:2]
+# the biggest launcher icon (round ones last), for the iPhone home screen
+icons = []
+for root, _, files in os.walk(os.path.join(src, "res")):
+    for f in files:
+        if f.endswith(".png") and f.startswith("ic_launcher") and "foreground" not in f and "background" not in f:
+            p = os.path.join(root, f); icons.append(("round" in f, -os.path.getsize(p), p))
+if icons:
+    shutil.copy(sorted(icons)[0][2], os.path.join(out, "icon.png")); info["icon"] = os.path.relpath(sorted(icons)[0][2], src)
 # the app's own package name and home-screen name, for the iPhone app's bundle id and display name
 try:
     from androguard.core.axml import AXMLPrinter, ARSCParser
