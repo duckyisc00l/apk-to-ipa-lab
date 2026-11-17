@@ -1,0 +1,22 @@
+{
+ "rn": "0.64.0",
+ "cutoff": "2021-08-17T16:14:30.151000+00:00",
+ "install": {
+  "react-native-safe-area-context": "3.3.0",
+  "react-native-gesture-handler": "1.10.3",
+  "react-native-inappbrowser-reborn": "3.6.3",
+  "react-native-haptic-feedback": "1.11.0",
+  "react-native-vector-icons": "8.1.0",
+  "react-native-splash-screen": "3.2.0"
+ },
+ "skipped_removed": [
+  "BugsnagReactNative",
+  "Flipper",
+  "RNFBAnalyticsModule",
+  "RNFBAppModule",
+  "RNFBUtilsModule"
+ ],
+ "unknown": []
+}
+INSTALL=react-native-safe-area-context@3.3.0 react-native-gesture-handler@1.10.3 react-native-inappbrowser-reborn@3.6.3 react-native-haptic-feedback@1.11.0 react-native-vector-icons@8.1.0 react-native-splash-screen@3.2.0
+STUB=BugsnagReactNative Flipper RNFBAnalyticsModule RNFBAppModule RNFBUtilsModule

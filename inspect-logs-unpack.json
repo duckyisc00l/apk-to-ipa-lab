@@ -1,0 +1,44 @@
+{
+ "inputs": [
+  "dl/DevHub-0.102.0.apk"
+ ],
+ "apks": [
+  "DevHub-0.102.0.apk"
+ ],
+ "base": "DevHub-0.102.0.apk",
+ "obbs": [],
+ "aabs": [],
+ "libs": [
+  "libbugsnag-ndk.so",
+  "libbugsnag-plugin-android-anr.so",
+  "libc++_shared.so",
+  "libfb.so",
+  "libfbjni.so",
+  "libfolly_futures.so",
+  "libfolly_json.so",
+  "libglog.so",
+  "libglog_init.so",
+  "libhermes-executor-common-debug.so",
+  "libhermes-executor-common-release.so",
+  "libhermes-executor-debug.so",
+  "libhermes-executor-release.so",
+  "libhermes-inspector.so",
+  "libimagepipeline.so",
+  "libjsc.so",
+  "libjscexecutor.so",
+  "libjsijniprofiler.so",
+  "libjsinspector.so",
+  "libnative-filters.so",
+  "libnative-imagetranscoder.so",
+  "libreact_codegen_reactandroidspec.so",
+  "libreact_nativemodule_core.so",
+  "libreactnativeblob.so",
+  "libreactnativejni.so",
+  "libreactnativeutilsjni.so",
+  "libreactperfloggerjni.so",
+  "libturbomodulejsijni.so",
+  "libyoga.so"
+ ],
+ "notes": [],
+ "protected_or_encrypted": []
+}

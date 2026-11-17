@@ -1,0 +1,19 @@
+- bundle: assets/index.android.bundle
+- size: 2651749
+- kind: plain JS
+- debug_dex_seqs: [['Lcom/bugsnag/RuntimeVersions;->findReactNativeVersion', 'major', '.', 'minor', 'patch', 'prerelease', '-'], ['Lcom/facebook/react/modules/systeminfo/ReactNativeVersion;-><clinit>', 0, 64, 'major', 'minor', 'patch', 'prerelease', 'rc.1']]
+- rn_version: 0.64.0
+- rn_prerelease: rc.1
+- rn_version_from: dex Lcom/facebook/react/modules/systeminfo/ReactNativeVersion;
+- app_name: devhub
+- new_architecture: False
+- engine_lib: hermes
+- native_core: ['PlatformConstants', 'UIManager']
+- native_third_party: ['BugsnagReactNative', 'Flipper', 'RNCSafeAreaProvider', 'RNCSafeAreaView', 'RNFBAnalyticsModule', 'RNFBAppModule', 'RNFBUtilsModule', 'RNGestureHandlerButton', 'RNGestureHandlerModule', 'RNInAppBrowser', 'RNReactNativeHapticFeedback', 'RNVectorIconsManager', 'RNVectorIconsModule', 'SplashScreen']
+- images: {'registrations': 2, 'copied': 6, 'missing': 0}
+- debug_version_ctx: ['ethod:"POST",params:{body:{type:"string"},draft:{type:"boolean"},name:{type:"string"},owner:{required:!0,type:"string"},prerelease:{type:"boolean"},repo:{required:!0,type:"string"},tag_name:', 'thod:"PATCH",params:{body:{type:"string"},draft:{type:"boolean"},name:{type:"string"},owner:{required:!0,type:"string"},prerelease:{type:"boolean"},release_id:{required:!0,type:"integer"},re']
+- debug_fb_ctx: [',a,m,e,d){Object.defineProperty(e,"__esModule",{value:!0}),e.setOnAppCreate=function(n){o=n},e.setOnAppDestroy=function(n){s=n},e.initializeNativeApps=l,e.getApp=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:r(d[3]).DEFAULT_APP_NAME;p||l();var o=t[n];if(!o)throw new Error("No Firebase App \'"+n+"\' has been created - call firebase.initializeApp()");return o},e.getApps=function(){p||l();return Object.values(t)},e.initializeApp=function(){var s=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},p=arguments.length>1?arguments[1]:void 0,l=p;(0,r(d[4]).isObject)(p)&&!(0,r(d[4]).isNu', 'storageBucket\'."));var f=new n.default(s,{name:c},!1,u.bind(null,c,!0));return t[c]=f,o(t[c]),(0,r(d[2]).getAppModule)().initializeApp(s,{name:c}).then(function(){return f._initialized=!0,f})},e.deleteApp=u;var n=r(d[0])(r(d[1])),t={},o=null,s=null,p=!1;function l(){var s=(0,r(d[2]).getAppModule)().NATIVE_FIREBASE_APPS;if(s&&s.length)for(var l=0;l<s.length;l++){var c=s[l],f=c.appConfig,A=c.options,b=f.name;t[b]=new n.default(A,f,!0,u.bind(null,b,!0)),o(t[b])}p=!0}function u(n,o){if(n===r(d[3]).DEFAULT_APP_NAME&&o)return Promise.reject(new Error(\'Unable to delete the default native firebase app instance.\'));var p=']
+- debug_asset_ctx: ['drawableFolderInBundle",value:function(){var t=this.jsbundleUrl||\'file://\';return this.fromSource(t+s(this.asset))}},{key:"fromSource",value:function(t){return{__packager_asset:!0,width:this.asset.width,height:this.asset.height,uri:t,scale:n.pickScale(this.asset.scales,r(d[0]).get())}}}],[{key:"pickScale",value:function(t,s){for(var n=0;n<t.length;n++)if(t[n]>=s)return t[n]', 'r(d[0])(r(d[4]))},1328,[13,14,17,797,653,679,902,942,422,1068,911,1020,1329,904,925,926,929,895]);\n__d(function(g,r,i,a,m,e,d){m.exports=r(d[0]).registerAsset({__packager_asset:!0,httpServerLocation:"/assets/../web/public/static/media",width:100,height:100,scales:[1,2,3],hash:"2cf97b6c859d8e17987f9e3170b8cfd6",name:"logo",type:"png"})},1329,[1330]);\n__d(function(g,r,i,a,m,e']
+- icon: res/mipmap-xxxhdpi-v4/ic_launcher.png
+- package: com.devhubapp
+- label: DevHub

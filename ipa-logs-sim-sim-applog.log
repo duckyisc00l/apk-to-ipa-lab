@@ -1,0 +1,200 @@
+2026-11-17 12:11:12.791 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-17 12:11:12.791 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-17 12:11:12.793 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-17 12:11:12.793 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-17 12:11:12.794 Df Host[36306:184a9] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x6000002070c0; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-17 12:11:12.795 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-17 12:11:12.795 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-17 12:11:12.796 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-17 12:11:12.796 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-17 12:11:12.797 Df Host[36306:184a9] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030003f0 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-17 12:11:12.797 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-17 12:11:12.797 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-17 12:11:12.798 Df Host[36306:18523] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-17 12:11:12.802 Df Host[36306:184a9] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030003f0 com.apple.frontboard.systemappservices> sent handshake
+2026-11-17 12:11:12.802 Df Host[36306:18528] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-17 12:11:12.803 Df Host[36306:184a9] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x6000002026c0>
+2026-11-17 12:11:12.805 Df Host[36306:18528] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-17 12:11:12.817 Df Host[36306:184a9] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x103509f40> for initial
+2026-11-17 12:11:12.818 Df Host[36306:184a9] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x103509f40> for CADisplay KVO
+2026-11-17 12:11:12.821 Df Host[36306:184a9] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-17 12:11:12.822 Df Host[36306:184a9] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-17 12:11:12.836 Df Host[36306:18528] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-17 12:11:12.836 Df Host[36306:18528] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-17 12:11:12.837 Df Host[36306:18528] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-17 12:11:12.840 Df Host[36306:184a9] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-17 12:11:12.841 Df Host[36306:184a9] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 12:11:12.842 Df Host[36306:184a9] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 12:11:12.842 Df Host[36306:184a9] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 12:11:12.844 Df Host[36306:184a9] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-17 12:11:12.848 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-17 12:11:12.848 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x600002109720>
+2026-11-17 12:11:12.848 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x600002109720>
+2026-11-17 12:11:12.848 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x60000171a0c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 2009 (elapsed = 0).
+2026-11-17 12:11:12.849 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 1024 -> 1056; animating application lifecycle event: 1
+2026-11-17 12:11:12.850 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.850 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.852 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.853 Df Host[36306:184a9] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x600002910380>; with scene: <UIWindowScene: 0x10350c960>
+2026-11-17 12:11:12.853 Df Host[36306:184a9] [com.apple.BacklightServices:scenes] 0x600000c11980 setDelegate:<0x600000c12d00 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.duckyisc00l.devhubapp-default
+2026-11-17 12:11:12.854 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.855 Df Host[36306:184a9] [com.apple.UIKit:EventDeferring] [0x6000029105b0] Initialized with scene: <UIWindowScene: 0x10350c960>; behavior: <_UIEventDeferringBehavior_iOS: 0x600000218ae0>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-17 12:11:12.856 Df Host[36306:184a9] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-17 12:11:12.856 Df Host[36306:184a9] [com.apple.xpc:connection] [0x1051076c0] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-17 12:11:12.860 Df Host[36306:184a9] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260a340; process scope; status: target> was:none
+2026-11-17 12:11:12.860 Df Host[36306:18528] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-17 12:11:12.860 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-17 12:11:12.860 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x10350c960; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.devhubapp-default
+2026-11-17 12:11:12.860 Df Host[36306:184a9] [com.apple.UIKit:EventDeferring] [0x6000029105b0] Scene target of event deferring environments did update: scene: 0x10350c960; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 12:11:12.860 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10350c960; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.devhubapp-default
+2026-11-17 12:11:12.861 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c0ac10: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-17 12:11:12.861 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-17 12:11:12.861 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10350c960; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x10350c960: Window scene became target of keyboard environment
+2026-11-17 12:11:12.863 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.864 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.869 F  Host[36306:184a9] [com.apple.runtime-issues:UIKit App Config] `UIScene` lifecycle will soon be required. Failure to adopt will result in an assert in the future.
+2026-11-17 12:11:12.869 A  Host[36306:184a9] (libsystem_trace.dylib) Activity for state dumps
+2026-11-17 12:11:12.870 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:12.870 Df Host[36306:184a9] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.devhubapp-default  persistentID: 8BB304FA-E51C-4D90-951D-FE583EBD850D
+2026-11-17 12:11:12.871 Df Host[36306:184a9] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 1056
+2026-11-17 12:11:12.871 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1056 -> 3104; animating application lifecycle event: 1
+2026-11-17 12:11:12.872 Df Host[36306:184a9] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-17 12:11:12.873 Df Host[36306:184a9] [com.apple.xpc:connection] [0x105209500] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-17 12:11:12.956 Df Host[36306:184a9] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D) Scene updated orientation preferences: none -> ( Pu Ll Lr )
+2026-11-17 12:11:12.958 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-17 12:11:12.958 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x10350c960: Window became key in scene: UIWindow: 0x1050090a0; contextId: 0xA83E77F6: reason: UIWindowScene: 0x10350c960: Window requested to become key in scene: 0x1050090a0
+2026-11-17 12:11:12.961 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10350c960; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x1050090a0; reason: UIWindowScene: 0x10350c960: Window requested to become key in scene: 0x1050090a0
+2026-11-17 12:11:12.964 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x1050090a0; contextId: 0xA83E77F6; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.devhubapp-default
+2026-11-17 12:11:12.971 Df Host[36306:184a9] [com.apple.UIKit:EventDeferring] [0x6000029105b0] Begin local event deferring requested for token: 0x60000260e8e0; environments: 1; reason: UIWindowScene: 0x10350c960: Begin event deferring in keyboardFocus for window: 0x1050090a0
+2026-11-17 12:11:12.979 Df Host[36306:18526] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-17 12:11:12.990 Df Host[36306:18526] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260a340; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.devhubapp-default; status: ancestor> was:target
+2026-11-17 12:11:13.010 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3104 -> 2080; animating application lifecycle event: 1
+2026-11-17 12:11:13.013 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-17 12:11:13.013 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-17 12:11:13.014 Df Host[36306:184a9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-17 12:11:13.025 Df Host[36306:18526] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-17 12:11:13.026 Df Host[36306:18526] [com.apple.xpc:session] [0x60000210c5a0] Session created.
+2026-11-17 12:11:13.026 Df Host[36306:18526] [com.apple.xpc:session] [0x60000210c5a0] Session created from connection [0x10510cde0]
+2026-11-17 12:11:13.026 Df Host[36306:18526] [com.apple.xpc:connection] [0x10510cde0] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-17 12:11:13.026 Df Host[36306:18526] [com.apple.xpc:session] [0x60000210c5a0] Session activated
+2026-11-17 12:11:13.036 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:13.055 Df Host[36306:184a9] [com.apple.xpc:connection] [0x105107a00] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-17 12:11:13.073 A  Host[36306:1852a] (RunningBoardServices) didChangeInheritances
+2026-11-17 12:11:13.096 A  Host[36306:18526] (RunningBoardServices) didChangeInheritances
+2026-11-17 12:11:13.135 Df Host[36306:184a9] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [F742B386-546B-47D9-ACFA-C9D8BABBEED8] (reporting strategy default)>
+2026-11-17 12:11:13.135 Df Host[36306:184a9] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [67AFDDCD-D5A7-4FB6-82A2-A6A6B8B00F11] (reporting strategy default)>
+2026-11-17 12:11:13.135 Df Host[36306:184a9] [com.apple.network:activity] Set activity <nw_activity 50:1 [F742B386-546B-47D9-ACFA-C9D8BABBEED8] (reporting strategy default)> as the global parent
+2026-11-17 12:11:13.135 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-17 12:11:13.136 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x600001709c80>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 2009 (elapsed = 0), _expireHandler: (null)
+2026-11-17 12:11:13.136 Df Host[36306:184a9] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x600002109720> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x600001709c80>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 2009 (elapsed = 0))
+2026-11-17 12:11:13.136 Df Host[36306:184a9] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-17 12:11:13.136 Df Host[36306:184a9] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-17 12:11:13.136 Df Host[36306:184a9] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-17 12:11:13.138 Df Host[36306:184a9] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.devhubapp-default  persistentID: 8BB304FA-E51C-4D90-951D-FE583EBD850D
+2026-11-17 12:11:13.139 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:13.150 Df Host[36306:184a9] [com.apple.UIKit:EventDeferring] [0x6000029105b0] Scene target of event deferring environments did update: scene: 0x10350c960; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 12:11:13.150 Df Host[36306:184a9] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10350c960; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.devhubapp-default
+2026-11-17 12:11:13.159 Df Host[36306:184a9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension SBUISecureRenderingSettingsExtension on FBSSceneSettings
+2026-11-17 12:11:13.161 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:13.163 Df Host[36306:184a9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10350c960> (8BB304FA-E51C-4D90-951D-FE583EBD850D)
+2026-11-17 12:11:13.163 Df Host[36306:184a9] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.devhubapp-default  persistentID: 8BB304FA-E51C-4D90-951D-FE583EBD850D
+2026-11-17 12:11:13.213 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-17 12:11:13.213 Df Host[36306:184a9] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-17 12:11:13.214 Df Host[36306:184a9] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-17 12:11:13.220 A  Host[36306:18526] (RunningBoardServices) didChangeInheritances
+2026-11-17 12:11:13.232 Df Host[36306:184a9] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-17 12:11:13.232 Df Host[36306:184a9] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-17 12:11:13.244 Df Host[36306:184a9] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-17 12:11:13.316 Df Host[36306:184a9] [com.apple.network:activity] <nw_activity 50:1 [F742B386-546B-47D9-ACFA-C9D8BABBEED8] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 4785ms
+2026-11-17 12:11:13.371 Df Host[36306:18526] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-11-17 12:11:13.371 Df Host[36306:18526] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x60000171a0c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 2009 (elapsed = 0), _expireHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-17 12:11:13.371 Df Host[36306:18526] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x600002109720> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x60000171a0c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 2009 (elapsed = 0))
+2026-11-17 12:11:13.372 Df Host[36306:18526] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x600002109720> for task identifier: 2
+2026-11-17 12:11:13.464 Df Host[36306:184a9] [com.apple.network:activity] <nw_activity 50:2 [67AFDDCD-D5A7-4FB6-82A2-A6A6B8B00F11] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 4932ms
+2026-11-17 12:11:13.467 Df Host[36306:184a9] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [F742B386-546B-47D9-ACFA-C9D8BABBEED8] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-17 12:11:13.467 Df Host[36306:184a9] [com.apple.network:activity] Unset the global parent activity
+2026-11-17 12:11:13.474 Df Host[36306:184a9] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-17 12:11:13.919 A  Host[36306:18528] (RunningBoardServices) didChangeInheritances
+2026-11-17 12:11:14.413 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RNCSafeAreaProvider"]
+2026-11-17 12:11:14.434 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTView"]
+2026-11-17 12:11:14.443 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [3,"RCTView",1,{"pointerEvents":"box-none","flex":1}]
+2026-11-17 12:11:14.447 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [5,"RCTView",1,{"flex":1,"pointerEvents":"box-none"}]
+2026-11-17 12:11:14.448 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [5,[3]]
+2026-11-17 12:11:14.461 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [1,[5]]
+2026-11-17 12:11:14.510 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [7,"RNCSafeAreaProvider",1,{"flex":1,"onInsetsChange":true}]
+2026-11-17 12:11:14.517 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.manageChildren [3,[],[],[7],[0],[]]
+2026-11-17 12:11:14.747 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [9,"RCTView",1,{"alignItems":"center","justifyContent":"center"}]
+2026-11-17 12:11:14.752 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [13,"RCTView",1,{"height":17.6,"pointerEvents":"none"}]
+2026-11-17 12:11:14.785 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTImageView"]
+2026-11-17 12:11:14.792 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [15,"RCTImageView",1,{"resizeMode":"contain","source":1,"width":88,"height":88,"overflow":"hidden","alignSelf":"center","marginBottom":8.8,"shouldNotifyLoadEvents":false,"src":[{"uri":"file:///Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/D9B677DB-3737-44A7-9A2B-984A7C279AC1/Host.app/drawable-xhdpi/_components_assets_lo
+2026-11-17 12:11:14.797 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [17,"RCTView",1,{"accessible":true,"maxWidth":"100%","opacity":1}]
+2026-11-17 12:11:14.799 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [17,[15]]
+2026-11-17 12:11:14.853 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [19,"RCTView",1,{"height":17.6,"pointerEvents":"none"}]
+2026-11-17 12:11:14.868 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTVirtualText"]
+2026-11-17 12:11:14.874 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [23,"RCTRawText",1,{"text":"Welcome to DevHub"}]
+2026-11-17 12:11:14.880 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [25,"RCTText",1,{"allowFontScaling":false,"fontSize":33,"fontWeight":"bold","lineHeight":39.6,"textAlign":"center","color":-14732729,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:14.887 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [25,[23]]
+2026-11-17 12:11:14.893 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [27,"RCTView",1,{"height":8.8,"pointerEvents":"none"}]
+2026-11-17 12:11:14.922 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [29,"RCTRawText",1,{"text":"GitHub Notifications & Activities on your Desktop"}]
+2026-11-17 12:11:14.924 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [33,"RCTText",1,{"allowFontScaling":false,"fontSize":17.6,"fontWeight":"400","lineHeight":19.800000000000004,"textAlign":"center","color":-13215620,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:14.929 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [33,[29]]
+2026-11-17 12:11:14.932 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [35,"RCTView",1,{"height":35.2,"pointerEvents":"none"}]
+2026-11-17 12:11:14.939 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [37,"RCTRawText",1,{"text":"Sign in with GitHub"}]
+2026-11-17 12:11:14.944 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [39,"RCTText",1,{"allowFontScaling":false,"fontSize":16.500000000000004,"width":"100%","fontWeight":"600","lineHeight":22.000000000000004,"textAlign":"center","color":-15915487,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:14.947 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [39,[37]]
+2026-11-17 12:11:14.949 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [43,"RCTView",1,{"flexGrow":1,"alignItems":"flex-start"}]
+2026-11-17 12:11:14.953 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [43,[39]]
+2026-11-17 12:11:14.958 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [45,"RCTView",1,{"alignContent":"center","alignItems":"center","justifyContent":"flex-start","width":"100%","height":"100%","paddingHorizontal":35.2,"borderRadius":27.500000000000004,"flex":1,"flexDirection":"row","minWidth":250,"overflow":"hidden"}]
+2026-11-17 12:11:14.959 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [45,[43]]
+2026-11-17 12:11:14.964 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [47,"RCTView",1,{"accessible":true,"accessibilityRole":"button","width":"100%","height":"100%","borderRadius":27.500000000000004,"backgroundColor":0}]
+2026-11-17 12:11:14.967 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [47,[45]]
+2026-11-17 12:11:14.969 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [49,"RCTView",1,{"position":"relative","overflow":"hidden","minWidth":55.00000000000001,"height":55.00000000000001,"borderRadius":27.500000000000004,"width":"100%","backgroundColor":-11938892,"borderColor":-11938892}]
+2026-11-17 12:11:14.974 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [49,[47]]
+2026-11-17 12:11:14.975 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [53,"RCTView",1,{"flex":1,"alignItems":"center","justifyContent":"center"}]
+2026-11-17 12:11:14.979 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [53,[13,17,19,25,27,33,35,49]]
+2026-11-17 12:11:14.982 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [55,"RCTView",1,{"height":17.6,"pointerEvents":"none"}]
+2026-11-17 12:11:14.988 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [57,"RCTRawText",1,{"text":"Twitter"}]
+2026-11-17 12:11:14.991 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [59,"RCTText",1,{"allowFontScaling":false,"fontSize":15.400000000000002,"lineHeight":23.1,"textAlign":"center","color":-13215620,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:14.993 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [59,[57]]
+2026-11-17 12:11:14.997 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [63,"RCTView",1,{"accessible":true,"maxWidth":"100%","opacity":1}]
+2026-11-17 12:11:14.998 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [63,[59]]
+2026-11-17 12:11:15.003 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [65,"RCTRawText",1,{"text":"|"}]
+2026-11-17 12:11:15.007 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [67,"RCTText",1,{"allowFontScaling":false,"fontSize":15.400000000000002,"paddingHorizontal":8.8,"fontStyle":"italic","color":-5849384,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:15.009 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [67,[65]]
+2026-11-17 12:11:15.014 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [69,"RCTRawText",1,{"text":"GitHub"}]
+2026-11-17 12:11:15.018 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [73,"RCTText",1,{"allowFontScaling":false,"fontSize":15.400000000000002,"lineHeight":23.1,"textAlign":"center","color":-13215620,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:15.019 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [73,[69]]
+2026-11-17 12:11:15.025 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [75,"RCTView",1,{"accessible":true,"maxWidth":"100%","opacity":1}]
+2026-11-17 12:11:15.029 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [75,[73]]
+2026-11-17 12:11:15.031 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [77,"RCTRawText",1,{"text":"|"}]
+2026-11-17 12:11:15.035 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [79,"RCTText",1,{"allowFontScaling":false,"fontSize":15.400000000000002,"paddingHorizontal":8.8,"fontStyle":"italic","color":-5849384,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:15.038 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [79,[77]]
+2026-11-17 12:11:15.040 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [83,"RCTRawText",1,{"text":"v0.102.0 (build 2709)"}]
+2026-11-17 12:11:15.042 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [85,"RCTText",1,{"allowFontScaling":false,"fontSize":15.400000000000002,"lineHeight":23.1,"textAlign":"center","color":-13215620,"accessible":true,"ellipsizeMode":"tail"}]
+2026-11-17 12:11:15.047 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [85,[83]]
+2026-11-17 12:11:15.173 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [87,"RCTView",1,{"accessible":true,"maxWidth":"100%","opacity":1}]
+2026-11-17 12:11:15.175 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [87,[85]]
+2026-11-17 12:11:15.181 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["AndroidHorizontalScrollContentView"]
+2026-11-17 12:11:15.185 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [89,"AndroidHorizontalScrollContentView",1,{"flexDirection":"row"}]
+2026-11-17 12:11:15.186 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [89,[63,67,75,79,87]]
+2026-11-17 12:11:15.190 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["AndroidHorizontalScrollView"]
+2026-11-17 12:11:15.193 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [93,"AndroidHorizontalScrollView",1,{"alwaysBounceHorizontal":true,"alwaysBounceVertical":false,"flexGrow":1,"flexShrink":1,"flexDirection":"row","overflow":"scroll","onLayout":true,"onMomentumScrollBegin":true,"onMomentumScrollEnd":true,"onScrollBeginDrag":true,"onScrollEndDrag":true,"onScroll":true,"snapToStart":true,"snapToEnd":true,"pagingEnabled":false}]
+2026-11-17 12:11:15.197 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [93,[89]]
+2026-11-17 12:11:15.201 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [95,"RCTView",1,{"height":23.1,"alignItems":"center","justifyContent":"center"}]
+2026-11-17 12:11:15.206 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [95,[93]]
+2026-11-17 12:11:15.208 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [97,"RCTView",1,{"onLayout":true,"flexGrow":1,"alignItems":"stretch","alignSelf":"center","justifyContent":"center","padding":17.6}]
+2026-11-17 12:11:15.212 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [97,[9,53,55,95]]
+2026-11-17 12:11:15.215 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTScrollView"]
+2026-11-17 12:11:15.218 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [99,"RCTScrollView",1,{"alwaysBounceVertical":false,"onLayout":true,"flexGrow":1,"flexShrink":1,"flexDirection":"column","overflow":"scroll","height":"100%","flex":1,"alignSelf":"center","width":"100%","maxWidth":375,"onMomentumScrollBegin":true,"onMomentumScrollEnd":true,"onScrollBeginDrag":true,"onScrollEndDrag":true,"onScroll":true,"snapToStart":true,"snapToEnd":true,"pagingEnabled":false}]
+2026-11-17 12:11:15.222 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [99,[97]]
+2026-11-17 12:11:15.225 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [103,"RCTView",1,{"paddingTop":20,"paddingBottom":0,"paddingLeft":0,"paddingRight":0,"flex":1,"backgroundColor":-1}]
+2026-11-17 12:11:15.227 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [103,[99]]
+2026-11-17 12:11:15.248 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [105,"RCTView",1,{"flex":1}]
+2026-11-17 12:11:15.249 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [105,[103]]
+2026-11-17 12:11:15.259 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.manageChildren [7,[],[],[105],[0],[]]
+2026-11-17 12:11:15.283 Df Host[36306:18523] [com.apple.xpc:connection] [0x1052067e0] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-11-17 12:11:15.437 E  Host[36306:1852c] [com.facebook.react.log:javascript] RNTRACE UIManager.updateView [97,"RCTView",{"minHeight":647,"flexGrow":null}]
+2026-11-17 12:11:15.451 Df Host[36306:184a9] [com.apple.UIKit:AssetManager] Could not load asset catalog from bundle NSBundle </Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/D9B677DB-3737-44A7-9A2B-984A7C279AC1/Host.app> (loaded): Error Domain=NSCocoaErrorDomain Code=260 "RunTimeThemeRefForBundleIdentifierAndName() couldn't find Assets.car in bundle with identifier: com.duckyisc00l.devhubapp" UserInfo={NSLocalizedDescription=RunTimeThemeRefForBundleIdentifierAndName() couldn't find Assets.car in bundle with identifier: com.duckyisc00l.devhubapp}
+2026-11-17 12:11:15.486 E  Host[36306:184a9] [com.apple.coreui:framework] CoreUI: CUIThemeStore: No theme registered with id=0
+2026-11-17 12:11:15.486 F  Host[36306:184a9] [com.apple.coreui:framework] CoreUI: CUIThemeStore: No theme registered with id=0
+2026-11-17 12:11:15.486 A  Host[36306:184a9] (libsystem_trace.dylib) Activity for state dumps
