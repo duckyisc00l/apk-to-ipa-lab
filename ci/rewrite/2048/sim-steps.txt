@@ -1,0 +1,11 @@
+shot 0-start
+swipe 200 500 200 750
+wait 1
+shot 1-after-down
+swipe 300 600 80 600
+wait 1
+swipe 200 750 200 450
+wait 1
+swipe 80 600 320 600
+wait 1
+shot 2-after-four-swipes

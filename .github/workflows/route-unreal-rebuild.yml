@@ -67,7 +67,7 @@ jobs:
           curl -sSLf -o g.zip "$base/Godot_v${tag}_linux.x86_64.zip" && unzip -q g.zip && mv Godot_v*_linux.x86_64 godot && chmod +x godot
       - name: Build the level scene in Godot, screenshot it (X4 + lab)
         run: |
-          P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes; [ -d export/um ] && cp -R export/um $P/um; cp export/umodel_map.json $P/
+          P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes; [ -d export/um ] && cp -R export/um $P/um; [ -d export/tex ] && cp -R export/tex $P/tex; cp export/umodel_map.json $P/
           ./godot --headless --path $P --import > out/import.log 2>&1 || true
           L=$(ls export/levels/*.json | xargs -n1 basename | grep -viE "editor|test|transition" | head -1); echo "level: $L" | tee -a out/rebuild.md
           ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR|  MAT " | head -40 | tee -a out/rebuild.md

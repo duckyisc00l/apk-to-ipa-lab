@@ -113,6 +113,22 @@ var results = await session.RunAsync(Path.Combine(outDir, "meshes"), new ExportO
 summary.Add($"meshes exported: {results.Count(r => r.Success)} of {meshes.Count}");
 foreach (var r in results.Where(r => !r.Success).Take(15)) summary.Add($"  failed {r.ObjectPath}: {r.Error?.Message}");
 foreach (var r in results.Where(r => r.Success).Take(5)) summary.Add($"  ok {r.ObjectPath} -> {string.Join(", ", r.DiskFilePaths ?? [])}");
+// every texture of the game as PNG (CUE4Parse decodes Android's ETC1/ETC2; UE Viewer writes those as empty .tga)
+var texSession = new ExportSession { MaxDegreeOfParallelism = Environment.ProcessorCount };
+int texCount = 0;
+foreach (var file in provider.Files.Keys.Where(k => k.EndsWith(".uasset", StringComparison.OrdinalIgnoreCase) && IsGame(k)))
+{
+    try
+    {
+        foreach (var e in provider.LoadPackage(file).GetExports())
+            if (e is CUE4Parse.UE4.Assets.Exports.Texture.UTexture2D t) { texSession.Add(t); texCount++; }
+    }
+    catch { }
+}
+var texResults = await texSession.RunAsync(Path.Combine(outDir, "tex"), new ExportOptions(textureFormat: ETextureFormat.Png));
+summary.Add($"textures exported: {texResults.Count(r => r.Success)} of {texCount}");
+foreach (var r in texResults.Where(r => !r.Success).Take(5)) summary.Add($"  failed {r.ObjectPath}: {r.Error?.Message}");
+
 await File.WriteAllLinesAsync(Path.Combine(outDir, "summary.txt"), summary);
 Console.WriteLine(string.Join("\n", summary));
 

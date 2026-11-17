@@ -87,6 +87,11 @@ func _material_for(name, folder):
 		var key = kv[0]; var tex = kv[1]
 		if key == "Diffuse" and diffuse == "": diffuse = tex
 		elif key == "Normal" or ((tex.ends_with("-nrm") or tex.ends_with("_N") or tex.ends_with("_nrm")) and normal == ""): normal = tex
+	if _is_normal(diffuse):
+		if normal == "": normal = diffuse
+		diffuse = ""
+		for t in tex_paths.keys():
+			if not _is_normal(t): diffuse = t; break
 	var mat = StandardMaterial3D.new(); mat.resource_name = name
 	var d = _tex(diffuse, tex_paths, folder)
 	if d: mat.albedo_texture = d
@@ -100,13 +105,18 @@ func _material_for(name, folder):
 
 func _tex(tname, tex_paths, folder):
 	if tname == "": return null
-	var p = tex_paths.get(tname, "")
+	# CUE4Parse's PNGs first (they decode Android's ETC1 textures), then UE Viewer's .tga
+	var p = _find_file("res://tex", tname + ".png", "res://tex")
+	if p == "" or not ResourceLoader.exists(p): p = tex_paths.get(tname, "")
 	if p == "" or not ResourceLoader.exists(p): p = _find_file(folder, tname + ".tga")
 	return load(p) if p != "" and ResourceLoader.exists(p) else null
 
-func _find_file(folder, file):
+static func _is_normal(t): return t.ends_with("-nrm") or t.ends_with("_N") or t.ends_with("_nrm") or t.to_lower().ends_with("normal")
+
+func _find_file(folder, file, root = "res://um"):
 	if FileAccess.file_exists(folder + "/" + file): return folder + "/" + file
-	var stack = ["res://um"]
+	if not DirAccess.dir_exists_absolute(root): return ""
+	var stack = [root]
 	while stack.size() > 0:
 		var dir = stack.pop_back()
 		for f in DirAccess.get_files_at(dir):
