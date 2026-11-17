@@ -7,7 +7,7 @@
 # and any crash report. Exit 0 only if the app is still running at the end.
 set -u
 # macOS may not have GNU timeout: fall back to perl's alarm (same "timeout SECONDS command..." usage)
-command -v timeout > /dev/null || timeout() { local s="$1"; shift; perl -e 'alarm shift; exec @ARGV' "$s" "$@"; }
+command -v timeout > /dev/null || timeout() { local s="$1"; shift; perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"; }
 APP="$1"; OUT="$2"; WAIT="${3:-25}"; STEPS="${4:-}"
 mkdir -p "$OUT"; OUT=$(cd "$OUT" && pwd)   # absolute: the simulator opens --stdout paths from its own folder
 BID=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Info.plist")
@@ -49,8 +49,10 @@ for t in 5 $WAIT; do
 done
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
   if ! command -v idb > /dev/null; then   # at most 8 minutes; without it the steps are skipped
-    timeout 420 bash -c 'brew tap facebook/fb > /dev/null 2>&1; brew install idb-companion > /dev/null 2>&1'
-    timeout 60 bash -c 'python3 -m pip install -q --break-system-packages fb-idb 2>/dev/null || python3 -m pip install -q fb-idb'
+    timeout 420 bash -c 'brew tap facebook/fb; brew install idb-companion' > "$OUT/idb-install.log" 2>&1
+    timeout 120 bash -c 'python3 -m pip install --break-system-packages fb-idb || python3 -m pip install --user fb-idb' >> "$OUT/idb-install.log" 2>&1
+    export PATH="$PATH:$(python3 -m site --user-base 2>/dev/null)/bin:$(python3 -c 'import sysconfig;print(sysconfig.get_path("scripts"))' 2>/dev/null)"
+    command -v idb > /dev/null || { echo "idb install failed:" >> "$OUT/sim.md"; tail -8 "$OUT/idb-install.log" >> "$OUT/sim.md"; }
   fi
   command -v idb > /dev/null || echo "idb not available: input steps skipped" >> "$OUT/sim.md"
   timeout 60 idb connect "$UDID" > /dev/null 2>&1

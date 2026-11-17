@@ -34,22 +34,25 @@ struct GameView: View {
             let startX = (w - boardSide) / 2, startY = centreY - boardSide / 2
             ZStack(alignment: .topLeading) {
                 Color(hex: Res.palette.background).ignoresSafeArea()
-                // header row: "2048", score boxes, undo + new game
-                HStack(alignment: .center, spacing: gap) {
-                    Text(Res.t("header")).font(.custom(Res.fontName, size: header)).foregroundColor(Color(hex: Res.palette.text_black))
-                        .minimumScaleFactor(0.4).lineLimit(1)
-                    Spacer(minLength: 0)
-                    ScoreBox(label: Res.t("score"), value: game.score, title: title, bodySize: body)
-                    ScoreBox(label: Res.t("high_score"), value: game.highScore, title: title, bodySize: body)
+                // header: "2048" and the score boxes, with undo + new game under the boxes (APK: icons sit between
+                // the score boxes and the board), all anchored just above the board
+                VStack(alignment: .trailing, spacing: gap) {
+                    HStack(alignment: .center, spacing: gap) {
+                        Text(Res.t("header")).font(.custom(Res.fontName, size: header)).foregroundColor(Color(hex: Res.palette.text_black))
+                            .minimumScaleFactor(0.4).lineLimit(1)
+                        Spacer(minLength: 0)
+                        ScoreBox(label: Res.t("score"), value: game.score, title: title, bodySize: body)
+                        ScoreBox(label: Res.t("high_score"), value: game.highScore, title: title, bodySize: body)
+                    }
+                    HStack(spacing: cell / 4) {
+                        Spacer()
+                        IconButton(image: Res.image("ic_action_undo.png"), system: "arrow.uturn.backward", size: cell / 2) { game.undo() }
+                            .opacity(game.canUndo ? 1 : 0.4)
+                        IconButton(image: Res.image("ic_action_refresh.png"), system: "arrow.clockwise", size: cell / 2) { confirmReset = true }
+                    }
                 }
-                .frame(width: boardSide).offset(x: startX, y: startY - cell * 1.5 - gap)
-                HStack(spacing: cell / 4) {
-                    Spacer()
-                    IconButton(image: Res.image("ic_action_undo.png"), system: "arrow.uturn.backward", size: cell / 2) { game.undo() }
-                        .opacity(game.canUndo ? 1 : 0.4)
-                    IconButton(image: Res.image("ic_action_refresh.png"), system: "arrow.clockwise", size: cell / 2) { confirmReset = true }
-                }
-                .frame(width: boardSide).offset(x: startX, y: startY - cell * 0.75)
+                .frame(width: boardSide, height: max(0, startY - gap), alignment: .bottom)
+                .offset(x: startX, y: 0)
                 // board
                 Board(game: game, cell: cell, gap: gap, textSize: textSize)
                     .frame(width: boardSide, height: boardSide).offset(x: startX, y: startY)
