@@ -1,8 +1,8 @@
-# OpenChess (web route): home screen, then open a puzzle
+# OpenChess (web route): open the puzzles. Web pages show no text to AXe, so taps go by position.
 shot 0-home
-ui home
-expect Play a bot
-tapon Solve puzzles
+uiat 26% 41%
+tap 26% 41%
 wait 4
 shot 1-puzzle
-ui puzzle
+wait 4
+shot 2-puzzle-later

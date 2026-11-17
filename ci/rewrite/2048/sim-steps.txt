@@ -30,6 +30,9 @@ shot 4-reset-dialog
 tapon Cancel
 wait 1
 expect HIGH SCORE
-# deliberately wrong, to prove a failed expect is reported (remove after the first run)
-expect You Win!
-shot 5-end
+shot 5-after-cancel
+# quit and start again: the board and the high score should come back
+relaunch
+wait 4
+expect HIGH SCORE
+shot 6-after-relaunch

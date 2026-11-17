@@ -1,14 +1,15 @@
-# Ionic Tic-Tac-Toe (web route), 402x874-point iPhone: Start, then X in the centre and two corners
+# Ionic Tic-Tac-Toe (web route). Web pages show no text to AXe, so taps go by position (% of the screen).
 shot 0-start
-ui start
-tapon Start
-wait 1
-tap 203 434
+uiat 75% 97%
+# Start (bottom right), then X in the centre, a corner, the opposite corner; the phone answers each with O
+tap 75% 97%
 wait 2
-shot 1-centre
-tap 128 357
+shot 1-started
+tap 50% 50%
 wait 2
-tap 280 511
+shot 2-centre
+tap 32% 41%
 wait 2
-shot 2-three-moves
-ui board
+tap 70% 59%
+wait 2
+shot 3-three-moves
