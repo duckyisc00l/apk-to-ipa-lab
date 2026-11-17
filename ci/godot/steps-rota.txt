@@ -3,17 +3,18 @@
 # AXe 1.6.0 taps raw portrait points, so % here are of the portrait screen (any iPhone).
 # First tap shows the touch buttons; X (accept/jump) at the game's bottom right = (86%, 7%);
 # the d-pad (game's bottom left) is around (76%, 86%), its right arrow at (76%, 79%).
+# Press buttons with a short swipe on the spot (held 0.2 s): a plain tap was mostly missed by Godot's TouchScreenButton.
 shot 0-title
 tap 50% 50%
 wait 2
 shot 1-touch-controls
-tap 86% 7%
-wait 2
+swipe 86% 7% 86% 8%
+wait 3
 shot 2-main-menu
-tap 86% 7%
-wait 2
+swipe 86% 7% 86% 8%
+wait 3
 shot 3-file-menu
-tap 86% 7%
+swipe 86% 7% 86% 8%
 wait 8
 shot 4-in-game
 swipe 76% 79% 76% 80%
@@ -22,6 +23,6 @@ swipe 76% 79% 76% 80%
 swipe 76% 79% 76% 80%
 wait 1
 shot 5-walked-right
-tap 86% 7%
+swipe 86% 7% 86% 8%
 wait 1
 shot 6-jump
