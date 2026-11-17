@@ -39,8 +39,8 @@ struct GameView: View {
                     Text(Res.t("header")).font(.custom(Res.fontName, size: header)).foregroundColor(Color(hex: Res.palette.text_black))
                         .minimumScaleFactor(0.4).lineLimit(1)
                     Spacer(minLength: 0)
-                    ScoreBox(label: Res.t("score"), value: game.score, title: title, body: body)
-                    ScoreBox(label: Res.t("high_score"), value: game.highScore, title: title, body: body)
+                    ScoreBox(label: Res.t("score"), value: game.score, title: title, bodySize: body)
+                    ScoreBox(label: Res.t("high_score"), value: game.highScore, title: title, bodySize: body)
                 }
                 .frame(width: boardSide).offset(x: startX, y: startY - cell * 1.5 - gap)
                 HStack(spacing: cell / 4) {
@@ -79,11 +79,11 @@ struct GameView: View {
 }
 
 struct ScoreBox: View {
-    let label: String; let value: Int64; let title: CGFloat; let body: CGFloat
+    let label: String; let value: Int64; let title: CGFloat; let bodySize: CGFloat
     var body: some View {
         VStack(spacing: 2) {
             Text(label).font(.custom(Res.fontName, size: title)).foregroundColor(Color(hex: Res.palette.text_brown))
-            Text("\(value)").font(.custom(Res.fontName, size: body)).foregroundColor(Color(hex: Res.palette.text_white))
+            Text("\(value)").font(.custom(Res.fontName, size: bodySize)).foregroundColor(Color(hex: Res.palette.text_white))
                 .minimumScaleFactor(0.3).lineLimit(1)
         }
         .padding(.horizontal, title).padding(.vertical, title / 2)
