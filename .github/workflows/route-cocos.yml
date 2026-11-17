@@ -43,7 +43,7 @@ jobs:
       NAME: Sakumai
       # game = add the game's own open-source C++ (its bindings) to the engine; stock = the APK's scripts on a stock engine
       NATIVE: ${{ inputs.native || 'game' }}
-      CCC_OVERRIDE_OPTIONS: "^-Wno-error=implicit-function-declaration ^-Wno-error=incompatible-function-pointer-types ^-Wno-error=int-conversion"
+      CCC_OVERRIDE_OPTIONS: "^-Wno-error=implicit-function-declaration ^-Wno-error=incompatible-function-pointer-types ^-Wno-error=int-conversion ^-Wno-deprecated-declarations ^-DGLES_SILENCE_DEPRECATION"
     steps:
       - uses: actions/checkout@v4
       - name: Download the APK and detect engine, version and script format
@@ -86,6 +86,9 @@ jobs:
           grep -rh '^#define BT_SHUFFLE' proj/frameworks/cocos2d-x/external/bullet | sort -u | tee -a out/cocos.md
           # the game's patched UIRichText.cpp calls bind() unqualified; Xcode 16's libc++ needs std::bind
           sed -i '' -E 's/([^:a-z_])bind\(&RichText/\1std::bind(\&RichText/' proj/frameworks/cocos2d-x/cocos/ui/UIRichText.cpp
+          # Xcode 16's SDK makes iconv_t a typed pointer: CCFontAtlas keeps it as void*, so cast it back
+          sed -i '' -E 's/iconv_close\(_iconv\)/iconv_close((iconv_t)_iconv)/; s/iconv\(_iconv,/iconv((iconv_t)_iconv,/' proj/frameworks/cocos2d-x/cocos/2d/CCFontAtlas.cpp
+          grep -n 'iconv_t)_iconv' proj/frameworks/cocos2d-x/cocos/2d/CCFontAtlas.cpp | tee -a out/cocos.md
           # Xcode 16 refuses iOS 6-8 deployment targets
           find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
           xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
@@ -99,8 +102,8 @@ jobs:
           set +e
           xcodebuild -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj -scheme HelloLua-mobile -configuration Release -sdk iphoneos \
             -destination 'generic/platform=iOS' -derivedDataPath dd ARCHS=arm64 ONLY_ACTIVE_ARCH=NO ENABLE_BITCODE=NO \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > out/xcodebuild.log 2>&1
-          xc=$?; echo "- iPhone build exit $xc" | tee -a out/cocos.md; grep -E "error:|\*\* BUILD" out/xcodebuild.log | sort -u | head -20 | tee -a out/cocos.md
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" -IDEBuildingContinueBuildingAfterErrors=YES build > out/xcodebuild.log 2>&1
+          xc=$?; echo "- iPhone build exit $xc" | tee -a out/cocos.md; grep -E "error:|\*\* BUILD" out/xcodebuild.log | sort -u | head -40 | tee -a out/cocos.md
           [ $xc = 0 ] || exit 1
           app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1)
           /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$app/Info.plist"
