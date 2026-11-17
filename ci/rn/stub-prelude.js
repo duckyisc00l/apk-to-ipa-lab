@@ -4,6 +4,8 @@
 // that return a resolved Promise of null. Everything the host really has is passed through unchanged.
 (function (g) {
   var STUBS = __STUBS__;
+  // same families as SKIP in modules.py: a library may ask for a name the scan never saw ("RNFB" + "AnalyticsModule")
+  var STUB_RE = /^(Flipper|RNFB|Bugsnag|RNSentry|Sentry|RNGoogle|GoogleSignin|RNAdMob|RNFirebase|Crashlytics|Amplitude|Mixpanel|AppCenter|CodePush|RNBranch|Adjust|AppsFlyer|FBSDK|RNIap|RNPlayInstall)/i;
   // a few removed modules must still describe themselves, or their JS side refuses to start the app.
   // Firebase: one local "[DEFAULT]" app with dummy settings, so firebase.app() works; nothing is ever sent.
   var CONSTANTS = {
@@ -33,7 +35,7 @@
     return new Proxy({}, { get: function (t, k) {
       var m = real ? real[k] : undefined;
       if (m != null) return m;
-      if (STUBS.indexOf(k) >= 0) return cache[k] || (cache[k] = stub(k));
+      if (typeof k === 'string' && (STUBS.indexOf(k) >= 0 || STUB_RE.test(k))) return cache[k] || (cache[k] = stub(k));
       return m;
     } });
   }
