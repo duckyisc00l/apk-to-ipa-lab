@@ -55,10 +55,12 @@
     function C() { return consts || (consts = (real.getConstants ? real.getConstants() : null) || {}); }
     var extra = {
       // Android looks each component up one by one; iOS lists them all in its constants
-      getConstantsForViewManager: function (n) { return C()[iosView(n)] || null; },
+      // a component no installed add-on provides becomes a plain view (the screen still shows) instead of a crash
+      getConstantsForViewManager: function (n) { return C()[iosView(n)] || (/^[A-Z]/.test(n) && C().RCTView) || null; },
       getDefaultEventTypes: function () { return { bubblingEventTypes: C().genericBubblingEventTypes || {}, directEventTypes: C().genericDirectEventTypes || {} }; },
       createView: function (tag, cls, root, props) {
         var n = cls === 'AndroidTextInput' && !(props && props.multiline) ? 'RCTSinglelineTextInputView' : iosView(cls);
+        if (!C()[n]) n = 'RCTView';
         names[tag] = n; return real.createView(tag, n, root, fixProps(cls, props));
       },
       updateView: function (tag, cls, props) { return real.updateView(tag, names[tag] || iosView(cls), fixProps(cls, props)); }

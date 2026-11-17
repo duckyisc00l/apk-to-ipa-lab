@@ -104,6 +104,8 @@ asked = set(re.findall(r"NativeModules\.([A-Z][A-Za-z0-9_]+)", text))
 asked |= set(re.findall(r"TurboModuleRegistry\.(?:getEnforcing|get)\(\s*['\"]([A-Za-z0-9_]+)", text))
 asked |= set(re.findall(r"requireNativeComponent\(\s*['\"]([A-Za-z0-9_]+)", text))
 asked |= set(re.findall(r"codegenNativeComponent\(\s*['\"]([A-Za-z0-9_]+)", text))
+# minified bundles rename requireNativeComponent (r(d[3])("RNCSafeAreaProvider")): also take quoted native-looking names
+asked |= set(re.findall(r"[\"'](RN[A-Z][A-Za-z0-9]{2,40}|RNC[A-Z][A-Za-z0-9]{2,40}|Expo[A-Z][A-Za-z0-9]{2,40}|LottieAnimationView)[\"']", text))
 if hermes:  # bytecode: names sit in the string table; catch the common third-party prefixes
     asked |= set(re.findall(r"\b(RN[A-Z][A-Za-z0-9]{2,40}|RCT[A-Z][A-Za-z0-9]{2,40}|Expo[A-Z][A-Za-z0-9]{2,40})\b", text))
 info["native_core"] = sorted(asked & CORE)
