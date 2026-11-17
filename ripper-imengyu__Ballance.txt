@@ -1,0 +1,116 @@
+load 302 (form) 
+export 302 (form) 
+backend: Mono
+seconds: 25
+project: /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/imengyu__Ballance/ExportedProject
+files: 6729
+scenes: 1
+textures: 420
+audio: 0
+all .cs by folder:
+    405 Scripts/Assembly-CSharp
+    344 Scripts/Unity.InputSystem
+    267 Scripts/Newtonsoft.Json
+    115 Scripts/UnityEngine.UI
+     84 Scripts/Unity.Timeline
+     76 Scripts/Unity.Mathematics
+     67 Scripts/RuntimeInspector.Runtime
+     48 Plugins/Assembly-CSharp-firstpass
+     24 Scripts/Tayx.Graphy
+     21 Scripts/SimpleFileBrowser.Runtime
+      2 Scripts/mod.speedball
+      2 Scripts/mod.selfkill
+      2 Scripts/mod.invlife
+      2 Scripts/UnityEngine.UIWidgetsModule
+      2 Scripts/UnityEngine.AutoStreamingModule
+all .dll: 0 
+game scripts (.cs under Assets/Scripts): 1415
+script folders: Assembly-CSharp Newtonsoft.Json RuntimeInspector.Runtime SimpleFileBrowser.Runtime System.Runtime.CompilerServices.Unsafe Tayx.Graphy Unity.InputSystem Unity.InputSystem.ForUI Unity.Mathematics Unity.Timeline UnityEngine.AutoStreamingModule UnityEngine.UI UnityEngine.UIWidgetsModule mod.invlife mod.selfkill mod.speedball 
+stub bodies (throw null / NotImplemented): 24
+ProjectVersion: m_EditorVersion: 2021.3.33f1c1
+packages: com.unity.modules.ai com.unity.modules.androidjni com.unity.modules.animation com.unity.modules.assetbundle com.unity.modules.audio com.unity.modules.cloth com.unity.modules.director com.unity.modules.imageconversion com.unity.modules.imgui com.unity.modules.jsonserialize com.unity.modules.particlesystem com.unity.modules.physics com.unity.modules.physics2d com.unity.modules.screencapture com.unity.modules.terrain com.unity.modules.terrainphysics com.unity.modules.tilemap com.unity.modules.ui com.unity.modules.uielements com.unity.modules.umbra com.unity.modules.unityanalytics com.unity.modules.unitywebrequest com.unity.modules.unitywebrequestassetbundle com.unity.modules.unitywebrequestaudio com.unity.modules.unitywebrequesttexture com.unity.modules.unitywebrequestwww com.unity.modules.vehicles com.unity.modules.video com.unity.modules.vr com.unity.modules.wind com.unity.modules.xr
+android plugins: 
+--- sample script (first 60 lines of the biggest game script)
+/home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/imengyu__Ballance/ExportedProject/Assets/Scripts/Newtonsoft.Json/Newtonsoft/Json/JsonTextReader.cs
+using System;
+using System.Globalization;
+using System.IO;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Utilities;
+
+namespace Newtonsoft.Json
+{
+	public class JsonTextReader : JsonReader, IJsonLineInfo
+	{
+		private readonly bool _safeAsync;
+
+		private const char UnicodeReplacementChar = '\ufffd';
+
+		private const int MaximumJavascriptIntegerCharacterLength = 380;
+
+		private const int LargeBufferLength = 1073741823;
+
+		private readonly TextReader _reader;
+
+		private char[]? _chars;
+
+		private int _charsUsed;
+
+		private int _charPos;
+
+		private int _lineStartPos;
+
+		private int _lineNumber;
+
+		private bool _isEndOfFile;
+
+		private StringBuffer _stringBuffer;
+
+		private StringReference _stringReference;
+
+		private IArrayPool<char>? _arrayPool;
+
+		public JsonNameTable? PropertyNameTable { get; set; }
+
+		public IArrayPool<char>? ArrayPool
+		{
+			get
+			{
+				return _arrayPool;
+			}
+			set
+			{
+				if (value == null)
+				{
+					throw new ArgumentNullException("value");
+				}
+				_arrayPool = value;
+			}
+		}
+
+		public int LineNumber
+--- server log lines for this game (errors, warnings, scripting)
+General : ScriptContentLevel: Level2
+General : ScriptExportMode: Decompiled
+General : ScriptLanguageVersion: AutoSafe
+Import : Files use the 'Mono' scripting backend.
+Import : During Mono initialization, found 102 assemblies
+Import : Error during reading of asset type 129. V: 2021.3.33f1c1 P: Android N: globalgamemanagers Path: 
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+   at AssetRipper.Import.Structure.Assembly.Serializable.SerializableValue.Read(EndianSpanReader&, UnityVersion, TransferInstructionFlags, Int32, SerializableType.Field&, ITypeResolver) + 0x9f6
+   at AssetRipper.Import.Structure.Assembly.Serializable.SerializableStructure.Read(EndianSpanReader&, UnityVersion, TransferInstructionFlags, ITypeResolver) + 0xdb
+Import : Error during reading of asset type BuildSettings. V: 2021.3.33f1c1 P: Android N: globalgamemanagers Path: 
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'length')
+Import : Error during reading of asset type UnityConnectSettings. V: 2021.3.33f1c1 P: Android N: globalgamemanagers Path: 
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+Processing : Processing Scriptable Object Groups
+Import : Assembly 'UnityEngine.TestRunner' hasn't been found
+ExportProgress : (489/2336) Exporting 'ScriptExportCollection'
+Export : Exporting scripts...
+Export : Decompiling Assembly-CSharp-firstpass
+Export : Decompiling Assembly-CSharp
+ExportProgress : (2213/2336) Exporting 'RAM_Mono_Graph'
+Export : Saving game assemblies...

@@ -1,0 +1,135 @@
+load 302 (form) 
+export 302 (form) 
+backend: Mono
+seconds: 20
+project: /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/UltraStar-Deluxe__Play/ExportedProject
+files: 4276
+scenes: 23
+textures: 51
+audio: 16
+all .cs by folder:
+    344 Scripts/Unity.InputSystem
+    302 Scripts/UniRx
+    262 Scripts/Plugins
+    178 Scripts/com.achimmihca.utfunknownunity
+    159 Scripts/playshared
+    137 Scripts/Common
+    116 Scripts/UnityEngine.UI
+    112 Scripts/Serilog
+    103 Scripts/SongEditorScene
+    100 Scripts/Scenes
+     85 Scripts/Unity.Timeline
+     82 Scripts/Unity.VectorGraphics
+     33 Scripts/com.achimmihca.uniinject
+     23 Scripts/IngameDebugConsole.Runtime
+     15 Scripts/com.achimmihca.simplehttpserverforunity
+all .dll: 0 
+game scripts (.cs under Assets/Scripts): 2088
+script folders: AndroidRuntimePermissions.Runtime Common IngameDebugConsole.Runtime Plugins Scenes Serilog SongEditorScene System.Runtime.CompilerServices.Unsafe UniRx Unity.AI.Navigation Unity.InputSystem Unity.InternalAPIEngineBridge.003 Unity.Timeline Unity.VectorGraphics UnityEngine.UI com.achimmihca.primeinputactions com.achimmihca.protrans com.achimmihca.scenechangeanimations com.achimmihca.simplehttpserverforunity com.achimmihca.uniinject com.achimmihca.utfunknownunity playshared 
+stub bodies (throw null / NotImplemented): 38
+ProjectVersion: m_EditorVersion: 2022.2.4f1
+packages: com.unity.modules.ai com.unity.modules.androidjni com.unity.modules.animation com.unity.modules.assetbundle com.unity.modules.audio com.unity.modules.cloth com.unity.modules.director com.unity.modules.imageconversion com.unity.modules.imgui com.unity.modules.jsonserialize com.unity.modules.particlesystem com.unity.modules.physics com.unity.modules.physics2d com.unity.modules.screencapture com.unity.modules.terrain com.unity.modules.terrainphysics com.unity.modules.tilemap com.unity.modules.ui com.unity.modules.uielements com.unity.modules.umbra com.unity.modules.unityanalytics com.unity.modules.unitywebrequest com.unity.modules.unitywebrequestassetbundle com.unity.modules.unitywebrequestaudio com.unity.modules.unitywebrequesttexture com.unity.modules.unitywebrequestwww com.unity.modules.vehicles com.unity.modules.video com.unity.modules.vr com.unity.modules.wind com.unity.modules.xr
+android plugins: 
+--- sample script (first 60 lines of the biggest game script)
+/home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/UltraStar-Deluxe__Play/ExportedProject/Assets/Scripts/UniRx/UniRx/Observable.cs
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using UniRx.InternalUtil;
+using UniRx.Operators;
+using UniRx.Triggers;
+using UnityEngine;
+
+namespace UniRx
+{
+	public static class Observable
+	{
+		private class ConnectableObservable<T> : IConnectableObservable<T>, IObservable<T>
+		{
+			private class Connection : IDisposable
+			{
+				private readonly ConnectableObservable<T> parent;
+
+				private IDisposable subscription;
+
+				public Connection(ConnectableObservable<T> parent, IDisposable subscription)
+				{
+					this.parent = parent;
+					this.subscription = subscription;
+				}
+
+				public void Dispose()
+				{
+					lock (parent.gate)
+					{
+						if (subscription != null)
+						{
+							subscription.Dispose();
+							subscription = null;
+							parent.connection = null;
+						}
+					}
+				}
+			}
+
+			private readonly IObservable<T> source;
+
+			private readonly ISubject<T> subject;
+
+			private readonly object gate = new object();
+
+			private Connection connection;
+
+			public ConnectableObservable(IObservable<T> source, ISubject<T> subject)
+			{
+				this.source = source.AsObservable();
+				this.subject = subject;
+			}
+
+			public IDisposable Connect()
+			{
+				lock (gate)
+				{
+--- server log lines for this game (errors, warnings, scripting)
+General : ScriptContentLevel: Level2
+General : ScriptExportMode: Decompiled
+General : ScriptLanguageVersion: AutoSafe
+Import : Files use the 'Mono' scripting backend.
+Import : During Mono initialization, found 106 assemblies
+Processing : Processing Scriptable Object Groups
+Import : Assembly 'UnityEngine.TestRunner' hasn't been found
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+ExportProgress : (27/397) Exporting 'ScriptExportCollection'
+Export : Exporting scripts...
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.UIDocument`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.UIDocument`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.UIDocument`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.StyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.VisualTreeAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.UIDocument`. Reason: Script ID is invalid
+ExportProgress : (97/397) Exporting 'console.warnicon'
+ExportProgress : (101/397) Exporting 'console.erroricon'
+ExportProgress : (106/397) Exporting 'IconWarning'
+ExportProgress : (111/397) Exporting 'IconError'
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.ThemeStyleSheet`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.PanelSettings`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.UIElements.PanelTextSettings`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.TextCore.Text.FontAsset`. Reason: Script ID is invalid
+Import : Could not read MonoBehaviour structure for `UnityEngine.TextCore.Text.FontAsset`. Reason: Script ID is invalid

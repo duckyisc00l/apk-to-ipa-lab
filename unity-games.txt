@@ -1,0 +1,3 @@
+AnimaRain__ShootAR work/AnimaRain__ShootAR IL2CPP
+UltraStar-Deluxe__Play work/UltraStar-Deluxe__Play Mono
+imengyu__Ballance work/imengyu__Ballance Mono

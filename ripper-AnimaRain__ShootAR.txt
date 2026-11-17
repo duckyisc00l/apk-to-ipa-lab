@@ -1,0 +1,103 @@
+load 302 (form) 
+export 302 (form) 
+backend: IL2CPP
+seconds: 2
+project: /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/AnimaRain__ShootAR/ExportedProject
+files: 275
+scenes: 2
+textures: 15
+audio: 12
+all .cs by folder:
+     21 Scripts/Main
+      6 Scripts/Menu
+      1 Scripts/System.Runtime.CompilerServices.Unsafe
+all .dll: 0 
+game scripts (.cs under Assets/Scripts): 28
+script folders: Main Menu System.Runtime.CompilerServices.Unsafe 
+stub bodies (throw null / NotImplemented): 0
+ProjectVersion: m_EditorVersion: 2018.2.11f1
+packages: com.unity.modules.ai com.unity.modules.animation com.unity.modules.assetbundle com.unity.modules.audio com.unity.modules.cloth com.unity.modules.director com.unity.modules.imageconversion com.unity.modules.imgui com.unity.modules.jsonserialize com.unity.modules.particlesystem com.unity.modules.physics com.unity.modules.physics2d com.unity.modules.screencapture com.unity.modules.terrain com.unity.modules.terrainphysics com.unity.modules.tilemap com.unity.modules.ui com.unity.modules.uielements com.unity.modules.umbra com.unity.modules.unityanalytics com.unity.modules.unitywebrequest com.unity.modules.unitywebrequestassetbundle com.unity.modules.unitywebrequestaudio com.unity.modules.unitywebrequesttexture com.unity.modules.unitywebrequestwww com.unity.modules.vehicles com.unity.modules.video com.unity.modules.vr com.unity.modules.wind com.unity.modules.xr
+android plugins: 
+--- sample script (first 60 lines of the biggest game script)
+/home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/AnimaRain__ShootAR/ExportedProject/Assets/Scripts/Main/ShootAR/Spawner.cs
+using System.Collections;
+using System.Diagnostics;
+using UnityEngine;
+
+namespace ShootAR
+{
+	public class Spawner : MonoBehaviour
+	{
+		[SerializeField]
+		private Spawnable objectToSpawn;
+
+		[SerializeField]
+		private float maxDistanceToSpawn;
+
+		[SerializeField]
+		private float minDistanceToSpawn;
+
+		[SerializeField]
+		private GameState gameState;
+
+		[SerializeField]
+		private AudioClip spawnSfx;
+
+		[SerializeField]
+		private GameObject portal;
+
+		private AudioSource sfx;
+
+		public Spawnable ObjectToSpawn
+		{
+			get
+			{
+				return null;
+			}
+			private set
+			{
+			}
+		}
+
+		public float SpawnRate { get; set; }
+
+		public float InitialDelay { get; private set; }
+
+		public float MaxDistanceToSpawn
+		{
+			get
+			{
+				return 0f;
+			}
+			private set
+			{
+			}
+		}
+
+		public float MinDistanceToSpawn
+		{
+			get
+			{
+				return 0f;
+			}
+--- server log lines for this game (errors, warnings, scripting)
+General : ScriptContentLevel: Level2
+General : ScriptExportMode: Decompiled
+General : ScriptLanguageVersion: AutoSafe
+Import : Files use the 'IL2Cpp' scripting backend.
+Import : During Il2Cpp initialization, found Unity version: 2018.2.11f1
+Cpp2IL : Initializing Metadata...
+Cpp2IL : Using actual IL2CPP Metadata version 24
+Cpp2IL : Initialized Metadata in 34ms
+Cpp2IL : Mapping pointers to Il2CppMethodDefinitions...
+Processing : Processing Scriptable Object Groups
+Import : Assembly 'Vuforia.UnityExtensions' hasn't been found
+Import : Assembly 'UnityEngine.Analytics' hasn't been found
+Import : Assembly 'Unity.TextMeshPro' hasn't been found
+Import : Assembly 'Tests' hasn't been found
+Import : Assembly 'Unity.TextMeshPro.Tests' hasn't been found
+Import : Assembly 'UnityEngine.Advertisements' hasn't been found
+ExportProgress : (38/121) Exporting 'ScriptExportCollection'
+Export : Exporting scripts...
+ExportProgress : (42/121) Exporting 'ui_error_1'
+Export : Saving game assemblies...

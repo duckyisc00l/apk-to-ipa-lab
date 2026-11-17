@@ -1,0 +1,154 @@
+[
+ {
+  "libs": [
+   "libil2cpp.so",
+   "libmain.so",
+   "libunity.so"
+  ],
+  "engine": "Unity",
+  "backend": "IL2CPP",
+  "game_dlls": [],
+  "dlls_where": "inside data.unity3d",
+  "unity_version": "2018.2.11f1",
+  "version_from": "assets/bin/Data/data.unity3d",
+  "data_unity3d": true,
+  "variant": "IL2CPP 2018.2.11f1",
+  "engine_id": "unity",
+  "tags": [
+   "unity",
+   "unity-il2cpp"
+  ],
+  "evidence": [
+   "libunity.so",
+   "libil2cpp.so"
+  ],
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "arches": [
+   "armeabi-v7a"
+  ],
+  "arm64": false,
+  "game": "AnimaRain__ShootAR",
+  "file": "shootar_0.5.0.5.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/AnimaRain__ShootAR",
+  "protection": []
+ },
+ {
+  "libs": [
+   "libMonoPosixHelper.so",
+   "libmain.so",
+   "libmono-native.so",
+   "libmonobdwgc-2.0.so",
+   "libunity.so"
+  ],
+  "engine": "Unity",
+  "backend": "Mono",
+  "game_dlls": [
+   "AndroidRuntimePermissions.Runtime.dll",
+   "Common.dll",
+   "IngameDebugConsole.Runtime.dll",
+   "Plugins.dll",
+   "Scenes.dll",
+   "Serilog.dll",
+   "SongEditorScene.dll",
+   "UniRx.dll",
+   "com.achimmihca.primeinputactions.dll",
+   "com.achimmihca.protrans.dll",
+   "com.achimmihca.scenechangeanimations.dll",
+   "com.achimmihca.simplehttpserverforunity.dll",
+   "com.achimmihca.uniinject.dll",
+   "com.achimmihca.utfunknownunity.dll",
+   "playshared.dll"
+  ],
+  "dlls_where": "Managed/",
+  "unity_version": "2022.2.4f1",
+  "version_from": "assets/bin/Data/globalgamemanagers",
+  "data_unity3d": false,
+  "variant": "Mono 2022.2.4f1",
+  "engine_id": "unity",
+  "tags": [
+   "unity",
+   "unity-mono"
+  ],
+  "evidence": [
+   "libunity.so",
+   "libmonobdwgc-2.0.so"
+  ],
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "arches": [
+   "armeabi-v7a"
+  ],
+  "arm64": false,
+  "game": "UltraStar-Deluxe__Play",
+  "file": "UltraStarPlay-v0.9.0-Android.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/UltraStar-Deluxe__Play",
+  "protection": []
+ },
+ {
+  "libs": [
+   "libMonoPosixHelper.so",
+   "libbphysics.so",
+   "libmain.so",
+   "libmono-native.so",
+   "libmonobdwgc-2.0.so",
+   "libunity.so"
+  ],
+  "engine": "Unity",
+  "backend": "Mono",
+  "game_dlls": [
+   "Assembly-CSharp-firstpass.dll",
+   "Assembly-CSharp.dll",
+   "ICSharpCode.SharpZipLib.dll",
+   "Newtonsoft.Json.dll",
+   "RuntimeInspector.Runtime.dll",
+   "SimpleFileBrowser.Runtime.dll",
+   "Tayx.Graphy.dll",
+   "mod.invlife.dll",
+   "mod.selfkill.dll",
+   "mod.speedball.dll"
+  ],
+  "dlls_where": "Managed/",
+  "unity_version": "2021.3.33f1",
+  "version_from": "assets/bin/Data/data.unity3d",
+  "data_unity3d": true,
+  "variant": "Mono 2021.3.33f1",
+  "engine_id": "unity",
+  "tags": [
+   "unity",
+   "unity-mono"
+  ],
+  "evidence": [
+   "libunity.so",
+   "libmonobdwgc-2.0.so"
+  ],
+  "route": {
+   "kind": "re-export",
+   "step": "U",
+   "what": "recover the project and build it for iOS"
+  },
+  "arches": [
+   "armeabi-v7a"
+  ],
+  "arm64": false,
+  "game": "imengyu__Ballance",
+  "file": "Ballance-1.0.7-android.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/imengyu__Ballance",
+  "protection": []
+ }
+]
