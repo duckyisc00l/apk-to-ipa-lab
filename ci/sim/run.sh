@@ -55,18 +55,19 @@ for t in 5 $(( WAIT / 2 )) $WAIT; do
 done
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
   if ! command -v idb > /dev/null; then   # at most 8 minutes; without it the steps are skipped
-    timeout 420 bash -c 'brew tap facebook/fb; brew install idb-companion' > "$OUT/idb-install.log" 2>&1
-    timeout 120 bash -c 'python3 -m pip install --break-system-packages fb-idb || python3 -m pip install --user fb-idb' >> "$OUT/idb-install.log" 2>&1
-    export PATH="$PATH:$(python3 -m site --user-base 2>/dev/null)/bin:$(python3 -c 'import sysconfig;print(sysconfig.get_path("scripts"))' 2>/dev/null)"
+    # newer Homebrew refuses taps it doesn't trust yet, and Homebrew's Python refuses system-wide pip installs
+    timeout 420 bash -c 'brew tap facebook/fb && { brew trust facebook/fb 2>/dev/null || brew trust --formula facebook/fb/idb-companion 2>/dev/null || true; } && brew install facebook/fb/idb-companion' > "$OUT/idb-install.log" 2>&1
+    timeout 180 bash -c 'python3 -m venv /tmp/idbv && /tmp/idbv/bin/pip install -q fb-idb' >> "$OUT/idb-install.log" 2>&1
+    export PATH="$PATH:/tmp/idbv/bin"
     command -v idb > /dev/null || { echo "idb install failed:" >> "$OUT/sim.md"; tail -8 "$OUT/idb-install.log" >> "$OUT/sim.md"; }
   fi
   command -v idb > /dev/null || echo "idb not available: input steps skipped" >> "$OUT/sim.md"
-  timeout 60 idb connect "$UDID" > /dev/null 2>&1
+  timeout 60 idb connect "$UDID" >> "$OUT/idb-install.log" 2>&1 || echo "idb connect failed (see idb-install.log)" >> "$OUT/sim.md"
   echo "## input steps" >> "$OUT/sim.md"
   while read -r cmd a b c d; do
     case "$cmd" in
-      tap) timeout 30 idb ui tap --udid "$UDID" "$a" "$b" && echo "tap $a $b" >> "$OUT/sim.md";;
-      swipe) timeout 30 idb ui swipe --udid "$UDID" "$a" "$b" "$c" "$d" --duration 0.2 && echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md";;
+      tap) if timeout 30 idb ui tap --udid "$UDID" "$a" "$b" >> "$OUT/idb-install.log" 2>&1; then echo "tap $a $b" >> "$OUT/sim.md"; else echo "tap $a $b FAILED" >> "$OUT/sim.md"; fi;;
+      swipe) if timeout 30 idb ui swipe --udid "$UDID" "$a" "$b" "$c" "$d" --duration 0.2 >> "$OUT/idb-install.log" 2>&1; then echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md"; else echo "swipe $a,$b -> $c,$d FAILED" >> "$OUT/sim.md"; fi;;
       wait) sleep "$a";;
       shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
     esac
