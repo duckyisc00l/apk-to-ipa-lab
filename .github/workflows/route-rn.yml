@@ -126,7 +126,7 @@ jobs:
           else cat rn/prelude.js rn/main.jsbundle > "$app/main.jsbundle"; fi
           # react-native-vector-icons draws with fonts that iOS must load from the app (UIAppFonts)
           vi=Host/node_modules/react-native-vector-icons/Fonts
-          if [ -d "$vi" ]; then cp "$vi"/*.ttf "$app/"; i=0; plutil -remove UIAppFonts "$app/Info.plist" 2>/dev/null; plutil -insert UIAppFonts -array "$app/Info.plist"
+          if [ -d "$vi" ]; then cp "$vi"/*.ttf "$app/"; i=0; plutil -remove UIAppFonts "$app/Info.plist" 2>/dev/null || true; plutil -insert UIAppFonts -array "$app/Info.plist"
             for f in "$vi"/*.ttf; do plutil -insert UIAppFonts.$i -string "$(basename "$f")" "$app/Info.plist"; i=$((i+1)); done; echo "icon fonts: $i" | tee -a out/ipa.md; fi
           [ -d rn/app ] && cp -R rn/app/. "$app/"
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry RN.ipa Payload && ls -la RN.ipa | tee -a out/ipa.md

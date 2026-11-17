@@ -34,7 +34,7 @@ jobs:
           git clone -q --depth 1 https://github.com/FabianFG/CUE4Parse c4p
           echo "CUE4Parse $(git -C c4p log -1 --format='%h %ad' --date=short)" | tee -a out/rebuild.md
           set -o pipefail
-          dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" GAME_UE4_16 export 2>&1 | grep -vE "^\s*$" | tail -60 | tee out/ue2godot.log
+          dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" GAME_UE4_16 export 2>&1 | grep -vE "^\s*$" | tail -200 | tee out/ue2godot.log
           ls export/levels | tee -a out/rebuild.md; find export/meshes -name '*.glb' | wc -l | sed 's/^/glb files: /' | tee -a out/rebuild.md
           cat export/summary.txt >> out/rebuild.md
       - name: Godot 4 (newest stable) and templates

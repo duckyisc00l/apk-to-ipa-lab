@@ -18,9 +18,11 @@ using CUE4Parse_Conversion.Writers.Gltf;
 
 var (paks, gameName, outDir) = (args[0], args[1], Path.GetFullPath(args[2]));
 var prefix = args.Length > 3 ? args[3] : null;
+Serilog.Log.Logger = new Serilog.LoggerConfiguration().MinimumLevel.Warning().WriteTo.Console().CreateLogger();
+CUE4Parse.CUE4ParseLog.UseLogger(Serilog.Log.Logger);
 await ZlibHelper.InitializeAsync();
-var provider = new DefaultFileProvider(paks, SearchOption.AllDirectories,
     new VersionContainer(Enum.Parse<EGame>(gameName)), StringComparer.OrdinalIgnoreCase);
+    new VersionContainer(Enum.Parse<EGame>(gameName), ETexturePlatform.Mobile), StringComparer.OrdinalIgnoreCase);   // Android build: mobile-cooked meshes and textures
 provider.Initialize();
 provider.Mount();
 provider.PostMount();
@@ -82,6 +84,14 @@ foreach (var map in maps)
     await File.WriteAllTextAsync(Path.Combine(outDir, "levels", name + ".json"),
         JsonSerializer.Serialize(new { map, actors = dto.Actors.Count, meshes = placed, lights }, new JsonSerializerOptions { WriteIndented = true }));
     summary.Add($"{map}: {dto.Actors.Count} actors, {placed.Count} placed meshes, {lights.Count} lights");
+}
+
+// why a mesh has no render data: dump the first one that doesn't
+foreach (var m in meshes.Values.Where(m => m.RenderData?.LODs is null).Take(1))
+{
+    summary.Add($"no LODs in {m.GetPathName()}: RenderData={(m.RenderData is null ? "null" : "set")}");
+    try { summary.Add(Newtonsoft.Json.JsonConvert.SerializeObject(m, Newtonsoft.Json.Formatting.None)[..Math.Min(1500, Newtonsoft.Json.JsonConvert.SerializeObject(m).Length)]); }
+    catch (Exception e) { summary.Add("dump failed: " + e.Message); }
 }
 
 // export every used mesh as glTF (textures decoded, ETC1 included)

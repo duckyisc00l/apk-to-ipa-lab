@@ -33,7 +33,7 @@ jobs:
           set +e
           ./setup.sh --target-platform linux --build-type release --build-steps dependencies configure build > ../out/build.log 2>&1
           echo "build exit $?" | tee -a ../out/offline.md
-          B=$(dirname "$(dirname "$(find build -type f -path '*apps/linux/bim' | head -1)")"); echo "B=$PWD/$B" >> $GITHUB_ENV; echo "build dir $B" | tee -a ../out/offline.md
+          B=$(dirname "$(dirname "$(dirname "$(find build -type f -path '*apps/linux/bim' | head -1)")")")   # .../release; echo "B=$PWD/$B" >> $GITHUB_ENV; echo "build dir $B" | tee -a ../out/offline.md
       - name: Cut the network (only this machine itself stays reachable)
         run: |
           iptables -P OUTPUT DROP; iptables -A OUTPUT -o lo -j ACCEPT
@@ -41,8 +41,9 @@ jobs:
       - name: Server with computer players, on this machine
         run: |
           printf '{"port": 23899, "enable_bots": true, "matchmaking_delay_for_bot": 2}\n' > server.cfg
-          ("$B/apps/server/bim-server" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
-          grep -E "up on port|bots|Bot" out/server.log | head | tee -a out/offline.md
+          (S=$(find "$GITHUB_WORKSPACE/bim/build" -type f -name bim-server | head -1); echo "server $S" | tee -a out/offline.md; "$S" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
+          echo "client $B/apps/linux/bim" | tee -a out/offline.md
+          grep -E "up on port|bots|Bot" out/server.log | head | tee -a out/offline.md; tail -5 out/server.log | tee -a out/offline.md
       - name: Play a match against a bot (scripted taps, screenshots)
         run: |
           mkdir -p shots app; cd shots
@@ -56,7 +57,7 @@ jobs:
       - name: Publish to branch r-offline
         if: always()
         run: |
-          iptables -P OUTPUT ACCEPT || true
+          iptables -P OUTPUT ACCEPT || true; iptables -F OUTPUT || true
           mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp shots/*.png /tmp/r/ 2>/dev/null; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
           cd /tmp/r && git init -q -b r-offline && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          git add -A && git commit -qm "offline ${{ github.run_number }}" && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-offline
+          git config --global --add safe.directory '*'; git add -A && git commit -qm "offline ${{ github.run_number }}" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-offline
