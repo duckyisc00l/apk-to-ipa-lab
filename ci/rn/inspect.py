@@ -152,6 +152,7 @@ for loc, scales, name, typ in regs:
 info["images"] = {"registrations": len(regs), "copied": copied, "missing": missing}
 # debug samples (kept short): where the version and image registrations sit in this bundle
 info["debug_version_ctx"] = [text[max(0, m.start() - 120):m.end() + 60] for m in re.finditer(r"prerelease", text)][:3]
+info["debug_fb_ctx"] = [text[max(0, m.start() - 300):m.end() + 300] for m in re.finditer(r"NATIVE_FIREBASE_APPS|No Firebase App", text)][:4]
 info["debug_asset_ctx"] = [text[max(0, m.start() - 160):m.end() + 200] for m in re.finditer(r"__packager_asset", text)][:2]
 # the app's own package name and home-screen name, for the iPhone app's bundle id and display name
 try:
