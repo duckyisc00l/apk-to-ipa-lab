@@ -58,6 +58,8 @@ jobs:
           C=$(find "$GITHUB_WORKSPACE/bim/build" -type f -perm -u+x -path '*apps/linux/bim' | head -1); B=$(dirname "$(dirname "$(dirname "$C")")")
           echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
           # A = the game's original behaviour with no internet; B = with the offline change switched on
+          # no sound card in the container: point OpenAL Soft (axmol's audio on Linux) at its silent "null" device
+          export ALSOFT_DRIVERS=null
           for mode in A B; do
             mkdir -p "shots-$mode" "app-$mode"; cd "shots-$mode"
             [ "$mode" = B ] && export BIM_OFFLINE=1 || unset BIM_OFFLINE
