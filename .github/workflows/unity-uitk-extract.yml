@@ -1,12 +1,15 @@
 name: unity-uitk-extract
-# Read a Unity game's UI Toolkit layouts (UXML), style sheets (USS/TSS) straight from its APK. See ci/unity/uitk_extract.py.
+# Read a Unity game's UI Toolkit layouts (UXML), style sheets (USS/TSS), PanelSettings and UIDocument links straight
+# from its APK (works for closed-source games). See ci/unity/uitk_extract.py. With a recovered project branch, puts
+# them in place of AssetRipper's shells on <branch>-uitkx. Summary on r-uitkx.
 on:
   workflow_dispatch:
     inputs:
       repo: { description: "Game repo with an APK in its releases", default: "UltraStar-Deluxe/Play" }
-      dump: { description: "also publish raw object bytes (open-source games only)", default: "false" }
-      compare_tag: { description: "open-source games: source tag to measure accuracy against (empty = skip)", default: "v0.9.0" }
+      project_branch: { description: "recovered project branch to fix (empty = files only)", default: "project-Play" }
+      compare_tag: { description: "open-source games only: source tag to measure accuracy against (empty = skip)", default: "v0.9.0" }
       compare_dir: { description: "Unity project folder in the source repo", default: "UltraStar Play" }
+      dump: { description: "also publish raw object bytes (open-source games only)", default: "false" }
 permissions:
   contents: write
 env:
@@ -16,30 +19,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with: { path: lab }
+      - uses: actions/checkout@v4
+        if: inputs.project_branch != ''
+        with: { ref: "${{ inputs.project_branch }}", path: proj, lfs: false }
       - name: Download the APK and detect
+        working-directory: lab
         run: |
           echo "${{ inputs.repo }}" > /tmp/one.txt
           CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
           python3 ci/detect.py dl work
       - name: Extract
-        continue-on-error: true
         run: |
           pip install -q UnityPy 2>&1 | tail -2
           mkdir -p out
-          managed=$(find work -type d -name Managed | head -1); data=$(dirname "$managed")
-          [ -n "$managed" ] || data=$(find work -type f \( -name globalgamemanagers -o -name data.unity3d \) | head -1 | xargs dirname)
-          if [ "${{ inputs.dump }}" = "true" ]; then python3 ci/unity/uitk_dump.py "$data" out/dump.json; fi
-          if [ -f ci/unity/uitk_extract.py ]; then python3 ci/unity/uitk_extract.py "$data" out/uitk > out/extract.log 2>&1; tail -20 out/extract.log; fi
+          managed=$(find lab/work -type d -name Managed | head -1)
+          if [ -n "$managed" ]; then data=$(dirname "$managed")
+          else data=$(find lab/work -type f \( -name globalgamemanagers -o -name data.unity3d \) | head -1 | xargs dirname); fi
+          echo "data=$data" | tee out/paths.txt
+          if [ "${{ inputs.dump }}" = "true" ]; then python3 lab/ci/unity/uitk_dump.py "$data" out/dump.json; fi
+          extra=""; [ -d proj ] && extra="--project proj"
+          python3 lab/ci/unity/uitk_extract.py "$data" out/uitk $extra 2>&1 | tee out/extract.log | tail -40
       - name: Compare with the source
         if: inputs.compare_tag != ''
         continue-on-error: true
         run: |
           GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 --branch "${{ inputs.compare_tag }}" "https://github.com/${{ inputs.repo }}" src
-          python3 ci/unity/uitk_compare.py out/uitk "src/${{ inputs.compare_dir }}" > out/compare.txt 2>&1; tail -40 out/compare.txt
+          python3 lab/ci/unity/uitk_compare.py out/uitk "src/${{ inputs.compare_dir }}" > out/compare.txt 2>&1; tail -8 out/compare.txt
+      - name: Commit the fixed project to <branch>-uitkx
+        if: inputs.project_branch != ''
+        run: |
+          cd proj
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout -b "${{ inputs.project_branch }}-uitkx"
+          git add -A && git diff --cached --stat | tail -3 > ../out/project-diffstat.txt
+          git commit -qm "UI Toolkit files read from the APK (uitk_extract.py)" -m "$(head -c 3000 ../out/extract.log)"
+          git push -f origin "${{ inputs.project_branch }}-uitkx"
       - name: Publish to branch r-uitkx
         if: always()
         run: |
           mkdir -p /tmp/r; cp -r out/. /tmp/r/ 2>/dev/null || true
+          cd lab
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          git checkout --orphan r-uitkx && git rm -rfq . && rm -rf dl work ci out src
+          git checkout --orphan r-uitkx && git rm -rfq . && rm -rf dl work ci
           cp -r /tmp/r/. . && git add -A && git commit -qm "uitk extract" && git push -f origin r-uitkx
