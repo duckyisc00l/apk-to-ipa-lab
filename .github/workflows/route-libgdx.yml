@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Find libGDX games with APKs, split each one's Java
         run: |
-          CANDIDATES=ci/libgdx/candidates.txt MAX_GAMES=25 python3 ci/scout.py | tail -40
+          CANDIDATES=ci/libgdx/candidates.txt MAX_GAMES=25  python3 ci/scout.py | tail -40
           python3 ci/detect.py dl work | tail -30
           for g in $(python3 -c "import json;[print(r['game']) for r in json.load(open('out/detect.json')) if r['engine']=='libGDX']"); do
             echo "## $g" >> out/split.md

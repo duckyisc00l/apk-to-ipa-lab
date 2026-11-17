@@ -52,8 +52,8 @@ def load(jar):
     return z, classes
 
 ANDROID = ("android/", "androidx/", "com/google/android/", "com/badlogic/gdx/backends/android/", "dalvik/")
-LIBS = ("com/badlogic/", "kotlin/", "kotlinx/", "org/", "javax/", "java/", "com/google/", "com/esotericsoftware/",
-        "net/", "io/", "okhttp3/", "okio/", "com/squareup/", "de/", "games/rednblack/", "space/earlygrey/")
+LIBS = ("com/badlogic/", "kotlin/", "kotlinx/", "javax/", "java/", "com/google/", "com/esotericsoftware/",
+        "okhttp3/", "okio/", "com/squareup/", "org/intellij/", "org/jetbrains/", "org/json/", "org/slf4j/")
 
 def ancestors(classes, c, seen=None):
     seen = seen if seen is not None else set()
@@ -90,6 +90,7 @@ def report(jar, out):
     _, classes = load(jar); a = analyse(classes)
     L = ["# libGDX split", "", f"- classes in classes.dex: {len(classes)}", f"- libGDX version (com.badlogic.gdx.Version): {a['gdx']}",
          f"- game classes (not libGDX, Android or common libraries): {len(a['game'])}",
+         f"- libGDX kept its own names (com.badlogic.gdx.Gdx present; if not, R8 renamed libGDX and the backend can't be swapped): {'com/badlogic/gdx/Gdx' in classes}",
          f"- share of game classes with 1-2 letter names (obfuscated if high): {a['obf']}",
          f"- Android-side classes (extend an Android or libGDX-Android class): {len(a['android'])}"]
     L += ["", "## Game packages"] + [f"- {p}: {n}" for p, n in a["packages"].most_common(12)]

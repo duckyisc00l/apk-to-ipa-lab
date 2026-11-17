@@ -4,12 +4,11 @@
 set -eu
 ROOT="$1"; OUT="$(cd "$(dirname "$2")" && pwd)/$(basename "$2")"
 T=/tmp/d2j; mkdir -p $T
-if [ ! -x $T/bin/d2j-dex2jar.sh ]; then
+if [ ! -d $T/x ]; then
   gh release download -R ThexXTURBOXx/dex2jar -p '*.zip' -D $T/zip --clobber
-  unzip -qo $T/zip/*.zip -d $T/x; mv $T/x/*/* $T/ 2>/dev/null || mv $T/x/* $T/
-  chmod +x $T/bin/*.sh $T/*.sh 2>/dev/null || true
+  unzip -qo $T/zip/*.zip -d $T/x
 fi
-D2J=$(ls $T/bin/d2j-dex2jar.sh $T/d2j-dex2jar.sh 2>/dev/null | head -1)
+D2J=$(find $T/x -name d2j-dex2jar.sh | head -1); chmod +x "$(dirname "$D2J")"/*.sh "$(dirname "$D2J")"/bin/* 2>/dev/null || true
 rm -rf $T/parts $T/merge; mkdir -p $T/parts $T/merge
 for d in "$ROOT"/classes*.dex; do
   "$D2J" --force -o "$T/parts/$(basename "$d" .dex).jar" "$d" 2>&1 | grep -vE "^dex2jar " | tail -3

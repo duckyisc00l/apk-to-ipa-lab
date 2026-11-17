@@ -1,19 +1,10 @@
 # open-source libGDX games that may have an APK in their GitHub releases
-mingli1/Unlucky
-wmora/martianrun
 ser-mk/piball
 Smooth-E/gdxtris
 Yacubane/pure-ski-jumping
 fredboy/cavedroid
 danirod/rectball
 ictrobot/Cubes
-Rolleander/Poklmon
-MovingBlocks/DestinationSol
 retrowars/retrowars
-agateau/burgerparty
-haxpor/asteroids
-haxpor/omo
 andrzej-nov/Tangler
-woofers/woofers3d
 emre-cil/interstellar-enemies
-00-Evan/shattered-pixel-dungeon
