@@ -46,10 +46,14 @@ func _init():
 	for l in data["lights"]:
 		if l["kind"] == "DirectionalLight":
 			var q = l["xf"]["rot"]; sun.basis = Basis(Quaternion(q[0], q[1], q[2], q[3]).normalized())
+	if (sun.basis * Vector3(0, 0, -1)).y > -0.2:   # converted sun points sideways or up: the level would be dark
+		sun.basis = Basis.from_euler(Vector3(deg_to_rad(-50), deg_to_rad(-30), 0))
 	root.add_child(sun); sun.owner = root
 	var env = WorldEnvironment.new(); env.name = "Env"; env.environment = Environment.new()
 	env.environment.background_mode = Environment.BG_SKY; env.environment.sky = Sky.new(); env.environment.sky.sky_material = ProceduralSkyMaterial.new()
 	env.environment.ambient_light_source = Environment.AMBIENT_SOURCE_SKY
+	env.environment.ambient_light_energy = 1.0
+	env.environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
 	root.add_child(env); env.owner = root
 	var player = load("res://player.tscn").instantiate(); player.name = "Player"
 	player.position = (centre / max(placed, 1)) + Vector3(0, 3, 0)   # above the middle of the level
