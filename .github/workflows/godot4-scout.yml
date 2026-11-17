@@ -1,0 +1,38 @@
+name: godot4-scout
+# Find open-source Godot 4 games with an APK in their releases (for route-godot.yml).
+# Per candidate: newest APK under 150 MB, the Godot version in libgodot_android.so,
+# C# (.NET) or GDExtension libraries (those parts don't survive a re-export). Report on branch r-godot4-scout.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check each candidate
+        run: |
+          mkdir -p out; echo "| repo | tag | asset | MB | godot | dotnet | other .so |" > out/scout.md; echo "|---|---|---|---|---|---|---|" >> out/scout.md
+          while read r; do
+            [ -n "$r" ] || continue
+            line=$(gh api "repos/$r/releases?per_page=5" --jq '.[] | .tag_name as $t | .assets[] | select(.name|test("\\.apk$")) | select(.size < 150000000) | "\($t)\t\(.name)\t\(.size/1048576|floor)"' 2>/dev/null | head -1)
+            [ -n "$line" ] || continue
+            IFS=$'\t' read tag asset mb <<< "$line"
+            rm -rf dl x; mkdir -p dl x
+            gh release download "$tag" -R "$r" -p "$asset" -D dl > /dev/null 2>&1 || { echo "| $r | $tag | $asset | $mb | download failed | | |" >> out/scout.md; continue; }
+            unzip -qo "dl/$asset" 'lib/*' -d x 2>/dev/null
+            so=$(find x -name libgodot_android.so | head -1)
+            v=""; [ -n "$so" ] && v=$(strings -n 5 "$so" | grep -oE '^[34]\.[0-9]+(\.[0-9]+)?\.(stable|rc[0-9]*|beta[0-9]*|dev[0-9]*)' | head -1)
+            net=$(unzip -l "dl/$asset" | grep -cE 'libmonosgen|\.dll|data_.*_android' )
+            other=$(find x -name '*.so' | xargs -n1 basename 2>/dev/null | sort -u | grep -vE 'libgodot_android|libc\+\+_shared' | tr '\n' ' ' | cut -c1-120)
+            echo "| $r | $tag | $asset | $mb | ${v:-no godot} | $net | $other |" | tee -a out/scout.md
+          done < ci/godot/candidates4.txt
+      - name: Publish
+        if: always()
+        run: |
+          cd out && git init -q -b r-godot4-scout && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm scout && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-godot4-scout
