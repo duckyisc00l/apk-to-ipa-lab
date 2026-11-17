@@ -1,19 +1,16 @@
-# LIKO-12 (LÖVE route): commands at the D:/> prompt. LÖVE may ignore AXe's hardware-key typing, so try both:
-# a tap on the screen first (LIKO-12 brings up iOS's keyboard on a touch), then softtype taps its keys.
+# LIKO-12 (LÖVE route): commands at the D:/> prompt. LÖVE ignores AXe's hardware-key typing, and its whole
+# accessibility tree times out; a tap on the screen brings up iOS's keyboard, softtype finds the keys by point lookups.
 shot 0-prompt
 tap 50% 30%
 wait 2
-ui keyboard
 shot 1-keyboard
 softtype help
+wait 1
+shot 2-typed-help
 tapon Return
 wait 3
-shot 2-help
+shot 3-help
 softtype dir
 tapon Return
 wait 3
-shot 3-dir
-type ls
-key return
-wait 3
-shot 4-typed-ls
+shot 4-dir

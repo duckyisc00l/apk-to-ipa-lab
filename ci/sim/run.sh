@@ -84,7 +84,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
     echo "AXe didn't install (see input-install.log): steps skipped" >> "$OUT/sim.md"; SF=1
   else
     echo "input tool: axe $(axe --version 2>/dev/null | head -1)" >> "$OUT/sim.md"
-    UI() { timeout 60 axe describe-ui --udid "$UDID" > "$1" 2>> "$OUT/input.log" < /dev/null; }
+    UI() { timeout 30 axe describe-ui --udid "$UDID" > "$1" 2>> "$OUT/input.log" < /dev/null; }
     # web pages (WKWebView) don't show in the whole tree, but a lookup at one point finds their text:
     # SCAN asks a grid of points (4 across, every 5% down) and keeps what it finds
     # (4 lookups at a time, one row of the grid; a whole scan takes about a minute instead of several)
@@ -131,9 +131,21 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
             else echo "tapon \"$arg\" FAILED: not on screen. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; SF=$((SF+1)); fi
           fi;;
         softtype)   # tap the letters on iOS's on-screen keyboard (for games that ignore AXe's hardware-key typing)
-          UI "$OUT/ui-now.json"; bad=""
+          # the keys' places come from the whole tree, else (a game whose tree times out, like LÖVE) from point
+          # lookups over the keyboard's half of the screen, done once and kept in ui-keys.json
+          kb="$OUT/ui-keys.json"; bad=""
+          if [ ! -s "$kb" ] || ! python3 "$HERE/ui.py" find "$kb" q exact > /dev/null; then
+            UI "$kb"
+            if ! python3 "$HERE/ui.py" find "$kb" q exact > /dev/null; then
+              rm -rf /tmp/simkeys; mkdir -p /tmp/simkeys; n=0
+              for y in $(seq 58 3 97); do pids=(); for x in $(seq 3 5 98); do n=$((n+1))
+                timeout 15 axe describe-ui --point "$((x*SW/100)),$((y*SH/100))" --udid "$UDID" > /tmp/simkeys/$n.json 2> /dev/null < /dev/null & pids+=($!)
+                [ $((n % 5)) = 0 ] && { wait "${pids[@]}"; pids=(); }; done; [ ${#pids[@]} -gt 0 ] && wait "${pids[@]}"; done
+              python3 "$HERE/ui.py" merge /tmp/simkeys/*.json > "$kb"
+            fi
+          fi
           for ((i=0; i<${#arg}; i++)); do ch="${arg:i:1}"; [ "$ch" = " " ] && ch=space
-            if xy=$(python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$ch" exact); then
+            if xy=$(python3 "$HERE/ui.py" find "$kb" "$ch" exact); then
               timeout 20 axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null || bad="$bad$ch"
             else bad="$bad$ch"; fi; sleep 0.3; done
           if [ -z "$bad" ]; then echo "softtype \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
@@ -166,7 +178,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
     [ -s "$OUT/sim-steps.mov" ] && timeout 240 avconvert --preset PresetLowQuality --source "$OUT/sim-steps.mov" --output "$OUT/sim-steps.mp4" >> "$OUT/record.log" 2>&1
     rm -f "$OUT/sim-steps.mov"
     python3 -m venv /tmp/pilv > /dev/null 2>&1 && timeout 180 /tmp/pilv/bin/pip install -q pillow > /dev/null 2>&1
-    /tmp/pilv/bin/python - "$OUT" /tmp/simframes <<'PY' 2>> "$OUT/record.log"
+    /tmp/pilv/bin/python - "$OUT" /tmp/simframes <<'PY' >> "$OUT/record.log" 2>&1
 import glob, os, sys
 from PIL import Image
 out, fr = sys.argv[1], sys.argv[2]
