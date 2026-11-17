@@ -4,10 +4,22 @@
 // that return a resolved Promise of null. Everything the host really has is passed through unchanged.
 (function (g) {
   var STUBS = __STUBS__;
+  // a few removed modules must still describe themselves, or their JS side refuses to start the app.
+  // Firebase: one local "[DEFAULT]" app with dummy settings, so firebase.app() works; nothing is ever sent.
+  var CONSTANTS = {
+    RNFBAppModule: { NATIVE_FIREBASE_APPS: [{ appConfig: { name: '[DEFAULT]', automaticDataCollectionEnabled: false,
+      automaticResourceManagement: false }, options: { apiKey: 'offline', appId: '1:0:ios:0', projectId: 'offline',
+      messagingSenderId: '0', databaseURL: '', storageBucket: '', clientId: '', iosBundleId: '' } }],
+      FIREBASE_RAW_JSON: '{}' },
+    RNFBUtilsModule: { isRunningInTestLab: false, androidPlayServices: { isAvailable: false, status: 1 } },
+    RNFBAnalyticsModule: {}, RNFBCrashlyticsModule: { isCrashlyticsCollectionEnabled: false, isErrorGenerationOnJSCrashEnabled: false },
+    RNFBMessagingModule: { isAutoInitEnabled: false, isRegisteredForRemoteNotifications: false }
+  };
   function stub(name) {
     var fn = function () { var cb = arguments[arguments.length - 1]; if (typeof cb === 'function') { try { cb(null); } catch (e) {} } return Promise.resolve(null); };
     return new Proxy({}, { get: function (t, k) {
-      if (k === 'getConstants') return function () { return {}; };
+      if (k === 'getConstants') return function () { return CONSTANTS[name] || {}; };
+      if (CONSTANTS[name] && k in CONSTANTS[name]) return CONSTANTS[name][k];
       if (k === 'then' || typeof k === 'symbol') return undefined;
       if (k === 'addListener' || k === 'removeListeners') return function () {};
       return fn;
