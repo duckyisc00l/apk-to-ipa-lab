@@ -11,7 +11,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: route-rn-hermes
+  group: route-rn-hermes-${{ inputs.repo }}
   cancel-in-progress: true
 jobs:
   inspect:
@@ -166,5 +166,5 @@ jobs:
         with: { path: art, pattern: "*-logs" }
       - run: |
           mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.png|*.jpg|*.ips) cp "$f" "$d";; *) tail -200 "$f" > "$d";; esac; done
-          cd /tmp/r && git init -q -b r-rn-hermes && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          git add -A && git commit -qm "rn ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rn-hermes
+          cd /tmp/r && n=$(echo "${{ inputs.repo }}" | cut -d/ -f2 | tr -cd "A-Za-z0-9-"); git init -q -b "r-rn-hermes-$n" && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "rn ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "r-rn-hermes-$n"
