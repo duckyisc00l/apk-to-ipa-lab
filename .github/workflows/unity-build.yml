@@ -7,7 +7,7 @@ on:
     inputs:
       branch: { description: "Branch holding the Unity project (e.g. project-Play)", default: "" }
       recover_run: { description: "Or: run id of a recover run (artifact recovered-project)", default: "" }
-      mode: { description: "compile or ipa", default: "compile" }
+      mode: { description: "compile, ipa, or sim (build for the iPhone Simulator and run it there)", default: "compile" }
       name: { description: "Short name for the IPA", default: "Game" }
       bundle_id: { default: "com.duckyisc00l.game" }
       unity_version: { description: "Blank = the project's own. Use 2022.3.x when Xcode crashes in System.ConsolePal (IL2CPP) on 2021/2022.1-2022.2", default: "" }
@@ -66,7 +66,8 @@ jobs:
           CI_BUNDLE_ID: ${{ inputs.bundle_id }}
         run: |
           set +e
-          method=CI.Build.Compile; [ "${{ inputs.mode }}" = ipa ] && method=CI.Build.iOS
+          method=CI.Build.Compile; [ "${{ inputs.mode }}" != compile ] && method=CI.Build.iOS
+          [ "${{ inputs.mode }}" = sim ] && export CI_SIMULATOR=1
           "$UNITY_EDITOR_PATH" -batchmode -nographics -projectPath "$PWD/proj" -buildTarget iOS \
             -executeMethod $method -logFile out/unity.log
           code=$?; echo "unity exit $code" | tee out/summary.txt
@@ -80,7 +81,7 @@ jobs:
             | grep -vE "Debug.LogError|UnityEngine.StackTraceUtility|^--$|Unloading|ALLOC_" | head -150 > out/build-errors.txt || true
           exit $code
       - name: Keep the Xcode project
-        if: inputs.mode == 'ipa'
+        if: inputs.mode != 'compile'
         uses: actions/upload-artifact@v4
         with: { name: xcode-project, path: proj/build/iOS }
       - name: Keep logs
@@ -89,14 +90,27 @@ jobs:
         with: { name: export-logs, path: out }
   ipa:
     needs: export
-    if: inputs.mode == 'ipa'
+    if: inputs.mode != 'compile'
     # Older Unity versions' IL2CPP crashes on macOS 26 (System.ConsolePal "Array dimensions exceeded"): use macOS 15.
     runs-on: macos-15
     timeout-minutes: 90
     steps:
+      - uses: actions/checkout@v4
+        with: { path: lab, sparse-checkout: ci/sim }
       - uses: actions/download-artifact@v4
         with: { name: xcode-project, path: ios }
+      - name: Build and run in the iPhone Simulator
+        if: inputs.mode == 'sim'
+        run: |
+          mkdir -p out; cd ios; set +e
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' -derivedDataPath dd CODE_SIGNING_ALLOWED=NO build > ../out/xcodebuild.log 2>&1
+          xc=$?; echo "xcodebuild (simulator) exit $xc" | tee ../out/log.txt; grep -E "error:|\*\* BUILD" ../out/xcodebuild.log | head -30 | tee -a ../out/log.txt
+          [ "$xc" = 0 ] || exit 1
+          app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1); cd ..
+          lab/ci/sim/run.sh "ios/$app" out/sim 40
       - name: Build unsigned IPA
+        if: inputs.mode == 'ipa'
         run: |
           mkdir -p out; xcodebuild -version | tee out/log.txt
           cd ios
@@ -112,6 +126,7 @@ jobs:
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "../${{ inputs.name }}.ipa" Payload
           cd .. && ls -la *.ipa | tee -a out/log.txt
       - name: Publish the IPA as a release
+        if: inputs.mode == 'ipa'
         env: { GH_TOKEN: "${{ github.token }}" }
         run: gh release create "${{ inputs.name }}-${{ github.run_number }}" "${{ inputs.name }}.ipa" -R "${{ github.repository }}" --notes "Unsigned IPA (lab test build)." --prerelease
       - uses: actions/upload-artifact@v4

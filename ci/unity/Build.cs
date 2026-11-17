@@ -34,6 +34,15 @@ namespace CI
             if (!string.IsNullOrEmpty(bundle)) PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS, bundle);
             PlayerSettings.iOS.targetOSVersionString = "15.0";
             PlayerSettings.iOS.appleEnableAutomaticSigning = false;
+            if (System.Environment.GetEnvironmentVariable("CI_SIMULATOR") == "1")
+            {
+                // for the iPhone Simulator lab run: a separate export, not usable on a phone
+                PlayerSettings.iOS.sdkVersion = iOSSdkVersion.SimulatorSDK;
+                var arch = typeof(PlayerSettings.iOS).GetProperty("simulatorSdkArchitecture");
+                if (arch != null)   // newer Unity: build for both Intel and Apple-chip simulators
+                    arch.SetValue(null, System.Enum.Parse(arch.PropertyType, "Universal"));
+                Debug.Log("CI: Simulator SDK export" + (arch != null ? " (universal)" : ""));
+            }
             var scenes = Scenes();
             Debug.Log("CI: building iOS with scenes: " + string.Join(", ", scenes));
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
