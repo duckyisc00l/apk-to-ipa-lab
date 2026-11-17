@@ -1,0 +1,25 @@
+# ROTA (Godot 3, landscape) on a portrait iPhone 17 (402x874 points). The game is drawn turned, so
+# a game point (x, y) in its 874x402 landscape view is tapped at (y, 874 - x). First tap shows the touch buttons;
+# X (accept/jump) is at the game's bottom right = (338, 53); the d-pad's right arrow = (307, 679).
+shot 0-title
+tap 201 437
+wait 2
+shot 1-touch-controls
+tap 338 53
+wait 2
+shot 2-main-menu
+tap 338 53
+wait 2
+shot 3-file-menu
+tap 338 53
+wait 8
+shot 4-in-game
+swipe 307 679 307 681
+swipe 307 679 307 681
+swipe 307 679 307 681
+swipe 307 679 307 681
+wait 1
+shot 5-walked-right
+tap 338 53
+wait 1
+shot 6-jump
