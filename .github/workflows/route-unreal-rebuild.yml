@@ -69,7 +69,7 @@ jobs:
           ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR" | head -20 | tee -a out/rebuild.md
           printf '\n[autoload]\nShot="*res://shot.gd"\n' >> $P/project.godot
           sudo apt-get install -y -qq xvfb > /dev/null
-          SHOT=$GITHUB_WORKSPACE/out/level.png timeout 120 xvfb-run -a -s "-screen 0 1280x720x24" ./godot --path $P --rendering-driver opengl3 2>&1 | grep -E "SHOT|ERROR" | head -10 | tee -a out/rebuild.md || true
+          SHOT=$GITHUB_WORKSPACE/out/level.png timeout 120 xvfb-run -a -s "-screen 0 1280x720x24" ./godot --path $P --rendering-driver opengl3 2>&1 | grep -E "SHOT|ERROR|LEVEL BOUNDS" | head -10 | tee -a out/rebuild.md || true
           sed -i '/^\[autoload\]/,$d' $P/project.godot
       - uses: actions/upload-artifact@v4
         with: { name: godot-project, path: proj, retention-days: 3 }
@@ -78,7 +78,7 @@ jobs:
         with: { name: rebuild-logs, path: out }
   ipa:
     needs: rebuild
-    runs-on: macos-15-intel
+    runs-on: macos-26   # Godot 4.7's iOS templates use iOS 26 APIs: they need Xcode 26, which macos-15 images don't have
     timeout-minutes: 60
     env:
       TAG: ${{ needs.rebuild.outputs.godot }}
@@ -101,6 +101,7 @@ jobs:
       - name: xcodebuild (unsigned) -> IPA
         run: |
           proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1); echo "xcodeproj: $proj" | tee -a out/ipa.md; [ -n "$proj" ] || exit 1
+          xcodebuild -version | head -1 | tee -a out/ipa.md
           set +e
           xcodebuild -project "$proj" -scheme "$(basename "$proj" .xcodeproj)" -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
             -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > out/xcodebuild.log 2>&1; xc=$?
