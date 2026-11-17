@@ -5,9 +5,9 @@ name: route-libgdx
 on:
   workflow_dispatch:
     inputs:
-      mode: { default: "scout", description: "scout (list libGDX games with APKs) or build" }
-      repo: { default: "" }
-      name: { default: "" }
+      mode: { default: "build", description: "build, or scout (list libGDX games with APKs in ci/libgdx/candidates.txt)" }
+      repo: { default: "Smooth-E/gdxtris" }
+      name: { default: "GdxTris" }
   push:
     branches: [main]
     paths: [".github/workflows/route-libgdx.yml"]
@@ -18,9 +18,11 @@ concurrency:
   cancel-in-progress: true
 env:
   GH_TOKEN: ${{ github.token }}
+  REPO: ${{ inputs.repo || 'Smooth-E/gdxtris' }}
+  NAME: ${{ inputs.name || 'GdxTris' }}
 jobs:
   scout:
-    if: ${{ (inputs.mode || 'scout') == 'scout' }}
+    if: ${{ inputs.mode == 'scout' }}
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
@@ -47,3 +49,37 @@ jobs:
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-libgdx && git rm -rfq . && rm -rf ci dl work out
           cp -r /tmp/r/. . && git add -A && git commit -qm "libgdx scout ${{ github.run_number }}" && git push -f origin r-libgdx
+
+  build:
+    if: ${{ (inputs.mode || 'build') == 'build' }}
+    runs-on: macos-15-intel
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "17" }
+      - name: Download the APK and unpack it
+        run: |
+          echo "$REPO" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py | tail -3
+          python3 ci/detect.py dl work | tail -2
+          echo "GAME=$(ls work | head -1)" >> $GITHUB_ENV; echo "APK=$(ls dl/*/* | head -1)" >> $GITHUB_ENV
+      - name: Keep the game's Java, compile it for iPhone with MobiVM (simulator app + unsigned IPA)
+        run: ci/libgdx/build.sh "$APK" "work/$GAME" "$NAME" out
+      - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
+        continue-on-error: true
+        run: ci/sim/run.sh "out/sim-app/$NAME.app" out/sim 40
+      - name: Release the unsigned IPA
+        continue-on-error: true
+        run: |
+          ipa=$(ls out/ipa/*.ipa | head -1); ls -la "$ipa" | tee -a out/libgdx.md
+          unzip -l "$ipa" | tail -1 | tee -a out/libgdx.md
+          gh release create "$NAME-libgdx-${{ github.run_number }}" "$ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the libGDX route: the game's own Java compiled for iPhone with MobiVM)."
+      - name: Publish to branch r-libgdx
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp -R out/sim /tmp/r/ 2>/dev/null || true
+          for l in out/robovm-*.log; do [ -f "$l" ] && { grep -vE "^\[DEBUG\]" "$l" | tail -300 > /tmp/r/$(basename "$l"); }; done
+          cp /tmp/gdxios/launcher/lab/IOSLauncher.java /tmp/gdxios/robovm.xml /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-libgdx && git rm -rfq . && rm -rf ci dl work out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "libgdx build ${{ github.run_number }}" && git push -f origin r-libgdx
