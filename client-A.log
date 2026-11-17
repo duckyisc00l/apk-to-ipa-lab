@@ -1,0 +1,119 @@
+warning: File "/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/release/apps/linux/bim" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/release/apps/linux/bim
+line to your configuration file "/github/home/.config/gdb/gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/github/home/.config/gdb/gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+warning: Error disabling address space randomization: Operation not permitted
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+[1m[I][0m[34m[StartUp][0m Start: file system.
+[New Thread 0x7e3c9328a6c0 (LWP 17379)]
+[1m[I][0m[34m[StartUp][0m Log system initialized: [31m'/tmp/app-A/log.txt'[0m
+[1m[I][0m[34m[StartUp][0m 2026-11-17T18:08:49+0000
+[1m[I][0m[34m[StartUp][0m Start: colour chart.
+[1m[I][0m[34m[StartUp][0m Start: display.
+[New Thread 0x7e3c922896c0 (LWP 17380)]
+[New Thread 0x7e3c912886c0 (LWP 17381)]
+[New Thread 0x7e3c8bfff6c0 (LWP 17382)]
+[New Thread 0x7e3c8affe6c0 (LWP 17383)]
+[New Thread 0x7e3c89ffd6c0 (LWP 17384)]
+[New Thread 0x7e3c88ffc6c0 (LWP 17385)]
+[New Thread 0x7e3c7c9536c0 (LWP 17386)]
+[New Thread 0x7e3c7b9526c0 (LWP 17387)]
+[New Thread 0x7e3c7a9516c0 (LWP 17388)]
+[New Thread 0x7e3c799506c0 (LWP 17389)]
+[New Thread 0x7e3c63fff6c0 (LWP 17390)]
+[New Thread 0x7e3c6bfff6c0 (LWP 17391)]
+[New Thread 0x7e3c6affe6c0 (LWP 17392)]
+[New Thread 0x7e3c69ffd6c0 (LWP 17393)]
+[New Thread 0x7e3c62ffe6c0 (LWP 17394)]
+
+{
+	axmol.version: axmol-2.11.5
+	supports_OES_packed_depth_stencil: false
+	supports_OES_map_buffer: false
+	axmol.compiled_with_gl_state_cache: true
+	supports_OES_depth24: false
+	supports_ETC2: true
+	supports_ETC1: false
+	version: 4.5 (Core Profile) Mesa 26.0.8-1ubuntu0.3
+	max_texture_units: 160
+	supports_NPOT: true
+	axmol.build_type: RELEASE
+	supports_discard_framebuffer: false
+	max_samples_allowed: 0
+	supports_ATITC: false
+	max_texture_size: 16384
+	supports_vertex_array_object: false
+	glsl: 4.50
+	max_vertex_attributes: 16
+	supports_S3TC: true
+	renderer: llvmpipe (LLVM 21.1.8, 256 bits)
+	vendor: Mesa
+	supports_BGRA8888: false
+	axmol.compiled_with_profiler: false
+	supports_ASTC: true
+	supports_PVRTC: false
+}
+
+
+FreeType version 2.14.2 initialized.
+[1m[I][0m[34m[StartUp][0m Start: social.
+[1m[I][0m[34m[StartUp][0m Start: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Start: audio.
+[1m[I][0m[34m[StartUp][0m Start: root scene.
+[1m[I][0m[34m[analytics_service][0m Event 'launched', [1mlanguage[0m=[34m[1m'en_GB'.[0m
+[1m[I][0m[34m[StartUp][0m Business server is [31m'https://bim-prod.jorge.st'[0m.
+[1m[I][0m[34m[StartUp][0m Start: widgets.
+[1m[I][0m[34m[StartUp][0m Start: styles.
+[1m[I][0m[34m[script_director][0m Wait [31m'loaded'[0m.
+[1m[I][0m[34m[StartUp][0m Start: local preferences.
+[New Thread 0x7e3c4bfff6c0 (LWP 17395)]
+[1m[I][0m[34m[StartUp][0m Launching the game.
+[1m[I][0m[34m[main_task][0m Device ID is [31m'96b06471-4b2e-4de9-98ed-168b92db1374'[0m.
+[1m[I][0m[34m[fetch_config_job][0m Start.
+[New Thread 0x7e3c4affe6c0 (LWP 17396)]
+[1m[I][0m[34m[authenticate_with_business_job][0m Connecting to business server at [31m'https://bim-prod.jorge.st'[0m.
+[New Thread 0x7e3c49ffd6c0 (LWP 17397)]
+[New Thread 0x7e3c43fff6c0 (LWP 17398)]
+[New Thread 0x7e3c42ffe6c0 (LWP 17399)]
+[New Thread 0x7e3c41ffd6c0 (LWP 17400)]
+[New Thread 0x7e3c2ffff6c0 (LWP 17401)]
+[New Thread 0x7e3c2effe6c0 (LWP 17402)]
+[Thread 0x7e3c2effe6c0 (LWP 17402) exited]
+[Thread 0x7e3c2ffff6c0 (LWP 17401) exited]
+[1m[31m[E][0m[34m[authenticate_with_business_job][0m Failed to connect to the business server (-1): .
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'business-authentication'.[0m
+[1m[I][0m[34m[push_legacy_state_job][0m Sending the legacy state to the backend.
+[1m[33m[W][0m[34m[fetch_config_job][0m Failed to fetch remote config (-1) [].
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'https://bim-prod.jorge.st/client/transfer-legacy-inventory'[0m: -1, .
+[1m[31m[E][0m[34m[push_legacy_state_job][0m Failed to send the legacy state to the backend.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'push-legacy'.[0m
+[1m[I][0m[34m[fetch_player_profile_job][0m Fetching the player's profile.
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'https://bim-prod.jorge.st/client/me'[0m: -1, .
+[1m[31m[E][0m[34m[fetch_player_profile_job][0m Failed to fetch the player's profile.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'fetch-player-profile'.[0m
+[1m[I][0m[34m[script_director][0m Capture [31m'1-lobby-offline.png'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/lobby/play_button'[0m, wait [31m'players-ready-2'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/lobby/play_button'[0m, at (540, 1665).
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'products-detail'.[0m
+[1m[31m[E][0m[34m[shop_service][0m Could not fetch the products detail.
+[1m[31m[E][0m[34m[script_director][0m Timeout while waiting for event [31m'players-ready-2'[0m.
+[1m[I][0m[34m[StartUp][0m Stopping the game.
+[1m[I][0m[34m[StartUp][0m Quit requested.
+[1m[I][0m[34m[StartUp][0m Stopping game.
+[1m[I][0m[34m[StartUp][0m Stop: local preferences.
+[1m[I][0m[34m[StartUp][0m Stop: styles.
+[Thread 0x7e3c4bfff6c0 (LWP 17395) exited]
+[1m[I][0m[34m[StartUp][0m Stop: widgets.
+[1m[I][0m[34m[StartUp][0m Stop: root scene.
+[1m[I][0m[34m[StartUp][0m Stop: audio.
+[1m[I][0m[34m[StartUp][0m Stop: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Stop: social.
+[1m[I][0m[34m[StartUp][0m Stop: display.
+[1m[I][0m[34m[StartUp][0m Stop: log system.

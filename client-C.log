@@ -1,0 +1,205 @@
+warning: File "/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/release/apps/linux/bim" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/release/apps/linux/bim
+line to your configuration file "/github/home/.config/gdb/gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/github/home/.config/gdb/gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+warning: Error disabling address space randomization: Operation not permitted
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x74c65195d6c0 (LWP 17519)]
+[1m[I][0m[34m[business_registration_service][0m Disabled.
+[New Thread 0x74c65095c6c0 (LWP 17520)]
+[New Thread 0x74c64f95b6c0 (LWP 17521)]
+[New Thread 0x74c64e95a6c0 (LWP 17522)]
+[New Thread 0x74c64d9596c0 (LWP 17523)]
+[New Thread 0x74c64c9586c0 (LWP 17524)]
+[1m[I][0m[34m[discord_publisher_service][0m Disabled.
+[1m[I][0m[34m[server][0m Server is up on port 23899.
+[1m[I][0m[34m[server][0m Protocol version is 14.
+[1m[I][0m[34m[StartUp][0m Start: file system.
+[New Thread 0x74c64b9576c0 (LWP 17525)]
+[1m[I][0m[34m[StartUp][0m Log system initialized: [31m'/tmp/app-C/log.txt'[0m
+[1m[I][0m[34m[StartUp][0m 2026-11-17T18:24:05+0000
+[1m[I][0m[34m[StartUp][0m Start: colour chart.
+[1m[I][0m[34m[StartUp][0m Start: display.
+[New Thread 0x74c64a7a56c0 (LWP 17526)]
+[New Thread 0x74c63e0256c0 (LWP 17527)]
+[New Thread 0x74c63d0246c0 (LWP 17528)]
+[New Thread 0x74c63c0236c0 (LWP 17529)]
+[New Thread 0x74c63b0226c0 (LWP 17530)]
+[New Thread 0x74c63a0216c0 (LWP 17531)]
+[New Thread 0x74c6390206c0 (LWP 17532)]
+[New Thread 0x74c627fff6c0 (LWP 17533)]
+[New Thread 0x74c626ffe6c0 (LWP 17534)]
+[New Thread 0x74c625bff6c0 (LWP 17535)]
+Local game server with bots on port 23899.
+
+{
+	axmol.version: axmol-2.11.5
+	supports_OES_packed_depth_stencil: false
+	supports_OES_map_buffer: false
+	axmol.compiled_with_gl_state_cache: true
+	supports_OES_depth24: false
+	supports_ETC2: true
+	supports_ETC1: false
+	version: 4.5 (Core Profile) Mesa 26.0.8-1ubuntu0.3
+	max_texture_units: 160
+	supports_NPOT: true
+	axmol.build_type: RELEASE
+	supports_discard_framebuffer: false
+	max_samples_allowed: 0
+	supports_ATITC: false
+	max_texture_size: 16384
+	supports_vertex_array_object: false
+	glsl: 4.50
+	max_vertex_attributes: 16
+	supports_S3TC: true
+	renderer: llvmpipe (LLVM 21.1.8, 256 bits)
+	vendor: Mesa
+	supports_BGRA8888: false
+	axmol.compiled_with_profiler: false
+	supports_ASTC: true
+	supports_PVRTC: false
+}
+
+
+FreeType version 2.14.2 initialized.
+[1m[I][0m[34m[StartUp][0m Start: social.
+[1m[I][0m[34m[StartUp][0m Start: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Start: audio.
+[1m[I][0m[34m[StartUp][0m Start: root scene.
+[1m[I][0m[34m[analytics_service][0m Event 'launched', [1mlanguage[0m=[34m[1m'en_GB'.[0m
+[1m[I][0m[34m[StartUp][0m Business server is [31m'https://bim-prod.jorge.st'[0m.
+[1m[I][0m[34m[StartUp][0m Start: widgets.
+[1m[I][0m[34m[StartUp][0m Start: styles.
+[1m[I][0m[34m[script_director][0m Wait [31m'loaded'[0m.
+[1m[I][0m[34m[StartUp][0m Start: local preferences.
+[New Thread 0x74c612c8c6c0 (LWP 17536)]
+[1m[I][0m[34m[StartUp][0m Launching the game.
+[1m[I][0m[34m[main_task][0m Device ID is [31m'a8c10ddb-f32a-4537-bb11-49b50951ea76'[0m.
+[1m[I][0m[34m[fetch_config_job][0m Start.
+[New Thread 0x74c611c8b6c0 (LWP 17537)]
+[1m[I][0m[34m[authenticate_with_business_job][0m Connecting to business server at [31m'https://bim-prod.jorge.st'[0m.
+[New Thread 0x74c607fff6c0 (LWP 17538)]
+[New Thread 0x74c606ffe6c0 (LWP 17539)]
+[New Thread 0x74c605ffd6c0 (LWP 17540)]
+[New Thread 0x74c5fffff6c0 (LWP 17541)]
+[New Thread 0x74c5feffe6c0 (LWP 17542)]
+[New Thread 0x74c5fdffd6c0 (LWP 17543)]
+[Thread 0x74c5feffe6c0 (LWP 17542) exited]
+[Thread 0x74c5fdffd6c0 (LWP 17543) exited]
+[1m[33m[W][0m[34m[fetch_config_job][0m Failed to fetch remote config (-1) [].
+[1m[31m[E][0m[34m[authenticate_with_business_job][0m Failed to connect to the business server (-1): .
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'business-authentication'.[0m
+[1m[I][0m[34m[main_task][0m Offline: no sign-in server, local player.
+[1m[I][0m[34m[main_task][0m Connecting to game server at [31m'127.0.0.1:23899'[0m.
+[New Thread 0x74c5fdffd6c0 (LWP 17544)]
+[1m[I][0m[34m[push_legacy_state_job][0m Sending the legacy state to the backend.
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'https://bim-prod.jorge.st/client/transfer-legacy-inventory'[0m: -1, .
+[1m[31m[E][0m[34m[push_legacy_state_job][0m Failed to send the legacy state to the backend.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'push-legacy'.[0m
+[1m[I][0m[34m[fetch_player_profile_job][0m Fetching the player's profile.
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'https://bim-prod.jorge.st/client/me'[0m: -1, .
+[1m[31m[E][0m[34m[fetch_player_profile_job][0m Failed to fetch the player's profile.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'fetch-player-profile'.[0m
+[1m[I][0m[34m[authentication_service][0m Received authentication request from token 2084067172897845545.
+[1m[I][0m[34m[session_service][0m Attach session 1 to token 2084067172897845545, [1mid[0m=[34m[1m0,[0m [1mcountry_code[0m=[34m[1mUNK,[0m [1mcountry[0m=[34m[1m'Unknown',[0m [1msession_token[0m=[34m[1moffline.[0m
+[1m[I][0m[34m[authentication_exchange][0m Authentication OK, [1msession[0m=[34m[1m1[0m
+[1m[I][0m[34m[authentication_service][0m Received hello from token 10999066783173640666.
+[1m[I][0m[34m[script_director][0m Capture [31m'1-lobby-offline.png'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/lobby/play_button'[0m, wait [31m'players-ready-2'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/lobby/play_button'[0m, at (540, 1665).
+[1m[I][0m[34m[analytics_service][0m Event 'button', [1mid[0m=[34m[1m'play'[0m [1mwhere[0m=[34m[1m'lobby'.[0m
+[1m[I][0m[34m[analytics_service][0m Screen [31m'matchmaking'[0m.
+[1m[I][0m[34m[authentication_service][0m Received hello from token 17327570576577155097.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'products-detail'.[0m
+[1m[31m[E][0m[34m[shop_service][0m Could not fetch the products detail.
+[1m[I][0m[34m[new_game_exchange][0m Requesting random game in session 1.
+[1m[I][0m[34m[random_game_encounter_service][0m Trying to add session 1 in existing encounter.
+[1m[I][0m[34m[matchmaking_service][0m Creating new encounter 1 on request of session 1.
+[1m[I][0m[34m[new_game_exchange][0m Got game proposal 1.
+[1m[I][0m[34m[matchmaking_service][0m Refreshing encounter 1 with 1 players on request of session 1.
+[1m[I][0m[34m[matchmaking_service][0m Last message repeated 1 time(s).
+[1m[I][0m[34m[script_director][0m Capture [31m'2-matched-with-bot.png'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/matchmaking/ready_button'[0m, wait [31m'game-started'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/matchmaking/ready_button'[0m, at (540, 1687.2).
+[1m[I][0m[34m[new_game_exchange][0m Accepting encounter 1.
+[1m[I][0m[34m[matchmaking_service][0m Refreshing encounter 1 with 1 players on request of session 1.
+[1m[I][0m[34m[random_game_encounter_service][0m Accepted game. Session 1, encounter 1.
+[1m[I][0m[34m[game_service][0m Creating new game 1 for 2 players.
+[1m[I][0m[34m[matchmaking_service][0m Channel for encounter 1 is 1, seed 18301848765998365067, [1mfeatures[0m=[34m[1m0,[0m [1mbot[0m=[34m[1mtrue.[0m
+[1m[I][0m[34m[new_game_exchange][0m Launch game [1mencounter[0m=[34m[1m1,[0m [1mgame_id[0m=[34m[1m0.[0m
+[1m[I][0m[34m[analytics_service][0m Screen 'online-game', [1mplayer-count[0m=[34m[1m'2'.[0m
+[1m[I][0m[34m[random_game_encounter_service][0m Accepted game. Session 1, encounter 1.
+[1m[I][0m[34m[game_service][0m Channel 1 all players ready, session 1.
+[1m[I][0m[34m[script_director][0m Capture [31m'3-in-game.png'[0m.
+[1m[I][0m[34m[game_service][0m Channel 1 all players ready, session 1.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/online_game/bomb_button'[0m, wait [31m'end-game-ready'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/online_game/bomb_button'[0m, at (302.4, 1755.7566).
+[1m[I][0m[34m[game_service][0m Game over, [1mgame_id[0m=[34m[1m1,[0m [1mwinner_index[0m=[34m[1m0,[0m [1mwinner_session[0m=[34m[1m2147483648,[0m [1mticks[0m=[34m[1m233,[0m [1mduration[0m=[34m[1m4s,[0m [1mshort[0m=[34m[1mfalse.[0m
+[1m[I][0m[34m[analytics_service][0m Screen 'end-game', [1mcoins[0m=[34m[1m'0'.[0m
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'https://bim-prod.jorge.st/client/game/consume-reward'[0m: -1, .
+[1m[31m[E][0m[34m[consume_game_reward_job][0m Failed to fetch the reward for game 0.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'game-reward'.[0m
+[1m[I][0m[34m[script_director][0m Capture [31m'4-game-over.png'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/end_game/quit_button'[0m, wait [31m'lobby-ready'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/end_game/quit_button'[0m, at (140.4, 2109).
+[1m[I][0m[34m[analytics_service][0m Event 'button', [1mid[0m=[34m[1m'quit'[0m [1mwhere[0m=[34m[1m'end-game'.[0m
+[1m[I][0m[34m[analytics_service][0m Screen 'lobby', [1mcoins[0m=[34m[1m'0'.[0m
+[1m[I][0m[34m[script_director][0m Capture [31m'5-back-in-lobby.png'[0m.
+[1m[I][0m[34m[StartUp][0m Stopping the game.
+[1m[I][0m[34m[StartUp][0m Quit requested.
+[1m[I][0m[34m[StartUp][0m Stopping game.
+[1m[I][0m[34m[StartUp][0m Stop: local preferences.
+[1m[I][0m[34m[StartUp][0m Stop: styles.
+[Thread 0x74c5fdffd6c0 (LWP 17544) exited]
+[Thread 0x74c612c8c6c0 (LWP 17536) exited]
+[1m[I][0m[34m[StartUp][0m Stop: widgets.
+[1m[I][0m[34m[StartUp][0m Stop: root scene.
+[1m[I][0m[34m[StartUp][0m Stop: audio.
+[1m[I][0m[34m[StartUp][0m Stop: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Stop: social.
+[1m[I][0m[34m[StartUp][0m Stop: display.
+[1m[I][0m[34m[StartUp][0m Stop: log system.
+[Thread 0x74c64a7a56c0 (LWP 17526) exited]
+[Thread 0x74c5fffff6c0 (LWP 17541) exited]
+[Thread 0x74c605ffd6c0 (LWP 17540) exited]
+[Thread 0x74c606ffe6c0 (LWP 17539) exited]
+[Thread 0x74c607fff6c0 (LWP 17538) exited]
+[Thread 0x74c626ffe6c0 (LWP 17534) exited]
+[Thread 0x74c627fff6c0 (LWP 17533) exited]
+[Thread 0x74c6390206c0 (LWP 17532) exited]
+[Thread 0x74c63a0216c0 (LWP 17531) exited]
+[Thread 0x74c63c0236c0 (LWP 17529) exited]
+[Thread 0x74c63e0256c0 (LWP 17527) exited]
+[Thread 0x74c63d0246c0 (LWP 17528) exited]
+[Thread 0x74c63b0226c0 (LWP 17530) exited]
+[Thread 0x74c625bff6c0 (LWP 17535) exited]
+[Thread 0x74c65195d6c0 (LWP 17519) exited]
+[Thread 0x74c611c8b6c0 (LWP 17537) exited]
+[Thread 0x74c64b9576c0 (LWP 17525) exited]
+[Thread 0x74c64c9586c0 (LWP 17524) exited]
+[Thread 0x74c64d9596c0 (LWP 17523) exited]
+[Thread 0x74c64e95a6c0 (LWP 17522) exited]
+[Thread 0x74c64f95b6c0 (LWP 17521) exited]
+[Thread 0x74c65095c6c0 (LWP 17520) exited]
+[yasio][1794939845397][global] the yasio-4.3.2 is initialized, the size of per transport is 368 when object_pool enabled.
+[yasio][1794939845397][global] sizeof(io_event)=80
+[yasio][1794939845399][index: 0] start query bim-prod.jorge.st...
+[yasio][1794939845399][index: 1] start query bim-prod.jorge.st...
+[yasio][1794939845400][index: 0] connecting server bim-prod.jorge.st(127.0.0.2):443...
+[yasio][1794939845400][index: 1] connecting server bim-prod.jorge.st(127.0.0.2):443...
+[yasio][1794939845400][index: 0] connect server bim-prod.jorge.st(127.0.0.2):443 failed, ec=111, detail:Connection refused
+[yasio][1794939845400][index: 1] connect server bim-prod.jorge.st(127.0.0.2):443 failed, ec=111, detail:Connection refused
+[yasio][1794939845507][index: 1] connecting server bim-prod.jorge.st(127.0.0.2):443...
+[yasio][1794939845507][index: 1] connect server bim-prod.jorge.st(127.0.0.2):443 failed, ec=111, detail:Connection refused
+[yasio][1794939845523][index: 1] connecting server bim-prod.jorge.st(127.0.0.2):443...
+[yasio][1794939845524][index: 1] connect server bim-prod.jorge.st(127.0.0.2):443 failed, ec=111, detail:Connection refused
+[yasio][1794939858438][index: 1] connecting server bim-prod.jorge.st(127.0.0.2):443...
+[yasio][1794939858438][index: 1] connect server bim-prod.jorge.st(127.0.0.2):443 failed, ec=111, detail:Connection refused
+[Inferior 1 (process 17516) exited normally]
