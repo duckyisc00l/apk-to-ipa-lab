@@ -79,6 +79,9 @@ jobs:
           # every error line with 3 lines after it (the log is too long to keep whole)
           grep -nE -A3 "(^|[^a-z])(Error|error|Exception|BuildFailedException)([^a-z]|$)|Building .* failed" out/unity.log \
             | grep -vE "Debug.LogError|UnityEngine.StackTraceUtility|^--$|Unloading|ALLOC_" | head -150 > out/build-errors.txt || true
+          # UI Toolkit import problems (layouts and style sheets that fail to load show no error at run time)
+          grep -inE "\.(uxml|uss|tss)\b|VisualTreeAsset|StyleSheet|Unknown (custom )?element" out/unity.log | grep -viE "^[0-9]+:Start importing|-> \(artifact id" \
+            | head -200 > out/uitk-import.txt || true
           exit $code
       - name: Keep the Xcode project
         if: inputs.mode != 'compile'
