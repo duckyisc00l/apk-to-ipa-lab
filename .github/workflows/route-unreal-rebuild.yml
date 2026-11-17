@@ -37,6 +37,21 @@ jobs:
           dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" GAME_UE4_16 export 2>&1 | grep -vE "^\s*$" | tail -200 | tee out/ue2godot.log
           ls export/levels | tee -a out/rebuild.md; find export/meshes -name '*.glb' | wc -l | sed 's/^/glb files: /' | tee -a out/rebuild.md
           cat export/summary.txt >> out/rebuild.md
+      - name: Models CUE4Parse can't read -> UE Viewer (umodel) glTF
+        run: |
+          sudo apt-get install -y -qq libsdl2-dev zlib1g-dev libpng-dev > /dev/null 2>&1
+          git clone -q --depth 1 https://github.com/gildor2/UEViewer uev && (cd uev && ./build.sh > ../out/umodel-build.log 2>&1); ls -la uev/umodel | tee -a out/rebuild.md
+          python3 -c "import json,glob;print('\n'.join(sorted({x['mesh'] for f in glob.glob('export/levels/*.json') for x in json.load(open(f))['meshes']})))" > meshes.txt
+          echo "{" > export/umodel_map.json
+          while read m; do
+            [ -f "export/meshes/$m" ] && continue
+            pkg="${m%.glb}"; name=$(basename "$pkg")
+            ./uev/umodel -path="$PAKS" -game=ue4.16 -export -gltf -out=export/um "$pkg" >> out/umodel.log 2>&1
+            f=$(find export/um -iname "$name.gltf" | head -1)
+            [ -n "$f" ] && echo "\"$m\": \"${f#export/}\"," >> export/umodel_map.json && echo "umodel: $m -> ${f#export/}" | tee -a out/rebuild.md
+          done < meshes.txt
+          echo '"": ""}' >> export/umodel_map.json
+          grep -iE "error|not found|unknown" out/umodel.log | sort | uniq -c | head -10 | tee -a out/rebuild.md
       - name: Godot 4 (newest stable) and templates
         id: godot
         run: |
@@ -46,7 +61,7 @@ jobs:
           curl -sSLf -o g.zip "$base/Godot_v${tag}_linux.x86_64.zip" && unzip -q g.zip && mv Godot_v*_linux.x86_64 godot && chmod +x godot
       - name: Build the level scene in Godot, screenshot it (X4 + lab)
         run: |
-          P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes
+          P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes; [ -d export/um ] && cp -R export/um $P/um; cp export/umodel_map.json $P/
           ./godot --headless --path $P --import > out/import.log 2>&1 || true
           L=$(ls export/levels/*.json | xargs -n1 basename | grep -viE "editor|test|transition" | head -1); echo "level: $L" | tee -a out/rebuild.md
           ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR" | head -20 | tee -a out/rebuild.md

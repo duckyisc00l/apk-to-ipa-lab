@@ -7,8 +7,14 @@ func _init():
 	var data = JSON.parse_string(FileAccess.get_file_as_string(args[0]))
 	var root = Node3D.new(); root.name = "Level"
 	var placed = 0; var missing = {}; var centre = Vector3.ZERO
+	# models CUE4Parse couldn't read were exported by UE Viewer instead (same axes and units)
+	var um = {}
+	if FileAccess.file_exists("res://umodel_map.json"):
+		um = JSON.parse_string(FileAccess.get_file_as_string("res://umodel_map.json"))
 	for m in data["meshes"]:
 		var path = "res://meshes/" + str(m["mesh"]).trim_prefix("/")
+		if not ResourceLoader.exists(path) and um.has(m["mesh"]):
+			path = "res://" + str(um[m["mesh"]])
 		if not ResourceLoader.exists(path):
 			missing[path] = true; continue
 		var inst = (load(path) as PackedScene).instantiate()
