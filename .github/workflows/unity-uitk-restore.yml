@@ -1,0 +1,31 @@
+name: unity-uitk-restore
+# Open-source Unity games only: put the real UI Toolkit files (layouts, styles, theme, panel settings) from the
+# source at the APK's release tag into a recovered project, on a new branch. See ci/unity/uitk_restore.py.
+on:
+  workflow_dispatch:
+    inputs:
+      branch: { description: "recovered project branch", default: "project-Play" }
+      repo: { description: "game source repo", default: "UltraStar-Deluxe/Play" }
+      tag: { description: "the APK's release tag", default: "v0.9.0" }
+      source_dir: { description: "Unity project folder in the repo", default: "UltraStar Play" }
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { path: lab }
+      - uses: actions/checkout@v4
+        with: { ref: "${{ inputs.branch }}", path: proj, lfs: true }
+      - name: Source at the APK's tag (text files only; images stay as recovered)
+        run: GIT_LFS_SKIP_SMUDGE=1 git clone -q --depth 1 --branch "${{ inputs.tag }}" "https://github.com/${{ inputs.repo }}" src
+      - name: Restore
+        run: python3 lab/ci/unity/uitk_restore.py proj "src/${{ inputs.source_dir }}" | tee restore.txt
+      - name: Commit to <branch>-ui
+        run: |
+          cd proj
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout -b "${{ inputs.branch }}-ui"
+          git add -A && git commit -qm "UI Toolkit files restored from ${{ inputs.repo }} ${{ inputs.tag }}" -m "$(cat ../restore.txt)"
+          git push -f origin "${{ inputs.branch }}-ui"
