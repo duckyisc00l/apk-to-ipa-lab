@@ -90,7 +90,8 @@ jobs:
           python3 -m venv /tmp/v && /tmp/v/bin/pip install -q dnfile androguard pillow
           app=$(grep -l -E 'CreateMauiApp|MauiUIApplicationDelegate|Xamarin.Forms.Application' -r rec --include=*.cs | head -1 | cut -d/ -f2)
           echo "APP=$app" >> $GITHUB_ENV
-          mkdir -p out-ios; /tmp/v/bin/python ci/dotnet/rebuild.py "rec/$app" asm dl/*.apk ios | tee out-ios/rebuild.log
+          mkdir -p out-ios; read repo tag apk kind < out/picked.txt
+          /tmp/v/bin/python ci/dotnet/rebuild.py "rec/$app" asm "$apk" ios | tee out-ios/rebuild.log
           cp ios/rebuild.md out-ios/
       - name: .NET SDK and the iOS workload
         run: |
