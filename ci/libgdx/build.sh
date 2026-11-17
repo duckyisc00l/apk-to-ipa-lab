@@ -173,7 +173,7 @@ RCPATH="launcher:core.jar$CP:$RVM/lib/robovm-objc.jar:$RVM/lib/robovm-cocoatouch
 t0=$(date +%s)
 set +e
 "$RVM/bin/robovm" -verbose -properties robovm.properties -config robovm.xml -os ios -arch x86_64-simulator \
-  -cp "$RCPATH" -d "$OUT/sim-app" > "$OUT/robovm-sim.log" 2>&1
+  -cp "$RCPATH" -d "$OUT/sim-app/$NAME.app" > "$OUT/robovm-sim.log" 2>&1
 rc=$?; echo "simulator build exit $rc in $(( $(date +%s) - t0 )) s" | tee -a "$MD"
 grep -E "ERROR|Exception|error:" "$OUT/robovm-sim.log" | head -30 | tee -a "$MD"
 t0=$(date +%s)
@@ -181,5 +181,5 @@ t0=$(date +%s)
   -cp "$RCPATH" -d "$OUT/ipa" > "$OUT/robovm-ipa.log" 2>&1
 rc2=$?; echo "iPhone build exit $rc2 in $(( $(date +%s) - t0 )) s" | tee -a "$MD"
 grep -E "ERROR|Exception|error:" "$OUT/robovm-ipa.log" | head -30 | tee -a "$MD"
-ls -la "$OUT/sim-app" "$OUT/ipa" 2>/dev/null | tee -a "$MD"
+ls -la "$OUT/ipa" 2>/dev/null | tee -a "$MD"; du -sh "$OUT/sim-app/$NAME.app" | tee -a "$MD"
 [ "$rc" = 0 ]
