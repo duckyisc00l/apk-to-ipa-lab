@@ -4,7 +4,7 @@
 # The optional steps file has one step per line (AXe does the input; X and Y in points, or as a % of the screen):
 #   tap X Y | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | key NAME (return, escape,
 #   backspace, tab, space, up/down/left/right, a letter, or a HID number) | wait SECONDS | shot NAME |
-#   ui NAME (save the accessibility tree, list its texts) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
+#   ui NAME (save the accessibility tree, list its texts) | relaunch (quit and restart the app) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
 # Writes <out>/sim.md (a summary line first; then launched? still running? crash? each step), <out>/sim-<n>s.png
 # screenshots, sim-console.log, sim-applog.log, crash reports, and for steps a recording (sim-steps.mov/.gif,
 # sim-sheet.png). Exit 0 only if the app is still running at the end and every step and expect passed.
@@ -105,6 +105,8 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
         type) RUN "type \"$arg\"" axe type "$arg" --udid "$UDID";;
         key) RUN "key $arg" axe key "$(KEY "$a")" --udid "$UDID";;
         wait) sleep "$a";;
+        relaunch) xcrun simctl terminate "$UDID" "$BID" > /dev/null 2>&1; sleep 2   # quit and start again: do saves survive?
+          RUN "relaunch" xcrun simctl launch "$UDID" "$BID";;
         shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
         ui) UI "$OUT/ui-$a.json"; echo "ui $a: $(python3 "$HERE/ui.py" labels "$OUT/ui-$a.json")" >> "$OUT/sim.md";;
         expect)   # the text must be in the accessibility tree; retried for up to ~8 s while the screen settles

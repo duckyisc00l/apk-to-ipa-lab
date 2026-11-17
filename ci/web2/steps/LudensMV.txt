@@ -10,6 +10,6 @@ shot 2-map
 tap 300 478
 wait 3
 shot 3-walked
-key 41
+key escape
 wait 3
 shot 4-menu
