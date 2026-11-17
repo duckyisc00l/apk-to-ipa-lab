@@ -236,6 +236,23 @@ try:
             vals = arsc.get_resolved_res_configs(rid)
             lab = vals[0][1] if vals else ""
     if lab: info["label"] = lab
+    if not info.get("app_name"):  # R8 renamed getMainComponentName: take the launcher activity's string the bundle also has
+        acts = [a.get(A + "name") for a in man.iter("activity") if any(c.get(A + "name") == "android.intent.category.LAUNCHER" for c in a.iter("category"))]
+        acts = ["L" + (info["package"] + a if a.startswith(".") else a).replace(".", "/") + ";" for a in acts if a]
+        js = set(strs) if hermes and "strs" in globals() else None
+        from androguard.core.dex import DEX
+        for f in sorted(os.listdir(src)):
+            if not re.match(r"classes\d*\.dex$", f) or info.get("app_name"):
+                continue
+            for c in DEX(open(os.path.join(src, f), "rb").read()).get_classes():
+                if c.get_name() not in acts:
+                    continue
+                for meth in c.get_methods():
+                    for ins in meth.get_instructions():
+                        if ins.get_name().startswith("const-string") and not info.get("app_name"):
+                            v = ins.get_output().split(",", 1)[1].strip().strip("'\"")
+                            if re.fullmatch(r"[A-Za-z][\w-]*", v) and (js is None or v in js):
+                                info["app_name"], info["app_name_from"] = v, c.get_name() + " (launcher activity)"
 except Exception as x:
     info["label_error"] = str(x)[:200]
 json.dump(info, open(os.path.join(out, "rn.json"), "w"), indent=1)
