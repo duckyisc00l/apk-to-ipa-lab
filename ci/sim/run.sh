@@ -34,8 +34,12 @@ before=$(date +%s)
 for try in 1 2 3; do
   if [ "$try" = 1 ]; then args=(--terminate-running-process --stdout="$OUT/sim-console.log" --stderr="$OUT/sim-console.log")
   else args=(--terminate-running-process); fi   # later tries: plain launch, in case the redirect is what's refused
-  if timeout 90 xcrun simctl launch "${args[@]}" "$UDID" "$BID" >> "$OUT/sim.md" 2>&1; then
+  if timeout 150 xcrun simctl launch "${args[@]}" "$UDID" "$BID" >> "$OUT/sim.md" 2>&1; then
     echo "launched (try $try)" | tee -a "$OUT/sim.md"; break
+  fi
+  # a heavy app (Unity) can keep the launch command waiting past the time limit while it is in fact up
+  if xcrun simctl spawn "$UDID" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID"; then
+    echo "launched (try $try; the launch command was slow, but the app is running)" | tee -a "$OUT/sim.md"; break
   fi
   echo "launch refused (try $try)" | tee -a "$OUT/sim.md"; sleep 10
   if [ "$try" = 3 ]; then   # why: SpringBoard's own log lines about this app
