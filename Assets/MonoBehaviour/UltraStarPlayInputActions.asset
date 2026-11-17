@@ -1,0 +1,1719 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39fa3d8997a24136984ca6e2c99902bc, type: 3}
+  m_Name: UltraStarPlayInputActions
+  m_EditorClassIdentifier:
+  m_ActionMaps:
+  - m_Name: ui
+    m_Id: e476793d-392f-41fa-9442-16c86d7c5b03
+    m_Asset: {fileID: 11400000}
+    m_Actions:
+    - m_Name: navigate
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 6380c5aa-aa8e-4142-aa56-2a22bbbdcf16
+      m_Processors:
+      m_Interactions: RepeatedHold
+      m_SingletonActionBindings: []
+      m_Flags: 1
+    - m_Name: submit
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 393297a2-e0f9-4387-a046-6d0443f90c1e
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: cancel
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: f88fcdd1-b9d2-424d-a2dc-9e057367479e
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: point
+      m_Type: 2
+      m_ExpectedControlType: Vector2
+      m_Id: a02bcba9-d98f-4357-95d7-55bce8841aa0
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: click
+      m_Type: 2
+      m_ExpectedControlType: Button
+      m_Id: 7957afff-e7a9-4c95-abc7-81e4f7b2915d
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: scrollWheel
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: ed3b1af7-6128-4755-9f4c-f3edca5481c1
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 1
+    - m_Name: middleClick
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 50d63dd8-8fb2-48a8-a7a4-1a47835d6d52
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: rightClick
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: edbc1453-2b13-4d03-8fcf-e731fdcf6e90
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: trackedDevicePosition
+      m_Type: 2
+      m_ExpectedControlType: Vector3
+      m_Id: d3e811ff-b199-4b86-a14b-8673b962c99a
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: trackedDeviceOrientation
+      m_Type: 2
+      m_ExpectedControlType: Quaternion
+      m_Id: a1448685-143c-4390-a028-790d2d3e3927
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: Gamepad
+      m_Id: bbac3832-033e-4cc0-bce2-7161d7b3c354
+      m_Path: 2DVector
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: navigate
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 1f57c124-22de-4b5d-a7e8-b26a400f1f6c
+      m_Path: '<Gamepad>/leftStick/up'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: up
+      m_Id: 5cbcb0f5-899c-4221-8212-1e6d6fd20825
+      m_Path: '<Gamepad>/rightStick/up'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: down
+      m_Id: e0a7d11b-7628-4029-9dae-a6edb6161e7b
+      m_Path: '<Gamepad>/leftStick/down'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: down
+      m_Id: af79cb12-3e36-44de-9631-71812b1676f7
+      m_Path: '<Gamepad>/rightStick/down'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 1a4cfd8d-0f8f-405b-aa4c-ad8a2f841787
+      m_Path: '<Gamepad>/leftStick/left'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 8a727021-08b6-4649-a113-4e00c66b0c17
+      m_Path: '<Gamepad>/rightStick/left'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 6db96f71-d226-483d-aa60-55adcc148def
+      m_Path: '<Gamepad>/leftStick/right'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 9fadeff9-0b0e-4aa9-831a-3c5db5e38c84
+      m_Path: '<Gamepad>/rightStick/right'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name:
+      m_Id: d9f6936f-4c5d-4487-beaf-5e234f3a7f72
+      m_Path: '<Gamepad>/dpad'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Gamepad
+      m_Action: navigate
+      m_Flags: 0
+    - m_Name: Joystick
+      m_Id: c36aef67-b5eb-4f30-b621-0f1d71633054
+      m_Path: 2DVector
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: navigate
+      m_Flags: 4
+    - m_Name: up
+      m_Id: fd364dd8-8b0c-4de6-a32b-6458441bf0af
+      m_Path: '<Joystick>/stick/up'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Joystick
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: down
+      m_Id: c19881bf-1e32-42a5-a041-22b891b86f4d
+      m_Path: '<Joystick>/stick/down'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Joystick
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: left
+      m_Id: bd435609-c65f-4a2e-9935-1753a0f047ac
+      m_Path: '<Joystick>/stick/left'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Joystick
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: right
+      m_Id: d3ed711b-6800-4dc1-ab20-2c306633cb83
+      m_Path: '<Joystick>/stick/right'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Joystick
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: Keyboard
+      m_Id: ae491ebb-2a88-4109-9cb8-7c08aa0f64c9
+      m_Path: 2DVector
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: navigate
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 78fafb37-b45b-4d7e-8d07-97c7666936ad
+      m_Path: '<Keyboard>/upArrow'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Keyboard&Mouse
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 14fa1041-7f33-4290-b458-9f0c95d01289
+      m_Path: '<Keyboard>/downArrow'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Keyboard&Mouse
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 462bd2c2-3f27-41ab-b1da-5f11634acb89
+      m_Path: '<Keyboard>/leftArrow'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Keyboard&Mouse
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name: right
+      m_Id: accaf641-2cfc-40e0-b4ef-781f03c064a3
+      m_Path: '<Keyboard>/rightArrow'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Keyboard&Mouse
+      m_Action: navigate
+      m_Flags: 8
+    - m_Name:
+      m_Id: 5b6f7905-3079-4668-9865-3ceb8189d801
+      m_Path: '<Keyboard>/enter'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: submit
+      m_Flags: 0
+    - m_Name:
+      m_Id: 6d897aa5-18d0-41e9-b883-2ca80cfefbd5
+      m_Path: '<Gamepad>/buttonSouth'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: submit
+      m_Flags: 0
+    - m_Name:
+      m_Id: 03931874-25c0-435c-8efa-3329196977a7
+      m_Path: '*/{Cancel}'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: cancel
+      m_Flags: 0
+    - m_Name:
+      m_Id: 4e00e21f-0cd4-4aa6-914e-bd8556006e7c
+      m_Path: '<Mouse>/position'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Keyboard&Mouse
+      m_Action: point
+      m_Flags: 0
+    - m_Name:
+      m_Id: c13f0982-b0bd-4868-b215-c7f1f0feb379
+      m_Path: '<Pen>/position'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Keyboard&Mouse
+      m_Action: point
+      m_Flags: 0
+    - m_Name:
+      m_Id: 710eeb5f-5a00-429c-85e2-42f374201af3
+      m_Path: '<Touchscreen>/touch*/position'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Touch
+      m_Action: point
+      m_Flags: 0
+    - m_Name:
+      m_Id: 3ea778db-6c1f-45e8-9709-945b8837d82a
+      m_Path: '<Mouse>/leftButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: click
+      m_Flags: 0
+    - m_Name:
+      m_Id: 74ba02d8-7ff1-4bc4-9d7f-3a514b72a01c
+      m_Path: '<Pen>/tip'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: click
+      m_Flags: 0
+    - m_Name:
+      m_Id: 26babf23-1094-43fc-976b-473beccc1da2
+      m_Path: '<Touchscreen>/touch*/press'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Touch
+      m_Action: click
+      m_Flags: 0
+    - m_Name:
+      m_Id: 6f0c2fd6-6a1b-4a97-afb8-aabce8d074d1
+      m_Path: '<Mouse>/scroll'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: scrollWheel
+      m_Flags: 0
+    - m_Name:
+      m_Id: bbfaa046-ebf9-429b-818d-2b94e4420062
+      m_Path: '<Mouse>/middleButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: middleClick
+      m_Flags: 0
+    - m_Name:
+      m_Id: e497e433-45ab-4650-a860-f450fb9dab51
+      m_Path: '<Mouse>/rightButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: rightClick
+      m_Flags: 0
+    - m_Name:
+      m_Id: 6951dccd-bac8-4b21-8571-56b0d3ee4230
+      m_Path: '<XRController>/devicePosition'
+      m_Interactions:
+      m_Processors:
+      m_Groups: XR
+      m_Action: trackedDevicePosition
+      m_Flags: 0
+    - m_Name:
+      m_Id: a5d3c1e7-00de-4732-ba61-17370f8fa7a3
+      m_Path: '<XRController>/deviceRotation'
+      m_Interactions:
+      m_Processors:
+      m_Groups: XR
+      m_Action: trackedDeviceOrientation
+      m_Flags: 0
+  - m_Name: usplay
+    m_Id: a0f8ca15-1413-4b20-8901-813756e966d3
+    m_Asset: {fileID: 11400000}
+    m_Actions:
+    - m_Name: back
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 3e3292ca-119e-4227-9948-6a5c5f53ac16
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: search
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 41e6fe7e-d361-40fe-897f-152f177a881f
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleFavoritePlaylistActive
+      m_Type: 2
+      m_ExpectedControlType: Button
+      m_Id: 78ffc4f4-f4d2-468d-9e42-608b3b757ccf
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleFavorite
+      m_Type: 2
+      m_ExpectedControlType: Button
+      m_Id: 6227994f-ca76-4f05-917e-85d369edb5e7
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: randomSong
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: aeb72133-9498-49d5-8b60-ab3a2a7620c7
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: nextSong
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: cdfb1e00-690c-4054-aa09-88339991bb19
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: previousSong
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: ba8f2a6f-3b25-423f-951d-e5c0d297454f
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: nextCharacterQuickJumpCharacter
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: bad4dd92-99be-47a6-bee5-c0fb3d2673f7
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: previousCharacterQuickJumpCharacter
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: ec2a8b9f-b851-48d1-9853-8a0f4bb5fbd2
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: openSongEditor
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 6174da8e-a478-4721-bd58-baaa42f52a8b
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: togglePlayers
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 90e5394f-9938-4877-bfc4-f3902339c4df
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleSongMenu
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: fdd40709-b194-4fe8-83d8-ded0261ef873
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: openContextMenu
+      m_Type: 2
+      m_ExpectedControlType:
+      m_Id: cac930d2-8155-45c9-8a3f-da3e293e3d1b
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: closeContextMenu
+      m_Type: 2
+      m_ExpectedControlType: Button
+      m_Id: dbcab40f-5fd7-49cc-b14c-5e3a764c0d8e
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: skipToNextLyrics
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: e96fdde6-5d6b-46db-ab56-4fd0d13c659b
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: togglePause
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 7d535b01-2668-4f38-b554-5e07b998f00f
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: restartSong
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: b6ffc08f-e68d-475f-b534-d1a4281cedc0
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleResultGraph
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 63847a27-9fa3-4ff4-85a9-a4071a2981c1
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleFullscreen
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 939bf79e-c8e1-4d45-b365-caa6e5ab3692
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleMute
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: c2ca0fd5-4768-4c18-ba7f-d3c644833394
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleHelp
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: ca0eb6ce-303d-4a5d-be18-89015231bef9
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: anyKeyboardModifier
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: ab50d342-f483-45f0-8352-217b86dea75e
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: anyKeyboardModifierPressedOrReleased
+      m_Type: 2
+      m_ExpectedControlType: Button
+      m_Id: 6488710e-bfad-4b93-a377-0691556792d0
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: space
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 0a9f81a5-3a55-4442-9b07-ee4731c6a3db
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: enter
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 90501e44-8c12-4007-9d7f-639078dd0dc5
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: start
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: cfcdc7f7-069e-4570-a7ef-80d398fb76c8
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name:
+      m_Id: 6dc2c8bd-c1d7-4c23-980e-a69695f611c0
+      m_Path: '<Keyboard>/escape'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: back
+      m_Flags: 0
+    - m_Name:
+      m_Id: 290f62c3-edc0-47b2-9a27-9fdbb92a2040
+      m_Path: '<Gamepad>/select'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: back
+      m_Flags: 0
+    - m_Name:
+      m_Id: 0e6a54a3-1ce5-45fc-a93c-0b2ea717688c
+      m_Path: '<Gamepad>/buttonEast'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: back
+      m_Flags: 0
+    - m_Name: Ctrl+F
+      m_Id: 9eaa0d2e-d25a-4bb4-affa-0d45d32226db
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: search
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 0884258b-a94a-4ffc-a84f-be36e56a29c1
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: search
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 471b4685-3987-42b8-bac1-d80e3c4bcf3d
+      m_Path: '<Keyboard>/f'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: search
+      m_Flags: 8
+    - m_Name: Ctrl+D
+      m_Id: a6cc8ce5-7344-4ad3-a513-d5185cb0ee0b
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavorite
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 4dc6868b-0a9e-4272-8e8b-d2480c945b8c
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavorite
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 12671323-bf0a-405d-941a-6c2e37f0522d
+      m_Path: '<Keyboard>/d'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavorite
+      m_Flags: 8
+    - m_Name: Ctrl+R
+      m_Id: 23e7e1d1-5db6-4505-a405-fc5d6c67f3be
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: randomSong
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 4520ac87-040b-4fde-b05d-f6c96ac3e8d2
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: randomSong
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 638af520-632e-4f87-91f3-191ddc572032
+      m_Path: '<Keyboard>/r'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: randomSong
+      m_Flags: 8
+    - m_Name: Ctrl+E
+      m_Id: 9aaf14f1-f48a-4127-ab33-8c5f14b3f94b
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: openSongEditor
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 1c0eeae7-4ecd-4299-9f2d-cd4803262d9a
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: openSongEditor
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 9f8c5c12-2ab7-4f58-8912-ab3e7590848f
+      m_Path: '<Keyboard>/e'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: openSongEditor
+      m_Flags: 8
+    - m_Name:
+      m_Id: 3aee06e2-86e8-40cb-9655-cf88e960c878
+      m_Path: '<Gamepad>/buttonNorth'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: openSongEditor
+      m_Flags: 0
+    - m_Name: Ctrl+Tab
+      m_Id: e35afe17-1ecb-4099-8165-9a92cdf29858
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePlayers
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 7a81a711-7b90-40b2-b13d-30a2e46f092f
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePlayers
+      m_Flags: 8
+    - m_Name: button
+      m_Id: c6180fe0-9f66-43a6-8bd0-d986ad5539cd
+      m_Path: '<Keyboard>/tab'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePlayers
+      m_Flags: 8
+    - m_Name:
+      m_Id: 73145dd7-26f2-4bac-bc26-6eed175586eb
+      m_Path: '<Gamepad>/buttonNorth'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePlayers
+      m_Flags: 0
+    - m_Name:
+      m_Id: 479cc28f-605c-4269-b28b-007ff626e181
+      m_Path: '<Mouse>/rightButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: openContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: 8044878b-8d50-45c6-8e53-1194a31a94fa
+      m_Path: '<Mouse>/leftButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: closeContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: 3359e4d4-3566-4f1c-9610-594f7ac92566
+      m_Path: '<Mouse>/rightButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: closeContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: 745a9841-f647-4866-9827-d295035a6689
+      m_Path: '<Mouse>/middleButton'
+      m_Interactions:
+      m_Processors:
+      m_Groups: ;Keyboard&Mouse
+      m_Action: closeContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: 2ce2303f-bceb-470e-b9eb-5892c5c9ddd6
+      m_Path: '<Pointer>/press'
+      m_Interactions: Tap
+      m_Processors:
+      m_Groups: Touch
+      m_Action: closeContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: d6b658a0-7faa-4111-9f46-6444158c7f91
+      m_Path: '<Touchscreen>/primaryTouch/tap'
+      m_Interactions:
+      m_Processors:
+      m_Groups: Touch
+      m_Action: closeContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: b053835c-a87f-4f67-8d56-4f6884a42357
+      m_Path: '<Keyboard>/anyKey'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: closeContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: 8323a2e9-14d9-444d-9bf8-0837fa72bb0b
+      m_Path: '<Keyboard>/s'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: skipToNextLyrics
+      m_Flags: 0
+    - m_Name:
+      m_Id: cd1f4b7b-6436-4bd7-a26c-b1b86a23f7cb
+      m_Path: '<Keyboard>/space'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePause
+      m_Flags: 0
+    - m_Name:
+      m_Id: 7198d1fa-b887-4134-9e3c-159280edd95a
+      m_Path: '<Keyboard>/p'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePause
+      m_Flags: 0
+    - m_Name:
+      m_Id: 5161fa02-8342-4384-ae54-13819a94b6f7
+      m_Path: '<Gamepad>/start'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePause
+      m_Flags: 0
+    - m_Name:
+      m_Id: 5e2bcd36-2454-4a72-ac1b-a147411d2e29
+      m_Path: '<Keyboard>/r'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: restartSong
+      m_Flags: 0
+    - m_Name:
+      m_Id: 9ccd4e70-f819-4f2b-918a-b1ca19844790
+      m_Path: '<Gamepad>/buttonWest'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: restartSong
+      m_Flags: 0
+    - m_Name:
+      m_Id: 1701e82d-7311-47ba-84e5-f563fb3a1a7b
+      m_Path: '<Keyboard>/g'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleResultGraph
+      m_Flags: 0
+    - m_Name:
+      m_Id: 98f80ca2-4fbd-43c1-9af6-a6e39f903c7d
+      m_Path: '<Keyboard>/s'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleResultGraph
+      m_Flags: 0
+    - m_Name:
+      m_Id: 211544e7-06f3-4ffc-ba7e-ad189573dc9d
+      m_Path: '<Gamepad>/buttonWest'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleResultGraph
+      m_Flags: 0
+    - m_Name:
+      m_Id: c04deb39-2e96-4a9e-bd47-0fd3d4e58bbd
+      m_Path: '<Gamepad>/start'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: start
+      m_Flags: 0
+    - m_Name:
+      m_Id: 36f9fb07-3d1a-4d14-a934-68ff0b6bd72c
+      m_Path: '<Keyboard>/shift'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardModifier
+      m_Flags: 0
+    - m_Name:
+      m_Id: 926c3bc3-313d-47d5-9873-00489ca43ccf
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardModifier
+      m_Flags: 0
+    - m_Name:
+      m_Id: 47552502-b47f-488e-aed5-cfa5441f57f9
+      m_Path: '<Keyboard>/alt'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardModifier
+      m_Flags: 0
+    - m_Name:
+      m_Id: 40833f42-053d-47e0-852e-d0727a857602
+      m_Path: '<Keyboard>/space'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: space
+      m_Flags: 0
+    - m_Name:
+      m_Id: 797ad500-fe6c-406e-8f4c-ed742a84d460
+      m_Path: '<Keyboard>/enter'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: enter
+      m_Flags: 0
+    - m_Name:
+      m_Id: 26e836a2-06c0-4275-bd48-10384238ad31
+      m_Path: '<Keyboard>/f11'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFullscreen
+      m_Flags: 0
+    - m_Name:
+      m_Id: e612168f-367f-45fc-a557-9d51142bbee8
+      m_Path: '<Keyboard>/f12'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleMute
+      m_Flags: 0
+    - m_Name:
+      m_Id: ee591cb6-3026-4f47-8a7b-e2675be1fac6
+      m_Path: '<Keyboard>/f1'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleHelp
+      m_Flags: 0
+    - m_Name:
+      m_Id: 3ca49960-e864-4fd2-bd3c-91fc22956a67
+      m_Path: '<Pointer>/press'
+      m_Interactions: Hold(duration=1)
+      m_Processors:
+      m_Groups: Touch
+      m_Action: openContextMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: ffa90955-6320-4109-9f6d-d6002c246ab3
+      m_Path: '<Keyboard>/space'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleSongMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: dbe46156-cfbe-4784-8653-90f90dcba93c
+      m_Path: '<Gamepad>/buttonWest'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleSongMenu
+      m_Flags: 0
+    - m_Name:
+      m_Id: 113d0440-bd80-4b5a-bdad-0a4cc3010550
+      m_Path: '<Gamepad>/rightTrigger'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: nextSong
+      m_Flags: 0
+    - m_Name:
+      m_Id: 3a413b5b-c8cf-4fac-a0e1-efefcbbc7753
+      m_Path: '<Gamepad>/leftShoulder'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: previousCharacterQuickJumpCharacter
+      m_Flags: 0
+    - m_Name:
+      m_Id: 64fde467-38f3-4eab-b42b-3cb27cee18a1
+      m_Path: '<Gamepad>/rightShoulder'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: nextCharacterQuickJumpCharacter
+      m_Flags: 0
+    - m_Name:
+      m_Id: 7b13cd60-b439-4861-8c93-903cd83ed7d5
+      m_Path: '<Gamepad>/leftTrigger'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: previousSong
+      m_Flags: 0
+    - m_Name: Ctrl+Shift+D
+      m_Id: 25fdc418-5480-4b4d-93d9-e87f180b743e
+      m_Path: ButtonWithTwoModifiers
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavoritePlaylistActive
+      m_Flags: 4
+    - m_Name: modifier1
+      m_Id: f81b60fa-95ba-4835-9162-a0c606bbe759
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavoritePlaylistActive
+      m_Flags: 8
+    - m_Name: modifier2
+      m_Id: df835fe2-c3ab-4ef3-9472-28e958b4bc56
+      m_Path: '<Keyboard>/shift'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavoritePlaylistActive
+      m_Flags: 8
+    - m_Name: button
+      m_Id: e2c18228-aa4a-43b9-90f0-873b07924af9
+      m_Path: '<Keyboard>/d'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleFavoritePlaylistActive
+      m_Flags: 8
+    - m_Name:
+      m_Id: 141afdaa-008c-4d94-914b-45f73a51e520
+      m_Path: '<Keyboard>/shift'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardModifierPressedOrReleased
+      m_Flags: 0
+    - m_Name:
+      m_Id: 068ec473-9517-4f97-a379-eafac0c2062c
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardModifierPressedOrReleased
+      m_Flags: 0
+    - m_Name:
+      m_Id: 26818c7e-cf65-41ca-bb29-23b39aba1acd
+      m_Path: '<Keyboard>/alt'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardModifierPressedOrReleased
+      m_Flags: 0
+  - m_Name: songEditor
+    m_Id: 9e51385e-25d1-4e32-b9ba-cddab1846f5a
+    m_Asset: {fileID: 11400000}
+    m_Actions:
+    - m_Name: jumpToStartOfSong
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: f2bd7a1a-5c8f-4fef-89d6-60aaa36b9cd0
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: jumpToEndOfSong
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 5895feff-c320-4de8-a969-317bd9afe452
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: togglePause
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 4e6aa313-73d8-48ae-bf17-d1034a2f5517
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: playSelectedNotes
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 5ebd702b-4e0c-4c96-859d-49294001b889
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: selectAll
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: f2f98172-2ed2-40f5-a3f6-41395f43b4c9
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: delete
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: e452893a-d6da-47bd-8538-4287c1dad340
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: undo
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 8cd708d1-bb7f-4668-b1ac-fcaa7f70d557
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: redo
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 7cfad8c4-1ee1-495f-9426-807ef8db0cd6
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: cut
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 8e400928-46be-4a21-9c51-202961782d0d
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: copy
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: d84222a4-9d1c-4777-b995-77f199b69f47
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: paste
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: b0d5ced7-77e6-4d8f-a827-330a5023bce2
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: save
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 04c3e463-663b-4087-89b0-45c7b13fe6f1
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: selectNextNote
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 2f18f4c5-9751-42e6-9058-e4d3cb87d882
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: selectPreviousNote
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: fc91ed53-392d-4d48-b779-20a395e63e9e
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: editLyrics
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: c50ccc1f-1f32-436b-864c-6c27cdd2606a
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleNoteTypeNormal
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 2b17f574-6759-4ab4-a758-3a7375e2d31e
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleNoteTypeGolden
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: beae83aa-5003-42fc-81ca-f6a1b14b8732
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleNoteTypeFreestyle
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: aa8c0ad5-c4b0-47b8-a07a-9eacab8882e8
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleNoteTypeRap
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 66667cb6-8b56-4645-a7ed-633351a9f840
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: toggleNoteTypeRapGolden
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 330b6440-2034-4844-b2f6-9b36e3aa684c
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: zoomInVertical
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 913acc92-f1cf-484a-a2aa-77e2357275c7
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: zoomOutVertical
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 43c0b518-2250-4acf-bcef-b1b3bbf9f234
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: zoomInHorizontal
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 1cf1c4fe-5c46-44cd-87e5-e24804230a56
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: zoomOutHorizontal
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 1e03d248-658a-4025-93dd-38e61ec0d750
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: anyKeyboardKey
+      m_Type: 2
+      m_ExpectedControlType: Button
+      m_Id: 41b84b84-f352-4238-a37f-9a402b6bcd62
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name:
+      m_Id: 476e7378-92ae-44dc-8ef8-26ab0d59db24
+      m_Path: '<Keyboard>/home'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: jumpToStartOfSong
+      m_Flags: 0
+    - m_Name:
+      m_Id: b4c904fb-2d67-4f4f-968f-19036e6fb448
+      m_Path: '<Keyboard>/end'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: jumpToEndOfSong
+      m_Flags: 0
+    - m_Name:
+      m_Id: a55efcfd-592f-4eeb-9cd8-ea41e8604122
+      m_Path: '<Keyboard>/space'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePause
+      m_Flags: 0
+    - m_Name:
+      m_Id: 693d855f-ab67-4c6a-80f1-7a2be9e83039
+      m_Path: '<Keyboard>/p'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: togglePause
+      m_Flags: 0
+    - m_Name: Button With One Modifier
+      m_Id: 9d59b0de-1b61-4419-ac95-fecef8f43385
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: playSelectedNotes
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 0ad0495a-a10f-4525-a24e-5c3086828a45
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: playSelectedNotes
+      m_Flags: 8
+    - m_Name: button
+      m_Id: a0a9ea7a-015d-4628-b72a-7338cb760be2
+      m_Path: '<Keyboard>/space'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: playSelectedNotes
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: 8baadbb1-2513-4e9a-8c48-538307188460
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: playSelectedNotes
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 99d66e9a-56b1-4f7d-8d2b-f02217707d54
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: playSelectedNotes
+      m_Flags: 8
+    - m_Name: button
+      m_Id: a411de42-8e57-4229-a6d7-c3d0fb394e76
+      m_Path: '<Keyboard>/p'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: playSelectedNotes
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: 476d131f-a2a4-485f-b6a9-a08721d81989
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectAll
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 7b180ed8-29d0-4066-b9f3-c10a169557d2
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectAll
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 9bfd416b-db18-4c14-a054-8893b3c89170
+      m_Path: '<Keyboard>/a'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectAll
+      m_Flags: 8
+    - m_Name:
+      m_Id: a0076752-d84c-4fdc-8566-c3f8eb68302a
+      m_Path: '<Keyboard>/delete'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: delete
+      m_Flags: 0
+    - m_Name: Button With One Modifier
+      m_Id: a58d07b2-4d16-4bc4-a813-7caba5deed4c
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: undo
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 5b5d1a71-eb95-4f84-ad9f-b99058bda8ec
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: undo
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 94a44175-01c3-46f9-ab62-3af13b74affa
+      m_Path: '<Keyboard>/y'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: undo
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: cc1132c9-c496-48df-9476-15d93648d3ca
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: redo
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: c2dbfa18-e2d7-4e4f-b225-cb1f24c960df
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: redo
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 32629c17-13ad-4f64-8ad8-c8b8e8a0e698
+      m_Path: '<Keyboard>/z'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: redo
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: 9d1ff461-7eb1-4e6f-a020-1ced18dd05d3
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: save
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 6424cef6-171e-4b6f-a7ab-fe8ca8f7a2fd
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: save
+      m_Flags: 8
+    - m_Name: button
+      m_Id: b0d154ac-0bee-4b1e-9357-ad06272882c4
+      m_Path: '<Keyboard>/s'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: save
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: eede7197-81b5-43bc-ab2c-d75a3a95fc34
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectPreviousNote
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 8c28f722-f2ab-4cf6-be5d-922e95a8cfcf
+      m_Path: '<Keyboard>/shift'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectPreviousNote
+      m_Flags: 8
+    - m_Name: button
+      m_Id: cdaecad7-b49c-4bba-b3f9-a610c4c1a608
+      m_Path: '<Keyboard>/tab'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectPreviousNote
+      m_Flags: 8
+    - m_Name:
+      m_Id: 72de3771-eeaf-4afa-8708-81b00a611556
+      m_Path: '<Keyboard>/tab'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: selectNextNote
+      m_Flags: 0
+    - m_Name:
+      m_Id: 3fcc05af-113e-40b3-bebb-924983a89c0e
+      m_Path: '<Keyboard>/f2'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: editLyrics
+      m_Flags: 0
+    - m_Name:
+      m_Id: 749af349-a8e8-4b35-9641-74da86b979cb
+      m_Path: '<Keyboard>/g'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleNoteTypeGolden
+      m_Flags: 0
+    - m_Name:
+      m_Id: edca8a73-a1d2-4d90-9650-e878f2f39fb7
+      m_Path: '<Keyboard>/f'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleNoteTypeFreestyle
+      m_Flags: 0
+    - m_Name:
+      m_Id: b3b6feaf-e419-4711-a108-2342763822f8
+      m_Path: '<Keyboard>/n'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleNoteTypeNormal
+      m_Flags: 0
+    - m_Name:
+      m_Id: 069a1aee-c151-459d-ad1e-82ac22db8669
+      m_Path: '<Keyboard>/r'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleNoteTypeRap
+      m_Flags: 0
+    - m_Name:
+      m_Id: 012b76a8-996f-4a40-aeaa-a091380ab6af
+      m_Path: '<Keyboard>/t'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: toggleNoteTypeRapGolden
+      m_Flags: 0
+    - m_Name: Button With One Modifier
+      m_Id: e8611c5f-6d51-4b8b-ab60-0a868151885e
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInHorizontal
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: b2a75a3e-5bf7-43cc-a177-9d65d371b0d9
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInHorizontal
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 55bfb17c-7ac1-4ac5-907c-31cdc221a22d
+      m_Path: '<Keyboard>/rightBracket'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInHorizontal
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: 603c33a9-11a4-490e-89ac-2006556c493d
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutHorizontal
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: f072ad28-2a71-4073-80c4-4d7a71ec96f9
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutHorizontal
+      m_Flags: 8
+    - m_Name: button
+      m_Id: b27fdf16-eed6-4ccc-b82d-eab1e73c3068
+      m_Path: '<Keyboard>/slash'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutHorizontal
+      m_Flags: 8
+    - m_Name: Button With Two Modifiers
+      m_Id: c1a748dc-6d26-4a85-b2ba-577a4f9351f2
+      m_Path: ButtonWithTwoModifiers
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInVertical
+      m_Flags: 4
+    - m_Name: modifier1
+      m_Id: 33b53650-444e-4835-800c-bd58c72103f0
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInVertical
+      m_Flags: 8
+    - m_Name: modifier2
+      m_Id: 662de422-7404-415b-81e2-af64da611a0b
+      m_Path: '<Keyboard>/shift'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInVertical
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 13f1059a-f44e-43ff-ba4c-818193413894
+      m_Path: '<Keyboard>/rightBracket'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomInVertical
+      m_Flags: 8
+    - m_Name: Button With Two Modifiers
+      m_Id: 7eff8ed8-640a-4458-b4e1-0a37453519b9
+      m_Path: ButtonWithTwoModifiers
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutVertical
+      m_Flags: 4
+    - m_Name: modifier1
+      m_Id: 9b3e91ce-9a8a-4702-a5a2-2b41fae089af
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutVertical
+      m_Flags: 8
+    - m_Name: modifier2
+      m_Id: 2a420d12-8e2e-4c42-9d1c-a23a719a31d6
+      m_Path: '<Keyboard>/shift'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutVertical
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 1ae4e2b2-1c4a-496d-983c-5e28b4d0d6cb
+      m_Path: '<Keyboard>/slash'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: zoomOutVertical
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: a145fe91-83bb-428c-8c6e-f700e2c7c5fe
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: copy
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: eb6cade4-d7da-4701-a8fd-08bc66ef745e
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: copy
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 5f5ee212-79d3-4b8c-9649-abd2b4dec5bb
+      m_Path: '<Keyboard>/c'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: copy
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: 9165014a-6ceb-4993-81b2-d86d96c817ba
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: paste
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: 19b254b9-bf6e-4e14-9a6b-228a5cf51c54
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: paste
+      m_Flags: 8
+    - m_Name: button
+      m_Id: a33f55dd-881c-4821-a0e5-74a9fe6db106
+      m_Path: '<Keyboard>/v'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: paste
+      m_Flags: 8
+    - m_Name: Button With One Modifier
+      m_Id: 59fc0b48-d1be-4e22-a18c-edc028f0215f
+      m_Path: ButtonWithOneModifier
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: cut
+      m_Flags: 4
+    - m_Name: modifier
+      m_Id: df0b62cb-21cc-4b80-a4bd-1157d9123d2b
+      m_Path: '<Keyboard>/ctrl'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: cut
+      m_Flags: 8
+    - m_Name: button
+      m_Id: 6ef7cefc-3112-4e5e-8833-f97029d58fe2
+      m_Path: '<Keyboard>/x'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: cut
+      m_Flags: 8
+    - m_Name:
+      m_Id: 6ac45707-cad0-48d4-b21c-9e3915d7ec6a
+      m_Path: '<Keyboard>/anyKey'
+      m_Interactions:
+      m_Processors:
+      m_Groups:
+      m_Action: anyKeyboardKey
+      m_Flags: 0
+  m_ControlSchemes: []

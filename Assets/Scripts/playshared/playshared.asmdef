@@ -1,0 +1,14 @@
+{
+  "name": "playshared",
+  "references": [
+    "Plugins",
+    "com.achimmihca.uniinject",
+    "com.achimmihca.protrans",
+    "UniRx",
+    "Serilog",
+    "Unity.InputSystem",
+    "com.achimmihca.primeinputactions",
+    "com.achimmihca.utfunknownunity"
+  ],
+  "allowUnsafeCode": true
+}

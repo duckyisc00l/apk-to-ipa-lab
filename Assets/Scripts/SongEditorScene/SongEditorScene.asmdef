@@ -1,0 +1,15 @@
+{
+  "name": "SongEditorScene",
+  "references": [
+    "com.achimmihca.uniinject",
+    "playshared",
+    "Common",
+    "Unity.InputSystem",
+    "UniRx",
+    "Plugins",
+    "UnityEngine.UI",
+    "com.achimmihca.primeinputactions",
+    "com.achimmihca.protrans"
+  ],
+  "allowUnsafeCode": true
+}

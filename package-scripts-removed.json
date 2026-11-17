@@ -1,0 +1,1518 @@
+{
+"7a6ceaab3099168d649dc2d45cdcc425": [
+"Unity.AI.Navigation.NavMeshModifierVolume",
+"com.unity.ai.navigation"
+],
+"5fe405211e011479b0bbd6d75648b1ab": [
+"Unity.AI.Navigation.NavMeshLink",
+"com.unity.ai.navigation"
+],
+"41bf9919877c74a343fcc34a8d40e607": [
+"Unity.AI.Navigation.NavMeshModifier",
+"com.unity.ai.navigation"
+],
+"83398a73898cedf4bd0e089a97f6cccc": [
+"Unity.AI.Navigation.HelpUrls",
+"com.unity.ai.navigation"
+],
+"3967c680668979432c52647ea326c0a9": [
+"Unity.AI.Navigation.NavMeshSurface",
+"com.unity.ai.navigation"
+],
+"326addce722d70d8d3627a62c788a984": [
+"UISupport",
+"com.unity.inputsystem"
+],
+"d5c7a3579fe8bcc62c28c91cb572d055": [
+"Unity.XR.GoogleVr.DaydreamHMD",
+"com.unity.inputsystem"
+],
+"82257acdbaacdd8ceb2e5416eccc2e74": [
+"Unity.XR.OpenVR.OpenVRHMD",
+"com.unity.inputsystem"
+],
+"cba0fad2f95a4ebdb94317fc5a0ac2af": [
+"Unity.XR.Oculus.Input.OculusHMD",
+"com.unity.inputsystem"
+],
+"02b490526b0df5e712631b588600c86f": [
+"UnityEngine.InputSystem.InputControlExtensions",
+"com.unity.inputsystem"
+],
+"e210d03a819170eea139a46f3cd32039": [
+"UnityEngine.InputSystem.FastKeyboard",
+"com.unity.inputsystem"
+],
+"7ee03ee17df70f478488998661cf8c64": [
+"UnityEngine.InputSystem.TrackedDevice",
+"com.unity.inputsystem"
+],
+"33cf667b3c2995b135adbdadb1307ddc": [
+"UnityEngine.InputSystem.InputControlScheme",
+"com.unity.inputsystem"
+],
+"657d1b57773f805ebd40f2db33125682": [
+"UnityEngine.InputSystem.PlayerInput",
+"com.unity.inputsystem"
+],
+"6b86fcd73515359fab09398298a4f01b": [
+"UnityEngine.InputSystem.InputActionState",
+"com.unity.inputsystem"
+],
+"3a62b227928d877d7923d72905993c46": [
+"UnityEngine.InputSystem.DynamicBitfield",
+"com.unity.inputsystem"
+],
+"327a3fbee0a3070afd23af7c5a46ecce": [
+"UnityEngine.InputSystem.InputManager",
+"com.unity.inputsystem"
+],
+"65c7b62b40b500dc7d00aa55183fd14b": [
+"UnityEngine.InputSystem.InputBinding",
+"com.unity.inputsystem"
+],
+"f1a2e56b2f7af2e36deb5a39b9ed9441": [
+"UnityEngine.InputSystem.Gamepad",
+"com.unity.inputsystem"
+],
+"5e56df2366f9ae54236cdb1da3acb0ec": [
+"UnityEngine.InputSystem.InputDevice",
+"com.unity.inputsystem"
+],
+"be8b32d03e056c93050640896c986153": [
+"UnityEngine.InputSystem.CommonUsages",
+"com.unity.inputsystem"
+],
+"c397894e278b0a59f94e82cbe5b8777e": [
+"UnityEngine.InputSystem.IInputActionCollection",
+"com.unity.inputsystem"
+],
+"90b8300c3c897a4c1f60630228567c85": [
+"UnityEngine.InputSystem.Sensor",
+"com.unity.inputsystem"
+],
+"1e5a90c938b0963dcbb82b91c6006ca5": [
+"UnityEngine.InputSystem.RemoteInputPlayerConnection",
+"com.unity.inputsystem"
+],
+"37871b878970d2ce9838631fa3f2d065": [
+"UnityEngine.InputSystem.FastMouse",
+"com.unity.inputsystem"
+],
+"d73dbb03a4817d56586b6ce4f4b8d87f": [
+"UnityEngine.InputSystem.FastTouchscreen",
+"com.unity.inputsystem"
+],
+"e4ca81d985052749f83286a22d8465bf": [
+"UnityEngine.InputSystem.InputRemoting",
+"com.unity.inputsystem"
+],
+"a7ad5774bb596a7197152a11241def91": [
+"UnityEngine.InputSystem.InputControl",
+"com.unity.inputsystem"
+],
+"3b48d3cff879851e1ed203054ee4d9fc": [
+"UnityEngine.InputSystem.Joystick",
+"com.unity.inputsystem"
+],
+"e74894e27429204e192eea6bdef22672": [
+"UnityEngine.InputSystem.InputProcessor",
+"com.unity.inputsystem"
+],
+"13bdc0345809eb292fedfe418def4a24": [
+"UnityEngine.InputSystem.InputBindingCompositeContext",
+"com.unity.inputsystem"
+],
+"4f09af76211cd938e099429f3fdc97bf": [
+"UnityEngine.InputSystem.InputAction",
+"com.unity.inputsystem"
+],
+"4b39fac5a396aadeaa9588ffabac69e8": [
+"UnityEngine.InputSystem.InputInteractionContext",
+"com.unity.inputsystem"
+],
+"811782204395bd31506cdefaeb672c1f": [
+"UnityEngine.InputSystem.InputActionMap",
+"com.unity.inputsystem"
+],
+"35281936f0b31b17954daabd11bf608b": [
+"UnityEngine.InputSystem.InputBindingComposite",
+"com.unity.inputsystem"
+],
+"a5bcc6d87d58603120d87de508ba0d84": [
+"UnityEngine.InputSystem.IInputInteraction",
+"com.unity.inputsystem"
+],
+"7ec1e524e4f032f9aad15cb26661e513": [
+"UnityEngine.InputSystem.InputSettings",
+"com.unity.inputsystem"
+],
+"fe5cf08cd61ca09261fff80f369660f4": [
+"UnityEngine.InputSystem.InputSystem",
+"com.unity.inputsystem"
+],
+"2c399a8fbfe9df1ae313e9694dcf4651": [
+"UnityEngine.InputSystem.InputValue",
+"com.unity.inputsystem"
+],
+"6767cd996303775c913eb6085c54ba0e": [
+"UnityEngine.InputSystem.Mouse",
+"com.unity.inputsystem"
+],
+"33c56b1aad496fa36b562ecf298f56b2": [
+"UnityEngine.InputSystem.PlayerInputManager",
+"com.unity.inputsystem"
+],
+"73eac34262f59b64a6af66cfc5498e67": [
+"UnityEngine.InputSystem.InputExtensions",
+"com.unity.inputsystem"
+],
+"5f06f60b1df2fadfb8b8d25510e034e5": [
+"UnityEngine.InputSystem.InputActionReference",
+"com.unity.inputsystem"
+],
+"6a740f42f176ac871a61090e9a5f1f18": [
+"UnityEngine.InputSystem.InputFeatureNames",
+"com.unity.inputsystem"
+],
+"04bda46a569165004b1bc93b652fcc97": [
+"UnityEngine.InputSystem.Touchscreen",
+"com.unity.inputsystem"
+],
+"c8427fd7c2456e999a282bf4a589fa09": [
+"UnityEngine.InputSystem.InputActionRebindingExtensions",
+"com.unity.inputsystem"
+],
+"741fef87ab2d6f6d6ec4ae4dbdfb1b2f": [
+"UnityEngine.InputSystem.Pointer",
+"com.unity.inputsystem"
+],
+"e95bea927298466d004689d3b2e4fe31": [
+"UnityEngine.InputSystem.InputBindingResolver",
+"com.unity.inputsystem"
+],
+"a46aaba319af4d9216640fcd878b9cd8": [
+"UnityEngine.InputSystem.Keyboard",
+"com.unity.inputsystem"
+],
+"98fb8016521e047b46f816bbf476d652": [
+"UnityEngine.InputSystem.InputActionAsset",
+"com.unity.inputsystem"
+],
+"b0f54ed7f9f4207914b137f47049864a": [
+"UnityEngine.InputSystem.InputActionProperty",
+"com.unity.inputsystem"
+],
+"5a28da1385204544ce42cbebfad2a055": [
+"UnityEngine.InputSystem.DefaultInputActions",
+"com.unity.inputsystem"
+],
+"23a3b000fefaa449d910e22e35447287": [
+"UnityEngine.InputSystem.Pen",
+"com.unity.inputsystem"
+],
+"2fec4d7e75e264f40d083f2ae6ddc376": [
+"UnityEngine.InputSystem.InputControlPath",
+"com.unity.inputsystem"
+],
+"c1447c8c857862c3bf4c64c79fd0183f": [
+"UnityEngine.InputSystem.InputActionSetupExtensions",
+"com.unity.inputsystem"
+],
+"d63d28af6b1d1b3e3085b7d46b24c74b": [
+"UnityEngine.InputSystem.Processors.NormalizeVector2Processor",
+"com.unity.inputsystem"
+],
+"1990bc9d02b2e67cbdb5453434387126": [
+"UnityEngine.InputSystem.Processors.ScaleVector3Processor",
+"com.unity.inputsystem"
+],
+"7d13e00ebba1aea0890e121ebf95410f": [
+"UnityEngine.InputSystem.Processors.ScaleVector2Processor",
+"com.unity.inputsystem"
+],
+"9b8a840546aa970f1ef5b8ad5aab2708": [
+"UnityEngine.InputSystem.Processors.NormalizeProcessor",
+"com.unity.inputsystem"
+],
+"4e010f77553cbcbc59bf60b469f983eb": [
+"UnityEngine.InputSystem.Processors.ScaleProcessor",
+"com.unity.inputsystem"
+],
+"5ec6c13e044c024e04d5c0ee9a642a22": [
+"UnityEngine.InputSystem.Processors.InvertVector2Processor",
+"com.unity.inputsystem"
+],
+"01a041388923967769b5a6367404032b": [
+"UnityEngine.InputSystem.Processors.InvertProcessor",
+"com.unity.inputsystem"
+],
+"0dd31bdd64d224a85920414b0e1e675b": [
+"UnityEngine.InputSystem.Processors.StickDeadzoneProcessor",
+"com.unity.inputsystem"
+],
+"23c9d3bd048abe15f6b5e3a1c5c60f8a": [
+"UnityEngine.InputSystem.Processors.CompensateDirectionProcessor",
+"com.unity.inputsystem"
+],
+"6c6b52879b47638129b46031076d120b": [
+"UnityEngine.InputSystem.Processors.CompensateRotationProcessor",
+"com.unity.inputsystem"
+],
+"9217751f7fa88f97d2b24c23fa558596": [
+"UnityEngine.InputSystem.Processors.NormalizeVector3Processor",
+"com.unity.inputsystem"
+],
+"860d6716ae7b1d039e5b9c12930bd99f": [
+"UnityEngine.InputSystem.Processors.InvertVector3Processor",
+"com.unity.inputsystem"
+],
+"ca68781eeb6d7e6b501fdb2b96125cdb": [
+"UnityEngine.InputSystem.Processors.AxisDeadzoneProcessor",
+"com.unity.inputsystem"
+],
+"390ba6735a6bfe99e02e76168c650bef": [
+"UnityEngine.InputSystem.Processors.ClampProcessor",
+"com.unity.inputsystem"
+],
+"a32e3109589308e289c9243da5c4a996": [
+"UnityEngine.InputSystem.Users.InputUserAccountHandle",
+"com.unity.inputsystem"
+],
+"ca5e714c6f54f976179c7c40b5d48a1c": [
+"UnityEngine.InputSystem.Users.InputUser",
+"com.unity.inputsystem"
+],
+"1f3dc2db828347a80fda89c864af0974": [
+"UnityEngine.InputSystem.Users.InputUserSettings",
+"com.unity.inputsystem"
+],
+"9e83272c2427f86fe25819b5831077a7": [
+"UnityEngine.InputSystem.Haptics.IHaptics",
+"com.unity.inputsystem"
+],
+"7b001fdb21f6b8780e1a5ef4a850dcdc": [
+"UnityEngine.InputSystem.Haptics.DualMotorRumble",
+"com.unity.inputsystem"
+],
+"5a7a8c0e4c68bafdfdb4af22d0b08734": [
+"UnityEngine.InputSystem.Haptics.IDualMotorRumble",
+"com.unity.inputsystem"
+],
+"96c2e138ef5db248ae198e30bc00dd23": [
+"UnityEngine.InputSystem.Controls.Vector3Control",
+"com.unity.inputsystem"
+],
+"d3e8f921447f8ca379ea9a5103fbf379": [
+"UnityEngine.InputSystem.Controls.DoubleControl",
+"com.unity.inputsystem"
+],
+"e4fa56c98854490cb4168369c55d412f": [
+"UnityEngine.InputSystem.Controls.QuaternionControl",
+"com.unity.inputsystem"
+],
+"da9cae878c51c0dd0ad44e8d25d8f845": [
+"UnityEngine.InputSystem.Controls.Vector2Control",
+"com.unity.inputsystem"
+],
+"034a39549f31501bd04c72c91f36a266": [
+"UnityEngine.InputSystem.Controls.IntegerControl",
+"com.unity.inputsystem"
+],
+"1cbfc8b8d0bbb1c1d5d5ec8632e3ba18": [
+"UnityEngine.InputSystem.Controls.ButtonControl",
+"com.unity.inputsystem"
+],
+"8de9f32a0a2ea07aba1df6e2eba69821": [
+"UnityEngine.InputSystem.Controls.KeyControl",
+"com.unity.inputsystem"
+],
+"0ff22b19314f55e1e8a88286e7cac0c3": [
+"UnityEngine.InputSystem.Controls.TouchControl",
+"com.unity.inputsystem"
+],
+"e56cc6b28021c4d8d8eddf8bc2d31f00": [
+"UnityEngine.InputSystem.Controls.StickControl",
+"com.unity.inputsystem"
+],
+"824e0e076c3ada4094ddc4debb1bb1d0": [
+"UnityEngine.InputSystem.Controls.TouchPhaseControl",
+"com.unity.inputsystem"
+],
+"75dedd88ea3de6e7b0055460cd24bc3d": [
+"UnityEngine.InputSystem.Controls.DiscreteButtonControl",
+"com.unity.inputsystem"
+],
+"a60105638f8a53da17fb0843f5a2a236": [
+"UnityEngine.InputSystem.Controls.DpadControl",
+"com.unity.inputsystem"
+],
+"7830bd300d80394815d8225bb84e5678": [
+"UnityEngine.InputSystem.Controls.AxisControl",
+"com.unity.inputsystem"
+],
+"a1586ff48f4dd0672f7fc6fce7967979": [
+"UnityEngine.InputSystem.Controls.DeltaControl",
+"com.unity.inputsystem"
+],
+"cbe71d6d0fcf6adcffa6c7b8fe1de5a5": [
+"UnityEngine.InputSystem.Controls.TouchPressControl",
+"com.unity.inputsystem"
+],
+"92070222d22538b56517703d0fac82e6": [
+"UnityEngine.InputSystem.Controls.AnyKeyControl",
+"com.unity.inputsystem"
+],
+"56941d803ff1152cb55de561b3eab389": [
+"UnityEngine.InputSystem.Utilities.Vector2MagnitudeComparer",
+"com.unity.inputsystem"
+],
+"9cb3408c2b86ee357622df41f76ee368": [
+"UnityEngine.InputSystem.Utilities.PredictiveParser",
+"com.unity.inputsystem"
+],
+"87482dee995330eff2c673ca14934d17": [
+"UnityEngine.InputSystem.Utilities.ArrayHelpers",
+"com.unity.inputsystem"
+],
+"390d934f22edd36e2b59583edc85505a": [
+"UnityEngine.InputSystem.Utilities.DisplayStringFormatAttribute",
+"com.unity.inputsystem"
+],
+"41e59fda106c8416615dbb2f5e57a931": [
+"UnityEngine.InputSystem.Utilities.NumberHelpers",
+"com.unity.inputsystem"
+],
+"9fc679bf045694944e77c74a43406799": [
+"UnityEngine.InputSystem.Utilities.TypeTable",
+"com.unity.inputsystem"
+],
+"1c0f65eb5f27c31be5eb1d0dbc81dcfb": [
+"UnityEngine.InputSystem.Utilities.ForDeviceEventObservable",
+"com.unity.inputsystem"
+],
+"73148fa6f6c5730d642b259282b0b811": [
+"UnityEngine.InputSystem.Utilities.PrimitiveValue",
+"com.unity.inputsystem"
+],
+"bba3b46a795cca8538fb0ef7d09965a8": [
+"UnityEngine.InputSystem.Utilities.ExceptionHelpers",
+"com.unity.inputsystem"
+],
+"457d603e2276f862336482046b1376ca": [
+"UnityEngine.InputSystem.Utilities.DelegateHelpers",
+"com.unity.inputsystem"
+],
+"d3a213e98a3f9d6ec48bf55e8797061c": [
+"UnityEngine.InputSystem.Utilities.CSharpCodeHelpers",
+"com.unity.inputsystem"
+],
+"728af869a24645117f79eaedfb8d2b80": [
+"UnityEngine.InputSystem.Utilities.InputActionTrace",
+"com.unity.inputsystem"
+],
+"1bf6f3ec698e3113fb8fcccdc519a165": [
+"UnityEngine.InputSystem.Utilities.ISavedState",
+"com.unity.inputsystem"
+],
+"6adf28a304eeafe0a797ec3a932cd4f9": [
+"UnityEngine.InputSystem.Utilities.JsonParser",
+"com.unity.inputsystem"
+],
+"1e3e25802a7d39c8542a286072d8914d": [
+"UnityEngine.InputSystem.Utilities.Observable",
+"com.unity.inputsystem"
+],
+"8181a23bdc9cb58d9e9ae4bcd1158e9b": [
+"UnityEngine.InputSystem.Utilities.MemoryHelpers",
+"com.unity.inputsystem"
+],
+"d5075b0d22e9cbb8a026740c186a7935": [
+"UnityEngine.InputSystem.Utilities.TypeHelpers",
+"com.unity.inputsystem"
+],
+"1c75d14411a3805d1a9305b52d01b539": [
+"UnityEngine.InputSystem.Utilities.StringHelpers",
+"com.unity.inputsystem"
+],
+"5d442687aa0d7cce26eec82cb061361a": [
+"UnityEngine.InputSystem.Utilities.NameAndParameters",
+"com.unity.inputsystem"
+],
+"99281255417fe7bc52dc2b0b3973755f": [
+"UnityEngine.InputSystem.Utilities.MiscHelpers",
+"com.unity.inputsystem"
+],
+"bee82db4314a0612f53f2fecbdf86bc9": [
+"UnityEngine.InputSystem.Utilities.InternedString",
+"com.unity.inputsystem"
+],
+"ee844185b5fb065dce12b8c587467e62": [
+"UnityEngine.InputSystem.Utilities.FourCC",
+"com.unity.inputsystem"
+],
+"18f5b9eb7dede330af6bede5d622b6c6": [
+"UnityEngine.InputSystem.Utilities.NamedValue",
+"com.unity.inputsystem"
+],
+"5701a2625e7a1be8c4d2d214c095d923": [
+"UnityEngine.InputSystem.Utilities.Substring",
+"com.unity.inputsystem"
+],
+"b795de4836e7e1e296ab8f1f51935789": [
+"UnityEngine.InputSystem.XInput.XInputSupport",
+"com.unity.inputsystem"
+],
+"1569636ac80a4b3c8f2c8394286dd961": [
+"UnityEngine.InputSystem.XInput.XInputController",
+"com.unity.inputsystem"
+],
+"be67e676514438e930fb6af3a51d9731": [
+"UnityEngine.InputSystem.XInput.IXboxOneRumble",
+"com.unity.inputsystem"
+],
+"4b5f1e9a23a9dfa5f67de8651b9102f2": [
+"UnityEngine.InputSystem.EnhancedTouch.TouchHistory",
+"com.unity.inputsystem"
+],
+"29b8578d5e6a9d729a9221c58614623c": [
+"UnityEngine.InputSystem.EnhancedTouch.TouchSimulation",
+"com.unity.inputsystem"
+],
+"ad17c8ee23d8e2d3215c7ff537d13ab1": [
+"UnityEngine.InputSystem.EnhancedTouch.EnhancedTouchSupport",
+"com.unity.inputsystem"
+],
+"21aed87931d328cb6726cc25a0c0d495": [
+"UnityEngine.InputSystem.EnhancedTouch.Finger",
+"com.unity.inputsystem"
+],
+"446f10bdba783a1464fc8bb4383db80f": [
+"UnityEngine.InputSystem.EnhancedTouch.Touch",
+"com.unity.inputsystem"
+],
+"ebb63f48746b30b6f07b2cab5004d32c": [
+"UnityEngine.InputSystem.Composites.Vector2Composite",
+"com.unity.inputsystem"
+],
+"76be2214f3ee1919b6c6caa235177abe": [
+"UnityEngine.InputSystem.Composites.AxisComposite",
+"com.unity.inputsystem"
+],
+"7e15574aaee4c63bd4330d698de9007e": [
+"UnityEngine.InputSystem.Composites.Vector3Composite",
+"com.unity.inputsystem"
+],
+"ef494ce5ad8cc7bf7a0db477c336f947": [
+"UnityEngine.InputSystem.Composites.ButtonWithTwoModifiers",
+"com.unity.inputsystem"
+],
+"d98cabecd83efcf0956b03939e70a1ad": [
+"UnityEngine.InputSystem.Composites.ButtonWithOneModifier",
+"com.unity.inputsystem"
+],
+"afc44e8115e1318ab3fcfc2dc6300294": [
+"UnityEngine.InputSystem.Composites.OneModifierComposite",
+"com.unity.inputsystem"
+],
+"24232ab203cadb856875574392d9eb4a": [
+"UnityEngine.InputSystem.Composites.TwoModifiersComposite",
+"com.unity.inputsystem"
+],
+"bb2f0776dc5c3f48eacc448eff4f5d83": [
+"UnityEngine.InputSystem.XR.TrackedPoseDriver",
+"com.unity.inputsystem"
+],
+"b97bd3cf1433de414b7879dac9ffc12b": [
+"UnityEngine.InputSystem.XR.XRLayoutBuilder",
+"com.unity.inputsystem"
+],
+"fac2a80f839bcacc24382e03d437f30b": [
+"UnityEngine.InputSystem.XR.PoseControl",
+"com.unity.inputsystem"
+],
+"c246e9da4385c3ffbfd7c995eb843205": [
+"UnityEngine.InputSystem.XR.XRHMD",
+"com.unity.inputsystem"
+],
+"9ac1d20dce60b9e975d5394f908709c9": [
+"UnityEngine.InputSystem.XR.XRSupport",
+"com.unity.inputsystem"
+],
+"b90788f23dfb3256349d98aa72801481": [
+"UnityEngine.InputSystem.XR.Haptics.GetHapticCapabilitiesCommand",
+"com.unity.inputsystem"
+],
+"8af23b62e9a6ea42dc7f8aa5c818a0ac": [
+"UnityEngine.InputSystem.XR.Haptics.BufferedRumble",
+"com.unity.inputsystem"
+],
+"8db6091ebe6d45ffc41387bf98da44b7": [
+"UnityEngine.InputSystem.XR.Haptics.SendBufferedHapticCommand",
+"com.unity.inputsystem"
+],
+"be0d87f427211a19383ac2192d815677": [
+"UnityEngine.InputSystem.XR.Haptics.SendHapticImpulseCommand",
+"com.unity.inputsystem"
+],
+"c6ae513a680af28c56b02b89322dd545": [
+"UnityEngine.InputSystem.XR.Haptics.GetCurrentHapticStateCommand",
+"com.unity.inputsystem"
+],
+"56193a189dcf400ef1741b234b931449": [
+"UnityEngine.InputSystem.Interactions.MultiTapInteraction",
+"com.unity.inputsystem"
+],
+"53f8d13ea956aabc6f7a80394e210c59": [
+"UnityEngine.InputSystem.Interactions.TapInteraction",
+"com.unity.inputsystem"
+],
+"7800c1e6cac070e6bae110b1631b5a5b": [
+"UnityEngine.InputSystem.Interactions.SlowTapInteraction",
+"com.unity.inputsystem"
+],
+"9144429c6e9a6571161351b9809c36c7": [
+"UnityEngine.InputSystem.Interactions.HoldInteraction",
+"com.unity.inputsystem"
+],
+"3119acbf10a5889fa5d982c0cda2cf39": [
+"UnityEngine.InputSystem.Interactions.PressInteraction",
+"com.unity.inputsystem"
+],
+"a88091346e49a2ace8d1a593293fdc26": [
+"UnityEngine.InputSystem.UI.VirtualMouseInput",
+"com.unity.inputsystem"
+],
+"1fbab244ebf71a0b1ecbedffdeee49c8": [
+"UnityEngine.InputSystem.UI.BaseInputOverride",
+"com.unity.inputsystem"
+],
+"f555d37ba79a134da29b40229486844d": [
+"UnityEngine.InputSystem.UI.NavigationModel",
+"com.unity.inputsystem"
+],
+"c0fddd917f2060cb3c51de9b02e546b5": [
+"UnityEngine.InputSystem.UI.MultiplayerEventSystem",
+"com.unity.inputsystem"
+],
+"a10e4c2d4129f5aeaa0a6286d1e74b08": [
+"UnityEngine.InputSystem.UI.ExtendedPointerEventData",
+"com.unity.inputsystem"
+],
+"80546158cb0ea9a96a135e6f4b4fe0e6": [
+"UnityEngine.InputSystem.UI.PointerModel",
+"com.unity.inputsystem"
+],
+"80a458b584dea5ea0b00e226865a174c": [
+"UnityEngine.InputSystem.UI.ExtendedAxisEventData",
+"com.unity.inputsystem"
+],
+"b73a9709c77ec76bdf0d5b40668ce956": [
+"UnityEngine.InputSystem.UI.InputSystemUIInputModule",
+"com.unity.inputsystem"
+],
+"0b22d1346b1500676caf61b0a309d52c": [
+"UnityEngine.InputSystem.UI.TrackedDeviceRaycaster",
+"com.unity.inputsystem"
+],
+"8821bcb3085208c52168248e694f5c4e": [
+"UnityEngine.InputSystem.Android.AndroidSupport",
+"com.unity.inputsystem"
+],
+"b602ed81b03ab1bdccf79f9dcc8cf39a": [
+"UnityEngine.InputSystem.Android.LowLevel.AndroidGameControllerState",
+"com.unity.inputsystem"
+],
+"12ac90490973197a052b1fbbb3097a98": [
+"UnityEngine.InputSystem.Android.LowLevel.AndroidSensorCapabilities",
+"com.unity.inputsystem"
+],
+"506caff315a7ee1be86faf7f7a0361b8": [
+"UnityEngine.InputSystem.DualShock.DualShockGamepad",
+"com.unity.inputsystem"
+],
+"32f7665982293961504124c1a24e28a3": [
+"UnityEngine.InputSystem.DualShock.DualShockSupport",
+"com.unity.inputsystem"
+],
+"04b06dbea26bace68665cd2be245cb28": [
+"UnityEngine.InputSystem.DualShock.IDualShockHaptics",
+"com.unity.inputsystem"
+],
+"1805d5a00c406a151fc4b8ec1d7a260f": [
+"UnityEngine.InputSystem.Layouts.InputDeviceDescription",
+"com.unity.inputsystem"
+],
+"601770d9ed8f48d77f83a97772abe928": [
+"UnityEngine.InputSystem.Layouts.InputControlAttribute",
+"com.unity.inputsystem"
+],
+"f8140cdfd6378b4a6364aec35e9c763f": [
+"UnityEngine.InputSystem.Layouts.InputDeviceMatcher",
+"com.unity.inputsystem"
+],
+"f2d037a159107812dfc05a3813b1301b": [
+"UnityEngine.InputSystem.Layouts.InputDeviceBuilder",
+"com.unity.inputsystem"
+],
+"2c0725560daa3aa911647fab8ae933af": [
+"UnityEngine.InputSystem.Layouts.InputControlLayoutAttribute",
+"com.unity.inputsystem"
+],
+"649098adfe3cc677a20968b0c63b71e0": [
+"UnityEngine.InputSystem.Layouts.InputControlLayout",
+"com.unity.inputsystem"
+],
+"0d3e76d31075b03e2d52e9c05de6b1df": [
+"UnityEngine.InputSystem.HID.HID",
+"com.unity.inputsystem"
+],
+"e5d6ef104f9fe250ff565a8267be1d72": [
+"UnityEngine.InputSystem.HID.HIDParser",
+"com.unity.inputsystem"
+],
+"a44d354d4b13ad8f47457877d0969898": [
+"UnityEngine.InputSystem.HID.HIDSupport",
+"com.unity.inputsystem"
+],
+"09cedfb1a4034d76b4b26f3f8a7e85d2": [
+"UnityEngine.InputSystem.OnScreen.OnScreenStick",
+"com.unity.inputsystem"
+],
+"413c78a8822f08b14a0503e9556ae589": [
+"UnityEngine.InputSystem.OnScreen.OnScreenControl",
+"com.unity.inputsystem"
+],
+"af316ba0f6642eca6f8b7553e6276407": [
+"UnityEngine.InputSystem.OnScreen.OnScreenButton",
+"com.unity.inputsystem"
+],
+"6b4e802e859280f71d3b9321d558a8ed": [
+"UnityEngine.InputSystem.OnScreen.OnScreenSupport",
+"com.unity.inputsystem"
+],
+"fa44546138b892d2b546fbef851e35b8": [
+"UnityEngine.InputSystem.LowLevel.InputStateBuffers",
+"com.unity.inputsystem"
+],
+"ce24445e3e5be3322af1da2e94bde236": [
+"UnityEngine.InputSystem.LowLevel.IInputStateChangeMonitor",
+"com.unity.inputsystem"
+],
+"e04e36d5bd495fbd2d017a76f61543b5": [
+"UnityEngine.InputSystem.LowLevel.IEventPreProcessor",
+"com.unity.inputsystem"
+],
+"5f796b69232dc301a8f360beaf406437": [
+"UnityEngine.InputSystem.LowLevel.IInputEventTypeInfo",
+"com.unity.inputsystem"
+],
+"b9ad7b1046d6689a0b66b8d02fd20564": [
+"UnityEngine.InputSystem.LowLevel.RequestResetCommand",
+"com.unity.inputsystem"
+],
+"cb4e6cc44f43b308f35bf36760c7f361": [
+"UnityEngine.InputSystem.LowLevel.QueryKeyNameCommand",
+"com.unity.inputsystem"
+],
+"073d71d2b2adf1020d74d523b403b6ff": [
+"UnityEngine.InputSystem.LowLevel.EnableDeviceCommand",
+"com.unity.inputsystem"
+],
+"e22bcc14d728cde8a9143b48afcf0ddc": [
+"UnityEngine.InputSystem.LowLevel.ITextInputReceiver",
+"com.unity.inputsystem"
+],
+"1f70ec964785523bb88d867053f2548b": [
+"UnityEngine.InputSystem.LowLevel.DualMotorRumbleCommand",
+"com.unity.inputsystem"
+],
+"191a9915e0c575e0abf44ff279827245": [
+"UnityEngine.InputSystem.LowLevel.DeviceResetEvent",
+"com.unity.inputsystem"
+],
+"61e708e0287e47d295753b93303d0895": [
+"UnityEngine.InputSystem.LowLevel.IMECompositionEvent",
+"com.unity.inputsystem"
+],
+"7462ed7ed8963cc87495705fbf0bdb4b": [
+"UnityEngine.InputSystem.LowLevel.QueryPairedUserAccountCommand",
+"com.unity.inputsystem"
+],
+"0004e83cfd06ad685c37832f00ef053a": [
+"UnityEngine.InputSystem.LowLevel.EnableIMECompositionCommand",
+"com.unity.inputsystem"
+],
+"98cfdc8861dc415dba433b67755ace0c": [
+"UnityEngine.InputSystem.LowLevel.QueryKeyboardLayoutCommand",
+"com.unity.inputsystem"
+],
+"1ca1bb19fe28673c0cc7d1376faf8b87": [
+"UnityEngine.InputSystem.LowLevel.InputState",
+"com.unity.inputsystem"
+],
+"aa08d5355b6afba186a86d334309879f": [
+"UnityEngine.InputSystem.LowLevel.IEventMerger",
+"com.unity.inputsystem"
+],
+"65fa18f607d9146f759aee8c0bfec89b": [
+"UnityEngine.InputSystem.LowLevel.InputUpdate",
+"com.unity.inputsystem"
+],
+"32883388316d25fb086f5ba2f98add7a": [
+"UnityEngine.InputSystem.LowLevel.NativeInputRuntime",
+"com.unity.inputsystem"
+],
+"95c44395258c3a9567cbe158daf16fd7": [
+"UnityEngine.InputSystem.LowLevel.ICustomDeviceReset",
+"com.unity.inputsystem"
+],
+"98d107b6d08f716535a7f19f3f292620": [
+"UnityEngine.InputSystem.LowLevel.IInputRuntime",
+"com.unity.inputsystem"
+],
+"727b9854b9ab8f607a3c8567719d3897": [
+"UnityEngine.InputSystem.LowLevel.InitiateUserAccountPairingCommand",
+"com.unity.inputsystem"
+],
+"870ff15104a454b67c0b6b1934ea3a1f": [
+"UnityEngine.InputSystem.LowLevel.WarpMousePositionCommand",
+"com.unity.inputsystem"
+],
+"cb9eb6fec2a0360fc2464c089b695082": [
+"UnityEngine.InputSystem.LowLevel.UseWindowsGamingInputCommand",
+"com.unity.inputsystem"
+],
+"fbe37917751f1d09e7e2944eb918902b": [
+"UnityEngine.InputSystem.LowLevel.IInputUpdateCallbackReceiver",
+"com.unity.inputsystem"
+],
+"0cac7492f6469f4a9d4cc22f2e213260": [
+"UnityEngine.InputSystem.LowLevel.RequestSyncCommand",
+"com.unity.inputsystem"
+],
+"8695f3dd3ec1f066016410e88b7db7c2": [
+"UnityEngine.InputSystem.LowLevel.QuerySamplingFrequencyCommand",
+"com.unity.inputsystem"
+],
+"bef22ad29119d1eca973cf9360ae2834": [
+"UnityEngine.InputSystem.LowLevel.IInputDeviceCommandInfo",
+"com.unity.inputsystem"
+],
+"59ef58a43277fce50134b11eaa68b321": [
+"UnityEngine.InputSystem.LowLevel.QueryDimensionsCommand",
+"com.unity.inputsystem"
+],
+"24e4ba9af4d869d9797496a342d29aef": [
+"UnityEngine.InputSystem.LowLevel.QueryCanRunInBackground",
+"com.unity.inputsystem"
+],
+"edf636f5b501d3990dae1ec85e786fb7": [
+"UnityEngine.InputSystem.LowLevel.IInputStateTypeInfo",
+"com.unity.inputsystem"
+],
+"f39431ed2333a8769463d26cc42c9e48": [
+"UnityEngine.InputSystem.LowLevel.InputStateBlock",
+"com.unity.inputsystem"
+],
+"86026c715ece9be051c9167d510e85da": [
+"UnityEngine.InputSystem.LowLevel.InputEventBuffer",
+"com.unity.inputsystem"
+],
+"e32a799c16d96aee411b8235124e8a3d": [
+"UnityEngine.InputSystem.LowLevel.InputStateHistory",
+"com.unity.inputsystem"
+],
+"64fbe114af4e34f3fa400bc6393262a2": [
+"UnityEngine.InputSystem.LowLevel.DeviceConfigurationEvent",
+"com.unity.inputsystem"
+],
+"82122d0ab7113bead0c415667540731f": [
+"UnityEngine.InputSystem.LowLevel.ActionEvent",
+"com.unity.inputsystem"
+],
+"0307500903733cc516af0a69647e6ccd": [
+"UnityEngine.InputSystem.LowLevel.QueryEnabledStateCommand",
+"com.unity.inputsystem"
+],
+"6cbc1d5480a6943739def638b07242bb": [
+"UnityEngine.InputSystem.LowLevel.InputEventStream",
+"com.unity.inputsystem"
+],
+"6f11310c63edfbc87bcf14a8614e005f": [
+"UnityEngine.InputSystem.LowLevel.TextEvent",
+"com.unity.inputsystem"
+],
+"c4435725164bc10e88fca2cbf36cfa52": [
+"UnityEngine.InputSystem.LowLevel.DeltaStateEvent",
+"com.unity.inputsystem"
+],
+"1a6dedc10b607afcaf51043b6c13f444": [
+"UnityEngine.InputSystem.LowLevel.InputEventTrace",
+"com.unity.inputsystem"
+],
+"d2bd48b3072d68bdba62c2429a671ad0": [
+"UnityEngine.InputSystem.LowLevel.SetIMECursorPositionCommand",
+"com.unity.inputsystem"
+],
+"7febe2e97d3e31dc915369ff17ff01b7": [
+"UnityEngine.InputSystem.LowLevel.DisableDeviceCommand",
+"com.unity.inputsystem"
+],
+"eb7772e8c3edf1e7d23d4bcc945ef4d2": [
+"UnityEngine.InputSystem.LowLevel.InputEventPtr",
+"com.unity.inputsystem"
+],
+"87ddb2e1b9f2600d4ddd9e72eae22700": [
+"UnityEngine.InputSystem.LowLevel.SetSamplingFrequencyCommand",
+"com.unity.inputsystem"
+],
+"0920a432c6a69de0f6220d0d4020bb21": [
+"UnityEngine.InputSystem.LowLevel.DeviceRemoveEvent",
+"com.unity.inputsystem"
+],
+"f452a64bc1f0c94302db7723bfe6d3aa": [
+"UnityEngine.InputSystem.LowLevel.InputMetrics",
+"com.unity.inputsystem"
+],
+"c1bdbe86ea2840d7c47d05b5e9ff98d5": [
+"UnityEngine.InputSystem.LowLevel.InputDeviceCommand",
+"com.unity.inputsystem"
+],
+"26facd2360ab4372ad70c2ad89323671": [
+"UnityEngine.InputSystem.LowLevel.QueryUserIdCommand",
+"com.unity.inputsystem"
+],
+"fc18b97274dcac0ff4f9b79ad42f9b97": [
+"UnityEngine.InputSystem.LowLevel.InputEvent",
+"com.unity.inputsystem"
+],
+"46e2df091c3b898a1a2521f7f6091f2c": [
+"UnityEngine.InputSystem.LowLevel.StateEvent",
+"com.unity.inputsystem"
+],
+"eb1a277ac2c8f5ad9d8b7b08771ada97": [
+"UnityEngine.InputSystem.LowLevel.IInputStateCallbackReceiver",
+"com.unity.inputsystem"
+],
+"1bad5ce30e1bd32678869ec76db1ec25": [
+"UnityEngine.InputSystem.LowLevel.InputEventListener",
+"com.unity.inputsystem"
+],
+"e50d7c6f01d16dd6ee2afa1fc3b45448": [
+"UnityEngine.XR.WindowsMR.Input.WMRHMD",
+"com.unity.inputsystem"
+],
+"651bcdd430cf283f6346b682f7f6ff34": [
+"UnityEngine.Timeline.ActivationControlPlayable",
+"com.unity.timeline"
+],
+"abaf1b454423027272f00fff2489fa8f": [
+"UnityEngine.Timeline.SignalReceiver",
+"com.unity.timeline"
+],
+"56c1d367759f46f0f4113dd6c454880b": [
+"UnityEngine.Timeline.GroupTrack",
+"com.unity.timeline"
+],
+"459c39d41745645ad02947e5b401309a": [
+"UnityEngine.Timeline.ITimeControl",
+"com.unity.timeline"
+],
+"7263ea43ed2775784b19c426b80e9eeb": [
+"UnityEngine.Timeline.DiscreteTime",
+"com.unity.timeline"
+],
+"211be37e0abd98a80c1017975864ab10": [
+"UnityEngine.Timeline.TimelineClipExtensions",
+"com.unity.timeline"
+],
+"17b8129fa58f3e831ca831fe9135781b": [
+"UnityEngine.Timeline.PrefabControlPlayable",
+"com.unity.timeline"
+],
+"5e7720d13be75b5e5aecb8674daeb202": [
+"UnityEngine.Timeline.AnimationPreviewUpdateCallback",
+"com.unity.timeline"
+],
+"13358af4bbcdfccae07e0cee4880b22b": [
+"UnityEngine.Timeline.BasicPlayableBehaviour",
+"com.unity.timeline"
+],
+"f41bb64e2af2194a59d362f0de61fbc1": [
+"UnityEngine.Timeline.IPropertyCollector",
+"com.unity.timeline"
+],
+"03c5d17c35a44bbdf369985ee37d40c0": [
+"UnityEngine.Timeline.AnimationTrack",
+"com.unity.timeline"
+],
+"d71a81dbfcff990fbab368dc06b9fd27": [
+"UnityEngine.Timeline.SignalTrack",
+"com.unity.timeline"
+],
+"dc1e74d753c9e95bc5445a7b586c3e23": [
+"UnityEngine.Timeline.PlayableTrack",
+"com.unity.timeline"
+],
+"f26b2faf552aeeb9d158eb606df1517f": [
+"UnityEngine.Timeline.ParticleControlPlayable",
+"com.unity.timeline"
+],
+"866b8b936f39d01af196a9d75516fde9": [
+"UnityEngine.Timeline.TrackAsset",
+"com.unity.timeline"
+],
+"872c8afcab9942aa205e6e8b92b097b6": [
+"UnityEngine.Timeline.MarkerTrack",
+"com.unity.timeline"
+],
+"e09f3456b45039aa1da96e3d04595b0b": [
+"UnityEngine.Timeline.ICurvesOwner",
+"com.unity.timeline"
+],
+"663357c471c1f90fc45d6b64fe9e0988": [
+"UnityEngine.Timeline.AudioPlayableAsset",
+"com.unity.timeline"
+],
+"fb1b962fafb11e2c40a3987b07fcb4fc": [
+"UnityEngine.Timeline.AnimationOutputWeightProcessor",
+"com.unity.timeline"
+],
+"3ac28f4b41369af74a951322fe1b22b6": [
+"UnityEngine.Timeline.MarkerList",
+"com.unity.timeline"
+],
+"c7465eddd3834110636e7250b4688c40": [
+"UnityEngine.Timeline.RuntimeElement",
+"com.unity.timeline"
+],
+"5bcf366122d12b6d12b5ad56b3d8c734": [
+"UnityEngine.Timeline.TrackClipTypeAttribute",
+"com.unity.timeline"
+],
+"ce951a80af5d2b0a03ab768e6232a6cf": [
+"UnityEngine.Timeline.WeightUtility",
+"com.unity.timeline"
+],
+"b2de488eda634846fa3f9627820277b2": [
+"UnityEngine.Timeline.Marker",
+"com.unity.timeline"
+],
+"dc418a99f98ead1eb4a5944ade0e52ad": [
+"UnityEngine.Timeline.TrackMediaType",
+"com.unity.timeline"
+],
+"f15a9a5384d8a8ac28c3d68de06160f1": [
+"UnityEngine.Timeline.ControlTrack",
+"com.unity.timeline"
+],
+"9f5dbd8ad89074651fe45fb9cbee71f7": [
+"UnityEngine.Timeline.TimeUtility",
+"com.unity.timeline"
+],
+"b85b91c4c48566e3a76a2954f68588a9": [
+"UnityEngine.Timeline.ActivationPlayableAsset",
+"com.unity.timeline"
+],
+"04eb1f3978a0f5f76168325f9e9fc149": [
+"UnityEngine.Timeline.TimeNotificationBehaviour",
+"com.unity.timeline"
+],
+"261f652519976def061ba0cf10a8cddd": [
+"UnityEngine.Timeline.TimelinePlayable",
+"com.unity.timeline"
+],
+"8ebf0209fab1ad6a6525161ed73cd77a": [
+"UnityEngine.Timeline.ControlPlayableAsset",
+"com.unity.timeline"
+],
+"99b14156dd61a49c3d90dbaa45ddadb3": [
+"UnityEngine.Timeline.AudioClipProperties",
+"com.unity.timeline"
+],
+"5ebfd7ccb1f9dd7286691c54b9b00c1f": [
+"UnityEngine.Timeline.TimelineClip",
+"com.unity.timeline"
+],
+"7e36f144e664b5a85d3e2968ae381ea0": [
+"UnityEngine.Timeline.RuntimeClipBase",
+"com.unity.timeline"
+],
+"6eb1e25497012fec00d785ee4e5755fe": [
+"UnityEngine.Timeline.TimelineClipCapsExtensions",
+"com.unity.timeline"
+],
+"527bc27bfad8d71b3c8a261dceb4d8ac": [
+"UnityEngine.Timeline.IPropertyPreview",
+"com.unity.timeline"
+],
+"b4a84b2f587086e5d22f21a3956b66d2": [
+"UnityEngine.Timeline.TimelineCreateUtilities",
+"com.unity.timeline"
+],
+"973f47d1b899838594234eb51f1ea407": [
+"UnityEngine.Timeline.RuntimeClip",
+"com.unity.timeline"
+],
+"89b2253367f84a5ff954e7db068fca0c": [
+"UnityEngine.Timeline.NotificationUtilities",
+"com.unity.timeline"
+],
+"b56fe5e80ee6a1f15ad86b93e20259ee": [
+"UnityEngine.Timeline.InfiniteRuntimeClip",
+"com.unity.timeline"
+],
+"fb196a4d1a905a630372954ac4f8f652": [
+"UnityEngine.Timeline.AudioTrack",
+"com.unity.timeline"
+],
+"c31c7cbc024ee92b63890de66c0c98fc": [
+"UnityEngine.Timeline.AnimationPlayableAsset",
+"com.unity.timeline"
+],
+"cfaf1e6b01edb790e5cac99c7a8437c0": [
+"UnityEngine.Timeline.DirectorControlPlayable",
+"com.unity.timeline"
+],
+"a2f4a3745d747903d03340b3cddcc23d": [
+"UnityEngine.Timeline.TimelineHelpURLAttribute",
+"com.unity.timeline"
+],
+"1dd4370046c526ce41d014fb0f5e9472": [
+"UnityEngine.Timeline.SignalAsset",
+"com.unity.timeline"
+],
+"cafd38731dfe1e7dd8c4aa895838ffd3": [
+"UnityEngine.Timeline.AudioMixerProperties",
+"com.unity.timeline"
+],
+"c8edf918685c09a8bab265c30646b4c3": [
+"UnityEngine.Timeline.INotificationOptionProvider",
+"com.unity.timeline"
+],
+"1488c1e44b19525c48c377292cb823ba": [
+"UnityEngine.Timeline.IMarker",
+"com.unity.timeline"
+],
+"ddc288ee56768d9bdacabe3501a74d1d": [
+"UnityEngine.Timeline.TimelineAsset",
+"com.unity.timeline"
+],
+"ace59356cb6b2b3b834e1651f2547a03": [
+"UnityEngine.Timeline.ILayerable",
+"com.unity.timeline"
+],
+"52f9bf523de92696b2b7e705f297ea85": [
+"UnityEngine.Timeline.CustomSignalEventDrawer",
+"com.unity.timeline"
+],
+"0b0fd18cc1d824272c4b9813bd5bc102": [
+"UnityEngine.Timeline.ActivationTrack",
+"com.unity.timeline"
+],
+"1a559d152f7e6e7d4d098bd8bbda4ceb": [
+"UnityEngine.Timeline.HashUtility",
+"com.unity.timeline"
+],
+"229efcb883b06f1b3db63d748a4a6b0e": [
+"UnityEngine.Timeline.SignalEmitter",
+"com.unity.timeline"
+],
+"e2979cd3a22f7887e43dec0ea8d53253": [
+"UnityEngine.Timeline.ScheduleRuntimeClip",
+"com.unity.timeline"
+],
+"f01e095c01d9a69905842d0d6070ded9": [
+"UnityEngine.Timeline.TrackAssetExtensions",
+"com.unity.timeline"
+],
+"2df6c816ed432104a97004ece2b3c001": [
+"UnityEngine.Timeline.TimeControlPlayable",
+"com.unity.timeline"
+],
+"b9267389b9629ff4265fbf80111ec5b6": [
+"UnityEngine.Timeline.Extrapolation",
+"com.unity.timeline"
+],
+"3cafba16e61d2db9ab210b3f8beb1a99": [
+"UnityEngine.Timeline.TimelineUndo",
+"com.unity.timeline"
+],
+"b7a582fc02b78c713528fd30755d7f21": [
+"UnityEngine.Timeline.TrackColorAttribute",
+"com.unity.timeline"
+],
+"98ecf53807b8d8845579dd5f86e4a02b": [
+"UnityEngine.Timeline.ActivationMixerPlayable",
+"com.unity.timeline"
+],
+"e85dfe2b99255fff3d9792b2b824cda6": [
+"Unity.VectorGraphics.SVGStyleSheet",
+"com.unity.vectorgraphics"
+],
+"c65d82983eb93d7fc243e722ca3b06c8": [
+"Unity.VectorGraphics.VectorUtils",
+"com.unity.vectorgraphics"
+],
+"16071bc96ca3ae1f823335124421c21d": [
+"Unity.VectorGraphics.SVGImage",
+"com.unity.vectorgraphics"
+],
+"04b4f8f0f33774a7c4efecfdca46222b": [
+"Unity.VectorGraphics.VectorClip",
+"com.unity.vectorgraphics"
+],
+"3d04592f8be69ee006d43b92b65c43ea": [
+"Unity.VectorGraphics.GradientStop",
+"com.unity.vectorgraphics"
+],
+"f7ad78bd5443c79dd95974e9bf17f082": [
+"Unity.VectorGraphics.VectorImageUtils",
+"com.unity.vectorgraphics"
+],
+"9c74665052a94863f8432c3b78df57bc": [
+"Unity.VectorGraphics.Matrix2D",
+"com.unity.vectorgraphics"
+],
+"eb953e48c946ba234283275ef79a650b": [
+"Unity.VectorGraphics.SVGParser",
+"com.unity.vectorgraphics"
+],
+"fca5294932c32e847b1b02975e45d568": [
+"Unity.VectorGraphics.External.LibTessDotNet.Geom",
+"com.unity.vectorgraphics"
+],
+"ef5576f528779dd580bb2276fc048c85": [
+"Unity.VectorGraphics.External.LibTessDotNet.Tess",
+"com.unity.vectorgraphics"
+],
+"2f88dfa6afbb4c3b1458e2353f369760": [
+"Unity.VectorGraphics.External.LibTessDotNet.Mesh",
+"com.unity.vectorgraphics"
+],
+"428921e65c36573ec9b3c8fb07c76a69": [
+"Unity.VectorGraphics.External.LibTessDotNet.MeshUtils",
+"com.unity.vectorgraphics"
+],
+"a1ff199633c80605c6d6be95c2c06d01": [
+"Unity.VectorGraphics.External.ClipperLib.DoublePoint",
+"com.unity.vectorgraphics"
+],
+"2a84a6bd90c7eb594e110c389d93f072": [
+"UnityEngine.EventSystems.StandaloneInputModule",
+"com.unity.ugui"
+],
+"ad46b554853b2ba993817833c41c1986": [
+"UnityEngine.EventSystems.PointerEventData",
+"com.unity.ugui"
+],
+"8aaef3e9449775789aa490bd1fd76166": [
+"UnityEngine.EventSystems.ExecuteEvents",
+"com.unity.ugui"
+],
+"18ede0699d555f958dc2d10a14d3aa98": [
+"UnityEngine.EventSystems.BaseInput",
+"com.unity.ugui"
+],
+"95de5fdc19eb531350f290fd43b9840b": [
+"UnityEngine.EventSystems.RaycasterManager",
+"com.unity.ugui"
+],
+"3058873699f579ca51f62795332a5bf1": [
+"UnityEngine.EventSystems.BaseInputModule",
+"com.unity.ugui"
+],
+"58c4ee398627ffdfdec7be37d4eeaea2": [
+"UnityEngine.EventSystems.Physics2DRaycaster",
+"com.unity.ugui"
+],
+"0cb48fdf8b8fd17ba0d8dd490e81171b": [
+"UnityEngine.EventSystems.RaycastResult",
+"com.unity.ugui"
+],
+"ce516089e71b344673076fd5bdb99f9f": [
+"UnityEngine.EventSystems.AxisEventData",
+"com.unity.ugui"
+],
+"ba2c49586942b2c63eaf5232b4e93bc3": [
+"UnityEngine.EventSystems.EventSystem",
+"com.unity.ugui"
+],
+"c01b41a7888bc0cac2d1158b4fc9d047": [
+"UnityEngine.EventSystems.BaseEventData",
+"com.unity.ugui"
+],
+"b50e5dabcb1ccb39609935c92b6b5521": [
+"UnityEngine.EventSystems.TouchInputModule",
+"com.unity.ugui"
+],
+"40c5ef6c9fba63ce40dacff1ad0f4f70": [
+"UnityEngine.EventSystems.UIBehaviour",
+"com.unity.ugui"
+],
+"d712afdd35b5081173f7a08067937062": [
+"UnityEngine.EventSystems.PhysicsRaycaster",
+"com.unity.ugui"
+],
+"15b0d9bb91b8dda73b3c36c61ce71801": [
+"UnityEngine.EventSystems.BaseRaycaster",
+"com.unity.ugui"
+],
+"785406a457493edcfba1be0e34b2c534": [
+"UnityEngine.EventSystems.PointerInputModule",
+"com.unity.ugui"
+],
+"fd3ac82ae0b3520ff3716df82be14969": [
+"UnityEngine.EventSystems.IEventSystemHandler",
+"com.unity.ugui"
+],
+"f3f93bf78008e17093a6a1d9f65bd01c": [
+"UnityEngine.EventSystems.EventTrigger",
+"com.unity.ugui"
+],
+"4a02f8bcc1d46623c3727ffc4a6dd034": [
+"UnityEngine.UI.GraphicRegistry",
+"com.unity.ugui"
+],
+"8ffc7d923b31b10e81b381e1325ae677": [
+"UnityEngine.UI.GridLayoutGroup",
+"com.unity.ugui"
+],
+"0d675da6dd237b8a71bea508accfde22": [
+"UnityEngine.UI.SpriteState",
+"com.unity.ugui"
+],
+"ddd9b864caa40c9247d3dd144e9da4ed": [
+"UnityEngine.UI.SetPropertyUtility",
+"com.unity.ugui"
+],
+"4293fd42559bc8bb1c81715179adf536": [
+"UnityEngine.UI.LayoutElement",
+"com.unity.ugui"
+],
+"60ee46d5dd38a32615ba9bd06818cfc9": [
+"UnityEngine.UI.StencilMaterial",
+"com.unity.ugui"
+],
+"3e19c5e95a634b4e8e3485c7b3beda07": [
+"UnityEngine.UI.FontData",
+"com.unity.ugui"
+],
+"001e9106d151663336316ed35de6a57a": [
+"UnityEngine.UI.IMask",
+"com.unity.ugui"
+],
+"6742ece1c05fab02f4ac9a27637ba78c": [
+"UnityEngine.UI.LayoutGroup",
+"com.unity.ugui"
+],
+"fd15dcd248d61aa7b5dbf8f46b1ba63c": [
+"UnityEngine.UI.ToggleGroup",
+"com.unity.ugui"
+],
+"1789c8c21b2723845f9cf137f61b472e": [
+"UnityEngine.UI.LayoutUtility",
+"com.unity.ugui"
+],
+"598ca59b26b303be9752bcc87e36626e": [
+"UnityEngine.UI.Outline",
+"com.unity.ugui"
+],
+"81aefaad7ff241611e6c4f69b3d89ebc": [
+"UnityEngine.UI.IMaskable",
+"com.unity.ugui"
+],
+"c6ec520b0a5a624bf26f0eb1fba2b7f0": [
+"UnityEngine.UI.IGraphicEnabledDisabled",
+"com.unity.ugui"
+],
+"41a035a39fe1287f16a952ba68ce6929": [
+"UnityEngine.UI.IMeshModifier",
+"com.unity.ugui"
+],
+"19fbb4a32b59286cd89b624f52ff7943": [
+"UnityEngine.UI.HorizontalLayoutGroup",
+"com.unity.ugui"
+],
+"69dacd7a039c12e90cde90bbae65247a": [
+"UnityEngine.UI.RectMask2D",
+"com.unity.ugui"
+],
+"6dfc8ec6aebac6665d9781d273993f23": [
+"UnityEngine.UI.CanvasScaler",
+"com.unity.ugui"
+],
+"655f3682c558b942f21d874a3ed55337": [
+"UnityEngine.UI.IMaterialModifier",
+"com.unity.ugui"
+],
+"b396737915a223daeea441b269bea1e8": [
+"UnityEngine.UI.Scrollbar",
+"com.unity.ugui"
+],
+"1522d51f2e596a7eb84e5007260f43ac": [
+"UnityEngine.UI.Slider",
+"com.unity.ugui"
+],
+"a062d3a058f39f47c87f80168c675fa0": [
+"UnityEngine.UI.ILayoutElement",
+"com.unity.ugui"
+],
+"153af51a5348d544217b3bc1635eeae7": [
+"UnityEngine.UI.RectangularVertexClipper",
+"com.unity.ugui"
+],
+"2422d41e9bd227df7245ae324ae478c3": [
+"UnityEngine.UI.ColorBlock",
+"com.unity.ugui"
+],
+"3cf5a44414476512e00c3e7a2569a919": [
+"UnityEngine.UI.Image",
+"com.unity.ugui"
+],
+"66511f268d0bb548c6c3db4c692e9f14": [
+"UnityEngine.UI.Clipping",
+"com.unity.ugui"
+],
+"16fef849bc359b1bd6db49c734f3aefa": [
+"UnityEngine.UI.Navigation",
+"com.unity.ugui"
+],
+"abc65ce59ac92e07f2e977ee7ec9e514": [
+"UnityEngine.UI.ClipperRegistry",
+"com.unity.ugui"
+],
+"04f84fc2003509a5e7e068ec1271cc40": [
+"UnityEngine.UI.Text",
+"com.unity.ugui"
+],
+"599b67b4b6c2b256d9e168494898a2f8": [
+"UnityEngine.UI.Misc",
+"com.unity.ugui"
+],
+"5b896f1b0f94b4e244daed0592093ede": [
+"UnityEngine.UI.PositionAsUV1",
+"com.unity.ugui"
+],
+"7fdbd6ed1d07ad3f72997232fb47c3f8": [
+"UnityEngine.UI.DefaultControls",
+"com.unity.ugui"
+],
+"fa7d9dd370623840f2f729b626984e7b": [
+"UnityEngine.UI.MaskUtilities",
+"com.unity.ugui"
+],
+"86fe8f3fc59dc06ea6b45a1bbee64682": [
+"UnityEngine.UI.GraphicRaycaster",
+"com.unity.ugui"
+],
+"ebd2e29daf7173be598bde7aa4276f64": [
+"UnityEngine.UI.Toggle",
+"com.unity.ugui"
+],
+"36ebf33879e418f9050a20a0b667ef11": [
+"UnityEngine.UI.IClipper",
+"com.unity.ugui"
+],
+"80799e7ff80be9e14a961be2a3154b38": [
+"UnityEngine.UI.AspectRatioFitter",
+"com.unity.ugui"
+],
+"2384515c9ae30711e42325494eda7f99": [
+"UnityEngine.UI.MultipleDisplayUtilities",
+"com.unity.ugui"
+],
+"339a1b5fbf58430287f6f8394827f7dc": [
+"UnityEngine.UI.CanvasUpdateRegistry",
+"com.unity.ugui"
+],
+"38949104fd622b3a4e7c0138151d0867": [
+"UnityEngine.UI.MaskableGraphic",
+"com.unity.ugui"
+],
+"18d0a90695249463551c00f45766e642": [
+"UnityEngine.UI.Button",
+"com.unity.ugui"
+],
+"31e3e441723fa9c614ef27b5f552039d": [
+"UnityEngine.UI.AnimationTriggers",
+"com.unity.ugui"
+],
+"74695e9ed60b6e8fac91198cb18002f2": [
+"UnityEngine.UI.BaseMeshEffect",
+"com.unity.ugui"
+],
+"10855e1c796e234652732bb098565409": [
+"UnityEngine.UI.Selectable",
+"com.unity.ugui"
+],
+"2cbaf7f938a676aaf8fab3181b92a517": [
+"UnityEngine.UI.ScrollRect",
+"com.unity.ugui"
+],
+"8b6b0933debec03db3ed40115224c1a8": [
+"UnityEngine.UI.RawImage",
+"com.unity.ugui"
+],
+"21c7954052da7655d96bff866c2b7662": [
+"UnityEngine.UI.ContentSizeFitter",
+"com.unity.ugui"
+],
+"263dfddf700b8365d946f2304e8a0dac": [
+"UnityEngine.UI.Graphic",
+"com.unity.ugui"
+],
+"1e953cc61451ee356db3f38ec28ac3df": [
+"UnityEngine.UI.InputField",
+"com.unity.ugui"
+],
+"dde8f8201029b4e86aaf139ccff2784c": [
+"UnityEngine.UI.Dropdown",
+"com.unity.ugui"
+],
+"42a249b5d66a276231949a531ffba72d": [
+"UnityEngine.UI.LayoutRebuilder",
+"com.unity.ugui"
+],
+"4c1650bb209ee26214d4b33859da2eba": [
+"UnityEngine.UI.FontUpdateTracker",
+"com.unity.ugui"
+],
+"16c0ec1e295995dd9a2d2df2d7b6cc7e": [
+"UnityEngine.UI.Mask",
+"com.unity.ugui"
+],
+"05c016d84c14605a3609d3fbdec01c12": [
+"UnityEngine.UI.HorizontalOrVerticalLayoutGroup",
+"com.unity.ugui"
+],
+"57c958f291d8e7aa4aae665c8cf53052": [
+"UnityEngine.UI.VertexHelper",
+"com.unity.ugui"
+],
+"d5fe8fb84cc8130f8d4b20bc63663f8c": [
+"UnityEngine.UI.ReflectionMethodsCache",
+"com.unity.ugui"
+],
+"f18f2cc2fe71a3a6d76a570588d5047c": [
+"UnityEngine.UI.VerticalLayoutGroup",
+"com.unity.ugui"
+],
+"76ccfb4bfe5eebba5766d6f50f76ae37": [
+"UnityEngine.UI.Shadow",
+"com.unity.ugui"
+],
+"0602074bd065cef731428bc2a86e51a7": [
+"UnityEngine.UI.CoroutineTween.ITweenValue",
+"com.unity.ugui"
+],
+"e445825d2994b38fc046b4e6182ba87c": [
+"UnityEngine.UIElements.PanelEventHandler",
+"com.unity.ugui"
+],
+"71cfb5a4dcca644da3c7ac051e9ecf5d": [
+"UnityEngine.UIElements.PanelRaycaster",
+"com.unity.ugui"
+]
+}

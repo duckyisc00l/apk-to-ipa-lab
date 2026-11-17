@@ -1,0 +1,7 @@
+{
+  "name": "UniRx",
+  "references": [
+    "UnityEngine.UI"
+  ],
+  "allowUnsafeCode": true
+}

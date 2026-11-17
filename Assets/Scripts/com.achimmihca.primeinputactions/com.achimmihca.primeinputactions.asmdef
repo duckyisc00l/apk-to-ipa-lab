@@ -1,0 +1,8 @@
+{
+  "name": "com.achimmihca.primeinputactions",
+  "references": [
+    "Unity.InputSystem",
+    "UniRx"
+  ],
+  "allowUnsafeCode": true
+}
