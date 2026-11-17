@@ -1,0 +1,1 @@
+data=work/UltraStar-Deluxe__Play/assets/bin/Data managed=work/UltraStar-Deluxe__Play/assets/bin/Data/Managed ver=2022.2.4f1

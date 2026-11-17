@@ -1,0 +1,44 @@
+[
+ {
+  "libs": [
+   "libMonoPosixHelper.so",
+   "libmain.so",
+   "libmono-native.so",
+   "libmonobdwgc-2.0.so",
+   "libunity.so"
+  ],
+  "engine": "Unity",
+  "backend": "Mono",
+  "game_dlls": [
+   "AndroidRuntimePermissions.Runtime.dll",
+   "Common.dll",
+   "IngameDebugConsole.Runtime.dll",
+   "Plugins.dll",
+   "Scenes.dll",
+   "Serilog.dll",
+   "SongEditorScene.dll",
+   "UniRx.dll",
+   "com.achimmihca.primeinputactions.dll",
+   "com.achimmihca.protrans.dll",
+   "com.achimmihca.scenechangeanimations.dll",
+   "com.achimmihca.simplehttpserverforunity.dll",
+   "com.achimmihca.uniinject.dll",
+   "com.achimmihca.utfunknownunity.dll",
+   "playshared.dll"
+  ],
+  "dlls_where": "Managed/",
+  "unity_version": "2022.2.4f1",
+  "version_from": "assets/bin/Data/globalgamemanagers",
+  "data_unity3d": false,
+  "arches": [
+   "armeabi-v7a"
+  ],
+  "arm64": false,
+  "game": "UltraStar-Deluxe__Play",
+  "file": "UltraStarPlay-v0.9.0-Android.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/UltraStar-Deluxe__Play"
+ }
+]

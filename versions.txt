@@ -1,0 +1,4 @@
+Name: UnityPy
+Version: 1.25.4
+Name: TypeTreeGeneratorAPI
+Version: 0.0.10
