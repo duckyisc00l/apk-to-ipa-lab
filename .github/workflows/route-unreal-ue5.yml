@@ -1,0 +1,146 @@
+name: route-unreal-ue5
+# Skill step X on UE5 IoStore games (.utoc/.ucas): APK from a licensed GitHub release -> CUE4Parse
+# (ci/unreal/ue2godot, World Partition cells merged) -> Godot level -> lab screenshot -> iPhone IPA + Simulator.
+# Results (logs, screenshots, blueprint pseudo-code samples) to branch r-ue5-<slug>.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { description: "owner/repo with the APK in its releases", default: "Roman215/Weltall" }
+      asset: { description: "regex for the APK asset name", default: "Android\\.apk$" }
+      slug: { description: "short name (branch r-ue5-<slug>)", default: "weltall" }
+      level: { description: "level JSON to rebuild (blank: the one with the most meshes)", default: "" }
+      ipa: { description: "also build the IPA and run the Simulator", type: boolean, default: false }
+permissions:
+  contents: write
+concurrency:
+  group: route-unreal-ue5-${{ inputs.slug }}
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    outputs:
+      godot: ${{ steps.godot.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: APK -> IoStore files, engine version (X1)
+        run: |
+          mkdir -p out dl paks
+          url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ inputs.repo }}/releases?per_page=10" | python3 -c "
+          import json,sys,re
+          for r in json.load(sys.stdin):
+              for a in r['assets']:
+                  if re.search(sys.argv[1], a['name']): print(a['browser_download_url']); sys.exit()" '${{ inputs.asset }}')
+          lic=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ inputs.repo }}" | python3 -c "import json,sys;print((json.load(sys.stdin).get('license') or {}).get('spdx_id'))")
+          echo "# ${{ inputs.repo }} ($lic)" | tee out/rebuild.md; echo "$url" | tee -a out/rebuild.md
+          curl -sSLf -o dl/game.apk "$url"; ls -la dl/game.apk | tee -a out/rebuild.md
+          cd dl && unzip -q -o game.apk 'assets/main.obb.png' 'lib/arm64-v8a/*' 2>/dev/null; ls -la assets lib/arm64-v8a | tee -a ../out/rebuild.md
+          [ -f assets/main.obb.png ] && unzip -q -o assets/main.obb.png -d ../paks
+          cd ..; find paks -type f -printf '%s %p\n' | tee -a out/rebuild.md
+          so=$(ls dl/lib/arm64-v8a/libUnreal.so dl/lib/arm64-v8a/libUE4.so 2>/dev/null | head -1)
+          # Android's TCHAR is UTF-16, so the version string is UTF-16 in UE5 builds
+          ver=$(python3 -c "
+          import re,sys
+          d=open(sys.argv[1],'rb').read()
+          m=re.findall(rb'\+\+UE[45]\+Release-[0-9.]+', d)+[x.decode('utf-16-le').encode() for x in re.findall(rb'(?:\+\x00){2}U\x00E\x00[45]\x00\+\x00R\x00e\x00l\x00e\x00a\x00s\x00e\x00-\x00(?:[0-9.]\x00)+', d)]
+          print(sorted(set(x.decode() for x in m)))" "$so")
+          echo "engine strings: $ver" | tee -a out/rebuild.md
+          v=$(echo "$ver" | grep -oE "UE[45]\+Release-[0-9]+\.[0-9]+" | head -1 | sed -E 's/UE([45])\+Release-([0-9]+)\.([0-9]+)/GAME_UE\2_\3/')
+          echo "EGAME=${v:-GAME_UE5_LATEST}" >> $GITHUB_ENV; echo "EGame: ${v:-GAME_UE5_LATEST}" | tee -a out/rebuild.md
+          P=$(dirname "$(find paks -name '*.utoc' -o -name '*.pak' | head -1)"); echo "PAKS=$P" >> $GITHUB_ENV
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: "10.0.x" }
+      - name: Level, meshes, textures, blueprints (X3/X4, CUE4Parse)
+        run: |
+          git clone -q --depth 1 https://github.com/FabianFG/CUE4Parse c4p
+          echo "CUE4Parse $(git -C c4p log -1 --format='%h %ad' --date=short)" | tee -a out/rebuild.md
+          set -o pipefail
+          dotnet run -c Release --project ci/unreal/ue2godot -- "$PAKS" "$EGAME" export 2>&1 | grep -vE "^\s*$" | tail -300 | tee out/ue2godot.log || true
+          cat export/summary.txt >> out/rebuild.md || true
+          find export/meshes -name '*.glb' -o -name '*.gltf' | wc -l | sed 's/^/mesh files: /' | tee -a out/rebuild.md
+          find export/tex -name '*.png' | wc -l | sed 's/^/texture PNGs: /' | tee -a out/rebuild.md
+          mkdir -p out/bp; ls -S export/bp | head -8 | while read f; do head -c 20000 "export/bp/$f" > "out/bp/$f"; done; ls export/bp | head -60 > out/bp-list.txt
+      - name: Godot 4 (newest stable)
+        id: godot
+        run: |
+          tag=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/godotengine/godot-builds/releases/latest | python3 -c "import json,sys;print(json.load(sys.stdin)['tag_name'])")
+          echo "tag=$tag" >> $GITHUB_OUTPUT; echo "Godot $tag" | tee -a out/rebuild.md
+          base=https://github.com/godotengine/godot-builds/releases/download/$tag
+          curl -sSLf -o g.zip "$base/Godot_v${tag}_linux.x86_64.zip" && unzip -q g.zip && mv Godot_v*_linux.x86_64 godot && chmod +x godot
+      - name: Build the level scene, screenshot it (X4 + lab)
+        run: |
+          P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes; [ -d export/tex ] && cp -R export/tex $P/tex; echo '{"": ""}' > $P/umodel_map.json
+          ./godot --headless --path $P --import > out/import.log 2>&1 || true
+          grep -E "ERROR" out/import.log | sort | uniq -c | sort -rn | head -10 | tee -a out/rebuild.md
+          L="${{ inputs.level }}"
+          [ -n "$L" ] || L=$(for f in export/levels/*.json; do echo "$(python3 -c "import json,sys;print(len(json.load(open(sys.argv[1]))['meshes']))" "$f") $(basename "$f")"; done | sort -rn | head -1 | cut -d' ' -f2)
+          echo "level: $L" | tee -a out/rebuild.md
+          ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR|  MAT " | head -40 | tee -a out/rebuild.md
+          printf '\n[autoload]\nShot="*res://shot.gd"\n' >> $P/project.godot
+          sudo apt-get install -y -qq xvfb > /dev/null
+          SHOT=$GITHUB_WORKSPACE/out/level.png timeout 150 xvfb-run -a -s "-screen 0 1280x720x24" ./godot --path $P --rendering-driver opengl3 2>&1 | grep -E "SHOT|ERROR|LEVEL BOUNDS" | head -10 | tee -a out/rebuild.md || true
+          sed -i '/^\[autoload\]/,$d' $P/project.godot
+          cp export/levels/*.json out/ 2>/dev/null; for f in out/*.json; do head -c 30000 "$f" > "$f.t" && mv "$f.t" "$f"; done
+      - uses: actions/upload-artifact@v4
+        with: { name: godot-project, path: proj, retention-days: 3 }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: rebuild-logs, path: out }
+  ipa:
+    needs: rebuild
+    if: inputs.ipa
+    runs-on: macos-26   # Godot 4.7's iOS templates need Xcode 26
+    timeout-minutes: 75
+    env:
+      TAG: ${{ needs.rebuild.outputs.godot }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: godot-project, path: proj }
+      - name: Godot + iOS templates, export the Xcode project (X5)
+        run: |
+          mkdir -p out export; base=https://github.com/godotengine/godot-builds/releases/download/$TAG
+          curl -sSLf -o g.zip "$base/Godot_v${TAG}_macos.universal.zip" && unzip -q g.zip
+          curl -sSLf -o t.tpz "$base/Godot_v${TAG}_export_templates.tpz" && unzip -q t.tpz -d tpz
+          v=${TAG%-stable}; d="$HOME/Library/Application Support/Godot/export_templates/$v.stable"; mkdir -p "$d"; cp -R tpz/templates/. "$d/"
+          G=$PWD/Godot.app/Contents/MacOS/Godot
+          python3 -m pip install -q --break-system-packages pillow 2>/dev/null || python3 -m pip install -q pillow || true
+          python3 ci/godot/preset.py proj 4 com.duckyisc00l.${{ inputs.slug }} Rebuilt | tee -a out/ipa.md
+          "$G" --headless --path proj --import > out/import.log 2>&1 || true
+          "$G" --headless --path proj --export-release "iOS" "$PWD/export/Rebuilt.ipa" > out/export.log 2>&1; echo "export exit $?" | tee -a out/ipa.md
+          grep -E "ERROR" out/export.log | head -10 | tee -a out/ipa.md; ls export | tee -a out/ipa.md
+      - name: xcodebuild (unsigned) -> IPA
+        run: |
+          proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1); echo "xcodeproj: $proj" | tee -a out/ipa.md; [ -n "$proj" ] || exit 1
+          xcodebuild -version | head -1 | tee -a out/ipa.md
+          set +e
+          xcodebuild -project "$proj" -scheme "$(basename "$proj" .xcodeproj)" -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > out/xcodebuild.log 2>&1; xc=$?
+          grep -E "error:|\*\* BUILD" out/xcodebuild.log | head -20 | tee -a out/ipa.md; [ "$xc" = 0 ] || exit 1
+          app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1); mkdir -p Payload && cp -R "$app" Payload/ && zip -qry Rebuilt.ipa Payload && ls -la Rebuilt.ipa | tee -a out/ipa.md
+      - name: Run it in the iPhone Simulator
+        continue-on-error: true
+        run: |
+          proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1)
+          SIM_ARCHS=x86_64 ci/sim/build-and-run.sh "$proj" "$(basename "$proj" .xcodeproj)" out/sim 150
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: ipa-logs, path: out }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.slug }}-ipa
+          path: Rebuilt.ipa
+          retention-days: 3
+  publish:
+    needs: [rebuild, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: art, pattern: "*-logs" }
+      - run: |
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.png|*.cpp|*.json) cp "$f" "$d";; *) tail -300 "$f" > "$d";; esac; done
+          cd /tmp/r && git init -q -b r-ue5-${{ inputs.slug }} && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "ue5 ${{ inputs.slug }} ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-ue5-${{ inputs.slug }}
