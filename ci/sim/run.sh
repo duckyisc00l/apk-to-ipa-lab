@@ -94,6 +94,11 @@ try:
 except Exception as x: print('could not read report:',x)
 P
 done
+# the first distinct errors (with the line after each) say more than the last ones, which often just repeat
+echo "## first distinct errors in the app's output" >> "$OUT/sim.md"
+grep -n -iE 'exception|error|fail|missing|not found|could not|unable' "$OUT/sim-console.log" 2>/dev/null | grep -viE 'restoration' \
+  | awk -F: '{k=$0; sub(/^[0-9]+:/,"",k); if(!(k in s)){s[k]=1; print; if(++n>=25) exit}}' >> "$OUT/sim.md"
+echo "## last lines of the app's output" >> "$OUT/sim.md"
 tail -40 "$OUT/sim-console.log" >> "$OUT/sim.md" 2>/dev/null
 # engines that log through Apple's system log (Godot, Unity, SDL) don't show in the console file: save that log too
 timeout 120 xcrun simctl spawn "$UDID" log show --start "$(date -r "$before" '+%Y-%m-%d %H:%M:%S')" --style compact \
