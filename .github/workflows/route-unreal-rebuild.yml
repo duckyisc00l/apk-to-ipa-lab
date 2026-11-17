@@ -54,6 +54,10 @@ jobs:
           done < meshes.txt
           echo '"": ""}' >> export/umodel_map.json
           grep -iE "error|not found|unknown" out/umodel.log | sort | uniq -c | head -10 | tee -a out/rebuild.md
+          { echo "## UE Viewer files"; find export/um -type f | sed 's#export/um/##' | head -60
+            m=$(find export/um -name 'mountain_1.gltf' | head -1); echo "## $m materials/images/textures"
+            python3 -c "import json,sys;d=json.load(open(sys.argv[1]));print({k:d.get(k) for k in ('materials','images','textures','samplers')})" "$m"
+            for f in $(find export/um -name '*.mat' -o -name '*.props.txt' | head -4); do echo "## $f"; head -30 "$f"; done; } > out/um-files.txt 2>&1
       - name: Godot 4 (newest stable) and templates
         id: godot
         run: |
