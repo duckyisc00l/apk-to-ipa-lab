@@ -1,0 +1,19 @@
+# Construct 3 Flappy Bird: tap to start, then keep flapping
+shot 0-start
+tap 50% 50%
+wait 1
+shot 1-after-tap
+tap 50% 50%
+wait 0.4
+tap 50% 50%
+wait 0.4
+tap 50% 50%
+wait 0.4
+tap 50% 50%
+wait 0.4
+shot 2-flapping
+tap 50% 50%
+wait 0.4
+tap 50% 50%
+wait 3
+shot 3-later

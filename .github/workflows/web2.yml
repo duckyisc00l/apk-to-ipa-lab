@@ -18,6 +18,7 @@ jobs:
         app:
           - { repo: "yoimerdr/ludens", name: "LudensMV" }
           - { repo: "RedEdge967/Doctor-Strange", name: "DoctorStrange" }
+          - { repo: "killflex/flappybird-c3", name: "FlappyC3" }
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -56,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        name: [LudensMV, DoctorStrange]
+        name: [LudensMV, DoctorStrange, FlappyC3]
     runs-on: macos-15-intel
     timeout-minutes: 50
     env:
@@ -85,7 +86,9 @@ jobs:
         if: inputs.only == '' || inputs.only == matrix.name
         continue-on-error: true
         run: |
-          lab/ci/sim/build-and-run.sh proj/App.xcodeproj App out/sim 20 "$PWD/lab/ci/web2/steps/${{ matrix.name }}.txt"
+          steps="$PWD/lab/ci/web2/steps/${{ matrix.name }}.txt"
+          export SIM_DEVICE="iPhone SE" SIM_AXE_VERSION=$(grep -m1 -oE '^# axe: v[0-9.]+' "$steps" | cut -d' ' -f3)
+          lab/ci/sim/build-and-run.sh proj/App.xcodeproj App out/sim 20 "$steps"
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: "ipa-logs-${{ matrix.name }}", path: out }
