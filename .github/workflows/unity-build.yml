@@ -92,7 +92,7 @@ jobs:
     needs: export
     if: inputs.mode != 'compile'
     # Older Unity versions' IL2CPP crashes on macOS 26 (System.ConsolePal "Array dimensions exceeded"): use macOS 15.
-    runs-on: macos-15
+    runs-on: macos-15-intel   # Apple-chip Macs often queue for 15+ minutes; Intel ones build iPhone apps too
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
