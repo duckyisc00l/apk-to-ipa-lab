@@ -1,0 +1,15 @@
+shot 0-title
+tap 220 536
+wait 5
+shot 1-after-newgame-tap
+tap 220 478
+wait 1
+tap 220 478
+wait 4
+shot 2-map
+tap 300 478
+wait 3
+shot 3-walked
+key 41
+wait 3
+shot 4-menu

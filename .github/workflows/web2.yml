@@ -1,0 +1,103 @@
+name: web2
+# Skill steps 2-5 + S on HTML5 game engines (RPG Maker MV inside Ludens' sample APK; a GDevelop game):
+# make the iOS project, engine fixes (ci/web2/engine.py), browser test, unsigned IPA, iPhone Simulator with AXe input.
+on:
+  workflow_dispatch:
+    inputs:
+      only: { description: "one app name, or empty for all", default: "" }
+permissions:
+  contents: write
+concurrency:
+  group: web2
+  cancel-in-progress: true
+jobs:
+  make:
+    strategy:
+      fail-fast: false
+      matrix:
+        app:
+          - { repo: "yoimerdr/ludens", name: "LudensMV" }
+          - { repo: "RedEdge967/Doctor-Strange", name: "DoctorStrange" }
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and unpack
+        if: inputs.only == '' || inputs.only == matrix.app.name
+        run: |
+          echo "${{ matrix.app.repo }}" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
+          python3 ci/detect.py dl work > /dev/null; cp "$(find dl -name '*.apk' | head -1)" app.apk
+          find "$(ls -d work/*/ | head -1)" -name index.html | head -5 | tee out/index-files.txt
+      - name: Make the iOS project (steps 2-3) + engine fixes
+        if: inputs.only == '' || inputs.only == matrix.app.name
+        run: |
+          sudo apt-get install -y -qq ffmpeg > /dev/null 2>&1
+          pip install -q --break-system-packages androguard pillow playwright 2>&1 | tail -1
+          python3 ci/web/make.py app.apk "$(ls -d work/*/ | head -1)" proj "com.duckyisc00l.$(echo ${{ matrix.app.name }} | tr A-Z a-z)" | tee out/make.md
+          python3 -I ci/web2/engine.py proj | tee out/engine.md
+          cp proj/App/www/index.html out/www-index.html; cp proj/App/Info.plist out/
+          (cd proj/App/www && find . -type f | sed 's#^\./##' | awk -F/ '{print $1"/"$2}' | sort | uniq -c | sort -rn | head -40) > out/www-tree.txt
+      - name: Test in a phone-sized browser (step 5)
+        if: inputs.only == '' || inputs.only == matrix.app.name
+        continue-on-error: true
+        run: |
+          python3 -m playwright install --with-deps chromium > /dev/null 2>&1
+          python3 ci/web/test.py proj out/test | tail -60 > out/test.txt
+      - uses: actions/upload-artifact@v4
+        if: inputs.only == '' || inputs.only == matrix.app.name
+        with: { name: "proj-${{ matrix.app.name }}", path: proj }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "make-logs-${{ matrix.app.name }}", path: out }
+  ipa:
+    needs: make
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [LudensMV, DoctorStrange]
+    runs-on: macos-15-intel
+    timeout-minutes: 50
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        if: inputs.only == '' || inputs.only == matrix.name
+        with: { path: lab, sparse-checkout: ci }
+      - uses: actions/download-artifact@v4
+        if: inputs.only == '' || inputs.only == matrix.name
+        with: { name: "proj-${{ matrix.name }}", path: proj }
+      - name: Build unsigned IPA
+        if: inputs.only == '' || inputs.only == matrix.name
+        run: |
+          mkdir -p out; brew install xcodegen > /dev/null 2>&1; cd proj && xcodegen generate > ../out/xcodegen.log 2>&1
+          set +e
+          TERM=dumb xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > ../out/xcodebuild.log 2>&1
+          xc=$?; echo "xcodebuild exit $xc" | tee ../out/ipa.md
+          grep -E "error:|\*\* BUILD" ../out/xcodebuild.log | head -30 | tee -a ../out/ipa.md
+          [ "$xc" = 0 ] || exit 1
+          mkdir -p Payload && cp -R dd/Build/Products/Release-iphoneos/App.app Payload/ && zip -qry "../${{ matrix.name }}.ipa" Payload
+          cd .. && ls -la *.ipa | tee -a out/ipa.md
+          gh release create "${{ matrix.name }}-web2-${{ github.run_number }}" "${{ matrix.name }}.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test: HTML5 engine on the web route)." || true
+      - name: Run it in the iPhone Simulator with input steps
+        if: inputs.only == '' || inputs.only == matrix.name
+        continue-on-error: true
+        run: |
+          lab/ci/sim/build-and-run.sh proj/App.xcodeproj App out/sim 20 "$PWD/lab/ci/web2/steps/${{ matrix.name }}.txt"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: "ipa-logs-${{ matrix.name }}", path: out }
+  publish:
+    needs: [make, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: art, pattern: "*-logs-*" }
+      - env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.log) tail -200 "$f" > "$d";; *) cp "$f" "$d";; esac; done
+          cd /tmp/r && git init -q -b r-web2 && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "web2 ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-web2

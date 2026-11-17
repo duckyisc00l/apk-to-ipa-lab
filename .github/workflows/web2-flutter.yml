@@ -1,0 +1,64 @@
+name: web2-flutter
+# Step R on a Flutter APK treated as closed source (Ricochlime): pull assets + names out of the APK,
+# then build the SwiftUI rewrite in ci/web2/flutter/ios (when present) and run it in the simulator.
+on:
+  workflow_dispatch:
+    inputs:
+      analyse: { default: "1" }
+      build: { default: "0" }
+permissions:
+  contents: write
+concurrency:
+  group: web2-flutter
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  analyse:
+    if: inputs.analyse == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: APK -> assets, strings, blutter
+        run: |
+          echo adil192/ricochlime > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
+          bash ci/web2/flutter/analyse.sh "$(find dl -name '*.apk' | head -1)" out
+      - name: Real app's own store screenshots (for comparison only)
+        run: |
+          git clone -q --depth 1 https://github.com/adil192/ricochlime src
+          mkdir -p out/real; find src -ipath '*phoneScreenshots*' -name '*.png' | head -6 | while read f; do cp "$f" "out/real/$(basename "$f")"; done; ls out/real
+      - name: Publish to r-web2-flutter
+        if: always()
+        run: |
+          cd out && git init -q -b r-web2-flutter && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "flutter analysis ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-web2-flutter
+  build:
+    if: inputs.build == '1'
+    runs-on: macos-15-intel
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: APK assets -> App/AppAssets, build the SwiftUI rewrite (unsigned IPA)
+        run: |
+          mkdir -p out; echo adil192/ricochlime > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
+          R=ci/web2/flutter/ios; mkdir -p x && unzip -qo "$(find dl -name '*.apk' | head -1)" 'assets/flutter_assets/*' -d x
+          mkdir -p $R/App/AppAssets && cp -R x/assets/flutter_assets/assets/. $R/App/AppAssets/
+          cd $R; brew install xcodegen > /dev/null 2>&1 || true; xcodegen generate > /dev/null
+          set +e
+          xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > $GITHUB_WORKSPACE/out/xcodebuild.log 2>&1; xc=$?
+          grep -E "error:|\*\* BUILD" $GITHUB_WORKSPACE/out/xcodebuild.log | head -30 | tee $GITHUB_WORKSPACE/out/build.md; [ "$xc" = 0 ] || exit 1
+          mkdir -p Payload && cp -R build/Build/Products/Release-iphoneos/App.app Payload/ && zip -qry $GITHUB_WORKSPACE/Ricochlime-rewrite.ipa Payload
+          ls -la $GITHUB_WORKSPACE/Ricochlime-rewrite.ipa | tee -a $GITHUB_WORKSPACE/out/build.md
+          gh release create "rewrite-flutter-${{ github.run_number }}" $GITHUB_WORKSPACE/Ricochlime-rewrite.ipa -R ${{ github.repository }} --prerelease \
+            --notes "Step R test: SwiftUI rewrite of Ricochlime (AGPL-3.0) from its Flutter APK's assets and recovered names. Unsigned." || true
+      - name: iPhone Simulator
+        continue-on-error: true
+        run: ci/sim/build-and-run.sh ci/web2/flutter/ios/App.xcodeproj App out/sim 12 "$PWD/ci/web2/flutter/sim-steps.txt"
+      - name: Publish to r-web2-flutter-build
+        if: always()
+        run: |
+          cd out && for f in *.log; do [ -f "$f" ] && tail -200 "$f" > "$f.t" && mv "$f.t" "$f"; done
+          git init -q -b r-web2-flutter-build && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "flutter rewrite build ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-web2-flutter-build

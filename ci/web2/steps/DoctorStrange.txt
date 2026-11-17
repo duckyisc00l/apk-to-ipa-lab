@@ -1,0 +1,15 @@
+shot 0-start
+tap 220 478
+wait 4
+shot 1-tap-center
+tap 220 600
+wait 4
+shot 2-tap-low
+tap 220 478
+wait 1
+tap 220 478
+wait 4
+shot 3-play
+relaunch
+wait 12
+shot 4-relaunched
