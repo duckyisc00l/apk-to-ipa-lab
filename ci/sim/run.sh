@@ -29,13 +29,15 @@ sleep 15   # let the home screen finish starting, or the first launch is refused
 xcrun simctl install "$UDID" "$APP" || { echo "INSTALL FAILED" | tee -a "$OUT/sim.md"; exit 1; }
 before=$(date +%s)
 for try in 1 2 3; do
-  if xcrun simctl launch --terminate-running-process --stdout="$OUT/sim-console.log" --stderr="$OUT/sim-console.log" "$UDID" "$BID" >> "$OUT/sim.md" 2>&1; then
+  if [ "$try" = 1 ]; then args=(--terminate-running-process --stdout="$OUT/sim-console.log" --stderr="$OUT/sim-console.log")
+  else args=(--terminate-running-process); fi   # later tries: plain launch, in case the redirect is what's refused
+  if timeout 90 xcrun simctl launch "${args[@]}" "$UDID" "$BID" >> "$OUT/sim.md" 2>&1; then
     echo "launched (try $try)" | tee -a "$OUT/sim.md"; break
   fi
   echo "launch refused (try $try)" | tee -a "$OUT/sim.md"; sleep 10
   if [ "$try" = 3 ]; then   # why: SpringBoard's own log lines about this app
     echo "## simulator log about the launch" >> "$OUT/sim.md"
-    xcrun simctl spawn "$UDID" log show --last 3m --style compact \
+    timeout 120 xcrun simctl spawn "$UDID" log show --last 3m --style compact \
       --predicate "eventMessage CONTAINS[c] '$BID' OR eventMessage CONTAINS[c] '$EXE'" 2>/dev/null | grep -viE "^Timestamp" | tail -40 >> "$OUT/sim.md"
   fi
 done
@@ -44,16 +46,17 @@ for t in 5 $WAIT; do
   xcrun simctl io "$UDID" screenshot "$OUT/sim-${t}s.png" > /dev/null 2>&1
 done
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
-  if ! command -v idb > /dev/null; then
-    brew tap facebook/fb > /dev/null 2>&1; brew install idb-companion > /dev/null 2>&1
-    python3 -m pip install -q --break-system-packages fb-idb 2>/dev/null || python3 -m pip install -q fb-idb
+  if ! command -v idb > /dev/null; then   # at most 8 minutes; without it the steps are skipped
+    timeout 420 bash -c 'brew tap facebook/fb > /dev/null 2>&1; brew install idb-companion > /dev/null 2>&1'
+    timeout 60 bash -c 'python3 -m pip install -q --break-system-packages fb-idb 2>/dev/null || python3 -m pip install -q fb-idb'
   fi
-  idb connect "$UDID" > /dev/null 2>&1
+  command -v idb > /dev/null || echo "idb not available: input steps skipped" >> "$OUT/sim.md"
+  timeout 60 idb connect "$UDID" > /dev/null 2>&1
   echo "## input steps" >> "$OUT/sim.md"
   while read -r cmd a b c d; do
     case "$cmd" in
-      tap) idb ui tap --udid "$UDID" "$a" "$b" && echo "tap $a $b" >> "$OUT/sim.md";;
-      swipe) idb ui swipe --udid "$UDID" "$a" "$b" "$c" "$d" --duration 0.2 && echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md";;
+      tap) timeout 30 idb ui tap --udid "$UDID" "$a" "$b" && echo "tap $a $b" >> "$OUT/sim.md";;
+      swipe) timeout 30 idb ui swipe --udid "$UDID" "$a" "$b" "$c" "$d" --duration 0.2 && echo "swipe $a,$b -> $c,$d" >> "$OUT/sim.md";;
       wait) sleep "$a";;
       shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
     esac
