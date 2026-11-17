@@ -1,0 +1,166 @@
+name: route-rn-hermes
+# Lab copy of route-rn for Hermes (bytecode) bundles: the host runs ci/rn/hermes-prelude.py's prelude hook.
+# React Native with no source: a host iPhone app on the SAME React Native version (and the same JS
+# engine: Hermes or not) runs the APK's own index.android.bundle, with images moved to iOS's layout.
+# Works when the bundle only needs core modules; third-party native modules are listed for adding.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { description: "owner/repo with an APK release", default: "codeAbinash/english-dictionary-rn" }
+      tag: { description: "release tag (blank = latest with an APK)", default: "" }
+permissions:
+  contents: write
+concurrency:
+  group: route-rn-hermes
+  cancel-in-progress: true
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    outputs:
+      rn_version: ${{ steps.i.outputs.rn_version }}
+      kind: ${{ steps.i.outputs.kind }}
+      app_name: ${{ steps.i.outputs.app_name }}
+      package: ${{ steps.i.outputs.package }}
+      label: ${{ steps.i.outputs.label }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: i
+        run: |
+          mkdir -p dl out
+          tag="${{ inputs.tag }}"
+          if [ -z "$tag" ]; then tag=$(gh api "repos/${{ inputs.repo }}/releases?per_page=20" --jq '[.[]|select(any(.assets[];.name|test("\\.apk$")))][0].tag_name'); fi
+          asset=$(gh api "repos/${{ inputs.repo }}/releases/tags/$tag" --jq '[.assets[]|select(.name|test("\\.apk$"))]|sort_by(.size)|.[0].name')
+          echo "${{ inputs.repo }} $tag $asset" | tee out/picked.txt
+          gh release download "$tag" -R "${{ inputs.repo }}" -p "$asset" -D dl
+          python3 -m venv /tmp/v && /tmp/v/bin/pip install -q androguard   # a venv: python -I ignores the user site-packages
+          python3 -I ci/unpack.py "dl/$asset" work > out/unpack.json
+          /tmp/v/bin/python -I ci/rn/inspect.py work/all rn | tee out/rn.md; cp rn/rn.json out/
+          cp work/all/$(python3 -c "import json;print(json.load(open('rn/rn.json'))['bundle'])") rn/main.jsbundle
+          cat rn/env >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with: { name: rn, path: rn }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: inspect-logs, path: out }
+  ipa:
+    needs: inspect
+    runs-on: macos-15-intel   # Intel Macs: often free when the Apple-chip ones are busy
+    timeout-minutes: 90
+    env:
+      V: ${{ needs.inspect.outputs.rn_version }}
+      KIND: ${{ needs.inspect.outputs.kind }}
+      APPNAME: ${{ needs.inspect.outputs.app_name }}
+      PKG: ${{ needs.inspect.outputs.package }}
+      LABEL: ${{ needs.inspect.outputs.label }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: rn, path: rn }
+      - name: Node version for this React Native
+        run: |
+          minor=$(echo "$V" | cut -d. -f2); node=20; [ "$minor" -lt 73 ] && node=18   # 18 is the floor: today's helper packages need it
+          echo "NODE_MAJOR=$node" >> $GITHUB_ENV; mkdir -p out; echo "RN $V ($KIND), app '$APPNAME', node $node" | tee out/ipa.md
+      - uses: actions/setup-node@v4
+        with: { node-version: "${{ env.NODE_MAJOR }}" }
+      - name: Create a host app on the same React Native version
+        run: |
+          set -o pipefail
+          minor=$(echo "$V" | cut -d. -f2)
+          # newest stable patch of the same minor (the native bridge is stable within a minor; an rc bundle runs on it)
+          V=$(npm view "react-native@~0.$minor.0" version | tail -1 | sed -E "s/.*'([0-9.]+)'.*/\1/; s/^react-native@[^ ]* //"); echo "host React Native $V" | tee -a out/ipa.md
+          if [ "$minor" -ge 75 ]; then npx -y @react-native-community/cli@latest init Host --version "$V" --skip-install --skip-git-init --pm npm 2>&1 | tail -15 | tee -a out/ipa.md
+          else
+            # up to 0.74 the app template ships inside the react-native package itself, with pinned versions:
+            # use it instead of "init", which pulls the newest (incompatible) helper packages
+            npm pack -q "react-native@$V" && tar xzf react-native-$V.tgz && cp -R package/template Host
+            [ -f Host/_gitignore ] && mv Host/_gitignore Host/.gitignore
+            # rename HelloWorld -> Host in file contents, then in file and folder names (deepest first)
+            grep -rlI HelloWorld Host | xargs sed -i '' 's/HelloWorld/Host/g'
+            find Host -depth -name '*HelloWorld*' | while read f; do mv "$f" "$(dirname "$f")/$(basename "$f" | sed 's/HelloWorld/Host/g')"; done
+            ls Host Host/ios | tee -a out/ipa.md
+          fi
+          cd Host && npm install --legacy-peer-deps 2>&1 | tail -5 | tee -a ../out/ipa.md
+      - name: Add the APK's native add-ons (same era), stub the removed ones
+        run: |
+          cd Host
+          python3 -I ../ci/rn/modules.py ../rn/rn.json . | tee ../out/addons.txt
+          inst=$(grep '^INSTALL=' ../out/addons.txt | cut -d= -f2-)
+          [ -n "$inst" ] && npm install --legacy-peer-deps $inst 2>&1 | tail -3 | tee -a ../out/ipa.md
+          stubs=$(grep '^STUB=' ../out/addons.txt | cut -d= -f2- | python3 -c "import json,sys;print(json.dumps(sys.stdin.read().split()))")
+          # every method name the bundle calls on a native wrapper ("this.native.X", "NativeModules.Y.X"): stubs get all of them
+          methods=$(python3 -c "import re,json,sys;t=open(sys.argv[1],errors='ignore').read();print(json.dumps(sorted(set(re.findall(r'\.native\.([A-Za-z_]\w*)\(',t))|set(re.findall(r'NativeModules\.\w+\.([A-Za-z_]\w*)\(',t)))))" ../rn/main.jsbundle)
+          echo "stub methods: $(echo "$methods" | python3 -c 'import json,sys;print(len(json.load(sys.stdin)))')" | tee -a ../out/ipa.md
+          python3 -c "import sys;s=open(sys.argv[1]).read().replace('__STUBS__',sys.argv[2]).replace('__METHODS__',sys.argv[3]);open(sys.argv[4],'w').write(s)" ../ci/rn/stub-prelude.js "$stubs" "$methods" ../rn/prelude.js
+      - name: Same JS engine as the APK, then pods
+        run: |
+          cd Host/ios
+          if [ "$KIND" = hermes ]; then H=true; else H=false; fi
+          # RN 0.64-0.69: Podfile option; 0.70+: hermes is default on, turned off with USE_HERMES=0
+          sed -i '' -E "s/:hermes_enabled => [^,)]+/:hermes_enabled => $H/" Podfile || true
+          sed -i '' -E 's/^([[:space:]]*use_flipper!)/# \1/; s/^([[:space:]]*flipper_post_install)/# \1/' Podfile   # debug-only tool; old Flipper pods break on new Xcode
+          [ "$H" = false ] && export USE_HERMES=0
+          # RN <0.66 builds glog for 32-bit armv7, which Xcode 14+ can't target: switch it to arm64
+          g=../node_modules/react-native/scripts/ios-configure-glog.sh; [ -f "$g" ] && sed -i '' 's/armv7/arm64/g' "$g" && echo "glog script patched to arm64" | tee -a ../../out/ipa.md
+          gem list cocoapods | head -1 | tee -a ../../out/ipa.md
+          (bundle install 2>/dev/null && bundle exec pod install || pod install) 2>&1 | tail -15 | tee -a ../../out/ipa.md
+      - name: Launch the APK's own app name
+        run: |
+          cd Host/ios
+          f=$(grep -rlE 'moduleName|"Host"' --include=AppDelegate.* . | head -1); echo "AppDelegate: $f" | tee -a ../../out/ipa.md
+          [ -n "$APPNAME" ] && sed -i '' -E "s/(moduleName[^\"]*\")Host(\")/\1$APPNAME\2/; s/(@\")Host(\")/\1$APPNAME\2/" "$f"
+          grep -n "$APPNAME" "$f" | head -3 | tee -a ../../out/ipa.md
+          if [ "$KIND" = hermes ]; then
+            # bytecode can't have JS put in front: the host runs prelude.js itself, before the bundle
+            python3 -I ../../ci/rn/hermes-prelude.py "$f" | tee -a ../../out/ipa.md
+            # the host's Hermes must read the APK's bytecode version
+            hc=$(find Pods -name hermesc -type f | head -1); echo "host hermesc: $hc $([ -n "$hc" ] && "$hc" -version 2>&1 | grep -i 'bytecode')" | tee -a ../../out/ipa.md
+            echo "APK bytecode: $(python3 -c "import json;print(json.load(open('../../rn/rn.json')).get('hermes_bytecode_version'))")" | tee -a ../../out/ipa.md
+          fi
+      - name: Build (unsigned, no bundling of the host's own JS)
+        run: |
+          # old RN on new Xcode: Yoga's "hadOverflow() |" fails -Werror (RN <0.66); old Boost uses std::unary_function
+          y=Host/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp; [ -f "$y" ] && sed -i '' -E 's/(hadOverflow\(\)) \|$/\1 ||/' "$y"
+          [ -f "$y" ] && cp "$y" Host/ios/Pods/Yoga/yoga/Yoga.cpp 2>/dev/null || true
+          cd Host/ios; ws=$(ls -d *.xcworkspace | head -1)
+          set +e
+          # add the define to every clang call without replacing any target's own settings
+          export CCC_OVERRIDE_OPTIONS='^-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1'
+          SKIP_BUNDLING=1 xcodebuild -workspace "$ws" -scheme Host -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' \
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            build > ../../out/xcodebuild.log 2>&1
+          xc=$?; echo "xcodebuild exit $xc" | tee -a ../../out/ipa.md
+          grep -E "error:|\*\* BUILD|Undefined symbols" ../../out/xcodebuild.log | sort -u | head -40 | tee -a ../../out/ipa.md
+          [ "$xc" = 0 ]
+      - name: Put the APK's bundle and images into the app, make the IPA
+        run: |
+          app=$(find Host/ios/build/Build/Products -maxdepth 2 -name '*.app' | head -1)
+          BID="com.duckyisc00l.$(echo "${PKG:-$APPNAME}" | tr -cd 'A-Za-z0-9.' | awk -F. '{print $NF}')"; ci/rn/fill-app.sh "$app" rn Host "$KIND" "$BID" "${LABEL:-$APPNAME}" | tee -a out/ipa.md
+          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry RN.ipa Payload && ls -la RN.ipa | tee -a out/ipa.md
+          gh release create "rn-hermes-${{ github.run_number }}" RN.ipa -R ${{ github.repository }} --prerelease --notes "React Native host route test (unsigned)" || true
+        env: { GH_TOKEN: "${{ github.token }}" }
+      - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
+        continue-on-error: true
+        run: |
+          export CCC_OVERRIDE_OPTIONS='^-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1' SKIP_BUNDLING=1
+          BID="com.duckyisc00l.$(echo "${PKG:-$APPNAME}" | tr -cd 'A-Za-z0-9.' | awk -F. '{print $NF}')"
+          export SIM_PRE_RUN="RN_TRACE=1 ci/rn/fill-app.sh \"\$APP\" rn Host \"$KIND\" \"$BID\" \"${LABEL:-$APPNAME}\""
+          ci/sim/build-and-run.sh "$(ls -d Host/ios/*.xcworkspace | head -1)" Host out/sim 40
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: ipa-logs, path: out }
+  publish:
+    needs: [inspect, ipa]
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: art, pattern: "*-logs" }
+      - run: |
+          mkdir -p /tmp/r; for f in $(find art -type f); do d=/tmp/r/$(echo "${f#art/}" | tr / -); case "$f" in *.png|*.jpg|*.ips) cp "$f" "$d";; *) tail -200 "$f" > "$d";; esac; done
+          cd /tmp/r && git init -q -b r-rn-hermes && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "rn ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rn-hermes

@@ -29,7 +29,37 @@ info = {"bundle": os.path.relpath(bundle, src) if bundle else None, "size": len(
         "kind": "hermes" if hermes else "plain JS" if data else None}
 if hermes:
     info["hermes_bytecode_version"] = struct.unpack("<I", data[8:12])[0]
+
+
+def hbc_strings(d):
+    """Hermes bytecode string table (layout of bytecode versions 74-96): every string the bundle uses."""
+    f = struct.unpack_from("<20I", d, 32)  # fileLength, globalCodeIndex, functionCount, stringKindCount, ...
+    func_count, kind_count, ident_count, str_count, over_count, storage = f[2], f[3], f[4], f[5], f[6], f[7]
+    pos = 128
+    def skip(n):
+        nonlocal pos
+        a = pos; pos = (pos + n + 3) & ~3; return a
+    skip(func_count * 16); skip(kind_count * 4); skip(ident_count * 4)
+    small = skip(str_count * 4); over = skip(over_count * 8); store = skip(storage)
+    out = []
+    for i in range(str_count):
+        v = struct.unpack_from("<I", d, small + 4 * i)[0]
+        utf16, off, ln = v & 1, (v >> 1) & 0x7FFFFF, v >> 24
+        if ln == 255:
+            off, ln = struct.unpack_from("<II", d, over + 8 * off)
+        raw = d[store + off: store + off + (ln * 2 if utf16 else ln)]
+        out.append(raw.decode("utf-16-le" if utf16 else "latin1", "replace"))
+    return out
+
+
 text = data.decode("utf-8", "replace") if not hermes else data.decode("latin1")
+if hermes:  # one quoted string per line, so the plain-JS patterns below ("RNC...") still match
+    try:
+        strs = hbc_strings(data)
+        info["hermes_strings"] = len(strs)
+        text = "\n".join('"' + x.replace('"', "'") + '"' for x in strs)
+    except Exception as e:
+        info["hermes_strings_error"] = str(e)[:200]
 
 # RN version: Libraries/Core/ReactNativeVersion.js -> {major:0,minor:N,patch:N,prerelease:...}
 m = re.search(r"major\s*:\s*0\s*,\s*minor\s*:\s*(\d+)\s*,\s*patch\s*:\s*(\d+)", text)
@@ -87,6 +117,22 @@ if "rn_version" not in info:  # Java side: com.facebook.react.modules.systeminfo
 libs = sorted({f for _, _, fs in os.walk(os.path.join(src, "lib")) for f in fs})
 m = re.search(r"registerComponent\(\s*[\"']([^\"']+)", text)
 info["app_name"] = m.group(1) if m else None   # the host must launch this exact name
+if not info["app_name"]:  # Hermes: the name isn't next to registerComponent; MainActivity.getMainComponentName() returns it
+    try:
+        from androguard.core.dex import DEX
+        for f in sorted(os.listdir(src)):
+            if not re.match(r"classes\d*\.dex$", f) or b"getMainComponentName" not in open(os.path.join(src, f), "rb").read():
+                continue
+            for c in DEX(open(os.path.join(src, f), "rb").read()).get_classes():
+                for meth in c.get_methods():
+                    if meth.get_name() == "getMainComponentName" and not info["app_name"]:
+                        for ins in meth.get_instructions():
+                            if ins.get_name().startswith("const-string"):
+                                info["app_name"] = ins.get_output().split(",", 1)[1].strip().strip("'\"")
+                                info["app_name_from"] = c.get_name()
+                                break
+    except Exception as e:
+        info["app_name_error"] = str(e)[:200]
 info["new_architecture"] = any(l in libs for l in ("libfabricjni.so", "libreact_newarchdefaults.so"))
 info["engine_lib"] = "hermes" if any("hermes" in l for l in libs) else "jsc" if "libjsc.so" in libs else None
 
@@ -155,6 +201,13 @@ for loc, scales, name, typ in regs:
             copied += 1
         else:
             missing += 1
+if hermes and not regs:  # registrations are bytecode: copy every drawable to where the Android bundle looks
+    for d, _, fs in os.walk(os.path.join(src, "res")):
+        dens = re.match(r"drawable-([a-z]+dpi)", os.path.basename(d))
+        for f in fs:
+            if dens and re.search(r"\.(png|jpe?g|gif|webp)$", f) and not re.match(r"(abc_|btn_|notification|ic_launcher|common_|googleg_|exo_)", f):
+                dd = os.path.join(out, "app", f"drawable-{dens.group(1)}"); os.makedirs(dd, exist_ok=True)
+                shutil.copy(os.path.join(d, f), os.path.join(dd, f)); copied += 1
 info["images"] = {"registrations": len(regs), "copied": copied, "missing": missing}
 # debug samples (kept short): where the version and image registrations sit in this bundle
 info["debug_version_ctx"] = [text[max(0, m.start() - 120):m.end() + 60] for m in re.finditer(r"prerelease", text)][:3]
