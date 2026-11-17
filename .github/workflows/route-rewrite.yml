@@ -79,7 +79,7 @@ jobs:
           cd ci/rewrite/${{ inputs.name }}
           xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath simbuild CODE_SIGNING_ALLOWED=NO build > ../../../out/sim-build.log 2>&1 || { grep -E "error:" ../../../out/sim-build.log | head; exit 1; }
-          cd ../../..; ci/sim/run.sh "ci/rewrite/${{ inputs.name }}/simbuild/Build/Products/Release-iphonesimulator/App.app" out/sim 25
+          cd ../../..; ci/sim/run.sh "ci/rewrite/${{ inputs.name }}/simbuild/Build/Products/Release-iphonesimulator/App.app" out/sim 25 "ci/rewrite/${{ inputs.name }}/sim-steps.txt"
       - name: Publish build log
         if: always()
         run: |

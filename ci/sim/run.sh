@@ -20,10 +20,20 @@ for rt in reversed(rts):
     if ph: print(ph[-1]['udid']); break")
 NAME=$(xcrun simctl list devices | grep "$UDID" | head -1 | sed 's/ (.*//' | xargs)
 { echo "app: $BID ($EXE)"; echo "simulator: $NAME $UDID"; file "$APP/$EXE" | sed 's/.*: //'; } | tee "$OUT/sim.md"
+# The simulator refuses to open a completely unsigned app ("denied by service delegate (SBMainWorkspace)"):
+# give it a free local ad-hoc signature (frameworks first, then the app). This changes nothing on a phone build.
+find "$APP" -depth \( -name '*.framework' -o -name '*.dylib' -o -name '*.appex' \) -exec codesign --force --sign - --timestamp=none {} \; 2>/dev/null
+codesign --force --sign - --timestamp=none "$APP" 2>&1 | tail -1
 xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null
+sleep 15   # let the home screen finish starting, or the first launch is refused too
 xcrun simctl install "$UDID" "$APP" || { echo "INSTALL FAILED" | tee -a "$OUT/sim.md"; exit 1; }
 before=$(date +%s)
-xcrun simctl launch --terminate-running-process --stdout="$OUT/sim-console.log" --stderr="$OUT/sim-console.log" "$UDID" "$BID" 2>&1 | tee -a "$OUT/sim.md"
+for try in 1 2 3; do
+  if xcrun simctl launch --terminate-running-process --stdout="$OUT/sim-console.log" --stderr="$OUT/sim-console.log" "$UDID" "$BID" >> "$OUT/sim.md" 2>&1; then
+    echo "launched (try $try)" | tee -a "$OUT/sim.md"; break
+  fi
+  echo "launch refused (try $try)" | tee -a "$OUT/sim.md"; sleep 10
+done
 for t in 5 $WAIT; do
   sleep $(( t == 5 ? 5 : WAIT - 5 ))
   xcrun simctl io "$UDID" screenshot "$OUT/sim-${t}s.png" > /dev/null 2>&1
