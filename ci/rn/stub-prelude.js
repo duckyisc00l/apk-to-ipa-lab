@@ -6,7 +6,7 @@
   var STUBS = __STUBS__;
   var METHODS = __METHODS__;   // method names the app calls on native modules (found in the bundle)
   // same families as SKIP in modules.py: a library may ask for a name the scan never saw ("RNFB" + "AnalyticsModule")
-  var STUB_RE = /^(Flipper|RNFB|Bugsnag|RNSentry|Sentry|RNGoogle|GoogleSignin|RNAdMob|RNFirebase|Crashlytics|Amplitude|Mixpanel|AppCenter|CodePush|RNBranch|Adjust|AppsFlyer|FBSDK|RNIap|RNPlayInstall)/i;
+  var STUB_RE = /^(Flipper|RNFB|Bugsnag|RNSentry|Sentry|RNGoogle|GoogleSignin|RNAdMob|RNFirebase|Crashlytics|Amplitude|Mixpanel|AppCenter|CodePush|RNBranch|Adjust|AppsFlyer|FBSDK|RNIap|RNPlayInstall|NavigationBarColor|ImmersiveMode)/i;   // last two: Android-only bar colors, nothing to do on iPhone
   // a few removed modules must still describe themselves, or their JS side refuses to start the app.
   // Firebase: one local "[DEFAULT]" app with dummy settings, so firebase.app() works; nothing is ever sent.
   var CONSTANTS = {
