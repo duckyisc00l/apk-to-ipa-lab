@@ -67,6 +67,7 @@ jobs:
           python3 -I ci/cocos/bindings.py "$SO" engine apk/assets/src | tee -a out/cocos.md
       - name: Make the iOS project from the engine's Lua template with the APK's scripts and resources
         run: |
+          export LC_ALL=C   # BSD sed stops on engine files that aren't UTF-8 ("illegal byte sequence")
           cp -R engine/templates/lua-template-default proj && mv engine proj/frameworks/cocos2d-x
           rm -rf proj/src proj/res && cp -R apk/assets/src apk/assets/res proj/ && { [ -f apk/assets/config.json ] && cp apk/assets/config.json proj/ || true; }
           if [ "$NATIVE" = game ]; then
@@ -108,10 +109,11 @@ jobs:
           gh release create "$NAME-cocos-${{ github.run_number }}" "$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the Cocos2d-x Lua route)."
       - name: Publish to branch r-cocos
         if: always()
+        shell: bash {0}
         run: |
           mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp -R out/sim /tmp/r/ 2>/dev/null; tail -300 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
           grep -E "error:|warning: .*(deprecated|unavailable)" out/sim/sim-build.log 2>/dev/null | sort -u | head -80 > /tmp/r/sim-build-errors.log; tail -100 out/sim/sim-build.log > /tmp/r/sim-build-tail.log 2>/dev/null
           rm -f /tmp/r/sim/sim-build.log
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout -q --orphan r-cocos && git rm -rfq . && rm -rf ci apk proj gamesrc dd Payload out *.apk *.ipa
-          cp -r /tmp/r/. . && git add -A && git commit -qm "cocos ${{ github.run_number }}" && git push -qf origin r-cocos
+          cp -r /tmp/r/. . && git add -A && git commit -qm "cocos ${{ github.run_number }}" && git push -qf origin r-cocos || exit 1
