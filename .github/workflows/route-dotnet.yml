@@ -29,7 +29,8 @@ jobs:
       - name: Find an open-source .NET app with an APK
         id: scout
         run: |
-          pip install -q lz4 dnfile androguard
+          python3 -m venv /tmp/v && /tmp/v/bin/pip install -q lz4 dnfile androguard && echo /tmp/v/bin >> $GITHUB_PATH
+          export PATH=/tmp/v/bin:$PATH
           if [ -n "${{ inputs.repo }}" ]; then echo "${{ inputs.repo }}" > /tmp/c.txt; else cp ci/dotnet/candidates.txt /tmp/c.txt; fi
           python3 ci/dotnet/scout.py /tmp/c.txt dl
           read repo tag apk kind < out/picked.txt
