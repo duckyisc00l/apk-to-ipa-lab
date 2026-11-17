@@ -169,7 +169,7 @@ P
 done
 # engines that log through Apple's system log (Godot, Unity, SDL) don't show in the console file: save that log too
 timeout 120 xcrun simctl spawn "$UDID" log show --start "$(date -r "$before" '+%Y-%m-%d %H:%M:%S')" --style compact \
-  --predicate "process == '$EXE'" 2>/dev/null | grep -viE '^Timestamp|restoration' | tail -300 > "$OUT/sim-applog.log"
+  --predicate "process == '$EXE'" 2>/dev/null | grep -viE '^Timestamp|restoration' | head -20000 > "$OUT/sim-applog.log"   # from the start: the first errors matter most
 # the first distinct errors say more than the last ones, which often just repeat; the same error with
 # another object name, number or address counts once, with how many times it came
 echo "## first distinct errors (app output, then system log)" >> "$OUT/sim.md"
