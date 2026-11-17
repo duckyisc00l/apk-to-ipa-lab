@@ -29,7 +29,14 @@ else:
             found.append((d.count(os.sep), d))
     if not found:
         sys.exit("no index.html anywhere in assets/: not a web app")
-    web = sorted(found)[0][1]
+    # Several index.html (a launcher page next to the game, e.g. Ludens' boot/ and www/): prefer the folder with an
+    # engine's own files, then the shallowest, then the one with the most files.
+    eng = ("js/rpg_core.js", "js/rmmz_core.js", "c3runtime.js", "data.js", "gd.js", "scripts/c3runtime.js")
+    def rank(t):
+        depth, d = t
+        n = sum(len(f) for _, _, f in os.walk(d))
+        return (not any(os.path.exists(os.path.join(d, e)) for e in eng), depth, -n)
+    web = sorted(found, key=rank)[0][1]
 report.append(f"kind: {kind}; web folder: {os.path.relpath(web, unpacked)}")
 
 # --- the APK's own facts

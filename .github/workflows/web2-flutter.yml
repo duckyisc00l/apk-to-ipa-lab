@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir -p out; echo adil192/ricochlime > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
           R=ci/web2/flutter/ios; mkdir -p x && unzip -qo "$(find dl -name '*.apk' | head -1)" 'assets/flutter_assets/*' -d x
-          mkdir -p $R/App/AppAssets && cp -R x/assets/flutter_assets/assets/. $R/App/AppAssets/
+          mkdir -p $R/App/AppAssets && cp -R x/assets/flutter_assets/assets/. $R/App/AppAssets/ && cp x/assets/flutter_assets/packages/nes_ui/google_fonts/*.ttf $R/App/AppAssets/
           cd $R; brew install xcodegen > /dev/null 2>&1 || true; xcodegen generate > /dev/null
           set +e
           xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build \

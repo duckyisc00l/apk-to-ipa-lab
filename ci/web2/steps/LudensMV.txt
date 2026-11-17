@@ -1,15 +1,30 @@
+# iPhone SE landscape 667x375; MV 816x624 canvas scaled 0.601, x offset 88
 shot 0-title
-tap 220 536
-wait 5
-shot 1-after-newgame-tap
-tap 220 478
-wait 1
-tap 220 478
+tap 333 252
 wait 4
-shot 2-map
-tap 300 478
+shot 1-after-newgame
+tap 420 180
 wait 3
-shot 3-walked
+shot 2-walked
+tap 250 200
+wait 3
+shot 3-walked2
 key escape
-wait 3
+wait 2
 shot 4-menu
+tap 160 151
+wait 1
+tap 160 151
+wait 2
+shot 5-save-screen
+tap 333 95
+wait 2
+shot 6-saved
+relaunch
+wait 12
+shot 7-title-after-restart
+tap 333 274
+wait 2
+tap 333 95
+wait 4
+shot 8-loaded

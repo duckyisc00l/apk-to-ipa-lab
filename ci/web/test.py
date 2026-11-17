@@ -6,7 +6,7 @@ uses (taken from BridgeScript.swift) and a fake native side that keeps files in 
 Writes screenshots and a report: page errors, failed requests, bridge calls, and whether
 a save survives a reload.
 """
-import json, os, re, sys
+import json, os, re, sys, urllib.parse
 from playwright.sync_api import sync_playwright
 
 proj, out = sys.argv[1:3]
@@ -43,6 +43,7 @@ report = {"kind": kind, "page_errors": [], "console_errors": [], "missing": [], 
 
 def handle(route):
     path = route.request.url.split("app.test/", 1)[1].split("?")[0].split("#")[0] or "index.html"
+    path = urllib.parse.unquote(path)  # file names with spaces (common in engine exports) come percent-encoded
     if kind == "cordova" and path.endswith("cordova.js"):
         return route.fulfill(status=200, body=common + "\n" + cordova, content_type="text/javascript")
     if kind == "cordova" and path.endswith("cordova_plugins.js"):

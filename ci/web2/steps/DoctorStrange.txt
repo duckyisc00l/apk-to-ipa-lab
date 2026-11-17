@@ -1,15 +1,16 @@
 shot 0-start
-tap 220 478
+tap 75% 75%
+wait 3
+shot 1-tap-a
+tap 50% 75%
+wait 3
+shot 2-tap-b
+tap 75% 50%
+wait 3
+shot 3-tap-c
+tap 50% 50%
 wait 4
-shot 1-tap-center
-tap 220 600
-wait 4
-shot 2-tap-low
-tap 220 478
-wait 1
-tap 220 478
-wait 4
-shot 3-play
+shot 4-tap-d
 relaunch
-wait 12
-shot 4-relaunched
+wait 10
+shot 5-relaunched

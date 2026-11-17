@@ -89,7 +89,17 @@ elif engine == "GDevelop":
     w = re.search(r'"windowWidth"\s*:\s*(\d+)', gd); h = re.search(r'"windowHeight"\s*:\s*(\d+)', gd)
     o = re.search(r'"orientation"\s*:\s*"(\w+)"', gd)
     out.append(f"game size: {w.group(1) if w else '?'}x{h.group(1) if h else '?'}; orientation in project: {o.group(1) if o else '?'}")
-    out.append("Extensions folder: " + ", ".join(sorted(os.listdir(os.path.join(www, "Extensions"))) if os.path.isdir(os.path.join(www, "Extensions")) else "none"))
+    plist = os.path.join(proj, "App", "Info.plist")
+    if o and o.group(1) in ("landscape", "portrait"):
+        # GDevelop locks orientation at runtime (screen-orientation plugin), so the Android manifest often says nothing
+        t = open(plist).read()
+        want = ("<string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string>"
+                if o.group(1) == "landscape" else "<string>UIInterfaceOrientationPortrait</string>")
+        t2 = re.sub(r"(<key>UISupportedInterfaceOrientations[^<]*</key>\s*<array>).*?(</array>)", lambda m: m.group(1) + want + m.group(2), t, flags=re.S)
+        if t2 != t:
+            open(plist, "w").write(t2); out.append(f"FIX: orientation set to the GDevelop project's '{o.group(1)}' (manifest had none)")
+    ext_dir = os.path.join(www, "Extensions")
+    out.append("Extensions folder: " + (", ".join(sorted(os.listdir(ext_dir))) if os.path.isdir(ext_dir) else "none"))
 
 # native calls (step 2 grep) outside libraries
 js = [f for f in files if f.endswith(".js")]
