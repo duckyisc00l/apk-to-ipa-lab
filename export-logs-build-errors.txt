@@ -1,0 +1,139 @@
+24:[Licensing::Module] Error: Access token is unavailable; failed to update
+25-[Licensing::Client] Successfully updated license
+26-[Licensing::Client] Successfully resolved entitlement details
+27-[Licensing::Module] Serial number assigned to: "F4-JH8B-XEFD-84YN-M5Q4-XXXX"
+153:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+154:ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+155:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+156:ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+157:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+158:ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+159-ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+160:FMOD failed to initialize the output device.: "Error initializing output device. " (60)
+161- #0 GetStacktrace(int)
+162- #1 DebugStringToFile(DebugStringToFileData const&)
+163- #2 AudioManager::ValidateFMODResult(FMOD_RESULT, int, char const*, char const*) const
+222:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+223:ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+224:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+225:ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+226:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+227:ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+228-ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+229:FMOD failed to initialize the output device.: "Error initializing output device. " (60)
+230- #0 GetStacktrace(int)
+231- #1 DebugStringToFile(DebugStringToFileData const&)
+232- #2 AudioManager::ValidateFMODResult(FMOD_RESULT, int, char const*, char const*) const
+3141:[  92/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/WindowsGames/Include/C/Baselib_ErrorState.inl.h
+3142-[  93/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/WindowsGames/Include/C/Baselib_DynamicLibrary.inl.h
+3143:[  94/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Android/Include/C/Baselib_ErrorState.inl.h
+3144-[  95/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/bdwgc/extra/msvc_dbg.c
+3145-[  96/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Windows/Include/C/Baselib_FileIO.inl.h
+3146:[  97/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Windows/Include/C/Baselib_ErrorState.inl.h
+3147-[  98/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Windows/Include/C/Baselib_DynamicLibrary.inl.h
+3148-[  99/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/bdwgc/extra/pcr_interface.c
+3149-[ 100/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/WebGL/Include/C/Baselib_ThreadLocalStorage.inl.h
+3151:[ 102/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/WebGL/Include/C/Baselib_ErrorState.inl.h
+3152-[ 103/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/WebGL/Include/C/Baselib_DynamicLibrary.inl.h
+3153-[ 104/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/WindowsGames/Include/BaselibPlatformSpecificEnvironment.h
+3154-[ 105/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Windows/Include/C/Baselib_ThreadLocalStorage.inl.h
+3157:[ 108/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/VisionOS/Include/C/Baselib_ErrorState.inl.h
+3158-[ 109/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Windows/Include/BaselibPlatformSpecificEnvironment.h
+3159-[ 110/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/bdwgc/extra/Mac_files/dataend.c
+3160-[ 111/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/bdwgc/extra/MacOS.c
+3182:[ 133/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/IOS/Include/C/Baselib_ErrorState.inl.h
+3183-[ 134/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/IOS/Include/C/Baselib_DynamicLibrary.inl.h
+3184-[ 135/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/IOS/Include/BaselibPlatformSpecificEnvironment.h
+3185-[ 136/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/EmbeddedLinux/Include/C/Baselib_ThreadLocalStorage.inl.h
+3187:[ 138/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/EmbeddedLinux/Include/C/Baselib_ErrorState.inl.h
+3188-[ 139/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/VisionOS/Include/C/Baselib_DynamicLibrary.inl.h
+3189-[ 140/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/EmbeddedLinux/Include/BaselibPlatformSpecificEnvironment.h
+3190-[ 141/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Android/Include/C/Baselib_ThreadLocalStorage.inl.h
+3202:[ 153/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/UniversalWindows/Include/C/Baselib_ErrorState.inl.h
+3203-[ 154/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/UniversalWindows/Include/C/Baselib_DynamicLibrary.inl.h
+3204-[ 155/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/bdwgc/dbg_mlc.c
+3205-[ 156/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Tvos/Include/C/Baselib_ThreadLocalStorage.inl.h
+3207:[ 158/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Tvos/Include/C/Baselib_ErrorState.inl.h
+3208-[ 159/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Linux/Include/C/Baselib_DynamicLibrary.inl.h
+3209-[ 160/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Tvos/Include/BaselibPlatformSpecificEnvironment.h
+3210-[ 161/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/OSX/Include/C/Baselib_ThreadLocalStorage.inl.h
+3212:[ 163/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/OSX/Include/C/Baselib_ErrorState.inl.h
+3213-[ 164/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/OSX/Include/C/Baselib_DynamicLibrary.inl.h
+3214-[ 165/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/OSX/Include/BaselibPlatformSpecificEnvironment.h
+3215-[ 166/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Linux/Include/C/Baselib_ThreadLocalStorage.inl.h
+3217:[ 168/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Linux/Include/C/Baselib_ErrorState.inl.h
+3218-[ 169/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Tvos/Include/C/Baselib_DynamicLibrary.inl.h
+3219-[ 170/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/build/deploy_x86_64/Unity.IL2CPP.Bee.BuildLogic.UniversalWindows.dll
+3220-[ 171/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/build/deploy_x86_64/Unity.IL2CPP.Bee.BuildLogic.MacOSX.pdb
+3302:[ 253/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Error.cpp
+3303-[ 254/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Win32/WindowsRuntime.cpp
+3304-[ 255/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Win32/WindowsHelpers.h
+3305-[ 256/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Win32/TimeZone.cpp
+3442:[ 393/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/ExceptionSupportStack.h
+3443:[ 394/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Exception.h
+3444:[ 395/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Exception.cpp
+3445-[ 396/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Environment.h
+3446-[ 397/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Environment.cpp
+3447-[ 398/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/atomic.c
+3542:[ 493/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Error-c-api.h
+3543-[ 494/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Environment.cpp
+3544-[ 495/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Environment-c-api.h
+3545-[ 496/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Directory.cpp
+4057:[1008/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Include/C/Baselib_ErrorCode.h
+4058:[1009/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Include/C/Baselib_ErrorState.h
+4059-[1010/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Include/C/Baselib_Socket.h
+4060-[1011/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Include/C/Baselib_SourceLocation.h
+4061-[1012/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Include/C/Baselib_HighCapacitySemaphore.h
+4410:[1361/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/Error.cpp
+4411:[1362/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/Error.h
+4412-[1363/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/FastReaderReaderWriterLockImpl.h
+4413-[1364/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/File.cpp
+4414-[1365/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/build/deploy_x86_64/System.Security.Cryptography.OpenSsl.dll
+4548:[1499/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Error.cpp
+4549-[1500/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/CrashHelpers.cpp
+4550-[1501/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/CrashHelpers.h
+4551-[1502/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Cryptography.h
+4619:[1570/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Error.h
+4620:[1571/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/ErrorCodes.h
+4621-[1572/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Event.cpp
+4622-[1573/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Generic/WindowsRuntime.cpp
+4623-[1574/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/FastReaderReaderWriterLock.cpp
+4668:[1619/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Exception.h
+4669-[1620/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System.Reflection/Assembly.cpp
+4670-[1621/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System.IO/BrokeredFileSystem.h
+4671-[1622/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System.IO/DriveInfo.cpp
+4800:[1751/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-error-internals.h
+4801-[1752/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-hwcap-web.c
+4802:[1753/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-error.c
+4803-[1754/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-filemap.c
+4804-[1755/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System.Runtime.InteropServices/GCHandle.cpp
+4805:[1756/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-error.h
+4806-[1757/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-lazy-init.h
+4807-[1758/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/seq-points-data.h
+4808-[1759/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-hwcap-vars.h
+4983:[1934/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Exception.cpp
+4984-[1935/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/COMEntryPoints.cpp
+4985-[1936/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/COMEntryPoints.h
+4986-[1937/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Enum.cpp
+4999:[1950/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Exception.h
+5000-[1951/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Field.cpp
+5001-[1952/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/ClassLibraryPAL/brotli/enc/bit_cost.c
+5002-[1953/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/GenericClass.cpp
+5545:[2496/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32error-win32.c
+5546-[2497/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/sgen/sgen-array-list.c
+5547-[2498/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/profiler.c
+5548-[2499/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32handle-namespace.c
+5553:[2504/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32error-unix.c
+5554-[2505/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32file-unix.c
+5555:[2506/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32error.h
+5556-[2507/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32file-win32.c
+5557-[2508/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/mono-ptr-array.h
+5558-[2509/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32file.h
+5575:[2526/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Exception.cpp
+5576-[2527/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System.Runtime.InteropServices/RuntimeInformation.h
+5577-[2528/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/sre.c
+5578-[2529/2567  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/threads.c
+6031: 1.0 kb	 0.0% Assets/AudioClip/ui_error_1.ogg
+6032- 1.0 kb	 0.0% Assets/GameObject/Drone.prefab
+6033- 1.0 kb	 0.0% Assets/Material/Drone.mat
+6034- 0.9 kb	 0.0% Assets/Material/remote red button.mat

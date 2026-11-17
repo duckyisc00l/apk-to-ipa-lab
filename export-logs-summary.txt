@@ -1,0 +1,3 @@
+unity exit 0
+C# errors: 0
+CI BUILD RESULT: Succeeded errors=0
