@@ -58,7 +58,15 @@ for obj in env.objects:
             s["selectors"] = len(tt.get("m_ComplexSelectors", []))
         samples.setdefault(cls, []).append(s)
     except Exception as x:
-        samples.setdefault(cls, []).append({"error": traceback.format_exc()[-600:]})
+        samples.setdefault(cls, []).append({"error": traceback.format_exc()[-300:], "byte_size": obj.byte_size})
+# the generated layouts of the two failing types, to see which field breaks reading
+rep["nodes"] = {}
+for c in ("VisualTreeAsset", "StyleSheet"):
+    try:
+        bn = gen.get_nodes("UnityEngine.UIElementsModule.dll", "UnityEngine.UIElements." + c)
+        rep["nodes"][c] = [f"{n.m_Level} {n.m_Type} {n.m_Name} {n.m_MetaFlag:#x}" for n in bn][:140]
+    except Exception as x:
+        rep["nodes"][c] = repr(x)
 rep["counts"] = kinds
 rep["types"] = dict(sorted(types.items(), key=lambda kv: -kv[1])[:15])
 rep["mb_classes"] = dict(sorted(hist.items(), key=lambda kv: -kv[1])[:40])
