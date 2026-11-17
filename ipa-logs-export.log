@@ -1,0 +1,286 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mexport[22m | Started Exporting for iOS (Project Files Only) (2 steps)[39m[0m
+[   0% ] [90m[1mexport[22m | Making .pck[39m[0m
+[   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bomb.png-e3835e15a0414ced890bb275452d23e3.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/bomb.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lavender.png-db49348fa043a4f71b7637574d349f63.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/lavender.png.import[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lily.png-a5f8acd76afa7fada26ba93bdb3d4334.ctex[39m[0m
+[   4% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/lily.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/magic.png-e13638b50661e0dc03abc4595ee1e9b9.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/magic.png.import[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/rose.png-0046c8f039515e448854291c5daff2ed.ctex[39m[0m
+[   7% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/rose.png.import[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sakura.png-3d6e566f969f51922dc81c2ce685c2e6.ctex[39m[0m
+[   9% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/sakura.png.import[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sunflower.png-c919e7df9f7462630a81307df33f4b35.ctex[39m[0m
+[  10% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/sunflower.png.import[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/tulip.png-4fac7af39a2cb065240045c6b6aabb04.ctex[39m[0m
+[  12% ] [90m[1msavepack[22m | Storing File: res://assets/flowers/tulip.png.import[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/ZCOOLKuaiLe-Regular.ttf-514cd62e906f01188e726a933201eba0.fontdata[39m[0m
+[  13% ] [90m[1msavepack[22m | Storing File: res://assets/fonts/ZCOOLKuaiLe-Regular.ttf.import[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/boom.wav-ce80ab5026d9de2164088103d22abe14.sample[39m[0m
+[  15% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/boom.wav.import[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/break.wav-db0dc963ca187eba995ad2567e0eabb2.sample[39m[0m
+[  17% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/break.wav.import[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/hint.wav-f8cab5dd0ee194a494e5d1aad590a675.sample[39m[0m
+[  18% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/hint.wav.import[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/invalid.wav-3fc21df44ed44313d1fec1e3f81af0f3.sample[39m[0m
+[  20% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/invalid.wav.import[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/line.wav-15bac4b076a4b23f5c2655ebbb0bc374.sample[39m[0m
+[  21% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/line.wav.import[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/lose.wav-498caab42185a7fce058b433d8d4152a.sample[39m[0m
+[  23% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/lose.wav.import[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/magic.wav-f9b7d8625b1724197af5ebc5fa5e82a2.sample[39m[0m
+[  25% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/magic.wav.import[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pop_a.wav-28ea38443605f8566877bfff2ed0180a.sample[39m[0m
+[  26% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/pop_a.wav.import[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pop_b.wav-53304c56d706b3adb027e338ce17b636.sample[39m[0m
+[  28% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/pop_b.wav.import[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/pop_c.wav-36003f82352669211a5c345fdcb55f17.sample[39m[0m
+[  30% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/pop_c.wav.import[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/select.wav-5c513b8003f93446e91f1963597d7cd6.sample[39m[0m
+[  31% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/select.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/shuffle.wav-459e4f3c12d3e0aa56fe9c34de72d8ff.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/shuffle.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/special.wav-253deb96f63cdcb79bcbc91834555283.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/special.wav.import[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/star.wav-3f7569a7453c45194537cce14d943b61.sample[39m[0m
+[  35% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/star.wav.import[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/swap.wav-ed40179e4bb58d7760a346fea3d8c8b8.sample[39m[0m
+[  37% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/swap.wav.import[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/win.wav-6ce9b27206398df6844005a9f67bf690.sample[39m[0m
+[  38% ] [90m[1msavepack[22m | Storing File: res://assets/sounds/win.wav.import[39m[0m
+[  40% ] [90m[1msavepack[22m | Storing File: res://assets/video/bg_butterfly.ogv[39m[0m
+[  41% ] [90m[1msavepack[22m | Storing File: res://assets/video/bg_cloud.ogv[39m[0m
+[  43% ] [90m[1msavepack[22m | Storing File: res://assets/video/bg_garden.ogv[39m[0m
+[  45% ] [90m[1msavepack[22m | Storing File: res://assets/video/bg_moon.ogv[39m[0m
+[  46% ] [90m[1msavepack[22m | Storing File: res://assets/video/bg_sakura.ogv[39m[0m
+[  48% ] [90m[1msavepack[22m | Storing File: res://assets/video/bg_starry.ogv[39m[0m
+[  50% ] [90m[1msavepack[22m | Storing File: res://assets/video/promo.ogv[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/badge.png-d06d2226f047b9398d9b9740c1b6bd5f.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | Storing File: res://assets/badge.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/bg.png-23a59c2e9cba2223a50fa3fe41b70b25.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | Storing File: res://assets/bg.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon_bg_432.png-b4bc8e407ded96733fc94c44a0140363.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | Storing File: res://assets/icon_bg_432.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon_fg_432.png-a6bab74e9ca141312353e0d9a46964c4.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | Storing File: res://assets/icon_fg_432.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/panel.png-98abd75f17820992d19abbe4c1e458c7.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | Storing File: res://assets/panel.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petal.png-4a429481ed3951f1b2d17f0789121ffb.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | Storing File: res://assets/petal.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petal_btn_disabled.png-1864bcd794bc8f01eebd0ae1f55efcb5.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | Storing File: res://assets/petal_btn_disabled.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petal_btn_normal.png-1ea8eeac10836c3e0349e94c64ec6202.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | Storing File: res://assets/petal_btn_normal.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/petal_btn_pressed.png-9bffda7ac3510e11e3d7e5e8d490e2af.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | Storing File: res://assets/petal_btn_pressed.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/snow.png-929e917300e1d7cf8ce88dfddb03947d.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://assets/snow.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sound_off.png-288fee444421b3238a0f5bd7fc51dee9.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | Storing File: res://assets/sound_off.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/sound_on.png-4079e13f64b1aadf4d09d2d34a616adb.ctex[39m[0m
+[  68% ] [90m[1msavepack[22m | Storing File: res://assets/sound_on.png.import[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/star_gold.png-0796c44d52d95ee8aef67221cc3599b3.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | Storing File: res://assets/star_gold.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/star_gray.png-28a7a0c4431f066ec0637c9112cd570f.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | Storing File: res://assets/star_gray.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/vine.png-ee5f3e8468ee3d98d63b770b97064e0f.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | Storing File: res://assets/vine.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-aa3f5c97579d5c748215bbb2e364ddeb-intro.scn[39m[0m
+[  76% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-0c939b19205267a005b2e63ce5e60e4d-level_select.scn[39m[0m
+[  78% ] [90m[1msavepack[22m | Storing File: res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | Storing File: res://scripts/board.gdc[39m[0m
+[  81% ] [90m[1msavepack[22m | Storing File: res://scripts/board_view3d.gdc[39m[0m
+[  82% ] [90m[1msavepack[22m | Storing File: res://scripts/game_state.gdc[39m[0m
+[  84% ] [90m[1msavepack[22m | Storing File: res://scripts/intro.gdc[39m[0m
+[  86% ] [90m[1msavepack[22m | Storing File: res://scripts/level_select.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | Storing File: res://scripts/match_logic.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | Storing File: res://scripts/sfx.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | Storing File: res://scripts/tile.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | Storing File: res://shaders/board_warp.gdshader[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/_ios_icon_1024.png-f8b0e58d11e96f7854f53ea1143ea404.ctex[39m[0m
+[  95% ] [90m[1msavepack[22m | Storing File: res://_ios_icon_1024.png.import[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://icon.png.import[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scenes/intro.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scenes/level_select.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scenes/main.tscn.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/board.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/board_view3d.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/game_state.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/intro.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/level_select.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/main.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/match_logic.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/sfx.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://scripts/tile.gd.remap[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/global_script_class_cache.cfg[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://icon.png[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://.godot/uid_cache.bin[39m[0m
+[  97% ] [90m[1msavepack[22m | Storing File: res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+[  33% ] [90m[1mexport[22m | Extracting and configuring Xcode project[39m[0m
+Static framework: libgodot.ios.release.xcframework
+Unzipping...
+READ: data.pck
+READ: godot_apple_embedded/
+READ: godot_apple_embedded/export_options.plist
+ADDING: FlowerMatch3/export_options.plist size: 475
+READ: godot_apple_embedded/godot_apple_embedded-Info.plist
+ADDING: FlowerMatch3/FlowerMatch3-Info.plist size: 2206
+READ: godot_apple_embedded/godot_apple_embedded.entitlements
+ADDING: FlowerMatch3/FlowerMatch3.entitlements size: 190
+READ: godot_apple_embedded/Launch Screen.storyboard
+WARNING: Property not found: application/boot_splash/fullsize
+     at: get_setting_with_override_and_custom_features (core/config/project_settings.cpp:409)
+ADDING: FlowerMatch3/Launch Screen.storyboard size: 3025
+READ: godot_apple_embedded/dummy.cpp
+ADDING: FlowerMatch3/dummy.cpp size: 2493
+READ: godot_apple_embedded/dummy.h
+ADDING: FlowerMatch3/dummy.h size: 2285
+READ: godot_apple_embedded/dummy.swift
+ADDING: FlowerMatch3/dummy.swift size: 2252
+READ: godot_apple_embedded/dylibs/
+READ: godot_apple_embedded/dylibs/empty
+ADDING: FlowerMatch3/dylibs/empty size: 42
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3/dylibs
+READ: godot_apple_embedded/en.lproj/
+READ: godot_apple_embedded/en.lproj/InfoPlist.strings
+ADDING: FlowerMatch3/en.lproj/InfoPlist.strings size: 44
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3/en.lproj
+READ: godot_apple_embedded/Images.xcassets/
+READ: godot_apple_embedded/Images.xcassets/SplashImage.imageset/
+READ: godot_apple_embedded/Images.xcassets/SplashImage.imageset/Contents.json
+ADDING: FlowerMatch3/Images.xcassets/SplashImage.imageset/Contents.json size: 343
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3/Images.xcassets/SplashImage.imageset
+READ: godot_apple_embedded/Images.xcassets/SplashImage.imageset/splash@2x.png
+ADDING: FlowerMatch3/Images.xcassets/SplashImage.imageset/splash@2x.png size: 14701
+READ: godot_apple_embedded/Images.xcassets/SplashImage.imageset/splash@3x.png
+ADDING: FlowerMatch3/Images.xcassets/SplashImage.imageset/splash@3x.png size: 14701
+READ: godot_apple_embedded.xcodeproj/
+READ: godot_apple_embedded.xcodeproj/project.pbxproj
+ADDING: FlowerMatch3.xcodeproj/project.pbxproj size: 16229
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3.xcodeproj
+READ: godot_apple_embedded.xcodeproj/project.xcworkspace/
+READ: godot_apple_embedded.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ADDING: FlowerMatch3.xcodeproj/project.xcworkspace/contents.xcworkspacedata size: 158
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3.xcodeproj/project.xcworkspace
+READ: godot_apple_embedded.xcodeproj/xcshareddata/
+READ: godot_apple_embedded.xcodeproj/xcshareddata/xcschemes/
+READ: godot_apple_embedded.xcodeproj/xcshareddata/xcschemes/godot_apple_embedded.xcscheme
+ADDING: FlowerMatch3.xcodeproj/xcshareddata/xcschemes/FlowerMatch3.xcscheme size: 3492
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3.xcodeproj/xcshareddata/xcschemes
+READ: libgodot_camera.ios.debug.xcframework/
+READ: libgodot_camera.ios.debug.xcframework/ios-arm64_x86_64-simulator/
+READ: libgodot_camera.ios.debug.xcframework/ios-arm64_x86_64-simulator/empty
+READ: libgodot_camera.ios.debug.xcframework/ios-arm64_x86_64-simulator/libgodot_camera.a
+READ: libgodot_camera.ios.debug.xcframework/Info.plist
+READ: libgodot_camera.ios.debug.xcframework/ios-arm64/
+READ: libgodot_camera.ios.debug.xcframework/ios-arm64/empty
+READ: libgodot_camera.ios.debug.xcframework/ios-arm64/libgodot_camera.a
+READ: libgodot_camera.ios.release.xcframework/
+READ: libgodot_camera.ios.release.xcframework/Info.plist
+READ: libgodot_camera.ios.release.xcframework/ios-arm64/
+READ: libgodot_camera.ios.release.xcframework/ios-arm64/empty
+READ: libgodot_camera.ios.release.xcframework/ios-arm64/libgodot_camera.a
+READ: libgodot_camera.ios.release.xcframework/ios-arm64_x86_64-simulator/
+READ: libgodot_camera.ios.release.xcframework/ios-arm64_x86_64-simulator/empty
+READ: libgodot_camera.ios.release.xcframework/ios-arm64_x86_64-simulator/libgodot_camera.a
+READ: libgodot_camera.visionos.debug.xcframework/
+READ: libgodot_camera.visionos.debug.xcframework/Info.plist
+ADDING: libgodot_camera.visionos.debug.xcframework/Info.plist size: 1011
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/libgodot_camera.visionos.debug.xcframework
+READ: libgodot_camera.visionos.debug.xcframework/xros-arm64-simulator/
+READ: libgodot_camera.visionos.debug.xcframework/xros-arm64-simulator/empty
+ADDING: libgodot_camera.visionos.debug.xcframework/xros-arm64-simulator/empty size: 42
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/libgodot_camera.visionos.debug.xcframework/xros-arm64-simulator
+READ: libgodot_camera.visionos.debug.xcframework/xros-arm64/
+READ: libgodot_camera.visionos.debug.xcframework/xros-arm64/empty
+ADDING: libgodot_camera.visionos.debug.xcframework/xros-arm64/empty size: 42
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/libgodot_camera.visionos.debug.xcframework/xros-arm64
+READ: libgodot_camera.visionos.release.xcframework/
+READ: libgodot_camera.visionos.release.xcframework/xros-arm64-simulator/
+READ: libgodot_camera.visionos.release.xcframework/xros-arm64-simulator/empty
+ADDING: libgodot_camera.visionos.release.xcframework/xros-arm64-simulator/empty size: 42
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/libgodot_camera.visionos.release.xcframework/xros-arm64-simulator
+READ: libgodot_camera.visionos.release.xcframework/xros-arm64/
+READ: libgodot_camera.visionos.release.xcframework/xros-arm64/empty
+ADDING: libgodot_camera.visionos.release.xcframework/xros-arm64/empty size: 42
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/libgodot_camera.visionos.release.xcframework/xros-arm64
+READ: libgodot_camera.visionos.release.xcframework/Info.plist
+ADDING: libgodot_camera.visionos.release.xcframework/Info.plist size: 1011
+READ: libgodot.ios.debug.xcframework/
+READ: libgodot.ios.debug.xcframework/Info.plist
+READ: libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/
+READ: libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/empty
+READ: libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/libgodot.a
+READ: libgodot.ios.debug.xcframework/ios-arm64/
+READ: libgodot.ios.debug.xcframework/ios-arm64/empty
+READ: libgodot.ios.debug.xcframework/ios-arm64/libgodot.a
+READ: libgodot.ios.release.xcframework/
+READ: libgodot.ios.release.xcframework/Info.plist
+ADDING: FlowerMatch3.xcframework/Info.plist size: 1028
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3.xcframework
+READ: libgodot.ios.release.xcframework/ios-arm64/
+READ: libgodot.ios.release.xcframework/ios-arm64/empty
+READ: libgodot.ios.release.xcframework/ios-arm64/libgodot.a
+ADDING: FlowerMatch3.xcframework/ios-arm64/libgodot.a size: 188887256
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3.xcframework/ios-arm64
+READ: libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/
+READ: libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/empty
+READ: libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/libgodot.a
+ADDING: FlowerMatch3.xcframework/ios-arm64_x86_64-simulator/libgodot.a size: 174700784
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/FlowerMatch3.xcframework/ios-arm64_x86_64-simulator
+READ: MoltenVK.xcframework/
+READ: MoltenVK.xcframework/ios-arm64_x86_64-simulator/
+READ: MoltenVK.xcframework/ios-arm64_x86_64-simulator/libMoltenVK.a
+ADDING: MoltenVK.xcframework/ios-arm64_x86_64-simulator/libMoltenVK.a size: 13712744
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/MoltenVK.xcframework/ios-arm64_x86_64-simulator
+READ: MoltenVK.xcframework/Info.plist
+ADDING: MoltenVK.xcframework/Info.plist size: 3177
+READ: MoltenVK.xcframework/ios-arm64/
+READ: MoltenVK.xcframework/ios-arm64/libMoltenVK.a
+ADDING: MoltenVK.xcframework/ios-arm64/libMoltenVK.a size: 6917632
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/MoltenVK.xcframework/ios-arm64
+READ: PrivacyInfo.xcprivacy
+ADDING: PrivacyInfo.xcprivacy size: 990
+WARNING: Export Icons: Icon (icons/settings_58x58): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (58, 58).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/settings_87x87): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (87, 87).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/notification_40x40): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (40, 40).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/notification_60x60): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (60, 60).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/spotlight_80x80): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (80, 80).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/iphone_120x120): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (120, 120).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/iphone_180x180): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (180, 180).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/ipad_167x167): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (167, 167).
+     at: add_message (editor/export/editor_export_platform.h:267)
+WARNING: Export Icons: Icon (icons/ipad_152x152): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (152, 152).
+     at: add_message (editor/export/editor_export_platform.h:267)
+Exporting launch screen storyboard
+Exporting additional assets
+[  66% ] [90m[1mexport[22m | Code-signing dylibs[39m[0m
+[92m[ DONE ][39m [1mexport[22m
+[0m
+WARNING: Project export for preset "iOS" completed with warnings.
+     at: _fs_changed (editor/editor_node.cpp:1422)

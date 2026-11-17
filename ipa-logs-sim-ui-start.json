@@ -1,0 +1,32 @@
+[
+  {
+    "title" : null,
+    "help" : null,
+    "traits" : [
+
+    ],
+    "content_required" : false,
+    "role" : "AXApplication",
+    "AXLabel" : null,
+    "custom_actions" : [
+
+    ],
+    "type" : "Application",
+    "enabled" : true,
+    "frame" : {
+      "y" : 0,
+      "x" : 0,
+      "height" : 0,
+      "width" : 0
+    },
+    "AXValue" : null,
+    "AXFrame" : "{{0, 0}, {0, 0}}",
+    "role_description" : "application",
+    "children" : [
+
+    ],
+    "pid" : 15849,
+    "AXUniqueId" : null,
+    "subrole" : null
+  }
+]

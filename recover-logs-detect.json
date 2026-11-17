@@ -1,0 +1,36 @@
+[
+ {
+  "libs": [
+   "libc++_shared.so",
+   "libgodot_android.so"
+  ],
+  "engine": "Godot",
+  "godot_version": "4.7.2.stable",
+  "variant": "Godot 4.7.2.stable",
+  "engine_id": "godot",
+  "tags": [
+   "godot",
+   "godot4"
+  ],
+  "evidence": [
+   "libgodot_android.so",
+   "version 4.7.2.stable"
+  ],
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "GDRE Tools recovers the project; export with the same Godot for iOS"
+  },
+  "arches": [
+   "arm64-v8a"
+  ],
+  "arm64": true,
+  "game": "HougeLangley__FlowerMatch3",
+  "file": "flowermatch3-1.3.0.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/HougeLangley__FlowerMatch3",
+  "protection": []
+ }
+]

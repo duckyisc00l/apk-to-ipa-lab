@@ -1,0 +1,5 @@
+✓ Tap at (39.0, 320.0) completed successfully
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/ci/sim/run.sh: line 14: 23315 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/ci/sim/run.sh: line 14: 26572 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+✓ Tap at (195.0, 422.0) completed successfully
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/ci/sim/run.sh: line 14: 30676 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
