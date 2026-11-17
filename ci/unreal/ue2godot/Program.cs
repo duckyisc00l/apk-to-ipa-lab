@@ -4,6 +4,7 @@
 // placed in the level with its world position/rotation/scale, already in glTF/Godot axes and metres),
 // and <out>/summary.txt. Coordinates go through the same Gltf.SwapYZ the mesh writer uses, so they match.
 using System.Text.Json;
+using Serilog;
 using CUE4Parse.Compression;
 using CUE4Parse.FileProvider;
 using CUE4Parse.UE4.Assets.Exports;
