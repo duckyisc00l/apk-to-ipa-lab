@@ -87,6 +87,17 @@ foreach (var map in maps)
     summary.Add($"{map}: {dto.Actors.Count} actors, {placed.Count} placed meshes, {lights.Count} lights");
 }
 
+// file flags of a working mesh vs. a failing one (cooked / editor data stripped / version)
+foreach (var m in meshes.Values.OrderBy(m => m.RenderData?.LODs is null).Take(1).Concat(meshes.Values.Where(m => m.RenderData?.LODs is null).Take(1)))
+{
+    try
+    {
+        var pkg = provider.LoadPackage(m.GetPathName().Split('.')[0]) as CUE4Parse.UE4.Assets.Package;
+        summary.Add($"{(m.RenderData?.LODs is null ? "FAIL" : "OK  ")} {m.GetPathName()}: flags={pkg?.Summary.PackageFlags} ue4ver={pkg?.Summary.FileVersionUE.FileVersionUE4} licensee={pkg?.Summary.FileVersionLicenseeUE} bCooked={m.bCooked} engine={pkg?.Summary.SavedByEngineVersion}");
+    }
+    catch (Exception e) { summary.Add("flags read failed: " + e.Message); }
+}
+
 // why a mesh has no render data: dump the first one that doesn't
 foreach (var m in meshes.Values.Where(m => m.RenderData?.LODs is null).Take(1))
 {
