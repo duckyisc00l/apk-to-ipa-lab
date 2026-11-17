@@ -16,6 +16,9 @@ jobs:
       image: ubuntu:26.04
       options: --cap-add=NET_ADMIN
     timeout-minutes: 180
+    defaults:
+      run:
+        shell: bash   # the container's default is sh -e
     steps:
       - name: Tools
         run: apt-get update -qq && apt-get install -y -qq git ca-certificates iproute2 procps iptables xvfb xauth curl python3 > /dev/null
@@ -42,10 +45,11 @@ jobs:
         run: |
           printf '{"port": 23899, "enable_bots": true, "matchmaking_delay_for_bot": 2}\n' > server.cfg
           (S=$(find "$GITHUB_WORKSPACE/bim/build" -type f -name bim-server | head -1); echo "server $S" | tee -a out/offline.md; "$S" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
-          echo "client $B/apps/linux/bim" | tee -a out/offline.md
           grep -E "up on port|bots|Bot" out/server.log | head | tee -a out/offline.md; tail -5 out/server.log | tee -a out/offline.md
       - name: Play a match against a bot (scripted taps, screenshots)
         run: |
+          C=$(find "$GITHUB_WORKSPACE/bim/build" -type f -perm -u+x -path '*apps/linux/bim' | head -1); B=$(dirname "$(dirname "$(dirname "$C")")")
+          echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
           mkdir -p shots app; cd shots
           set +e
           timeout 900 xvfb-run -a -s "-screen 0 1080x1920x24" "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
@@ -58,6 +62,6 @@ jobs:
         if: always()
         run: |
           iptables -P OUTPUT ACCEPT || true; iptables -F OUTPUT || true
-          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp shots/*.png /tmp/r/ 2>/dev/null; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp shots/*.png /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
           cd /tmp/r && git init -q -b r-offline && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git config --global --add safe.directory '*'; git add -A && git commit -qm "offline ${{ github.run_number }}" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-offline
