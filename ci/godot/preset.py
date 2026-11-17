@@ -79,12 +79,12 @@ try:
         im = Image.open(src).convert("RGBA")
         bg = Image.new("RGBA", im.size, (0, 0, 0, 255))
         bg.alpha_composite(im)
-        out = bg.convert("RGB").resize((1024, 1024), Image.LANCZOS)
+        icon_img = bg.convert("RGB").resize((1024, 1024), Image.LANCZOS)
         print("opaque 1024 icon made from", os.path.relpath(src, proj))
     else:
-        out = Image.new("RGB", (1024, 1024), (40, 40, 48))   # no usable project icon: a plain one
+        icon_img = Image.new("RGB", (1024, 1024), (40, 40, 48))   # no usable project icon: a plain one
         print("no project icon: plain 1024 icon made")
-    out.save(os.path.join(proj, "_ios_icon_1024.png"))
+    icon_img.save(os.path.join(proj, "_ios_icon_1024.png"))
     icon_opt = "".join(f'icons/{k}="res://_ios_icon_1024.png"\n' for k in ICON_KEYS)
 except Exception as e:  # no PIL: Godot uses its own
     print("icon not made:", e)
