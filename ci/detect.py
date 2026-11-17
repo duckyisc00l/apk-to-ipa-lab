@@ -226,13 +226,17 @@ def classify(root):
     elif (lib("libhermes.so", "libjsc.so", "libreactnativejni.so", "libreactnative.so", "libhermesvm.so", "libhermes_executor.so")
           or has("assets/index.android.bundle")):
         r["engine"] = "React Native"
-        bundle = os.path.join(root, "assets/index.android.bundle")
+        # index.android.bundle; old Expo "shell apps" ship assets/shell-app.bundle
+        names = [f for f in files if f.startswith("assets/") and f.count("/") == 1 and f.endswith((".bundle", ".hbc"))]
+        pick = next((f for f in ("assets/index.android.bundle", "assets/shell-app.bundle") if f in names), names[0] if names else None)
+        bundle = os.path.join(root, pick or "assets/index.android.bundle")
         hermes = _read(bundle, 8) == bytes.fromhex("c61fbc03c103191f")
-        expo = bool(libre(r"^libexpo") or has("assets/app.config") or has("assets/app.manifest") or b"Lexpo/modules/" in dex)
+        expo = bool(libre(r"^libexpo") or has("assets/app.config") or has("assets/app.manifest") or has("assets/shell-app-manifest.json")
+                    or b"Lexpo/modules/" in dex or b"Lhost/exp/exponent/" in dex)
         tags = ["rn", "rn-hermes" if hermes else ("rn-plain" if os.path.exists(bundle) else "rn-nobundle")] + (["expo"] if expo else [])
         r["variant"] = ("Hermes bytecode" if hermes else "plain JS" if os.path.exists(bundle) else "no bundle in APK") + (", Expo" if expo else "")
         ev = lib("libhermes.so", "libhermesvm.so", "libjsc.so", "libreactnativejni.so", "libreactnative.so") + \
-            (["assets/index.android.bundle"] if os.path.exists(bundle) else []) + (libre(r"^libexpo")[:1] or (["Expo markers"] if expo else []))
+            ([pick] if pick and os.path.exists(bundle) else []) + (libre(r"^libexpo")[:1] or (["Expo markers"] if expo else []))
         m = re.search(rb"major:(\d+),minor:(\d+),patch:(\d+)", _read(bundle, 40 * 1024 * 1024)) if not hermes else None
         r["rn_version"] = ".".join(x.decode() for x in m.groups()) if m else None
     elif any(l in libs for l in ("libgdx.so",)):

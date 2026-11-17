@@ -7,13 +7,13 @@ web-capacitor+ionic | tomfong/simple-qr
 web-capacitor+ionic | thenaim/ionic-tk-social-network
 gamemaker | Ahmadrezadl/legendary-chess
 gm8 | Klisee/pokemon-reloaded-android
-unity-mono | UltraStar-Deluxe/Play
+unity-mono | UltraStar-Deluxe/Play | ^UltraStarPlay-v
+unity-il2cpp | UltraStar-Deluxe/Play | Companion
 unity-mono | imengyu/Ballance
 unity-il2cpp | AnimaRain/ShootAR
 unreal | ankitpassi141/Wanderer-VR
 godot3 | HarmonyHoney/ROTA
 godot | arshiyabarjaste-eng/PixelFist
-godot4 | uralys/fox
 renpy | saber-nyan/ddlc-android
 renpy | saber-nyan/test-renpy-vn
 renpy | MewX/cross-channel_chinese-localization_project
@@ -28,7 +28,7 @@ flutter | adil192/ricochlime
 flutter | mantou132/nesbox
 xamarin+maui | lswiderski/mi-scale-exporter
 xamarin | stratumauth/app
-xamarin+xamarin-forms | bitwarden/mobile | x8bit
+xamarin+maui | bitwarden/mobile | x8bit
 libgdx | yairm210/Unciv
 libgdx | 00-Evan/shattered-pixel-dungeon
 native-cpp | j-jorge/bim
@@ -38,4 +38,18 @@ native-compose | Ashinch/ReadYou
 native-compose | maxrave-dev/SimpMusic
 qt | wh201906/SerialTest | android
 qt | nspire-emus/firebird | android
-kivy | GVCoder09/NoDPI4Android
+native-compose | GVCoder09/NoDPI4Android
+solar2d | Aarav2709/FR1-Replayed
+kivy | HelloZeroNet/ZeroNet-kivy
+kivy | AndreMiras/PyWallet
+qt+qt6 | opengisch/QField
+qt+qt5 | OlivierLDff/Qaterial
+nativescript | ossappscollective/oss-weather
+cocos-cpp | yumin-chen/arkaflow
+cocos-lua | re-esper/dream-avg
+web-html5+rpgmaker-mv | yoimerdr/ludens
+xamarin+maui | lochidev/Expandroid
+native-compose | mykola-dev/Tetris
+native-compose | jayasuryat/minesweeper-j-compose
+rn+expo | pedropfsf/tic-tac-toe-game
+rn+expo | nunogois/game-search-expo

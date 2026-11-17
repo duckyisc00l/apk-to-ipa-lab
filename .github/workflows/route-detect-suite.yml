@@ -27,6 +27,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       MODE: ${{ inputs.mode || 'run' }}
       LIST: ${{ inputs.list || 'ci/detect-suite/apps.txt' }}
+      SCOUT_LIST: ${{ inputs.list != 'ci/detect-suite/apps.txt' && inputs.list || '' }}
     steps:
       - uses: actions/checkout@v4
       - name: Free disk space
@@ -34,7 +35,7 @@ jobs:
       - name: Suite or scout
         run: |
           mkdir -p out
-          if [ "$MODE" = scout ]; then python3 -u ci/detect-suite/suite.py scout ci/detect-suite/scout.txt 2>&1 | tee out/scout.log
+          if [ "$MODE" = scout ]; then python3 -u ci/detect-suite/suite.py scout "${SCOUT_LIST:-ci/detect-suite/scout.txt}" 2>&1 | tee out/scout.log
           else python3 -u ci/detect-suite/suite.py run "$LIST" 2>&1 | tee out/suite.log; fi
       - name: Protection fixtures (signs planted into clean real apps)
         if: env.MODE == 'run'

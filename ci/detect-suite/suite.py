@@ -199,4 +199,4 @@ def scout(listfile):
 
 
 if __name__ == "__main__":
-    {"run": run, "scout": scout}[sys.argv[1]](sys.argv[2])
+    {"run": run, "scout": scout}[sys.argv[1]](sys.argv[2])  # scout: any engine | query list
