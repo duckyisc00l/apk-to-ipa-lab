@@ -148,9 +148,10 @@ for loc, scales, name, typ in regs:
         if found and dest.startswith(os.path.join(out, "app")):
             os.makedirs(os.path.dirname(dest), exist_ok=True)
             shutil.copy(found, dest)
-            # the Android bundle asks for images by their Android resource name (no folder, no extension);
-            # iOS finds "<name>@2x.png" at the app's top level for that, so put a copy there too
-            shutil.copy(found, os.path.join(out, "app", f"{android}{suffix}.{typ}"))
+            # the Android bundle, loaded from a file, asks for file://<bundle folder>/drawable-<density>/<resource name>
+            # (the APK's own file name), so put a copy exactly there too
+            dd = os.path.join(out, "app", f"drawable-{dens}"); os.makedirs(dd, exist_ok=True)
+            shutil.copy(found, os.path.join(dd, os.path.basename(found)))
             copied += 1
         else:
             missing += 1
