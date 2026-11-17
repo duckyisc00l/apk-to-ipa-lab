@@ -1,6 +1,26 @@
-public static class PlatformUtils
+﻿public static class PlatformUtils
 {
-	public static bool IsStandalone => false;
+    public static bool IsStandalone
+    {
+        get
+        {
+#if UNITY_STANDALONE
+            return true;
+#else
+            return false;
+#endif
+        }
+    }
 
-	public static bool IsAndroid => true;
+    public static bool IsAndroid
+    {
+        get
+        {
+#if UNITY_ANDROID
+            return true;
+#else
+            return false;
+#endif
+        }
+    }
 }

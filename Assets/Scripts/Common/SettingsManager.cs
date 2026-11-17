@@ -1,165 +1,176 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 
 public class SettingsManager : AbstractSingletonBehaviour
 {
-	private static string settingsPath;
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void StaticInit()
+    {
+        settingsPath = null;
+        settings = null;
+        initializedResolution = false;
+    }
 
-	private static Settings settings;
+    public static SettingsManager Instance => DontDestroyOnLoadManager.Instance.FindComponentOrThrow<SettingsManager>();
 
-	private static bool initializedResolution;
+    // The settings must be written to the same path they have been loaded from.
+    // This field stores the path from where settings have been loaded / will be saved.
+    private static string settingsPath;
 
-	public static SettingsManager Instance => DontDestroyOnLoadManager.Instance.FindComponentOrThrow<SettingsManager>();
+    // The settings field is static to persist it across scene changes.
+    // The SettingsManager is meant to be used as a singleton, such that this static field should not be a problem.
+    private static Settings settings;
+    public Settings Settings
+    {
+        get
+        {
+            if (settings == null)
+            {
+                Reload();
+            }
+            return settings;
+        }
+    }
 
-	public Settings Settings
-	{
-		get
-		{
-			if (settings == null)
-			{
-				Reload();
-			}
-			return settings;
-		}
-	}
+    private static bool initializedResolution;
 
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-	private static void StaticInit()
-	{
-		settingsPath = null;
-		settings = null;
-		initializedResolution = false;
-	}
+    protected override object GetInstance()
+    {
+        return Instance;
+    }
 
-	protected override object GetInstance()
-	{
-		return Instance;
-	}
+    protected override void StartSingleton()
+    {
+        // Load reference from last scene if needed
+        if (!initializedResolution)
+        {
+            initializedResolution = true;
+            // GetCurrentAppResolution may only be called from Start() and Awake(). This is why it is done here.
+            Settings.GraphicSettings.resolution = ApplicationUtils.GetScreenResolution();
+        }
+    }
 
-	protected override void StartSingleton()
-	{
-		if (!initializedResolution)
-		{
-			initializedResolution = true;
-			Settings.GraphicSettings.resolution = ApplicationUtils.GetScreenResolution();
-		}
-	}
+    protected override void OnDisableSingleton()
+    {
+        Save();
+    }
 
-	protected override void OnDisableSingleton()
-	{
-		Save();
-	}
+    public void Save()
+    {
+        string json = JsonConverter.ToJson(Settings, true);
+        File.WriteAllText(GetSettingsPath(), json);
+    }
 
-	public void Save()
-	{
-		string contents = JsonConverter.ToJson(Settings, prettyPrint: true);
-		File.WriteAllText(GetSettingsPath(), contents);
-	}
+    private void Reload()
+    {
+        using (new DisposableStopwatch("Loading the settings took <millis> ms"))
+        {
+            string loadedSettingsPath = GetSettingsPath();
+            if (!File.Exists(loadedSettingsPath))
+            {
+                UnityEngine.Debug.LogWarning($"Settings file not found. Creating default settings at {loadedSettingsPath}.");
+                settings = CreateDefaultSettings();
+                Save();
+                return;
+            }
+            string fileContent = File.ReadAllText(loadedSettingsPath);
+            settings = JsonConverter.FromJson<Settings>(fileContent);
+            OverwriteSettingsWithCommandLineArguments();
+        }
+    }
 
-	private void Reload()
-	{
-		using (new DisposableStopwatch("Loading the settings took <millis> ms"))
-		{
-			string text = GetSettingsPath();
-			if (!File.Exists(text))
-			{
-				Debug.LogWarning("Settings file not found. Creating default settings at " + text + ".");
-				settings = CreateDefaultSettings();
-				Save();
-			}
-			else
-			{
-				settings = JsonConverter.FromJson<Settings>(File.ReadAllText(text));
-				OverwriteSettingsWithCommandLineArguments();
-			}
-		}
-	}
+    private Settings CreateDefaultSettings()
+    {
+        Settings defaultSettings = new Settings();
+#if UNITY_ANDROID
+        if (!Application.isEditor)
+        {
+            // Create internal song folder on Android and add it to the settings.
+            try
+            {
+                string internalSongFolder = AndroidUtils.GetAppSpecificStorageAbsolutePath(false) + "/Songs";
+                if (!Directory.Exists(internalSongFolder))
+                {
+                    Directory.CreateDirectory(internalSongFolder);
+                }
 
-	private Settings CreateDefaultSettings()
-	{
-		Settings settings = new Settings();
-		if (!Application.isEditor)
-		{
-			try
-			{
-				string text = AndroidUtils.GetAppSpecificStorageAbsolutePath(sdCard: false) + "/Songs";
-				if (!Directory.Exists(text))
-				{
-					Directory.CreateDirectory(text);
-				}
-				settings.GameSettings.songDirs.Add(text);
-			}
-			catch (Exception message)
-			{
-				Debug.LogError("Failed to create initial song folder.");
-				Debug.LogError(message);
-			}
-		}
-		try
-		{
-			MicProfile micProfile = CreateDefaultMicProfile();
-			if (micProfile != null)
-			{
-				SettingsManager.settings.MicProfiles.Add(micProfile);
-			}
-		}
-		catch (Exception message2)
-		{
-			Debug.LogError("Failed to create initial recording device profile.");
-			Debug.LogError(message2);
-		}
-		return settings;
-	}
+                defaultSettings.GameSettings.songDirs.Add(internalSongFolder);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Failed to create initial song folder.");
+                Debug.LogError(ex);
+            }
+        }
+#endif
 
-	private MicProfile CreateDefaultMicProfile()
-	{
-		if (Microphone.devices.Length == 0)
-		{
-			return null;
-		}
-		return new MicProfile(Microphone.devices.FirstOrDefault())
-		{
-			IsEnabled = true
-		};
-	}
+        // Try to select the first mic for singing.
+        try
+        {
+            MicProfile defaultMicProfile = CreateDefaultMicProfile();
+            if (defaultMicProfile != null)
+            {
+                settings.MicProfiles.Add(defaultMicProfile);
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Failed to create initial recording device profile.");
+            Debug.LogError(ex);
+        }
 
-	private void OverwriteSettingsWithCommandLineArguments()
-	{
-		string commandLineArgument = ApplicationManager.Instance.GetCommandLineArgument("--settingsOverwriteJson");
-		if (!commandLineArgument.IsNullOrEmpty())
-		{
-			commandLineArgument = commandLineArgument.Strip("\"", "\"");
-			commandLineArgument = commandLineArgument.Strip("'", "'");
-			try
-			{
-				JsonConverter.FillFromJson(commandLineArgument, settings);
-			}
-			catch (Exception exception)
-			{
-				Debug.LogError("OverwriteSettingsWithCommandLineArguments failed");
-				Debug.LogException(exception);
-			}
-		}
-	}
+        return defaultSettings;
+    }
 
-	public string GetSettingsPath()
-	{
-		if (settingsPath.IsNullOrEmpty())
-		{
-			string commandLineArgument = ApplicationManager.Instance.GetCommandLineArgument("--settingsPath");
-			commandLineArgument = commandLineArgument.Strip("\"", "\"");
-			commandLineArgument = commandLineArgument.Strip("'", "'");
-			if (!commandLineArgument.IsNullOrEmpty())
-			{
-				settingsPath = commandLineArgument;
-			}
-			else
-			{
-				settingsPath = Path.Combine(Application.persistentDataPath, "Settings.json");
-			}
-		}
-		return settingsPath;
-	}
+    private MicProfile CreateDefaultMicProfile()
+    {
+        if (Microphone.devices.Length <= 0)
+        {
+            return null;
+        }
+
+        MicProfile result = new(Microphone.devices.FirstOrDefault());
+        result.IsEnabled = true;
+        return result;
+    }
+
+    private void OverwriteSettingsWithCommandLineArguments()
+    {
+        string settingsOverwriteJson = ApplicationManager.Instance.GetCommandLineArgument("--settingsOverwriteJson");
+        if (!settingsOverwriteJson.IsNullOrEmpty())
+        {
+            settingsOverwriteJson = settingsOverwriteJson.Strip("\"", "\"");
+            settingsOverwriteJson = settingsOverwriteJson.Strip("'", "'");
+            try
+            {
+                JsonConverter.FillFromJson(settingsOverwriteJson, settings);
+            }
+            catch (Exception e)
+            {
+                UnityEngine.Debug.LogError("OverwriteSettingsWithCommandLineArguments failed");
+                UnityEngine.Debug.LogException(e);
+            }
+        }
+    }
+
+    public string GetSettingsPath()
+    {
+        if (settingsPath.IsNullOrEmpty())
+        {
+            string commandLineSettingsPath = ApplicationManager.Instance.GetCommandLineArgument("--settingsPath");
+            commandLineSettingsPath = commandLineSettingsPath.Strip("\"", "\"");
+            commandLineSettingsPath = commandLineSettingsPath.Strip("'", "'");
+            if (!commandLineSettingsPath.IsNullOrEmpty())
+            {
+                settingsPath = commandLineSettingsPath;
+            }
+            else
+            {
+                settingsPath = Path.Combine(Application.persistentDataPath, "Settings.json");
+            }
+        }
+        return settingsPath;
+    }
 }

@@ -1,116 +1,133 @@
-using System;
+﻿using System;
 using System.IO;
 using ProTrans;
 using UnityEngine;
 
 public static class ApplicationUtils
 {
-	public static void OpenDirectory(string path)
-	{
-		Application.OpenURL("file://" + path);
-	}
+    public static void OpenDirectory(string path)
+    {
+        Application.OpenURL("file://" + path);
+    }
 
-	public static void QuitOrStopPlayMode()
-	{
-		Application.Quit();
-	}
+    public static void QuitOrStopPlayMode()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 
-	public static string GetStreamingAssetsPath(string pathInStreamingAssetsFolder)
-	{
-		return AndroidStreamingAssets.Path + "/" + pathInStreamingAssetsFolder;
-	}
+    public static string GetStreamingAssetsPath(string pathInStreamingAssetsFolder)
+    {
+#if UNITY_ANDROID
+        return AndroidStreamingAssets.Path + "/" + pathInStreamingAssetsFolder;
+#else
+        return Application.streamingAssetsPath + "/" + pathInStreamingAssetsFolder;
+#endif
+    }
 
-	public static ScreenResolution GetScreenResolution()
-	{
-		return new ScreenResolution(Screen.width, Screen.height, Screen.currentResolution.refreshRate);
-	}
+    public static ScreenResolution GetScreenResolution()
+    {
+        // Screen.currentResolution in window mode returns the size of the desktop, not of the Unity application.
+        // Thus, use Screen.width and Screen.height instead, which return the pixel size of the Unity application.
+        ScreenResolution res = new(Screen.width, Screen.height, Screen.currentResolution.refreshRate);
+        return res;
+    }
 
-	public static Vector2 GetScreenSizeInPanelCoordinates(PanelHelper panelHelper)
-	{
-		return panelHelper.ScreenToPanel(new Vector2(Screen.width, Screen.height));
-	}
+    public static Vector2 GetScreenSizeInPanelCoordinates(PanelHelper panelHelper)
+    {
+        return panelHelper.ScreenToPanel(new Vector2(Screen.width, Screen.height));
+    }
 
-	public static bool IsSupportedAudioFormat(string fileExtension)
-	{
-		fileExtension = NormalizeFileExtension(fileExtension);
-		if (!(fileExtension == "mp3") && !(fileExtension == "ogg"))
-		{
-			return fileExtension == "wav";
-		}
-		return true;
-	}
+    public static bool IsSupportedAudioFormat(string fileExtension)
+    {
+        fileExtension = NormalizeFileExtension(fileExtension);
+        return fileExtension
+            is "mp3"
+            or "ogg"
+            or "wav";
+    }
 
-	public static bool IsSupportedVideoFormat(string fileExtension)
-	{
-		fileExtension = NormalizeFileExtension(fileExtension);
-		switch (fileExtension)
-		{
-		default:
-			return fileExtension == "wmf";
-		case "avi":
-		case "mp4":
-		case "mpg":
-		case "mpeg":
-		case "vp8":
-		case "webm":
-		case "m4v":
-		case "mov":
-		case "dv":
-		case "afs":
-			return true;
-		}
-	}
+    public static bool IsSupportedVideoFormat(string fileExtension)
+    {
+        fileExtension = NormalizeFileExtension(fileExtension);
+        return fileExtension
+            is "avi"
+            or "mp4"
+            or "mpg"
+            or "mpeg"
+            or "vp8"
+            or "webm"
+            or "m4v"
+            or "mov"
+            or "dv"
+            or "afs"
+            or "wmf";
+    }
 
-	private static string NormalizeFileExtension(string fileExtension)
-	{
-		if (fileExtension == null)
-		{
-			return "";
-		}
-		if (fileExtension.StartsWith("."))
-		{
-			fileExtension = fileExtension.Substring(1);
-		}
-		return fileExtension.ToLowerInvariant();
-	}
+    private static string NormalizeFileExtension(string fileExtension)
+    {
+        if (fileExtension == null)
+        {
+            return "";
+        }
+        if (fileExtension.StartsWith("."))
+        {
+            fileExtension = fileExtension.Substring(1);
+        }
+        return fileExtension.ToLowerInvariant();
+    }
 
-	public static int ComparePaths(string path1, string path2)
-	{
-		return string.Compare(Path.GetFullPath(path1).TrimEnd('\\'), Path.GetFullPath(path2).TrimEnd('\\'), StringComparison.InvariantCultureIgnoreCase);
-	}
+    public static int ComparePaths(string path1, string path2)
+    {
+        return string.Compare(
+            Path.GetFullPath(path1).TrimEnd('\\'),
+            Path.GetFullPath(path2).TrimEnd('\\'),
+            StringComparison.InvariantCultureIgnoreCase);
+    }
 
-	public static bool IsLargeScreen()
-	{
-		return GetPhysicalDiagonalScreenSizeInInches() > 10f;
-	}
+    public static bool IsLargeScreen()
+    {
+        return GetPhysicalDiagonalScreenSizeInInches() > 10;
+    }
 
-	public static bool IsSmallScreen()
-	{
-		return !IsLargeScreen();
-	}
+    public static bool IsSmallScreen()
+    {
+        return !IsLargeScreen();
+    }
 
-	public static float GetPhysicalDiagonalScreenSizeInInches()
-	{
-		float num = Screen.width * Screen.width;
-		float num2 = Screen.height * Screen.height;
-		return Mathf.Sqrt(num + num2) / Screen.dpi;
-	}
+    public static float GetPhysicalDiagonalScreenSizeInInches()
+    {
+        // Get diagonal of right-angled triangle via Pythagoras theorem
+        float widthInPixels = Screen.width * Screen.width;
+        float heightInPixels = Screen.height * Screen.height;
+        float diagonalInPixels = Mathf.Sqrt(widthInPixels + heightInPixels);
+        float diagonalInInches = diagonalInPixels / Screen.dpi;
+        return diagonalInInches;
+    }
 
-	public static string ReplacePathsWithDisplayString(string text)
-	{
-		if (PlatformUtils.IsAndroid)
-		{
-			string text2 = "Internal Storage";
-			string text3 = "SD Card";
-			if (ThreadUtils.IsMainThread())
-			{
-				text2 = TranslationManager.GetTranslation("androidInternalStorage");
-				text3 = TranslationManager.GetTranslation("androidSdCardStorage");
-			}
-			string storageRootPath = AndroidUtils.GetStorageRootPath(sdCard: false);
-			string storageRootPath2 = AndroidUtils.GetStorageRootPath(sdCard: true);
-			return text.Replace(storageRootPath, text2 + "/").Replace(storageRootPath2, text3 + "/");
-		}
-		return text;
-	}
+    public static string ReplacePathsWithDisplayString(string text)
+    {
+        if (PlatformUtils.IsAndroid)
+        {
+            string internalStorageTranslation = "Internal Storage";
+            string sdCardStorageTranslation = "SD Card";
+            if (ThreadUtils.IsMainThread())
+            {
+                // The ProTrans TranslationManager only works on the main thread.
+                internalStorageTranslation = TranslationManager.GetTranslation("androidInternalStorage");
+                sdCardStorageTranslation = TranslationManager.GetTranslation("androidSdCardStorage");
+            }
+
+            string internalStorageRoot = AndroidUtils.GetStorageRootPath(false);
+            string sdCardStorageRoot = AndroidUtils.GetStorageRootPath(true);
+            return text
+                .Replace(internalStorageRoot, $"{internalStorageTranslation}/")
+                .Replace(sdCardStorageRoot, $"{sdCardStorageTranslation}/");
+        }
+
+        return text;
+    }
 }
