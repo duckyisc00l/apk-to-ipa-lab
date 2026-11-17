@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       mode: { default: "" }
+      native: { default: "" }
   push:
     branches: [main]
     paths: [".github/workflows/route-cocos.yml", "ci/cocos/**"]
@@ -31,3 +32,81 @@ jobs:
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-cocos-scout && git rm -rfq . && rm -rf ci dl out
           cp -r /tmp/r/. . && git add -A && git commit -qm "cocos scout ${{ github.run_number }}" && git push -f origin r-cocos-scout
+
+  build:
+    if: ${{ inputs.mode == 'build' || (inputs.mode == '' && !contains(github.event.head_commit.message, '[cocos-scout]')) }}
+    runs-on: macos-15-intel
+    timeout-minutes: 150
+    env:
+      APK_URL: https://github.com/re-esper/dream-avg/releases/download/0.1/Sakumai-release-signed.apk
+      GAME_SRC: https://github.com/re-esper/dream-avg
+      NAME: Sakumai
+      # game = add the game's own open-source C++ (its bindings) to the engine; stock = the APK's scripts on a stock engine
+      NATIVE: ${{ inputs.native || 'game' }}
+      CCC_OVERRIDE_OPTIONS: "^-Wno-error=implicit-function-declaration ^-Wno-error=incompatible-function-pointer-types ^-Wno-error=int-conversion"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and detect engine, version and script format
+        run: |
+          mkdir -p out apk && curl -sSL --fail -o game.apk "$APK_URL" && unzip -qo game.apk -d apk
+          so=$(ls apk/lib/arm64-v8a/libcocos2d*.so apk/lib/armeabi-v7a/libcocos2d*.so 2>/dev/null | head -1); echo "SO=$so" >> $GITHUB_ENV
+          v=$(strings "$so" | grep -oE 'cocos2d-x-[0-9]+\.[0-9]+(\.[0-9]+)?' | sort | uniq -c | sort -rn | head -1 | awk '{print $2}')
+          echo "COCOS_VERSION=$v" >> $GITHUB_ENV
+          { echo "# Detect"; echo "- engine library: $so ($(du -h "$so" | cut -f1))"; echo "- version: $v"
+            echo "- scripts: $(find apk/assets -name '*.lua' | wc -l) .lua, $(find apk/assets -name '*.luac' | wc -l) .luac, $(find apk/assets -name '*.js' | wc -l) .js, $(find apk/assets -name '*.jsc' | wc -l) .jsc"
+            echo "- first bytes of main.lua: $(head -c 16 apk/assets/src/main.lua 2>/dev/null | xxd -p)"
+            echo "- XXTEA key/sign near the setXXTEAKeyAndSign strings (default is 2dxLua/XXTEA):"; strings "$so" | grep -n -B2 -A2 -E '^XXTEA$' | head -8
+            echo "- assets/: $(ls apk/assets | tr '\n' ' ')"; } | tee out/cocos.md
+      - name: Get the engine at the game's version and its prebuilt third-party libraries
+        run: |
+          git clone -q --depth 1 --branch "$COCOS_VERSION" https://github.com/cocos2d/cocos2d-x engine 2>&1 | tail -1
+          dep=$(python3 -c "import json;print(json.load(open('engine/external/config.json'))['version'])")
+          curl -sSL --fail -o deps.zip "https://github.com/cocos2d/cocos2d-x-3rd-party-libs-bin/archive/$dep.zip" && unzip -qo deps.zip -d deps
+          cp -R deps/*/. engine/external/ && rm -rf deps deps.zip; echo "- third-party libs: $dep" | tee -a out/cocos.md
+          lipo -info engine/external/lua/luajit/prebuilt/ios/libluajit.a | tee -a out/cocos.md
+          python3 -I ci/cocos/bindings.py "$SO" engine apk/assets/src | tee -a out/cocos.md
+      - name: Make the iOS project from the engine's Lua template with the APK's scripts and resources
+        run: |
+          cp -R engine/templates/lua-template-default proj && mv engine proj/frameworks/cocos2d-x
+          rm -rf proj/src proj/res && cp -R apk/assets/src apk/assets/res proj/ && { [ -f apk/assets/config.json ] && cp apk/assets/config.json proj/ || true; }
+          if [ "$NATIVE" = game ]; then
+            git clone -q --depth 1 "$GAME_SRC" gamesrc
+            cp -R gamesrc/cocos2d-x-patch/cocos2d-x/. proj/frameworks/cocos2d-x/
+            C=proj/frameworks/runtime-src/Classes
+            for f in gamesrc/cocos2d-x-patch/runtime-src/Classes/*; do case "$f" in *LuaConsole*) ;; *) cp "$f" $C/;; esac; done
+            # Live2D's Cubism SDK isn't open source and isn't in the repo: build without it
+            sed -i '' 's/#define USE_LIVE2D_SPRITE 1/#define USE_LIVE2D_SPRITE 0/' $C/AppDelegate.cpp
+            # the template's Xcode project only compiles AppDelegate.cpp: pull the game's other .cpp files in through it
+            for f in $C/*.cpp; do b=$(basename $f); [ $b = AppDelegate.cpp ] || echo "#include \"$b\"" >> $C/AppDelegate.cpp; done
+            echo "- native: the game's own C++ added ($(ls $C | tr '\n' ' ')); Live2D left out" | tee -a out/cocos.md
+          else echo "- native: stock engine" | tee -a out/cocos.md; fi
+          # Xcode 16 refuses iOS 6-8 deployment targets
+          find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
+          xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
+      - name: Build for the iPhone Simulator and run it
+        continue-on-error: true
+        run: |
+          SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"; du -sh "$APP"' \
+            ci/sim/build-and-run.sh proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj HelloLua-mobile out/sim 40
+      - name: Build for iPhone (unsigned) and package the IPA
+        run: |
+          set +e
+          xcodebuild -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj -scheme HelloLua-mobile -configuration Release -sdk iphoneos \
+            -destination 'generic/platform=iOS' -derivedDataPath dd ARCHS=arm64 ONLY_ACTIVE_ARCH=NO ENABLE_BITCODE=NO \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" build > out/xcodebuild.log 2>&1
+          xc=$?; echo "- iPhone build exit $xc" | tee -a out/cocos.md; grep -E "error:|\*\* BUILD" out/xcodebuild.log | sort -u | head -20 | tee -a out/cocos.md
+          [ $xc = 0 ] || exit 1
+          app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1)
+          /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$app/Info.plist"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $NAME" "$app/Info.plist" 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :CFBundleDisplayName string $NAME" "$app/Info.plist"
+          mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "$NAME.ipa" Payload && ls -la "$NAME.ipa" | tee -a out/cocos.md
+          gh release create "$NAME-cocos-${{ github.run_number }}" "$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the Cocos2d-x Lua route)."
+      - name: Publish to branch r-cocos
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp -R out/sim /tmp/r/ 2>/dev/null; tail -300 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
+          grep -E "error:|warning: .*(deprecated|unavailable)" out/sim/sim-build.log 2>/dev/null | sort -u | head -80 > /tmp/r/sim-build-errors.log; tail -100 out/sim/sim-build.log > /tmp/r/sim-build-tail.log 2>/dev/null
+          rm -f /tmp/r/sim/sim-build.log
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout -q --orphan r-cocos && git rm -rfq . && rm -rf ci apk proj gamesrc dd Payload out *.apk *.ipa
+          cp -r /tmp/r/. . && git add -A && git commit -qm "cocos ${{ github.run_number }}" && git push -qf origin r-cocos
