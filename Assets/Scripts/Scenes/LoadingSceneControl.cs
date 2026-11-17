@@ -76,6 +76,7 @@ public class LoadingSceneControl : MonoBehaviour, INeedInjection
         // Wait for Theme and I18N resources
         TranslationManager.Instance.ReloadTranslationsAndUpdateScene();
 
+#if UNITY_ANDROID // the Android-only permissions plugin is not in the recovered project
         // Ask for microphone and webcam permissions on Android
         if (PlatformUtils.IsAndroid)
         {
@@ -91,6 +92,7 @@ public class LoadingSceneControl : MonoBehaviour, INeedInjection
                 AndroidRuntimePermissions.RequestPermission("android.permission.CAMERA");
             }
         }
+#endif
 
         FinishScene();
     }
