@@ -1,0 +1,44 @@
+name: hermes-scout
+# Find open-source React Native apps whose release APK has a Hermes bundle: RN version, bytecode version, add-ons.
+on:
+  workflow_dispatch:
+    inputs:
+      repos: { description: "space-separated owner/repo list", default: "" }
+permissions:
+  contents: write
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+          mkdir -p /tmp/r; o=/tmp/r/scout.md
+          for r in ${{ inputs.repos }}; do
+            echo "## $r" >> $o
+            pj=$(gh api "repos/$r/contents/package.json" --jq .content 2>/dev/null | base64 -d 2>/dev/null)
+            echo "pkg: $(echo "$pj" | grep -E '"(react-native|expo|react-native-reanimated)"' | tr -d ' \n')  deps: $(echo "$pj" | grep -cE '"(react-native-|@react-native|expo-)')" >> $o
+            line=$(gh api "repos/$r/releases?per_page=15" --jq '[.[]|.tag_name as $t|.assets[]|select(.name|test("\\.apk$"))|"\($t) \(.name) \(.size)"]|sort_by(split(" ")[2]|tonumber)|.[0]' 2>/dev/null)
+            echo "apk: $line" >> $o
+            [ -z "$line" ] || [ "$line" = null ] && continue
+            set -- $line; rm -rf d; mkdir d
+            [ "$3" -gt 150000000 ] && { echo "too big" >> $o; continue; }
+            gh release download "$1" -R "$r" -p "$2" -D d 2>>$o || continue
+            (cd d && unzip -qo *.apk 'assets/*' 'lib/*' 2>/dev/null)
+            b=$(ls d/assets/index.android.bundle 2>/dev/null)
+            if [ -n "$b" ]; then
+              python3 - "$b" >> $o <<'PY'
+          import sys,struct,re
+          d=open(sys.argv[1],'rb').read()
+          h=d[:8]==bytes.fromhex('c61fbc03c103191f')
+          print('bundle', len(d), 'hermes' if h else 'plain', struct.unpack('<I',d[8:12])[0] if h else '')
+          t=d.decode('latin1')
+          print('names:', ' '.join(sorted(set(re.findall(r'\b(RN[A-Z][A-Za-z0-9]{2,40}|RCT[A-Z][A-Za-z0-9]{2,40}|Expo[A-Z][A-Za-z0-9]{2,40})\b',t)))[:60])
+          PY
+            else echo "no index.android.bundle: $(ls d/assets | head -5 | tr '\n' ' ')" >> $o; fi
+            echo "libs: $(ls d/lib/*/ 2>/dev/null | sort -u | grep -E 'hermes|fabric|reanimated|jsc|newarch' | tr '\n' ' ')" >> $o
+          done
+          cat $o
+          cd /tmp/r && git init -q -b r-hermes-scout && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm scout && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-hermes-scout
