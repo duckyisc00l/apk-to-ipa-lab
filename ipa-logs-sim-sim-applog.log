@@ -1,0 +1,200 @@
+2026-11-17 19:49:33.523 Df Host[63863:27e0d] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1056 -> 3104; animating application lifecycle event: 1
+2026-11-17 19:49:33.523 Df Host[63863:27e0d] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-17 19:49:33.524 Df Host[63863:27e0d] [com.apple.xpc:connection] [0x10ce0ba70] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-17 19:49:33.531 Df Host[63863:27e0d] HERMES-PRELUDE: 10303 bytes
+2026-11-17 19:49:33.607 Df Host[63863:27e0d] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10c806380> (7AA25B24-5324-4F68-913A-0AD6581877F0) Scene updated orientation preferences: none -> ( Pu Ll Lr )
+2026-11-17 19:49:33.608 Df Host[63863:27e0d] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-17 19:49:33.608 Df Host[63863:27e0d] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x10c806380: Window became key in scene: UIWindow: 0x10d009520; contextId: 0x11AA40BE: reason: UIWindowScene: 0x10c806380: Window requested to become key in scene: 0x10d009520
+2026-11-17 19:49:33.608 Df Host[63863:27e0d] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10c806380; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x10d009520; reason: UIWindowScene: 0x10c806380: Window requested to become key in scene: 0x10d009520
+2026-11-17 19:49:33.608 Df Host[63863:27e0d] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x10d009520; contextId: 0x11AA40BE; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.rn-default
+2026-11-17 19:49:33.608 Df Host[63863:27e0d] [com.apple.UIKit:EventDeferring] [0x600002914b60] Begin local event deferring requested for token: 0x60000260e340; environments: 1; reason: UIWindowScene: 0x10c806380: Begin event deferring in keyboardFocus for window: 0x10d009520
+2026-11-17 19:49:33.610 Df Host[63863:27e22] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-17 19:49:33.615 Df Host[63863:27e22] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x600002609da0; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.rn-default; status: ancestor> was:target
+2026-11-17 19:49:33.646 Df Host[63863:27e0d] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3104 -> 2080; animating application lifecycle event: 1
+2026-11-17 19:49:33.656 Df Host[63863:27e0d] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-17 19:49:33.656 Df Host[63863:27e0d] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-17 19:49:33.656 Df Host[63863:27e0d] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-17 19:49:33.664 Df Host[63863:27e22] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-17 19:49:33.664 Df Host[63863:27e0d] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10c806380> (7AA25B24-5324-4F68-913A-0AD6581877F0)
+2026-11-17 19:49:33.665 Df Host[63863:27e22] [com.apple.xpc:session] [0x600002102990] Session created.
+2026-11-17 19:49:33.665 Df Host[63863:27e22] [com.apple.xpc:session] [0x600002102990] Session created from connection [0x10ce0ecb0]
+2026-11-17 19:49:33.665 Df Host[63863:27e22] [com.apple.xpc:connection] [0x10ce0ecb0] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-17 19:49:33.665 Df Host[63863:27e22] [com.apple.xpc:session] [0x600002102990] Session activated
+2026-11-17 19:49:33.745 Df Host[63863:27e2b] HERMES-PRELUDE: ran
+2026-11-17 19:49:33.751 Df Host[63863:27e0d] [com.apple.xpc:connection] [0x10ce0e180] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-17 19:49:33.765 A  Host[63863:27e1b] (RunningBoardServices) didChangeInheritances
+2026-11-17 19:49:33.785 A  Host[63863:27e22] (RunningBoardServices) didChangeInheritances
+2026-11-17 19:49:33.859 Df Host[63863:27e0d] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [10949559-DD40-439C-AA58-C28260C0147C] (reporting strategy default)>
+2026-11-17 19:49:33.859 Df Host[63863:27e0d] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [2151CF08-D80E-4FFB-9276-2ABE5409F7D1] (reporting strategy default)>
+2026-11-17 19:49:33.859 Df Host[63863:27e0d] [com.apple.network:activity] Set activity <nw_activity 50:1 [10949559-DD40-439C-AA58-C28260C0147C] (reporting strategy default)> as the global parent
+2026-11-17 19:49:33.859 Df Host[63863:27e0d] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-17 19:49:33.859 Df Host[63863:27e0d] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x60000170a9c0>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 2681 (elapsed = 1), _expireHandler: (null)
+2026-11-17 19:49:33.860 Df Host[63863:27e0d] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x600002101e50> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x60000170a9c0>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 2681 (elapsed = 1))
+2026-11-17 19:49:33.863 Df Host[63863:27e0d] [com.apple.UIKit:EventDeferring] [0x600002914b60] Scene target of event deferring environments did update: scene: 0x10c806380; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 19:49:33.863 Df Host[63863:27e0d] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10c806380; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.rn-default
+2026-11-17 19:49:33.864 Df Host[63863:27e0d] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-17 19:49:33.864 Df Host[63863:27e0d] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-17 19:49:33.879 Df Host[63863:27e0d] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.rn-default  persistentID: 7AA25B24-5324-4F68-913A-0AD6581877F0
+2026-11-17 19:49:33.882 Df Host[63863:27e0d] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10c806380> (7AA25B24-5324-4F68-913A-0AD6581877F0)
+2026-11-17 19:49:33.882 Df Host[63863:27e0d] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-17 19:49:33.886 Df Host[63863:27e0d] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10c806380> (7AA25B24-5324-4F68-913A-0AD6581877F0)
+2026-11-17 19:49:33.887 Df Host[63863:27e0d] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.rn-default  persistentID: 7AA25B24-5324-4F68-913A-0AD6581877F0
+2026-11-17 19:49:33.888 Df Host[63863:27e0d] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-17 19:49:33.888 Df Host[63863:27e0d] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-17 19:49:33.889 Df Host[63863:27e0d] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-17 19:49:33.896 Df Host[63863:27e0d] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-17 19:49:33.896 Df Host[63863:27e0d] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-17 19:49:33.905 Df Host[63863:27e0d] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-17 19:49:33.912 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RNCMaskedView"]
+2026-11-17 19:49:33.920 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RNSScreenStackHeaderConfig"]
+2026-11-17 19:49:33.922 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTView"]
+2026-11-17 19:49:33.924 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [3,"RNSScreenStackHeaderConfig",1,{"backButtonInCustomView":false,"backgroundColor":-1,"color":-14935010,"direction":"ltr","disableBackButtonMenu":false,"hidden":true,"hideBackButton":false,"largeTitleHideShadow":false,"title":"Splash","titleColor":-14935010,"translucent":false}]
+2026-11-17 19:49:33.925 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [5,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flex":1,"backgroundColor":-855310}]
+2026-11-17 19:49:33.928 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.929 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [7,"RCTView",1,{"accessibilityState":{},"accessibilityElementsHidden":false,"accessibilityValue":{},"flex":1,"flexDirection":"column-reverse"}]
+2026-11-17 19:49:33.929 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [7,[5]]
+2026-11-17 19:49:33.929 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.932 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.932 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.933 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RNSScreen"]
+2026-11-17 19:49:33.933 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.933 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.943 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.949 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [9,"RNSScreen",1,{"gestureEnabled":false,"replaceAnimation":"push","stackPresentation":"push","swipeDirection":"horizontal","onWillDisappear":true,"onAppear":true,"onDisappear":true,"onDismissed":true,"onNativeDismissCancelled":true,"gestureResponseDistance":{"start":-1,"end":-1,"top":-1,"bottom":-1},"onTransitionProgress":true,"collapsable":false,"position":"absolute","left":0,"right":0,"top":0,"
+2026-11-17 19:49:33.952 Df Host[63863:27e0d] [com.apple.network:activity] <nw_activity 50:1 [10949559-DD40-439C-AA58-C28260C0147C] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 1782ms
+2026-11-17 19:49:33.952 Df Host[63863:27e0d] [com.apple.network:activity] <nw_activity 50:2 [2151CF08-D80E-4FFB-9276-2ABE5409F7D1] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 1781ms
+2026-11-17 19:49:33.952 Df Host[63863:27e0d] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [10949559-DD40-439C-AA58-C28260C0147C] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-17 19:49:33.953 Df Host[63863:27e0d] [com.apple.network:activity] Unset the global parent activity
+2026-11-17 19:49:33.986 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [9,[3,7]]
+2026-11-17 19:49:33.987 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.987 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:33.988 Df Host[63863:27e0d] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-17 19:49:34.090 Df Host[63863:27e1c] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-11-17 19:49:34.090 Df Host[63863:27e1c] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x6000017140c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 2681 (elapsed = 1), _expireHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-17 19:49:34.090 Df Host[63863:27e1c] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x600002101e50> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x6000017140c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 2681 (elapsed = 1))
+2026-11-17 19:49:34.098 Df Host[63863:27e1c] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x600002101e50> for task identifier: 2
+2026-11-17 19:49:34.213 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RNSScreenStack"]
+2026-11-17 19:49:34.215 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.215 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [13,"RNSScreenStack",1,{"flex":1}]
+2026-11-17 19:49:34.217 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [13,[9]]
+2026-11-17 19:49:34.218 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.218 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RNCSafeAreaProvider"]
+2026-11-17 19:49:34.218 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.219 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [15,"RNCSafeAreaProvider",1,{"flex":1,"onInsetsChange":true}]
+2026-11-17 19:49:34.219 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [15,[13]]
+2026-11-17 19:49:34.220 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [17,"RCTView",1,{"collapsable":true,"accessibilityState":{},"accessibilityValue":{},"flex":1,"pointerEvents":"box-none"}]
+2026-11-17 19:49:34.224 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.225 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.227 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.230 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.231 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.231 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [17,[15]]
+2026-11-17 19:49:34.233 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [19,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flex":1,"pointerEvents":"box-none"}]
+2026-11-17 19:49:34.234 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [19,[17]]
+2026-11-17 19:49:34.235 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [1,[19]]
+2026-11-17 19:49:34.239 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.239 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.240 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.240 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.243 Df Host[63863:27e1c] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/DD0609A6-B84B-4508-920D-C25E84D14506/Library/Application Support/com.duckyisc00l.rn/RCTAsyncLocalStorage_V1
+2026-11-17 19:49:34.247 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [23,"RNSScreenStackHeaderConfig",1,{"backButtonInCustomView":false,"backgroundColor":-1,"color":-14935010,"direction":"ltr","disableBackButtonMenu":false,"hidden":true,"hideBackButton":false,"largeTitleHideShadow":false,"title":"OnBoarding","titleColor":-14935010,"translucent":false}]
+2026-11-17 19:49:34.250 E  Host[63863:27e1c] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.253 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [25,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{}}]
+2026-11-17 19:49:34.256 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.257 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTImageView"]
+2026-11-17 19:49:34.260 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [27,"RCTImageView",1,{"source":19,"width":"100%","height":"40%","overflow":"hidden","resizeMode":"contain","margin":"auto","shouldNotifyLoadEvents":false,"src":[{"__packager_asset":true,"width":752,"height":557,"uri":"file:///Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/46B7B3AA-6EC3-45C6-98A8-7A8849EBC69D/Host.app/dra
+2026-11-17 19:49:34.261 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.262 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTVirtualText"]
+2026-11-17 19:49:34.263 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [29,"RCTRawText",1,{"text":"English Dictionary"}]
+2026-11-17 19:49:34.264 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [33,"RCTText",1,{"fontSize":30,"lineHeight":36,"fontWeight":"700","color":-16777216,"marginLeft":8,"marginTop":8,"accessibilityState":{},"allowFontScaling":true,"ellipsizeMode":"tail","isHighlighted":false,"selectionColor":null}]
+2026-11-17 19:49:34.275 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.276 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [33,[29]]
+2026-11-17 19:49:34.279 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.279 Df Host[63863:27e1c] [com.apple.xpc:connection] [0x10d015850] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-11-17 19:49:34.280 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.281 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.289 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [35,"RCTRawText",1,{"text":"Welcome to English Dictionary. This application helps you to learn new words. It has many features like word of the day, trending words, word search etc."}]
+2026-11-17 19:49:34.289 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.298 A  Host[63863:27e21] (RunningBoardServices) didChangeInheritances
+2026-11-17 19:49:34.300 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [37,"RCTText",1,{"fontSize":16,"lineHeight":24,"paddingLeft":24,"paddingRight":24,"textAlign":"center","fontWeight":"500","marginLeft":8,"marginTop":8,"accessibilityState":{},"allowFontScaling":true,"ellipsizeMode":"tail","isHighlighted":false,"selectionColor":null}]
+2026-11-17 19:49:34.300 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.301 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [37,[35]]
+2026-11-17 19:49:34.303 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [39,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"justifyContent":"center","alignItems":"center","marginLeft":-8,"marginTop":-8}]
+2026-11-17 19:49:34.307 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.308 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [39,[33,37]]
+2026-11-17 19:49:34.310 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.310 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.311 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.312 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [43,"RCTRawText",1,{"text":"Get Started"}]
+2026-11-17 19:49:34.313 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [45,"RCTText",1,{"textAlign":"center","fontSize":16,"lineHeight":24,"fontWeight":"500","color":-1,"accessibilityState":{},"allowFontScaling":true,"ellipsizeMode":"tail","isHighlighted":false,"selectionColor":null}]
+2026-11-17 19:49:34.313 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [45,[43]]
+2026-11-17 19:49:34.316 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.316 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [47,"RCTView",1,{"accessible":true,"onStartShouldSetResponder":true,"onResponderGrant":true,"onResponderMove":true,"onResponderRelease":true,"onResponderTerminate":true,"onResponderTerminationRequest":true,"collapsable":false,"accessibilityState":{},"accessibilityValue":{},"backgroundColor":-246716,"paddingTop":19,"paddingRight":19,"paddingBottom":19,"paddingLeft":19,"borderTopLeftRadius":16,"bord
+2026-11-17 19:49:34.317 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.317 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [47,[45]]
+2026-11-17 19:49:34.317 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.318 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [49,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{}}]
+2026-11-17 19:49:34.318 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [49,[47]]
+2026-11-17 19:49:34.324 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.325 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.325 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [53,"RCTRawText",1,{"text":"Read"}]
+2026-11-17 19:49:34.325 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.326 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.326 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [55,"RCTText",1,{"accessibilityState":{},"allowFontScaling":true,"ellipsizeMode":"tail","isHighlighted":false,"selectionColor":null}]
+2026-11-17 19:49:34.327 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [55,[53]]
+2026-11-17 19:49:34.331 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [57,"RCTRawText",1,{"text":" T&C and Privacy Policy "}]
+2026-11-17 19:49:34.335 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.337 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.337 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [59,"RCTText",1,{"color":-12877066,"accessibilityState":{},"allowFontScaling":true,"ellipsizeMode":"tail","isHighlighted":false,"selectionColor":null}]
+2026-11-17 19:49:34.338 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.338 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.341 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [59,[57]]
+2026-11-17 19:49:34.341 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.344 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [63,"RCTView",1,{"accessible":true,"onStartShouldSetResponder":true,"onResponderGrant":true,"onResponderMove":true,"onResponderRelease":true,"onResponderTerminate":true,"onResponderTerminationRequest":true,"collapsable":false,"accessibilityState":{},"accessibilityValue":{},"opacity":1}]
+2026-11-17 19:49:34.347 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [63,[59]]
+2026-11-17 19:49:34.347 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.348 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.352 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [65,"RCTRawText",1,{"text":"before using this application."}]
+2026-11-17 19:49:34.353 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.361 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [67,"RCTText",1,{"accessibilityState":{},"allowFontScaling":true,"ellipsizeMode":"tail","isHighlighted":false,"selectionColor":null}]
+2026-11-17 19:49:34.361 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.363 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [67,[65]]
+2026-11-17 19:49:34.366 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [69,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flexDirection":"row","justifyContent":"center","marginTop":12}]
+2026-11-17 19:49:34.367 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.367 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.370 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [69,[55,63,67]]
+2026-11-17 19:49:34.370 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.373 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [73,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"paddingTop":20,"paddingRight":20,"paddingBottom":8,"paddingLeft":20}]
+2026-11-17 19:49:34.378 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.378 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [73,[49,69]]
+2026-11-17 19:49:34.379 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.381 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [75,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"justifyContent":"space-between","flexGrow":1,"flexShrink":1,"flexBasis":"0%"}]
+2026-11-17 19:49:34.382 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.383 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [75,[25,27,39,73]]
+2026-11-17 19:49:34.385 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [77,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flexGrow":1,"flexShrink":1,"flexBasis":"0%","backgroundColor":-1}]
+2026-11-17 19:49:34.390 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.391 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.391 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [77,[75]]
+2026-11-17 19:49:34.392 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.394 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [79,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flex":1,"backgroundColor":-855310}]
+2026-11-17 19:49:34.395 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [79,[77]]
+2026-11-17 19:49:34.403 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.405 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.408 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.409 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [83,"RCTView",1,{"accessibilityState":{},"accessibilityElementsHidden":false,"accessibilityValue":{},"flex":1,"flexDirection":"column-reverse"}]
+2026-11-17 19:49:34.411 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [83,[79]]
+2026-11-17 19:49:34.414 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.415 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [85,"RNSScreen",1,{"gestureEnabled":false,"replaceAnimation":"push","stackPresentation":"push","swipeDirection":"horizontal","onWillDisappear":true,"onAppear":true,"onDisappear":true,"onDismissed":true,"onNativeDismissCancelled":true,"gestureResponseDistance":{"start":-1,"end":-1,"top":-1,"bottom":-1},"onTransitionProgress":true,"collapsable":false,"position":"absolute","left":0,"right":0,"top":0,
+2026-11-17 19:49:34.415 E  Host[63863:27e21] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.416 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [85,[23,83]]
+2026-11-17 19:49:34.420 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.420 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.420 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.manageChildren [13,[],[],[],[],[0]]
+2026-11-17 19:49:34.430 E  Host[63863:27e2b] [com.facebook.react.log:javascript] RNTRACE UIManager.manageChildren [13,[],[],[85],[0],[]]
+2026-11-17 19:49:34.432 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.439 E  Host[63863:27e19] [com.facebook.react.log:native] Unable to find module for RedBox
+2026-11-17 19:49:34.469 Df Host[63863:27e0d] [com.apple.UIKit:AssetManager] Could not load asset catalog from bundle NSBundle </Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/46B7B3AA-6EC3-45C6-98A8-7A8849EBC69D/Host.app> (loaded): Error Domain=NSCocoaErrorDomain Code=260 "RunTimeThemeRefForBundleIdentifierAndName() couldn't find Assets.car in bundle with identifier: com.duckyisc00l.rn" UserInfo={NSLocalizedDescription=RunTimeThemeRefForBundleIdentifierAndName() couldn't find Assets.car in bundle with identifier: com.duckyisc00l.rn}
+2026-11-17 19:49:34.471 Df Host[63863:27e0d] [com.apple.UIKit:AssetManager] Could not load asset catalog from bundle NSBundle </Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/46B7B3AA-6EC3-45C6-98A8-7A8849EBC69D/Host.app/Frameworks/hermes.framework> (not yet loaded): Error Domain=NSCocoaErrorDomain Code=260 "RunTimeThemeRefForBundleIdentifierAndName() couldn't find Assets.car in bundle with identifier: dev.hermesengine.iphonesimulator" UserInfo={NSLocalizedDescription=RunTimeThemeRefForBundleIdentifierAndName() couldn't find Assets.car in bundle with identifier: dev.hermesengine.iphonesimulator}
+2026-11-17 19:49:34.490 Df Host[63863:27e0d] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10c806380> (7AA25B24-5324-4F68-913A-0AD6581877F0) Scene updated orientation preferences: ( Pu Ll Lr ) -> ( Pu )
+2026-11-17 19:49:34.743 A  Host[63863:27e22] (RunningBoardServices) didChangeInheritances
+2026-11-17 19:49:35.023 Df Host[63863:27e0d] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10c806380> (7AA25B24-5324-4F68-913A-0AD6581877F0) Scene updated orientation preferences: ( Pu ) -> ( Pu Ll Lr )

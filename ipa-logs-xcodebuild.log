@@ -1,0 +1,200 @@
+    export SYSTEM_DEVELOPER_TOOLS_DOC_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/ADC\ Reference\ Library/documentation/DeveloperTools
+    export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/ADC\ Reference\ Library/releasenotes/DeveloperTools
+    export SYSTEM_DEVELOPER_USR_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/usr
+    export SYSTEM_DEVELOPER_UTILITIES_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/Applications/Utilities
+    export SYSTEM_DEXT_INSTALL_PATH\=/System/Library/DriverExtensions
+    export SYSTEM_DOCUMENTATION_DIR\=/Library/Documentation
+    export SYSTEM_EXTENSIONS_FOLDER_PATH\=Host.app/SystemExtensions
+    export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_NO\=Host.app/Library/SystemExtensions
+    export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_YES\=Host.app/SystemExtensions
+    export SYSTEM_KEXT_INSTALL_PATH\=/System/Library/Extensions
+    export SYSTEM_LIBRARY_DIR\=/System/Library
+    export TAPI_DEMANGLE\=YES
+    export TAPI_ENABLE_PROJECT_HEADERS\=NO
+    export TAPI_LANGUAGE\=objective-c
+    export TAPI_LANGUAGE_STANDARD\=compiler-default
+    export TAPI_USE_SRCROOT\=YES
+    export TAPI_VERIFY_MODE\=Pedantic
+    export TARGETED_DEVICE_FAMILY\=1
+    export TARGETNAME\=Host
+    export TARGET_BUILD_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos
+    export TARGET_NAME\=Host
+    export TARGET_TEMP_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build
+    export TEMP_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build
+    export TEMP_FILES_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build
+    export TEMP_FILE_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build
+    export TEMP_ROOT\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex
+    export TEMP_SANDBOX_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/TemporaryTaskSandboxes
+    export TEST_FRAMEWORK_SEARCH_PATHS\=\ /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks\ /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/Developer/Library/Frameworks
+    export TEST_LIBRARY_SEARCH_PATHS\=\ /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib
+    export TOOLCHAINS\=com.apple.dt.toolchain.XcodeDefault
+    export TOOLCHAIN_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    export TREAT_MISSING_BASELINES_AS_TEST_FAILURES\=NO
+    export TREAT_MISSING_SCRIPT_PHASE_OUTPUTS_AS_ERRORS\=NO
+    export UID\=501
+    export UNINSTALLED_PRODUCTS_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/UninstalledProducts
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH\=Host.app
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_NO\=Host.app/Resources
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_YES\=Host.app
+    export UNSTRIPPED_PRODUCT\=NO
+    export USER\=runner
+    export USER_APPS_DIR\=/Users/runner/Applications
+    export USER_LIBRARY_DIR\=/Users/runner/Library
+    export USE_DYNAMIC_NO_PIC\=YES
+    export USE_HEADERMAP\=YES
+    export USE_HEADER_SYMLINKS\=NO
+    export USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES\=YES
+    export VALIDATE_DEVELOPMENT_ASSET_PATHS\=YES_ERROR
+    export VALIDATE_PRODUCT\=YES
+    export VALID_ARCHS\=arm64\ arm64e\ armv7\ armv7s
+    export VERBOSE_PBXCP\=NO
+    export VERSIONING_SYSTEM\=apple-generic
+    export VERSIONPLIST_PATH\=Host.app/version.plist
+    export VERSION_INFO_BUILDER\=runner
+    export VERSION_INFO_FILE\=Host_vers.c
+    export VERSION_INFO_STRING\=\"@\(\#\)PROGRAM:Host\ \ PROJECT:Host-1\"
+    export WORKSPACE_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    export WRAPPER_EXTENSION\=app
+    export WRAPPER_NAME\=Host.app
+    export WRAPPER_SUFFIX\=.app
+    export WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES\=NO
+    export XCODE_APP_SUPPORT_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/Library/Xcode
+    export XCODE_PRODUCT_BUILD_VERSION\=16F6
+    export XCODE_VERSION_ACTUAL\=1640
+    export XCODE_VERSION_MAJOR\=1600
+    export XCODE_VERSION_MINOR\=1640
+    export XPCSERVICES_FOLDER_PATH\=Host.app/XPCServices
+    export YACC\=yacc
+    export _DISCOVER_COMMAND_LINE_LINKER_INPUTS\=YES
+    export _DISCOVER_COMMAND_LINE_LINKER_INPUTS_INCLUDE_WL\=YES
+    export _WRAPPER_CONTENTS_DIR_SHALLOW_BUNDLE_NO\=/Contents
+    export _WRAPPER_PARENT_PATH_SHALLOW_BUNDLE_NO\=/..
+    export _WRAPPER_RESOURCES_DIR_SHALLOW_BUNDLE_NO\=/Resources
+    export __DIAGNOSE_DEPRECATED_ARCHS\=YES
+    export __IS_NOT_MACOS\=YES
+    export __IS_NOT_MACOS_macosx\=NO
+    export __IS_NOT_SIMULATOR\=YES
+    export __IS_NOT_SIMULATOR_simulator\=NO
+    export arch\=undefined_arch
+    export variant\=normal
+    /bin/sh -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build/Script-00DD1BFF1BD5951E006B06BC.sh
+Node found at: /Users/runner/hostedtoolcache/node/18.20.8/x64/bin/node
++ DEST=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app
++ [[ ! -n '' ]]
++ [[ Release = *Debug* ]]
++ [[ -n 1 ]]
++ echo 'SKIP_BUNDLING enabled; skipping.'
+SKIP_BUNDLING enabled; skipping.
++ exit 0
+
+GenerateDSYMFile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app.dSYM /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Host (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Host -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app.dSYM
+
+PhaseScriptExecution [CP]\ Embed\ Pods\ Frameworks /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build/Script-00EEFC60759A1932668264C0.sh (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    /bin/sh -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build/Script-00EEFC60759A1932668264C0.sh
+mkdir -p /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Frameworks
+rsync --delete -av --filter P .*.?????? --links --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" "/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/XCFrameworkIntermediates/hermes-engine/Pre-built/hermes.framework" "/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Frameworks"
+Transfer starting: 3 files
+hermes.framework/
+hermes.framework/Info.plist
+hermes.framework/hermes
+
+sent 3132399 bytes  received 70 bytes  61300763 bytes/sec
+total size is 3131623  speedup is 1.00
+
+PhaseScriptExecution [CP]\ Copy\ Pods\ Resources /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build/Script-E235C05ADACE081382539298.sh (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    /bin/sh -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build/Script-E235C05ADACE081382539298.sh
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/React-Core/AccessibilityResources.bundle
+Transfer starting: 4 files
+AccessibilityResources.bundle/
+AccessibilityResources.bundle/Info.plist
+AccessibilityResources.bundle/en.lproj/
+AccessibilityResources.bundle/en.lproj/Localizable.strings
+
+sent 1728 bytes  received 76 bytes  254084 bytes/sec
+total size is 1309  speedup is 0.73
+
+CopySwiftLibs /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Host --scan-folder /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Frameworks --scan-folder /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/PlugIns --scan-folder /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/SystemExtensions --scan-folder /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Extensions --platform iphoneos --toolchain /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Intermediates.noindex/Host.build/Release-iphoneos/Host.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-concurrency
+Ignoring --strip-bitcode because --sign was not passed
+
+RegisterExecutionPolicyException /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    builtin-RegisterExecutionPolicyException /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app
+
+Validate /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    builtin-validationUtility /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app -validate-for-store -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app (in target 'Host' from project 'Host')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios
+    /usr/bin/touch -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/build/Build/Products/Release-iphoneos/Host.app
+
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-callinvoker' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-runtimeexecutor' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTActionSheet' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'RCTRequired' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'boost' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'FBLazyVector' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'hermes-engine' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'OpenSSL-Universal' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-Glog' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-DoubleConversion' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'FBReactNativeSpec' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'react-native-safe-area-context' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'libevent' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'glog' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'fmt' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'YogaKit' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Yoga' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'SocketRocket' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'ReactCommon' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-perflogger' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-logger' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-jsinspector' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-jsiexecutor' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-jsi' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-hermes' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-cxxreact' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTVibration' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTText' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTSettings' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTNetwork' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTLinking' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTImage' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTBlob' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTAppDelegate' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-RCTAnimation' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-CoreModules' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-Core-AccessibilityResources' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-Core' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'React-Codegen' from project 'Pods')
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/Pods/Pods.xcodeproj: warning: The iOS deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 18.5.99. (in target 'RNScreens' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'RNScreens' from project 'Pods')
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/Pods/Pods.xcodeproj: warning: The iOS deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 18.5.99. (in target 'RNCMaskedView' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'RNCMaskedView' from project 'Pods')
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/Pods/Pods.xcodeproj: warning: The iOS deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 18.5.99. (in target 'RNCAsyncStorage' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'RNCAsyncStorage' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'RCTTypeSafety' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'RCT-Folly' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Pods-Host' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Host' from project 'Host')
+warning: Run script build phase 'Start Packager' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'Host' from project 'Host')
+warning: Run script build phase 'Bundle React Native code and images' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'Host' from project 'Host')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'FlipperKit' from project 'Pods')
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/Host/ios/Pods/Pods.xcodeproj: warning: The iOS deployment target 'IPHONEOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 18.5.99. (in target 'Flipper-RSocket' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-RSocket' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-PeerTalk' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-Folly' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-Fmt' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper-Boost-iOSX' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'Flipper' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'DoubleConversion' from project 'Pods')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'CocoaAsyncSocket' from project 'Pods')
+** BUILD SUCCEEDED **
+

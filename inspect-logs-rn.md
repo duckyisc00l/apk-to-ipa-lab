@@ -1,0 +1,21 @@
+- bundle: assets/index.android.bundle
+- size: 1058252
+- kind: hermes
+- hermes_bytecode_version: 90
+- hermes_strings: 7165
+- rn_version: 0.71.5
+- rn_prerelease: None
+- rn_version_from: dex Lm3/b;
+- debug_dex_seqs: [['Lm3/b;-><clinit>', 0, 71, 5, 'major', 'minor', 'patch', 'prerelease', 0]]
+- app_name: englishDictionary
+- new_architecture: True
+- engine_lib: hermes
+- native_core: ['RCTImageView', 'RCTModalHostView', 'RCTMultilineTextInputView', 'RCTRefreshControl', 'RCTSafeAreaView', 'RCTScrollView', 'RCTSinglelineTextInputView', 'RCTSwitch', 'RCTText', 'RCTView', 'RCTVirtualText']
+- native_third_party: ['ExpoSnackWrapper', 'RCTActivityIndicatorView', 'RCTAnimation', 'RCTDeviceEventEmitter', 'RCTEventEmitter', 'RCTImageSource', 'RCTInputAccessoryView', 'RCTLog', 'RCTNativeAppEventEmitter', 'RCTNetworking', 'RCTRawText', 'RCTScrollContentView', 'RCTSlider', 'RCTTextInlineImage', 'RNCAsyncStorage', 'RNCMaskedView', 'RNCSafeAreaContext', 'RNCSafeAreaProvider', 'RNCSafeAreaView', 'RNSFullWindowOverlay', 'RNSScreen', 'RNSScreenContainer', 'RNSScreenNavigationContainer', 'RNSScreenStack', 'RNSScreenStackHeaderConfig', 'RNSScreenStackHeaderSubview', 'RNSSearchBar']
+- images: {'registrations': 0, 'copied': 0, 'missing': 0}
+- debug_version_ctx: []
+- debug_fb_ctx: []
+- debug_asset_ctx: ['r"\n"stringifyViewConfig"\n"scrollResponderKeyboardDidShow"\n"_animation"\n"_animationClass"\n"darkorchid"\n"orchid"\n"hideBackButton"\n"onResponderTerminate"\n"_mass"\n"__packager_asset"\n"labelBeneath"\n"radius"\n"classList"\n"iconHorizontal"\n"locationY"\n"h-4"\n"h-44"\n"rounded-3xl"\n"hiddenOnScroll"\n"locationX"\n"bg-white"\n"white"\n"dark:bg-black"\n"black"\n"flex-1"\n"p-5"\n"gap-5"\n"divide"\n"_']
+- package: com.englishdictionary.rn
+- label: Word Sense
+- app_name_from: Lcom/englishdictionary/MainActivity; (launcher activity)
