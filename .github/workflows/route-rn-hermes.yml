@@ -48,7 +48,7 @@ jobs:
   ipa:
     needs: inspect
     runs-on: macos-15-intel   # Intel Macs: often free when the Apple-chip ones are busy
-    timeout-minutes: 90
+    timeout-minutes: 170   # pods ~8 min, device build ~30, simulator build ~25 on Intel
     env:
       V: ${{ needs.inspect.outputs.rn_version }}
       KIND: ${{ needs.inspect.outputs.kind }}
@@ -148,7 +148,7 @@ jobs:
       - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
         continue-on-error: true
         run: |
-          export CCC_OVERRIDE_OPTIONS='^-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1' SKIP_BUNDLING=1
+          export CCC_OVERRIDE_OPTIONS='^-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1' SKIP_BUNDLING=1 SIM_ARCHS=x86_64   # Intel Mac: one simulator arch
           BID="com.duckyisc00l.$(echo "${PKG:-$APPNAME}" | tr -cd 'A-Za-z0-9.' | awk -F. '{print $NF}')"
           export SIM_PRE_RUN="RN_TRACE=1 ci/rn/fill-app.sh \"\$APP\" rn Host \"$KIND\" \"$BID\" \"${LABEL:-$APPNAME}\""
           ci/sim/build-and-run.sh "$(ls -d Host/ios/*.xcworkspace | head -1)" Host out/sim 40
