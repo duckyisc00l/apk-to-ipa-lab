@@ -1,0 +1,495 @@
+[
+ {
+  "repo": "Open-GD/OpenGD",
+  "stars": 253,
+  "licence": "GPL-3.0",
+  "lang": "C++",
+  "tag": "v0.1.0-beta",
+  "asset": "OpenGD.apk",
+  "url": "https://github.com/Open-GD/OpenGD/releases/download/v0.1.0-beta/OpenGD.apk",
+  "mb": 22.6,
+  "libs": [
+   "libOpenGD.so",
+   "libc++_shared.so",
+   "libopenal.so"
+  ],
+  "engine_libs": [],
+  "versions": [],
+  "asset_exts": {
+   ".png": 81,
+   ".plist": 34,
+   ".mp3": 9,
+   ".fnt": 6,
+   ".ogg": 5,
+   ".ttf": 2,
+   ".txt": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "summerinsects/ChineseOfficialMahjongHelper",
+  "stars": 156,
+  "licence": "MIT",
+  "lang": "C++",
+  "tag": "v1.5.2.3",
+  "asset": "v1.5.2.3.apk",
+  "url": "https://github.com/summerinsects/ChineseOfficialMahjongHelper/releases/download/v1.5.2.3/v1.5.2.3.apk",
+  "mb": 3.4,
+  "libs": [
+   "libMyGame.so"
+  ],
+  "engine_libs": [
+   "libMyGame.so"
+  ],
+  "versions": [
+   "cocos2d-x-4.0"
+  ],
+  "asset_exts": {
+   ".png": 57,
+   ".xml": 3,
+   ".ttf": 1,
+   "": 1,
+   ".txt": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "PenguinAndy/il2Fusion",
+  "stars": 91,
+  "licence": "MIT",
+  "lang": "C",
+  "tag": "v0.0.3",
+  "asset": "il2Fusion-0.0.3-arm64-v8a-release.apk",
+  "url": "https://github.com/PenguinAndy/il2Fusion/releases/download/v0.0.3/il2Fusion-0.0.3-arm64-v8a-release.apk",
+  "mb": 48.2,
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libdatastore_shared_counter.so",
+   "libnative_hook.so"
+  ],
+  "engine_libs": [],
+  "versions": [],
+  "asset_exts": {
+   "": 2,
+   ".prof": 1,
+   ".profm": 1,
+   ".prop": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "lfeng1420/BrickGame",
+  "stars": 45,
+  "licence": "MIT",
+  "lang": "C++",
+  "tag": "V2.0.1",
+  "asset": "BrickGame-GooglePlay.apk",
+  "url": "https://github.com/lfeng1420/BrickGame/releases/download/V2.0.1/BrickGame-GooglePlay.apk",
+  "mb": 4.2,
+  "libs": [
+   "liblfeng.so"
+  ],
+  "engine_libs": [],
+  "versions": [
+   "cocos2d-x 3.2",
+   "cocos2d-x-3"
+  ],
+  "asset_exts": {
+   ".txt": 48,
+   ".mp3": 10,
+   ".plist": 3,
+   ".png": 3,
+   ".json": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "yumin-chen/arkaflow",
+  "stars": 31,
+  "licence": "GPL-3.0",
+  "lang": "C++",
+  "tag": "v1.2",
+  "asset": "com.CharmySoft.CCPP.apk",
+  "url": "https://github.com/yumin-chen/arkaflow/releases/download/v1.2/com.CharmySoft.CCPP.apk",
+  "mb": 3.9,
+  "libs": [
+   "libcocos2dcpp.so"
+  ],
+  "engine_libs": [
+   "libcocos2dcpp.so"
+  ],
+  "versions": [
+   "cocos2d-x 3.4",
+   "cocos2d-x-3"
+  ],
+  "asset_exts": {
+   ".png": 51,
+   ".ogg": 5,
+   ".ttf": 3,
+   ".jpg": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "cocos56/Baby-s_36_Skills",
+  "stars": 18,
+  "licence": "GPL-3.0",
+  "lang": "C++",
+  "tag": "V1.0",
+  "asset": "Baby_s_36_Skills-release-signed.apk",
+  "url": "https://github.com/cocos56/Baby-s_36_Skills/releases/download/V1.0/Baby_s_36_Skills-release-signed.apk",
+  "mb": 24.0,
+  "libs": [
+   "libMyGame.so"
+  ],
+  "engine_libs": [
+   "libMyGame.so"
+  ],
+  "versions": [
+   "cocos2d-x-3",
+   "cocos2d-x-3.17.2"
+  ],
+  "asset_exts": {
+   ".png": 129,
+   ".plist": 7,
+   ".tmx": 6,
+   ".mp3": 4,
+   ".json": 1,
+   ".xml": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "wgt19861219/CardGameAxmol",
+  "stars": 16,
+  "licence": "MIT",
+  "lang": "Lua",
+  "tag": "v1.0.0",
+  "asset": "CardGame-release.apk",
+  "url": "https://github.com/wgt19861219/CardGameAxmol/releases/download/v1.0.0/CardGame-release.apk",
+  "mb": 107.2,
+  "libs": [
+   "libCardGame.so",
+   "libc++_shared.so",
+   "libopenal.so"
+  ],
+  "engine_libs": [],
+  "versions": [],
+  "asset_exts": {
+   ".png": 1514,
+   ".jpg": 723,
+   ".lua": 544,
+   ".mp3": 405,
+   ".abc": 327,
+   "": 105,
+   ".ani": 101,
+   ".ccbi": 21,
+   ".atlas": 19,
+   ".json": 19,
+   ".proto": 4,
+   ".sh": 2,
+   ".prof": 1,
+   ".profm": 1,
+   ".key": 1
+  },
+  "heads": {
+   "assets/src/ActStageGroup.lua": "72657475726e207b0d0a20205b323030",
+   "assets/src/AnimAtkFrame.lua": "72657475726e207b0d0a20205b225a65",
+   "assets/src/AnimDuration.lua": "72657475726e207b0d0a20205b225a65",
+   "assets/src/Avatar.lua": "72657475726e207b0d0a20205b305d20",
+   "assets/src/Battle.lua": "72657475726e207b0d0a20205b2d3237",
+   "assets/src/Buff.lua": "72657475726e207b0d0a20205b315d20",
+   "assets/src/Chapter.lua": "72657475726e207b0d0a20205b315d20",
+   "assets/src/CrusadeRewards.lua": "72657475726e207b0d0a20205b315d20"
+  }
+ },
+ {
+  "repo": "re-esper/dream-avg",
+  "stars": 9,
+  "licence": "Apache-2.0",
+  "lang": "C++",
+  "tag": "0.1",
+  "asset": "Sakumai-release-signed.apk",
+  "url": "https://github.com/re-esper/dream-avg/releases/download/0.1/Sakumai-release-signed.apk",
+  "mb": 30.0,
+  "libs": [
+   "libcocos2dlua.so"
+  ],
+  "engine_libs": [
+   "libcocos2dlua.so"
+  ],
+  "versions": [
+   "cocos2d-x-3",
+   "cocos2d-x-3.17.2",
+   "libcocos2dlua.so mentions xxtea"
+  ],
+  "asset_exts": {
+   ".lua": 92,
+   ".png": 59,
+   ".json": 14,
+   ".ogg": 10,
+   ".jpg": 5,
+   ".mp3": 2,
+   ".ttf": 1,
+   ".moc3": 1,
+   ".plist": 1
+  },
+  "heads": {
+   "assets/src/cocos/3d/3dConstants.lua": "6966206e696c203d3d2063632e546572",
+   "assets/src/cocos/cocos2d/Cocos2d.lua": "0a6363203d206363206f72207b7d0a0a",
+   "assets/src/cocos/cocos2d/Cocos2dConstants.lua": "0a6363203d206363206f72207b7d0a0a",
+   "assets/src/cocos/cocos2d/DeprecatedCocos2dClass.lua": "2d2d2054686973206973207468652044",
+   "assets/src/cocos/cocos2d/DeprecatedCocos2dEnum.lua": "0a2d2d456e756d732077696c6c206265",
+   "assets/src/cocos/cocos2d/DeprecatedCocos2dFunc.lua": "0a2d2d7469700a6c6f63616c2066756e",
+   "assets/src/cocos/cocos2d/DeprecatedOpenglEnum.lua": "2d2d2054686973206973207468652044",
+   "assets/src/cocos/cocos2d/DrawPrimitives.lua": "0a6c6f63616c2064705f696e69746961"
+  }
+ },
+ {
+  "repo": "SawaraNazo/GraduationProject",
+  "stars": 8,
+  "licence": null,
+  "lang": "C++",
+  "tag": "V1.0",
+  "asset": "Monopoly_v1.0.apk",
+  "url": "https://github.com/SawaraNazo/GraduationProject/releases/download/V1.0/Monopoly_v1.0.apk",
+  "mb": 48.7,
+  "libs": [
+   "libMyGame.so"
+  ],
+  "engine_libs": [
+   "libMyGame.so"
+  ],
+  "versions": [
+   "cocos2d-x-3",
+   "cocos2d-x-3.16"
+  ],
+  "asset_exts": {
+   ".png": 77,
+   ".mp3": 17,
+   ".xml": 5,
+   ".tmx": 3,
+   ".ttf": 2,
+   ".txt": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "day0loophole/TestRapier2d",
+  "stars": 6,
+  "licence": null,
+  "lang": "TypeScript",
+  "tag": "v.1.0.0",
+  "asset": "TestRapier-release.apk",
+  "url": "https://github.com/day0loophole/TestRapier2d/releases/download/v.1.0.0/TestRapier-release.apk",
+  "mb": 16.0,
+  "libs": [
+   "libEGL.so",
+   "libcocos.so"
+  ],
+  "engine_libs": [
+   "libcocos.so"
+  ],
+  "versions": [],
+  "asset_exts": {
+   ".json": 16,
+   ".js": 9,
+   ".png": 5
+  },
+  "heads": {
+   "assets/assets/internal/index.js": "53797374656d2e726567697374657228",
+   "assets/assets/main/index.js": "53797374656d2e726567697374657228",
+   "assets/jsb-adapter/engine-adapter.js": "2866756e6374696f6e28297b66756e63",
+   "assets/jsb-adapter/web-adapter.js": "2866756e6374696f6e28297b66756e63",
+   "assets/main.js": "0d0a0d0a2f2f2053797374656d4a5320",
+   "assets/src/application.js": "53797374656d2e726567697374657228",
+   "assets/src/chunks/bundle.js": "53797374656d2e726567697374657228",
+   "assets/src/cocos-js/cc.js": "53797374656d2e726567697374657228"
+  }
+ },
+ {
+  "repo": "rmake/cor-engine",
+  "stars": 5,
+  "licence": "MIT",
+  "lang": "C++",
+  "tag": "current_build",
+  "asset": "cor_lib_test_main-debug.apk",
+  "url": "https://github.com/rmake/cor-engine/releases/download/current_build/cor_lib_test_main-debug.apk",
+  "mb": 6.8,
+  "libs": [
+   "libcocos2dcpp.so"
+  ],
+  "engine_libs": [
+   "libcocos2dcpp.so"
+  ],
+  "versions": [
+   "cocos2d-x-3",
+   "cocos2d-x-3.8.1"
+  ],
+  "asset_exts": {
+   ".txt": 35,
+   ".rb": 19,
+   ".png": 7,
+   ".ttf": 2,
+   "": 2,
+   ".fnt": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "funkyzooink/fresh-engine",
+  "stars": 4,
+  "licence": "MIT",
+  "lang": "C++",
+  "tag": "release-the-dragon-kid-v40",
+  "asset": "The.Dragon.Kid-release.apk",
+  "url": "https://github.com/funkyzooink/fresh-engine/releases/download/release-the-dragon-kid-v40/The.Dragon.Kid-release.apk",
+  "mb": 22.6,
+  "libs": [
+   "libMyGame.so"
+  ],
+  "engine_libs": [
+   "libMyGame.so"
+  ],
+  "versions": [
+   "cocos2d-x-3",
+   "cocos2d-x-4.0"
+  ],
+  "asset_exts": {
+   ".tmx": 87,
+   ".png": 52,
+   ".plist": 51,
+   ".mp3": 18,
+   ".json": 17,
+   ".ttf": 2,
+   ".storyboard": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "bluemylake/Blue-Mingyuan-Lake",
+  "stars": 4,
+  "licence": "GPL-2.0",
+  "lang": "C++",
+  "tag": "1.2",
+  "asset": "Blue_Mingyuan_Lake_v1.2_android.apk",
+  "url": "https://github.com/bluemylake/Blue-Mingyuan-Lake/releases/download/1.2/Blue_Mingyuan_Lake_v1.2_android.apk",
+  "mb": 52.1,
+  "libs": [
+   "libcocos2dcpp.so"
+  ],
+  "engine_libs": [
+   "libcocos2dcpp.so"
+  ],
+  "versions": [
+   "cocos2d-x-2.2.3"
+  ],
+  "asset_exts": {
+   ".png": 234,
+   ".csv": 64,
+   ".jpg": 23,
+   "": 15,
+   ".mp3": 13,
+   ".tmx": 6,
+   ".wav": 5,
+   ".plist": 4,
+   ".txt": 3,
+   ".pl": 2,
+   ".xlsx": 2,
+   ".ttf": 2,
+   ".cfg": 1,
+   ".exe": 1,
+   ".icf": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "lil2kki/Paperdays",
+  "stars": 3,
+  "licence": "MIT",
+  "lang": "C++",
+  "tag": "nightly",
+  "asset": "paperdays.launcher.apk",
+  "url": "https://github.com/lil2kki/Paperdays/releases/download/nightly/paperdays.launcher.apk",
+  "mb": 93.7,
+  "libs": [
+   "libandroidx.graphics.path.so",
+   "libc++_shared.so",
+   "liblauncherfix.so"
+  ],
+  "engine_libs": [],
+  "versions": [],
+  "asset_exts": {
+   ".geode": 2,
+   ".prof": 1,
+   ".profm": 1,
+   ".list": 1,
+   ".png": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "duc-hoang-161/JOMK-Game",
+  "stars": 3,
+  "licence": "MIT",
+  "lang": "C++",
+  "tag": "v1.0-alpha-test",
+  "asset": "arm-x86.GameJOMK-debug.apk",
+  "url": "https://github.com/duc-hoang-161/JOMK-Game/releases/download/v1.0-alpha-test/arm-x86.GameJOMK-debug.apk",
+  "mb": 71.4,
+  "libs": [
+   "libMyGame.so"
+  ],
+  "engine_libs": [
+   "libMyGame.so"
+  ],
+  "versions": [
+   "cocos2d-x-3",
+   "cocos2d-x-3.15"
+  ],
+  "asset_exts": {
+   ".png": 628,
+   ".json": 69,
+   ".mp3": 49,
+   ".plist": 34,
+   ".gif": 18,
+   ".ttf": 7,
+   ".tmx": 4,
+   ".bak": 1,
+   ".vfb": 1,
+   ".py": 1,
+   ".jpg": 1,
+   ".txt": 1
+  },
+  "heads": {}
+ },
+ {
+  "repo": "gifur/MoonIce",
+  "stars": 2,
+  "licence": null,
+  "lang": "Java",
+  "tag": "1.0.0",
+  "asset": "MoonIce.apk",
+  "url": "https://github.com/gifur/MoonIce/releases/download/1.0.0/MoonIce.apk",
+  "mb": 100.6,
+  "libs": [
+   "libgame.so"
+  ],
+  "engine_libs": [
+   "libgame.so"
+  ],
+  "versions": [],
+  "asset_exts": {
+   ".png": 142,
+   ".wav": 23,
+   ".csv": 21,
+   ".plist": 15,
+   ".ccz": 8,
+   ".tmx": 7,
+   ".jpg": 6,
+   ".txt": 1,
+   ".fnt": 1
+  },
+  "heads": {}
+ }
+]
