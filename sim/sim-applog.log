@@ -1,0 +1,806 @@
+2026-11-17 23:47:23.965 Df App[9143:7e79] [com.apple.xpc:connection] [0x1091043c0] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-11-17 23:47:23.966 Df App[9143:7d12] [com.apple.xpc:connection] [0x107e04910] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-17 23:47:23.968 A  App[9143:7d12] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-17 23:47:24.003 A  App[9143:7e7b] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-17 23:47:24.008 Df App[9143:7e83] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-17 23:47:24.009 Df App[9143:7e83] [com.apple.xpc:connection] [0x109205d80] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-17 23:47:24.012 Df App[9143:7d12] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-17 23:47:24.022 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-11-17 23:47:24.023 Df App[9143:7d12] [com.apple.runningboard:connection] Initializing connection
+2026-11-17 23:47:24.023 Df App[9143:7d12] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-17 23:47:24.024 Df App[9143:7e84] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-17 23:47:24.024 Df App[9143:7d12] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-11-17 23:47:24.024 Df App[9143:7e84] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-17 23:47:24.024 Df App[9143:7e84] [com.apple.xpc:connection] [0x109105ee0] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-17 23:47:24.024 Df App[9143:7d12] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-11-17 23:47:24.025 A  App[9143:7e83] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:47:24.026 Df App[9143:7d12] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-11-17 23:47:24.027 Df App[9143:7e84] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-17 23:47:24.027 Df App[9143:7e84] [com.apple.runningboard:connection] Identity resolved as app<com.duckyisc00l.twozerogame((null))>
+2026-11-17 23:47:24.028 Df App[9143:7d12] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x60000023c720; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-17 23:47:24.029 Df App[9143:7d12] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x600003000630 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-17 23:47:24.029 Df App[9143:7d12] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x600003000630 com.apple.frontboard.systemappservices> sent handshake
+2026-11-17 23:47:24.029 Df App[9143:7d12] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x60000020ade0>
+2026-11-17 23:47:24.034 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-11-17 23:47:24.035 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-11-17 23:47:24.036 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-11-17 23:47:24.037 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-11-17 23:47:24.037 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-11-17 23:47:24.038 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-11-17 23:47:24.039 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-11-17 23:47:24.040 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-11-17 23:47:24.040 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-11-17 23:47:24.041 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-11-17 23:47:24.041 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-11-17 23:47:24.041 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-11-17 23:47:24.042 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-11-17 23:47:24.042 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-17 23:47:24.042 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-17 23:47:24.043 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-17 23:47:24.045 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-17 23:47:24.052 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-17 23:47:24.052 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-17 23:47:24.053 Df App[9143:7e84] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-17 23:47:24.171 Df App[9143:7e79] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-11-17 23:47:24.171 Df App[9143:7e79] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-11-17 23:47:24.172 Df App[9143:7e79] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x60000210ee40>
+2026-11-17 23:47:24.173 Df App[9143:7e79] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x60000210ee40>
+2026-11-17 23:47:24.173 Df App[9143:7e79] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x60000170ba40>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 577 (elapsed = 0).
+2026-11-17 23:47:24.173 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-17 23:47:24.174 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-17 23:47:24.175 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-17 23:47:24.175 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-17 23:47:24.176 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-17 23:47:24.177 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-17 23:47:24.177 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-17 23:47:24.177 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-17 23:47:24.178 Df App[9143:7e79] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-17 23:47:24.451 Df App[9143:7d12] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x109106ee0> for initial
+2026-11-17 23:47:24.452 Df App[9143:7d12] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x109106ee0> for CADisplay KVO
+2026-11-17 23:47:24.454 Df App[9143:7d12] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-17 23:47:24.455 Df App[9143:7d12] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-17 23:47:24.463 Df App[9143:7d12] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-17 23:47:24.464 Df App[9143:7d12] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 23:47:24.464 Df App[9143:7d12] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 23:47:24.464 Df App[9143:7d12] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 23:47:24.466 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1024 -> 3072; animating application lifecycle event: 0
+2026-11-17 23:47:24.617 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3072 -> 2048; animating application lifecycle event: 0
+2026-11-17 23:47:24.619 Df App[9143:7d12] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-17 23:47:24.619 Df App[9143:7d12] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-17 23:47:24.619 Df App[9143:7d12] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-17 23:47:24.627 Df App[9143:7d12] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-17 23:47:24.627 Df App[9143:7d12] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x60000210ee40>
+2026-11-17 23:47:24.627 Df App[9143:7d12] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x60000210ee40>
+2026-11-17 23:47:24.627 Df App[9143:7d12] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x6000017149c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 577 (elapsed = 0).
+2026-11-17 23:47:24.628 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 2048 -> 2080; animating application lifecycle event: 1
+2026-11-17 23:47:24.628 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.629 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.629 Df App[9143:7d12] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x60000290e760>; with scene: <UIWindowScene: 0x109206a60>
+2026-11-17 23:47:24.629 Df App[9143:7d12] [com.apple.BacklightServices:scenes] 0x600000c10ae0 setDelegate:<0x600000c10ab0 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.duckyisc00l.twozerogame-default
+2026-11-17 23:47:24.630 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.630 Df App[9143:7d12] [com.apple.UIKit:EventDeferring] [0x60000290e610] Initialized with scene: <UIWindowScene: 0x109206a60>; behavior: <_UIEventDeferringBehavior_iOS: 0x600000241e40>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-17 23:47:24.630 Df App[9143:7d12] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-17 23:47:24.631 Df App[9143:7d12] [com.apple.xpc:connection] [0x109204630] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-17 23:47:24.633 Df App[9143:7e83] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260c840; process scope; status: target> was:none
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x109206a60; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.UIKit:EventDeferring] [0x60000290e610] Scene target of event deferring environments did update: scene: 0x109206a60; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x109206a60; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c11cb0: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-17 23:47:24.633 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-17 23:47:24.634 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x109206a60; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x109206a60: Window scene became target of keyboard environment
+2026-11-17 23:47:24.634 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.635 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.705 Df App[9143:7d12] [com.apple.UIKit:Orientation] <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB) Scene updated orientation preferences: none -> ( Pu )
+2026-11-17 23:47:24.706 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-17 23:47:24.706 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x109206a60: Window became key in scene: UIWindow: 0x107e0d690; contextId: 0x49074B3F: reason: UIWindowScene: 0x109206a60: Window requested to become key in scene: 0x107e0d690
+2026-11-17 23:47:24.706 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x109206a60; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x107e0d690; reason: UIWindowScene: 0x109206a60: Window requested to become key in scene: 0x107e0d690
+2026-11-17 23:47:24.706 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x107e0d690; contextId: 0x49074B3F; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:47:24.706 Df App[9143:7d12] [com.apple.UIKit:EventDeferring] [0x60000290e610] Begin local event deferring requested for token: 0x600002610840; environments: 1; reason: UIWindowScene: 0x109206a60: Begin event deferring in keyboardFocus for window: 0x107e0d690
+2026-11-17 23:47:24.707 Df App[9143:7e83] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-17 23:47:24.711 Df App[9143:7e83] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260c840; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default; status: ancestor> was:target
+2026-11-17 23:47:24.712 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.715 Df App[9143:7d12] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:47:24.715 Df App[9143:7d12] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 2080
+2026-11-17 23:47:24.715 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-17 23:47:24.716 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-17 23:47:24.716 Df App[9143:7d12] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-17 23:47:24.717 Df App[9143:7e7b] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-17 23:47:24.717 Df App[9143:7e7b] [com.apple.xpc:session] [0x6000021095e0] Session created.
+2026-11-17 23:47:24.717 Df App[9143:7e7b] [com.apple.xpc:session] [0x6000021095e0] Session created from connection [0x107e0d510]
+2026-11-17 23:47:24.717 Df App[9143:7e7b] [com.apple.xpc:connection] [0x107e0d510] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-17 23:47:24.717 Df App[9143:7e7b] [com.apple.xpc:session] [0x6000021095e0] Session activated
+2026-11-17 23:47:24.719 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:24.724 A  App[9143:7d12] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-17 23:47:25.150 Df App[9143:7e89] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-11-17 23:47:25.150 Df App[9143:7e89] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x6000017149c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 577 (elapsed = 1), _expireHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-17 23:47:25.150 Df App[9143:7e89] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x60000210ee40> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x6000017149c0>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 577 (elapsed = 1))
+2026-11-17 23:47:25.162 A  App[9143:7e89] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:47:25.174 Df App[9143:7e7b] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-17 23:47:25.174 Df App[9143:7e7b] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x60000170ba40>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 577 (elapsed = 1), _expireHandler: (null)
+2026-11-17 23:47:25.174 Df App[9143:7e7b] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x60000210ee40> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x60000170ba40>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 577 (elapsed = 1))
+2026-11-17 23:47:25.174 Df App[9143:7e7b] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x60000210ee40> for task identifier: 1
+2026-11-17 23:47:25.944 Df App[9143:7d12] [com.apple.xpc:connection] [0x109107ce0] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-17 23:47:26.244 A  App[9143:7e89] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:47:26.274 A  App[9143:7e7b] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:47:26.307 Df App[9143:7d12] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [FBA79A58-68AD-4F44-A932-9BFA8AE1DD95] (reporting strategy default)>
+2026-11-17 23:47:26.307 Df App[9143:7d12] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [DB1B0615-5C3A-483C-B4D0-C39BB50256BA] (reporting strategy default)>
+2026-11-17 23:47:26.307 Df App[9143:7d12] [com.apple.network:activity] Set activity <nw_activity 50:1 [FBA79A58-68AD-4F44-A932-9BFA8AE1DD95] (reporting strategy default)> as the global parent
+2026-11-17 23:47:26.308 Df App[9143:7d12] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-17 23:47:26.318 Df App[9143:7d12] [com.apple.UIKit:EventDeferring] [0x60000290e610] Scene target of event deferring environments did update: scene: 0x109206a60; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 23:47:26.318 Df App[9143:7d12] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x109206a60; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:47:26.319 Df App[9143:7d12] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-17 23:47:26.319 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-17 23:47:26.320 Df App[9143:7d12] [com.apple.xpc:connection] [0x1092051c0] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-17 23:47:26.328 Df App[9143:7d12] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:47:26.328 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:26.330 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:47:26.331 Df App[9143:7d12] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:47:26.332 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-17 23:47:26.333 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-17 23:47:26.333 Df App[9143:7d12] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-17 23:47:26.335 Df App[9143:7d12] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:47:26.342 Df App[9143:7d12] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:47:26.343 Df App[9143:7d12] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:47:26.344 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-17 23:47:26.354 Df App[9143:7d12] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-17 23:47:26.427 Df App[9143:7d12] [com.apple.network:activity] <nw_activity 50:1 [FBA79A58-68AD-4F44-A932-9BFA8AE1DD95] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 5601ms
+2026-11-17 23:47:26.428 Df App[9143:7d12] [com.apple.network:activity] <nw_activity 50:2 [DB1B0615-5C3A-483C-B4D0-C39BB50256BA] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 5602ms
+2026-11-17 23:47:26.428 Df App[9143:7d12] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [FBA79A58-68AD-4F44-A932-9BFA8AE1DD95] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-17 23:47:26.428 Df App[9143:7d12] [com.apple.network:activity] Unset the global parent activity
+2026-11-17 23:47:26.520 A  App[9143:7e89] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:50:43.839 A  App[9143:7e84] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-17 23:50:45.612 Df App[9143:7d12] (Foundation) void * _Nullable NSMapGet(NSMapTable * _Nonnull, const void * _Nullable): map table argument is NULL
+2026-11-17 23:50:45.701 Df App[9143:7d12] [com.apple.BackBoard:Display] [FBSDisplaySource 1-1] silently connecting raw configuration: <FBSDisplayConfiguration: 0x600003d3aee0; Main; mode: "375x667@2x 60Hz p3 SDR">
+2026-11-17 23:51:06.586 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:06.587 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:06.588 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:06.589 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:06.630 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:06.631 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:06.631 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:06.635 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:06.636 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:06.695 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:06.772 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:06.772 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:06.772 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:06.772 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:06.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:06.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:06.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:06.940 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:07.072 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:07.072 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:07.072 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:07.072 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:07.240 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:07.423 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:07.423 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:07.424 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:07.424 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:16.414 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:16.414 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:16.414 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:16.414 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:16.505 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:16.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:16.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:16.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:16.539 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:16.703 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:16.703 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:16.703 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:16.704 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:16.873 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:16.874 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:16.874 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:16.874 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:17.005 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:17.005 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:17.006 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:17.006 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:17.181 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:17.182 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:17.182 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:17.182 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:17.338 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:17.491 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:17.491 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:17.491 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:17.491 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:20.419 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:20.419 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:20.419 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:20.419 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:20.505 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:20.599 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:20.599 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:20.600 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:20.600 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:20.761 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:20.761 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:20.762 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:20.762 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:20.948 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:20.948 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:20.948 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:20.948 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:21.099 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:21.100 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:21.100 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:21.100 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:21.205 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:21.390 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:21.390 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:21.390 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:21.391 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:24.021 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:24.021 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:24.021 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:24.021 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:24.105 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:24.187 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:24.187 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:24.187 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:24.187 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:24.340 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:24.340 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:24.340 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:24.340 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:24.504 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:24.504 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:24.504 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:24.504 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:24.675 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:24.675 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:24.676 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:24.676 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:24.805 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:24.805 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:24.805 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:24.806 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:24.939 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:25.072 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:25.072 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:25.072 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:25.072 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:31.774 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:31.774 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:31.775 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:31.775 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:31.858 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:31.957 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:31.957 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:31.957 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:31.957 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:32.142 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:32.142 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:32.142 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:32.142 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:32.291 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:32.292 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:32.292 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:32.292 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:32.473 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:32.473 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:32.473 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:32.473 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:32.629 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:32.806 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:32.806 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:32.806 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:32.806 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:35.828 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:35.828 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:35.828 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:35.828 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:35.911 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:35.970 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:35.970 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:35.970 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:35.971 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:36.143 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:36.143 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:36.143 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:36.143 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:36.313 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:36.314 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:36.314 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:36.314 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:36.490 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:36.490 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:36.490 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:36.490 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:36.623 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:36.623 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:36.623 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:36.623 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:36.787 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:36.956 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:36.956 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:36.956 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:36.957 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:39.566 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:39.566 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:39.566 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:39.566 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:39.649 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:39.672 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:39.672 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:39.672 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:39.673 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:39.823 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:39.823 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:39.823 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:39.824 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:39.939 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:39.939 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:39.939 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:39.939 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:40.090 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:40.090 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:40.090 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:40.090 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:40.271 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:40.445 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:40.445 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:40.446 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:40.446 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:44.573 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:44.573 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:44.573 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:44.573 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:44.656 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:44.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:44.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:44.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:44.740 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:44.875 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:44.875 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:44.875 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:44.875 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:45.046 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:45.046 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:45.046 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:45.046 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:45.205 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:45.205 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:45.205 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:45.205 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:45.361 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:45.361 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:45.361 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:45.361 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:45.540 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:45.690 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:45.690 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:45.690 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:45.690 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:48.638 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:48.639 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:48.639 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:48.639 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:48.722 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:48.805 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:48.805 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:48.805 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:48.806 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:48.939 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:48.939 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:48.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:48.940 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:49.096 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:49.096 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:49.096 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:49.096 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:49.272 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:49.272 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:49.272 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:49.273 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:49.450 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:49.605 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:49.606 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:49.606 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:49.606 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:52.108 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:52.108 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:52.108 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:52.108 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:52.191 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:52.271 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:52.271 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:52.271 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:52.271 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:52.423 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:52.423 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:52.423 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:52.424 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:52.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:52.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:52.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:52.539 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:52.671 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:52.671 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:52.671 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:52.672 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:52.838 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:52.838 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:52.838 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:52.838 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:53.005 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:53.156 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:53.156 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:53.156 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:53.156 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:56.050 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:51:56.050 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:56.050 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:56.051 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:56.137 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:51:56.220 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:56.220 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:56.220 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:56.220 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:56.384 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:56.384 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:56.384 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:56.385 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:56.556 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:56.556 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:56.556 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:56.557 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:56.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:56.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:56.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:56.740 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:51:56.903 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:57.108 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:51:57.110 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:51:57.112 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:51:57.116 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:00.155 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:00.155 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:00.155 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:00.155 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:00.238 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:52:00.290 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:00.290 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:00.290 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:00.290 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:00.442 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:00.443 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:00.443 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:00.443 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:00.604 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:00.605 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:00.605 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:00.605 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:00.740 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:00.740 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:00.740 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:00.741 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:00.891 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:00.891 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:00.891 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:00.891 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:01.053 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:01.223 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:01.224 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:01.224 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:01.224 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:04.519 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:04.520 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:04.521 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:04.521 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:04.622 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:52:04.678 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:04.678 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:04.678 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:04.680 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:04.837 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:04.837 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:04.837 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:04.837 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:04.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:04.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:04.940 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:04.940 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:05.099 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:05.100 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:05.100 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:05.100 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:05.272 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:05.442 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:05.442 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:05.442 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:05.443 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:08.480 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:08.481 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:08.481 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:08.481 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:08.572 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:52:08.623 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:08.623 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:08.623 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:08.624 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:08.738 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:08.738 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:08.739 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:08.739 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:08.873 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:08.873 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:08.873 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:08.874 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:09.024 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:09.024 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:09.024 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:09.025 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:09.160 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:09.160 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:09.160 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:09.160 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:09.272 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:09.441 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:09.441 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:09.441 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:09.441 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:12.044 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:12.044 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:12.044 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:12.044 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:12.127 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:52:12.205 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:12.205 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:12.206 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:12.206 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:12.357 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:12.357 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:12.357 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:12.357 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:12.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:12.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:12.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:12.538 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:12.671 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:12.671 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:12.671 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:12.671 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:12.830 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:13.004 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:13.004 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:13.005 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:13.005 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:15.628 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:15.628 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:15.628 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:15.628 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:15.711 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:52:15.757 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:15.757 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:15.757 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:15.757 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:15.911 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:15.912 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:15.912 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:15.912 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:16.073 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:16.073 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:16.074 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:16.074 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:16.223 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:16.223 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:16.223 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:16.224 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:16.393 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:16.393 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:16.393 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:16.394 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:16.538 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:16.703 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:16.703 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:16.703 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:16.704 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:32.435 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:32.436 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:32.436 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:32.436 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:32.455 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:32.460 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:32.460 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:32.460 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:32.461 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:32.466 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-17 23:52:39.771 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:39.771 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:39.771 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:39.771 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:39.773 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:39.773 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:39.773 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:39.773 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:39.774 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:39.840 Df App[9143:7d12] [PrototypeTools:domain] Not observing PTDefaults on customer install.
+2026-11-17 23:52:39.925 Df App[9143:7d12] [com.apple.UIKit:UIFocusSystemSceneComponent] Override focusSystemState: (ENABLED) for reason(s): {(
+    "<_UIAlertControllerPhoneTVMacView 0x10889a000>"
+)}
+2026-11-17 23:52:39.928 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:52:39.980 Df App[9143:7d12] [com.apple.UIKit:UIFocus] Failed to update focus with context <UIFocusUpdateContext: 0x60000300f3c0; previouslyFocusedItem: (nil); nextFocusedItem: (nil); focusHeading: None>. No additional info available.
+2026-11-17 23:52:40.045 Df App[9143:7d12] [com.apple.UIKit:UIAlertControllerStackManager] _willShowAlertController: <SwiftUI.PlatformAlertController: 0x1080a3600>
+2026-11-17 23:52:40.045 Df App[9143:7d12] [com.apple.UIKit:UIAlertControllerStackManager] _addAlertControllerToStack: Adding Alert to stack : <SwiftUI.PlatformAlertController: 0x1080a3600>
+2026-11-17 23:52:40.102 Df App[9143:7d12] [com.apple.UIKit:UIFocus] Deferring focus update to item <_UIInterfaceActionCustomViewRepresentationView: 0x109018130>. No additional info available.
+2026-11-17 23:52:40.106 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 1, systemGestureStateChange: 1
+2026-11-17 23:52:40.505 Df App[9143:7d12] [com.apple.UIKit:UIFocus] Deferring focus update to item <_UIInterfaceActionCustomViewRepresentationView: 0x109018130>. No additional info available.
+2026-11-17 23:52:48.393 Df App[9143:7d12] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.twozerogame-default
+2026-11-17 23:52:48.393 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:48.393 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:48.393 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:48.394 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:48.403 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-17 23:52:48.403 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-17 23:52:48.403 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e0d690>; contextId: 0x49074B3F
+2026-11-17 23:52:48.404 A  App[9143:7d12] (UIKitCore) send gesture actions
+2026-11-17 23:52:48.407 Df App[9143:7d12] [com.apple.UIKit:UIAlertControllerStackManager] _alertControllerWillDisappear: will hide alert : <UIAlertControllerStackManager: 0x600000248060>
+2026-11-17 23:52:48.407 Df App[9143:7d12] [com.apple.UIKit:UIAlertControllerStackManager] _removeAlertControllerFromStack: Removing Alert from stack : <SwiftUI.PlatformAlertController: 0x1080a3600>
+2026-11-17 23:52:48.420 Df App[9143:7d12] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d3a940; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 1, systemGestureStateChange: 1
+2026-11-17 23:52:48.829 Df App[9143:7d12] [com.apple.UIKit:UIFocusSystemSceneComponent] Override focusSystemState: (DISABLED) for reason(s): <_UIAlertControllerPhoneTVMacView: 0x10889a000; frame = (52.5 263.5; 270 140.5); layer = <CALayer: 0x600000c8af70>>
+2026-11-17 23:52:48.830 Df App[9143:7d12] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x109206a60> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:52:48.833 Df App[9143:7d12] [com.apple.UIKit:UIAlertControllerStackManager] _didHideAlertController: <SwiftUI.PlatformAlertController: 0x1080a3600>
+2026-11-17 23:52:48.835 Df App[9143:7d12] [com.apple.runningboard:connection] Creating side-channel connection to com.apple.runningboard
+2026-11-17 23:52:48.835 Df App[9143:7d12] [com.apple.xpc:connection] [0x10927bfb0] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-17 23:52:48.836 Df App[9143:7d12] [com.apple.runningboard:process] Hit the server for a process handle 9b80721000023b7 that resolved to: [app<com.duckyisc00l.twozerogame((null))>:9143]
+2026-11-17 23:52:48.845 A  App[9143:7d12] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-17 23:53:01.422 Df App[23410:10063] [com.apple.xpc:connection] [0x1120042b0] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-11-17 23:53:01.428 Df App[23410:10038] [com.apple.xpc:connection] [0x1120046c0] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-17 23:53:01.430 A  App[23410:10038] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-17 23:53:01.612 Df App[23410:10038] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-17 23:53:01.613 A  App[23410:10065] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-17 23:53:01.614 Df App[23410:1006e] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-17 23:53:01.615 Df App[23410:1006e] [com.apple.xpc:connection] [0x10ff06a80] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-17 23:53:01.621 Df App[23410:10063] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-11-17 23:53:01.628 Df App[23410:10063] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-11-17 23:53:01.629 Df App[23410:10063] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x600002109810>
+2026-11-17 23:53:01.629 Df App[23410:10063] [com.apple.runningboard:connection] Initializing connection
+2026-11-17 23:53:01.629 Df App[23410:10063] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-17 23:53:01.629 Df App[23410:10071] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-17 23:53:01.630 Df App[23410:10071] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-17 23:53:01.630 Df App[23410:10071] [com.apple.xpc:connection] [0x10fe07800] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-17 23:53:01.633 A  App[23410:10065] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:53:01.634 Df App[23410:10071] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-17 23:53:01.634 Df App[23410:10071] [com.apple.runningboard:connection] Identity resolved as app<com.duckyisc00l.twozerogame((null))>
+2026-11-17 23:53:01.635 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-11-17 23:53:01.635 Df App[23410:10063] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x600002109810>
+2026-11-17 23:53:01.636 Df App[23410:10063] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x60000170c900>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 914 (elapsed = 0).
+2026-11-17 23:53:01.637 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-11-17 23:53:01.641 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-11-17 23:53:01.643 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-11-17 23:53:01.646 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-11-17 23:53:01.647 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-11-17 23:53:01.647 Df App[23410:10038] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-11-17 23:53:01.649 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-11-17 23:53:01.650 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-11-17 23:53:01.650 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-11-17 23:53:01.651 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-11-17 23:53:01.654 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-11-17 23:53:01.654 Df App[23410:10038] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-11-17 23:53:01.655 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-11-17 23:53:01.656 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-11-17 23:53:01.657 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-11-17 23:53:01.657 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-17 23:53:01.658 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-17 23:53:01.660 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-17 23:53:01.660 Df App[23410:10038] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-11-17 23:53:01.661 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-17 23:53:01.663 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-17 23:53:01.664 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-17 23:53:01.664 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-17 23:53:01.666 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-17 23:53:01.666 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-17 23:53:01.667 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-17 23:53:01.667 Df App[23410:10063] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-17 23:53:01.667 Df App[23410:10038] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x600000203c40; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-17 23:53:01.673 Df App[23410:10038] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030082d0 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-17 23:53:01.674 Df App[23410:10038] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030082d0 com.apple.frontboard.systemappservices> sent handshake
+2026-11-17 23:53:01.681 Df App[23410:10038] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x60000020d060>
+2026-11-17 23:53:01.698 Df App[23410:10071] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-17 23:53:01.701 Df App[23410:10071] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-17 23:53:01.711 Df App[23410:10071] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-17 23:53:01.711 Df App[23410:10071] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-17 23:53:01.712 Df App[23410:10071] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-17 23:53:01.723 Df App[23410:10038] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x10ff04510> for initial
+2026-11-17 23:53:01.724 Df App[23410:10038] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x10ff04510> for CADisplay KVO
+2026-11-17 23:53:01.727 Df App[23410:10038] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-17 23:53:01.728 Df App[23410:10038] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-17 23:53:02.637 Df App[23410:10074] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-17 23:53:02.810 A  App[23410:10071] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:53:03.121 Df App[23410:10074] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x60000170c900>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 914 (elapsed = 2), _expireHandler: (null)
+2026-11-17 23:53:03.121 Df App[23410:10074] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x600002109810> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x60000170c900>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 914 (elapsed = 2))
+2026-11-17 23:53:03.121 Df App[23410:10074] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x600002109810> for task identifier: 1
+2026-11-17 23:53:03.694 A  App[23410:10074] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-17 23:53:03.770 Df App[23410:10038] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-17 23:53:03.772 Df App[23410:10038] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 23:53:03.774 Df App[23410:10038] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 23:53:03.874 Df App[23410:10038] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-17 23:53:03.876 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1024 -> 3072; animating application lifecycle event: 0
+2026-11-17 23:53:03.880 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3072 -> 2048; animating application lifecycle event: 0
+2026-11-17 23:53:03.883 Df App[23410:10038] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-17 23:53:03.883 Df App[23410:10038] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-17 23:53:03.883 Df App[23410:10038] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-17 23:53:03.892 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 2048 -> 2080; animating application lifecycle event: 1
+2026-11-17 23:53:03.893 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:03.895 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:03.896 Df App[23410:10038] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x60000292bf70>; with scene: <UIWindowScene: 0x10fc12dc0>
+2026-11-17 23:53:03.898 Df App[23410:10038] [com.apple.BacklightServices:scenes] 0x600000c24b10 setDelegate:<0x600000c1e040 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.duckyisc00l.twozerogame-default
+2026-11-17 23:53:03.899 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:03.899 Df App[23410:10038] [com.apple.UIKit:EventDeferring] [0x6000029353b0] Initialized with scene: <UIWindowScene: 0x10fc12dc0>; behavior: <_UIEventDeferringBehavior_iOS: 0x60000024ebe0>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-17 23:53:03.900 Df App[23410:10038] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-17 23:53:03.901 Df App[23410:10038] [com.apple.xpc:connection] [0x10ff15c10] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-17 23:53:03.905 Df App[23410:1006e] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-17 23:53:03.905 Df App[23410:10038] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260c540; process scope; status: target> was:none
+2026-11-17 23:53:03.906 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-17 23:53:03.907 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x10fc12dc0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:53:03.908 Df App[23410:10038] [com.apple.UIKit:EventDeferring] [0x6000029353b0] Scene target of event deferring environments did update: scene: 0x10fc12dc0; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 23:53:03.908 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10fc12dc0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:53:03.909 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c51d70: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-17 23:53:03.909 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-17 23:53:03.910 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10fc12dc0; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x10fc12dc0: Window scene became target of keyboard environment
+2026-11-17 23:53:03.910 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:03.911 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:04.082 Df App[23410:10038] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB) Scene updated orientation preferences: none -> ( Pu )
+2026-11-17 23:53:04.082 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-17 23:53:04.083 Df App[23410:10038] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x10fc12dc0: Window became key in scene: UIWindow: 0x10fc06f10; contextId: 0x3CB18FAF: reason: UIWindowScene: 0x10fc12dc0: Window requested to become key in scene: 0x10fc06f10
+2026-11-17 23:53:04.083 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10fc12dc0; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x10fc06f10; reason: UIWindowScene: 0x10fc12dc0: Window requested to become key in scene: 0x10fc06f10
+2026-11-17 23:53:04.083 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x10fc06f10; contextId: 0x3CB18FAF; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:53:04.083 Df App[23410:10038] [com.apple.UIKit:EventDeferring] [0x6000029353b0] Begin local event deferring requested for token: 0x600002610540; environments: 1; reason: UIWindowScene: 0x10fc12dc0: Begin event deferring in keyboardFocus for window: 0x10fc06f10
+2026-11-17 23:53:04.084 Df App[23410:10074] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-17 23:53:04.088 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:04.090 Df App[23410:10074] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260c540; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default; status: ancestor> was:target
+2026-11-17 23:53:04.091 Df App[23410:10038] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:53:04.091 Df App[23410:10038] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 2080
+2026-11-17 23:53:04.092 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-17 23:53:04.092 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-17 23:53:04.092 Df App[23410:10038] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-17 23:53:04.095 Df App[23410:1006e] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-17 23:53:04.096 Df App[23410:1006e] [com.apple.xpc:session] [0x600002111770] Session created.
+2026-11-17 23:53:04.096 Df App[23410:1006e] [com.apple.xpc:session] [0x600002111770] Session created from connection [0x10ff0bec0]
+2026-11-17 23:53:04.096 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:04.096 Df App[23410:1006e] [com.apple.xpc:connection] [0x10ff0bec0] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-17 23:53:04.096 Df App[23410:1006e] [com.apple.xpc:session] [0x600002111770] Session activated
+2026-11-17 23:53:04.111 A  App[23410:10038] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-17 23:53:04.606 A  App[23410:1006f] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:53:04.617 A  App[23410:1006e] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:53:04.709 Df App[23410:10038] [com.apple.xpc:connection] [0x10ff25540] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-17 23:53:04.721 A  App[23410:1006e] (RunningBoardServices) didChangeInheritances
+2026-11-17 23:53:04.806 Df App[23410:1006f] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-17 23:53:04.806 Df App[23410:10038] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [0EA10DD5-A5B1-42AC-B6F2-65C64873B448] (reporting strategy default)>
+2026-11-17 23:53:04.807 Df App[23410:10038] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [3C83587A-6068-46DF-A4AE-3991B2B27BC3] (reporting strategy default)>
+2026-11-17 23:53:04.807 E  App[23410:1006f] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-11-17 23:53:04.807 Df App[23410:10038] [com.apple.network:activity] Set activity <nw_activity 50:1 [0EA10DD5-A5B1-42AC-B6F2-65C64873B448] (reporting strategy default)> as the global parent
+2026-11-17 23:53:04.815 Df App[23410:10038] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:53:04.822 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:04.824 Df App[23410:10038] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-17 23:53:05.103 Df App[23410:10038] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-17 23:53:05.389 Df App[23410:10038] [com.apple.UIKit:EventDeferring] [0x6000029353b0] Scene target of event deferring environments did update: scene: 0x10fc12dc0; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-17 23:53:05.389 Df App[23410:10038] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10fc12dc0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.twozerogame-default
+2026-11-17 23:53:05.391 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:05.393 Df App[23410:10038] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:53:05.393 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-17 23:53:05.393 Df App[23410:10038] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-17 23:53:05.394 Df App[23410:10038] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-17 23:53:05.403 Df App[23410:10038] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-17 23:53:05.405 Df App[23410:10038] [com.apple.xpc:connection] [0x10ff0a340] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-17 23:53:05.406 Df App[23410:10038] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:53:05.413 Df App[23410:10038] [com.apple.FrontBoard:SceneExtension] Realizing settings extension SBUISecureRenderingSettingsExtension on FBSSceneSettings
+2026-11-17 23:53:05.426 Df App[23410:10038] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10fc12dc0> (9854E332-EF9A-4EFF-AC92-F37B9F8D14DB)
+2026-11-17 23:53:05.426 Df App[23410:10038] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:53:05.436 Df App[23410:10038] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.twozerogame-default  persistentID: 9854E332-EF9A-4EFF-AC92-F37B9F8D14DB
+2026-11-17 23:53:05.449 Df App[23410:10038] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-17 23:53:05.456 Df App[23410:10038] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-17 23:53:05.561 Df App[23410:10038] [com.apple.network:activity] <nw_activity 50:1 [0EA10DD5-A5B1-42AC-B6F2-65C64873B448] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 4807ms
+2026-11-17 23:53:05.561 Df App[23410:10038] [com.apple.network:activity] <nw_activity 50:2 [3C83587A-6068-46DF-A4AE-3991B2B27BC3] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 4803ms
+2026-11-17 23:53:05.561 Df App[23410:10038] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [0EA10DD5-A5B1-42AC-B6F2-65C64873B448] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-17 23:53:05.561 Df App[23410:10038] [com.apple.network:activity] Unset the global parent activity
+2026-11-17 23:53:05.561 E  App[23410:10073] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+2026-11-17 23:53:06.489 Df App[23410:10038] (Foundation) void * _Nullable NSMapGet(NSMapTable * _Nonnull, const void * _Nullable): map table argument is NULL
+2026-11-17 23:53:06.676 Df App[23410:10038] [com.apple.BackBoard:Display] [FBSDisplaySource 1-1] silently connecting raw configuration: <FBSDisplayConfiguration: 0x600003d44690; Main; mode: "375x667@2x 60Hz p3 SDR">

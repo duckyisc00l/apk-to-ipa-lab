@@ -1,0 +1,39 @@
+{
+ "palette": {
+  "background": "#faf8ef",
+  "text_black": "#776e65",
+  "text_white": "#f9f6f2",
+  "text_brown": "#d6cdc4",
+  "status_background": "#bbada0",
+  "cells": {
+   "2": "#eee4da",
+   "32": "#f67c5f",
+   "4": "#ede0c8",
+   "2048": "#edc22e",
+   "1024": "#edc53f",
+   "256": "#edcc61",
+   "64": "#f65e3b",
+   "128": "#edcf72",
+   "512": "#edc850",
+   "4096": "#3c3a32",
+   "8": "#f2b179",
+   "16": "#f59563",
+   "super": "#3c3a32"
+  },
+  "board": "#bbada0",
+  "empty": "#d6cdc4"
+ },
+ "strings": 14,
+ "font": [
+  "ClearSans-Bold.ttf"
+ ],
+ "icons": [
+  ".keep",
+  "ClearSans-Bold.ttf",
+  "ic_action_refresh.png",
+  "ic_action_undo.png",
+  "palette.json",
+  "strings.json"
+ ],
+ "app_icon_from": "dec/resources/res/drawable-xxhdpi/logo_2048.png"
+}
