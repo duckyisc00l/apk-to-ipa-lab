@@ -1,0 +1,14 @@
+# open-source Xamarin.Forms / .NET MAUI apps that may ship an APK in their GitHub releases
+KrawMire/profitocracy
+kimgoetzke/listem
+Ramo-Y/PersonalRecord
+lswiderski/mi-scale-exporter
+fdmomtaz/WeightTracker-DotNetMaui
+DevElkami/PasswordVault
+MOtterbine/SimpleOBDII
+GiorgioCitterio/WeatherForecastAppMAUI
+Brainydaps/AICalculator
+YBTopaz8/Dimmer-MAUI
+lapulpeta/Nostrid
+BigBearKing/terraria-wiki-offline
+bambuman/BambuMan.App

@@ -1,0 +1,83 @@
+name: route-dotnet
+# Xamarin / .NET MAUI route: pull the DLLs out of the APK, decompile them with ILSpy, rebuild the shared
+# screens for iOS with the .NET iOS workload on a Mac, run it in the iPhone Simulator, build an unsigned IPA.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { description: "owner/repo with an APK in its releases (empty: first hit in ci/dotnet/candidates.txt)", default: "" }
+      stage: { description: "recover | ios", default: "recover" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-dotnet.yml", "ci/dotnet/**"]
+permissions:
+  contents: write
+concurrency:
+  group: route-dotnet
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    outputs:
+      repo: ${{ steps.scout.outputs.repo }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: "8.0.x" }
+      - name: Find an open-source .NET app with an APK
+        id: scout
+        run: |
+          pip install -q lz4 dnfile androguard
+          if [ -n "${{ inputs.repo }}" ]; then echo "${{ inputs.repo }}" > /tmp/c.txt; else cp ci/dotnet/candidates.txt /tmp/c.txt; fi
+          python3 ci/dotnet/scout.py /tmp/c.txt dl
+          read repo tag apk kind < out/picked.txt
+          echo "repo=$repo" >> $GITHUB_OUTPUT
+          echo "REPO=$repo" >> $GITHUB_ENV; echo "TAG=$tag" >> $GITHUB_ENV; echo "APK=$apk" >> $GITHUB_ENV
+      - name: Pull the DLLs out and list them
+        run: |
+          python3 -I ci/dotnet/unpack.py "$APK" asm | tee out/recover.md
+          head -3 asm/assemblies.txt >> out/recover.md
+          python3 ci/dotnet/inspect.py asm > out/assemblies.md
+          grep '^\*' out/assemblies.md | tee -a out/recover.md
+          python3 - "$APK" >> out/recover.md <<'P'
+          import sys
+          from androguard.core.apk import APK
+          a = APK(sys.argv[1]); print("app:", a.get_app_name(), a.get_package(), a.get_androidversion_name())
+          P
+          unzip -l "$APK" | awk '{print $4}' | grep -vE '^(lib|assemblies)/' | sed 's#/[^/]*$##' | sort | uniq -c | sort -rn | head -40 > out/apk-folders.md
+          unzip -l "$APK" | awk '{print $4}' | grep -E '^assets/' > out/apk-assets.md
+      - name: Decompile the app's own assemblies (ILSpy)
+        run: |
+          dotnet tool install -g ilspycmd > /dev/null
+          ilspycmd --version | head -1 | tee -a out/recover.md
+          mkdir -p rec
+          for n in $(cat asm/own.txt); do
+            ilspycmd -p -o "rec/$n" -r asm "asm/$n.dll" > "out/ilspy-$n.log" 2>&1; echo "ilspy $n exit $? : $(find rec/$n -name '*.cs' | wc -l) .cs, $(find rec/$n -name '*.xaml' | wc -l) .xaml, $(find rec/$n -type f | wc -l) files" | tee -a out/recover.md
+          done
+          find rec -type f | grep -v '\.cs$' | head -60 >> out/recover.md
+      - name: Real source at the same release (only to compare afterwards)
+        run: |
+          git clone -q --depth 1 --branch "$TAG" "https://github.com/$REPO" orig || git clone -q --depth 1 "https://github.com/$REPO" orig
+          (cd orig && find . -name '*.csproj' -o -name '*.xaml' -o -name '*.cs' | grep -v '/obj/' | sort) > out/orig-files.md
+          grep -h -E '<(TargetFrameworks?|PackageReference|UseMaui|MauiVersion)' $(find orig -name '*.csproj') | sort -u >> out/orig-files.md
+      - uses: actions/upload-artifact@v4
+        with: { name: rec, path: "rec\nasm\ndl\nout" }
+      - name: Publish to branch r-dotnet
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp -R out /tmp/r/; cp -R rec /tmp/r/ 2>/dev/null || true
+          cd /tmp/r && git init -q -b r-dotnet && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "dotnet recover ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet
+  macinfo:
+    runs-on: macos-15-intel
+    timeout-minutes: 15
+    steps:
+      - name: What the Mac has
+        run: |
+          mkdir -p out
+          { ls /Applications | grep -i xcode; xcode-select -p; xcodebuild -version; dotnet --list-sdks; sw_vers; xcrun simctl list runtimes; } > out/mac.md 2>&1
+          cat out/mac.md
+          cd /tmp && git init -q -b r-dotnet-mac && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          cp $GITHUB_WORKSPACE/out/mac.md . && git add -A && git commit -qm mac && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet-mac
