@@ -53,3 +53,8 @@ native-compose | mykola-dev/Tetris
 native-compose | jayasuryat/minesweeper-j-compose
 rn+expo | pedropfsf/tic-tac-toe-game
 rn+expo | nunogois/game-search-expo
+defold | asetsiya/wateru
+web-cordova+construct3 | killflex/flappybird-c3
+web-capacitor+phaser | aria0939/shadow-runner-pixel-adventure
+xamarin+xamarin-forms | maxim-saplin/CrossPlatformDiskTest
+xamarin+xamarin-forms | o1298098/Xamarin-CloudMusic

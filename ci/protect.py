@@ -128,7 +128,8 @@ def scan(root):
             if flags & 1:
                 add("encrypted", "Godot .pck directory encrypted", f)
     jsc = [f for f in files if f.startswith("assets/") and f.endswith(".jsc")]
-    if jsc:
+    cocos = any(l.startswith("libcocos") for l in libs) or any(f.startswith("assets/jsb-adapter") or f in ("assets/main.jsc", "assets/main.js") for f in files)
+    if jsc and cocos:  # Qt also ships .jsc (its compiled QML cache): only Cocos .jsc means encrypted scripts
         add("encrypted", f"Cocos scripts compiled/encrypted (.jsc x{len(jsc)}): needs the XXTEA key from the engine library", jsc[0])
     luac = [f for f in files if f.startswith("assets/") and f.endswith((".luac", ".lua"))]
     enc_lua = []
