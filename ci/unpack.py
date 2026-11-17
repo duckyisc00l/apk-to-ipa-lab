@@ -220,9 +220,19 @@ def main():
     dexes = [f for f in os.listdir(allf) if re.match(r"classes\d*\.dex$", f)]
     if not dexes and not libs:
         warn.append("no classes.dex and no native libraries: not an app, or everything is packed")
+    protection = []
+    try:  # ci/protect.py: the fuller check (stub classes, packer assets, engine headers) with levels
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("protect", os.path.join(os.path.dirname(os.path.abspath(__file__)), "protect.py"))
+        protect = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(protect)
+        protection = protect.scan(allf)
+        warn = protect.summary(protection)
+    except Exception as e:  # noqa: BLE001  keep the simple list above
+        notes.append(f"protect.py failed: {e}")
     report = {"inputs": inputs, "apks": [os.path.basename(p) for p in apks], "base": os.path.basename(base) if base else None,
               "obbs": [os.path.basename(o) for o in obbs], "aabs": [os.path.basename(a) for a in aabs],
-              "libs": libs, "notes": notes, "protected_or_encrypted": warn}
+              "libs": libs, "notes": notes, "protected_or_encrypted": warn, "protection": protection}
     json.dump(report, open(os.path.join(out, "report.json"), "w"), indent=1)
     shutil.rmtree(work, ignore_errors=True)
     print(json.dumps(report, indent=1))

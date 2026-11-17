@@ -1,0 +1,33 @@
+# engine | GitHub search query (repos with APKs in releases get downloaded and detected)
+defold | topic:defold topic:game
+defold | defold game android
+defold | language:Lua defold
+solar2d | topic:solar2d
+solar2d | solar2d game
+solar2d | topic:corona-sdk
+kivy | topic:kivy topic:android
+kivy | kivy app apk
+qt | topic:qml topic:android
+nativescript | topic:nativescript topic:android
+nativescript | nativescript app android
+cocos | topic:cocos2d-x topic:android
+cocos | cocos2d-x game android apk
+cocos | topic:cocos-creator
+cocos | cocos2d lua game
+cocos | cocos2d-js game
+phaser | topic:phaser topic:android
+phaser | phaser cordova game
+construct | construct 3 game android
+gdevelop | gdevelop game android
+rpgmaker | rpg maker mz android
+rpgmaker | topic:rpgmaker android
+godot4 | topic:godot4 topic:game
+godot4 | godot 4 android game apk
+renpy | topic:renpy android
+maui | topic:maui topic:android
+maui | .net maui app android apk
+xamarin | xamarin forms app android apk
+compose | topic:jetpack-compose topic:game
+expo | topic:expo topic:game
+unity | topic:unity topic:android topic:game
+haxe | openfl game android

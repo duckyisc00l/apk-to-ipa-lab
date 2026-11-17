@@ -1,0 +1,41 @@
+# Detection suite: expected tags (joined with +) | owner/repo | optional asset regex | optional release tag
+# Every repo has an OSI licence on GitHub. Expected engines come from each repo's own source tree.
+web-cordova+ionic | VarunS2002/Ionic-Tic-Tac-Toe
+web-capacitor | 6c65726f79/Transmissionic
+web-capacitor | jupiutrera/open-chess
+web-capacitor+ionic | tomfong/simple-qr
+web-capacitor+ionic | thenaim/ionic-tk-social-network
+gamemaker | Ahmadrezadl/legendary-chess
+gm8 | Klisee/pokemon-reloaded-android
+unity-mono | UltraStar-Deluxe/Play
+unity-mono | imengyu/Ballance
+unity-il2cpp | AnimaRain/ShootAR
+unreal | ankitpassi141/Wanderer-VR
+godot3 | HarmonyHoney/ROTA
+godot | arshiyabarjaste-eng/PixelFist
+godot4 | uralys/fox
+renpy | saber-nyan/ddlc-android
+renpy | saber-nyan/test-renpy-vn
+renpy | MewX/cross-channel_chinese-localization_project
+love | LIKO-12/LIKO-12
+love | Oval-Tutu/bootstrap-love2d-project
+rn-plain | devhubapp/devhub
+rn-hermes | alekseynemiro/multi-duper-stopwatch
+rn-hermes | sikelio/plexmanager
+rn+expo | roshang1t/NetPrime
+rn+expo | e18lab/NHApp
+flutter | adil192/ricochlime
+flutter | mantou132/nesbox
+xamarin+maui | lswiderski/mi-scale-exporter
+xamarin | stratumauth/app
+xamarin+xamarin-forms | bitwarden/mobile | x8bit
+libgdx | yairm210/Unciv
+libgdx | 00-Evan/shattered-pixel-dungeon
+native-cpp | j-jorge/bim
+native | TeamNewPipe/NewPipe
+native | Kunzisoft/KeePassDX | libre
+native-compose | Ashinch/ReadYou
+native-compose | maxrave-dev/SimpMusic
+qt | wh201906/SerialTest | android
+qt | nspire-emus/firebird | android
+kivy | GVCoder09/NoDPI4Android
