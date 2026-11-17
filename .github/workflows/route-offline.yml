@@ -57,6 +57,13 @@ jobs:
         run: |
           C=$(find "$GITHUB_WORKSPACE/bim/build" -type f -perm -u+x -path '*apps/linux/bim' | head -1); B=$(dirname "$(dirname "$(dirname "$C")")")
           echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
+          # 0 = plain start, no scripted taps (does the game run headless at all?), screenshot after 20 s
+          apt-get install -y -qq x11-apps imagemagick > /dev/null 2>&1 || true
+          ( export BIM_OFFLINE=1; xvfb-run -a -n 77 -s "-screen 0 1080x1920x24" bash -c "
+              '$B/apps/linux/bim' --assets '$GITHUB_WORKSPACE/bim/static-assets/' '$B/assets/generated/' --console-log --app-dir '$GITHUB_WORKSPACE/app-0' > out/client-0.log 2>&1 &
+              sleep 20; import -window root out/plain-start.png; sleep 2; kill %1 2>/dev/null" ) || true
+          echo "## run 0 (no script, BIM_OFFLINE=1): $(grep -c 'Segmentation\|SIGSEGV' out/client-0.log) crash(es), last lines:" | tee -a out/offline.md
+          tail -6 out/client-0.log | tee -a out/offline.md
           # A = the game's original behaviour with no internet; B = with the offline change switched on
           for mode in A B; do
             mkdir -p "shots-$mode" "app-$mode"; cd "shots-$mode"
@@ -75,6 +82,6 @@ jobs:
         if: always()
         run: |
           iptables -P OUTPUT ACCEPT || true; iptables -F OUTPUT || true
-          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp shots/*.png /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp out/*.png /tmp/r/ 2>/dev/null || true; cp shots/*.png /tmp/r/ 2>/dev/null || true; for f in out/*.log; do tail -150 "$f" > /tmp/r/$(basename "$f"); done
           cd /tmp/r && git init -q -b r-offline && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git config --global --add safe.directory '*'; git add -A && git commit -qm "offline ${{ github.run_number }}" && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" r-offline
