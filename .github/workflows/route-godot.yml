@@ -136,6 +136,8 @@ jobs:
           case " $archs " in *" $host "*) a=$host;; *) a=x86_64;; esac
           echo "simulator slice $sim: $archs; building $a on $host" | tee -a out/ipa.md
           steps=ci/godot/steps-$(echo $NAME | tr -cd 'a-zA-Z0-9' | tr A-Z a-z).txt; [ -f "$steps" ] || steps=""
+          # a steps file can ask for a fixed AXe ("# axe: v1.6.0", for landscape games: see ci/sim/run.sh)
+          [ -n "$steps" ] && export SIM_AXE_VERSION=$(grep -m1 -oE '^# axe: v[0-9.]+' "$steps" | cut -d' ' -f3)
           SIM_ARCHS=$a ci/sim/build-and-run.sh "$proj" "$(basename "$proj" .xcodeproj)" out/sim 60 "$steps"
       - uses: actions/upload-artifact@v4
         if: always()

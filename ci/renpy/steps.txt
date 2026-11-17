@@ -1,19 +1,16 @@
-# Ren'Py test game (1280x720, "small" phone layout) on a portrait iPhone 17 (402x874 points), drawn turned.
-# Main menu "Start" is at about (80, 297) of 1280x720 -> (125, 166) points in the 874x402 landscape view.
-# The turn direction isn't known in advance, so tap Start for both: (166, 749) and (236, 125). Then tap the middle
-# to advance the dialogue.
+# axe: v1.6.0
+# Ren'Py test game (1280x720, landscape) drawn turned on a portrait iPhone (content top = screen right).
+# AXe 1.6.0 taps raw portrait points; % of the portrait screen. On the iPhone SE (16:9, no bars) the main
+# menu's "Start" is at (63%, 6.5%). Then tap the middle to advance the dialogue.
 shot 0-menu
-tap 166 749
+tap 63% 6%
 wait 3
-shot 1-after-start-a
-tap 236 125
-wait 3
-shot 2-after-start-b
-tap 201 437
+shot 1-after-start
+tap 50% 50%
 wait 2
-shot 3-advance-1
-tap 201 437
+shot 2-advance-1
+tap 50% 50%
 wait 2
-tap 201 437
+tap 50% 50%
 wait 2
-shot 4-advance-3
+shot 3-advance-3

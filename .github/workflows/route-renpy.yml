@@ -113,6 +113,7 @@ jobs:
           ls -la ../RenPy.ipa | tee -a ../out/renpy.md
       - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
         continue-on-error: true
+        env: { GH_TOKEN: "${{ github.token }}" }
         run: |
           mkdir -p out/sim
           # renios has two library sets: prebuilt/release (phone) and prebuilt/debug, which its Xcode project uses
@@ -126,6 +127,8 @@ jobs:
           # Release builds search prebuilt/release whatever the SDK: give the simulator build the simulator set
           mv xcode/prebuilt/release xcode/prebuilt/release-phone && cp -R xcode/prebuilt/debug xcode/prebuilt/release
           P=$(ls -d xcode/*.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
+          # a steps file can ask for a fixed AXe ("# axe: v1.6.0", for landscape games: see ci/sim/run.sh)
+          export SIM_AXE_VERSION=$(grep -m1 -oE '^# axe: v[0-9.]+' ci/renpy/steps.txt 2>/dev/null | cut -d' ' -f3)
           SIM_ARCHS=$arch ci/sim/build-and-run.sh "$P" "$S" out/sim 60 ci/renpy/steps.txt
       - uses: actions/upload-artifact@v4
         if: always()

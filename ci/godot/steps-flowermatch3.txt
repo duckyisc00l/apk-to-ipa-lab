@@ -1,0 +1,21 @@
+# FlowerMatch3 (Godot 4.7, portrait). Level select shows after the intro: level 1 at (10%, 38%).
+wait 5
+shot 0-levels
+tap 10% 38%
+wait 4
+shot 1-level-1
+swipe 50% 50% 62% 50%
+wait 2
+shot 2-swipe-1
+swipe 38% 56% 38% 62%
+wait 2
+swipe 62% 44% 50% 44%
+wait 2
+swipe 50% 62% 50% 56%
+wait 2
+shot 3-swipes-4
+tap 50% 50%
+wait 1
+tap 62% 50%
+wait 2
+shot 4-tap-pair

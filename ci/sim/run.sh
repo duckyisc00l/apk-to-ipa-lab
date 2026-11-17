@@ -64,6 +64,15 @@ done
 SN=0; SF=0; EP=0; EF=0   # steps done / failed, expects passed / failed
 if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
   # input: AXe (cameroncooke/AXe, one ready-built program). Meta's idb is not used: no build for older Macs.
+  # SIM_AXE_VERSION=v1.6.0: a landscape-only game is drawn turned on the portrait screen, and AXe 1.7+ then fails
+  # ("screenshot probing failed for a landscape accessibility frame") or moves the point. 1.6.0 taps the raw
+  # portrait screen points, and % steps are then of the portrait screen.
+  if [ -n "${SIM_AXE_VERSION:-}" ]; then
+    mkdir -p /tmp/axe1 && ( cd /tmp/axe1 && gh release download "$SIM_AXE_VERSION" -R cameroncooke/AXe -p '*.tar.gz' --clobber \
+      && for t in *.tar.gz; do tar xzf "$t"; done ) > "$OUT/input-install.log" 2>&1
+    ab=$(find /tmp/axe1 -type f -name axe -perm -u+x | head -1)
+    if [ -n "$ab" ]; then export PATH="$(dirname "$ab"):$PATH"; else echo "AXe $SIM_AXE_VERSION not found; using the newest" >> "$OUT/sim.md"; fi
+  fi
   if ! command -v axe > /dev/null; then
     timeout 300 bash -c 'brew tap cameroncooke/axe && { brew trust cameroncooke/axe 2>/dev/null || true; } && brew install cameroncooke/axe/axe' > "$OUT/input-install.log" 2>&1
   fi
@@ -81,6 +90,10 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
       done; done; python3 "$HERE/ui.py" merge /tmp/simscan/*.json > "$1"; }
     UI "$OUT/ui-start.json"
     read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "390 844")
+    if [ -n "${SIM_AXE_VERSION:-}" ]; then   # raw portrait points: from a screenshot (2x below 1000 pixels wide, else 3x)
+      xcrun simctl io "$UDID" screenshot /tmp/simsize.png > /dev/null 2>&1
+      read -r SW SH < <(python3 -c "import struct,sys;d=open('/tmp/simsize.png','rb').read(24);w,h=struct.unpack('>II',d[16:24]);k=2 if w<1000 else 3;print(w//k,h//k)")
+    fi
     echo "screen: ${SW}x${SH} points (steps may give X and Y in points or as 50%)" >> "$OUT/sim.md"
     P() { case "$1" in *%) awk -v v="${1%\%}" -v t="$2" 'BEGIN{printf "%d", v*t/100}';; *) echo "$1";; esac; }
     # one line per step in sim.md; a failed step gets FAILED and its error
