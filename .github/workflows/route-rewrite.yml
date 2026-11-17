@@ -1,0 +1,48 @@
+name: route-rewrite
+# Skill step R on a native Java game, treated as closed source: APK -> jadx (decompiled Java as the spec)
+# + its own texts, colours, sizes and images -> r-rewrite. The SwiftUI rewrite is then built by
+# build-rewrite in the same workflow when ios/ exists in ci/rewrite/<name>/.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "tpcstld/2048" }
+      name: { default: "2048" }
+permissions:
+  contents: write
+concurrency:
+  group: route-rewrite
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  spec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get the APK (repo release, else F-Droid) and decompile it
+        run: |
+          mkdir -p out dl
+          gh api "repos/${{ inputs.repo }}" --jq '"license: \(.license.spdx_id)"' | tee out/spec.md
+          a=$(gh api "repos/${{ inputs.repo }}/releases?per_page=10" --jq '[.[].assets[]|select(.name|test("\\.apk$"))][0]|"\(.browser_download_url)"' 2>/dev/null)
+          if [ -n "$a" ] && [ "$a" != "null" ]; then curl -sSLf -o dl/app.apk "$a"; echo "APK: $a" | tee -a out/spec.md; fi
+          if [ ! -s dl/app.apk ]; then
+            pkg=com.tpcstld.twozerogame
+            f=$(curl -sSL "https://f-droid.org/api/v1/packages/$pkg" | python3 -c "import json,sys;d=json.load(sys.stdin);print(d['suggestedVersionCode'])")
+            curl -sSLf -o dl/app.apk "https://f-droid.org/repo/${pkg}_$f.apk" && echo "APK: F-Droid $pkg $f" | tee -a out/spec.md
+          fi
+          ls -la dl | tee -a out/spec.md
+          j=$(gh api repos/skylot/jadx/releases/latest --jq '[.assets[]|select(.name|test("^jadx-[0-9.]+\\.zip$"))][0].browser_download_url')
+          curl -sSLf -o jadx.zip "$j" && unzip -q jadx.zip -d jadx
+          jadx/bin/jadx -d dec --no-debug-info dl/app.apk > out/jadx.log 2>&1 || true
+          pkgdir=$(find dec/sources -type d -path '*twozerogame*' | head -1); echo "code: $pkgdir" | tee -a out/spec.md
+          mkdir -p out/code out/res; cp $pkgdir/*.java out/code/ 2>/dev/null || true
+          wc -l out/code/*.java | tail -1 | tee -a out/spec.md
+          for f in strings colors dimens styles; do [ -f dec/resources/res/values/$f.xml ] && cp dec/resources/res/values/$f.xml out/res/; done
+          find dec/resources/res -name '*.png' -o -name '*.xml' -path '*drawable*' | sed 's#dec/resources/##' | sort | head -60 > out/res/drawables.txt
+          ls dec/resources/res/ | tee out/res/folders.txt
+          ls dec/resources/assets 2>/dev/null | head | tee -a out/spec.md
+      - name: Publish spec to branch r-rewrite
+        run: |
+          cd out && git init -q -b r-rewrite && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "rewrite spec ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rewrite
