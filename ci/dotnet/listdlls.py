@@ -1,6 +1,6 @@
 """List .NET assemblies pulled out of an APK: name, size, assembly version, informational (package) version,
 and which are the app's own (not .NET, MAUI, AndroidX or other well-known libraries).
-Usage: python3 -I ci/dotnet/inspect.py <dll dir>   -> prints a table; writes <dir>/own.txt (app's own assemblies)
+Usage: python3 -I ci/dotnet/listdlls.py <dll dir>   -> prints a table; writes <dir>/own.txt (app's own assemblies)
 """
 import os, re, sys
 d = sys.argv[1]

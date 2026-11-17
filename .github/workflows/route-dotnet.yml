@@ -40,7 +40,7 @@ jobs:
         run: |
           python3 -I ci/dotnet/unpack.py "$APK" asm | tee out/recover.md
           head -3 asm/assemblies.txt >> out/recover.md
-          python3 ci/dotnet/inspect.py asm > out/assemblies.md
+          python3 ci/dotnet/listdlls.py asm > out/assemblies.md
           grep '^\*' out/assemblies.md | tee -a out/recover.md
           python3 - "$APK" >> out/recover.md <<'P'
           import sys
@@ -64,21 +64,75 @@ jobs:
           (cd orig && find . -name '*.csproj' -o -name '*.xaml' -o -name '*.cs' | grep -v '/obj/' | sort) > out/orig-files.md
           grep -h -E '<(TargetFrameworks?|PackageReference|UseMaui|MauiVersion)' $(find orig -name '*.csproj') | sort -u >> out/orig-files.md
       - uses: actions/upload-artifact@v4
-        with: { name: rec, path: "rec\nasm\ndl\nout" }
+        with:
+          name: rec
+          path: |
+            rec
+            asm
+            dl
+            out
       - name: Publish to branch r-dotnet
         if: always()
         run: |
           mkdir -p /tmp/r; cp -R out /tmp/r/; cp -R rec /tmp/r/ 2>/dev/null || true
           cd /tmp/r && git init -q -b r-dotnet && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git add -A && git commit -qm "dotnet recover ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet
-  macinfo:
+  ios:
+    needs: recover
     runs-on: macos-15-intel
-    timeout-minutes: 15
+    timeout-minutes: 90
     steps:
-      - name: What the Mac has
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: rec }
+      - name: Rebuild an iOS project from the recovered C#
         run: |
-          mkdir -p out
-          { ls /Applications | grep -i xcode; xcode-select -p; xcodebuild -version; dotnet --list-sdks; sw_vers; xcrun simctl list runtimes; } > out/mac.md 2>&1
-          cat out/mac.md
-          cd /tmp && git init -q -b r-dotnet-mac && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          cp $GITHUB_WORKSPACE/out/mac.md . && git add -A && git commit -qm mac && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet-mac
+          python3 -m venv /tmp/v && /tmp/v/bin/pip install -q dnfile androguard pillow
+          app=$(grep -l -E 'CreateMauiApp|MauiUIApplicationDelegate|Xamarin.Forms.Application' -r rec --include=*.cs | head -1 | cut -d/ -f2)
+          echo "APP=$app" >> $GITHUB_ENV
+          mkdir -p out-ios; /tmp/v/bin/python ci/dotnet/rebuild.py "rec/$app" asm dl/*.apk ios | tee out-ios/rebuild.log
+          cp ios/rebuild.md out-ios/
+      - name: .NET SDK and the iOS workload
+        run: |
+          major=$(grep -o 'net[0-9]*\.0-ios' ios/App.csproj | grep -o '[0-9]*' | head -1)
+          echo "{\"sdk\":{\"version\":\"$major.0.100\",\"rollForward\":\"latestFeature\"}}" > ios/global.json
+          cd ios; dotnet --version | tee -a ../out-ios/build.md
+          dotnet workload install maui-ios > ../out-ios/workload.log 2>&1; echo "workload install exit $?" | tee -a ../out-ios/build.md
+          dotnet workload list 2>&1 | grep -iE 'ios|maui' | tee -a ../out-ios/build.md
+          # the Xcode this iOS workload was made for: from its own SDK version (e.g. 26.0.x -> Xcode 26.0)
+          v=$(ls ~/.dotnet/packs 2>/dev/null | grep -i 'Microsoft.iOS.Sdk' | head -1); v=$(ls ~/.dotnet/packs/$v 2>/dev/null | sort -V | tail -1)
+          [ -n "$v" ] || { v=$(ls /usr/local/share/dotnet/packs/ | grep -i Microsoft.iOS.Sdk | head -1); v=$(ls /usr/local/share/dotnet/packs/$v | sort -V | tail -1); }
+          want=$(echo "$v" | sed -E 's/^([0-9]+)\.([0-9]+).*/\1.\2/'); echo "iOS SDK pack $v wants Xcode $want" | tee -a ../out-ios/build.md
+          x=$(ls -d /Applications/Xcode_${want}*.app 2>/dev/null | head -1); [ -n "$x" ] || x=$(ls -d /Applications/Xcode_${want%%.*}.*.app 2>/dev/null | sort -V | tail -1)
+          [ -n "$x" ] && sudo xcode-select -s "$x"; xcodebuild -version | head -1 | tee -a ../out-ios/build.md
+      - name: Build for the iPhone Simulator and run it
+        continue-on-error: true
+        run: |
+          cd ios; tfm=$(grep -o 'net[0-9]*\.0-ios' App.csproj | head -1)
+          set +e
+          dotnet build App.csproj -f $tfm -c Release -r iossimulator-x64 -p:ValidateXcodeVersion=false -o simout > ../out-ios/sim-build.log 2>&1
+          b=$?; echo "simulator build exit $b" | tee -a ../out-ios/build.md
+          grep -E ' error ' ../out-ios/sim-build.log | sed -E 's#^.*/ios/##; s# \[.*##' | sort -u | head -80 | tee ../out-ios/sim-errors.md
+          echo "distinct errors: $(grep -E ' error ' ../out-ios/sim-build.log | sed -E 's# \[.*##' | sort -u | wc -l)" | tee -a ../out-ios/build.md
+          [ "$b" = 0 ] || exit 1
+          appdir=$(find simout bin -maxdepth 6 -name '*.app' -type d | head -1); echo "app: $appdir" | tee -a ../out-ios/build.md
+          bash ../ci/sim/run.sh "$PWD/$appdir" ../out-ios/sim 45 ../ci/dotnet/sim-steps.txt
+      - name: Build the unsigned IPA for iPhone
+        run: |
+          cd ios; tfm=$(grep -o 'net[0-9]*\.0-ios' App.csproj | head -1)
+          set +e
+          dotnet build App.csproj -f $tfm -c Release -r ios-arm64 -p:ValidateXcodeVersion=false -p:EnableCodeSigning=false -p:CodesignRequireProvisioningProfile=false > ../out-ios/ipa-build.log 2>&1
+          b=$?; echo "device build exit $b" | tee -a ../out-ios/build.md
+          grep -E ' error ' ../out-ios/ipa-build.log | sed -E 's# \[.*##' | sort -u | head -30 | tee -a ../out-ios/build.md
+          [ "$b" = 0 ] || exit 1
+          appdir=$(find bin -path '*ios-arm64*' -name '*.app' -type d | head -1)
+          mkdir -p Payload && cp -R "$appdir" Payload/ && zip -qry "../$APP.ipa" Payload
+          ls -la "../$APP.ipa" | tee -a ../out-ios/build.md; du -sh "$appdir" | tee -a ../out-ios/build.md
+          gh release create "dotnet-$APP-${{ github.run_number }}" "../$APP.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test: .NET MAUI app rebuilt for iOS from decompiled C#)."
+      - name: Publish to branch r-dotnet-ios
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp -R out-ios/. /tmp/r/; for f in /tmp/r/*.log; do tail -150 "$f" > "$f.t" && mv "$f.t" "$f"; done
+          [ -d ios ] && (cd ios && find . -name '*.cs' -path './src/*' | head -0; cp App.csproj /tmp/r/ ; cp -R Platforms /tmp/r/ ) 2>/dev/null
+          cd /tmp/r && git init -q -b r-dotnet-ios && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "dotnet ios ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet-ios
