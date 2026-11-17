@@ -35,6 +35,10 @@ jobs:
       - name: Get Bim's source and patch it for offline
         run: |
           mkdir -p out; git clone -q --depth 1 https://github.com/j-jorge/bim bim
+          git -C bim log -1 --format=%H > bim-commit
+          # A cached build of the same commit is reused: sources get an old date before the patch, so only the
+          # patched files (newer) are compiled again. Cache from another commit: next step, full build.
+          (cd bim && git ls-files -z | xargs -0 touch -h -d 2001-01-01)
           echo "bim $(git -C bim log -1 --format='%h %ad' --date=short), build $T" | tee out/offline.md
           K=""; [ "$T" = asan ] && K="--keep-crash"
           python3 -I lab/ci/offline/bim_offline.py bim 23899 $K | tee -a out/offline.md
@@ -45,13 +49,20 @@ jobs:
             bim/build
             bim/.backroom
           key: bim-build-${{ matrix.type }}-${{ hashFiles('lab/ci/offline/bim_offline.py') }}-v2
+          restore-keys: bim-build-${{ matrix.type }}-
+      - name: Same commit as the cached build? Otherwise rebuild everything
+        run: |
+          if [ "$(cat bim/build/commit 2>/dev/null)" != "$(cat bim-commit)" ]; then
+            echo "cache: none or another commit, full build" | tee -a out/offline.md
+            (cd bim && git ls-files -z | xargs -0 touch -h); rm -rf bim/build/linux
+          else echo "cache: same commit, only patched files are compiled" | tee -a out/offline.md; fi
       - name: Build environment and build (Bim's own scripts)
         run: |
           cd bim
           ./setup/install-minimal-environment.sh --compiler g++ --target-platform linux > ../out/env.log 2>&1; echo "env exit $?" | tee -a ../out/offline.md
           set +e
           ./setup.sh --target-platform linux --build-type $T --build-steps dependencies configure build > ../out/build.log 2>&1
-          echo "build exit $?" | tee -a ../out/offline.md
+          echo "build exit $?" | tee -a ../out/offline.md; cp ../bim-commit build/commit
           echo "B=$PWD/build/linux/$T" >> $GITHUB_ENV; ls build/linux/$T/apps/linux/bim build/linux/$T/apps/server/bim-server | tee -a ../out/offline.md
       - name: Cut the network (only this machine itself stays reachable)
         run: |
@@ -97,6 +108,12 @@ jobs:
             C $mode | grep -iE "main_task|business|game server|matchmak|script|offline|error|SUMMARY|signal SIG" | tail -25 >> out/offline.md
             C $mode | grep -A25 "signal SIG\|ERROR: AddressSanitizer\|runtime error" | head -40 >> out/offline.md || true
           done
+          # C = no separate server: the game's server runs inside the client (BIM_LOCAL_SERVER=1)
+          pkill -INT -f apps/server/bim-server; sleep 2
+          ( export BIM_OFFLINE=1 BIM_LOCAL_SERVER=1; $P "$PWD/bim" "$B" "$O" C "$S" | tee -a out/offline.md )
+          echo "## run C (server inside the client)" >> out/offline.md
+          C C | grep -iE "Local game server|main_task|business|game server|matchmak|script|offline|error|SUMMARY|signal SIG" | tail -25 >> out/offline.md
+          C C | grep -A25 "signal SIG\|ERROR: AddressSanitizer\|runtime error" | head -40 >> out/offline.md || true
           echo "## server" >> out/offline.md; sed 's/\x1b\[[0-9;]*m//g' out/server.log | grep -iE "bot|game|session|encounter" | tail -25 >> out/offline.md
       - name: Publish to branch r-offline / r-offline-asan
         if: always()
