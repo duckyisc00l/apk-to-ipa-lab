@@ -1,0 +1,2 @@
+AssetRipper: https://github.com/AssetRipper/AssetRipper/releases/download/2.0.0/AssetRipper_linux_x64.tar.xz
+binary: /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/tools/ar/AssetRipper.GUI.Free
