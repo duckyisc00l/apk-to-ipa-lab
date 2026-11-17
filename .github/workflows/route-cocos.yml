@@ -1,0 +1,33 @@
+name: route-cocos
+# Skill step E (Cocos2d-x) lab: scout open-source Cocos games with APKs, then build the engine's own
+# iOS app at the game's version, drop the APK's scripts and resources in, package an unsigned IPA,
+# and run it in the iPhone Simulator. What to do comes from ci/cocos/job (or the mode input).
+on:
+  workflow_dispatch:
+    inputs:
+      mode: { default: "" }
+  push:
+    branches: [main]
+    paths: [".github/workflows/route-cocos.yml", "ci/cocos/**"]
+permissions:
+  contents: write
+concurrency:
+  group: route-cocos
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  scout:
+    if: ${{ inputs.mode == 'scout' || (inputs.mode == '' && contains(github.event.head_commit.message, '[cocos-scout]')) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 ci/cocos/scout.py 8
+      - name: Publish to branch r-cocos-scout
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp out/* /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-cocos-scout && git rm -rfq . && rm -rf ci dl out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "cocos scout ${{ github.run_number }}" && git push -f origin r-cocos-scout
