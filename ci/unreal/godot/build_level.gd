@@ -18,20 +18,27 @@ func _init():
 			path = "res://" + str(um[m["mesh"]])
 		if not ResourceLoader.exists(path):
 			missing[path] = true; continue
-		var inst = (load(path) as PackedScene).instantiate()
+		# Copy the model's meshes into the level as its own nodes: changes made to nodes inside an imported
+		# glTF scene (materials, collision) are not saved with the level, so build our own MeshInstance3Ds.
+		var src = (load(path) as PackedScene).instantiate()
+		var inst = Node3D.new()
 		var xf = m.get("xf", m)
 		var p = xf["pos"]; var r = xf["rot"]; var s = xf["scale"]
 		inst.transform = Transform3D(Basis(Quaternion(r[0], r[1], r[2], r[3]).normalized()).scaled(Vector3(s[0], s[1], s[2])), Vector3(p[0], p[1], p[2]))
 		inst.name = str(m["name"]).validate_node_name()
-		root.add_child(inst)
-		inst.owner = root   # without this the placed model isn't saved into level.tscn
-		_texture(inst, path)
-		for mi in inst.find_children("*", "MeshInstance3D", true, false):
-			var before = mi.get_child_count()
-			mi.create_trimesh_collision()   # so the player can stand on the level
-			for k in range(before, mi.get_child_count()):   # the new collision nodes belong to the level too
-				var body = mi.get_child(k); body.owner = root
+		root.add_child(inst); inst.owner = root
+		for mi in src.find_children("*", "MeshInstance3D", true, false):
+			var copy = MeshInstance3D.new()
+			copy.mesh = mi.mesh
+			copy.transform = _relative(mi, src)
+			inst.add_child(copy); copy.owner = root
+			_texture_one(copy, path)
+			var before = copy.get_child_count()
+			copy.create_trimesh_collision()   # so the player can stand on the level
+			for k in range(before, copy.get_child_count()):
+				var body = copy.get_child(k); body.owner = root
 				for c in body.get_children(): c.owner = root
+		src.free()
 		placed += 1; centre += inst.position
 	# the Unreal level's own sun if it had one, else a default; plus sky, so it's never pitch black
 	var sun = DirectionalLight3D.new(); sun.name = "Sun"; sun.shadow_enabled = true
@@ -57,14 +64,19 @@ func _init():
 # <name>.props.txt (full paths of the textures it uses), with the textures as .tga files. glTF itself carries
 # no textures from it, so build a StandardMaterial3D per material from those files.
 var _mat_cache = {}
-func _texture(inst, gltf_path):
+func _texture_one(mi, gltf_path):
 	if not gltf_path.begins_with("res://um/"): return
-	for mi in inst.find_children("*", "MeshInstance3D", true, false):
-		for i in mi.mesh.get_surface_count():
-			var m = mi.mesh.surface_get_material(i)
-			if m == null or m.resource_name == "": continue
-			var mat = _material_for(m.resource_name, gltf_path.get_base_dir())
-			if mat: mi.set_surface_override_material(i, mat)
+	for i in mi.mesh.get_surface_count():
+		var m = mi.mesh.surface_get_material(i)
+		if m == null or m.resource_name == "": continue
+		var mat = _material_for(m.resource_name, gltf_path.get_base_dir())
+		if mat: mi.set_surface_override_material(i, mat)
+
+func _relative(node, top):   # node's transform relative to the glTF scene's root
+	var t = Transform3D.IDENTITY; var n = node
+	while n != null and n != top:
+		t = n.transform * t; n = n.get_parent()
+	return t
 
 func _material_for(name, folder):
 	if _mat_cache.has(name): return _mat_cache[name]
