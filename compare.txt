@@ -1,0 +1,10 @@
+== layouts
+  SingingResultsPlayerUi: elements 33/33, tag+name 33, attrs 113/114 [(('VisualElement', {'name': 'playerImage', 'picking-mode': 'Ignore', 'style': 'background-image: url(dummyplayerprofileimage);align-items: center;justify-content: center;-unity-background-scale-mode: scale-to-fit;flex-grow: 1'}), ('VisualElement', {'name': 'playerImage', 'picking-mode': 'Ignore', 'style': 'background-image: url(fallbackplayerprofileimage);align-items: center;justify-content: center;-unity-background-scale-mode: scale-to-fit;flex-grow: 1'}))]
+  SingingResultsPlayerUiAlternative: elements 33/33, tag+name 33, attrs 113/114 [(('VisualElement', {'name': 'playerImage', 'picking-mode': 'Ignore', 'style': 'background-image: url(dummyplayerprofileimage);align-items: center;justify-content: center;-unity-background-scale-mode: scale-to-fit;flex-grow: 1'}), ('VisualElement', {'name': 'playerImage', 'picking-mode': 'Ignore', 'style': 'background-image: url(fallbackplayerprofileimage);align-items: center;justify-content: center;-unity-background-scale-mode: scale-to-fit;flex-grow: 1'}))]
+== uss
+== tss
+  default: no source file
+== total
+layouts compared 59, exact 57
+elements: ours 1224, source 1224; same type+name in order 1224/1224 (100.0%); attributes 3562/3564 (99.9%)
+style sheets compared 8, exact 8; selectors 263/263 (100.0%); properties 682/682 (100.0%); imports 6/6 (100.0%)

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="ContextMenuItemUi" src="project://database/Assets/MonoBehaviour/ContextMenuItemUi.uxml?fileID=9197481963319205126&amp;guid=9d24f55692f1e2447adcdd12c80bcd8e&amp;type=3#ContextMenuItemUi" />
+    <ui:Template name="ContextMenuSeparatorUi" src="project://database/Assets/MonoBehaviour/ContextMenuSeparatorUi.uxml?fileID=9197481963319205126&amp;guid=ef647f85c859e8c47a93b6c1231e3416&amp;type=3#ContextMenuSeparatorUi" />
+    <Style src="project://database/Assets/MonoBehaviour/CommonStyles.uss?fileID=7433441132597879392&amp;guid=dc199448b85c64a48b65683457c8c5e4&amp;type=3#CommonStyles" />
+    <ui:VisualElement name="contextMenu" class="contextMenu roundCorners" style="position: absolute; min-width: 120px; min-height: 24px; border-left-color: rgb(50, 50, 50); border-right-color: rgb(50, 50, 50); border-top-color: rgb(50, 50, 50); border-bottom-color: rgb(50, 50, 50); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px;">
+        <ui:Instance template="ContextMenuItemUi" name="ContextMenuItemUi">
+            <ui:AttributeOverrides element-name="contextMenuLabel" text="Some very very long text" />
+        </ui:Instance>
+        <ui:Instance template="ContextMenuSeparatorUi" name="ContextMenuSeparatorUi" />
+        <ui:Instance template="ContextMenuItemUi" name="ContextMenuItemUi" />
+    </ui:VisualElement>
+</ui:UXML>

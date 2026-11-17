@@ -1,0 +1,32 @@
+{
+ "layouts": 59,
+ "style_sheets": 9,
+ "inline_sheets": 59,
+ "files": 68,
+ "read_errors": [],
+ "elements": 1195,
+ "rules": 572,
+ "properties": 1770,
+ "inline_style_check": "715/717 decoded inline rules match the style text kept in the build",
+ "inline_style_mismatches": [
+  [
+   "SingingResultsPlayerUi",
+   "background-image: url(dummyplayerprofileimage)",
+   "=>",
+   "background-image: url(fallbackplayerprofileimage)"
+  ],
+  [
+   "SingingResultsPlayerUiAlternative",
+   "background-image: url(dummyplayerprofileimage)",
+   "=>",
+   "background-image: url(fallbackplayerprofileimage)"
+  ]
+ ],
+ "panel_settings": 1,
+ "ui_documents": 23,
+ "unresolved_assets": {},
+ "replaced_shells": 68,
+ "panel_settings_filled": 1,
+ "ui_documents_filled": 23,
+ "files_repointed": 23
+}

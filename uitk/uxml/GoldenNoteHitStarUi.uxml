@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="image" style='width: 24px; height: 24px; background-image: url("project://database/Assets/Texture2D/PerfectNoteStar.png?fileID=2800000&amp;guid=e79ca32449e77e349b4a8b0a3fdf21fa&amp;type=3#PerfectNoteStar"); margin-left: -12px; margin-top: -12px;' />
+</ui:UXML>

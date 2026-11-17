@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="background" style='background-image: url("project://database/Assets/Sprite/_sing_lineBonusPopUp.asset?fileID=21300000&amp;guid=fd974e83b772afa45a1ba35269830725&amp;type=2#[sing]lineBonusPopUp"); align-items: center; width: 120px; height: 30px; justify-content: center; right: 0; position: absolute;'>
+        <ui:Label text="Perfect!" display-tooltip-when-elided="true" name="text" style="text-shadow: 0 0 2px rgba(32, 32, 32, 0.5); -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

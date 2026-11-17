@@ -1,0 +1,589 @@
+{
+ "summary": {
+  "layouts": 59,
+  "style_sheets": 9,
+  "inline_sheets": 59,
+  "files": 68,
+  "read_errors": [],
+  "elements": 1195,
+  "rules": 572,
+  "properties": 1770,
+  "inline_style_check": "715/717 decoded inline rules match the style text kept in the build",
+  "inline_style_mismatches": [
+   [
+    "SingingResultsPlayerUi",
+    "background-image: url(dummyplayerprofileimage)",
+    "=>",
+    "background-image: url(fallbackplayerprofileimage)"
+   ],
+   [
+    "SingingResultsPlayerUiAlternative",
+    "background-image: url(dummyplayerprofileimage)",
+    "=>",
+    "background-image: url(fallbackplayerprofileimage)"
+   ]
+  ],
+  "panel_settings": 1,
+  "ui_documents": 23,
+  "unresolved_assets": {},
+  "replaced_shells": 68,
+  "panel_settings_filled": 1,
+  "ui_documents_filled": 23,
+  "files_repointed": 23
+ },
+ "files": [
+  {
+   "file": "uxml/AboutSceneUi.uxml",
+   "name": "AboutSceneUi",
+   "source": "sharedassets3.assets:11",
+   "elements": 18,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/AboutSceneUi.uxml"
+  },
+  {
+   "file": "uxml/AccordionItemUi.uxml",
+   "name": "AccordionItemUi",
+   "source": "sharedassets0.assets:142",
+   "elements": 6,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/AccordionItemUi.uxml"
+  },
+  {
+   "file": "uss/CommonStyleVariables.uss",
+   "name": "CommonStyleVariables",
+   "source": "sharedassets0.assets:130",
+   "rules": 1,
+   "selectors": 1,
+   "properties": 28,
+   "replaced": "Assets/MonoBehaviour/CommonStyleVariables.uss"
+  },
+  {
+   "file": "uss/CommonStyles.uss",
+   "name": "CommonStyles",
+   "source": "sharedassets0.assets:134",
+   "rules": 63,
+   "selectors": 63,
+   "properties": 105,
+   "replaced": "Assets/MonoBehaviour/CommonStyles.uss"
+  },
+  {
+   "file": "uxml/CompanionAppOptionsSceneUi.uxml",
+   "name": "CompanionAppOptionsSceneUi",
+   "source": "sharedassets19.assets:4",
+   "elements": 12,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/CompanionAppOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/ConnectedClientListEntry.uxml",
+   "name": "ConnectedClientListEntry",
+   "source": "sharedassets19.assets:5",
+   "elements": 9,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/ConnectedClientListEntry.uxml"
+  },
+  {
+   "file": "uxml/ContentDownloadSceneUi.uxml",
+   "name": "ContentDownloadSceneUi",
+   "source": "sharedassets15.assets:4",
+   "elements": 26,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/ContentDownloadSceneUi.uxml"
+  },
+  {
+   "file": "uxml/ContextMenuItemUi.uxml",
+   "name": "ContextMenuItemUi",
+   "source": "sharedassets0.assets:141",
+   "elements": 3,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/ContextMenuItemUi.uxml"
+  },
+  {
+   "file": "uxml/ContextMenuSeparatorUi.uxml",
+   "name": "ContextMenuSeparatorUi",
+   "source": "sharedassets0.assets:139",
+   "elements": 1,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/ContextMenuSeparatorUi.uxml"
+  },
+  {
+   "file": "uxml/ContextMenuUi.uxml",
+   "name": "ContextMenuUi",
+   "source": "sharedassets0.assets:138",
+   "elements": 1,
+   "templates": 3,
+   "replaced": "Assets/MonoBehaviour/ContextMenuUi.uxml"
+  },
+  {
+   "file": "uxml/CreditsEntryUi.uxml",
+   "name": "CreditsEntryUi",
+   "source": "sharedassets21.assets:17",
+   "elements": 7,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/CreditsEntryUi.uxml"
+  },
+  {
+   "file": "uxml/CreditsSceneUi.uxml",
+   "name": "CreditsSceneUi",
+   "source": "sharedassets21.assets:18",
+   "elements": 25,
+   "templates": 1,
+   "replaced": "Assets/MonoBehaviour/CreditsSceneUi.uxml"
+  },
+  {
+   "file": "uss/CustomControlStyles.uss",
+   "name": "CustomControlStyles",
+   "source": "sharedassets0.assets:129",
+   "rules": 46,
+   "selectors": 46,
+   "properties": 107,
+   "replaced": "Assets/MonoBehaviour/CustomControlStyles.uss"
+  },
+  {
+   "file": "uxml/DesignOptionsSceneUi.uxml",
+   "name": "DesignOptionsSceneUi",
+   "source": "sharedassets16.assets:3",
+   "elements": 34,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/DesignOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/DevelopmentOptionsSceneUi.uxml",
+   "name": "DevelopmentOptionsSceneUi",
+   "source": "sharedassets18.assets:3",
+   "elements": 44,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/DevelopmentOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/EditorIssueUi.uxml",
+   "name": "EditorIssueUi",
+   "source": "sharedassets13.assets:18",
+   "elements": 2,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/EditorIssueUi.uxml"
+  },
+  {
+   "file": "uxml/EditorNoteUi.uxml",
+   "name": "EditorNoteUi",
+   "source": "sharedassets13.assets:19",
+   "elements": 9,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/EditorNoteUi.uxml"
+  },
+  {
+   "file": "uxml/EditorSentenceUi.uxml",
+   "name": "EditorSentenceUi",
+   "source": "sharedassets13.assets:21",
+   "elements": 7,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/EditorSentenceUi.uxml"
+  },
+  {
+   "file": "uxml/GameOptionsSceneUi.uxml",
+   "name": "GameOptionsSceneUi",
+   "source": "sharedassets4.assets:3",
+   "elements": 13,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/GameOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/GoldenNoteHitStarUi.uxml",
+   "name": "GoldenNoteHitStarUi",
+   "source": "sharedassets11.assets:28",
+   "elements": 1,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/GoldenNoteHitStarUi.uxml"
+  },
+  {
+   "file": "uxml/GoldenNoteStarUi.uxml",
+   "name": "GoldenNoteStarUi",
+   "source": "sharedassets11.assets:33",
+   "elements": 1,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/GoldenNoteStarUi.uxml"
+  },
+  {
+   "file": "uxml/GraphicOptionsSceneUi.uxml",
+   "name": "GraphicOptionsSceneUi",
+   "source": "sharedassets5.assets:4",
+   "elements": 19,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/GraphicOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/HighscoreEntry.uxml",
+   "name": "HighscoreEntry",
+   "source": "sharedassets8.assets:6",
+   "elements": 8,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/HighscoreEntry.uxml"
+  },
+  {
+   "file": "uxml/HighscoreSceneUi.uxml",
+   "name": "HighscoreSceneUi",
+   "source": "sharedassets8.assets:5",
+   "elements": 17,
+   "templates": 5,
+   "replaced": "Assets/MonoBehaviour/HighscoreSceneUi.uxml"
+  },
+  {
+   "file": "uxml/InputDeviceIconContainer.uxml",
+   "name": "InputDeviceIconContainer",
+   "source": "sharedassets11.assets:32",
+   "elements": 4,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/InputDeviceIconContainer.uxml"
+  },
+  {
+   "file": "uxml/IssueSideBarEntryUi.uxml",
+   "name": "IssueSideBarEntryUi",
+   "source": "sharedassets13.assets:20",
+   "elements": 5,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/IssueSideBarEntryUi.uxml"
+  },
+  {
+   "file": "uxml/ItemPicker.uxml",
+   "name": "ItemPicker",
+   "source": "dfc837904c120e047a26dc208ada9022:2",
+   "elements": 7,
+   "templates": 0,
+   "replaced": "Assets/Resources/uidocuments/ItemPicker.uxml"
+  },
+  {
+   "file": "uss/LargeScreenStyles.uss",
+   "name": "LargeScreenStyles",
+   "source": "sharedassets0.assets:131",
+   "rules": 1,
+   "selectors": 1,
+   "properties": 15,
+   "replaced": "Assets/MonoBehaviour/LargeScreenStyles.uss"
+  },
+  {
+   "file": "uxml/LoadingSceneUi.uxml",
+   "name": "LoadingSceneUi",
+   "source": "sharedassets0.assets:140",
+   "elements": 12,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/LoadingSceneUi.uxml"
+  },
+  {
+   "file": "uxml/MainSceneUi.uxml",
+   "name": "MainSceneUi",
+   "source": "sharedassets1.assets:14",
+   "elements": 35,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/MainSceneUi.uxml"
+  },
+  {
+   "file": "uxml/MessageDialog.uxml",
+   "name": "MessageDialog",
+   "source": "sharedassets0.assets:137",
+   "elements": 11,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/MessageDialog.uxml"
+  },
+  {
+   "file": "uxml/NetworkOptionsSceneUi.uxml",
+   "name": "NetworkOptionsSceneUi",
+   "source": "sharedassets17.assets:3",
+   "elements": 10,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/NetworkOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/NewSongDialog.uxml",
+   "name": "NewSongDialog",
+   "source": "sharedassets1.assets:15",
+   "elements": 24,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/NewSongDialog.uxml"
+  },
+  {
+   "file": "uxml/NewVersionAvailableDialog.uxml",
+   "name": "NewVersionAvailableDialog",
+   "source": "sharedassets1.assets:13",
+   "elements": 11,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/NewVersionAvailableDialog.uxml"
+  },
+  {
+   "file": "uxml/NoteUi.uxml",
+   "name": "NoteUi",
+   "source": "sharedassets11.assets:29",
+   "elements": 7,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/NoteUi.uxml"
+  },
+  {
+   "file": "uxml/Notification.uxml",
+   "name": "Notification",
+   "source": "sharedassets0.assets:136",
+   "elements": 2,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/Notification.uxml"
+  },
+  {
+   "file": "uxml/NotificationContainer.uxml",
+   "name": "NotificationContainer",
+   "source": "sharedassets0.assets:135",
+   "elements": 1,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/NotificationContainer.uxml"
+  },
+  {
+   "file": "uxml/OptionsOverviewSceneUi.uxml",
+   "name": "OptionsOverviewSceneUi",
+   "source": "sharedassets2.assets:3",
+   "elements": 56,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/OptionsOverviewSceneUi.uxml"
+  },
+  {
+   "file": "uxml/PerfectEffectStarUi.uxml",
+   "name": "PerfectEffectStarUi",
+   "source": "sharedassets11.assets:26",
+   "elements": 1,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/PerfectEffectStarUi.uxml"
+  },
+  {
+   "file": "uxml/PlayerProfileListEntry.uxml",
+   "name": "PlayerProfileListEntry",
+   "source": "sharedassets7.assets:4",
+   "elements": 16,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/PlayerProfileListEntry.uxml"
+  },
+  {
+   "file": "uxml/PlayerProfileOptionsSceneUi.uxml",
+   "name": "PlayerProfileOptionsSceneUi",
+   "source": "sharedassets7.assets:5",
+   "elements": 16,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/PlayerProfileOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/PlayerUi.uxml",
+   "name": "PlayerUi",
+   "source": "sharedassets11.assets:31",
+   "elements": 21,
+   "templates": 2,
+   "replaced": "Assets/MonoBehaviour/PlayerUi.uxml"
+  },
+  {
+   "file": "uxml/RecordingOptionsSceneUi.uxml",
+   "name": "RecordingOptionsSceneUi",
+   "source": "sharedassets14.assets:7",
+   "elements": 43,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/RecordingOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uss/SceneSpecificStyles.uss",
+   "name": "SceneSpecificStyles",
+   "source": "sharedassets0.assets:133",
+   "rules": 59,
+   "selectors": 59,
+   "properties": 173,
+   "replaced": "Assets/MonoBehaviour/SceneSpecificStyles.uss"
+  },
+  {
+   "file": "uxml/SentenceRatingUi.uxml",
+   "name": "SentenceRatingUi",
+   "source": "sharedassets11.assets:34",
+   "elements": 2,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SentenceRatingUi.uxml"
+  },
+  {
+   "file": "uxml/SingSceneUi.uxml",
+   "name": "SingSceneUi",
+   "source": "sharedassets11.assets:30",
+   "elements": 22,
+   "templates": 5,
+   "replaced": "Assets/MonoBehaviour/SingSceneUi.uxml"
+  },
+  {
+   "file": "uxml/SingingLyricsUi.uxml",
+   "name": "SingingLyricsUi",
+   "source": "sharedassets11.assets:27",
+   "elements": 10,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SingingLyricsUi.uxml"
+  },
+  {
+   "file": "uxml/SingingResultsPlayerUi.uxml",
+   "name": "SingingResultsPlayerUi",
+   "source": "sharedassets9.assets:25",
+   "elements": 33,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SingingResultsPlayerUi.uxml"
+  },
+  {
+   "file": "uxml/SingingResultsPlayerUiAlternative.uxml",
+   "name": "SingingResultsPlayerUiAlternative",
+   "source": "sharedassets9.assets:26",
+   "elements": 33,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SingingResultsPlayerUiAlternative.uxml"
+  },
+  {
+   "file": "uxml/SingingResultsSceneUi.uxml",
+   "name": "SingingResultsSceneUi",
+   "source": "sharedassets9.assets:27",
+   "elements": 17,
+   "templates": 3,
+   "replaced": "Assets/MonoBehaviour/SingingResultsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/SongEditorLayerSideBarEntryUi.uxml",
+   "name": "SongEditorLayerSideBarEntryUi",
+   "source": "sharedassets13.assets:22",
+   "elements": 14,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongEditorLayerSideBarEntryUi.uxml"
+  },
+  {
+   "file": "uxml/SongEditorSceneUi.uxml",
+   "name": "SongEditorSceneUi",
+   "source": "sharedassets13.assets:15",
+   "elements": 215,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongEditorSceneUi.uxml"
+  },
+  {
+   "file": "uss/SongEditorStyles.uss",
+   "name": "SongEditorStyles",
+   "source": "sharedassets13.assets:14",
+   "rules": 44,
+   "selectors": 44,
+   "properties": 115,
+   "replaced": "Assets/MonoBehaviour/SongEditorStyles.uss"
+  },
+  {
+   "file": "uxml/SongFolderListEntry.uxml",
+   "name": "SongFolderListEntry",
+   "source": "sharedassets20.assets:6",
+   "elements": 12,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongFolderListEntry.uxml"
+  },
+  {
+   "file": "uxml/SongIssueSongEntryUi.uxml",
+   "name": "SongIssueSongEntryUi",
+   "source": "sharedassets20.assets:5",
+   "elements": 6,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongIssueSongEntryUi.uxml"
+  },
+  {
+   "file": "uxml/SongLibraryOptionsSceneUi.uxml",
+   "name": "SongLibraryOptionsSceneUi",
+   "source": "sharedassets20.assets:7",
+   "elements": 23,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongLibraryOptionsSceneUi.uxml"
+  },
+  {
+   "file": "uxml/SongPropertySideBarEntryUi.uxml",
+   "name": "SongPropertySideBarEntryUi",
+   "source": "sharedassets13.assets:17",
+   "elements": 3,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongPropertySideBarEntryUi.uxml"
+  },
+  {
+   "file": "uxml/SongSelectCharacterQuickJumpCharacter.uxml",
+   "name": "SongSelectCharacterQuickJumpCharacter",
+   "source": "sharedassets12.assets:17",
+   "elements": 2,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongSelectCharacterQuickJumpCharacter.uxml"
+  },
+  {
+   "file": "uxml/SongSelectSceneMicEntryUi.uxml",
+   "name": "SongSelectSceneMicEntryUi",
+   "source": "sharedassets12.assets:16",
+   "elements": 3,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongSelectSceneMicEntryUi.uxml"
+  },
+  {
+   "file": "uxml/SongSelectScenePlayerEntryUi.uxml",
+   "name": "SongSelectScenePlayerEntryUi",
+   "source": "sharedassets12.assets:15",
+   "elements": 6,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongSelectScenePlayerEntryUi.uxml"
+  },
+  {
+   "file": "uxml/SongSelectSceneUi.uxml",
+   "name": "SongSelectSceneUi",
+   "source": "sharedassets12.assets:14",
+   "elements": 176,
+   "templates": 10,
+   "replaced": "Assets/MonoBehaviour/SongSelectSceneUi.uxml"
+  },
+  {
+   "file": "uxml/SongSelectSongEntryUi.uxml",
+   "name": "SongSelectSongEntryUi",
+   "source": "sharedassets12.assets:18",
+   "elements": 20,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SongSelectSongEntryUi.uxml"
+  },
+  {
+   "file": "uxml/SoundOptionsSceneUi.uxml",
+   "name": "SoundOptionsSceneUi",
+   "source": "sharedassets6.assets:3",
+   "elements": 22,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/SoundOptionsSceneUi.uxml"
+  },
+  {
+   "file": "tss/UltraStarPlayMainTheme.tss",
+   "name": "UltraStarPlayMainTheme",
+   "source": "sharedassets0.assets:105",
+   "rules": 0,
+   "selectors": 0,
+   "properties": 0,
+   "replaced": "Assets/MonoBehaviour/UltraStarPlayMainTheme.tss"
+  },
+  {
+   "file": "uss/UnityControlStyles.uss",
+   "name": "UnityControlStyles",
+   "source": "sharedassets0.assets:132",
+   "rules": 49,
+   "selectors": 49,
+   "properties": 139,
+   "replaced": "Assets/MonoBehaviour/UnityControlStyles.uss"
+  },
+  {
+   "file": "uxml/ValueInputDialog.uxml",
+   "name": "ValueInputDialog",
+   "source": "sharedassets13.assets:16",
+   "elements": 13,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/ValueInputDialog.uxml"
+  },
+  {
+   "file": "uxml/WebcamOptionsSceneUi.uxml",
+   "name": "WebcamOptionsSceneUi",
+   "source": "sharedassets22.assets:3",
+   "elements": 18,
+   "templates": 0,
+   "replaced": "Assets/MonoBehaviour/WebcamOptionsSceneUi.uxml"
+  },
+  {
+   "file": "tss/default.tss",
+   "name": "default",
+   "source": "sharedassets0.assets:126",
+   "rules": 309,
+   "selectors": 309,
+   "properties": 1088,
+   "replaced": "Assets/MonoBehaviour/default.tss"
+  }
+ ]
+}
