@@ -46,7 +46,10 @@
   function iosView(n) { return VIEW[n] || n; }
   function fixProps(cls, p) {
     if (!p) return p;
-    if (cls === 'RCTImageView' && p.src && !p.source) p = Object.assign({}, p, { source: p.src });   // Android Image sends src
+    if (cls === 'RCTImageView' && (p.src || typeof p.source === 'number')) {   // Android Image: list in src, source is a bare asset id
+      p = Object.assign({}, p); if (p.src) p.source = p.src; else delete p.source; delete p.src;
+      if (p.defaultSrc) p.defaultSource = { uri: p.defaultSrc }; delete p.defaultSrc; delete p.loadingIndicatorSrc; delete p.headers;
+    }
     if (cls === 'AndroidProgressBar') p = Object.assign({ animating: true }, p);
     return p;
   }
@@ -56,7 +59,13 @@
     var extra = {
       // Android looks each component up one by one; iOS lists them all in its constants
       // a component no installed add-on provides becomes a plain view (the screen still shows) instead of a crash
-      getConstantsForViewManager: function (n) { return C()[iosView(n)] || (/^[A-Z]/.test(n) && C().RCTView) || null; },
+      getConstantsForViewManager: function (n) {
+        var c = C()[iosView(n)] || (/^[A-Z]/.test(n) && C().RCTView) || null;
+        // React Native only sends props listed here: add Android's image props so fixProps can translate them
+        if (c && n === 'RCTImageView') c = Object.assign({}, c, { NativeProps: Object.assign({ src: 'array', defaultSrc: 'string',
+          loadingIndicatorSrc: 'string', headers: 'object', shouldNotifyLoadEvents: 'boolean' }, c.NativeProps || {}) });
+        return c;
+      },
       getDefaultEventTypes: function () { return { bubblingEventTypes: C().genericBubblingEventTypes || {}, directEventTypes: C().genericDirectEventTypes || {} }; },
       createView: function (tag, cls, root, props) {
         var n = cls === 'AndroidTextInput' && !(props && props.multiline) ? 'RCTSinglelineTextInputView' : iosView(cls);
@@ -115,9 +124,10 @@
       if (typeof k !== 'string') return undefined;
       if (k in cache) return cache[k];
       var m = real ? real[k] : undefined, out;
-      if (m != null) out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
-      if (m != null && g.__RN_TRACE && k === 'UIManager') out = traced(k, out);   // not ExceptionsManager: logging an error reports one
-      else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
+      if (m != null) {
+        out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
+        if (g.__RN_TRACE && k === 'UIManager') out = traced(k, out);   // not ExceptionsManager: logging an error reports one
+      } else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
       else if (STUBS.indexOf(k) >= 0 || STUB_RE.test(k)) out = stub(k);
       else return m;
       return (cache[k] = out);
