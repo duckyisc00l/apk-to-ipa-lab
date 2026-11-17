@@ -1,15 +1,12 @@
-# LIKO-12 (LÖVE route). iOS first shows a one-time keyboard tip over the keyboard: its Continue button
-# is not in the app's accessibility tree, so tap it by position. Then type commands at the D:/> prompt.
+# LIKO-12 (LÖVE route). LÖVE ignores AXe's hardware-key typing here, so tap the on-screen keyboard:
+# softtype finds each letter's key; the keyboard tip is skipped by run.sh. Commands at the D:/> prompt.
 shot 0-prompt
-tap 50% 94%
-wait 2
-shot 1-keyboard
-type help
-key return
-wait 3
-shot 2-help
 ui keyboard
-type dir
-key return
+softtype help
+tapon Return
 wait 3
-shot 3-dir
+shot 1-help
+softtype dir
+tapon Return
+wait 3
+shot 2-dir

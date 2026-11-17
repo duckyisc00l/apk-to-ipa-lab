@@ -2,7 +2,7 @@
 # Run an iPhone app in Apple's iPhone Simulator on a GitHub Mac (there are no real iPhones on GitHub).
 # Usage: ci/sim/run.sh <path to .app built for the simulator> <out dir> [seconds to wait, default 25] [input steps]
 # The optional steps file has one step per line (AXe does the input; X and Y in points, or as a % of the screen):
-#   tap X Y | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | key NAME (return, escape,
+#   tap X Y | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | softtype TEXT (on-screen keys) | key NAME (return, escape,
 #   backspace, tab, space, up/down/left/right, a letter, or a HID number) | wait SECONDS | shot NAME |
 #   ui NAME (save the accessibility tree, list its texts) | uiat X Y (the element at one point) | relaunch (quit and restart the app) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
 # Writes <out>/sim.md (a summary line first; then launched? still running? crash? each step), <out>/sim-<n>s.png
@@ -32,6 +32,9 @@ NAME=$(xcrun simctl list devices | grep "$UDID" | head -1 | sed 's/ (.*//' | xar
 find "$APP" -depth \( -name '*.framework' -o -name '*.dylib' -o -name '*.appex' \) -exec codesign --force --sign - --timestamp=none {} \; 2>/dev/null
 codesign --force --sign - --timestamp=none "$APP" 2>&1 | tail -1
 xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null
+# skip iOS's one-time "slide to type" keyboard tip: it covers the keyboard and AXe can't tap it (another process)
+for dom in com.apple.keyboard.ContinuousPath com.apple.Preferences; do
+  xcrun simctl spawn "$UDID" defaults write "$dom" DidShowContinuousPathIntroduction -bool true 2>/dev/null; done
 export SIMCTL_CHILD_NSUnbufferedIO=YES   # passed to the app: Foundation output not held back
 sleep 15   # let the home screen finish starting, or the first launch is refused too
 xcrun simctl install "$UDID" "$APP" || { echo "INSTALL FAILED" | tee -a "$OUT/sim.md"; exit 1; }
@@ -70,6 +73,12 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
   else
     echo "input tool: axe $(axe --version 2>/dev/null | head -1)" >> "$OUT/sim.md"
     UI() { timeout 60 axe describe-ui --udid "$UDID" > "$1" 2>> "$OUT/input.log" < /dev/null; }
+    # web pages (WKWebView) don't show in the whole tree, but a lookup at one point finds their text:
+    # SCAN asks a grid of points (4 across, every 5% down) and keeps what it finds
+    SCAN() { rm -rf /tmp/simscan; mkdir -p /tmp/simscan; local n=0 x y
+      for y in $(seq 5 5 95); do for x in 15 38 62 85; do n=$((n+1))
+        timeout 15 axe describe-ui --point "$((x*SW/100)),$((y*SH/100))" --udid "$UDID" > /tmp/simscan/$n.json 2> /dev/null < /dev/null
+      done; done; python3 "$HERE/ui.py" merge /tmp/simscan/*.json > "$1"; }
     UI "$OUT/ui-start.json"
     read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "390 844")
     echo "screen: ${SW}x${SH} points (steps may give X and Y in points or as 50%)" >> "$OUT/sim.md"
@@ -98,10 +107,19 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
             echo "tapon \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
           else
             UI "$OUT/ui-now.json"
+            python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$arg" > /dev/null || SCAN "$OUT/ui-now.json"
             if xy=$(python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$arg"); then
               RUN "tapon \"$arg\" (at $xy)" axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID"
             else echo "tapon \"$arg\" FAILED: not on screen. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; SF=$((SF+1)); fi
           fi;;
+        softtype)   # tap the letters on iOS's on-screen keyboard (for games that ignore AXe's hardware-key typing)
+          UI "$OUT/ui-now.json"; bad=""
+          for ((i=0; i<${#arg}; i++)); do ch="${arg:i:1}"; [ "$ch" = " " ] && ch=space
+            if xy=$(python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$ch" exact); then
+              timeout 20 axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null || bad="$bad$ch"
+            else bad="$bad$ch"; fi; sleep 0.3; done
+          if [ -z "$bad" ]; then echo "softtype \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
+          else echo "softtype \"$arg\" FAILED for: $bad (keyboard not up?)" >> "$OUT/sim.md"; SF=$((SF+1)); fi;;
         type) RUN "type \"$arg\"" axe type "$arg" --udid "$UDID";;
         key) RUN "key $arg" axe key "$(KEY "$a")" --udid "$UDID";;
         wait) sleep "$a";;
@@ -113,6 +131,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
         ui) UI "$OUT/ui-$a.json"; echo "ui $a: $(python3 "$HERE/ui.py" labels "$OUT/ui-$a.json")" >> "$OUT/sim.md";;
         expect)   # the text must be in the accessibility tree; retried for up to ~8 s while the screen settles
           hit=1; for i in 1 2 3 4; do UI "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && { hit=0; break; }; sleep 2; done
+          [ $hit = 1 ] && { SCAN "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && hit=0; }   # a web page?
           if [ $hit = 0 ]; then echo "expect \"$arg\": PASS" >> "$OUT/sim.md"; EP=$((EP+1))
           else echo "expect \"$arg\": FAIL. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; EF=$((EF+1)); fi;;
         ''|'#'*) ;;

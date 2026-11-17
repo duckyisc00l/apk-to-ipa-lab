@@ -3,6 +3,7 @@
   ui.py size   <describe-ui.json>          -> "W H": the screen in points (largest frame)
   ui.py find   <describe-ui.json> <label>  -> "X Y": centre of the first element with that label
                                               (exact, else contains, case ignored); exit 1 if none
+  ui.py merge  <json>...                   -> one list of all the elements (from point lookups)
   ui.py has    <describe-ui.json> <text>   -> exit 0 if any label/value/title contains the text
   ui.py labels <describe-ui.json>          -> the texts on screen, one line, for the report
   ui.py errors <log> [<log>...]            -> first distinct errors, repeats grouped with a count
@@ -41,13 +42,20 @@ if cmd == "size":
     print(int(w), int(h))
 if cmd == "find":
     want = sys.argv[3].strip().lower(); els = [e for e in load(sys.argv[2]) if frame(e)]
-    for exact in (True, False):
+    for exact in ((True,) if sys.argv[4:] == ["exact"] else (True, False)):
         for e in els:
             for t in texts(e):
                 if (t.lower() == want) if exact else (want in t.lower()):
                     x, y, w, h = frame(e)
                     if w > 0 and h > 0: print(int(x + w / 2), int(y + h / 2)); sys.exit(0)
     sys.exit(1)
+if cmd == "merge":   # several describe-ui outputs (one per point) -> one list
+    out = []
+    for p in sys.argv[2:]:
+        try: d = json.load(open(p))
+        except Exception: continue
+        out.extend(d if isinstance(d, list) else [d])
+    print(json.dumps(out))
 if cmd == "has":
     want = sys.argv[3]
     sys.exit(0 if any(want in t for e in load(sys.argv[2]) for t in texts(e)) else 1)

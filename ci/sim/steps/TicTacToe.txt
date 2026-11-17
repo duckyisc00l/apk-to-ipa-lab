@@ -1,15 +1,14 @@
-# Ionic Tic-Tac-Toe (web route). Web pages show no text to AXe, so taps go by position (% of the screen).
+# Ionic Tic-Tac-Toe (web route): taps by position (% of the screen); expect/tapon find web text by point lookups.
 shot 0-start
-uiat 75% 97%
-# Start (bottom right), then X in the centre, a corner, the opposite corner; the phone answers each with O
-tap 75% 97%
+tapon Start
 wait 2
 shot 1-started
 tap 50% 50%
 wait 2
 shot 2-centre
-tap 32% 41%
+tap 70% 41%
 wait 2
-tap 70% 59%
+tap 32% 59%
 wait 2
-shot 3-three-moves
+shot 3-moves
+expect Restart Game
