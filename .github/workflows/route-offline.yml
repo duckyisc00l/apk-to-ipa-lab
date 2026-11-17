@@ -57,15 +57,20 @@ jobs:
         run: |
           C=$(find "$GITHUB_WORKSPACE/bim/build" -type f -perm -u+x -path '*apps/linux/bim' | head -1); B=$(dirname "$(dirname "$(dirname "$C")")")
           echo "client $C (build $B)" | tee -a out/offline.md; ls "$B" "$B/assets" 2>&1 | head -8 | tee -a out/offline.md
-          mkdir -p shots app; cd shots
-          set +e
-          timeout 900 xvfb-run -a -s "-screen 0 1080x1920x24" gdb -batch -ex run -ex bt --args "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
-            --console-log --script "$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json" --script-step-timeout 300 --app-dir "$GITHUB_WORKSPACE/app" > ../out/client.log 2>&1
-          echo "client exit $?" | tee -a ../out/offline.md
-          ls -la | tee -a ../out/offline.md
-          grep -iE "game server|connect|matchmak|bot|script|error|offline" ../out/client.log | head -40 >> ../out/offline.md
-          grep -A25 "SIGSEGV\|signal SIG" ../out/client.log | head -40 >> ../out/offline.md || true
-          tail -20 ../out/server.log >> ../out/offline.md
+          # A = the game's original behaviour with no internet; B = with the offline change switched on
+          for mode in A B; do
+            mkdir -p "shots-$mode" "app-$mode"; cd "shots-$mode"
+            [ "$mode" = B ] && export BIM_OFFLINE=1 || unset BIM_OFFLINE
+            set +e
+            timeout 600 xvfb-run -a -s "-screen 0 1080x1920x24" gdb -batch -ex run -ex bt -ex "frame 1" -ex "info frame" -ex "frame 2" -ex "info locals" \
+              --args "$B/apps/linux/bim" --assets "$GITHUB_WORKSPACE/bim/static-assets/" "$B/assets/generated/" \
+              --console-log --script "$GITHUB_WORKSPACE/lab/ci/offline/vs-bot.json" --script-step-timeout 240 --app-dir "$GITHUB_WORKSPACE/app-$mode" > "../out/client-$mode.log" 2>&1
+            echo "## run $mode (BIM_OFFLINE=${BIM_OFFLINE:-unset}): $(grep -c 'signal SIG' ../out/client-$mode.log) crash(es); screenshots: $(ls *.png 2>/dev/null | tr '\n' ' ')" | tee -a ../out/offline.md
+            grep -iE "StartUp|business|game server|connect|matchmak|bot|script|offline|error" "../out/client-$mode.log" | grep -v "^\[36" | tail -25 >> ../out/offline.md
+            grep -A30 "signal SIG" "../out/client-$mode.log" | head -45 >> ../out/offline.md || true
+            cd ..; mkdir -p shots; for f in shots-$mode/*.png; do [ -f "$f" ] && cp "$f" "shots/$mode-$(basename "$f")"; done
+          done
+          tail -20 out/server.log >> out/offline.md
       - name: Publish to branch r-offline
         if: always()
         run: |

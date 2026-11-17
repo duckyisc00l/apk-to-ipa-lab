@@ -19,8 +19,12 @@ p = f"{src}/apps/axmol/main/src/bim/axmol/app/task/main_task.cpp"
 s = open(p).read()
 old = "  // It won't work but we'll still continue toward opening the main screen.\n  start_authenticated_jobs();"
 new = ("  // Offline rebuild: no sign-in server, so play as a local player against the server on this device.\n"
-       "  m_session_token = \"offline\";\n  m_done_steps |= steps::business;\n  try_connect_to_game_server();\n"
+       "  // (switchable with BIM_OFFLINE=1 so the lab can compare with the original behaviour in one build)\n"
+       "  if (std::getenv(\"BIM_OFFLINE\"))\n  {\n"
+       "    m_session_token = \"offline\";\n    m_done_steps |= steps::business;\n    try_connect_to_game_server();\n  }\n"
        "  start_authenticated_jobs();")
+if "#include <cstdlib>" not in s:
+    s = "#include <cstdlib>\n" + s
 assert old in s, "business error handler not found"
 open(p, "w").write(s.replace(old, new))
 print(f"patched: game server 127.0.0.1:{port}, offline sign-in fallback")
