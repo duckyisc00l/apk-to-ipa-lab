@@ -98,12 +98,25 @@
       return noop;
     } });
   }
+  // lab only (fill-app.sh sets __RN_TRACE for simulator runs): log the first native calls with their arguments
+  var traceLeft = 400;
+  function traced(name, mod) {
+    return new Proxy(mod, { get: function (t, k) {
+      var v = t[k];
+      if (typeof v !== 'function' || typeof k !== 'string' || /^(getConstants|addListener|removeListeners)$/.test(k)) return v;
+      return function () {
+        if (traceLeft-- > 0) { try { console.error('RNTRACE ' + name + '.' + k + ' ' + JSON.stringify([].slice.call(arguments).map(function (a) { return typeof a === 'function' ? 'fn' : a; })).slice(0, 400)); } catch (e) {} }
+        return v.apply(t, arguments);
+      };
+    } });
+  }
   function wrap(real) {
     return new Proxy({}, { get: function (t, k) {
       if (typeof k !== 'string') return undefined;
       if (k in cache) return cache[k];
       var m = real ? real[k] : undefined, out;
       if (m != null) out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
+      if (m != null && g.__RN_TRACE) out = traced(k, out);
       else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
       else if (STUBS.indexOf(k) >= 0 || STUB_RE.test(k)) out = stub(k);
       else return m;

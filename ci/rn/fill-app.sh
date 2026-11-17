@@ -4,7 +4,7 @@
 set -e
 app="$1"; rn="$2"; host="$3"; kind="$4"
 if [ "$kind" = hermes ]; then cp "$rn/main.jsbundle" "$app/main.jsbundle"   # bytecode: can't put JS in front
-else cat "$rn/prelude.js" "$rn/main.jsbundle" > "$app/main.jsbundle"; fi
+else { [ -n "${RN_TRACE:-}" ] && echo "globalThis.__RN_TRACE=1;"; cat "$rn/prelude.js" "$rn/main.jsbundle"; } > "$app/main.jsbundle"; fi
 # react-native-vector-icons draws with fonts that iOS must load from the app (UIAppFonts)
 vi="$host/node_modules/react-native-vector-icons/Fonts"
 if [ -d "$vi" ]; then
