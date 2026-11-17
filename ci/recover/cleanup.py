@@ -137,6 +137,10 @@ def package_classes(pkg, ver, cache="/tmp/unity-pkgs"):
     os.makedirs(cache, exist_ok=True)
     try:
         info = json.load(urllib.request.urlopen(f"https://packages.unity.com/{pkg}", timeout=60))
+        if ver not in info["versions"]:
+            # built into the editor (com.unity.ugui 1.0.0): not in the registry. Script IDs stay the same across
+            # versions, so the newest published version gives the same IDs.
+            ver = sorted(info["versions"], key=lambda v: info.get("time", {}).get(v, ""))[-1]
         url = info["versions"][ver]["dist"]["tarball"]
         data = urllib.request.urlopen(url, timeout=120).read()
     except Exception as x:
