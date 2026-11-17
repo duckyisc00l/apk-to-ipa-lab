@@ -74,9 +74,15 @@ jobs:
           cd ../../..; ls -la ${{ inputs.name }}.ipa | tee -a out/build.md; unzip -l ${{ inputs.name }}.ipa | grep -E "AppAssets/|App$" | head -20 | tee -a out/build.md
           gh release create "rewrite-${{ inputs.name }}-${{ github.run_number }}" ${{ inputs.name }}.ipa -R ${{ github.repository }} --prerelease \
             --notes "Step R test: SwiftUI rewrite of ${{ inputs.repo }} (MIT) from its decompiled APK, using the APK's own colours, texts, font and icons. Unsigned." || true
+      - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
+        run: |
+          cd ci/rewrite/${{ inputs.name }}
+          xcodebuild -project App.xcodeproj -scheme App -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath simbuild CODE_SIGNING_ALLOWED=NO build > ../../../out/sim-build.log 2>&1 || { grep -E "error:" ../../../out/sim-build.log | head; exit 1; }
+          cd ../../..; ci/sim/run.sh "ci/rewrite/${{ inputs.name }}/simbuild/Build/Products/Release-iphonesimulator/App.app" out/sim 25
       - name: Publish build log
         if: always()
         run: |
-          mkdir -p /tmp/r; cp out/*.md out/*.json /tmp/r/ 2>/dev/null; tail -100 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
+          mkdir -p /tmp/r; cp out/*.md out/*.json /tmp/r/ 2>/dev/null; cp -R out/sim /tmp/r/ 2>/dev/null || true; tail -100 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
           cd /tmp/r && git init -q -b r-rewrite-build && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git add -A && git commit -qm "rewrite build ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-rewrite-build
