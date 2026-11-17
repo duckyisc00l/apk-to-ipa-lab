@@ -34,7 +34,7 @@ jobs:
           h=d[:8]==bytes.fromhex('c61fbc03c103191f')
           print('bundle', len(d), 'hermes' if h else 'plain', struct.unpack('<I',d[8:12])[0] if h else '')
           t=d.decode('latin1')
-          print('names:', ' '.join(sorted(set(re.findall(r'\b(RN[A-Z][A-Za-z0-9]{2,40}|RCT[A-Z][A-Za-z0-9]{2,40}|Expo[A-Z][A-Za-z0-9]{2,40})\b',t)))[:60])
+          print('names:', ' '.join(sorted(set(re.findall(r'\b(RN[A-Z][A-Za-z0-9]{2,40}|RCT[A-Z][A-Za-z0-9]{2,40}|Expo[A-Z][A-Za-z0-9]{2,40})\b',t)))[:60]))
           PY
             else echo "no index.android.bundle: $(ls d/assets | head -5 | tr '\n' ' ')" >> $o; fi
             echo "libs: $(ls d/lib/*/ 2>/dev/null | sort -u | grep -E 'hermes|fabric|reanimated|jsc|newarch' | tr '\n' ' ')" >> $o
