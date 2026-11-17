@@ -82,10 +82,16 @@ jobs:
           /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$app/Info.plist"
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "$NAME.ipa" Payload && ls -la "$NAME.ipa" | tee -a out/love.md
           gh release create "$NAME-love-${{ github.run_number }}" "$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the LÖVE route)."
+      - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
+        continue-on-error: true
+        run: |
+          export NAME
+          SIM_PRE_RUN='cp game.love "$APP/"; /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$APP/Info.plist"' \
+            ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/sim 30
       - name: Publish to branch r-love
         if: always()
         run: |
-          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; tail -200 out/xcodebuild.log > /tmp/r/xcodebuild.log 2>/dev/null || true
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp -R out/sim /tmp/r/ 2>/dev/null || true; tail -200 out/xcodebuild.log > /tmp/r/xcodebuild.log 2>/dev/null || true
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git checkout --orphan r-love && git rm -rfq . && rm -rf ci dl work out love applelibs Payload *.zip *.love *.ipa
           cp -r /tmp/r/. . && git add -A && git commit -qm "love ${{ github.run_number }}" && git push -f origin r-love

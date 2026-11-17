@@ -68,6 +68,12 @@ jobs:
           mkdir -p Payload && cp -R dd/Build/Products/Release-iphoneos/App.app Payload/ && zip -qry "../${{ matrix.name }}.ipa" Payload
           cd .. && ls -la *.ipa | tee -a out/ipa.md
           gh release create "${{ matrix.name }}-web-${{ github.run_number }}" "${{ matrix.name }}.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the web route)."
+      - uses: actions/checkout@v4
+        with: { path: lab, sparse-checkout: ci/sim }
+      - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
+        continue-on-error: true
+        run: |
+          lab/ci/sim/build-and-run.sh proj/App.xcodeproj App out/sim 30
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: "ipa-logs-${{ matrix.name }}", path: out }

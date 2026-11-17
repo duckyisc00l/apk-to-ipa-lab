@@ -109,6 +109,11 @@ jobs:
           app=$(find dd/Build/Products -maxdepth 2 -name '*.app' | head -1)
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "$NAME.ipa" Payload && ls -la "$NAME.ipa" | tee -a out/ipa.md
           gh release create "$NAME-godot-${{ github.run_number }}" "$NAME.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test of the Godot route)."
+      - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
+        continue-on-error: true
+        run: |
+          proj=$(find export -maxdepth 2 -name '*.xcodeproj' | head -1)
+          ci/sim/build-and-run.sh "$proj" "$(basename "$proj" .xcodeproj)" out/sim 30
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: ipa-logs, path: out }
