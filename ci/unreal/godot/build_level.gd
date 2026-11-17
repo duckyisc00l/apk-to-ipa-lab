@@ -69,7 +69,7 @@ func _texture(inst, gltf_path):
 func _material_for(name, folder):
 	if _mat_cache.has(name): return _mat_cache[name]
 	var found = _find_file(folder, name + ".mat")
-	if found == "": _mat_cache[name] = null; return null
+	if found == "": _mat_cache[name] = null; print("  MAT %s: no .mat file" % name); return null
 	var tex_paths = {}   # texture name -> res:// path, from the props file's full references
 	var props = found.get_basename() + ".props.txt"
 	if FileAccess.file_exists(props):
@@ -94,6 +94,7 @@ func _material_for(name, folder):
 	if n: mat.normal_enabled = true; mat.normal_texture = n
 	mat.roughness = 0.9
 	_mat_cache[name] = mat if d else null
+	print("  MAT %s: diffuse '%s' -> %s, normal '%s' -> %s" % [name, diffuse, "ok" if d else "NOT LOADED (" + str(tex_paths.get(diffuse, "?")) + ")", normal, "ok" if n else "-"])
 	if d: textured += 1
 	return _mat_cache[name]
 

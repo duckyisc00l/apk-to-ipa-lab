@@ -70,7 +70,7 @@ jobs:
           P=proj; mkdir -p $P; cp ci/unreal/godot/* $P/; cp -R export/meshes $P/meshes; [ -d export/um ] && cp -R export/um $P/um; cp export/umodel_map.json $P/
           ./godot --headless --path $P --import > out/import.log 2>&1 || true
           L=$(ls export/levels/*.json | xargs -n1 basename | grep -viE "editor|test|transition" | head -1); echo "level: $L" | tee -a out/rebuild.md
-          ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR" | head -20 | tee -a out/rebuild.md
+          ./godot --headless --path $P --script res://build_level.gd -- "$GITHUB_WORKSPACE/export/levels/$L" 2>&1 | grep -E "LEVEL BUILT|missing|ERROR|  MAT " | head -40 | tee -a out/rebuild.md
           printf '\n[autoload]\nShot="*res://shot.gd"\n' >> $P/project.godot
           sudo apt-get install -y -qq xvfb > /dev/null
           SHOT=$GITHUB_WORKSPACE/out/level.png timeout 120 xvfb-run -a -s "-screen 0 1280x720x24" ./godot --path $P --rendering-driver opengl3 2>&1 | grep -E "SHOT|ERROR|LEVEL BOUNDS" | head -10 | tee -a out/rebuild.md || true
