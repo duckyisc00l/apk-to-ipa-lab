@@ -114,8 +114,14 @@ jobs:
       - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
         continue-on-error: true
         run: |
-          P=$(ls -d xcode/*.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
-          ci/sim/build-and-run.sh "$P" "$S" out/sim 40
+          mkdir -p out/sim
+          # renios ships its libraries for phones only: no simulator build is possible without rebuilding them
+          if lipo -info xcode/prebuilt/release/libSDL2.a 2>/dev/null | grep -qE "x86_64|simulator"; then
+            P=$(ls -d xcode/*.xcodeproj | head -1); S=$(xcodebuild -list -project "$P" | awk '/Schemes:/{getline; print; exit}' | xargs)
+            ci/sim/build-and-run.sh "$P" "$S" out/sim 40
+          else
+            echo "SKIPPED: renios libraries are phone-only ($(lipo -info xcode/prebuilt/release/libSDL2.a 2>&1 | sed 's/.*: //'))" | tee out/sim/sim.md
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: ipa-logs, path: out }
