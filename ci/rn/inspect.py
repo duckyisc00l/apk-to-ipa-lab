@@ -255,6 +255,16 @@ try:
                                 info["app_name"], info["app_name_from"] = v, c.get_name() + " (launcher activity)"
 except Exception as x:
     info["label_error"] = str(x)[:200]
+# the APK's own icon fonts (react-native-vector-icons copies them to assets/fonts): their glyphs match the bundle's
+# glyph maps, which a host's other vector-icons version may not (missing glyphs show as "?" boxes)
+fd = os.path.join(src, "assets", "fonts")
+if os.path.isdir(fd):
+    fonts = [f for f in os.listdir(fd) if f.lower().endswith((".ttf", ".otf"))]
+    if fonts:
+        os.makedirs(os.path.join(out, "fonts"), exist_ok=True)
+        for f in fonts:
+            shutil.copy(os.path.join(fd, f), os.path.join(out, "fonts", f))
+        info["fonts"] = len(fonts)
 json.dump(info, open(os.path.join(out, "rn.json"), "w"), indent=1)
 md = [f"- {k}: {v}" for k, v in info.items()]
 open(os.path.join(out, "rn.md"), "w").write("\n".join(md) + "\n")

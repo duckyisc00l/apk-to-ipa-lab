@@ -27,7 +27,13 @@ KNOWN = {  # native module / component name -> npm package
     "RNShare": "react-native-share", "RNLocalize": "react-native-localize", "RNKeychainManager": "react-native-keychain",
     "RNCDatePicker": "@react-native-community/datetimepicker", "RNVideo": "react-native-video", "RCTVideo": "react-native-video",
     "RNImagePicker": "react-native-image-picker", "RNPermissions": "react-native-permissions",
+    "RNReanimated": "react-native-reanimated", "SQLite": "react-native-sqlite-storage",
 }
+# Hermes bundles keep strings in one run-together table, so short module names ("SQLite") can't be matched alone:
+# these packages are added when their npm name is in the bundle (error messages and paths carry it)
+BY_NAME = ["react-native-sqlite-storage", "react-native-reanimated", "react-native-gesture-handler"]
+# the bundle's JS half must match the native half's major version: signs that pin an older major
+MAJOR_SIGNS = {"react-native-reanimated": [("AnimatedMainClock", 2)]}  # Reanimated 1 API: only 2.x still has it
 SKIP = re.compile(r"^(Flipper|RNFB|Bugsnag|RNSentry|Sentry|RNGoogle|GoogleSignin|RNAdMob|RNFirebase|Crashlytics|"
                   r"Amplitude|Mixpanel|AppCenter|CodePush|RNBranch|Adjust|AppsFlyer|FBSDK|RNIap|RNPlayInstall)", re.I)
 
@@ -52,8 +58,13 @@ def main():
     rn_times = npm_json("react-native", "time") or {}
     nxt = [v for v in rn_times if re.fullmatch(rf"0\.{minor + 1}\.0", v)]
     cutoff = date(rn_times[nxt[0]]) if nxt else datetime.now().astimezone()
+    text = open(sys.argv[3], "rb").read().decode("latin-1") if len(sys.argv) > 3 else ""
     picked, skipped, unknown = {}, [], []
-    for name in info.get("native_third_party", []):
+    names = list(info.get("native_third_party", []))
+    for pkg in BY_NAME:
+        if pkg in text:
+            names.append(next(k for k, v in KNOWN.items() if v == pkg))
+    for name in names:
         if SKIP.match(name):
             skipped.append(name)
             continue
@@ -64,8 +75,10 @@ def main():
         if pkg in picked:
             continue
         times = npm_json(pkg, "time") or {}
+        major = next((m for sign, m in MAJOR_SIGNS.get(pkg, []) if sign in text), None)
         ok = sorted((date(t), v) for v, t in times.items()
-                    if re.fullmatch(r"\d+\.\d+\.\d+", v) and date(t) < cutoff)
+                    if re.fullmatch(r"\d+\.\d+\.\d+", v) and date(t) < cutoff
+                    and (major is None or v.split(".")[0] == str(major)))
         if ok:
             picked[pkg] = ok[-1][1]
     out = {"rn": rn, "cutoff": cutoff.isoformat(), "install": picked, "skipped_removed": skipped, "unknown": unknown}

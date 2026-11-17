@@ -7,13 +7,16 @@ if [ "$kind" = hermes ]; then cp "$rn/main.jsbundle" "$app/main.jsbundle"   # by
   # so the host (patched by hermes-prelude.py) runs prelude.js itself before the bundle
   { [ -n "${RN_TRACE:-}" ] && echo "globalThis.__RN_TRACE=1;"; cat "$rn/prelude.js"; } > "$app/prelude.js"
 else { [ -n "${RN_TRACE:-}" ] && echo "globalThis.__RN_TRACE=1;"; cat "$rn/prelude.js" "$rn/main.jsbundle"; } > "$app/main.jsbundle"; fi
-# react-native-vector-icons draws with fonts that iOS must load from the app (UIAppFonts)
+# icon fonts iOS must load from the app (UIAppFonts): the host's react-native-vector-icons fonts, then the APK's
+# own fonts (rn/fonts) over them, since only those match the glyph maps inside the bundle
 vi="$host/node_modules/react-native-vector-icons/Fonts"
-if [ -d "$vi" ]; then
-  cp "$vi"/*.ttf "$app/"; i=0
-  plutil -remove UIAppFonts "$app/Info.plist" 2>/dev/null || true; plutil -insert UIAppFonts -array "$app/Info.plist"
-  for f in "$vi"/*.ttf; do plutil -insert UIAppFonts.$i -string "$(basename "$f")" "$app/Info.plist"; i=$((i+1)); done
-  echo "icon fonts: $i"
+[ -d "$vi" ] && cp "$vi"/*.ttf "$app/"
+[ -d "$rn/fonts" ] && cp "$rn/fonts/"* "$app/"
+if [ -d "$vi" ] || [ -d "$rn/fonts" ]; then
+  i=0; plutil -remove UIAppFonts "$app/Info.plist" > /dev/null 2>&1 || true; plutil -insert UIAppFonts -array "$app/Info.plist"
+  for f in $( { ls "$vi" 2>/dev/null; ls "$rn/fonts" 2>/dev/null; } | grep -iE '\.(ttf|otf)$' | sort -u); do
+    plutil -insert UIAppFonts.$i -string "$f" "$app/Info.plist"; i=$((i+1)); done
+  echo "icon fonts: $i ($(ls "$rn/fonts" 2>/dev/null | wc -l | tr -d ' ') from the APK)"
 fi
 [ -d "$rn/app" ] && cp -R "$rn/app/." "$app/"
 # the app's own identity instead of the template's "Host" (safe after the build: the IPA is unsigned)

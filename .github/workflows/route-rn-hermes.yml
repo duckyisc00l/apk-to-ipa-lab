@@ -86,7 +86,7 @@ jobs:
       - name: Add the APK's native add-ons (same era), stub the removed ones
         run: |
           cd Host
-          python3 -I ../ci/rn/modules.py ../rn/rn.json . | tee ../out/addons.txt
+          python3 -I ../ci/rn/modules.py ../rn/rn.json . ../rn/main.jsbundle | tee ../out/addons.txt
           inst=$(grep '^INSTALL=' ../out/addons.txt | cut -d= -f2-)
           [ -n "$inst" ] && npm install --legacy-peer-deps $inst 2>&1 | tail -3 | tee -a ../out/ipa.md
           stubs=$(grep '^STUB=' ../out/addons.txt | cut -d= -f2- | python3 -c "import json,sys;print(json.dumps(sys.stdin.read().split()))")
