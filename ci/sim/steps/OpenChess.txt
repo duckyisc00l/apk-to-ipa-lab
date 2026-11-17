@@ -1,10 +1,19 @@
-# OpenChess (web route): open the puzzles, ask for the solution
+# OpenChess (web route): puzzles (hint, solution), then a game against a bot. Web text is found by point lookups.
 shot 0-home
 expect Play a bot
 tapon Solve puzzles
-wait 4
+wait 10
 shot 1-puzzle
 expect White to move
+tapon Hint
+wait 3
+shot 2-hint
 tapon Show solution
-wait 4
-shot 2-solution
+wait 5
+shot 3-solution
+tapon Home
+wait 3
+tapon Play a bot
+wait 6
+shot 4-bot
+ui bot

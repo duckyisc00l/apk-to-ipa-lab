@@ -33,6 +33,10 @@ enum BridgeScript {
   };
   // Errors go to the native log (visible in Xcode / the device console).
   window.addEventListener('error', function (e) { window.nativeCall('log', { text: 'JS error: ' + e.message + ' @ ' + e.filename + ':' + e.lineno }).catch(function () {}); });
+  window.addEventListener('unhandledrejection', function (e) { var r = e.reason; window.nativeCall('log', { text: 'JS promise error: ' + (r && (r.stack || r.message) || r) }).catch(function () {}); });
+  var cerr = console.error, cwarn = console.warn;
+  console.error = function () { try { window.nativeCall('log', { text: 'console.error: ' + Array.prototype.join.call(arguments, ' ').slice(0, 500) }).catch(function () {}); } catch (x) {} return cerr.apply(console, arguments); };
+  console.warn = function () { try { window.nativeCall('log', { text: 'console.warn: ' + Array.prototype.join.call(arguments, ' ').slice(0, 300) }).catch(function () {}); } catch (x) {} return cwarn.apply(console, arguments); };
 })();
 """#
 

@@ -6,7 +6,7 @@
 #   backspace, tab, space, up/down/left/right, a letter, or a HID number) | wait SECONDS | shot NAME |
 #   ui NAME (save the accessibility tree, list its texts) | uiat X Y (the element at one point) | relaunch (quit and restart the app) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
 # Writes <out>/sim.md (a summary line first; then launched? still running? crash? each step), <out>/sim-<n>s.png
-# screenshots, sim-console.log, sim-applog.log, crash reports, and for steps a recording (sim-steps.mov/.gif,
+# screenshots, sim-console.log, sim-applog.log, crash reports, and for steps a recording (sim-steps.mp4/.gif,
 # sim-sheet.png). Exit 0 only if the app is still running at the end and every step and expect passed.
 # Env: SIM_DEVICE="iPhone 16" picks that simulator (name contains it) instead of the last iPhone on the newest iOS.
 set -u
@@ -74,7 +74,10 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
     if [ -n "$ab" ]; then export PATH="$(dirname "$ab"):$PATH"; else echo "AXe $SIM_AXE_VERSION not found; using the newest" >> "$OUT/sim.md"; fi
   fi
   if ! command -v axe > /dev/null; then
-    timeout 300 bash -c 'brew tap cameroncooke/axe && { brew trust cameroncooke/axe 2>/dev/null || true; } && brew install cameroncooke/axe/axe' > "$OUT/input-install.log" 2>&1
+    # no brew self-update (it can take minutes); one retry: a busy runner sometimes stalls the first install
+    for t in 1 2; do command -v axe > /dev/null && break
+      HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_NO_INSTALL_CLEANUP=1 timeout 480 bash -c 'brew tap cameroncooke/axe && { brew trust cameroncooke/axe 2>/dev/null || true; } && brew install cameroncooke/axe/axe' >> "$OUT/input-install.log" 2>&1
+    done
   fi
   echo "## input steps" >> "$OUT/sim.md"
   if ! command -v axe > /dev/null; then
@@ -84,10 +87,12 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
     UI() { timeout 60 axe describe-ui --udid "$UDID" > "$1" 2>> "$OUT/input.log" < /dev/null; }
     # web pages (WKWebView) don't show in the whole tree, but a lookup at one point finds their text:
     # SCAN asks a grid of points (4 across, every 5% down) and keeps what it finds
-    SCAN() { rm -rf /tmp/simscan; mkdir -p /tmp/simscan; local n=0 x y
-      for y in $(seq 5 5 95); do for x in 15 38 62 85; do n=$((n+1))
-        timeout 15 axe describe-ui --point "$((x*SW/100)),$((y*SH/100))" --udid "$UDID" > /tmp/simscan/$n.json 2> /dev/null < /dev/null
-      done; done; python3 "$HERE/ui.py" merge /tmp/simscan/*.json > "$1"; }
+    # (4 lookups at a time, one row of the grid; a whole scan takes about a minute instead of several)
+    SCAN() { rm -rf /tmp/simscan; mkdir -p /tmp/simscan; local n=0 x y pids
+      for y in $(seq 4 5 99); do pids=(); for x in 15 38 62 85; do n=$((n+1))
+        timeout 15 axe describe-ui --point "$((x*SW/100)),$((y*SH/100))" --udid "$UDID" > /tmp/simscan/$n.json 2> /dev/null < /dev/null & pids+=($!)
+      done; wait "${pids[@]}"; done; python3 "$HERE/ui.py" merge /tmp/simscan/*.json > "$1"; }
+    WEB=0   # set once a scan found text the whole tree didn't have: later lookups go straight to the scan
     UI "$OUT/ui-start.json"
     read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "390 844")
     if [ -n "${SIM_AXE_VERSION:-}" ]; then   # raw portrait points: from a screenshot (2x below 1000 pixels wide, else 3x)
@@ -120,7 +125,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
             echo "tapon \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
           else
             UI "$OUT/ui-now.json"
-            python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$arg" > /dev/null || SCAN "$OUT/ui-now.json"
+            python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$arg" > /dev/null || { SCAN "$OUT/ui-now.json"; WEB=1; }
             if xy=$(python3 "$HERE/ui.py" find "$OUT/ui-now.json" "$arg"); then
               RUN "tapon \"$arg\" (at $xy)" axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID"
             else echo "tapon \"$arg\" FAILED: not on screen. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; SF=$((SF+1)); fi
@@ -143,8 +148,10 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
           echo "uiat $a $b: $(python3 "$HERE/ui.py" labels "$OUT/ui-at.json")" >> "$OUT/sim.md";;
         ui) UI "$OUT/ui-$a.json"; echo "ui $a: $(python3 "$HERE/ui.py" labels "$OUT/ui-$a.json")" >> "$OUT/sim.md";;
         expect)   # the text must be in the accessibility tree; retried for up to ~8 s while the screen settles
-          hit=1; for i in 1 2 3 4; do UI "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && { hit=0; break; }; sleep 2; done
-          [ $hit = 1 ] && { SCAN "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && hit=0; }   # a web page?
+          hit=1; for i in 1 2 3 4; do UI "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && { hit=0; break; }
+            [ $WEB = 1 ] && break; sleep 2; done
+          for i in 1 2; do [ $hit = 1 ] || break   # a web page? its text only shows in point lookups
+            SCAN "$OUT/ui-now.json"; python3 "$HERE/ui.py" has "$OUT/ui-now.json" "$arg" && { hit=0; WEB=1; } || sleep 3; done
           if [ $hit = 0 ]; then echo "expect \"$arg\": PASS" >> "$OUT/sim.md"; EP=$((EP+1))
           else echo "expect \"$arg\": FAIL. On screen: $(python3 "$HERE/ui.py" labels "$OUT/ui-now.json")" >> "$OUT/sim.md"; EF=$((EF+1)); fi;;
         ''|'#'*) ;;
@@ -152,30 +159,31 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
       esac
     done 3< "$STEPS"
     sleep 1; kill -INT $REC 2>/dev/null; wait $REC 2>/dev/null; rm -f "$OUT/ui-now.json"
-    # recording -> small GIF + one-picture contact sheet (ffmpeg if the Mac has it, else Pillow from the shots)
-    if [ -s "$OUT/sim-steps.mov" ] && command -v ffmpeg > /dev/null; then
-      dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT/sim-steps.mov" 2>/dev/null | cut -d. -f1)
-      [ "${dur:-0}" -gt 0 ] || dur=12
-      ffmpeg -v error -y -i "$OUT/sim-steps.mov" -vf "fps=2,scale=240:-2:flags=lanczos" -loop 0 "$OUT/sim-steps.gif"
-      ffmpeg -v error -y -i "$OUT/sim-steps.mov" -vf "fps=12/$dur,scale=200:-2,tile=6x2:padding=4" -frames:v 1 "$OUT/sim-sheet.png"
-    else
-      python3 -m venv /tmp/pilv > /dev/null 2>&1 && timeout 120 /tmp/pilv/bin/pip install -q pillow > /dev/null 2>&1
-      /tmp/pilv/bin/python - "$OUT" <<'PY' 2>> "$OUT/record.log"
+    # recording -> frames (AVFoundation, through a small Swift script: no ffmpeg on GitHub's Macs) -> GIF + contact sheet.
+    # The full-size .mov is too big to keep (180 MB for a few minutes): a small .mp4 copy is kept instead.
+    rm -rf /tmp/simframes; mkdir -p /tmp/simframes
+    [ -s "$OUT/sim-steps.mov" ] && timeout 240 swift "$HERE/frames.swift" "$OUT/sim-steps.mov" /tmp/simframes 24 >> "$OUT/record.log" 2>&1
+    [ -s "$OUT/sim-steps.mov" ] && timeout 240 avconvert --preset PresetLowQuality --source "$OUT/sim-steps.mov" --output "$OUT/sim-steps.mp4" >> "$OUT/record.log" 2>&1
+    rm -f "$OUT/sim-steps.mov"
+    python3 -m venv /tmp/pilv > /dev/null 2>&1 && timeout 180 /tmp/pilv/bin/pip install -q pillow > /dev/null 2>&1
+    /tmp/pilv/bin/python - "$OUT" /tmp/simframes <<'PY' 2>> "$OUT/record.log"
 import glob, os, sys
 from PIL import Image
-out = sys.argv[1]; fs = sorted(glob.glob(out + "/sim-*.png"), key=os.path.getmtime)
-fs = [f for f in fs if not f.endswith("sim-sheet.png")][:12]
+out, fr = sys.argv[1], sys.argv[2]
+fs = sorted(glob.glob(fr + "/f*.png"))   # frames from the recording, else the step screenshots
+if not fs: fs = [f for f in sorted(glob.glob(out + "/sim-*.png"), key=os.path.getmtime) if not f.endswith("sim-sheet.png")]
 ims = [Image.open(f).convert("RGB") for f in fs]
 ims = [i.resize((200, int(200 * i.height / i.width))) for i in ims]
 if ims:
-    h = max(i.height for i in ims); cols = min(6, len(ims)); rows = (len(ims) + cols - 1) // cols
+    ims[0].save(out + "/sim-steps.gif", save_all=True, append_images=ims[1:], duration=700, loop=0)
+    pick = ims if len(ims) <= 12 else [ims[round(k * (len(ims) - 1) / 11)] for k in range(12)]
+    h = max(i.height for i in pick); cols = min(6, len(pick)); rows = (len(pick) + cols - 1) // cols
     sheet = Image.new("RGB", (cols * 204, rows * (h + 4)), "white")
-    for n, i in enumerate(ims): sheet.paste(i, ((n % cols) * 204, (n // cols) * (h + 4)))
+    for n, i in enumerate(pick): sheet.paste(i, ((n % cols) * 204, (n // cols) * (h + 4)))
     sheet.save(out + "/sim-sheet.png")
-    ims[0].save(out + "/sim-steps.gif", save_all=True, append_images=ims[1:], duration=800, loop=0)
+    print("frames:", len(fs), "from", "recording" if fs[0].startswith(fr) else "screenshots")
 PY
-    fi
-    [ -s "$OUT/sim-sheet.png" ] && echo "recording: sim-steps.mov, sim-steps.gif, sim-sheet.png (contact sheet)" >> "$OUT/sim.md"
+    [ -s "$OUT/sim-sheet.png" ] && echo "recording: sim-steps.mp4, sim-steps.gif, sim-sheet.png (contact sheet; $(tail -1 "$OUT/record.log"))" >> "$OUT/sim.md"
   fi
   [ "$SF" -gt 0 ] && { echo "## input errors (last lines)" >> "$OUT/sim.md"; tail -8 "$OUT/input.log" >> "$OUT/sim.md" 2>/dev/null; }
 fi
