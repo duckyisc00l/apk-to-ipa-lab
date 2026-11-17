@@ -51,6 +51,25 @@ for p in list((eng / "src" / "gl").glob("*.[ch]")) + list((eng / "src" / "gl_com
     if t2 != t:
         n += t.count("defined(__ANDROID__)")
         p.write_text(t2)
+# GLSL ES 1.00 shaders (GameMaker's own __yy_sdf_* text shaders) call fwidth, which Apple's compiler only accepts
+# with the derivatives extension switched on: add it after the #version line.
+edit(eng / "src" / "gl" / "gl_renderer.c",
+     "#else\n    convertedFragmentShaderSource = strdup(fragmentShaderSource);\n#endif\n\n    GLuint fragShaderT",
+     "#elif defined(PLATFORM_IOS)\n"
+     "    if ((strstr(fragmentShaderSource, \"fwidth\") || strstr(fragmentShaderSource, \"dFdx\") || strstr(fragmentShaderSource, \"dFdy\"))\n"
+     "        && !strstr(fragmentShaderSource, \"GL_OES_standard_derivatives\")\n"
+     "        && (strstr(fragmentShaderSource, \"#version 100\") || !strstr(fragmentShaderSource, \"#version \"))) {\n"
+     "        const char* ext = \"#extension GL_OES_standard_derivatives : enable\\n\";\n"
+     "        const char* nl = strstr(fragmentShaderSource, \"#version \") ? strchr(strstr(fragmentShaderSource, \"#version \"), '\\n') : NULL;\n"
+     "        size_t head = nl ? (size_t) (nl - fragmentShaderSource) + 1 : 0;\n"
+     "        convertedFragmentShaderSource = malloc(strlen(fragmentShaderSource) + strlen(ext) + 1);\n"
+     "        memcpy(convertedFragmentShaderSource, fragmentShaderSource, head);\n"
+     "        strcpy(convertedFragmentShaderSource + head, ext);\n"
+     "        strcat(convertedFragmentShaderSource, fragmentShaderSource + head);\n"
+     "    } else {\n"
+     "        convertedFragmentShaderSource = strdup(fragmentShaderSource);\n"
+     "    }\n"
+     "#else\n    convertedFragmentShaderSource = strdup(fragmentShaderSource);\n#endif\n\n    GLuint fragShaderT")
 print(f"patch_engine: CMakeLists.txt patched, {n} GLES checks extended to PLATFORM_IOS")
 if n < 5:
     sys.exit("patch_engine: fewer GLES checks than expected; the runner changed")

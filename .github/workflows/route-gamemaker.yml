@@ -8,7 +8,9 @@ on:
     inputs:
       repo: { default: "Ahmadrezadl/legendary-chess" }
       jobs: { default: "ios", description: "linux, ios or both" }
-      taps: { default: "", description: "Simulator steps in game pixels, ';'-separated (empty = the chess moves below)" }
+      taps: { default: "", description: "Simulator steps, tap X Y in game pixels, ';'-separated (empty = the chess moves below)" }
+      game_size: { default: "1080x2160", description: "the game's real window size, for tap positions (the data file may say 100x100)" }
+      orientation: { default: "auto", description: "auto (from AndroidManifest.xml), portrait or landscape" }
   push:
     branches: [main]
     paths: [".github/workflows/route-gamemaker.yml", "ci/gamemaker/**"]
@@ -83,6 +85,8 @@ jobs:
     env:
       BS_COMMIT: ad34ff419de41bed2fa91b1d2ebd3ecfa586ff89
       TAPS: ${{ inputs.taps }}
+      GAME_SIZE: ${{ inputs.game_size || '1080x2160' }}
+      ORIENT: ${{ inputs.orientation || 'auto' }}
     steps:
       - uses: actions/checkout@v4
       - name: Download the APK and find the data file
@@ -117,7 +121,12 @@ jobs:
               i += 8 + s
           E
           )
-          echo "game window $GW x $GH" | tee -a out/ios.md; echo "GW=$GW" >> $GITHUB_ENV; echo "GH=$GH" >> $GITHUB_ENV
+          echo "game window in the data file: $GW x $GH" | tee -a out/ios.md
+          # which way to hold the phone: the APK's manifest says; the data file's window size is only a fallback
+          man=$(find work -maxdepth 3 -name AndroidManifest.xml | head -1)
+          if [ "$ORIENT" = auto ] && [ -n "$man" ]; then ORIENT=$(python3 -I ci/gamemaker/orientation.py "$man"); fi
+          if [ "$ORIENT" != portrait ] && [ "$ORIENT" != landscape ]; then ORIENT=$([ "$GH" -gt "$GW" ] && echo portrait || echo landscape); fi
+          echo "orientation: $ORIENT (manifest: ${man:-none})" | tee -a out/ios.md
           NAME=$(basename "$REPO"); BID="lab.gamemaker.$(echo "$NAME" | tr -cd 'a-zA-Z0-9')"
           for kind in device sim; do
             if [ $kind = device ]; then sdk=iphoneos; target=arm64-apple-ios15.0; plat=iPhoneOS
@@ -129,10 +138,10 @@ jobs:
               -framework UIKit -framework Foundation -framework QuartzCore -framework OpenGLES -framework CoreGraphics \
               -framework AVFoundation -framework AudioToolbox -framework CoreAudio -o "$APP/App" > out/link-$kind.log 2>&1
             echo "link ($kind) exit $?" | tee -a out/ios.md; grep -E "error|Undefined" out/link-$kind.log | head -20 | tee -a out/ios.md
-            python3 - "$APP/Info.plist" "$NAME" "$BID" "$plat" "$GW" "$GH" <<'E'
+            python3 - "$APP/Info.plist" "$NAME" "$BID" "$plat" "$ORIENT" <<'E'
           import plistlib, sys
-          out, name, bid, plat, w, h = sys.argv[1:]
-          o = ["UIInterfaceOrientationPortrait"] if int(h) > int(w) else ["UIInterfaceOrientationLandscapeLeft", "UIInterfaceOrientationLandscapeRight"]
+          out, name, bid, plat, orient = sys.argv[1:]
+          o = ["UIInterfaceOrientationPortrait"] if orient == "portrait" else ["UIInterfaceOrientationLandscapeLeft", "UIInterfaceOrientationLandscapeRight"]
           plistlib.dump({"CFBundleDisplayName": name, "CFBundleName": name[:15], "CFBundleExecutable": "App", "CFBundleIdentifier": bid,
               "CFBundlePackageType": "APPL", "CFBundleShortVersionString": "1.0", "CFBundleVersion": "1", "CFBundleSupportedPlatforms": [plat],
               "LSRequiresIPhoneOS": True, "MinimumOSVersion": "15.0", "UIDeviceFamily": [1, 2], "UILaunchScreen": {}, "UIRequiresFullScreen": True,
@@ -156,16 +165,17 @@ jobs:
           # Legendary Chess default: wait past the splash, then move the white e-pawn e2-e4 and the black e-pawn e7-e5.
           # Board: 8 squares of 128 px from (28,568) in a 1080x2160 game.
           [ -n "$TAPS" ] || TAPS="wait 6;shot board;tap 604 1400;wait 1;shot selected;tap 604 1144;wait 2;shot e4;tap 604 760;wait 1;tap 604 1016;wait 2;shot e5;tap 120 1700;wait 2;shot reset"
-          python3 - /tmp/home.png "$GW" "$GH" "$TAPS" > out/sim/steps.txt <<'E'
+          python3 - /tmp/home.png "$GAME_SIZE" "$TAPS" > out/sim/steps.txt <<'E'
           import struct, sys
-          png, gw, gh, taps = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
+          png, size, taps = sys.argv[1:]
+          gw, gh = map(int, size.split("x"))
           W, H = struct.unpack(">2I", open(png, "rb").read()[16:24])
           if (H > W) != (gh > gw): W, H = H, W     # the app turns the screen to the game's orientation
           s = min(W / gw, H / gh); ox, oy = (W - gw * s) / 2, (H - gh * s) / 2
           for step in taps.split(";"):
               p = step.split()
-              if p and p[0] == "tap":
-                  print("tap", round((ox + int(p[1]) * s) / 3), round((oy + int(p[2]) * s) / 3))   # @3x iPhones
+              if p and p[0] == "tap":    # as % of the screen, so it works on any iPhone (run.sh turns % into points)
+                  print(f"tap {100 * (ox + int(p[1]) * s) / W:.1f}% {100 * (oy + int(p[2]) * s) / H:.1f}%")
               else:
                   print(step.strip())
           print(f"# screen {W}x{H} px, scale {s:.3f}, offset {ox:.0f},{oy:.0f}", file=sys.stderr)
