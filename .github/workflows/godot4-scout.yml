@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check each candidate
         run: |
+          set +e
           mkdir -p out; echo "| repo | tag | asset | MB | godot | dotnet | other .so |" > out/scout.md; echo "|---|---|---|---|---|---|---|" >> out/scout.md
           while read r; do
             [ -n "$r" ] || continue
