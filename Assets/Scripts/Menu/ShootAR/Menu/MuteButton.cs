@@ -15,10 +15,22 @@ namespace ShootAR.Menu
 
 		public void ToggleSound()
 		{
+			Configuration.SoundMuted = !Configuration.SoundMuted;
+			Apply();
 		}
 
 		private void Start()
 		{
+			image = GetComponent<Image>();
+			var button = GetComponent<Button>();
+			if (button != null) button.onClick.AddListener(ToggleSound);
+			Apply();
+		}
+
+		private void Apply()
+		{
+			AudioListener.volume = Configuration.SoundMuted ? 0f : 1f;
+			if (image != null) image.material = Configuration.SoundMuted ? soundOffIcon : soundOnIcon;
 		}
 	}
 }

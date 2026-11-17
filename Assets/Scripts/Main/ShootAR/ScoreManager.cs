@@ -12,15 +12,23 @@ namespace ShootAR
 
 		public static ScoreManager Create(Text scoreLabel = null, int score = 0)
 		{
-			return null;
+			var s = new GameObject("ScoreManager").AddComponent<ScoreManager>();
+			s.scoreLabel = scoreLabel;
+			s.Score = score;
+			return s;
 		}
 
-		private void Start()
-		{
-		}
+		private void Start() { UpdateLabel(); }
 
 		public void AddScore(int points)
 		{
+			Score += points;
+			UpdateLabel();
+		}
+
+		private void UpdateLabel()
+		{
+			if (scoreLabel != null) scoreLabel.text = Score.ToString();
 		}
 	}
 }

@@ -1,5 +1,1 @@
-{
-  "name": "Main",
-  "references": [],
-  "allowUnsafeCode": true
-}
+{"name":"Main","references":["Menu"],"allowUnsafeCode":true}

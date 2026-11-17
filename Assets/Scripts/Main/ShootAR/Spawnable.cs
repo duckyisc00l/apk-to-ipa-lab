@@ -13,20 +13,20 @@ namespace ShootAR
 
 		public float Speed
 		{
-			get
-			{
-				return 0f;
-			}
-			protected set
-			{
-			}
+			get { return speed; }
+			protected set { speed = value; }
 		}
 
 		public GameState GameState
 		{
-			set
-			{
-			}
+			set { gameState = value; }
+		}
+
+		// Spawnables created in the scene without a spawner still find the round state.
+		protected GameState FindState()
+		{
+			if (gameState == null) gameState = FindObjectOfType<GameState>();
+			return gameState;
 		}
 	}
 }

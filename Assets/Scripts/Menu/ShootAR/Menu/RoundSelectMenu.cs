@@ -12,17 +12,17 @@ namespace ShootAR.Menu
 
 		public int RoundToPlay
 		{
-			get
-			{
-				return 0;
-			}
+			get { return roundToPlay; }
 			internal set
 			{
+				roundToPlay = Mathf.Max(1, value);   // rounds start at 1
+				if (labelOnUI != null) labelOnUI.text = roundToPlay.ToString();
 			}
 		}
 
 		private void OnEnable()
 		{
+			RoundToPlay = Configuration.StartingLevel > 0 ? Configuration.StartingLevel : 1;
 		}
 	}
 }
