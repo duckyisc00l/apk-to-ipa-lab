@@ -14,7 +14,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - run: |
-          mkdir -p /tmp/r; o=/tmp/r/scout.md
+          set +e; mkdir -p /tmp/r; o=/tmp/r/scout.md
           for r in ${{ inputs.repos }}; do
             echo "## $r" >> $o
             pj=$(gh api "repos/$r/contents/package.json" --jq .content 2>/dev/null | base64 -d 2>/dev/null)
