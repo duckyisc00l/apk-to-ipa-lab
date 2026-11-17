@@ -74,7 +74,8 @@ jobs:
           if curl -sS -m 8 https://github.com > /dev/null 2>&1; then echo "network still up!" | tee -a out/offline.md; exit 1; else echo "internet: cut (curl to github.com fails)" | tee -a out/offline.md; fi
       - name: Server with computer players, on this machine
         run: |
-          printf '{"port": 23899, "enable_bots": true, "matchmaking_delay_for_bot": 2}\n' > server.cfg
+          # The server's JSON keys are its option names with dashes: "enable_bots" is silently ignored.
+          printf '{"port": 23899, "enable-bots": true, "matchmaking-delay-for-bot": 2}\n' > server.cfg
           ("$B/apps/server/bim-server" --console-log --config server.cfg > out/server.log 2>&1 &); sleep 5
           grep -E "up on port" out/server.log | head -1 | tee -a out/offline.md
       - name: Play a match against a bot (Bim's own UI script runner, screenshots)
