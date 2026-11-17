@@ -44,11 +44,13 @@ jobs:
           python3 -c "import json,glob;print('\n'.join(sorted({x['mesh'] for f in glob.glob('export/levels/*.json') for x in json.load(open(f))['meshes']})))" > meshes.txt
           echo "{" > export/umodel_map.json
           while read m; do
-            [ -f "export/meshes/$m" ] && continue
+            if [ -f "export/meshes/$m" ]; then continue; fi
             pkg="${m%.glb}"; name=$(basename "$pkg")
-            ./uev/umodel -path="$PAKS" -game=ue4.16 -export -gltf -out=export/um "$pkg" >> out/umodel.log 2>&1
-            f=$(find export/um -iname "$name.gltf" | head -1)
-            [ -n "$f" ] && echo "\"$m\": \"${f#export/}\"," >> export/umodel_map.json && echo "umodel: $m -> ${f#export/}" | tee -a out/rebuild.md
+            for arg in "$pkg.uasset" "$name"; do   # UE Viewer's names: try the full file name, then the short one
+              ./uev/umodel -path="$PAKS" -game=ue4.16 -export -gltf -out="export/um/$(dirname "$pkg")" "$arg" >> out/umodel.log 2>&1 && break
+            done
+            f=$(find "export/um/$(dirname "$pkg")" -iname "$name.gltf" | head -1)
+            if [ -n "$f" ]; then echo "\"$m\": \"${f#export/}\"," >> export/umodel_map.json; echo "umodel: $m -> ${f#export/}" | tee -a out/rebuild.md; fi
           done < meshes.txt
           echo '"": ""}' >> export/umodel_map.json
           grep -iE "error|not found|unknown" out/umodel.log | sort | uniq -c | head -10 | tee -a out/rebuild.md
