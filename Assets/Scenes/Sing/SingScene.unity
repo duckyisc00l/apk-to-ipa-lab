@@ -6856,6 +6856,11 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name:
   m_EditorClassIdentifier:
+  m_PanelSettings: {fileID: 11400000, guid: 9ecb0637fc85cd445ac002889beb8ce4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: f20405fb6b80abc48bcacdb4c620f427,
+    type: 3}
+  m_SortingOrder: 0
 --- !u!114 &256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7001,13 +7006,13 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   playerControlPrefab: {fileID: 114703437598541787, guid: c7a9196738ab00542905770ede83f5eb, type: 2}
-  playerUi: {fileID: 11400000, guid: 614218b9e733d8346a21f806cd8bf3a4, type: 2}
-  sentenceRatingUi: {fileID: 11400000, guid: 3267aea60c264664eb460f31e6bbce03, type: 2}
-  noteUi: {fileID: 11400000, guid: c206e5c6713867442bdae38fbbf642ee, type: 2}
-  dialogUi: {fileID: 11400000, guid: d3e596d851e417443904d445c87662c1, type: 2}
-  perfectEffectStarUi: {fileID: 11400000, guid: 94e5c96a23786e04a8038ba6cb073782, type: 2}
-  goldenNoteStarUi: {fileID: 11400000, guid: 7b5a9677725ad7d43af5014449445fcf, type: 2}
-  goldenNoteHitStarUi: {fileID: 11400000, guid: a874acfa25fc17a408e66211363409a7, type: 2}
+  playerUi: {fileID: 9197481963319205126, guid: 614218b9e733d8346a21f806cd8bf3a4, type: 3}
+  sentenceRatingUi: {fileID: 9197481963319205126, guid: 3267aea60c264664eb460f31e6bbce03, type: 3}
+  noteUi: {fileID: 9197481963319205126, guid: c206e5c6713867442bdae38fbbf642ee, type: 3}
+  dialogUi: {fileID: 9197481963319205126, guid: d3e596d851e417443904d445c87662c1, type: 3}
+  perfectEffectStarUi: {fileID: 9197481963319205126, guid: 94e5c96a23786e04a8038ba6cb073782, type: 3}
+  goldenNoteStarUi: {fileID: 9197481963319205126, guid: 7b5a9677725ad7d43af5014449445fcf, type: 3}
+  goldenNoteHitStarUi: {fileID: 9197481963319205126, guid: a874acfa25fc17a408e66211363409a7, type: 3}
   songAudioPlayer: {fileID: 264}
   songVideoPlayer: {fileID: 258}
   webcamControl: {fileID: 257}
@@ -7067,7 +7072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42d1ce0152b19553201b578b5051f85, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  largeScreenStyleSheet: {fileID: 11400000, guid: 5fe8d92a3b97ca048914db35502171f5, type: 2}
+  largeScreenStyleSheet: {fileID: 7433441132597879392, guid: 5fe8d92a3b97ca048914db35502171f5, type: 3}
 --- !u!114 &270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9456,10 +9461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2076f3119d654888fe82edf8190a3b53, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  notificationOverlayVisualTreeAsset: {fileID: 11400000, guid: ea84b7dac3ad63b458e62082b65fa48f, type: 2}
-  notificationVisualTreeAsset: {fileID: 11400000, guid: 2df69e469dfe54b4ca5de3693712ac61, type: 2}
-  dialogUi: {fileID: 11400000, guid: d3e596d851e417443904d445c87662c1, type: 2}
-  accordionUi: {fileID: 11400000, guid: e3cd425ab88869d4e8dda5609caf2eec, type: 2}
+  notificationOverlayVisualTreeAsset: {fileID: 9197481963319205126, guid: ea84b7dac3ad63b458e62082b65fa48f, type: 3}
+  notificationVisualTreeAsset: {fileID: 9197481963319205126, guid: 2df69e469dfe54b4ca5de3693712ac61, type: 3}
+  dialogUi: {fileID: 9197481963319205126, guid: d3e596d851e417443904d445c87662c1, type: 3}
+  accordionUi: {fileID: 9197481963319205126, guid: e3cd425ab88869d4e8dda5609caf2eec, type: 3}
   fallbackPlayerProfileImage: {fileID: 21300000, guid: cfb3bc6e051c467458c5f225ed316985, type: 2}
 --- !u!114 &359
 MonoBehaviour:
@@ -9550,9 +9555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e63485a86695b74d7ff8d184908969, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  contextMenuUi: {fileID: 11400000, guid: 2183eac6f26e18a45983c0a6bfbd34d0, type: 2}
-  contextMenuItemUi: {fileID: 11400000, guid: 9d24f55692f1e2447adcdd12c80bcd8e, type: 2}
-  contextMenuSeparatorUi: {fileID: 11400000, guid: ef647f85c859e8c47a93b6c1231e3416, type: 2}
+  contextMenuUi: {fileID: 9197481963319205126, guid: 2183eac6f26e18a45983c0a6bfbd34d0, type: 3}
+  contextMenuItemUi: {fileID: 9197481963319205126, guid: 9d24f55692f1e2447adcdd12c80bcd8e, type: 3}
+  contextMenuSeparatorUi: {fileID: 9197481963319205126, guid: ef647f85c859e8c47a93b6c1231e3416, type: 3}
 --- !u!114 &366
 MonoBehaviour:
   m_ObjectHideFlags: 0

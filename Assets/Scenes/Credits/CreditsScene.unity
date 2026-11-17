@@ -6372,6 +6372,11 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name:
   m_EditorClassIdentifier:
+  m_PanelSettings: {fileID: 11400000, guid: 9ecb0637fc85cd445ac002889beb8ce4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 623f38ca3a8fb9b4c913c4f0380a2271,
+    type: 3}
+  m_SortingOrder: 0
 --- !u!114 &231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6427,12 +6432,12 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier:
   creditsEntriesTextAsset: {fileID: 4900000, guid: 5bc95a9e8084a1c45913133ffbedacd1, type: 3}
-  creditsEntryUi: {fileID: 11400000, guid: a4924b20359a06b4e8110dcf89f3ac93, type: 2}
+  creditsEntryUi: {fileID: 9197481963319205126, guid: a4924b20359a06b4e8110dcf89f3ac93, type: 3}
   regularBanners:
-  - {fileID: 11400000, guid: bda48e49ad0dddb4ba78e12e1db28c7c, type: 2}
-  - {fileID: 11400000, guid: bd22dd2a7e5af314288f792b6082f322, type: 2}
-  - {fileID: 11400000, guid: 93cee7ab31639894dbd07c116af81ff9, type: 2}
-  goldBanner: {fileID: 11400000, guid: a04f1d618f8d85440ba26b1c25042721, type: 2}
+  - {fileID: 7388822144124034973, guid: bda48e49ad0dddb4ba78e12e1db28c7c, type: 3}
+  - {fileID: 7388822144124034973, guid: bd22dd2a7e5af314288f792b6082f322, type: 3}
+  - {fileID: 7388822144124034973, guid: 93cee7ab31639894dbd07c116af81ff9, type: 3}
+  goldBanner: {fileID: 7388822144124034973, guid: a04f1d618f8d85440ba26b1c25042721, type: 3}
   silverBanner: {fileID: 21300000, guid: d2c46be3ad62b304a86ef1e49fd5e03e, type: 2}
   forceFadeOut: 0
 --- !u!114 &234
@@ -6447,7 +6452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42d1ce0152b19553201b578b5051f85, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  largeScreenStyleSheet: {fileID: 11400000, guid: 5fe8d92a3b97ca048914db35502171f5, type: 2}
+  largeScreenStyleSheet: {fileID: 7433441132597879392, guid: 5fe8d92a3b97ca048914db35502171f5, type: 3}
 --- !u!114 &235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8836,10 +8841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2076f3119d654888fe82edf8190a3b53, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  notificationOverlayVisualTreeAsset: {fileID: 11400000, guid: ea84b7dac3ad63b458e62082b65fa48f, type: 2}
-  notificationVisualTreeAsset: {fileID: 11400000, guid: 2df69e469dfe54b4ca5de3693712ac61, type: 2}
-  dialogUi: {fileID: 11400000, guid: d3e596d851e417443904d445c87662c1, type: 2}
-  accordionUi: {fileID: 11400000, guid: e3cd425ab88869d4e8dda5609caf2eec, type: 2}
+  notificationOverlayVisualTreeAsset: {fileID: 9197481963319205126, guid: ea84b7dac3ad63b458e62082b65fa48f, type: 3}
+  notificationVisualTreeAsset: {fileID: 9197481963319205126, guid: 2df69e469dfe54b4ca5de3693712ac61, type: 3}
+  dialogUi: {fileID: 9197481963319205126, guid: d3e596d851e417443904d445c87662c1, type: 3}
+  accordionUi: {fileID: 9197481963319205126, guid: e3cd425ab88869d4e8dda5609caf2eec, type: 3}
   fallbackPlayerProfileImage: {fileID: 21300000, guid: cfb3bc6e051c467458c5f225ed316985, type: 2}
 --- !u!114 &324
 MonoBehaviour:
@@ -8930,9 +8935,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e63485a86695b74d7ff8d184908969, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  contextMenuUi: {fileID: 11400000, guid: 2183eac6f26e18a45983c0a6bfbd34d0, type: 2}
-  contextMenuItemUi: {fileID: 11400000, guid: 9d24f55692f1e2447adcdd12c80bcd8e, type: 2}
-  contextMenuSeparatorUi: {fileID: 11400000, guid: ef647f85c859e8c47a93b6c1231e3416, type: 2}
+  contextMenuUi: {fileID: 9197481963319205126, guid: 2183eac6f26e18a45983c0a6bfbd34d0, type: 3}
+  contextMenuItemUi: {fileID: 9197481963319205126, guid: 9d24f55692f1e2447adcdd12c80bcd8e, type: 3}
+  contextMenuSeparatorUi: {fileID: 9197481963319205126, guid: ef647f85c859e8c47a93b6c1231e3416, type: 3}
 --- !u!114 &331
 MonoBehaviour:
   m_ObjectHideFlags: 0
