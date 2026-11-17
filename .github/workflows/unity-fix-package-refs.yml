@@ -1,0 +1,49 @@
+name: unity-fix-package-refs
+# For a recovered project cleaned before cleanup.py moved scene references to the real package scripts:
+# extract the APK again (same IDs), map each deleted package script to the real package's, fix the branch.
+on:
+  workflow_dispatch:
+    inputs:
+      branch: { description: "recovered project branch to fix", default: "project-Play-ui" }
+      repo: { description: "game repo with the APK in its releases", default: "UltraStar-Deluxe/Play" }
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { ref: "${{ inputs.branch }}", path: proj, lfs: true }
+      - name: Extract the APK again
+        run: |
+          echo "${{ inputs.repo }}" > /tmp/one.txt
+          CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+          bash ci/ripper.sh
+      - name: Move scene references to the real package scripts
+        run: |
+          scripts=$(find export -maxdepth 4 -type d -path '*ExportedProject/Assets/Scripts' | head -1); echo "export scripts: $scripts"
+          # which script IDs the scenes ask for that the project doesn't have
+          python3 - proj <<'E' | tee missing.txt
+          import os,re,sys
+          proj=sys.argv[1]; have=set(); want={}
+          for d,_,fs in os.walk(proj+"/Assets"):
+              for f in fs:
+                  p=os.path.join(d,f)
+                  if f.endswith(".meta"):
+                      m=re.search(r"guid: ([0-9a-f]{32})",open(p,errors="ignore").read()); m and have.add(m.group(1))
+                  elif f.endswith((".unity",".prefab")):
+                      for g in re.findall(r"m_Script: \{fileID: 11500000, guid: ([0-9a-f]{32})",open(p,errors="ignore").read()): want[g]=want.get(g,0)+1
+          miss={g:n for g,n in want.items() if g not in have}
+          print(f"script IDs used by scenes/prefabs but not in the project: {len(miss)} ({sum(miss.values())} uses)")
+          E
+          python3 ci/recover/cleanup.py --remap-only proj "$scripts" | tee remap.txt
+          python3 - proj < /dev/null || true
+      - name: Commit
+        run: |
+          cd proj
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "Scene references moved to the real Unity package scripts" -m "$(cat ../missing.txt ../remap.txt)" && git push origin HEAD:"${{ inputs.branch }}"

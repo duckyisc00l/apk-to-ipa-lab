@@ -112,6 +112,72 @@ def best_version(pkg, unity_version):
     return (sorted(ok, key=key)[-1] if ok else None), f"by date (before {cutoff})"
 
 
+# ---- references from scenes and prefabs to the deleted package scripts ----
+# Scenes point at a script by its .meta guid. The decompiled package scripts get deleted, so without this every
+# EventSystem, Image, Text, InputSystemUIInputModule... in every scene becomes "The referenced script is missing".
+NS = re.compile(r"^\s*namespace\s+([\w.]+)", re.M)
+
+def script_classes(folder):
+    """guid -> full class name (namespace + file name) for every .cs under folder"""
+    out = {}
+    for d, _, files in os.walk(folder):
+        for f in files:
+            if f.endswith(".cs") and os.path.exists(os.path.join(d, f + ".meta")):
+                m = re.search(r"guid: ([0-9a-f]{32})", open(os.path.join(d, f + ".meta"), errors="ignore").read())
+                if not m:
+                    continue
+                t = open(os.path.join(d, f), errors="ignore").read()
+                ns = NS.search(t)
+                out[m.group(1)] = (ns.group(1) + "." if ns else "") + f[:-3]
+    return out
+
+def package_classes(pkg, ver, cache="/tmp/unity-pkgs"):
+    """full class name -> guid in the real package (downloaded from Unity's registry)"""
+    import tarfile, io
+    os.makedirs(cache, exist_ok=True)
+    try:
+        info = json.load(urllib.request.urlopen(f"https://packages.unity.com/{pkg}", timeout=60))
+        url = info["versions"][ver]["dist"]["tarball"]
+        data = urllib.request.urlopen(url, timeout=120).read()
+    except Exception as x:
+        return {}, f"{pkg}@{ver}: not downloaded ({x})"
+    d = os.path.join(cache, f"{pkg}@{ver}")
+    tarfile.open(fileobj=io.BytesIO(data)).extractall(d)
+    out = {}
+    for full in script_classes(d).items():
+        out.setdefault(full[1], full[0])
+    return out, f"{pkg}@{ver}: {len(out)} scripts"
+
+def remap_package_scripts(proj, old, deps):
+    """old: guid -> (full class name, package id). Rewrites {fileID: 11500000, guid: OLD, type: 3} everywhere."""
+    want = {}
+    for g, (cls, pkg) in old.items():
+        want.setdefault(pkg, {})[g] = cls
+    remap, notes = {}, []
+    for pkg, items in want.items():
+        ver = deps.get(pkg)
+        if not ver:
+            continue
+        new, note = package_classes(pkg, ver)
+        notes.append(note)
+        for g, cls in items.items():
+            if cls in new:
+                remap[g] = new[cls]
+    changed = 0
+    if remap:
+        rx = re.compile(r"(\{fileID: 11500000, guid: )([0-9a-f]{32})(, type: 3\})")
+        for d, _, files in os.walk(os.path.join(proj, "Assets")):
+            for f in files:
+                if f.endswith((".unity", ".prefab", ".asset", ".controller", ".playable", ".mat")):
+                    fp = os.path.join(d, f)
+                    t = open(fp, errors="ignore").read()
+                    nt = rx.sub(lambda m: m.group(1) + remap.get(m.group(2), m.group(2)) + m.group(3), t)
+                    if nt != t:
+                        open(fp, "w").write(nt)
+                        changed += 1
+    return remap, changed, notes
+
+
 def main(proj, unity_version, bundle_id, product):
     report = ["# Cleanup", "", f"Project: `{proj}`  Unity {unity_version}", ""]
     scripts = os.path.join(proj, "Assets", "Scripts")
@@ -119,12 +185,16 @@ def main(proj, unity_version, bundle_id, product):
     manifest = json.load(open(manifest_path)) if os.path.exists(manifest_path) else {"dependencies": {}}
     deps = manifest.setdefault("dependencies", {})
     removed, added, android = [], {}, []
+    old_scripts = {}   # guid -> (class, package) of the decompiled package scripts about to be deleted
     for folder in sorted(os.listdir(scripts)) if os.path.isdir(scripts) else []:
         path = os.path.join(scripts, folder)
         pkg = next((p for prefix, p in UNITY_PACKAGES if folder == prefix or folder.startswith(prefix + ".")), "NOMATCH")
         if pkg != "NOMATCH":
             n = sum(len(f) for _, _, f in os.walk(path))
             code_ver, where = version_in_code(path) if pkg else (None, None)
+            if pkg:
+                for g, cls in script_classes(path).items():
+                    old_scripts[g] = (cls, pkg)
             shutil.rmtree(path)
             removed.append(f"{folder} ({n} files)")
             if pkg and pkg not in deps and pkg not in added:
@@ -163,6 +233,10 @@ def main(proj, unity_version, bundle_id, product):
             shutil.rmtree(p)
             android.append(sub)
     json.dump(manifest, open(manifest_path, "w"), indent=2)
+    json.dump(old_scripts, open(os.path.join(proj, "package-scripts-removed.json"), "w"), indent=0)
+    remap, changed, notes = remap_package_scripts(proj, old_scripts, deps)
+    report += ["## Scene references moved to the real package scripts",
+               f"- {len(remap)} of {len(old_scripts)} scripts matched, {changed} files changed", *[f"- {n}" for n in notes], ""]
 
     # iOS player settings
     ps = os.path.join(proj, "ProjectSettings", "ProjectSettings.asset")
@@ -190,4 +264,17 @@ def main(proj, unity_version, bundle_id, product):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:5])
+    if sys.argv[1] == "--remap-only":
+        # for a project cleaned before this existed: <project> <a fresh AssetRipper export's Assets/Scripts>
+        proj, export_scripts = sys.argv[2], sys.argv[3]
+        deps = json.load(open(os.path.join(proj, "Packages", "manifest.json")))["dependencies"]
+        old = {}
+        for folder in sorted(os.listdir(export_scripts)):
+            pkg = next((p for prefix, p in UNITY_PACKAGES if folder == prefix or folder.startswith(prefix + ".")), None)
+            if pkg:
+                for g, cls in script_classes(os.path.join(export_scripts, folder)).items():
+                    old[g] = (cls, pkg)
+        remap, changed, notes = remap_package_scripts(proj, old, deps)
+        print(f"{len(remap)} of {len(old)} package scripts matched; {changed} files changed"); print("\n".join(notes))
+    else:
+        main(*sys.argv[1:5])
