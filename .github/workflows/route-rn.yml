@@ -22,6 +22,8 @@ jobs:
       rn_version: ${{ steps.i.outputs.rn_version }}
       kind: ${{ steps.i.outputs.kind }}
       app_name: ${{ steps.i.outputs.app_name }}
+      package: ${{ steps.i.outputs.package }}
+      label: ${{ steps.i.outputs.label }}
     steps:
       - uses: actions/checkout@v4
       - id: i
@@ -50,6 +52,8 @@ jobs:
       V: ${{ needs.inspect.outputs.rn_version }}
       KIND: ${{ needs.inspect.outputs.kind }}
       APPNAME: ${{ needs.inspect.outputs.app_name }}
+      PKG: ${{ needs.inspect.outputs.package }}
+      LABEL: ${{ needs.inspect.outputs.label }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -122,7 +126,7 @@ jobs:
       - name: Put the APK's bundle and images into the app, make the IPA
         run: |
           app=$(find Host/ios/build/Build/Products -maxdepth 2 -name '*.app' | head -1)
-          ci/rn/fill-app.sh "$app" rn Host "$KIND" | tee -a out/ipa.md
+          BID="com.duckyisc00l.$(echo "${PKG:-$APPNAME}" | tr -cd 'A-Za-z0-9.' | awk -F. '{print $NF}')"; ci/rn/fill-app.sh "$app" rn Host "$KIND" "$BID" "${LABEL:-$APPNAME}" | tee -a out/ipa.md
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry RN.ipa Payload && ls -la RN.ipa | tee -a out/ipa.md
           gh release create "rn-${{ github.run_number }}" RN.ipa -R ${{ github.repository }} --prerelease --notes "React Native host route test (unsigned)" || true
         env: { GH_TOKEN: "${{ github.token }}" }
@@ -130,7 +134,8 @@ jobs:
         continue-on-error: true
         run: |
           export CCC_OVERRIDE_OPTIONS='^-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1' SKIP_BUNDLING=1
-          export SIM_PRE_RUN="ci/rn/fill-app.sh \"\$APP\" rn Host \"$KIND\""
+          BID="com.duckyisc00l.$(echo "${PKG:-$APPNAME}" | tr -cd 'A-Za-z0-9.' | awk -F. '{print $NF}')"
+          export SIM_PRE_RUN="ci/rn/fill-app.sh \"\$APP\" rn Host \"$KIND\" \"$BID\" \"${LABEL:-$APPNAME}\""
           ci/sim/build-and-run.sh "$(ls -d Host/ios/*.xcworkspace | head -1)" Host out/sim 40
       - uses: actions/upload-artifact@v4
         if: always()

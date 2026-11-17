@@ -153,6 +153,23 @@ info["images"] = {"registrations": len(regs), "copied": copied, "missing": missi
 # debug samples (kept short): where the version and image registrations sit in this bundle
 info["debug_version_ctx"] = [text[max(0, m.start() - 120):m.end() + 60] for m in re.finditer(r"prerelease", text)][:3]
 info["debug_asset_ctx"] = [text[max(0, m.start() - 160):m.end() + 200] for m in re.finditer(r"__packager_asset", text)][:2]
+# the app's own package name and home-screen name, for the iPhone app's bundle id and display name
+try:
+    from androguard.core.axml import AXMLPrinter, ARSCParser
+    from lxml import etree
+    man = etree.fromstring(AXMLPrinter(open(os.path.join(src, "AndroidManifest.xml"), "rb").read()).get_xml())
+    A = "{http://schemas.android.com/apk/res/android}"
+    info["package"] = man.get("package")
+    lab = man.find("application").get(A + "label") or ""
+    if lab.startswith("@"):
+        arsc = ARSCParser(open(os.path.join(src, "resources.arsc"), "rb").read())
+        rid = int(lab[1:].split(":")[-1], 16) if lab[1:2] != "s" else None
+        if rid is not None:
+            vals = arsc.get_resolved_res_configs(rid)
+            lab = vals[0][1] if vals else ""
+    if lab: info["label"] = lab
+except Exception as x:
+    info["label_error"] = str(x)[:200]
 json.dump(info, open(os.path.join(out, "rn.json"), "w"), indent=1)
 md = [f"- {k}: {v}" for k, v in info.items()]
 open(os.path.join(out, "rn.md"), "w").write("\n".join(md) + "\n")

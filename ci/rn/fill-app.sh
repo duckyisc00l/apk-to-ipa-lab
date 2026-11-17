@@ -1,6 +1,6 @@
 #!/bin/bash
 # Put the APK's React Native bundle, images and icon fonts into a built host .app (phone or simulator build).
-# Usage: ci/rn/fill-app.sh <.app> <rn dir from inspect.py> <Host dir> <kind: hermes|plain JS>
+# Usage: ci/rn/fill-app.sh <.app> <rn dir from inspect.py> <Host dir> <kind: hermes|plain JS> [bundle id] [home-screen name]
 set -e
 app="$1"; rn="$2"; host="$3"; kind="$4"
 if [ "$kind" = hermes ]; then cp "$rn/main.jsbundle" "$app/main.jsbundle"   # bytecode: can't put JS in front
@@ -14,4 +14,7 @@ if [ -d "$vi" ]; then
   echo "icon fonts: $i"
 fi
 [ -d "$rn/app" ] && cp -R "$rn/app/." "$app/"
-echo "filled $app"
+# the app's own identity instead of the template's "Host" (safe after the build: the IPA is unsigned)
+[ -n "${5:-}" ] && plutil -replace CFBundleIdentifier -string "$5" "$app/Info.plist"
+[ -n "${6:-}" ] && plutil -replace CFBundleDisplayName -string "$6" "$app/Info.plist"
+echo "filled $app (${5:-template id}, ${6:-template name})"
