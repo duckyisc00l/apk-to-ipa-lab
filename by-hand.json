@@ -1,0 +1,20 @@
+{
+ "inputs": [
+  "dl/15puzzle.aab"
+ ],
+ "apks": [],
+ "base": null,
+ "obbs": [],
+ "aabs": [
+  "15puzzle.aab"
+ ],
+ "libs": [
+  "libapp.so",
+  "libflutter.so"
+ ],
+ "notes": [
+  "AAB mapped by hand (no bundletool/Java): its AndroidManifest.xml is in protobuf format, read it with bundletool dump manifest"
+ ],
+ "protected_or_encrypted": [],
+ "protection": []
+}

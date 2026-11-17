@@ -1,0 +1,35 @@
+[
+ {
+  "libs": [
+   "libapp.so",
+   "libflutter.so"
+  ],
+  "engine": "Flutter",
+  "engine_id": "flutter",
+  "tags": [
+   "flutter"
+  ],
+  "evidence": [
+   "libapp.so",
+   "libflutter.so"
+  ],
+  "route": {
+   "kind": "re-export",
+   "step": "E",
+   "what": "build from source if open source; else rewrite (step R) with flutter_assets"
+  },
+  "arches": [
+   "arm64-v8a",
+   "armeabi-v7a",
+   "x86_64"
+  ],
+  "arm64": true,
+  "game": "hand",
+  "file": "15puzzle.aab",
+  "notes": [
+   "AAB mapped by hand (no bundletool/Java): its AndroidManifest.xml is in protobuf format, read it with bundletool dump manifest"
+  ],
+  "root": "work1/hand",
+  "protection": []
+ }
+]

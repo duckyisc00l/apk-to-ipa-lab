@@ -1,0 +1,22 @@
+{
+ "inputs": [
+  "dl/15puzzle.aab"
+ ],
+ "apks": [
+  "universal.apk"
+ ],
+ "base": "universal.apk",
+ "obbs": [],
+ "aabs": [
+  "15puzzle.aab"
+ ],
+ "libs": [
+  "libapp.so",
+  "libflutter.so"
+ ],
+ "notes": [
+  "AAB converted with bundletool (universal APK, debug-signed)"
+ ],
+ "protected_or_encrypted": [],
+ "protection": []
+}
