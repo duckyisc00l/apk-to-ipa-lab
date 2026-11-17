@@ -7,7 +7,7 @@
 # and any crash report. Exit 0 only if the app is still running at the end.
 set -u
 APP="$1"; OUT="$2"; WAIT="${3:-25}"; STEPS="${4:-}"
-mkdir -p "$OUT"
+mkdir -p "$OUT"; OUT=$(cd "$OUT" && pwd)   # absolute: the simulator opens --stdout paths from its own folder
 BID=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Info.plist")
 EXE=$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP/Info.plist")
 # newest iOS runtime, first iPhone on it
@@ -33,6 +33,11 @@ for try in 1 2 3; do
     echo "launched (try $try)" | tee -a "$OUT/sim.md"; break
   fi
   echo "launch refused (try $try)" | tee -a "$OUT/sim.md"; sleep 10
+  if [ "$try" = 3 ]; then   # why: SpringBoard's own log lines about this app
+    echo "## simulator log about the launch" >> "$OUT/sim.md"
+    xcrun simctl spawn "$UDID" log show --last 3m --style compact \
+      --predicate "eventMessage CONTAINS[c] '$BID' OR eventMessage CONTAINS[c] '$EXE'" 2>/dev/null | grep -viE "^Timestamp" | tail -40 >> "$OUT/sim.md"
+  fi
 done
 for t in 5 $WAIT; do
   sleep $(( t == 5 ? 5 : WAIT - 5 ))
