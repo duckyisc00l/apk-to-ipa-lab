@@ -25,15 +25,20 @@ if gen is not None:
     env.typetree_generator = gen
 kinds = {}
 samples = {}
+hist = {}; fails = []; types = {}
 for obj in env.objects:
+    types[obj.type.name] = types.get(obj.type.name, 0) + 1
     if obj.type.name != "MonoBehaviour":
         continue
     try:
-        mb = obj.read(check_read=False)
-        scr = mb.m_Script.read() if mb.m_Script else None
-        cls = scr.m_ClassName if scr else "?"
-    except Exception:
+        mb = obj.parse_as_object() if hasattr(obj, "parse_as_object") else obj.read(check_read=False)
+        ptr = getattr(mb, "m_Script", None)
+        scr = ptr.deref_parse_as_object() if hasattr(ptr, "deref_parse_as_object") else ptr.read()
+        cls = scr.m_ClassName
+    except Exception as x:
+        if len(fails) < 5: fails.append(traceback.format_exc()[-400:])
         continue
+    hist[cls] = hist.get(cls, 0) + 1
     if cls not in ("VisualTreeAsset", "StyleSheet", "PanelSettings", "ThemeStyleSheet", "UIDocument"):
         continue
     kinds[cls] = kinds.get(cls, 0) + 1
@@ -56,6 +61,10 @@ for obj in env.objects:
     except Exception as x:
         samples.setdefault(cls, []).append({"error": traceback.format_exc()[-600:]})
 rep["counts"] = kinds
+rep["types"] = dict(sorted(types.items(), key=lambda kv: -kv[1])[:15])
+rep["mb_classes"] = dict(sorted(hist.items(), key=lambda kv: -kv[1])[:40])
+rep["fails"] = fails
+rep["files"] = list(env.files)[:20]
 rep["samples"] = samples
 json.dump(rep, open(os.path.join(out, "uitk-probe.json"), "w"), indent=1, default=str)
 print(json.dumps(rep, indent=1, default=str)[:6000])
