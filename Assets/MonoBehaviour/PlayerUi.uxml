@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="NoteUi" src="project://database/Assets/MonoBehaviour/NoteUi.uxml?fileID=9197481963319205126&amp;guid=c206e5c6713867442bdae38fbbf642ee&amp;type=3#NoteUi" />
+    <ui:VisualElement name="root" class="singScenePlayerUi" style="flex-grow: 1; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+        <ui:VisualElement name="column">
+            <ui:VisualElement name="row" style="flex-direction: row; align-items: flex-end; margin-left: 20px; margin-right: 20px;">
+                <ui:VisualElement name="playerInfoContainer" style="flex-direction: row; align-items: flex-end;">
+                    <ui:VisualElement name="playerImage" style='background-image: url("project://database/Assets/Texture2D/FallbackPlayerProfileImage.png?fileID=2800000&amp;guid=9373048be5b6d2c42ac566a9a0a36b54&amp;type=3#FallbackPlayerProfileImage"); align-items: center; -unity-background-scale-mode: scale-to-fit;' />
+                    <ui:VisualElement name="playerNameContainer" style="margin-left: 10px; margin-right: 10px;">
+                        <ui:VisualElement name="leadingPlayerIcon" style='background-image: url("project://database/Assets/MonoBehaviour/LeadingPlayerCrown.asset?fileID=11400000&amp;guid=cb96d087b668bf446b8a5d763a621552&amp;type=2#LeadingPlayerCrown"); -unity-background-scale-mode: scale-to-fit; margin-top: -5px; margin-bottom: -5px; flex-shrink: 2;' />
+                        <ui:Label text="Player 01" display-tooltip-when-elided="true" name="playerNameLabel" class="textOutline largeFont" style="-unity-text-align: middle-left; flex-shrink: 1;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="spacer" style="flex-grow: 1;" />
+                <ui:VisualElement name="micDisconnectedContainer" style="flex-direction: row; align-items: flex-end; width: auto; height: 100%;">
+                    <ui:Label text="Mic Disconnected" display-tooltip-when-elided="true" name="micDisconnectedLabel" class="error" style="-unity-font-style: bold; -unity-text-align: lower-left; -unity-text-outline-color: rgb(255, 255, 255); text-shadow: 0 0 1px rgb(0, 0, 0);" />
+                    <MaterialIcon name="micDisconnectedIcon" icon="mic" class="error" />
+                </ui:VisualElement>
+                <ui:VisualElement name="playerScoreContainer" style='height: auto; width: 120px; justify-content: center; align-items: flex-end; border-top-left-radius: 5px; border-bottom-left-radius: 0; border-top-right-radius: 5px; padding-left: 10px; padding-right: 10px; padding-top: 2px; padding-bottom: 2px; background-image: url("project://database/Assets/Sprite/_sing_scoreBg.asset?fileID=21300000&amp;guid=9aa7302bd4a210c4c9fc4fd8c96828f4&amp;type=2#[sing]scoreBg");'>
+                    <ui:Label text="99999" display-tooltip-when-elided="true" name="playerScoreLabel" style="-unity-font-style: bold; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5); -unity-text-align: middle-left;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="noteContainer" style="flex-grow: 1; width: 100%;">
+            <ui:VisualElement name="noteLines" style="width: 100%; height: 100%; position: absolute; overflow: hidden; display: none;" />
+            <ui:VisualElement name="targetNoteEntryContainer" style="width: 100%; position: absolute; height: 100%; overflow: hidden;">
+                <ui:Instance template="NoteUi" name="noteEntry" style="position: absolute; top: 20px; width: 200px; height: 20px;" />
+                <ui:Instance template="NoteUi" name="noteEntry" style="position: absolute; top: 60px; width: 400px; height: 40px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="recordedNoteEntryContainer" style="width: 100%; position: absolute; height: 100%; overflow: hidden;" />
+            <ui:VisualElement name="effectsContainer" style="width: 100%; position: absolute; height: 100%; overflow: hidden;" />
+            <ui:VisualElement name="sentenceRatingContainer" style="position: absolute; width: 100%; height: 100%; overflow: hidden;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="lyricsContainer" class="lyricsContainer" style="justify-content: center; width: 100%; height: 20px; overflow: hidden;" />
+    </ui:VisualElement>
+</ui:UXML>

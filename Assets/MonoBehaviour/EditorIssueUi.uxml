@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="issueUiRoot" style="width: 18px; height: 18px; position: absolute;">
+        <MaterialIcon name="issueImage" icon="warning" class="warning rounded" style="font-size: 24px;" />
+    </ui:VisualElement>
+</ui:UXML>

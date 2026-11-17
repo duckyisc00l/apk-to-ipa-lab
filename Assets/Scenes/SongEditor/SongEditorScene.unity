@@ -7114,6 +7114,10 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name:
   m_EditorClassIdentifier:
+  m_PanelSettings: {fileID: 11400000, guid: 9ecb0637fc85cd445ac002889beb8ce4, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 0d98cb6992bc82e42bae5960c2f71261, type: 3}
+  m_SortingOrder: 0
 --- !u!114 &267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7180,8 +7184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f129f4823db2f45441f3984ce1c6bdbc, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  editorNoteUi: {fileID: 11400000, guid: 67337aa11c3f2514fa8a059ef1add96d, type: 2}
-  editorSentenceUi: {fileID: 11400000, guid: 4c59d394afef668458d8ac6212eafbe0, type: 2}
+  editorNoteUi: {fileID: 9197481963319205126, guid: 67337aa11c3f2514fa8a059ef1add96d, type: 3}
+  editorSentenceUi: {fileID: 9197481963319205126, guid: 4c59d394afef668458d8ac6212eafbe0, type: 3}
 --- !u!114 &271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7234,10 +7238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08626995b89c2067a632ba8df733d20f, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  issueSideBarEntryUi: {fileID: 11400000, guid: 660c477a767751545b423e52c3386325, type: 2}
-  songPropertySideBarEntryUi: {fileID: 11400000, guid: 8990698a077be4945a287da2e64f4bfd, type: 2}
-  songEditorLayerSideBarEntryUi: {fileID: 11400000, guid: 72a271983a6965d46ab97c5e68bf6042, type: 2}
-  valueInputDialogUi: {fileID: 11400000, guid: cf644876451d16f499950abfe4ec7371, type: 2}
+  issueSideBarEntryUi: {fileID: 9197481963319205126, guid: 660c477a767751545b423e52c3386325, type: 3}
+  songPropertySideBarEntryUi: {fileID: 9197481963319205126, guid: 8990698a077be4945a287da2e64f4bfd, type: 3}
+  songEditorLayerSideBarEntryUi: {fileID: 9197481963319205126, guid: 72a271983a6965d46ab97c5e68bf6042, type: 3}
+  valueInputDialogUi: {fileID: 9197481963319205126, guid: cf644876451d16f499950abfe4ec7371, type: 3}
   songAudioPlayer: {fileID: 275}
   songVideoPlayer: {fileID: 370}
   songEditorNoteRecorder: {fileID: 279}
@@ -7359,7 +7363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c1ffacc4e424069bcc07b4421fb76f, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  editorIssueUi: {fileID: 11400000, guid: da493ad059beb0745b5473eed5cde560, type: 2}
+  editorIssueUi: {fileID: 9197481963319205126, guid: da493ad059beb0745b5473eed5cde560, type: 3}
 --- !u!114 &284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7384,7 +7388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42d1ce0152b19553201b578b5051f85, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  largeScreenStyleSheet: {fileID: 11400000, guid: 5fe8d92a3b97ca048914db35502171f5, type: 2}
+  largeScreenStyleSheet: {fileID: 7433441132597879392, guid: 5fe8d92a3b97ca048914db35502171f5, type: 3}
 --- !u!114 &286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9788,10 +9792,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2076f3119d654888fe82edf8190a3b53, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  notificationOverlayVisualTreeAsset: {fileID: 11400000, guid: ea84b7dac3ad63b458e62082b65fa48f, type: 2}
-  notificationVisualTreeAsset: {fileID: 11400000, guid: 2df69e469dfe54b4ca5de3693712ac61, type: 2}
-  dialogUi: {fileID: 11400000, guid: d3e596d851e417443904d445c87662c1, type: 2}
-  accordionUi: {fileID: 11400000, guid: e3cd425ab88869d4e8dda5609caf2eec, type: 2}
+  notificationOverlayVisualTreeAsset: {fileID: 9197481963319205126, guid: ea84b7dac3ad63b458e62082b65fa48f, type: 3}
+  notificationVisualTreeAsset: {fileID: 9197481963319205126, guid: 2df69e469dfe54b4ca5de3693712ac61, type: 3}
+  dialogUi: {fileID: 9197481963319205126, guid: d3e596d851e417443904d445c87662c1, type: 3}
+  accordionUi: {fileID: 9197481963319205126, guid: e3cd425ab88869d4e8dda5609caf2eec, type: 3}
   fallbackPlayerProfileImage: {fileID: 21300000, guid: cfb3bc6e051c467458c5f225ed316985, type: 2}
 --- !u!114 &376
 MonoBehaviour:
@@ -9882,9 +9886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e63485a86695b74d7ff8d184908969, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  contextMenuUi: {fileID: 11400000, guid: 2183eac6f26e18a45983c0a6bfbd34d0, type: 2}
-  contextMenuItemUi: {fileID: 11400000, guid: 9d24f55692f1e2447adcdd12c80bcd8e, type: 2}
-  contextMenuSeparatorUi: {fileID: 11400000, guid: ef647f85c859e8c47a93b6c1231e3416, type: 2}
+  contextMenuUi: {fileID: 9197481963319205126, guid: 2183eac6f26e18a45983c0a6bfbd34d0, type: 3}
+  contextMenuItemUi: {fileID: 9197481963319205126, guid: 9d24f55692f1e2447adcdd12c80bcd8e, type: 3}
+  contextMenuSeparatorUi: {fileID: 9197481963319205126, guid: ef647f85c859e8c47a93b6c1231e3416, type: 3}
 --- !u!114 &383
 MonoBehaviour:
   m_ObjectHideFlags: 0

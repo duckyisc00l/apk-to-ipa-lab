@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/MonoBehaviour/CommonStyles.uss?fileID=7433441132597879392&amp;guid=dc199448b85c64a48b65683457c8c5e4&amp;type=3#CommonStyles" />
+    <ui:VisualElement name="lyricsContainer" class="lyricsContainer">
+        <ui:VisualElement name="currentSentenceContainer" style="flex-direction: row; width: 100%; align-items: center; justify-content: center;">
+            <MaterialIcon icon="forward" name="positionBeforeLyricsIndicator" />
+            <ui:Label text="Lo" display-tooltip-when-elided="true" name="lo" class="currentLyrics singingLyrics previousNoteLyrics" />
+            <ui:Label text="rem" display-tooltip-when-elided="true" name="rem" class="currentLyrics singingLyrics previousNoteLyrics" />
+            <ui:Label text=" " display-tooltip-when-elided="true" name="space" class="currentLyrics singingLyrics previousNoteLyrics" style="width: 10px;" />
+            <ui:Label text="ip" display-tooltip-when-elided="true" name="ip" class="currentLyrics singingLyrics currentNoteLyrics" />
+            <ui:Label text="sum" display-tooltip-when-elided="true" name="sum" class="currentLyrics singingLyrics" />
+        </ui:VisualElement>
+        <ui:VisualElement name="nextSentenceContainer" style="flex-direction: row; width: 100%; align-items: center; justify-content: center;">
+            <ui:Label text="Lorem ipsum" display-tooltip-when-elided="true" name="nextSentenceLabel" class="nextLyrics singingLyrics" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
