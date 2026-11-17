@@ -1,0 +1,7 @@
+[1;32mInstalling the shell utils scripts[0;0m
+Installing the package manager.
+Installing Python virtual environment (/usr/bin/python3).
+Building 'asan'.
+[1/3] Building CXX object modules/axmol/schedule/CMakeFiles/bim_axmol_schedule.dir/Unity/unity_0_cxx.cxx.o
+[2/3] Linking CXX static library modules/axmol/schedule/libbim_axmol_schedule.a
+[3/3] Linking CXX executable apps/linux/bim

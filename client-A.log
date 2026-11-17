@@ -1,0 +1,91 @@
+[1m[I][0m[34m[StartUp][0m Start: file system.
+[1m[I][0m[34m[StartUp][0m Log system initialized: [31m'/tmp/app-A/log.txt'[0m
+[1m[I][0m[34m[StartUp][0m 2026-11-17T18:09:33+0000
+[1m[I][0m[34m[StartUp][0m Start: colour chart.
+[1m[I][0m[34m[StartUp][0m Start: display.
+
+{
+	axmol.version: axmol-2.11.5
+	supports_OES_packed_depth_stencil: false
+	supports_OES_map_buffer: false
+	axmol.compiled_with_gl_state_cache: true
+	supports_OES_depth24: false
+	supports_ETC2: true
+	supports_ETC1: false
+	version: 4.5 (Core Profile) Mesa 26.0.8-1ubuntu0.3
+	max_texture_units: 160
+	supports_NPOT: true
+	axmol.build_type: RELEASE
+	supports_discard_framebuffer: false
+	max_samples_allowed: 0
+	supports_ATITC: false
+	max_texture_size: 16384
+	supports_vertex_array_object: false
+	glsl: 4.50
+	max_vertex_attributes: 16
+	supports_S3TC: true
+	renderer: llvmpipe (LLVM 21.1.8, 256 bits)
+	vendor: Mesa
+	supports_BGRA8888: false
+	axmol.compiled_with_profiler: false
+	supports_ASTC: true
+	supports_PVRTC: false
+}
+
+
+FreeType version 2.14.2 initialized.
+[1m[I][0m[34m[StartUp][0m Start: social.
+[1m[I][0m[34m[StartUp][0m Start: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Start: audio.
+[1m[I][0m[34m[StartUp][0m Start: root scene.
+[1m[I][0m[34m[analytics_service][0m Event 'launched', [1mlanguage[0m=[34m[1m'en_GB'.[0m
+[1m[I][0m[34m[StartUp][0m Business server is [31m'http://localhost:4210'[0m.
+[1m[I][0m[34m[StartUp][0m Start: widgets.
+[1m[I][0m[34m[StartUp][0m Start: styles.
+[1m[I][0m[34m[script_director][0m Wait [31m'loaded'[0m.
+[1m[I][0m[34m[StartUp][0m Start: local preferences.
+[1m[I][0m[34m[StartUp][0m Launching the game.
+[1m[I][0m[34m[main_task][0m Device ID is [31m'62e4ba1d-120d-4e76-b7e8-6c345dd58cf3'[0m.
+[1m[I][0m[34m[fetch_config_job][0m Start.
+[1m[I][0m[34m[authenticate_with_business_job][0m Connecting to business server at [31m'http://localhost:4210'[0m.
+[1m[33m[W][0m[34m[fetch_config_job][0m Failed to fetch remote config (-1) [].
+[1m[31m[E][0m[34m[authenticate_with_business_job][0m Failed to connect to the business server (-1): .
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'business-authentication'.[0m
+[1m[I][0m[34m[push_legacy_state_job][0m Sending the legacy state to the backend.
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'http://localhost:4210/client/transfer-legacy-inventory'[0m: -1, .
+[1m[31m[E][0m[34m[push_legacy_state_job][0m Failed to send the legacy state to the backend.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'push-legacy'.[0m
+[1m[I][0m[34m[fetch_player_profile_job][0m Fetching the player's profile.
+[1m[31m[E][0m[34m[business_interface][0m Request failed for [31m'http://localhost:4210/client/me'[0m: -1, .
+[1m[31m[E][0m[34m[fetch_player_profile_job][0m Failed to fetch the player's profile.
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'fetch-player-profile'.[0m
+[1m[I][0m[34m[script_director][0m Capture [31m'1-lobby-offline.png'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/lobby/play_button'[0m, wait [31m'players-ready-2'[0m.
+[1m[I][0m[34m[script_director][0m Click [31m'main/screen-wheel/lobby/play_button'[0m, at (540, 1665).
+[1m[I][0m[34m[analytics_service][0m Event 'error', [1mcause[0m=[34m[1m'products-detail'.[0m
+[1m[31m[E][0m[34m[shop_service][0m Could not fetch the products detail.
+[1m[31m[E][0m[34m[script_director][0m Timeout while waiting for event [31m'players-ready-2'[0m.
+[1m[I][0m[34m[StartUp][0m Stopping the game.
+[1m[I][0m[34m[StartUp][0m Quit requested.
+[1m[I][0m[34m[StartUp][0m Stopping game.
+[1m[I][0m[34m[StartUp][0m Stop: local preferences.
+[1m[I][0m[34m[StartUp][0m Stop: styles.
+[1m[I][0m[34m[StartUp][0m Stop: widgets.
+[1m[I][0m[34m[StartUp][0m Stop: root scene.
+[1m[I][0m[34m[StartUp][0m Stop: audio.
+[1m[I][0m[34m[StartUp][0m Stop: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Stop: social.
+[1m[I][0m[34m[StartUp][0m Stop: display.
+[1m[I][0m[34m[StartUp][0m Stop: log system.
+[yasio][1794938973233][global] the yasio-4.3.2 is initialized, the size of per transport is 368 when object_pool enabled.
+[yasio][1794938973233][global] sizeof(io_event)=80
+[yasio][1794938973237][index: 0] start query localhost...
+[yasio][1794938973237][index: 1] start query localhost...
+[yasio][1794938973238][index: 0] connecting server localhost(127.0.0.1):4210...
+[yasio][1794938973238][index: 0] connect server localhost(127.0.0.1):4210 failed, ec=111, detail:Connection refused
+[yasio][1794938973238][index: 1] connecting server localhost(127.0.0.1):4210...
+[yasio][1794938973239][index: 1] connect server localhost(127.0.0.1):4210 failed, ec=111, detail:Connection refused
+[yasio][1794938973556][index: 1] connecting server localhost(127.0.0.1):4210...
+[yasio][1794938973556][index: 1] connect server localhost(127.0.0.1):4210 failed, ec=111, detail:Connection refused
+[yasio][1794938973939][index: 1] connecting server localhost(127.0.0.1):4210...
+[yasio][1794938973939][index: 1] connect server localhost(127.0.0.1):4210 failed, ec=111, detail:Connection refused

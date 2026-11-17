@@ -1,0 +1,136 @@
+[1m[I][0m[34m[StartUp][0m Start: file system.
+[1m[I][0m[34m[StartUp][0m Log system initialized: [31m'/tmp/app-asan-upstream/log.txt'[0m
+[1m[I][0m[34m[StartUp][0m 2026-11-17T18:09:27+0000
+[1m[I][0m[34m[StartUp][0m Start: colour chart.
+[1m[I][0m[34m[StartUp][0m Start: display.
+
+{
+	axmol.version: axmol-2.11.5
+	supports_OES_packed_depth_stencil: false
+	supports_OES_map_buffer: false
+	axmol.compiled_with_gl_state_cache: true
+	supports_OES_depth24: false
+	supports_ETC2: true
+	supports_ETC1: false
+	version: 4.5 (Core Profile) Mesa 26.0.8-1ubuntu0.3
+	max_texture_units: 160
+	supports_NPOT: true
+	axmol.build_type: RELEASE
+	supports_discard_framebuffer: false
+	max_samples_allowed: 0
+	supports_ATITC: false
+	max_texture_size: 16384
+	supports_vertex_array_object: false
+	glsl: 4.50
+	max_vertex_attributes: 16
+	supports_S3TC: true
+	renderer: llvmpipe (LLVM 21.1.8, 256 bits)
+	vendor: Mesa
+	supports_BGRA8888: false
+	axmol.compiled_with_profiler: false
+	supports_ASTC: true
+	supports_PVRTC: false
+}
+
+
+FreeType version 2.14.2 initialized.
+[1m[I][0m[34m[StartUp][0m Start: social.
+[1m[I][0m[34m[StartUp][0m Start: haptic feedback.
+[1m[I][0m[34m[StartUp][0m Start: audio.
+[1m[I][0m[34m[StartUp][0m Start: root scene.
+[1m[I][0m[34m[analytics_service][0m Event 'launched', [1mlanguage[0m=[34m[1m'en_GB'.[0m
+[1m[I][0m[34m[StartUp][0m Business server is [31m'http://localhost:4210'[0m.
+[1m[I][0m[34m[StartUp][0m Start: widgets.
+[1m[I][0m[34m[StartUp][0m Start: styles.
+=================================================================
+==16991==ERROR: AddressSanitizer: heap-use-after-free on address 0x79b24563ce68 at pc 0x58c196278ad6 bp 0x7fff7a1f4410 sp 0x7fff7a1f4400
+READ of size 8 at 0x79b24563ce68 thread T0
+    #0 0x58c196278ad5 in std::_Function_base::_M_empty() const /usr/include/c++/15/bits/std_function.h:249
+    #1 0x58c196278ad5 in std::function<void ()>::operator()() const /usr/include/c++/15/bits/std_function.h:591
+    #2 0x58c19662241b in operator() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/modules/axmol/schedule/main/src/bim/axmol/schedule/bridge.cpp:60
+    #3 0x58c196622498 in __invoke_impl<void, bim::axmol::schedule::bridge::schedule_call(const std::function<void()>&, const std::chrono::nanoseconds&)::<lambda(float)>&, float> /usr/include/c++/15/bits/invoke.h:63
+    #4 0x58c196622516 in __invoke_r<void, bim::axmol::schedule::bridge::schedule_call(const std::function<void()>&, const std::chrono::nanoseconds&)::<lambda(float)>&, float> /usr/include/c++/15/bits/invoke.h:113
+    #5 0x58c196622516 in _M_invoke /usr/include/c++/15/bits/std_function.h:292
+    #6 0x58c19682b1c4 in std::function<void (float)>::operator()(float) const /usr/include/c++/15/bits/std_function.h:593
+    #7 0x58c19682b1c4 in ax::TimerTargetCallback::trigger(float) /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Scheduler.cpp:175
+    #8 0x58c19686ba44 in ax::Timer::update(float) /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Scheduler.cpp:99
+    #9 0x58c1968dfa2b in ax::Scheduler::update(float) /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Scheduler.cpp:799
+    #10 0x58c1969ac2e9 in ax::Director::drawScene() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Director.cpp:301
+    #11 0x58c1969ac494 in ax::Director::mainLoop() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Director.cpp:1629
+    #12 0x58c1969ac494 in ax::Director::mainLoop() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Director.cpp:1611
+    #13 0x58c1969ac577 in ax::Application::run() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//platform/linux/Application-linux.cpp:74
+    #14 0x58c196006cf5 in main /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/apps/linux/main.cpp:293
+    #15 0x7d724661c600 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #16 0x7d724661c717 in __libc_start_main_impl ../csu/libc-start.c:360
+    #17 0x58c195e43024 in _start (/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan/apps/linux/bim+0x35ec024) (BuildId: 3507d2ffeee4774d599e9b4e5814baef0157c9cb)
+
+0x79b24563ce68 is located 24 bytes inside of 48-byte region [0x79b24563ce50,0x79b24563ce80)
+freed by thread T0 here:
+    #0 0x58c195f2bddb in operator delete(void*, unsigned long) (/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan/apps/linux/bim+0x36d4ddb) (BuildId: 3507d2ffeee4774d599e9b4e5814baef0157c9cb)
+    #1 0x58c19662081f in _M_destroy /usr/include/c++/15/bits/std_function.h:177
+    #2 0x58c196621230 in _M_manager /usr/include/c++/15/bits/std_function.h:205
+    #3 0x58c1966214bb in _M_manager /usr/include/c++/15/bits/std_function.h:284
+    #4 0x58c1968df965 in std::_Function_base::~_Function_base() /usr/include/c++/15/bits/std_function.h:246
+    #5 0x58c1968df965 in std::function<void ()>::~function() /usr/include/c++/15/bits/std_function.h:336
+    #6 0x58c1968df965 in void std::destroy_at<std::function<void ()> >(std::function<void ()>*) /usr/include/c++/15/bits/stl_construct.h:88
+    #7 0x58c1968df965 in void std::_Destroy<std::function<void ()> >(std::function<void ()>*) /usr/include/c++/15/bits/stl_construct.h:164
+    #8 0x58c1968df965 in void std::_Destroy<std::function<void ()>*>(std::function<void ()>*, std::function<void ()>*) /usr/include/c++/15/bits/stl_construct.h:226
+    #9 0x58c1968df965 in void std::_Destroy<std::function<void ()>*, std::function<void ()> >(std::function<void ()>*, std::function<void ()>*, std::allocator<std::function<void ()> >&) /usr/include/c++/15/bits/alloc_traits.h:1045
+    #10 0x58c1968df965 in std::vector<std::function<void ()>, std::allocator<std::function<void ()> > >::~vector() /usr/include/c++/15/bits/stl_vector.h:802
+    #11 0x58c1968df965 in ax::Scheduler::update(float) /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Scheduler.cpp:874
+    #12 0x58c1969ac2e9 in ax::Director::drawScene() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Director.cpp:301
+    #13 0x58c1969ac494 in ax::Director::mainLoop() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Director.cpp:1629
+    #14 0x58c1969ac494 in ax::Director::mainLoop() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//base/Director.cpp:1611
+    #15 0x58c1969ac577 in ax::Application::run() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/axmol/source/core//platform/linux/Application-linux.cpp:74
+    #16 0x58c196006cf5 in main /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/apps/linux/main.cpp:293
+    #17 0x7d724661c600 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:59
+    #18 0x7d724661c717 in __libc_start_main_impl ../csu/libc-start.c:360
+    #19 0x58c195e43024 in _start (/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan/apps/linux/bim+0x35ec024) (BuildId: 3507d2ffeee4774d599e9b4e5814baef0157c9cb)
+
+previously allocated by thread T0 here:
+    #0 0x58c195f2acbb in operator new(unsigned long) (/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan/apps/linux/bim+0x36d3cbb) (BuildId: 3507d2ffeee4774d599e9b4e5814baef0157c9cb)
+    #1 0x58c196621a17 in _M_create<bim::axmol::schedule::bridge::delayed_call(const std::function<void()>&, const std::chrono::nanoseconds&)::<lambda()> > /usr/include/c++/15/bits/std_function.h:163
+    #2 0x58c196621c22 in _M_init_functor<bim::axmol::schedule::bridge::delayed_call(const std::function<void()>&, const std::chrono::nanoseconds&)::<lambda()> > /usr/include/c++/15/bits/std_function.h:217
+    #3 0x58c196621c22 in function<bim::axmol::schedule::bridge::delayed_call(const std::function<void()>&, const std::chrono::nanoseconds&)::<lambda()> > /usr/include/c++/15/bits/std_function.h:451
+    #4 0x58c19662200f in bim::axmol::schedule::bridge::delayed_call(std::function<void ()> const&, std::chrono::duration<long, std::ratio<1l, 1000000000l> > const&) /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/modules/axmol/schedule/main/src/bim/axmol/schedule/bridge.cpp:38
+    #5 0x58c196622243 in operator() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/modules/axmol/schedule/main/src/bim/axmol/schedule/bridge.cpp:21
+    #6 0x58c196622333 in __invoke_impl<void, bim::axmol::schedule::bridge::bridge()::<lambda(const std::function<void()>&, const std::chrono::nanoseconds&)>&, std::function<void()>, std::chrono::duration<long int, std::ratio<1, 1000000000> > > /usr/include/c++/15/bits/invoke.h:63
+    #7 0x58c196622333 in __invoke_r<void, bim::axmol::schedule::bridge::bridge()::<lambda(const std::function<void()>&, const std::chrono::nanoseconds&)>&, std::function<void()>, std::chrono::duration<long int, std::ratio<1, 1000000000> > > /usr/include/c++/15/bits/invoke.h:113
+    #8 0x58c196622333 in _M_invoke /usr/include/c++/15/bits/std_function.h:292
+    #9 0x58c1977f4438 in std::function<void (std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000000000l> >)>::operator()(std::function<void ()>, std::chrono::duration<long, std::ratio<1l, 1000000000l> >) const /usr/include/c++/15/bits/std_function.h:593
+    #10 0x58c1977f4438 in iscool::schedule::detail::delayed_call_manager::schedule_client_non_cumulated() /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/packages/iscool-core/source/build-scripts/cmake/../../modules/core/schedule/module/src/iscool/schedule/detail/delayed_call_manager.cpp:144
+
+SUMMARY: AddressSanitizer: heap-use-after-free /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/modules/axmol/schedule/main/src/bim/axmol/schedule/bridge.cpp:60 in operator()
+Shadow bytes around the buggy address:
+  0x79b24563cb80: fa fa fd fd fd fd fd fd fa fa fd fd fd fd fd fd
+  0x79b24563cc00: fa fa fd fd fd fd fd fd fa fa fd fd fd fd fd fd
+  0x79b24563cc80: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fd
+  0x79b24563cd00: fa fa fd fd fd fd fd fd fa fa 00 00 00 00 04 fa
+  0x79b24563cd80: fa fa 00 00 00 00 00 03 fa fa 00 00 00 00 00 02
+=>0x79b24563ce00: fa fa 00 00 00 00 07 fa fa fa fd fd fd[fd]fd fd
+  0x79b24563ce80: fa fa fd fd fd fd fd fd fa fa 00 00 00 00 00 00
+  0x79b24563cf00: fa fa fd fd fd fd fd fa fa fa fd fd fd fd fd fa
+  0x79b24563cf80: fa fa fd fd fd fd fd fa fa fa 00 00 00 00 00 fa
+  0x79b24563d000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x79b24563d080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==16991==ABORTING
+Aborted (core dumped)

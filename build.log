@@ -1,0 +1,107 @@
+[1;32mInstalling the shell utils scripts[0;0m
+Installing the package manager.
+Installing Python virtual environment (/usr/bin/python3).
+Installing host dependencies.
+Package "axslcc" is already installed.
+Package "image-magick" is already installed.
+Package "boost" is already installed.
+Package "libclaw" is already installed.
+Package "jsoncpp" is already installed.
+Package "mo-file-reader" is already installed.
+Package "tracy-profiler" is already installed.
+Package "iscool-core" is already installed.
+Package "pack-my-sprites" is already installed.
+Installing app dependencies.
+Package "benchmark" is already installed.
+Package "boost" is already installed.
+Package "entt" is already installed.
+Package "fpm" is already installed.
+Package "googletest" is already installed.
+Package "jsoncpp" is already installed.
+Package "libunwind" is already installed.
+Package "maxminddb" is already installed.
+Package "mo-file-reader" is already installed.
+Package "tracy" is already installed.
+Package "axmol" is already installed.
+Package "cpptrace" is already installed.
+Package "iscool-core" is already installed.
+Package "curl" is already installed.
+Configuring 'asan'.
+Building 'asan'.
+[0/1] Re-running CMake...
+-- Building benchmarks: ON
+-- Building tests: ON
+-- Profiling with Tracy: OFF
+-- Production build is OFF
+-- Building with FOSS software only: OFF
+-- Business server is 'http://localhost:4210'.
+-- Targeting Generic hardware: OFF
+-- Optimized debug: ON
+-- Using mold linker.
+-- Disabling LTO explicitly.
+-- CXX flags are: -fvisibility=hidden -fno-omit-frame-pointer -fmacro-prefix-map=/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/=./
+-- Axmol with Tracy: 
+-- AXSLCC_OUT_DIR=/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan/runtime/axslc
+-- AXSLCC_FIND_PROG_ROOT=
+-- AXSLCC_FRAG_SOURCE_FILE_EXTENSIONS=.frag;.fsh;.fs
+-- AXSLCC_VERT_SOURCE_FILE_EXTENSIONS=.vert;.vsh;.vs
+-- Found Zstd: /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/linux-asan/lib/libzstd.a
+-- libunwind: /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/.backroom/linux-asan/lib/libunwind.a
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan
+[1/41] Generating bim.pot
+[2/41] Generating de.po
+........... done.
+[3/41] Generating br.po
+............ done.
+[4/41] Generating es.po
+.............. done.
+[5/41] Generating en.po
+............ done.
+[6/41] Generating kab.po
+........... done.
+[7/41] Generating fr.po
+............. done.
+[8/41] Generating ko.po
+............ done.
+[9/41] Generating oc.po
+............ done.
+[10/41] Generating pt.po
+............... done.
+[11/41] Generating pt_BR.po
+............ done.
+[12/41] Generating ru.po
+............ done.
+[13/41] Generating ta.po
+............. done.
+[14/41] Generating tr.po
+............. done.
+[15/41] Generating uk.po
+............ done.
+[16/41] Generating zh_Hans.po
+............ done.
+[17/41] Generating ../generated/i18n/br.mo
+[18/41] Generating ../generated/i18n/de.mo
+[19/41] Generating ../generated/i18n/en.mo
+[20/41] Generating ../generated/i18n/es.mo
+[21/41] Generating ../generated/i18n/fr.mo
+[22/41] Generating ../generated/i18n/ko.mo
+[23/41] Generating ../generated/i18n/kab.mo
+[24/41] Generating ../generated/i18n/oc.mo
+[25/41] Generating ../generated/i18n/pt.mo
+[26/41] Generating ../generated/i18n/pt_BR.mo
+[27/41] Generating ../generated/i18n/ru.mo
+[28/41] Generating ../generated/i18n/ta.mo
+[29/41] Generating ../generated/i18n/tr.mo
+[30/41] Generating ../generated/i18n/uk.mo
+[31/41] Generating ../generated/i18n/zh_Hans.mo
+[32/41] Building CXX object modules/axmol/schedule/CMakeFiles/bim_axmol_schedule.dir/Unity/unity_0_cxx.cxx.o
+[33/41] Linking CXX static library modules/axmol/schedule/libbim_axmol_schedule.a
+[34/41] Building CXX object apps/linux/CMakeFiles/bim.dir/Unity/unity_0_cxx.cxx.o
+[35/41] Building CXX object modules/bim/app/CMakeFiles/bim_app.dir/Unity/unity_0_cxx.cxx.o
+[36/41] Linking CXX static library modules/bim/app/libbim_app.a
+[37/41] Linking CXX executable modules/bim/app/app-tests
+[38/41] Building CXX object apps/axmol/CMakeFiles/bim_axmol_app.dir/Unity/unity_0_cxx.cxx.o
+[39/41] Linking CXX static library apps/axmol/libbim_axmol_app.a
+[40/41] Linking CXX executable apps/linux/bim

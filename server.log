@@ -1,0 +1,27 @@
+[1m[I][0m[34m[server][0m Stack trace dumper is [31m'/__w/apk-to-ipa-lab/apk-to-ipa-lab/bim/build/linux/asan/apps/server/bim-stack-dump'[0m.
+[1m[I][0m[34m[server][0m Bim! 18 (dev).
+[1m[I][0m[34m[server][0m Business is http://localhost:4210.
+[1m[I][0m[34m[server][0m Running on port 23899.
+[1m[I][0m[34m[business_registration_service][0m Disabled.
+[1m[I][0m[34m[discord_publisher_service][0m Disabled.
+[1m[I][0m[34m[server][0m Server is up on port 23899.
+[1m[I][0m[34m[server][0m Protocol version is 14.
+[1m[I][0m[34m[authentication_service][0m Received authentication request from token 13539819955791338827.
+[1m[I][0m[34m[session_service][0m Attach session 1 to token 13539819955791338827, [1mid[0m=[34m[1m0,[0m [1mcountry_code[0m=[34m[1mUNK,[0m [1mcountry[0m=[34m[1m'Unknown',[0m [1msession_token[0m=[34m[1moffline.[0m
+[1m[I][0m[34m[authentication_service][0m Received hello from token 12823039072090996495.
+[1m[I][0m[34m[authentication_service][0m Received hello from token 7665679078904069559.
+[1m[I][0m[34m[random_game_encounter_service][0m Trying to add session 1 in existing encounter.
+[1m[I][0m[34m[matchmaking_service][0m Creating new encounter 1 on request of session 1.
+[1m[I][0m[34m[matchmaking_service][0m Refreshing encounter 1 with 1 players on request of session 1.
+[1m[I][0m[34m[matchmaking_service][0m Last message repeated 1 time(s).
+[1m[I][0m[34m[random_game_encounter_service][0m Accepted game. Session 1, encounter 1.
+[1m[I][0m[34m[game_service][0m Creating new game 1 for 2 players.
+[1m[I][0m[34m[matchmaking_service][0m Channel for encounter 1 is 1, seed 3315686128815646986, [1mfeatures[0m=[34m[1m0,[0m [1mbot[0m=[34m[1mtrue.[0m
+[1m[I][0m[34m[game_service][0m Channel 1 all players ready, session 1.
+[1m[I][0m[34m[game_service][0m Last message repeated 1 time(s).
+[1m[I][0m[34m[server][0m Overloaded. Tick took 27ms but should be under 10ms (270%).
+[1m[I][0m[34m[server][0m Stressed. Tick took 8ms of 10ms (80%).
+[1m[I][0m[34m[server][0m Last message repeated 1 time(s).
+[1m[I][0m[34m[game_service][0m Game over, [1mgame_id[0m=[34m[1m1,[0m [1mwinner_index[0m=[34m[1m1,[0m [1mwinner_session[0m=[34m[1m2147483648,[0m [1mticks[0m=[34m[1m236,[0m [1mduration[0m=[34m[1m4s,[0m [1mshort[0m=[34m[1mfalse.[0m
+[1m[I][0m[34m[server][0m Quit.
+Press Ctrl+C to exit.
