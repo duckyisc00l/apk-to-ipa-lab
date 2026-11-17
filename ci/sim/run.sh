@@ -6,6 +6,8 @@
 # Writes <out>/sim.md (launched? still running? crash?), <out>/sim-<n>s.png screenshots, <out>/sim-console.log,
 # and any crash report. Exit 0 only if the app is still running at the end.
 set -u
+# macOS may not have GNU timeout: fall back to perl's alarm (same "timeout SECONDS command..." usage)
+command -v timeout > /dev/null || timeout() { local s="$1"; shift; perl -e 'alarm shift; exec @ARGV' "$s" "$@"; }
 APP="$1"; OUT="$2"; WAIT="${3:-25}"; STEPS="${4:-}"
 mkdir -p "$OUT"; OUT=$(cd "$OUT" && pwd)   # absolute: the simulator opens --stdout paths from its own folder
 BID=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$APP/Info.plist")
