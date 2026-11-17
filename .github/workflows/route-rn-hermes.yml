@@ -105,7 +105,11 @@ jobs:
           # RN <0.66 builds glog for 32-bit armv7, which Xcode 14+ can't target: switch it to arm64
           g=../node_modules/react-native/scripts/ios-configure-glog.sh; [ -f "$g" ] && sed -i '' 's/armv7/arm64/g' "$g" && echo "glog script patched to arm64" | tee -a ../../out/ipa.md
           gem list cocoapods | head -1 | tee -a ../../out/ipa.md
-          (bundle install 2>/dev/null && bundle exec pod install || pod install) 2>&1 | tail -15 | tee -a ../../out/ipa.md
+          # RN 0.71-0.72 codegen writes its podspec with spec.to_json, which the old ActiveSupport + new json gem
+          # reject ("unknown keyword: quirks_mode"): plain JSON.generate does the same job
+          cg=../node_modules/react-native/scripts/cocoapods/codegen_utils.rb
+          [ -f "$cg" ] && sed -i '' 's/f\.write(spec\.to_json)/f.write(JSON.generate(spec))/' "$cg" && grep -c "JSON.generate(spec)" "$cg" | sed 's/^/codegen to_json patched: /' | tee -a ../../out/ipa.md
+          (bundle install 2>/dev/null && bundle exec pod install || pod install) 2>&1 | grep -vE '^\s*$' | tail -40 | tee -a ../../out/ipa.md
       - name: Launch the APK's own app name
         run: |
           cd Host/ios
