@@ -1,0 +1,35 @@
+name: unity-uitk-probe
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { description: "Game repo with an APK in its releases", default: "UltraStar-Deluxe/Play" }
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the APK and detect
+        run: |
+          echo "${{ inputs.repo }}" > /tmp/one.txt
+          CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py
+          python3 ci/detect.py dl work
+      - name: Read the UI Toolkit data with UnityPy
+        continue-on-error: true
+        run: |
+          pip install -q UnityPy TypeTreeGeneratorAPI 2>&1 | tail -2
+          mkdir -p out; pip show UnityPy TypeTreeGeneratorAPI | grep -E 'Name|Version' > out/versions.txt
+          managed=$(find work -type d -name Managed | head -1); data=$(dirname "$managed")
+          ver=$(python3 -c "import json;print(json.load(open('out/detect.json'))[0]['unity_version'])")
+          echo "data=$data managed=$managed ver=$ver" | tee out/probe-paths.txt
+          python3 ci/unity/uitk_probe.py "$data" "$managed" "$ver" out > out/probe.log 2>&1; tail -5 out/probe.log
+      - name: Publish summary to branch r-uitk
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.json out/*.txt out/*.log /tmp/r/ 2>/dev/null || true
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-uitk && git rm -rfq . && rm -rf dl work ci out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "uitk probe" && git push -f origin r-uitk
