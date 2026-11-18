@@ -17,9 +17,11 @@ tap 42% 82%
 wait 6
 shot 3-game
 ui game
-# e2-e4 if the board fills the width under the top bar (squares 12.5% wide)
-tap 56% 60%
+# e2-e4: the board fills the width, rank 2 at 50% down, rank 4 at 38% (e file at 56% across); the bot answers
+tap 56% 50%
 wait 1
-tap 56% 49%
-wait 5
-shot 4-e4
+shot 4-e2-picked
+tap 56% 38%
+wait 6
+shot 5-e4
+expect Undo
