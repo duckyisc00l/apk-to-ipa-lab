@@ -1,0 +1,60 @@
+Godot version: 4.3.stable
+Mac runner: macos-15-intel
+GDRE: https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.4/GDRE_tools-v2.7.4-linux.zip
+gdre exit 0
+Recovery started
+input_file: ["game.apk"]
+Input files: ["/home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/game.apk"]
+GDRE Tools v2.7.4
+Ubuntu 26.04.1 LTS 26.04, headless
+Opening file: ~/work/apk-to-ipa-lab/apk-to-ipa-lab/game.apk
+                                                                      Loading import files... [                              ] 0%                                                                                           Loading import files... [===================           ] 65%                                                                                          Loading import files... [===================           ] 65%                                                                                          Loaded 26 imported files
+Detected Engine Version: 4.3.0.stable
+Detected Bytecode Revision: 4.3.0-stable (77af6ca)
+Successfully loaded PCK!
+Version: 4.3.0.stable
+                                                                      Extracting files... [                              ] 0%                                                                                               Extracting files... [====                          ] 15%                                                                                              Extracting files... [====                          ] 15%                                                                                              Extracted 59 files, no errors detected!
+                                                                      Exporting resources... [                              ] 0%                                                                                            Exporting resources... [                              ] 0%                                                                                            Exporting resources... [                              ] 0%                                                                                            Exporting resources... [                              ] 0%                                                                                            Exporting resources... [                              ] 0%                                                                                            Exporting resources... [========                      ] 26%                                                                                           Exporting resources... [========                      ] 26%                                                                                           Exporting resources... [=====================         ] 73%                                                                                           Exporting resources... [=====================         ] 73%                                                                                           Exporting resources... [============================  ] 96%                                                                                           Exporting resources... [============================  ] 96%                                                                                           Exporting resources... [============================  ] 96%                                                                                           Exporting resources... [                              ] 96%                                                                                           Saved project config.
+                                                                      Reading folder /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj structure... [                              ] 0%                                                                      Exporting resources... [                              ] 96%                                                                                           Reading folder /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj structure... [                              ] 0%                                                                      Exporting resources... [                              ] 96%                                                                                           Reading folder /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj structure... [                              ] 400%                                                                      Exporting resources... [                              ] 96%                                                                                           Reading folder /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj structure... [                              ] 400%                                                                      Exporting resources... [                              ] 96%                                                                                           Reading folder /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj structure... [                              ] 400%                                                                      Exporting resources... [                              ] 96%                                                                                           Reading folder /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj structure... [                              ] 400%                                                                      Exporting resources... [                              ] 96%                                                                                           Exporting resources... [                              ] 96%                                                                                           Exporting resources... [                              ] 96%                                                                                           Generating filesystem cache... [                              ] 0%                                                                                    Exporting resources... [                              ] 96%                                                                                           
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     5
+Scripts not decompiled:                 0
+Imported resources for export session:  26
+Successfully converted:                 26
+Lossy:                                  0
+Rewrote metadata:                       19
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.3.0.stable to edit the project.
+
+*******************************************************************************
+
+Recovery finished in 00m00s
+Log file written to: /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/gdre_export.log
+Please include this file when reporting issues!
+files: 100; scripts: 5; scenes: 2
+_cl_
+assets
+dexopt
+gdre_export.log
+icon.png
+icon.png.import
+project.godot
+scenes
+scripts
+config/name="Pixel Fist Boxing"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3")
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+C# scripts: 0; GDExtensions: 0

@@ -1,0 +1,188 @@
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+export: begin: Exporting for iOS (Project Files Only) steps: 2
+	export: step 0: Making .pck
+savepack: begin: Packing steps: 102
+	savepack: step 2: Storing File: res://.godot/imported/bell.wav-c9e8b15c72938ff0cc4247d900f73a2f.sample
+	savepack: step 2: Storing File: res://assets/audio/bell.wav.import
+	savepack: step 5: Storing File: res://.godot/imported/block.wav-5527ba6f44185bcf4629256ee18a99e1.sample
+	savepack: step 5: Storing File: res://assets/audio/block.wav.import
+	savepack: step 9: Storing File: res://.godot/imported/crowd.wav-d9618efa49dc97956a8f1058e65ec8ed.sample
+	savepack: step 9: Storing File: res://assets/audio/crowd.wav.import
+	savepack: step 13: Storing File: res://.godot/imported/hit.wav-96dc477cdf4a42f381370dba6e3f75ce.sample
+	savepack: step 13: Storing File: res://assets/audio/hit.wav.import
+	savepack: step 16: Storing File: res://.godot/imported/jab.wav-2ff608b0fd53c50d99f1a569bec2b45a.sample
+	savepack: step 16: Storing File: res://assets/audio/jab.wav.import
+	savepack: step 20: Storing File: res://.godot/imported/ko.wav-8efbfb5450f08ceecc308d79efe9c9dd.sample
+	savepack: step 20: Storing File: res://assets/audio/ko.wav.import
+	savepack: step 24: Storing File: res://.godot/imported/lose.wav-f2031eeaf36f7f1c79209a028e6ed60e.sample
+	savepack: step 24: Storing File: res://assets/audio/lose.wav.import
+	savepack: step 27: Storing File: res://.godot/imported/select.wav-aed1a691d68aeb5e967d16e0e58699b8.sample
+	savepack: step 27: Storing File: res://assets/audio/select.wav.import
+	savepack: step 31: Storing File: res://.godot/imported/uppercut.wav-d2391bf1a4e6e8513313c84d90f13bd2.sample
+	savepack: step 31: Storing File: res://assets/audio/uppercut.wav.import
+	savepack: step 35: Storing File: res://.godot/imported/win.wav-ed9b591a574a24bf30e29686ed78ad6a.sample
+	savepack: step 35: Storing File: res://assets/audio/win.wav.import
+	savepack: step 39: Storing File: res://.godot/imported/icon_192.png-befc4ab321ce5e744fd2de9667ab34f2.ctex
+	savepack: step 39: Storing File: res://assets/icons/icon_192.png.import
+	savepack: step 42: Storing File: res://.godot/imported/icon_512.png-e4812bf476a6405a5d7a2a78d1daa568.ctex
+	savepack: step 42: Storing File: res://assets/icons/icon_512.png.import
+	savepack: step 46: Storing File: res://.godot/imported/icon_bg_432.png-c90becb280d6ac37ccd73e41a481e329.ctex
+	savepack: step 46: Storing File: res://assets/icons/icon_bg_432.png.import
+	savepack: step 50: Storing File: res://.godot/imported/icon_fg_432.png-8b79fb1a15a71a6f606aa1fba65218c5.ctex
+	savepack: step 50: Storing File: res://assets/icons/icon_fg_432.png.import
+	savepack: step 53: Storing File: res://.godot/imported/boxer_enemy.png-10e24926a39dab2fe2df0575bd086b1c.ctex
+	savepack: step 53: Storing File: res://assets/sprites/boxer_enemy.png.import
+	savepack: step 57: Storing File: res://.godot/imported/boxer_player.png-38eb8b0260c50254a46aec2bad160aaf.ctex
+	savepack: step 57: Storing File: res://assets/sprites/boxer_player.png.import
+	savepack: step 61: Storing File: res://.godot/imported/logo.png-ec0d5908606a38766100cfc93f0dfde6.ctex
+	savepack: step 61: Storing File: res://assets/sprites/logo.png.import
+	savepack: step 64: Storing File: res://.godot/imported/ring_bg.png-f3f93eed03e7b9ad703bd6a87e235db6.ctex
+	savepack: step 64: Storing File: res://assets/sprites/ring_bg.png.import
+	savepack: step 68: Storing File: res://.godot/exported/133200997/export-118d3aede82a4524643d65e32c4588f8-fight.scn
+	savepack: step 72: Storing File: res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+	savepack: step 76: Storing File: res://scripts/boxer.gdc
+	savepack: step 79: Storing File: res://scripts/fight.gdc
+	savepack: step 83: Storing File: res://scripts/game_state.gdc
+	savepack: step 87: Storing File: res://scripts/main_menu.gdc
+	savepack: step 90: Storing File: res://scripts/sfx.gdc
+	savepack: step 94: Storing File: res://.godot/imported/_ios_icon_1024.png-f8b0e58d11e96f7854f53ea1143ea404.ctex
+	savepack: step 94: Storing File: res://_ios_icon_1024.png.import
+	savepack: step 98: Storing File: res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex
+	savepack: step 98: Storing File: res://icon.png.import
+	savepack: step 98: Storing File: res://scenes/fight.tscn.remap
+	savepack: step 98: Storing File: res://scenes/main_menu.tscn.remap
+	savepack: step 98: Storing File: res://scripts/boxer.gd.remap
+	savepack: step 98: Storing File: res://scripts/fight.gd.remap
+	savepack: step 98: Storing File: res://scripts/game_state.gd.remap
+	savepack: step 98: Storing File: res://scripts/main_menu.gd.remap
+	savepack: step 98: Storing File: res://scripts/sfx.gd.remap
+	savepack: step 98: Storing File: res://.godot/global_script_class_cache.cfg
+	savepack: step 98: Storing File: res://icon.png
+	savepack: step 98: Storing File: res://.godot/uid_cache.bin
+	savepack: step 98: Storing File: res://project.binary
+savepack: end
+	export: step 1: Extracting and configuring Xcode project
+Static framework: libgodot.ios.release.xcframework
+Unzipping...
+READ: data.pck
+READ: godot_ios/
+READ: godot_ios/Images.xcassets/
+READ: godot_ios/Images.xcassets/SplashImage.imageset/
+READ: godot_ios/Images.xcassets/SplashImage.imageset/Contents.json
+ADDING: PixelFist/Images.xcassets/SplashImage.imageset/Contents.json size: 343
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist/Images.xcassets/SplashImage.imageset
+READ: godot_ios/Images.xcassets/SplashImage.imageset/splash@2x.png
+ADDING: PixelFist/Images.xcassets/SplashImage.imageset/splash@2x.png size: 14779
+READ: godot_ios/Images.xcassets/SplashImage.imageset/splash@3x.png
+ADDING: PixelFist/Images.xcassets/SplashImage.imageset/splash@3x.png size: 14779
+READ: godot_ios/dylibs/
+READ: godot_ios/dylibs/empty
+ADDING: PixelFist/dylibs/empty size: 42
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist/dylibs
+READ: godot_ios/en.lproj/
+READ: godot_ios/en.lproj/InfoPlist.strings
+ADDING: PixelFist/en.lproj/InfoPlist.strings size: 44
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist/en.lproj
+READ: godot_ios/Launch Screen.storyboard
+ADDING: PixelFist/Launch Screen.storyboard size: 3022
+READ: godot_ios/dummy.cpp
+ADDING: PixelFist/dummy.cpp size: 2449
+READ: godot_ios/dummy.h
+ADDING: PixelFist/dummy.h size: 2271
+READ: godot_ios/dummy.swift
+ADDING: PixelFist/dummy.swift size: 2252
+READ: godot_ios/export_options.plist
+ADDING: PixelFist/export_options.plist size: 472
+READ: godot_ios/godot_ios-Info.plist
+ADDING: PixelFist/PixelFist-Info.plist size: 1816
+READ: godot_ios/godot_ios.entitlements
+ADDING: PixelFist/PixelFist.entitlements size: 190
+READ: godot_ios.xcodeproj/
+READ: godot_ios.xcodeproj/project.xcworkspace/
+READ: godot_ios.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+ADDING: PixelFist.xcodeproj/project.xcworkspace/contents.xcworkspacedata size: 155
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist.xcodeproj/project.xcworkspace
+READ: godot_ios.xcodeproj/xcshareddata/
+READ: godot_ios.xcodeproj/xcshareddata/xcschemes/
+READ: godot_ios.xcodeproj/xcshareddata/xcschemes/godot_ios.xcscheme
+ADDING: PixelFist.xcodeproj/xcshareddata/xcschemes/PixelFist.xcscheme size: 3456
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist.xcodeproj/xcshareddata/xcschemes
+READ: godot_ios.xcodeproj/project.pbxproj
+ADDING: PixelFist.xcodeproj/project.pbxproj size: 15382
+READ: libgodot.ios.debug.xcframework/
+READ: libgodot.ios.debug.xcframework/Info.plist
+READ: libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/
+READ: libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/empty
+READ: libgodot.ios.debug.xcframework/ios-arm64_x86_64-simulator/libgodot.a
+READ: libgodot.ios.debug.xcframework/ios-arm64/
+READ: libgodot.ios.debug.xcframework/ios-arm64/empty
+READ: libgodot.ios.debug.xcframework/ios-arm64/libgodot.a
+READ: libgodot.ios.release.xcframework/
+READ: libgodot.ios.release.xcframework/Info.plist
+ADDING: PixelFist.xcframework/Info.plist size: 1028
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist.xcframework
+READ: libgodot.ios.release.xcframework/ios-arm64/
+READ: libgodot.ios.release.xcframework/ios-arm64/empty
+READ: libgodot.ios.release.xcframework/ios-arm64/libgodot.a
+ADDING: PixelFist.xcframework/ios-arm64/libgodot.a size: 141376624
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist.xcframework/ios-arm64
+READ: libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/
+READ: libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/empty
+READ: libgodot.ios.release.xcframework/ios-arm64_x86_64-simulator/libgodot.a
+ADDING: PixelFist.xcframework/ios-arm64_x86_64-simulator/libgodot.a size: 147205288
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/PixelFist.xcframework/ios-arm64_x86_64-simulator
+READ: MoltenVK.xcframework/
+READ: MoltenVK.xcframework/ios-arm64_x86_64-maccatalyst/
+READ: MoltenVK.xcframework/ios-arm64_x86_64-maccatalyst/libMoltenVK.a
+ADDING: MoltenVK.xcframework/ios-arm64_x86_64-maccatalyst/libMoltenVK.a size: 20366392
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/MoltenVK.xcframework/ios-arm64_x86_64-maccatalyst
+READ: MoltenVK.xcframework/Info.plist
+ADDING: MoltenVK.xcframework/Info.plist size: 2834
+READ: MoltenVK.xcframework/ios-arm64/
+READ: MoltenVK.xcframework/ios-arm64/libMoltenVK.a
+ADDING: MoltenVK.xcframework/ios-arm64/libMoltenVK.a size: 9611272
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/MoltenVK.xcframework/ios-arm64
+READ: MoltenVK.xcframework/ios-arm64_x86_64-simulator/
+READ: MoltenVK.xcframework/ios-arm64_x86_64-simulator/libMoltenVK.a
+ADDING: MoltenVK.xcframework/ios-arm64_x86_64-simulator/libMoltenVK.a size: 20264336
+Creating /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/export/MoltenVK.xcframework/ios-arm64_x86_64-simulator
+READ: PrivacyInfo.xcprivacy
+ADDING: PrivacyInfo.xcprivacy size: 990
+Export: ARM64 simulator library, generating from device library.
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/iphone_120x120): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (120, 120).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/iphone_120x120): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (120, 120).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/iphone_180x180): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (180, 180).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/ipad_76x76): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (76, 76).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/ipad_152x152): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (152, 152).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/ipad_167x167): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (167, 167).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/spotlight_40x40): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (40, 40).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/spotlight_80x80): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (80, 80).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/spotlight_80x80): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (80, 80).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/settings_58x58): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (58, 58).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/settings_58x58): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (58, 58).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/settings_87x87): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (87, 87).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/notification_40x40): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (40, 40).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/notification_40x40): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (40, 40).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+[1;33mWARNING:[0;93m Export Icons: Icon (icons/notification_60x60): 'res://_ios_icon_1024.png' has incorrect size (1024, 1024) and was automatically resized to (60, 60).
+[0;90m     at: add_message (editor/export/editor_export_platform.h:179)[0m
+Exporting launch screen storyboard
+Exporting additional assets
+	export: step 2: Code-signing dylibs
+export: end
+[1;33mWARNING:[0;93m Project export for preset "iOS" completed with warnings.
+[0;90m     at: _fs_changed (editor/editor_node.cpp:1033)[0m

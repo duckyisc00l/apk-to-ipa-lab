@@ -1,0 +1,300 @@
+2026-11-18 13:06:36.184 Df PixelFist[23679:10854] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000268cba0> delivering update to host (0 plugins)
+2026-11-18 13:06:36.184 A  PixelFist[23679:10854] (ExtensionFoundation) discovering extensions
+2026-11-18 13:06:36.184 Df PixelFist[23679:10854] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit-UI";
+}, extensionSet {(
+)}
+2026-11-18 13:06:36.184 Df PixelFist[23679:10854] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000268cba0> installing watchers for continuous discovery
+2026-11-18 13:06:36.185 A  PixelFist[23679:10805] (PlugInKit) continuous-discovery
+2026-11-18 13:06:36.185 Df PixelFist[23679:10805] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000268cb40> created discovery driver
+2026-11-18 13:06:36.185 Df PixelFist[23679:10805] [com.apple.PlugInKit:discovery] [d 8E7F0527-D9AA-4B96-BA74-F813D7D88853] <PKHost:0x600001750200> Beginning discovery for flags: 0, point: com.apple.AudioUnit-Speech
+2026-11-18 13:06:36.185 Df PixelFist[23679:1084a] [com.apple.launchservices:progress] Establishing xpc connection to lsd
+2026-11-18 13:06:36.187 Df PixelFist[23679:1084a] [com.apple.xpc:connection] [0x112672140] activating connection: mach=true listener=false peer=false name=com.apple.lsd.xpc
+2026-11-18 13:06:36.190 Df PixelFist[23679:1084d] [com.apple.launchservices:progress] Received LSWorkspaceObserverPing, xpc connection established
+2026-11-18 13:06:36.196 Df PixelFist[23679:1084d] [com.apple.PlugInKit:discovery] [d 8E7F0527-D9AA-4B96-BA74-F813D7D88853] <PKHost:0x600001750200> Completed discovery. Final # of matches: 4
+2026-11-18 13:06:36.197 Df PixelFist[23679:1084d] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000268cb40> delivering update to host (4 plugins)
+2026-11-18 13:06:36.197 A  PixelFist[23679:1084d] (ExtensionFoundation) discovering extensions
+2026-11-18 13:06:36.204 Df PixelFist[23679:1084d] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit-Speech";
+}, extensionSet {(
+    <EXConcreteExtension: 0x600003901ee0> {id = com.apple.speech.MacinTalkFramework.MacinTalkAUSP},
+    <EXConcreteExtension: 0x6000039bb330> {id = com.apple.ax.KonaTTSSupport.KonaSynthesizer},
+    <EXConcreteExtension: 0x60000390fc20> {id = com.apple.ax.MauiTTSSupport.MauiAUSP},
+    <EXConcreteExtension: 0x6000039bb260> {id = com.apple.texttospeech.SiriAUSP}
+)}
+2026-11-18 13:06:36.205 Df PixelFist[23679:1084d] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000268cb40> installing watchers for continuous discovery
+2026-11-18 13:06:36.310 Df PixelFist[23679:10805] [com.apple.coreaudio:aurioc]            AURemoteIO.cpp:1130  AURemoteIO@0x1130d5440: set kAudioOutputUnitProperty_OutputChannelLayout.  Layout = tag=0x0, 0 channel descriptions [], err = 0
+2026-11-18 13:06:36.314 Df PixelFist[23679:10854] [com.apple.coreaudio:ddagg]        AggregateDevice.mm:887   Creating DefaultDeviceAggregate
+2026-11-18 13:06:36.473 Df PixelFist[23679:10854] [com.apple.coreaudio:ddagg]        AggregateDevice.mm:688   Built valid aggregate 96
+2026-11-18 13:06:36.527 Df PixelFist[23679:10854] [com.apple.coreaudio:aqme]           AQMixEngine.cpp:733   AQMEDevice (0x1125067c8) has neither a defaultOutStreamClient nor a defaultInStreamClient
+2026-11-18 13:06:36.530 Df PixelFist[23679:10854] [com.apple.coreaudio:EnhanceDialogueProcessor] EnhanceDialogueProcessor.cpp:226   EnhanceDialogueProcessor() - Product does not support Enhance Dialogue
+2026-11-18 13:06:36.530 Df PixelFist[23679:10854] [com.apple.coreaudio:EnhanceDialogueProcessor] EnhanceDialogueProcessor.cpp:226   EnhanceDialogueProcessor() - Product does not support Enhance Dialogue
+2026-11-18 13:06:36.532 Df PixelFist[23679:10854] [com.apple.coreaudio:AudioConverter]        ACv2Workarounds.mm:51    com.duckyisc00l.pixelfist: fix84702776_86723525_86479548_89800354_SinglePacketDesc: false
+2026-11-18 13:06:36.537 Df PixelFist[23679:10854] [com.apple.audio.caulk:alloc] Registered notify signal com.apple.caulk.alloc.audiodump (0)
+2026-11-18 13:06:36.539 Df PixelFist[23679:10854] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000ce8210, from  2 ch,  44100 Hz, Float32, deinterleaved to  2 ch,  44100 Hz, Float32, interleaved
+2026-11-18 13:06:36.542 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]              AQIONode.cpp:693   client <RemoteIOClient@0x11292bc00(@0x11292be18); output; [23679]> is NOT Now Playing eligible
+2026-11-18 13:06:36.543 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1872  rio@0x11292be18 spatialization disabled.  layout = tag=0x0, 0 channel descriptions [], format =  2 ch,  44100 Hz, Int16, interleaved
+2026-11-18 13:06:36.567 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]          RemoteIOServer.h:101   rio@0x11292bc00 Got output layout from io node or spatialized client: tag=0x0, 2 channel descriptions [L, R]
+2026-11-18 13:06:36.568 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1581  SetLoudnessFromLM(): ->
+2026-11-18 13:06:36.569 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1620  SetLoudnessFromLM(): is CoreAudioServices/LoudnessManager enabled? yes
+2026-11-18 13:06:36.569 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1623  SetLoudnessFromLM(): is CoreAudioServices/LoudnessManagerV2 enabled? yes
+2026-11-18 13:06:36.569 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1626  SetLoudnessFromLM(): is CoreAudioServices/lm-disable-hardware-check on? no
+2026-11-18 13:06:36.571 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1629  SetLoudnessFromLM(): is hardware supported? no
+2026-11-18 13:06:36.571 Df PixelFist[23679:1084d] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1641  SetLoudnessFromLM(): hardware not supported, Loudness Manager disabled
+2026-11-18 13:06:36.572 Df PixelFist[23679:10805] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000d056b0, from  2 ch,  44100 Hz, Int16, interleaved to  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-18 13:06:36.573 Df PixelFist[23679:10805] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1317  AudioConverter -> 0x600000d056b0: The in-process GetProperty call returned 1886547824 for property 1936876385 with size 4.
+2026-11-18 13:06:36.573 Df PixelFist[23679:10805] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1317  AudioConverter -> 0x600000d056b0: The in-process GetProperty call returned 1886547824 for property 1936876401 with size 4.
+2026-11-18 13:06:36.573 Df PixelFist[23679:10805] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1317  AudioConverter -> 0x600000d056b0: The in-process GetProperty call returned 1886547824 for property 1886546285 with size 8.
+2026-11-18 13:06:36.573 Df PixelFist[23679:1084d] [com.apple.coreaudio:SpatialMgr] SpatializationManager.cpp:1459  Could not load preset file, invalid model/product name!
+2026-11-18 13:06:36.573 Df PixelFist[23679:10907] [com.apple.coreaudio:AudioConverter] AudioConverter -> 0x600000d056b0: The in-process SetProperty call returned 1886547824 for property 1886547309 with size 4.
+2026-11-18 13:06:36.574 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]        MEMixerChannel.cpp:3254  2-channel audiovisual content is NOT eligible for spatialization
+2026-11-18 13:06:36.575 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]  MEDeviceStreamClient.cpp:245   AQME Default-InputOutput: client starting: <CA_UISoundClientBase@0x112744e00>; running count now 1
+2026-11-18 13:06:36.576 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2849  FetchAndLogFrameSize starting IO deviceID=96, frame size is 512
+2026-11-18 13:06:36.581 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2655  aqmeio@0x1138b5618: set input stream usage to 0 on device 96, err = 0
+2026-11-18 13:06:37.232 Df PixelFist[23679:1084d] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2818  aqmeio@0x1138b5618, device 96 (iOSSimulatorAudioDevice-23679-0), AudioDeviceStart (err 0)
+2026-11-18 13:06:37.284 Df PixelFist[23679:10805] [com.apple.coreaudio:aurioc]            AURemoteIO.cpp:1666  Starting AURemoteIO(0x1130d5440)
+output client:  2 ch,  44100 Hz, Int16, interleaved, output HW:  2 ch,  44100 Hz, Float32, deinterleaved
+input client:   2 ch,      0 Hz, Int16, interleaved, input HW:   2 ch,      0 Hz, Int16, interleaved
+2026-11-18 13:06:37.312 Df PixelFist[23679:10853] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:1079  fetched workgroup 0x600001758300
+2026-11-18 13:06:37.354 Df PixelFist[23679:10853] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:30    AUOOPWorkgroupManager: AddRemoteIOWorkgroup called with token 96989185.
+2026-11-18 13:06:37.354 Df PixelFist[23679:10853] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:66    AUOOPWorkgroupManager: mutating workgroups.
+2026-11-18 13:06:37.355 Df PixelFist[23679:10805] [com.apple.coreaudio:aurioc]            AURemoteIO.cpp:1727  workgroup port 0x4707
+2026-11-18 13:06:37.355 Df PixelFist[23679:1094e] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:30    AUOOPWorkgroupManager: AddRemoteIOWorkgroup called with token 96989184.
+2026-11-18 13:06:37.355 Df PixelFist[23679:1094e] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:66    AUOOPWorkgroupManager: mutating workgroups.
+2026-11-18 13:06:37.357 Df PixelFist[23679:10854] [com.apple.coreaudio:aqme]              AQIONode.cpp:693   client <RemoteIOClient@0x11292bc00(@0x11292be18); output; [23679]> is NOT Now Playing eligible
+2026-11-18 13:06:37.361 Df PixelFist[23679:10854] [com.apple.coreaudio:aqme]  MEDeviceStreamClient.cpp:245   AQME Default-InputOutput: client starting: <RemoteIOClient@0x11292bc00(@0x11292be18); output; [23679]>; running count now 2
+2026-11-18 13:06:37.878 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:38.550 E  PixelFist[23679:10805] ERROR: Mouse is not supported by this display server.
+at: mouse_get_position (servers/display_server.cpp:497)
+2026-11-18 13:06:38.852 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:39.029 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:39.304 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:39.353 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:39.744 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:42.122 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:42.422 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:42.461 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:45.029 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:45.545 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:45.583 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:45.722 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:46.898 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:47.217 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:58.079 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:58.378 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:58.461 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:58.660 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:58.800 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:58.843 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:59.558 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:59.653 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:59.712 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:59.792 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:06:59.948 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:01.055 Df PixelFist[23679:1084c] (libAudioDSP.dylib) cannot migrate AudioUnit assets for current process
+2026-11-18 13:07:01.338 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:01.339 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:01.441 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:06.669 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:06.818 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:07.074 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:07.162 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:07.442 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:07.730 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:07.793 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:08.381 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:08.436 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:08.514 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:08.559 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:10.175 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:11.757 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:17.496 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:25.908 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:32.451 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:32.501 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:32.794 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:07:32.847 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:07.124 Df PixelFist[23679:10805] [com.apple.app_launch_measurement:General] Bailing responsive launch check as reached maximum count
+2026-11-18 13:08:07.124 Df PixelFist[23679:10805] [com.apple.network:activity] <nw_activity 50:1 [6CB5DB8A-BD32-4246-84D0-DD69434B58D3] (global parent) (reporting strategy default) complete (reason failure)> complete with reason 3 (failure), duration 96796ms
+2026-11-18 13:08:07.126 Df PixelFist[23679:10805] [com.apple.network:activity] <nw_activity 50:2 [A2ECE9DF-AE5E-434C-9D0A-01D337193670] (reporting strategy default) complete (reason failure)> complete with reason 3 (failure), duration 96798ms
+2026-11-18 13:08:07.126 Df PixelFist[23679:10805] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [6CB5DB8A-BD32-4246-84D0-DD69434B58D3] (global parent) (reporting strategy default) complete (reason failure)>
+2026-11-18 13:08:07.126 Df PixelFist[23679:10805] [com.apple.network:activity] Unset the global parent activity
+2026-11-18 13:08:07.346 Df PixelFist[23679:10805] [com.apple.app_launch_measurement:General] Bailing responsive launch check as reached maximum count
+2026-11-18 13:08:10.054 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:10.220 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:10.408 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:10.523 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:11.283 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.057 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.114 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.566 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.567 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.567 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.567 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.718 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.718 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.767 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:16.993 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:17.185 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:17.390 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:26.456 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:26.509 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:26.706 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:32.547 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:33.221 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:36.247 A  PixelFist[23679:1262d] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-18 13:08:39.458 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:39.682 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:39.927 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:42.722 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:43.028 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:49.973 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:50.010 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:50.183 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:50.808 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:54.685 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:54.786 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:55.262 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:55.512 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:08:57.728 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:00.118 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:20.530 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:21.402 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:36.090 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:36.240 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:40.889 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:09:52.883 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:09:52.884 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.886 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.886 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.889 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.889 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.890 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.891 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:09:52.891 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.891 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.891 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.892 Df PixelFist[23679:10805] [com.apple.UIKit:SystemGestureGate] <0x11260fd30> Gesture: Failed to receive system gesture state notification before next touch
+2026-11-18 13:09:52.892 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.893 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.893 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.894 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:09:52.894 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.894 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.894 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.895 Df PixelFist[23679:10805] [com.apple.UIKit:SystemGestureGate] <0x11260fd30> Gesture: Failed to receive system gesture state notification before next touch
+2026-11-18 13:09:52.896 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.896 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.896 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.897 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:09:52.897 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.897 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.897 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.897 Df PixelFist[23679:10805] [com.apple.UIKit:SystemGestureGate] <0x11260fd30> Gesture: Failed to receive system gesture state notification before next touch
+2026-11-18 13:09:52.898 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:52.898 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:52.899 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:52.952 E  PixelFist[23679:10805] ERROR: Condition "!is_inside_tree()" is true. Returning: false
+at: can_process (scene/main/node.cpp:835)
+2026-11-18 13:09:54.373 E  PixelFist[23679:10805] [com.apple.UIKit:SystemGestureGate] <0x11260fd30> Gesture: System gesture gate timed out.
+2026-11-18 13:09:54.374 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:09:54.374 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:54.374 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:54.374 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:54.375 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:09:54.375 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:09:54.375 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:09:55.774 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:10:01.372 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:10:01.372 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:01.372 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:01.372 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:02.164 E  PixelFist[23679:10805] [com.apple.UIKit:SystemGestureGate] <0x11260fd30> Gesture: System gesture gate timed out.
+2026-11-18 13:10:03.208 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:03.209 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:03.209 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:03.209 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:10:04.715 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:10:04.715 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:04.715 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:04.715 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:04.799 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:04.799 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:04.799 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:04.799 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:10:05.690 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:06.034 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:06.475 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:06.523 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:07.054 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:10:07.054 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:07.054 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:07.054 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:07.055 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:07.055 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:07.055 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:07.056 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:10:09.780 Df PixelFist[23679:10805] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.pixelfist-default
+2026-11-18 13:10:09.781 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:09.781 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:09.781 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:09.783 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:10:09.783 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:10:09.783 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x11270dd10>; contextId: 0x4BD13094
+2026-11-18 13:10:09.784 Df PixelFist[23679:10805] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d483c0; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:10:10.561 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:12.254 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:12.373 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:14.110 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:14.786 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:15.040 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:15.327 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:15.485 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:15.854 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:15.962 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:16.735 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:17.491 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:20.364 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:21.715 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:21.981 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:28.863 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:37.026 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:37.089 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:10:43.513 Df PixelFist[23679:10805] [com.apple.BackBoard:Display] [FBSDisplaySource 1-1] silently connecting raw configuration: <FBSDisplayConfiguration: 0x600003d3bcf0; Main; mode: "375x667@2x 60Hz p3 SDR">
+2026-11-18 13:11:03.312 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:15.267 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:15.461 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:20.573 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:20.864 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:21.130 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:21.224 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:21.340 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:24.445 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:24.556 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:24.726 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:26.114 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:26.148 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:26.443 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:26.568 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:39.143 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:39.150 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:48.871 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:48.955 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:49.044 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:49.241 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:49.385 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:11:49.562 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:00.243 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:00.460 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:13.839 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:13.930 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:14.272 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:21.185 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:23.730 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:24.656 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:24.972 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:24.972 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:24.972 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:12:24.972 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:13:22.947 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:13:53.300 E  PixelFist[23679:10876] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
