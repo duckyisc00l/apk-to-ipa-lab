@@ -93,6 +93,11 @@ jobs:
           grep -n 'iconv_t)_iconv' proj/frameworks/cocos2d-x/cocos/2d/CCFontAtlas.cpp | tee -a out/cocos.md
           # the template and libsimulator set VALID_ARCHS to arm64/armv7: a simulator build then compiles nothing and "succeeds" with no executable
           find proj -name project.pbxproj -exec sed -i '' -E '/VALID_ARCHS = /d' {} +
+          # Release builds drop CCLOG, so Lua load errors are silent: print them with cocos2d::log (stdout) instead
+          M=proj/frameworks/cocos2d-x/cocos/scripting/lua-bindings/manual
+          sed -i '' 's/CCLOG(/cocos2d::log(/g' $M/CCLuaStack.cpp $M/Cocos2dxLuaLoader.cpp
+          sed -i '' 's/    if (engine->executeScriptFile("main.lua"))/    cocos2d::log("lab: running main.lua"); if (engine->executeScriptFile("main.lua"))/' proj/frameworks/runtime-src/Classes/AppDelegate.cpp
+          grep -c 'lab: running main.lua' proj/frameworks/runtime-src/Classes/AppDelegate.cpp | sed 's/^/- main.lua log line added: /' | tee -a out/cocos.md
           # Xcode 16 refuses iOS 6-8 deployment targets
           find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
           xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
