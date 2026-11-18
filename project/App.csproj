@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-ios</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <AssemblyName>MiScaleExporter.MAUI</AssemblyName>
+    <RootNamespace></RootNamespace>
+    <ApplicationTitle>MiScale Exporter</ApplicationTitle>
+    <ApplicationId>com.lukaszswiderski.MiScaleExporter</ApplicationId>
+    <ApplicationDisplayVersion>2.3.1</ApplicationDisplayVersion>
+    <ApplicationVersion>36</ApplicationVersion>
+    <SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>$(NoWarn);CS0108;CS0114;CS0162;CS0168;CS0219;CS0414;CS0649;CS1998;CS4014;CS8632;XC0022;XC0023;MA0001</NoWarn>
+    <MauiVersion>9.0.81</MauiVersion>
+    <EnableDefaultMauiItems>false</EnableDefaultMauiItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageReference Include="Autofac.Extras.CommonServiceLocator" Version="6.1.0" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="12.1.0" />
+    <PackageReference Include="MiScaleBodyComposition" Version="1.0.12" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="5.3.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Plugin.BLE" Version="3.2.0-beta.1" />
+    <PackageReference Include="YetAnotherGarminConnectClient" Version="0.0.11" />
+    <EmbeddedResource Include="src/MiScaleExporter.MAUI.Resources.Localization.AppSnippets.resx" LogicalName="MiScaleExporter.MAUI.Resources.Localization.AppSnippets.resources" />
+    <MauiFont Include="Resources/Fonts/FontAwesome6Regular.otf" />
+    <MauiFont Include="Resources/Fonts/FontAwesome6Solid.otf" />
+    <MauiFont Include="Resources/Fonts/OpenSans-Regular.ttf" />
+    <MauiFont Include="Resources/Fonts/OpenSans-Semibold.ttf" />
+    <BundleResource Include="Resources/Bundle/buymeacoffe@1x.png" LogicalName="buymeacoffe@1x.png" />
+    <BundleResource Include="Resources/Bundle/buymeacoffe@1x.png" LogicalName="Images/buymeacoffe@1x.png" />
+    <BundleResource Include="Resources/Bundle/xiaomi@1x.jpg" LogicalName="xiaomi@1x.jpg" />
+    <BundleResource Include="Resources/Bundle/xiaomi@1x.jpg" LogicalName="Images/xiaomi@1x.jpg" />
+    <MauiIcon Include="Resources/AppIcon/appicon.png" />
+  </ItemGroup>
+</Project>

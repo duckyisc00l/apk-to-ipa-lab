@@ -1,0 +1,12 @@
+[34m==>[0m [1mTapping cameroncooke/axe[0m
+Cloning into '/opt/homebrew/Library/Taps/cameroncooke/homebrew-axe'...
+Tapped 1 formula (13 files, 27.5KB).
+Trusted tap: cameroncooke/axe
+[34m==>[0m [1mTrusted formula cameroncooke/axe/axe[0m
+[32m==>[0m [1mFetching downloads for: [32maxe[39m[0m
+✔︎ Formula axe (2.0.4)
+[34m==>[0m [1mInstalling axe from cameroncooke/axe[0m
+/opt/homebrew/Cellar/axe/2.0.4/libexec/Frameworks/FBControlCore.framework: replacing existing signature
+/opt/homebrew/Cellar/axe/2.0.4/libexec/Frameworks/FBSimulatorControl.framework: replacing existing signature
+/opt/homebrew/Cellar/axe/2.0.4/libexec/axe: replacing existing signature
+🍺  /opt/homebrew/Cellar/axe/2.0.4: 94 files, 69MB, built in 21 seconds
