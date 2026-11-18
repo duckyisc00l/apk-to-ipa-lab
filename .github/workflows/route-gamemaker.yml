@@ -72,6 +72,7 @@ jobs:
           echo "unknown functions: $(grep -c . out/unknown-functions.txt)" | tee -a out/gamemaker.md
           ls -la out/*.png 2>/dev/null | tee -a out/gamemaker.md
       - name: Tap test (mouse clicks through xdotool, under gdb so a crash prints a backtrace)
+        timeout-minutes: 6   # gdb ignores the stop signal while the game runs: kill it outright
         run: |
           sudo apt-get install -y -qq xdotool gdb imagemagick > /dev/null
           BIN=$(find engine/build -maxdepth 2 -type f -perm -u+x -name 'butterscotch*' | head -1)
@@ -84,7 +85,7 @@ jobs:
           click 604 1400; import -window root out/tap-1-selected.png
           click 604 1144; import -window root out/tap-2-e4.png
           click 604 760; click 604 1016; import -window root out/tap-3-e5.png
-          sleep 3; pkill -f butterscotch || true; sleep 2
+          sleep 3; pkill -9 -f butterscotch || true; pkill -9 gdb || true; pkill -9 Xvfb || true; sleep 2
           echo "tap test: $(grep -c . out/tap-gdb.log) log lines; signals: $(grep -E 'SIG|signal' out/tap-gdb.log | head -3 | tr '\n' ' ')" | tee -a out/gamemaker.md
       - name: Publish to branch r-gamemaker
         if: always()
@@ -141,7 +142,7 @@ jobs:
           echo "game window in the data file: $GW x $GH" | tee -a out/ios.md
           # which way to hold the phone: the APK's manifest says; the data file's window size is only a fallback
           man=$(find work -maxdepth 3 -name AndroidManifest.xml | head -1)
-          if [ "$ORIENT" = auto ] && [ -n "$man" ]; then ORIENT=$(python3 -I ci/gamemaker/orientation.py "$man" 2>> out/ios.md); fi
+          if [ "$ORIENT" = auto ] && [ -n "$man" ]; then ORIENT=$(python3 -I ci/gamemaker/orientation.py "$man" "$DATA" 2>> out/ios.md); fi
           if [ "$ORIENT" != portrait ] && [ "$ORIENT" != landscape ]; then ORIENT=$([ "$GH" -gt "$GW" ] && echo portrait || echo landscape); fi
           echo "orientation: $ORIENT (manifest: ${man:-none})" | tee -a out/ios.md
           NAME=$(basename "$REPO"); BID="lab.gamemaker.$(echo "$NAME" | tr -cd 'a-zA-Z0-9')"

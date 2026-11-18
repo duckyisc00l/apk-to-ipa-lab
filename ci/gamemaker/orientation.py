@@ -1,8 +1,9 @@
 """Print "portrait" or "landscape" from an APK's binary AndroidManifest.xml (android:screenOrientation).
 
-Usage: python3 -I ci/gamemaker/orientation.py <AndroidManifest.xml or .apk>
+Usage: python3 -I ci/gamemaker/orientation.py <AndroidManifest.xml or .apk> [game.droid / data.win]
 A GameMaker game's data file doesn't say which way the phone is held (its window size can be a 100x100
-placeholder that the game resizes at run time); the manifest does. Prints "unknown" if it isn't set.
+placeholder that the game resizes at run time); the manifest does. If the manifest allows both (Legendary Chess:
+no value, all four turned on in GameMaker's options), the shape of the data file's rooms decides. Else "unknown".
 """
 import struct, sys, zipfile
 
@@ -41,4 +42,29 @@ def main(path):
     return "unknown"
 
 
-print(main(sys.argv[1]))
+def rooms(path):
+    """portrait/landscape from the rooms' sizes (rooms of 200 px or less and square rooms are splash or placeholder rooms)."""
+    d = open(path, "rb").read()
+    i, p, l = 8, 0, 0
+    while i + 8 <= len(d):
+        name, size = d[i:i + 4], struct.unpack("<I", d[i + 4:i + 8])[0]
+        if name == b"ROOM":
+            n = struct.unpack("<I", d[i + 8:i + 12])[0]
+            for k in range(n):
+                o = struct.unpack("<I", d[i + 12 + 4 * k:i + 16 + 4 * k])[0]
+                if not o:
+                    continue
+                sp, _, w, h = struct.unpack("<4I", d[o:o + 16])
+                ln = struct.unpack("<I", d[sp - 4:sp])[0] if 4 <= sp < len(d) else 0
+                print(f"room {d[sp:sp + ln].decode('latin1', 'replace')}: {w}x{h}", file=sys.stderr)
+                if w > 200 and h > 200 and w != h:
+                    p, l = p + (h > w), l + (w > h)
+            break
+        i += 8 + size
+    return "portrait" if p > l else "landscape" if l > p else "unknown"
+
+
+r = main(sys.argv[1])
+if r == "unknown" and len(sys.argv) > 2:
+    r = rooms(sys.argv[2])
+print(r)
