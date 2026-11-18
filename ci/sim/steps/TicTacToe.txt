@@ -1,28 +1,17 @@
 # Ionic Tic-Tac-Toe (web route), one whole game against the computer. Cells by position (% of the screen):
-# columns 31% 50% 69%, rows 41% 50% 59%. Taps on a taken cell do nothing; the game ends with a Game Over box.
+# columns 31% 50% 69%, rows 41% 50% 59%. Taps on a taken cell do nothing. The computer wins in 3 moves here;
+# no taps after that: a tap beside the Game Over box closes it.
 shot 0-start
 tapon Start
 wait 2
 expect Restart Game
 tap 50% 50%
-wait 2
+wait 3
 shot 1-centre
-tap 31% 41%
-wait 2
 tap 69% 59%
-wait 2
+wait 3
 tap 69% 41%
-wait 2
-tap 31% 59%
-wait 2
-tap 50% 41%
-wait 2
-tap 31% 50%
-wait 2
-tap 69% 50%
-wait 2
-tap 50% 59%
-wait 2
+wait 3
 shot 2-game-over
 expect Game Over
 tapon OK

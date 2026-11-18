@@ -1,19 +1,25 @@
 # OpenChess (web route): puzzles (hint, solution), then a game against a bot. Web text is found by point lookups.
+# The puzzle board stays empty in the app: its puzzles come from IndexedDB ("JS promise error: Unable to open cursor").
 shot 0-home
 expect Play a bot
 tapon Solve puzzles
-wait 10
+wait 6
 shot 1-puzzle
 expect White to move
-tapon Hint
-wait 3
-shot 2-hint
-tapon Show solution
-wait 5
-shot 3-solution
 tapon Home
 wait 3
 tapon Play a bot
+wait 5
+shot 2-bots
+expect Beginners
+# the big green Play button under the bot list
+tap 42% 82%
 wait 6
-shot 4-bot
-ui bot
+shot 3-game
+ui game
+# e2-e4 if the board fills the width under the top bar (squares 12.5% wide)
+tap 56% 60%
+wait 1
+tap 56% 49%
+wait 5
+shot 4-e4

@@ -94,8 +94,9 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
       done; wait "${pids[@]}"; done; python3 "$HERE/ui.py" merge /tmp/simscan/*.json > "$1"; }
     WEB=0   # set once a scan found text the whole tree didn't have: later lookups go straight to the scan
     UI "$OUT/ui-start.json"
-    read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "390 844")
-    if [ -n "${SIM_AXE_VERSION:-}" ]; then   # raw portrait points: from a screenshot (2x below 1000 pixels wide, else 3x)
+    read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "0 0")
+    # raw portrait points for AXe 1.6.0, or when the tree timed out (LÖVE): from a screenshot (2x below 1000 pixels wide, else 3x)
+    if [ -n "${SIM_AXE_VERSION:-}" ] || [ "$SW" = 0 ]; then
       xcrun simctl io "$UDID" screenshot /tmp/simsize.png > /dev/null 2>&1
       read -r SW SH < <(python3 -c "import struct,sys;d=open('/tmp/simsize.png','rb').read(24);w,h=struct.unpack('>II',d[16:24]);k=2 if w<1000 else 3;print(w//k,h//k)")
     fi
@@ -103,7 +104,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
     P() { case "$1" in *%) awk -v v="${1%\%}" -v t="$2" 'BEGIN{printf "%d", v*t/100}';; *) echo "$1";; esac; }
     # one line per step in sim.md; a failed step gets FAILED and its error
     RUN() { local what="$1"; shift
-      if timeout 40 "$@" >> "$OUT/input.log" 2>&1 < /dev/null; then echo "$what" >> "$OUT/sim.md"; SN=$((SN+1))
+      if timeout 60 "$@" >> "$OUT/input.log" 2>&1 < /dev/null; then echo "$what" >> "$OUT/sim.md"; SN=$((SN+1))
       else echo "$what FAILED: $(tail -1 "$OUT/input.log")" >> "$OUT/sim.md"; SF=$((SF+1)); fi; }
     KEY() { case "$(echo "$1" | tr A-Z a-z)" in
       return|enter) echo 40;; escape|esc) echo 41;; backspace|delete) echo 42;; tab) echo 43;; space) echo 44;;
@@ -146,7 +147,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
           fi
           for ((i=0; i<${#arg}; i++)); do ch="${arg:i:1}"; [ "$ch" = " " ] && ch=space
             if xy=$(python3 "$HERE/ui.py" find "$kb" "$ch" exact); then
-              timeout 20 axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null || bad="$bad$ch"
+              timeout 60 axe tap -x "${xy% *}" -y "${xy#* }" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null || bad="$bad$ch"   # a LÖVE app makes each tap take 20-40 s
             else bad="$bad$ch"; fi; sleep 0.3; done
           if [ -z "$bad" ]; then echo "softtype \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
           else echo "softtype \"$arg\" FAILED for: $bad (keyboard not up?)" >> "$OUT/sim.md"; SF=$((SF+1)); fi;;
