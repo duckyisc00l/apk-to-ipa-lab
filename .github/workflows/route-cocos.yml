@@ -90,6 +90,8 @@ jobs:
           # Xcode 16's SDK makes iconv_t a typed pointer: CCFontAtlas keeps it as void*, so cast it back
           sed -i '' -E 's/iconv_close\(_iconv\)/iconv_close((iconv_t)_iconv)/; s/iconv\(_iconv,/iconv((iconv_t)_iconv,/' proj/frameworks/cocos2d-x/cocos/2d/CCFontAtlas.cpp
           grep -n 'iconv_t)_iconv' proj/frameworks/cocos2d-x/cocos/2d/CCFontAtlas.cpp | tee -a out/cocos.md
+          # the template and libsimulator set VALID_ARCHS to arm64/armv7: a simulator build then compiles nothing and "succeeds" with no executable
+          find proj -name project.pbxproj -exec sed -i '' -E '/VALID_ARCHS = /d' {} +
           # Xcode 16 refuses iOS 6-8 deployment targets
           find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
           xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
