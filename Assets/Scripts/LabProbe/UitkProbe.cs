@@ -23,8 +23,15 @@ public class UitkProbe : MonoBehaviour
         yield return new WaitForSeconds(3f);
         var docs = FindObjectsOfType<UIDocument>(true);
         Debug.Log($"UITK PROBE scene={scene} screen={Screen.width}x{Screen.height} uiDocuments={docs.Length} cameras={Camera.allCamerasCount}");
+        foreach (var bsc in FindObjectsOfType<BackgroundShaderControl>(true))
+        {
+            var m = bsc.material;
+            Debug.Log($"UITK PROBE bg go='{bsc.gameObject.name}' enabled={bsc.enabled} active={bsc.gameObject.activeInHierarchy} cam={(bsc.GetComponent<Camera>() != null)} mat={(m ? m.name : "NULL")} shader={(m && m.shader ? m.shader.name + " supported=" + m.shader.isSupported : "NULL")} keywords='{(m ? string.Join(",", m.shaderKeywords) : "")}' transitionTime={(m ? m.GetFloat("_TransitionTime") : -1)} uiTex={(m && m.GetTexture("_UiTex") ? m.GetTexture("_UiTex").name + " " + m.GetTexture("_UiTex").width + "x" + m.GetTexture("_UiTex").height : "NULL")} rampTex={(m && m.GetTexture("_ColorRampTex") ? m.GetTexture("_ColorRampTex").name : "NULL")}");
+        }
         foreach (var d in docs)
         {
+            var rt = d.panelSettings ? d.panelSettings.targetTexture : null;
+            Debug.Log($"UITK PROBE target={(rt ? rt.name + " " + rt.width + "x" + rt.height + " id=" + rt.GetInstanceID() : "NULL (screen)")} alphaPixels={AlphaPixels(rt)}");
             var sb = new StringBuilder();
             sb.Append($"UITK PROBE doc go='{d.gameObject.name}' active={d.gameObject.activeInHierarchy} enabled={d.enabled} ");
             sb.Append($"panelSettings={(d.panelSettings ? d.panelSettings.name : "NULL")} theme={(d.panelSettings && d.panelSettings.themeStyleSheet ? d.panelSettings.themeStyleSheet.name : "NULL")} ");
@@ -39,6 +46,19 @@ public class UitkProbe : MonoBehaviour
         }
     }
 
+    static string AlphaPixels(RenderTexture rt)
+    {
+        if (rt == null) return "-";
+        var prev = RenderTexture.active; RenderTexture.active = rt;
+        var tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false);
+        tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0); tex.Apply();
+        RenderTexture.active = prev;
+        int n = 0; var px = tex.GetPixels32();
+        for (int i = 0; i < px.Length; i += 7) if (px[i].a > 10) n++;
+        Destroy(tex);
+        return n + "/" + (px.Length / 7);
+    }
+
     static void Count(VisualElement e, ref int n, ref int shown)
     {
         n++;
@@ -48,7 +68,7 @@ public class UitkProbe : MonoBehaviour
 
     static void Walk(VisualElement e, int depth, ref int k)
     {
-        if (k++ > 40 || depth > 4) return;
+        if (k++ > 12 || depth > 4) return;
         var s = e.resolvedStyle;
         string text = e is TextElement t ? $" text='{t.text}' font={(s.unityFontDefinition.fontAsset != null ? s.unityFontDefinition.fontAsset.name : (s.unityFont != null ? s.unityFont.name : "NONE"))} color={s.color}" : "";
         Debug.Log($"UITK PROBE {new string(' ', depth * 2)}<{e.GetType().Name} name='{e.name}' classes='{string.Join(" ", e.GetClasses())}'> bound={e.worldBound} display={s.display} vis={s.visibility} opacity={s.opacity} bg={s.backgroundColor} bgImage={(s.backgroundImage.texture != null || s.backgroundImage.vectorImage != null || s.backgroundImage.sprite != null)}{text}");
