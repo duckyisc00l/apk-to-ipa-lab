@@ -1,0 +1,60 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff6d4e6c0 (LWP 6103)]
+[New Thread 0x7fffe7bff6c0 (LWP 6104)]
+[New Thread 0x7fffe6bfe6c0 (LWP 6105)]
+[New Thread 0x7fffe5bfd6c0 (LWP 6106)]
+[New Thread 0x7fffd7fff6c0 (LWP 6107)]
+[New Thread 0x7fffcffff6c0 (LWP 6108)]
+[New Thread 0x7fffd6ffe6c0 (LWP 6109)]
+[New Thread 0x7fffd5ffd6c0 (LWP 6110)]
+[New Thread 0x7fffceffe6c0 (LWP 6111)]
+[New Thread 0x7fffcdffd6c0 (LWP 6112)]
+Warning: Gamepad: SDL gamecontrollerdb.txt not found at gamecontrollerdb.txt or failed to load, using defaults
+Error: GL: Shader compilation failed: 0:1(1): error: syntax error, unexpected end of file
+
+Error: GL: Failed to compile __yy_sdf_shader vertex shader!
+Error: GL: Shader compilation failed: 0:1(1): error: syntax error, unexpected end of file
+
+Error: GL: Failed to compile __yy_sdf_effect_shader vertex shader!
+Error: GL: Shader compilation failed: 0:1(1): error: syntax error, unexpected end of file
+
+Error: GL: Failed to compile __yy_sdf_blur_shader vertex shader!
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_id returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM dmix
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_id returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM dmix:0
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_id returned error: No such file or directory
+ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM dmix:0,0
+ALSA lib confmisc.c:165:(snd_config_get_card) Cannot get card index for 0
+ALSA lib confmisc.c:165:(snd_config_get_card) Cannot get card index for 0
+ALSA lib confmisc.c:165:(snd_config_get_card) Cannot get card index for 0
+[New Thread 0x7fffb7fff6c0 (LWP 6113)]
+[New Thread 0x7fffb6ffe6c0 (LWP 6114)]
+[New Thread 0x7fffb5ffd6c0 (LWP 6115)]

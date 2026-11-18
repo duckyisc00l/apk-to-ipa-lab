@@ -1,0 +1,26 @@
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAS_FOMIT_FRAME_POINTER
+-- Performing Test HAS_FOMIT_FRAME_POINTER - Success
+-- Performing Test HAS_ICF_ALL
+-- Performing Test HAS_ICF_ALL - Failed
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+-- Checking for modules 'libavformat;libavcodec;libavutil;libswscale;libswresample'
+--   Package 'libavformat', required by 'virtual:world', not found
+--   Package 'libavcodec', required by 'virtual:world', not found
+--   Package 'libavutil', required by 'virtual:world', not found
+--   Package 'libswscale', required by 'virtual:world', not found
+--   Package 'libswresample', required by 'virtual:world', not found
+CMake Warning at CMakeLists.txt:265 (message):
+  FFmpeg development libraries not found - video playback will be disabled
+
+
+-- Checking for module 'sdl2'
+--   Found sdl2, version 2.30.0
+-- Configuring done (2.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/build

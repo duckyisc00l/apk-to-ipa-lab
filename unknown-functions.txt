@@ -1,0 +1,10 @@
+Loading work/Ahmadrezadl__legendary-chess/assets/game.droid...
+Unknown chunk: PSEM (length 8 at offset 0x3320)
+Unknown chunk: PSYS (length 8 at offset 0x3330)
+Unknown chunk: FEAT (length 72 at offset 0x7EF0)
+Loaded "Legendary_Chess" (0) successfully! [WAD Version 17 / GameMaker version 2023.2.0.0]
+Memory after data.win parsing: used=79904 bytes (78.0 KB)
+VM: Initialized with 60 functions mapped
+Unknown Functions:
+All 77 referenced functions are implemented! :3
+VM: Reset complete
