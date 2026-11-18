@@ -104,15 +104,26 @@ jobs:
           # the workload's newest iOS pack for this .NET names the Xcode it was made for (Microsoft.iOS.Sdk.net9.0_26.5 -> Xcode 26.5)
           packs="$(dirname "$(readlink -f "$(which dotnet)")")/packs"
           want=$(ls "$packs" | grep "^Microsoft.iOS.Sdk.net$major.0_" | sed 's/.*_//' | sort -V | tail -1); echo "iOS SDK pack $want wants Xcode $want" | tee -a ../out-ios/build.md
-          x=$(ls -d /Applications/Xcode_${want}*.app 2>/dev/null | head -1); [ -n "$x" ] || x=$(ls -d /Applications/Xcode_${want%%.*}.*.app 2>/dev/null | sort -V | tail -1)
-          [ -n "$x" ] && sudo xcode-select -s "$x"; xcodebuild -version 2>/dev/null | head -1 | tee -a ../out-ios/build.md
+          # keep the runner's default Xcode when it is new enough: a switched-to Xcode_26.5.0.app path made actool fail
+          # ("SDK .../MacOSX.sdk cannot be located")
+          have=$(xcodebuild -version 2>/dev/null | head -1 | awk '{print $2}')
+          if [ "$(printf '%s\n%s\n' "$want" "$have" | sort -V | head -1)" != "$want" ]; then
+            x=$(ls -d /Applications/Xcode_${want}.app /Applications/Xcode_${want%%.*}.*.app 2>/dev/null | head -1)
+            [ -n "$x" ] && sudo xcode-select -s "$(cd "$x" && pwd -P)" && sudo xcodebuild -runFirstLaunch > /dev/null 2>&1
+          fi
+          xcodebuild -version 2>/dev/null | head -1 | tee -a ../out-ios/build.md
       - name: Build for the iPhone Simulator and run it
         continue-on-error: true
         run: |
           cd ios; tfm=$(grep -o 'net[0-9]*\.0-ios' App.csproj | head -1)
           set +e
-          dotnet build App.csproj -f $tfm -c Release -r iossimulator-$([ "$(uname -m)" = arm64 ] && echo arm64 || echo x64) -p:ValidateXcodeVersion=false -o simout > ../out-ios/sim-build.log 2>&1
-          b=$?; echo "simulator build exit $b" | tee -a ../out-ios/build.md
+          sb() { dotnet build App.csproj -f $tfm -c Release -r iossimulator-$([ "$(uname -m)" = arm64 ] && echo arm64 || echo x64) -p:ValidateXcodeVersion=false -o simout > ../out-ios/sim-build.log 2>&1; }
+          sb; b=$?; echo "simulator build exit $b" | tee -a ../out-ios/build.md
+          if [ "$b" != 0 ] && grep -q 'actool' ../out-ios/sim-build.log; then
+            # the app icon is the only asset catalog: build without it rather than stop here
+            sed -i '' '/<MauiIcon /d' App.csproj; sed -i '' '/XSAppIconAssets/d' Platforms/iOS/Info.plist
+            cp ../out-ios/sim-build.log ../out-ios/sim-build-1.log; sb; b=$?; echo "simulator build without the icon exit $b" | tee -a ../out-ios/build.md
+          fi
           grep -E ' error ' ../out-ios/sim-build.log | sed -E 's#^.*/ios/##; s# \[.*##' | sort -u | head -80 | tee ../out-ios/sim-errors.md
           echo "distinct errors: $(grep -E ' error ' ../out-ios/sim-build.log | sed -E 's# \[.*##' | sort -u | wc -l)" | tee -a ../out-ios/build.md
           [ "$b" = 0 ] || exit 1
