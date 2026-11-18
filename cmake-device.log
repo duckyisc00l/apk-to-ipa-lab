@@ -1,0 +1,13 @@
+-- The C compiler identification is AppleClang 17.0.0.17000013
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAS_FOMIT_FRAME_POINTER
+-- Performing Test HAS_FOMIT_FRAME_POINTER - Success
+-- Performing Test HAS_ICF_ALL
+-- Performing Test HAS_ICF_ALL - Failed
+-- Configuring done (9.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/build-device

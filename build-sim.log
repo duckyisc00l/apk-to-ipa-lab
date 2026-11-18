@@ -1,0 +1,120 @@
+  437 |     glGetIntegerv(GL_TEXTURE_BINDING_2D, &previousTexture);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:848:35: note: 'glGetIntegerv' has been explicitly marked deprecated here
+  848 | GL_API void           GL_APIENTRY glGetIntegerv (GLenum pname, GLint* params) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:438:5: warning: 'glGetIntegerv' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  438 |     glGetIntegerv(GL_UNPACK_ALIGNMENT, &previousUnpackAlignment);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:848:35: note: 'glGetIntegerv' has been explicitly marked deprecated here
+  848 | GL_API void           GL_APIENTRY glGetIntegerv (GLenum pname, GLint* params) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:439:5: warning: 'glBindTexture' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  439 |     glBindTexture(GL_TEXTURE_2D, gl->surfaceTexture[surfaceId]);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:791:35: note: 'glBindTexture' has been explicitly marked deprecated here
+  791 | GL_API void           GL_APIENTRY glBindTexture (GLenum target, GLuint texture) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:440:5: warning: 'glPixelStorei' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  440 |     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:875:35: note: 'glPixelStorei' has been explicitly marked deprecated here
+  875 | GL_API void           GL_APIENTRY glPixelStorei (GLenum pname, GLint param) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:441:5: warning: 'glTexSubImage2D' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  441 |     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, flipped);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:895:35: note: 'glTexSubImage2D' has been explicitly marked deprecated here
+  895 | GL_API void           GL_APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid* pixels) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:442:5: warning: 'glPixelStorei' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  442 |     glPixelStorei(GL_UNPACK_ALIGNMENT, previousUnpackAlignment);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:875:35: note: 'glPixelStorei' has been explicitly marked deprecated here
+  875 | GL_API void           GL_APIENTRY glPixelStorei (GLenum pname, GLint param) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:443:5: warning: 'glBindTexture' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  443 |     glBindTexture(GL_TEXTURE_2D, (GLuint)previousTexture);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:791:35: note: 'glBindTexture' has been explicitly marked deprecated here
+  791 | GL_API void           GL_APIENTRY glBindTexture (GLenum target, GLuint texture) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:452:5: warning: 'glBindTexture' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  452 |     glBindTexture(GL_TEXTURE_2D, gl->surfaceTexture[surfaceId]);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:791:35: note: 'glBindTexture' has been explicitly marked deprecated here
+  791 | GL_API void           GL_APIENTRY glBindTexture (GLenum target, GLuint texture) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:453:5: warning: 'glTexSubImage2D' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  453 |     glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, rgba);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:895:35: note: 'glTexSubImage2D' has been explicitly marked deprecated here
+  895 | GL_API void           GL_APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid* pixels) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:462:36: warning: 'glGetString' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  462 |     const char* ver = (const char*)glGetString(GL_VERSION);
+      |                                    ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:856:35: note: 'glGetString' has been explicitly marked deprecated here
+  856 | GL_API const GLubyte* GL_APIENTRY glGetString (GLenum name) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:632:5: warning: 'glGenTextures' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  632 |     glGenTextures(1, &ui->texture);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:838:35: note: 'glGenTextures' has been explicitly marked deprecated here
+  838 | GL_API void           GL_APIENTRY glGenTextures (GLsizei n, GLuint* textures) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:639:5: warning: 'glBindTexture' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  639 |     glBindTexture(GL_TEXTURE_2D, ui->texture);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:791:35: note: 'glBindTexture' has been explicitly marked deprecated here
+  791 | GL_API void           GL_APIENTRY glBindTexture (GLenum target, GLuint texture) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:640:5: warning: 'glTexImage2D' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  640 |     glTexImage2D(GL_TEXTURE_2D, 0, gl->textureFormat, DEFAULTFONT_ATLAS_W, DEFAULTFONT_ATLAS_H, 0, GL_RGBA, GL_UNSIGNED_BYTE, rgba);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:890:35: note: 'glTexImage2D' has been explicitly marked deprecated here
+  890 | GL_API void           GL_APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid* pixels) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:641:5: warning: 'glTexParameteri' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  641 |     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:893:35: note: 'glTexParameteri' has been explicitly marked deprecated here
+  893 | GL_API void           GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:642:5: warning: 'glTexParameteri' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  642 |     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:893:35: note: 'glTexParameteri' has been explicitly marked deprecated here
+  893 | GL_API void           GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:643:5: warning: 'glTexParameteri' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  643 |     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:893:35: note: 'glTexParameteri' has been explicitly marked deprecated here
+  893 | GL_API void           GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:644:5: warning: 'glTexParameteri' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  644 |     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:893:35: note: 'glTexParameteri' has been explicitly marked deprecated here
+  893 | GL_API void           GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:645:5: warning: 'glBindTexture' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  645 |     glBindTexture(GL_TEXTURE_2D, 0);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:791:35: note: 'glBindTexture' has been explicitly marked deprecated here
+  791 | GL_API void           GL_APIENTRY glBindTexture (GLenum target, GLuint texture) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/engine/src/gl_common/gl_common.c:652:9: warning: 'glDeleteTextures' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  652 |         glDeleteTextures(1, &ui->texture);
+      |         ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:818:35: note: 'glDeleteTextures' has been explicitly marked deprecated here
+  818 | GL_API void           GL_APIENTRY glDeleteTextures (GLsizei n, const GLuint* textures) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+70 warnings generated.
+[ 99%] Building C object CMakeFiles/butterscotch.dir/src/image/image_decoder.c.o
+272 warnings generated.
+[100%] Linking C static library libbutterscotch.a
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: libbutterscotch.a(wuffs-v0.4.c.o) has no symbols
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib: file: libbutterscotch.a(wuffs-v0.4.c.o) has no symbols
+[100%] Built target butterscotch

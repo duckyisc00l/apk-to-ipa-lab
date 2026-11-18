@@ -1,0 +1,73 @@
+2026-11-18 17:52:59.049 App[8909:30851] GameView: drawable 750x1334 px, view 375x667 pt
+Unknown chunk: PSEM (length 8 at offset 0x3320)
+Unknown chunk: PSYS (length 8 at offset 0x3330)
+Unknown chunk: FEAT (length 72 at offset 0x7EF0)
+VM: Initialized with 60 functions mapped
+VM: Reset complete
+VM: Reset complete
+GL: Compiling default vertex shader
+GL: Compiling default fragment shader
+GL: Shader default succesfully linked!
+GL: 3 Shaders Found
+GL: Compiling __yy_sdf_shader
+GL: Compiling __yy_sdf_shader vertex shader
+GL: Compiling __yy_sdf_shader fragment shader
+GL: Shader __yy_sdf_shader succesfully linked!
+GL: Compiling __yy_sdf_effect_shader
+GL: Compiling __yy_sdf_effect_shader vertex shader
+GL: Compiling __yy_sdf_effect_shader fragment shader
+GL: Shader __yy_sdf_effect_shader succesfully linked!
+GL: Compiling __yy_sdf_blur_shader
+GL: Compiling __yy_sdf_blur_shader vertex shader
+GL: Compiling __yy_sdf_blur_shader fragment shader
+GL: Shader __yy_sdf_blur_shader succesfully linked!
+GL: Renderer initialized (2 texture pages)
+Audio: miniaudio engine initialized
+Runner: Executing global init script: gml_GlobalScript_scr_game_rules
+Runner: Executing global init script: gml_GlobalScript_scr_seq_end
+Runner: Room loaded: Starter (room 0) with 1 instances
+IOSRunner: started, game size 100x100
+GL: Created surface 0 with size (100x100)
+Room changed: Starter (room 0) -> Splash (room 1)
+GL: Resized Surface 0 Size (1080x2260)
+Runner: Room loaded: Splash (room 1) with 2 instances
+GL: Loaded TXTR page 1 (1024x1024)
+Room changed: Splash (room 1) -> GamePortrait (room 2)
+GL: Resized Surface 0 Size (1080x2160)
+Runner: Room loaded: GamePortrait (room 2) with 69 instances
+IOSRunner: frame 300 room GamePortrait
+IOSRunner: frame 600 room GamePortrait
+IOSRunner: frame 900 room GamePortrait
+IOSRunner: frame 1200 room GamePortrait
+IOSRunner: frame 1500 room GamePortrait
+IOSRunner: touch down 414,864 frame 1727
+Game: 1
+Game: 10
+Game: 1
+Game: 2
+IOSRunner: touch down 414,706 frame 1770
+Game: 1
+Game: 2
+Game: 3
+Game: 4
+Game: 1
+Game: 10
+IOSRunner: frame 1800 room GamePortrait
+IOSRunner: touch down 414,468 frame 1820
+Game: 1
+Game: 10
+Game: 1
+Game: 2
+IOSRunner: touch down 414,626 frame 1850
+Game: 1
+Game: 2
+Game: 3
+Game: 4
+Game: 1
+Game: 10
+IOSRunner: touch down 114,1048 frame 1927
+IOSRunner: frame 2100 room GamePortrait
+IOSRunner: frame 2400 room GamePortrait
+IOSRunner: frame 2700 room GamePortrait
+IOSRunner: frame 3000 room GamePortrait
+IOSRunner: frame 3300 room GamePortrait

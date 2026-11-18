@@ -1,0 +1,120 @@
+   37 |         l.drawableProperties = @{ kEAGLDrawablePropertyRetainedBacking: @NO, kEAGLDrawablePropertyColorFormat: kEAGLColorFormatRGBA8 };
+      |                                   ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGLDrawable.h:29:30: note: 'kEAGLDrawablePropertyRetainedBacking' has been explicitly marked deprecated here
+   29 | EAGL_EXTERN NSString * const kEAGLDrawablePropertyRetainedBacking OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
+      |                              ^
+ci/gamemaker/ios/main.m:37:78: warning: 'kEAGLDrawablePropertyColorFormat' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   37 |         l.drawableProperties = @{ kEAGLDrawablePropertyRetainedBacking: @NO, kEAGLDrawablePropertyColorFormat: kEAGLColorFormatRGBA8 };
+      |                                                                              ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGLDrawable.h:30:30: note: 'kEAGLDrawablePropertyColorFormat' has been explicitly marked deprecated here
+   30 | EAGL_EXTERN NSString * const kEAGLDrawablePropertyColorFormat OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
+      |                              ^
+ci/gamemaker/ios/main.m:37:112: warning: 'kEAGLColorFormatRGBA8' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   37 |         l.drawableProperties = @{ kEAGLDrawablePropertyRetainedBacking: @NO, kEAGLDrawablePropertyColorFormat: kEAGLColorFormatRGBA8 };
+      |                                                                                                                ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGLDrawable.h:35:30: note: 'kEAGLColorFormatRGBA8' has been explicitly marked deprecated here
+   35 | EAGL_EXTERN NSString * const kEAGLColorFormatRGBA8 OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
+      |                              ^
+ci/gamemaker/ios/main.m:38:30: warning: 'EAGLContext' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   38 |         _ctx = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+      |                              ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h:70:12: note: 'EAGLContext' has been explicitly marked deprecated here
+   70 | @interface EAGLContext : NSObject 
+      |            ^
+ci/gamemaker/ios/main.m:39:22: warning: 'EAGLContext' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   39 |         [EAGLContext setCurrentContext:_ctx];
+      |                      ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h:70:12: note: 'EAGLContext' has been explicitly marked deprecated here
+   70 | @interface EAGLContext : NSObject 
+      |            ^
+ci/gamemaker/ios/main.m:40:9: warning: 'glGenFramebuffers' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   40 |         glGenFramebuffers(1, &_fbo);
+      |         ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:836:35: note: 'glGenFramebuffers' has been explicitly marked deprecated here
+  836 | GL_API void           GL_APIENTRY glGenFramebuffers (GLsizei n, GLuint* framebuffers)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:41:9: warning: 'glGenRenderbuffers' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   41 |         glGenRenderbuffers(1, &_color);
+      |         ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:837:35: note: 'glGenRenderbuffers' has been explicitly marked deprecated here
+  837 | GL_API void           GL_APIENTRY glGenRenderbuffers (GLsizei n, GLuint* renderbuffers)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:52:18: warning: 'EAGLContext' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   52 |     [EAGLContext setCurrentContext:_ctx];
+      |                  ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h:70:12: note: 'EAGLContext' has been explicitly marked deprecated here
+   70 | @interface EAGLContext : NSObject 
+      |            ^
+ci/gamemaker/ios/main.m:53:5: warning: 'glBindRenderbuffer' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   53 |     glBindRenderbuffer(GL_RENDERBUFFER, _color);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:790:35: note: 'glBindRenderbuffer' has been explicitly marked deprecated here
+  790 | GL_API void           GL_APIENTRY glBindRenderbuffer (GLenum target, GLuint renderbuffer)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:54:61: warning: 'CAEAGLLayer' is deprecated: first deprecated in iOS 12.0 - OpenGLES is deprecated [-Wdeprecated-declarations]
+   54 |     [_ctx renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer *)self.layer];
+      |                                                             ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CAEAGLLayer.h:26:12: note: 'CAEAGLLayer' has been explicitly marked deprecated here
+   26 | @interface CAEAGLLayer : CALayer <EAGLDrawable>
+      |            ^
+ci/gamemaker/ios/main.m:55:5: warning: 'glBindFramebuffer' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   55 |     glBindFramebuffer(GL_FRAMEBUFFER, _fbo);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:789:35: note: 'glBindFramebuffer' has been explicitly marked deprecated here
+  789 | GL_API void           GL_APIENTRY glBindFramebuffer (GLenum target, GLuint framebuffer)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:56:5: warning: 'glFramebufferRenderbuffer' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   56 |     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _color);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:831:35: note: 'glFramebufferRenderbuffer' has been explicitly marked deprecated here
+  831 | GL_API void           GL_APIENTRY glFramebufferRenderbuffer (GLenum target, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:57:5: warning: 'glGetRenderbufferParameteriv' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   57 |     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_w);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:851:35: note: 'glGetRenderbufferParameteriv' has been explicitly marked deprecated here
+  851 | GL_API void           GL_APIENTRY glGetRenderbufferParameteriv (GLenum target, GLenum pname, GLint* params)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:58:5: warning: 'glGetRenderbufferParameteriv' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   58 |     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_h);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:851:35: note: 'glGetRenderbufferParameteriv' has been explicitly marked deprecated here
+  851 | GL_API void           GL_APIENTRY glGetRenderbufferParameteriv (GLenum target, GLenum pname, GLint* params)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:91:18: warning: 'EAGLContext' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   91 |     [EAGLContext setCurrentContext:_ctx];
+      |                  ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h:70:12: note: 'EAGLContext' has been explicitly marked deprecated here
+   70 | @interface EAGLContext : NSObject 
+      |            ^
+ci/gamemaker/ios/main.m:92:5: warning: 'glFinish' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+   92 |     glFinish();
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:829:35: note: 'glFinish' has been explicitly marked deprecated here
+  829 | GL_API void           GL_APIENTRY glFinish (void) OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:109:18: warning: 'EAGLContext' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  109 |     [EAGLContext setCurrentContext:_ctx];
+      |                  ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h:70:12: note: 'EAGLContext' has been explicitly marked deprecated here
+   70 | @interface EAGLContext : NSObject 
+      |            ^
+ci/gamemaker/ios/main.m:111:5: warning: 'glBindFramebuffer' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  111 |     glBindFramebuffer(GL_FRAMEBUFFER, _fbo);
+      |     ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:789:35: note: 'glBindFramebuffer' has been explicitly marked deprecated here
+  789 | GL_API void           GL_APIENTRY glBindFramebuffer (GLenum target, GLuint framebuffer)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:116:9: warning: 'glBindRenderbuffer' is deprecated: first deprecated in iOS 12.0 - OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings) [-Wdeprecated-declarations]
+  116 |         glBindRenderbuffer(GL_RENDERBUFFER, _color);
+      |         ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES3/gl.h:790:35: note: 'glBindRenderbuffer' has been explicitly marked deprecated here
+  790 | GL_API void           GL_APIENTRY glBindRenderbuffer (GLenum target, GLuint renderbuffer)   OPENGLES_DEPRECATED(ios(3.0, 12.0), tvos(9.0, 12.0));
+      |                                   ^
+ci/gamemaker/ios/main.m:156:30: warning: 'atomic' attribute on property 'window' does not match the property inherited from 'UIApplicationDelegate' [-Wproperty-attribute-mismatch]
+  156 | @property (strong) UIWindow *window;
+      |                              ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIApplication.h:441:51: note: property declared here
+  441 | @property (nullable, nonatomic, strong) UIWindow *window API_AVAILABLE(ios(5.0));
+      |                                                   ^
+24 warnings generated.
