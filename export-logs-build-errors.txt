@@ -1,0 +1,150 @@
+24:[Licensing::Module] Error: Access token is unavailable; failed to update
+25-[Licensing::Client] Successfully updated license
+26-[Licensing::Client] Successfully resolved entitlement details
+27-[Licensing::Module] Serial number assigned to: "F4-JH8B-XEFD-84YN-M5Q4-XXXX"
+138:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+139:ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+140:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+141:ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+142:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+143:ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+144-ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+145:FMOD failed to initialize the output device.: "Error initializing output device. " (60)
+146-Forced to initialize FMOD to to the device driver's system output rate 48000, this may impact performance and/or give inconsistent experiences compared to selected sample rate 48000
+147-ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+148:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+149:ALSA lib confmisc.c:422:(snd_func_concat) error evaluating strings
+150:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+151:ALSA lib confmisc.c:1342:(snd_func_refer) error evaluating name
+152:ALSA lib conf.c:5208:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+153:ALSA lib conf.c:5731:(snd_config_expand) Evaluate error: No such file or directory
+154-ALSA lib pcm.c:2721:(snd_pcm_open_noupdate) Unknown PCM default
+155:FMOD failed to initialize the output device.: "Error initializing output device. " (60)
+156-FMOD initialized on nosound output
+157-PlayerPrefs - Creating folder: /home/runner/.config/unity3d/ultrastar
+158-PlayerPrefs - Creating folder: /home/runner/.config/unity3d/ultrastar/UltraStar Play
+424:Assets/Scripts/UniRx/UniRx/WWWErrorException.cs(20,10): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+425:Assets/Scripts/UniRx/UniRx/WWWErrorException.cs(22,28): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+426-Assets/Scripts/UniRx/UniRx/Observable.cs(120,11): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+427-Assets/Scripts/UniRx/UniRx/DisposableExtensions.cs(37,50): warning CS0618: 'ObservableDestroyTrigger.IsMonitoredActivate' is obsolete: 'Internal Use.'
+428-Assets/Scripts/UniRx/UniRx/DisposableExtensions.cs(39,5): warning CS0618: 'ObservableDestroyTrigger.IsMonitoredActivate' is obsolete: 'Internal Use.'
+474:Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(183,5): warning CS0618: 'JsonFormatter.WriteException(Exception, ref string, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+475-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(187,5): warning CS0618: 'JsonFormatter.WriteProperties(IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+476-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(194,5): warning CS0618: 'JsonFormatter.WriteRenderings(IGrouping<string, PropertyToken>[], IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+477-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(380,5): warning CS0618: 'JsonFormatter.WriteLiteralValue(object, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+520:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(162,18): warning CS0649: Field 'DebugLogManager.errorLog' is never assigned to, and will always have its default value null
+521-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogPopup.cs(25,16): warning CS0649: Field 'DebugLogPopup.newWarningCountText' is never assigned to, and will always have its default value null
+522-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(127,16): warning CS0649: Field 'DebugLogManager.receiveLogcatLogsInAndroid' is never assigned to, and will always have its default value false
+523-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogItem.cs(23,17): warning CS0649: Field 'DebugLogItem.logTypeImage' is never assigned to, and will always have its default value null
+541:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(230,16): warning CS0649: Field 'DebugLogManager.errorEntryCountText' is never assigned to, and will always have its default value null
+542-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(221,17): warning CS0649: Field 'DebugLogManager.filterErrorButton' is never assigned to, and will always have its default value null
+543-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogResizeListener.cs(9,27): warning CS0649: Field 'DebugLogResizeListener.debugManager' is never assigned to, and will always have its default value null
+544-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(197,25): warning CS0649: Field 'DebugLogManager.logItemsContainer' is never assigned to, and will always have its default value null
+1619:Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(183,5): warning CS0618: 'JsonFormatter.WriteException(Exception, ref string, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+1620-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(187,5): warning CS0618: 'JsonFormatter.WriteProperties(IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+1621-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(194,5): warning CS0618: 'JsonFormatter.WriteRenderings(IGrouping<string, PropertyToken>[], IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+1622-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(380,5): warning CS0618: 'JsonFormatter.WriteLiteralValue(object, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+1662:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(162,18): warning CS0649: Field 'DebugLogManager.errorLog' is never assigned to, and will always have its default value null
+1663-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogPopup.cs(25,16): warning CS0649: Field 'DebugLogPopup.newWarningCountText' is never assigned to, and will always have its default value null
+1664-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(127,16): warning CS0649: Field 'DebugLogManager.receiveLogcatLogsInAndroid' is never assigned to, and will always have its default value false
+1665-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogItem.cs(23,17): warning CS0649: Field 'DebugLogItem.logTypeImage' is never assigned to, and will always have its default value null
+1683:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(230,16): warning CS0649: Field 'DebugLogManager.errorEntryCountText' is never assigned to, and will always have its default value null
+1684-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(221,17): warning CS0649: Field 'DebugLogManager.filterErrorButton' is never assigned to, and will always have its default value null
+1685-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogResizeListener.cs(9,27): warning CS0649: Field 'DebugLogResizeListener.debugManager' is never assigned to, and will always have its default value null
+1686-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(197,25): warning CS0649: Field 'DebugLogManager.logItemsContainer' is never assigned to, and will always have its default value null
+3930:Start importing Assets/Scripts/UniRx/UniRx/WWWErrorException.cs using Guid(9e2708be83df1ad12be5422b0a9b08d0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+3931- -> (artifact id: '5a9c7d3fefef5112078655fa381a4767') in 0.000924 seconds
+3932-Start importing Assets/Scripts/UniRx/UniRx/ReactiveProperty.cs using Guid(9ef859378dd9eec5d9da9d1919422249) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+3933- -> (artifact id: '021f1746336246e1f5757e4b0a45d639') in 0.000937 seconds
+4827:Assets/Scripts/UniRx/UniRx/WWWErrorException.cs(20,10): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+4828:Assets/Scripts/UniRx/UniRx/WWWErrorException.cs(22,28): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+4829-Assets/Scripts/UniRx/UniRx/DisposableExtensions.cs(37,50): warning CS0618: 'ObservableDestroyTrigger.IsMonitoredActivate' is obsolete: 'Internal Use.'
+4830-Assets/Scripts/UniRx/UniRx/DisposableExtensions.cs(39,5): warning CS0618: 'ObservableDestroyTrigger.IsMonitoredActivate' is obsolete: 'Internal Use.'
+4831-Assets/Scripts/UniRx/UniRx/Observable.cs(120,11): warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
+4856:Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(183,5): warning CS0618: 'JsonFormatter.WriteException(Exception, ref string, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+4857-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(187,5): warning CS0618: 'JsonFormatter.WriteProperties(IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+4858-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(194,5): warning CS0618: 'JsonFormatter.WriteRenderings(IGrouping<string, PropertyToken>[], IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+4859-Assets/Scripts/Serilog/Serilog/Sinks/File/RollingFileSink.cs(157,32): warning CS0618: 'SharedFileSink' is obsolete: 'This type will be removed from the public API in a future version; use `WriteTo.File(shared: true)` instead.'
+4885:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(162,18): warning CS0649: Field 'DebugLogManager.errorLog' is never assigned to, and will always have its default value null
+4886-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(212,17): warning CS0649: Field 'DebugLogManager.collapseButton' is never assigned to, and will always have its default value null
+4887-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogResizeListener.cs(9,27): warning CS0649: Field 'DebugLogResizeListener.debugManager' is never assigned to, and will always have its default value null
+4888-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(206,18): warning CS0649: Field 'DebugLogManager.hideButton' is never assigned to, and will always have its default value null
+4901:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(230,16): warning CS0649: Field 'DebugLogManager.errorEntryCountText' is never assigned to, and will always have its default value null
+4902-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogItem.cs(32,25): warning CS0649: Field 'DebugLogItem.copyLogButton' is never assigned to, and will always have its default value null
+4903-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(239,25): warning CS0649: Field 'DebugLogManager.searchbarSlotBottom' is never assigned to, and will always have its default value null
+4904-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(221,17): warning CS0649: Field 'DebugLogManager.filterErrorButton' is never assigned to, and will always have its default value null
+5989:Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(183,5): warning CS0618: 'JsonFormatter.WriteException(Exception, ref string, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+5990-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(187,5): warning CS0618: 'JsonFormatter.WriteProperties(IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+5991-Assets/Scripts/Serilog/Serilog/Formatting/Json/JsonFormatter.cs(194,5): warning CS0618: 'JsonFormatter.WriteRenderings(IGrouping<string, PropertyToken>[], IReadOnlyDictionary<string, LogEventPropertyValue>, TextWriter)' is obsolete: 'Extension of JsonFormatter by subclassing is obsolete and will be removed in a future Serilog version. Write a custom formatter based on JsonValueFormatter instead. See https://github.com/serilog/serilog/pull/819.'
+5992-Assets/Scripts/Serilog/Serilog/Sinks/File/RollingFileSink.cs(157,32): warning CS0618: 'SharedFileSink' is obsolete: 'This type will be removed from the public API in a future version; use `WriteTo.File(shared: true)` instead.'
+6019:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(162,18): warning CS0649: Field 'DebugLogManager.errorLog' is never assigned to, and will always have its default value null
+6020-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(212,17): warning CS0649: Field 'DebugLogManager.collapseButton' is never assigned to, and will always have its default value null
+6021-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogResizeListener.cs(9,27): warning CS0649: Field 'DebugLogResizeListener.debugManager' is never assigned to, and will always have its default value null
+6022-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(206,18): warning CS0649: Field 'DebugLogManager.hideButton' is never assigned to, and will always have its default value null
+6035:Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(230,16): warning CS0649: Field 'DebugLogManager.errorEntryCountText' is never assigned to, and will always have its default value null
+6036-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogItem.cs(32,25): warning CS0649: Field 'DebugLogItem.copyLogButton' is never assigned to, and will always have its default value null
+6037-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(239,25): warning CS0649: Field 'DebugLogManager.searchbarSlotBottom' is never assigned to, and will always have its default value null
+6038-Assets/Scripts/IngameDebugConsole.Runtime/IngameDebugConsole/DebugLogManager.cs(221,17): warning CS0649: Field 'DebugLogManager.filterErrorButton' is never assigned to, and will always have its default value null
+9737:[ 244/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Error.cpp
+9738-[ 245/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/LastError.h
+9739-[ 246/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Expected.h
+9740-[ 247/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Environment.cpp
+9782:[ 289/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/ExceptionSupportStack.h
+9783-[ 290/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Buffer.cpp
+9784:[ 291/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/c-api/Error-c-api.h
+9785-[ 292/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/sgen/gc-internal-agnostic.h
+9786-[ 293/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/mini/mini-arm64.h
+9787-[ 294/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/mini/mini-arm.h
+9793:[ 300/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Exception.h
+9794:[ 301/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Exception.cpp
+9795-[ 302/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Environment.h
+9796-[ 303/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/Environment.cpp
+9797-[ 304/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/utils/DirectoryUtils.h
+10054:[ 561/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/Error.h
+10055-[ 562/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/FastReaderReaderWriterLockImpl.h
+10056:[ 563/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/Error.cpp
+10057-[ 564/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/ClassLibraryPAL/brotli/enc/params.h
+10058-[ 565/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/ClassLibraryPAL/brotli/enc/hash_longest_match_quickly_inc.h
+10059-[ 566/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Posix/Cryptography.cpp
+10135:[ 642/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Exception.h
+10136-[ 643/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Field.cpp
+10137:[ 644/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Exception.cpp
+10138-[ 645/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/vm/Event.h
+10139-[ 646/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/mono/ThreadPool/ThreadPoolMonitorThread.cpp
+10140-[ 647/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/metadata/Il2CppGenericMethodHash.cpp
+10176:[ 683/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Exception.cpp
+10177:[ 684/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Exception.h
+10178-[ 685/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Environment.h
+10179-[ 686/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/icalls/mscorlib/System/Enum.cpp
+10180-[ 687/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/mono/ThreadPool/ThreadPoolMacros.h
+10665:[1172/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Error.cpp
+10666-[1173/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Generic/Assert.cpp
+10667:[1174/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Error.h
+10668:[1175/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/ErrorCodes.h
+10669-[1176/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/CrashHelpers.h
+10670-[1177/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/Event.h
+10671-[1178/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/libil2cpp/os/FastReaderReaderWriterLock.cpp
+10908:[1415/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/baselib/Platforms/Android/Include/C/Baselib_ErrorState.inl.h
+10909-[1416/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/build/deploy_x86_64/System.Net.Mail.dll
+10910-[1417/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/build/deploy_x86_64/System.Net.NetworkInformation.dll
+10911-[1418/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/build/deploy_x86_64/System.Security.Cryptography.Algorithms.dll
+11580:[2087/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-error.h
+11581:[2088/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-error-internals.h
+11582-[2089/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-dl-windows-internals.h
+11583-[2090/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/lock-tracer.c
+11584-[2091/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-hwcap-arm64.c
+11674:[2181/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-error.c
+11675-[2182/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32file-unix-glob.c
+11676-[2183/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-log-darwin.c
+11677-[2184/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-dl-unity.c
+11680:[2187/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32error-win32.c
+11681-[2188/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-context.c
+11682-[2189/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/memfuncs.h
+11683-[2190/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/mono-codeman.c
+11773:[2280/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32error-unix.c
+11774-[2281/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/memfuncs.c
+11775-[2282/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32file-win32.c
+11776:[2283/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32error.h
+11777-[2284/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32event-unix.c
+11778-[2285/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/metadata/w32event-win32.c
+11779-[2286/3125  0s] CopyFiles build/iOS/Il2CppOutputProject/IL2CPP/external/mono/mono/utils/hazard-pointer.c

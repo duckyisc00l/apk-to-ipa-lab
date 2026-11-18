@@ -1,0 +1,400 @@
+2026-11-18 05:29:34.602 Df UltraStarPlay[44029:1beef] [com.apple.xpc:connection] [0x10e596fd0] activating connection: mach=true listener=false peer=false name=com.apple.distributed_notifications@1v3
+2026-11-18 05:29:34.604 Df UltraStarPlay[44029:1beef] [com.apple.launchservices:appinstallation] registering for distributed notification com.apple.LaunchServices.pluginsunregistered in this process
+2026-11-18 05:29:34.605 Df UltraStarPlay[44029:1c4b1] [com.apple.PlugInKit:discovery] [d 67CAE53C-C602-4893-9A75-461CEC8541A1] <PKHost:0x6000017dd180> Completed discovery. Final # of matches: 0
+2026-11-18 05:29:34.620 Df UltraStarPlay[44029:1c4b0] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000260a2e0> delivering update to host (0 plugins)
+2026-11-18 05:29:34.620 A  UltraStarPlay[44029:1c4b0] (ExtensionFoundation) discovering extensions
+2026-11-18 05:29:34.621 Df UltraStarPlay[44029:1c4b0] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit-UI";
+}, extensionSet {(
+)}
+2026-11-18 05:29:34.622 Df UltraStarPlay[44029:1c4b0] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x60000260a2e0> installing watchers for continuous discovery
+2026-11-18 05:29:34.622 A  UltraStarPlay[44029:1bead] (PlugInKit) continuous-discovery
+2026-11-18 05:29:34.622 Df UltraStarPlay[44029:1bead] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002619140> created discovery driver
+2026-11-18 05:29:34.622 Df UltraStarPlay[44029:1bead] [com.apple.PlugInKit:discovery] [d 413133E4-97C2-4136-B52A-2EC5F1C0BFB6] <PKHost:0x6000017dd180> Beginning discovery for flags: 0, point: com.apple.AudioUnit-Speech
+2026-11-18 05:29:34.623 Df UltraStarPlay[44029:1beef] [com.apple.launchservices:progress] Establishing xpc connection to lsd
+2026-11-18 05:29:34.623 Df UltraStarPlay[44029:1beef] [com.apple.xpc:connection] [0x10f8051c0] activating connection: mach=true listener=false peer=false name=com.apple.lsd.xpc
+2026-11-18 05:29:34.625 Df UltraStarPlay[44029:1c4b1] [com.apple.launchservices:progress] Received LSWorkspaceObserverPing, xpc connection established
+2026-11-18 05:29:34.632 Df UltraStarPlay[44029:1c4b1] [com.apple.PlugInKit:discovery] [d 413133E4-97C2-4136-B52A-2EC5F1C0BFB6] <PKHost:0x6000017dd180> Completed discovery. Final # of matches: 4
+2026-11-18 05:29:34.633 Df UltraStarPlay[44029:1c4b1] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002619140> delivering update to host (4 plugins)
+2026-11-18 05:29:34.634 A  UltraStarPlay[44029:1c4b1] (ExtensionFoundation) discovering extensions
+2026-11-18 05:29:34.639 Df UltraStarPlay[44029:1c4b1] [com.apple.xpc:connection] [0x10e7fa060] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-18 05:29:34.646 Df UltraStarPlay[44029:1c4b1] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit-Speech";
+}, extensionSet {(
+    <EXConcreteExtension: 0x60000390a630> {id = com.apple.ax.MauiTTSSupport.MauiAUSP},
+    <EXConcreteExtension: 0x600003917e90> {id = com.apple.ax.KonaTTSSupport.KonaSynthesizer},
+    <EXConcreteExtension: 0x600003915a00> {id = com.apple.texttospeech.SiriAUSP},
+    <EXConcreteExtension: 0x600003902700> {id = com.apple.speech.MacinTalkFramework.MacinTalkAUSP}
+)}
+2026-11-18 05:29:34.647 Df UltraStarPlay[44029:1c4b1] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002619140> installing watchers for continuous discovery
+2026-11-18 05:29:34.686 Df UltraStarPlay[44029:1c4b0] [com.apple.audio.caulk:alloc] Registered notify signal com.apple.caulk.alloc.rtdump (0)
+2026-11-18 05:29:34.689 Df UltraStarPlay[44029:1bead] [com.apple.coreaudio:aurioc]            AURemoteIO.cpp:1130  AURemoteIO@0x10e88a040: set kAudioOutputUnitProperty_OutputChannelLayout.  Layout = tag=0x0, 0 channel descriptions [], err = 0
+2026-11-18 05:29:35.160 Df UltraStarPlay[44029:1bf09] (libAudioDSP.dylib) cannot migrate AudioUnit assets for current process
+2026-11-18 05:29:35.610 Df UltraStarPlay[44029:1c4b0] (CoreAudio)   HALPlugInManagement.cpp:443    HALPlugInManagement::RegisterPlugIns: loading in-process plug-ins
+2026-11-18 05:29:35.611 E  UltraStarPlay[44029:1c4b0] [com.apple.CFBundle:plugin] AddInstanceForFactory: No factory registered for id <CFUUID 0x600000258c20> F8BB1C28-BAE8-11D6-9C31-00039315CD46
+2026-11-18 05:29:35.731 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:ddagg]        AggregateDevice.mm:887   Creating DefaultDeviceAggregate
+2026-11-18 05:29:35.951 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:ddagg]        AggregateDevice.mm:688   Built valid aggregate 96
+2026-11-18 05:29:36.354 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:aqme]           AQMixEngine.cpp:733   AQMEDevice (0x10f8b2b88) has neither a defaultOutStreamClient nor a defaultInStreamClient
+2026-11-18 05:29:36.360 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:EnhanceDialogueProcessor] EnhanceDialogueProcessor.cpp:226   EnhanceDialogueProcessor() - Product does not support Enhance Dialogue
+2026-11-18 05:29:36.360 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:EnhanceDialogueProcessor] EnhanceDialogueProcessor.cpp:226   EnhanceDialogueProcessor() - Product does not support Enhance Dialogue
+2026-11-18 05:29:36.362 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:AudioConverter]        ACv2Workarounds.mm:51    com.duckyisc00l.ultrastarplay: fix84702776_86723525_86479548_89800354_SinglePacketDesc: false
+2026-11-18 05:29:36.368 Df UltraStarPlay[44029:1c4b0] [com.apple.audio.caulk:alloc] Registered notify signal com.apple.caulk.alloc.audiodump (0)
+2026-11-18 05:29:36.370 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000c602a0, from  2 ch,  44100 Hz, Float32, deinterleaved to  2 ch,  44100 Hz, Float32, interleaved
+2026-11-18 05:29:36.374 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]              AQIONode.cpp:693   client <RemoteIOClient@0x10f044800(@0x10f044a18); output; [44029]> is NOT Now Playing eligible
+2026-11-18 05:29:36.376 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1872  rio@0x10f044a18 spatialization disabled.  layout = tag=0x0, 0 channel descriptions [], format =  2 ch,  24000 Hz, Int16, interleaved
+2026-11-18 05:29:42.585 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]          RemoteIOServer.h:101   rio@0x10f044800 Got output layout from io node or spatialized client: tag=0x0, 2 channel descriptions [L, R]
+2026-11-18 05:29:42.586 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1581  SetLoudnessFromLM(): ->
+2026-11-18 05:29:42.587 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1620  SetLoudnessFromLM(): is CoreAudioServices/LoudnessManager enabled? yes
+2026-11-18 05:29:42.588 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1623  SetLoudnessFromLM(): is CoreAudioServices/LoudnessManagerV2 enabled? yes
+2026-11-18 05:29:42.588 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1626  SetLoudnessFromLM(): is CoreAudioServices/lm-disable-hardware-check on? no
+2026-11-18 05:29:42.590 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1629  SetLoudnessFromLM(): is hardware supported? no
+2026-11-18 05:29:42.590 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aurios]        RemoteIOServer.cpp:1641  SetLoudnessFromLM(): hardware not supported, Loudness Manager disabled
+2026-11-18 05:29:42.593 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:SpatialMgr] SpatializationManager.cpp:1459  Could not load preset file, invalid model/product name!
+2026-11-18 05:29:42.593 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]        MEMixerChannel.cpp:3254  2-channel audiovisual content is NOT eligible for spatialization
+2026-11-18 05:29:42.595 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]  MEDeviceStreamClient.cpp:245   AQME Default-InputOutput: client starting: <CA_UISoundClientBase@0x10f857590>; running count now 1
+2026-11-18 05:29:42.595 Df UltraStarPlay[44029:1bead] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000c5e7c0, from  2 ch,  24000 Hz, Int16, interleaved to  2 ch,  44100 Hz, Float32, deinterleaved
+2026-11-18 05:29:42.595 Df UltraStarPlay[44029:1bead] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1317  AudioConverter -> 0x600000c5e7c0: The in-process GetProperty call returned 1886547824 for property 1936876385 with size 4.
+2026-11-18 05:29:42.595 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2849  FetchAndLogFrameSize starting IO deviceID=96, frame size is 512
+2026-11-18 05:29:42.601 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2655  aqmeio@0x11083f818: set input stream usage to 0 on device 96, err = 0
+2026-11-18 05:29:42.851 Df UltraStarPlay[44029:1c4b1] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2818  aqmeio@0x11083f818, device 96 (iOSSimulatorAudioDevice-44029-0), AudioDeviceStart (err 0)
+2026-11-18 05:29:42.872 Df UltraStarPlay[44029:1bead] [com.apple.coreaudio:aurioc]            AURemoteIO.cpp:1666  Starting AURemoteIO(0x10e88a040)
+output client:  2 ch,  24000 Hz, Int16, interleaved, output HW:  2 ch,  44100 Hz, Float32, deinterleaved
+input client:   2 ch,      0 Hz, Int16, interleaved, input HW:   2 ch,      0 Hz, Int16, interleaved
+2026-11-18 05:29:42.872 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:1079  fetched workgroup 0x6000017ed840
+2026-11-18 05:29:42.874 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:30    AUOOPWorkgroupManager: AddRemoteIOWorkgroup called with token 180342785.
+2026-11-18 05:29:42.874 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:66    AUOOPWorkgroupManager: mutating workgroups.
+2026-11-18 05:29:42.874 Df UltraStarPlay[44029:1bead] [com.apple.coreaudio:aurioc]            AURemoteIO.cpp:1727  workgroup port 0x11803
+2026-11-18 05:29:42.875 Df UltraStarPlay[44029:1c63e] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:30    AUOOPWorkgroupManager: AddRemoteIOWorkgroup called with token 180342784.
+2026-11-18 05:29:42.875 Df UltraStarPlay[44029:1c63e] [com.apple.coreaudio:auext]        AUOOPWorkgroups.mm:66    AUOOPWorkgroupManager: mutating workgroups.
+2026-11-18 05:29:42.875 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:aqme]              AQIONode.cpp:693   client <RemoteIOClient@0x10f044800(@0x10f044a18); output; [44029]> is NOT Now Playing eligible
+2026-11-18 05:29:42.876 Df UltraStarPlay[44029:1c4b0] [com.apple.coreaudio:aqme]  MEDeviceStreamClient.cpp:245   AQME Default-InputOutput: client starting: <RemoteIOClient@0x10f044800(@0x10f044a18); output; [44029]>; running count now 2
+2026-11-18 05:29:42.988 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:29:43.232 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:29:43.266 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:29:44.230 A  UltraStarPlay[44029:1c4b0] (LocationSupport) CL: Sending cached messages to daemon
+2026-11-18 05:29:44.230 Df UltraStarPlay[44029:1c4b0] [com.apple.LocationSupport:Connection] {"msg":"Sending cached messages to daemon", "event":activity}
+2026-11-18 05:29:44.232 Df UltraStarPlay[44029:1c4b0] [com.apple.xpc:connection] [0x10f849920] activating connection: mach=true listener=false peer=false name=com.apple.locationd.registration
+2026-11-18 05:29:44.439 F  UltraStarPlay[44029:1c65a] [com.apple.locationd.Legacy:Generic_deprecated] could not read user kCFPreferencesCurrentUser uid/gid
+2026-11-18 05:29:44.439 A  UltraStarPlay[44029:1c65a] (libsystem_trace.dylib) Activity for state dumps
+2026-11-18 05:29:49.556 E  UltraStarPlay[44029:1c65a] [com.apple.locationd.Core:Core] {"msg":"file does not exist... clearing", "file":/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, "error":Error Domain=NSCocoaErrorDomain Code=260 "The file “com.apple.CoreMotion.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSURL=file:///Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS%2026.2.simruntime/Contents/Resources/RuntimeRoot/private/var/Managed%20Preferences/kCFPreferencesCurrentUser/com.apple.CoreMotion.plist, NSUnderlyingError=0x600000c52cd0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}}
+2026-11-18 05:29:49.557 A  UltraStarPlay[44029:1c65a] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-18 05:29:54.862 Df UltraStarPlay[44029:1bead] [com.apple.gamecontroller:Session] Creating the shared game controller session...
+2026-11-18 05:29:54.875 Df UltraStarPlay[44029:1bead] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x600002614180; process scope; status: target> was:none
+2026-11-18 05:29:54.875 A  UltraStarPlay[44029:1bead] (GameController) [GCDeviceSession] Activate
+2026-11-18 05:29:54.915 E  UltraStarPlay[44029:1bead] (libCoreFSCache.dylib) fopen failed for data file: errno = 2 (No such file or directory)
+2026-11-18 05:29:54.915 E  UltraStarPlay[44029:1bead] (libCoreFSCache.dylib) Errors found! Invalidating cache...
+2026-11-18 05:29:54.918 Df UltraStarPlay[44029:1bead] [com.apple.xpc:connection] [0x10e588bc0] activating connection: mach=false listener=false peer=false name=com.apple.MTLCompilerService
+2026-11-18 05:29:55.061 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:29:57.506 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:29:57.506 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:29:57.507 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:00.944 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:01.441 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:01.442 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:03.092 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:03.435 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:03.557 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:04.155 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:04.168 E  UltraStarPlay[44029:1bead] (libCoreFSCache.dylib) fopen failed for data file: errno = 2 (No such file or directory)
+2026-11-18 05:30:04.168 E  UltraStarPlay[44029:1bead] (libCoreFSCache.dylib) Errors found! Invalidating cache...
+2026-11-18 05:30:04.169 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:04.204 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:04.222 Df UltraStarPlay[44029:1bead] [com.apple.xpc:connection] [0x10e5ea5d0] activating connection: mach=true listener=false peer=false name=com.apple.IOSurface.Remote
+2026-11-18 05:30:04.225 Df UltraStarPlay[44029:1bead] (libMobileGestalt.dylib) Failed to copyDeviceTreeProperty(IODeviceTree:/arm-io soc-generation)
+2026-11-18 05:30:04.225 Df UltraStarPlay[44029:1bead] (libMobileGestalt.dylib) Failed to get current SOC Generation string
+2026-11-18 05:30:04.260 Df UltraStarPlay[44029:1bead] [com.apple.coreaudio:as_client] AVAudioSessionImpl_Simulator.mm:111   Set volume on device 48 to 0.60
+2026-11-18 05:30:04.263 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3104 -> 2080; animating application lifecycle event: 1
+2026-11-18 05:30:04.264 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-18 05:30:04.265 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-18 05:30:04.265 Df UltraStarPlay[44029:1bead] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-18 05:30:04.272 Df UltraStarPlay[44029:1ccb8] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-18 05:30:04.273 Df UltraStarPlay[44029:1ccb8] [com.apple.xpc:session] [0x60000212a620] Session created.
+2026-11-18 05:30:04.275 Df UltraStarPlay[44029:1ccb8] [com.apple.xpc:session] [0x60000212a620] Session created from connection [0x10e51a040]
+2026-11-18 05:30:04.275 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10e616be0> (8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC)
+2026-11-18 05:30:04.277 Df UltraStarPlay[44029:1ccb8] [com.apple.xpc:connection] [0x10e51a040] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-18 05:30:04.279 Df UltraStarPlay[44029:1ccb8] [com.apple.xpc:session] [0x60000212a620] Session activated
+2026-11-18 05:30:04.537 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:04.663 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:04.702 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:04.774 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:04.885 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:05.079 A  UltraStarPlay[44029:1ccb8] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:05.106 A  UltraStarPlay[44029:1ccb8] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:05.123 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [DAD4F4C2-F6B0-4890-99C4-0355B29831A3] (reporting strategy default)>
+2026-11-18 05:30:05.123 Df UltraStarPlay[44029:1c4b1] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-18 05:30:05.123 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [6F50E1D7-F899-46D5-A51C-DDAB7D9C4B4D] (reporting strategy default)>
+2026-11-18 05:30:05.123 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] Set activity <nw_activity 50:1 [DAD4F4C2-F6B0-4890-99C4-0355B29831A3] (reporting strategy default)> as the global parent
+2026-11-18 05:30:05.123 E  UltraStarPlay[44029:1c4b1] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-11-18 05:30:05.124 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:EventDeferring] [0x600002902680] Scene target of event deferring environments did update: scene: 0x10e616be0; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-18 05:30:05.124 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10e616be0; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.ultrastarplay-default
+2026-11-18 05:30:05.224 Df UltraStarPlay[44029:1bead] [com.apple.gamecontroller:Session] Connected devices changed (2 added, 0 removed) -> [2] {(
+    <GCController 0x600003d08f00 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x600000269c00 'Generic Keyboard'>
+)}
+2026-11-18 05:30:05.230 Df UltraStarPlay[44029:1bead] [com.apple.gamecontroller:Session] Connected devices changed (0 added, 0 removed) -> [2] {(
+    <GCController 0x600003d08f00 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x600000269c00 'Generic Keyboard'>
+)}
+2026-11-18 05:30:05.231 Df UltraStarPlay[44029:1bead] [com.apple.gamecontroller:Session] Connected devices changed (0 added, 0 removed) -> [2] {(
+    <GCController 0x600003d08f00 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x600000269c00 'Generic Keyboard'>
+)}
+2026-11-18 05:30:05.232 A  UltraStarPlay[44029:1bead] (GameControllerFoundation) [HID Event System Client] Activate
+2026-11-18 05:30:05.234 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-18 05:30:05.234 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-18 05:30:05.234 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-18 05:30:05.236 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.ultrastarplay-default  persistentID: 8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC
+2026-11-18 05:30:05.239 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:InterfaceStyle] Should not send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x10e616be0> (8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC)
+2026-11-18 05:30:05.240 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.ultrastarplay-default  persistentID: 8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC
+2026-11-18 05:30:05.241 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10e616be0> (8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC)
+2026-11-18 05:30:05.245 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10e616be0> (8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC)
+2026-11-18 05:30:05.245 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.ultrastarplay-default  persistentID: 8506CC15-F7B6-4AE6-AAE7-01BD1D5BD3AC
+2026-11-18 05:30:05.246 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-18 05:30:05.246 Df UltraStarPlay[44029:1bead] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-18 05:30:05.247 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-18 05:30:05.248 A  UltraStarPlay[44029:1bead] (GameController) Notify ApplicationDidBecomeActive
+2026-11-18 05:30:05.251 Df UltraStarPlay[44029:1bead] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-18 05:30:05.356 A  UltraStarPlay[44029:1ccb8] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:05.356 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:05.436 Df UltraStarPlay[44029:1bead] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-18 05:30:05.445 Df UltraStarPlay[44029:1bead] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-18 05:30:05.997 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] <nw_activity 50:1 [DAD4F4C2-F6B0-4890-99C4-0355B29831A3] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 49129ms
+2026-11-18 05:30:05.997 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] <nw_activity 50:2 [6F50E1D7-F899-46D5-A51C-DDAB7D9C4B4D] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 49130ms
+2026-11-18 05:30:05.997 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [DAD4F4C2-F6B0-4890-99C4-0355B29831A3] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-18 05:30:05.997 Df UltraStarPlay[44029:1bead] [com.apple.network:activity] Unset the global parent activity
+2026-11-18 05:30:05.998 E  UltraStarPlay[44029:1bf21] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+2026-11-18 05:30:06.235 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:06.302 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:06.313 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:06.930 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:08.262 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:08.394 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:08.404 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:08.429 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.349 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.376 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.717 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.725 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.734 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.751 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:09.819 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:10.539 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:10.559 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:10.578 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:10.615 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:10.674 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.591 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.598 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.604 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.628 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.674 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.682 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:11.782 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:12.815 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:14.243 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:14.273 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:14.291 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:14.520 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:14.659 Df UltraStarPlay[44029:1bf6b] [com.apple.network:] networkd_settings_read_from_file initialized networkd settings by reading plist directly
+2026-11-18 05:30:14.663 Df UltraStarPlay[44029:1bf6b] [com.apple.network:] networkd_settings_read_from_file initialized networkd settings by reading plist directly
+2026-11-18 05:30:15.118 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:15.130 A  UltraStarPlay[44029:1bead] (Metal) compiling shader
+2026-11-18 05:30:20.207 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:44.171 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:30:59.018 Df UltraStarPlay[44029:1bf6b] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> resuming, timeouts(0.0, 604800.0) qos(0x0) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-11-18 05:30:59.019 A  UltraStarPlay[44029:1bf6b] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-18 05:30:59.031 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Initializing NSHTTPCookieStorage singleton
+2026-11-18 05:30:59.032 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Initializing CFHTTPCookieStorage singleton
+2026-11-18 05:30:59.032 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Creating default cookie storage with process/bundle identifier
+2026-11-18 05:30:59.033 A  UltraStarPlay[44029:1c4b1] (libsystem_containermanager.dylib) container_system_group_path_for_identifier
+2026-11-18 05:30:59.033 Df UltraStarPlay[44029:1c4b1] [com.apple.containermanager:xpc] Requesting container lookup; class = 13, identifier = com.apple.nsurlsessiond, group_identifier = systemgroup.com.apple.nsurlstoragedresources, create = 1, temp = 0, euid = 501, uid = 501
+2026-11-18 05:30:59.033 A  UltraStarPlay[44029:1c4b1] (libsystem_containermanager.dylib) container_query_t
+2026-11-18 05:30:59.033 Df UltraStarPlay[44029:1c4b1] [com.apple.containermanager:xpc] Query; euid = 501, uid = 501, class = 13, identifier = [com.apple.nsurlsessiond](1), flags = 900000003
+2026-11-18 05:30:59.036 Df UltraStarPlay[44029:1c4b1] [com.apple.containermanager:unspecified] _container_query_get_result_at_index: success
+2026-11-18 05:30:59.036 A  UltraStarPlay[44029:1c4b1] (libsystem_containermanager.dylib) container_copy_object
+2026-11-18 05:30:59.036 Df UltraStarPlay[44029:1c4b1] [com.apple.containermanager:unspecified] container_system_group_path_for_identifier: success
+2026-11-18 05:30:59.037 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Initializing AlternativeServices Storage singleton
+2026-11-18 05:30:59.038 Df UltraStarPlay[44029:1c4b1] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/091142BF-FAF1-447F-8087-3DEA06395241/Library/HTTPStorages/com.duckyisc00l.ultrastarplay
+2026-11-18 05:30:59.066 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 0: creating secure tcp or quic connection
+2026-11-18 05:30:59.069 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Garbage collection for alternative services
+2026-11-18 05:31:01.216 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 1: enabling TLS
+2026-11-18 05:31:01.216 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 1: starting, TC(0x0)
+2026-11-18 05:31:01.218 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1 AE6CF0EC-DD73-4898-BA8E-FB7D5CA2D0FD Hostname#4f224f6a:443 quic-connection, url: https://api.github.com/repos/UltraStar-Deluxe/Play/tags, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{3F91D88C-AD4E-4C76-9D17-39323E879A5C}{(null)}{Y}{2}{0x0} (private), proc: 4B252640-B155-3F79-B9A0-3E7308076613, delegated upid: 0] start
+2026-11-18 05:31:01.218 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1 Hostname#4f224f6a:443 initial parent-flow ((null))] event: path:start @0.000s
+2026-11-18 05:31:01.736 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1 Hostname#4f224f6a:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.518s, uuid: 4C9985F6-6657-47AA-90BF-2CFDF85D71CE
+2026-11-18 05:31:01.737 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1 Hostname#4f224f6a:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0)] event: flow:start_connect @0.519s
+2026-11-18 05:31:01.737 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C1] reporting state preparing
+2026-11-18 05:31:01.740 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1 Hostname#4f224f6a:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0)] event: flow:start_child @0.521s
+2026-11-18 05:31:01.740 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1.1 Hostname#4f224f6a:443 initial path ((null))] event: path:start @0.522s
+2026-11-18 05:31:01.740 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1.1 Hostname#4f224f6a:443 waiting path (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.522s, uuid: 4C9985F6-6657-47AA-90BF-2CFDF85D71CE
+2026-11-18 05:31:01.740 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1.1 Hostname#4f224f6a:443 in_progress transform (satisfied (Path is satisfied), interface: en0)] event: transform:start @0.522s
+2026-11-18 05:31:01.741 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1.1.1 Hostname#4f224f6a:443 initial path ((null))] event: path:start @0.523s
+2026-11-18 05:31:01.742 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1.1.1 Hostname#4f224f6a:443 waiting path (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.524s, uuid: DFFB66DF-4FD9-45F6-92B5-A2E903C65B19
+2026-11-18 05:31:01.743 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1.1.1 Hostname#4f224f6a:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] event: resolver:start_dns @0.525s
+2026-11-18 05:31:01.747 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> setting up Connection 1
+2026-11-18 05:31:01.759 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_endpoint_resolver_update [C1.1.1 Hostname#4f224f6a:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] Adding endpoint handler for IPv4#997f4202:443
+2026-11-18 05:31:01.759 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C1.1.1 Hostname#4f224f6a:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] event: resolver:receive_dns @0.541s
+2026-11-18 05:31:01.759 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C1.1.1.1 IPv4#997f4202:443 initial path ((null))] event: path:start @0.541s
+2026-11-18 05:31:01.760 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C1.1.1.1 IPv4#997f4202:443 waiting path (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.541s, uuid: F0F3E623-48DB-4ABF-9FC1-5A80A8BA98C5
+2026-11-18 05:31:01.761 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C1.1.1.1 IPv4#997f4202:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] event: flow:start_connect @0.543s
+2026-11-18 05:31:01.822 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_socket_handle_socket_event [C1.1.1.1:3] Socket received CONNECTED event
+2026-11-18 05:31:01.823 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_flow_connected [C1.1.1.1 IPv4#997f4202:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] Transport protocol connected (socket)
+2026-11-18 05:31:01.823 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C1.1.1.1 IPv4#997f4202:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] event: flow:finish_transport @0.605s
+2026-11-18 05:31:01.825 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_session_apply_protocol_options_for_transport_block_invoke_2(2323) [C1.1.1.1:2][0x10f860540] TLS configured [min_version(0x0301) max_version(0x0304) name(redacted) tickets(false) false_start(false) enforce_ev(false) enforce_ats(false) ats_non_pfs_ciphersuite_allowed(false) ech(false) pqtls(true), pake(false)]
+2026-11-18 05:31:01.826 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_context_info_handler(2390) [C1.1.1.1:2][0x10f860540] Client handshake started
+2026-11-18 05:31:01.827 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS client enter_early_data
+2026-11-18 05:31:01.827 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS client read_server_hello
+2026-11-18 05:31:01.888 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_hello_retry_request
+2026-11-18 05:31:01.888 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_server_hello
+2026-11-18 05:31:01.889 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_encrypted_extensions
+2026-11-18 05:31:01.889 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_certificate_request
+2026-11-18 05:31:01.889 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_server_certificate
+2026-11-18 05:31:01.889 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_server_certificate_verify
+2026-11-18 05:31:01.890 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async(1833) [C1.1.1.1:2][0x10f860540] Performing external trust evaluation
+2026-11-18 05:31:01.890 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:01.891 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyAttributes
+2026-11-18 05:31:01.891 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:01.892 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external(1818) [C1.1.1.1:2][0x10f860540] Asyncing for external verify block
+2026-11-18 05:31:01.893 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Connection 1: asked to evaluate TLS Trust
+2026-11-18 05:31:01.900 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> auth completion disp=1 cred=0x0
+2026-11-18 05:31:01.901 Df UltraStarPlay[44029:1d41e] [com.apple.securityd:trust] (Trust 0x600003511d90) No pending evals, starting
+2026-11-18 05:31:01.902 A  UltraStarPlay[44029:1d41e] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-11-18 05:31:02.495 Df UltraStarPlay[44029:1d41e] [com.apple.securityd:keychain] System Keychain Always Supported set via feature flag to disabled
+2026-11-18 05:31:02.495 Df UltraStarPlay[44029:1d41e] [com.apple.xpc:connection] [0x1267d3c40] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-18 05:31:02.496 Df UltraStarPlay[44029:1d41e] [com.apple.xpc:connection] [0x10e668ba0] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-18 05:31:02.496 Df UltraStarPlay[44029:1d41e] [com.apple.securityd:trust] (Trust 0x600003511d90) Completed async eval kickoff
+2026-11-18 05:31:03.235 Df UltraStarPlay[44029:1d41e] [com.apple.securityd:trust] (Trust 0x600003511d90) trustd returned 4
+2026-11-18 05:31:03.235 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Connection 1: TLS Trust result 0
+2026-11-18 05:31:03.235 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external_block_invoke_3(1773) [C1.1.1.1:2][0x10f860540] Returning from external verify block with result: true
+2026-11-18 05:31:03.236 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(2014) [C1.1.1.1:2][0x10f860540] Certificate verification result: OK
+2026-11-18 05:31:03.236 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client read_server_finished
+2026-11-18 05:31:03.236 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client send_end_of_early_data
+2026-11-18 05:31:03.236 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client send_client_encrypted_extensions
+2026-11-18 05:31:03.236 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client send_client_certificate
+2026-11-18 05:31:03.236 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client complete_second_flight
+2026-11-18 05:31:03.237 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS 1.3 client done
+2026-11-18 05:31:03.237 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS client finish_client_handshake
+2026-11-18 05:31:03.237 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C1.1.1.1:2][0x10f860540] Client handshake state: TLS client done
+2026-11-18 05:31:03.238 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] boringssl_context_info_handler(2396) [C1.1.1.1:2][0x10f860540] Client handshake done
+2026-11-18 05:31:03.239 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.239 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyAttributes
+2026-11-18 05:31:03.239 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.240 Df UltraStarPlay[44029:1d41e] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C1.1.1.1:2][0x10f860540] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_128_GCM_SHA256) group(0x001d) signature_alg(0x0403) alpn(h2) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(0) sct_received(0) connect_time(1413ms) flight_time(61ms) rtt(61ms) write_stalls(0) read_stalls(2) pake(0x0000)]
+2026-11-18 05:31:03.240 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] nw_flow_connected [C1.1.1.1 IPv4#997f4202:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] Output protocol connected (CFNetworkConnection-2057841347)
+2026-11-18 05:31:03.243 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] [C1.1.1.1 IPv4#997f4202:443 ready socket-flow (satisfied (Path is satisfied), interface: en0)] event: flow:child_finish_connect @2.025s
+2026-11-18 05:31:03.246 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] [C1.1.1 Hostname#4f224f6a:443 ready resolver (satisfied (Path is satisfied), interface: en0)] event: flow:child_finish_connect @2.028s
+2026-11-18 05:31:03.248 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] [C1.1 Hostname#4f224f6a:443 ready transform (satisfied (Path is satisfied), interface: en0)] event: flow:child_finish_connect @2.029s
+2026-11-18 05:31:03.249 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] nw_flow_connected [C1 IPv4#997f4202:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0)] Output protocol connected (endpoint_flow)
+2026-11-18 05:31:03.250 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] [C1 IPv4#997f4202:443 ready parent-flow (satisfied (Path is satisfied), interface: en0)] event: flow:finish_connect @2.032s
+2026-11-18 05:31:03.252 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C1] reporting state ready
+2026-11-18 05:31:03.252 Df UltraStarPlay[44029:1d41e] [com.apple.xpc:connection] [0x10e668ba0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-18 05:31:03.253 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Connection 1: connected successfully
+2026-11-18 05:31:03.254 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Connection 1: TLS handshake complete
+2026-11-18 05:31:03.255 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Connection 1: ready C(N) E(N)
+2026-11-18 05:31:03.256 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] [C1] event: client:connection_reused @2.038s
+2026-11-18 05:31:03.257 Df UltraStarPlay[44029:1d41e] [com.apple.network:connection] nw_protocol_socket_notify [C1.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-11-18 05:31:03.258 E  UltraStarPlay[44029:1d41e] [com.apple.network:connection] nw_socket_set_connection_idle [C1.1.1.1:3] setsockopt SO_CONNECTION_IDLE failed [42: Protocol not available]
+2026-11-18 05:31:03.262 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> now using Connection 1
+2026-11-18 05:31:03.263 Df UltraStarPlay[44029:1d41e] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> sent request, body N 0
+2026-11-18 05:31:03.297 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.297 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyAttributes
+2026-11-18 05:31:03.297 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.298 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.298 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyAttributes
+2026-11-18 05:31:03.298 A  UltraStarPlay[44029:1d41e] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.491 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> received response, status 200 content K
+2026-11-18 05:31:03.491 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> done using Connection 1
+2026-11-18 05:31:03.491 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C1] event: client:connection_idle @2.273s
+2026-11-18 05:31:03.492 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_protocol_socket_notify [C1.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-11-18 05:31:03.492 E  UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_socket_set_connection_idle [C1.1.1.1:3] setsockopt SO_CONNECTION_IDLE failed [42: Protocol not available]
+2026-11-18 05:31:03.493 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> response ended
+2026-11-18 05:31:03.552 Df UltraStarPlay[44029:1dbd3] [com.apple.CFNetwork:Summary] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> summary for task success {transaction_duration_ms=4523, response_status=200, connection=1, protocol="h2", domain_lookup_duration_ms=16, connect_duration_ms=1489, secure_connection_duration_ms=1413, private_relay=false, request_start_ms=4233, request_duration_ms=0, response_start_ms=4462, response_duration_ms=1, request_bytes=158, request_throughput_kbps=3335, response_bytes=2114, response_throughput_kbps=8753, cache_hit=false}
+2026-11-18 05:31:03.553 Df UltraStarPlay[44029:1dbd3] [com.apple.CFNetwork:Default] Task <A5E0A072-A7CC-4BC5-BD7B-CEE170BAA418>.<1> finished successfully
+2026-11-18 05:31:03.583 Df UltraStarPlay[44029:1bf6b] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> resuming, timeouts(0.0, 604800.0) qos(0x0) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-11-18 05:31:03.590 Df UltraStarPlay[44029:1ccbd] [com.apple.CFNetwork:Default] Connection 0: creating secure tcp or quic connection
+2026-11-18 05:31:03.591 Df UltraStarPlay[44029:1ccbd] [com.apple.CFNetwork:Default] Connection 2: enabling TLS
+2026-11-18 05:31:03.591 Df UltraStarPlay[44029:1ccbd] [com.apple.CFNetwork:Default] Connection 2: starting, TC(0x0)
+2026-11-18 05:31:03.591 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2 9C04166B-CC57-4089-BB7F-F2F56B843B9D Hostname#47013ef5:443 quic-connection, url: https://raw.githubusercontent.com/UltraStar-Deluxe/Play/v1.7.1-beta1/UltraStar Play/Assets/VERSION.txt, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{3F91D88C-AD4E-4C76-9D17-39323E879A5C}{(null)}{Y}{2}{0x0} (private), proc: 4B252640-B155-3F79-B9A0-3E7308076613, delegated upid: 0] start
+2026-11-18 05:31:03.592 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2 Hostname#47013ef5:443 initial parent-flow ((null))] event: path:start @0.000s
+2026-11-18 05:31:03.593 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2 Hostname#47013ef5:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.001s, uuid: C9B83534-E765-4559-874F-88539E9DE93D
+2026-11-18 05:31:03.595 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2 Hostname#47013ef5:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0)] event: flow:start_connect @0.003s
+2026-11-18 05:31:03.596 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state preparing
+2026-11-18 05:31:03.601 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2 Hostname#47013ef5:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0)] event: flow:start_child @0.008s
+2026-11-18 05:31:03.603 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1 Hostname#47013ef5:443 initial path ((null))] event: path:start @0.011s
+2026-11-18 05:31:03.604 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1 Hostname#47013ef5:443 waiting path (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.012s, uuid: C9B83534-E765-4559-874F-88539E9DE93D
+2026-11-18 05:31:03.605 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1 Hostname#47013ef5:443 in_progress transform (satisfied (Path is satisfied), interface: en0)] event: transform:start @0.013s
+2026-11-18 05:31:03.608 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1 Hostname#47013ef5:443 initial path ((null))] event: path:start @0.016s
+2026-11-18 05:31:03.610 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1 Hostname#47013ef5:443 waiting path (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.018s, uuid: BA31EE3C-1669-45E9-81A5-0D11899710EC
+2026-11-18 05:31:03.613 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1 Hostname#47013ef5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] event: resolver:start_dns @0.020s
+2026-11-18 05:31:03.616 Df UltraStarPlay[44029:1ccbd] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> setting up Connection 2
+2026-11-18 05:31:03.630 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#47013ef5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] Adding endpoint handler for IPv4#9b21868b:443
+2026-11-18 05:31:03.630 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#47013ef5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] Adding endpoint handler for IPv4#39fbfae5:443
+2026-11-18 05:31:03.630 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#47013ef5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] Adding endpoint handler for IPv4#659920a6:443
+2026-11-18 05:31:03.631 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#47013ef5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] Adding endpoint handler for IPv4#2cc87344:443
+2026-11-18 05:31:03.631 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1 Hostname#47013ef5:443 in_progress resolver (satisfied (Path is satisfied), interface: en0)] event: resolver:receive_dns @0.039s
+2026-11-18 05:31:03.635 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1.1 IPv4#9b21868b:443 initial path ((null))] event: path:start @0.042s
+2026-11-18 05:31:03.636 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1.1 IPv4#9b21868b:443 waiting path (satisfied (Path is satisfied), interface: en0)] event: path:satisfied @0.044s, uuid: 1BA4FF56-6781-485D-B45A-6C7A567333DC
+2026-11-18 05:31:03.640 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1.1 IPv4#9b21868b:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] event: flow:start_connect @0.048s
+2026-11-18 05:31:03.645 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_socket_handle_socket_event [C2.1.1.1:3] Socket received CONNECTED event
+2026-11-18 05:31:03.648 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] nw_flow_connected [C2.1.1.1 IPv4#9b21868b:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] Transport protocol connected (socket)
+2026-11-18 05:31:03.648 Df UltraStarPlay[44029:1ccbd] [com.apple.network:connection] [C2.1.1.1 IPv4#9b21868b:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] event: flow:finish_transport @0.056s
+2026-11-18 05:31:03.655 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_session_apply_protocol_options_for_transport_block_invoke_2(2323) [C2.1.1.1:2][0x129ead010] TLS configured [min_version(0x0301) max_version(0x0304) name(redacted) tickets(false) false_start(false) enforce_ev(false) enforce_ats(false) ats_non_pfs_ciphersuite_allowed(false) ech(false) pqtls(true), pake(false)]
+2026-11-18 05:31:03.657 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_context_info_handler(2390) [C2.1.1.1:2][0x129ead010] Client handshake started
+2026-11-18 05:31:03.659 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS client enter_early_data
+2026-11-18 05:31:03.659 Df UltraStarPlay[44029:1ccbd] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS client read_server_hello
+2026-11-18 05:31:03.663 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_hello_retry_request
+2026-11-18 05:31:03.663 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_server_hello
+2026-11-18 05:31:03.663 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_encrypted_extensions
+2026-11-18 05:31:03.664 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_certificate_request
+2026-11-18 05:31:03.664 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_server_certificate
+2026-11-18 05:31:03.664 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_server_certificate_verify
+2026-11-18 05:31:03.665 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async(1833) [C2.1.1.1:2][0x129ead010] Performing external trust evaluation
+2026-11-18 05:31:03.665 A  UltraStarPlay[44029:1c4b1] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:03.666 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external(1818) [C2.1.1.1:2][0x129ead010] Asyncing for external verify block
+2026-11-18 05:31:03.667 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 2: asked to evaluate TLS Trust
+2026-11-18 05:31:03.668 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> auth completion disp=1 cred=0x0
+2026-11-18 05:31:03.670 Df UltraStarPlay[44029:1c4b1] [com.apple.securityd:trust] (Trust 0x600003507e90) No pending evals, starting
+2026-11-18 05:31:03.670 A  UltraStarPlay[44029:1c4b1] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-11-18 05:31:03.671 Df UltraStarPlay[44029:1c4b1] [com.apple.xpc:connection] [0x10f84ef40] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-11-18 05:31:03.672 Df UltraStarPlay[44029:1c4b1] [com.apple.securityd:trust] (Trust 0x600003507e90) Completed async eval kickoff
+2026-11-18 05:31:03.825 E  UltraStarPlay[44029:1c4f1] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 05:31:04.393 Df UltraStarPlay[44029:1c4b1] [com.apple.securityd:trust] (Trust 0x600003507e90) trustd returned 4
+2026-11-18 05:31:04.393 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 2: TLS Trust result 0
+2026-11-18 05:31:04.393 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external_block_invoke_3(1773) [C2.1.1.1:2][0x129ead010] Returning from external verify block with result: true
+2026-11-18 05:31:04.393 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(2014) [C2.1.1.1:2][0x129ead010] Certificate verification result: OK
+2026-11-18 05:31:04.394 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client read_server_finished
+2026-11-18 05:31:04.394 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client send_end_of_early_data
+2026-11-18 05:31:04.394 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client send_client_encrypted_extensions
+2026-11-18 05:31:04.394 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client send_client_certificate
+2026-11-18 05:31:04.394 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client complete_second_flight
+2026-11-18 05:31:04.395 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS 1.3 client done
+2026-11-18 05:31:04.397 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS client finish_client_handshake
+2026-11-18 05:31:04.397 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2407) [C2.1.1.1:2][0x129ead010] Client handshake state: TLS client done
+2026-11-18 05:31:04.399 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] boringssl_context_info_handler(2396) [C2.1.1.1:2][0x129ead010] Client handshake done
+2026-11-18 05:31:04.400 A  UltraStarPlay[44029:1c4b1] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:04.401 Df UltraStarPlay[44029:1c4b1] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C2.1.1.1:2][0x129ead010] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_128_GCM_SHA256) group(0x11ec) signature_alg(0x0804) alpn(h2) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(0) sct_received(0) connect_time(743ms) flight_time(4ms) rtt(4ms) write_stalls(0) read_stalls(2) pake(0x0000)]
+2026-11-18 05:31:04.402 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_flow_connected [C2.1.1.1 IPv4#9b21868b:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0)] Output protocol connected (CFNetworkConnection-2057841347)
+2026-11-18 05:31:04.404 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C2.1.1.1 IPv4#9b21868b:443 ready socket-flow (satisfied (Path is satisfied), interface: en0)] event: flow:child_finish_connect @0.812s
+2026-11-18 05:31:04.405 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C2.1.1 Hostname#47013ef5:443 ready resolver (satisfied (Path is satisfied), interface: en0)] event: flow:child_finish_connect @0.813s
+2026-11-18 05:31:04.407 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C2.1 Hostname#47013ef5:443 ready transform (satisfied (Path is satisfied), interface: en0)] event: flow:child_finish_connect @0.815s
+2026-11-18 05:31:04.412 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_flow_connected [C2 IPv4#9b21868b:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0)] Output protocol connected (endpoint_flow)
+2026-11-18 05:31:04.413 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C2 IPv4#9b21868b:443 ready parent-flow (satisfied (Path is satisfied), interface: en0)] event: flow:finish_connect @0.821s
+2026-11-18 05:31:04.414 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state ready
+2026-11-18 05:31:04.416 A  UltraStarPlay[44029:1c4b1] (Security) SecKeyCopyPublicBytes
+2026-11-18 05:31:04.416 Df UltraStarPlay[44029:1c4b1] [com.apple.xpc:connection] [0x10f84ef40] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-11-18 05:31:04.416 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 2: connected successfully
+2026-11-18 05:31:04.417 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 2: TLS handshake complete
+2026-11-18 05:31:04.418 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Connection 2: ready C(N) E(N)
+2026-11-18 05:31:04.418 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] [C2] event: client:connection_reused @0.826s
+2026-11-18 05:31:04.420 Df UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_protocol_socket_notify [C2.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-11-18 05:31:04.420 E  UltraStarPlay[44029:1c4b1] [com.apple.network:connection] nw_socket_set_connection_idle [C2.1.1.1:3] setsockopt SO_CONNECTION_IDLE failed [42: Protocol not available]
+2026-11-18 05:31:04.421 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> now using Connection 2
+2026-11-18 05:31:04.422 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> sent request, body N 0
+2026-11-18 05:31:04.502 Df UltraStarPlay[44029:1dbd3] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> received response, status 404 content K
+2026-11-18 05:31:04.502 Df UltraStarPlay[44029:1dbd3] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> done using Connection 2
+2026-11-18 05:31:04.502 Df UltraStarPlay[44029:1dbd3] [com.apple.network:connection] [C2] event: client:connection_idle @0.910s
+2026-11-18 05:31:04.502 Df UltraStarPlay[44029:1dbd3] [com.apple.network:connection] nw_protocol_socket_notify [C2.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-11-18 05:31:04.502 E  UltraStarPlay[44029:1dbd3] [com.apple.network:connection] nw_socket_set_connection_idle [C2.1.1.1:3] setsockopt SO_CONNECTION_IDLE failed [42: Protocol not available]
+2026-11-18 05:31:04.503 Df UltraStarPlay[44029:1dbd3] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> response ended
+2026-11-18 05:31:04.503 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Summary] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> summary for task success {transaction_duration_ms=915, response_status=404, connection=2, protocol="h2", domain_lookup_duration_ms=19, connect_duration_ms=773, secure_connection_duration_ms=743, private_relay=false, request_start_ms=833, request_duration_ms=0, response_start_ms=913, response_duration_ms=1, request_bytes=195, request_throughput_kbps=7688, response_bytes=526, response_throughput_kbps=3678, cache_hit=false}
+2026-11-18 05:31:04.504 Df UltraStarPlay[44029:1c4b1] [com.apple.CFNetwork:Default] Task <8CD3BE6C-055F-4252-925F-92BF074306F2>.<2> finished successfully

@@ -1,0 +1,400 @@
+UnloadTime: 20.036447 ms
+DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+IngameDebugConsole.DebugLogManager:Awake()
+
+[./Runtime/SceneManager/SceneManager.cpp line -1312230984]
+
+SceneInjectionManager - Analyzing scene LoadingScene took 49 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:AnalyzeScene()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+SceneInjectionManager - Creating bindings took 7 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:CreateBindings()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Settings file not found. Creating default settings at /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/091142BF-FAF1-447F-8087-3DEA06395241/Documents/Settings.json.
+SettingsManager:Reload()
+<>c:<GetBindings>b__0_3()
+UniInject.ExistingInstanceProvider`1:Get(Injector, Boolean&)
+UniInject.Injector:GetValuesForInjectionKeys(Object[], Object, Type)
+UniInject.Injector:InjectMemberFromBindings(Object, MemberInfo, Object[], Boolean)
+UniInject.Injector:Inject(Object, Object)
+UniInject.SceneInjectionManager:InjectScriptsThatNeedInjection()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Failed to create initial recording device profile.
+SettingsManager:CreateDefaultSettings()
+SettingsManager:Reload()
+<>c:<GetBindings>b__0_3()
+UniInject.ExistingInstanceProvider`1:Get(Injector, Boolean&)
+UniInject.Injector:GetValuesForInjectionKeys(Object[], Object, Type)
+UniInject.Injector:InjectMemberFromBindings(Object, MemberInfo, Object[], Boolean)
+UniInject.Injector:Inject(Object, Object)
+UniInject.SceneInjectionManager:InjectScriptsThatNeedInjection()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+  at SettingsManager.CreateDefaultSettings () [0x00000] in <00000000000000000000000000000000>:0 
+  at SettingsManager.Reload () [0x00000] in <00000000000000000000000000000000>:0 
+  at CommonSceneObjectsBinder+<>c.<GetBindings>b__0_3 () [0x00000] in <00000000000000000000000000000000>:0 
+  at UniInject.ExistingInstanceProvider`1[T].Get (UniInject.Injector injector, System.Boolean& resultNeedsInjection) [0x00000] in <00000000000000000000000000000000>:0 
+  at UniInject.Injector.GetValuesForInjectionKeys (System.Object[] injectionKeys, System.Object target, System.Type targetType) [0x00000] in <00000000000000000000000000000000>:0 
+  at UniInject.Injector.InjectMemberFromBindings (System.Object target, System.Reflection.MemberInfo memberInfo, System.Object[] injectionKeys, System.Boolean isOptional) [0x00000] in <00000000000000000000000000000000>:0 
+  at UniInject.Injector.Inject (System.Object target, System.Object injectionKey) [0x00000] in <00000000000000000000000000000000>:0 
+  at UniInject.SceneInjectionManager.InjectScriptsThatNeedInjection () [0x00000] in <00000000000000000000000000000000>:0 
+  at UniInject.SceneInjectionManager.DoSceneInjection () [0x00000] in <00000000000000000000000000000000>:0 
+SettingsManager:CreateDefaultSettings()
+SettingsManager:Reload()
+<>c:<GetBindings>b__0_3()
+UniInject.ExistingInstanceProvider`1:Get(Injector, Boolean&)
+UniInject.Injector:GetValuesForInjectionKeys(Object[], Object, Type)
+UniInject.Injector:InjectMemberFromBindings(Object, MemberInfo, Object[], Boolean)
+UniInject.Injector:Inject(Object, Object)
+UniInject.SceneInjectionManager:InjectScriptsThatNeedInjection()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Loading the settings took 52 ms
+DisposableStopwatch:LogTextWithPlaceholders(Stopwatch, String, Single)
+SettingsManager:Reload()
+<>c:<GetBindings>b__0_3()
+UniInject.ExistingInstanceProvider`1:Get(Injector, Boolean&)
+UniInject.Injector:GetValuesForInjectionKeys(Object[], Object, Type)
+UniInject.Injector:InjectMemberFromBindings(Object, MemberInfo, Object[], Boolean)
+UniInject.Injector:Inject(Object, Object)
+UniInject.SceneInjectionManager:InjectScriptsThatNeedInjection()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+SceneInjectionManager - Injecting scripts took 74 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:InjectScriptsThatNeedInjection()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+SceneInjectionManager - Analyzing, binding and injecting scene took 160 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Updated 0 ITranslator instances in scene took 0 ms
+ApplyTranslationsOnSceneInjectionFinished:UpdateTranslatorsInScene()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Found 6 themes: [default_blue,ocean,pumpkin,static_background,valentine,watermelon]
+ThemeManager:GetThemeMetas()
+ThemeManager:GetThemeByName(String)
+ThemeManager:LoadCurrentTheme()
+UltraStarPlaySceneChangeAnimationControl:OnSceneInjectionFinished()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Loading theme 'default_blue'
+ThemeManager:LoadCurrentTheme()
+UltraStarPlaySceneChangeAnimationControl:OnSceneInjectionFinished()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Found 6 player profile images: {"Silhouette01.png":"/Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/A8767291-7F90-401D-A157-452915FA9277/UltraStarPlay.app/Data/Raw/PlayerProfileImages/Silhouette01.png","Silhouette02.png":"/Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/A8767291-7F90-401D-A157-452915FA9277/UltraStarPlay.app/Data/Raw/PlayerProfileImages/Silhouette02.png","Silhouette03.png":"/Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/A8767291-7F90-401D-A157-452915FA9277/UltraStarPlay.app/Data/Raw/PlayerProfileImages/Silhouette03.png","Silhouette04.png":"/Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/A8767291-7F90-401D-A157-452915FA9277/UltraStarPlay.app/Data/Raw/PlayerProfileImages/Silhouette04.png","Silhouette05.png":"/Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/A8767291-7F90-401D-A157-452915FA9277/UltraStarPlay.app/Data/Raw/PlayerProfileImages/Silhouette05.png","Silhouette06.png":"/Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/A8767291-7F90-401D-A157-452915FA9277/UltraStarPlay.app/Data/Raw/PlayerProfileImages/Silhouette06.png"}
+PlayerProfileUtils:FindPlayerProfileImages()
+UiManager:AwakeSingleton()
+
+Loaded 312 translations from Translations/messages
+ProTrans.TranslationManager:TryReloadFallbackLanguageTranslations()
+ProTrans.TranslationManager:Awake()
+
+[INF] loaded settings:{"GameSettings":{"ScoreMode":"Individual","CommonScoreNameSeparator":" & ","language":"English","songDirs":[]},"GraphicSettings":{"AnimateSceneChange":true,"resolution":{"Width":800,"Height":600,"RefreshRate":60},"fullScreenMode":"Windowed","targetFps":30,"noteDisplayMode":"SentenceBySentence","showPitchIndicator":false,"useImageAsCursor":true,"showLyricsOnNotes":false,"showStaticLyrics":true,"analyzeBeatsWithoutTargetNote":true,"themeName":"default_blue"},"AudioSettings":{"PreviewVolumePercent":50,"VolumePercent":100,"BackgroundMusicVolumePercent":50,"SceneChangeSoundVolumePercent":50,"pitchDetectionAlgorithm":"Dywa"},"PlayerProfiles":[{"Name":"Player01","Difficulty":"Medium","ImagePath":"Silhouette01.png","IsEnabled":true,"IsSelected":true},{"Name":"Player02","Difficulty":"Easy","ImagePath":"Silhouette02.png","IsEnabled":true,"IsSelected":true}],"MicProfiles":[],"LastMicProfileNameInRecordingOptionsScene":null,"WebcamSettings":{"CurrentDeviceName":null,"UseAsBackgroundInSingScene":false},"SongEditorSettings":{"AutoSave":true,"MusicVolume":1.0,"MusicPlaybackSpeed":1.0,"GoToLastPlaybackPosition":true,"RecordingSource":"Off","MicProfile":null,"MicOctaveOffset":0,"MicDelayInMillis":450,"MidiNoteForButtonRecording":69,"ButtonDisplayNameForButtonRecording":"N","AdjustFollowingNotes":false,"MidiVelocity":100,"MidiGain":1.0,"MidiSoundPlayAlongEnabled":true,"MidiPlaybackOffsetInMillis":0,"LastMidiFilePath":"","ShowLyricsArea":true,"ShowVideoArea":true,"ShowStatusBar":true,"ShowVirtualPianoArea":true,"SmallLeftSideBar":false,"ShowControlHints":true,"ShowNotePitchLabel":true,"GridSizeInPx":1.0,"SentenceLineSizeInPx":2.0},"SongSelectSettings":{"songOrder":"Artist","searchProperties":["Artist","Title"],"playlistName":""},"DeveloperSettings":{"showFps":false,"disableDynamicThemes":false,"enableEventSystemOnAndroid":false,"useUniversalCharsetDetector":true},"IgnoredReleases":[],"UdpPortOnServer":34567,"UdpPortOnClient":34568,"OwnHost":null}
+(UnityLogEventSink)
+ScanFilesAsynchronously
+SongMetaManager:ScanFilesAsynchronously()
+SongMetaManager:ScanFilesIfNotDoneYet()
+LoadingSceneControl:Start()
+
+Found 0 songs in 1 configured song directories
+SongMetaManager:ScanForTxtFiles(FolderScanner, List`1)
+SongMetaManager:ScanFilesAsynchronously()
+SongMetaManager:ScanFilesIfNotDoneYet()
+LoadingSceneControl:Start()
+
+[INF] started loading songs.
+(UnityLogEventSink)
+Loaded 312 translations from Translations/messages
+ProTrans.TranslationManager:TryReloadFallbackLanguageTranslations()
+ProTrans.TranslationManager:ReloadTranslationsAndUpdateScene()
+LoadingSceneControl:Start()
+
+Updated ITranslator instances in scene: 0
+ProTrans.TranslationManager:UpdateTranslatorsInScene()
+LoadingSceneControl:Start()
+
+Screen size (inches): 4.69441, DPI: 326
+StyleSheetControl:StartSingleton()
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Started song-scan-thread.
+<>c__DisplayClass33_0:<ScanFilesAsynchronously>b__0(PoolHandle)
+ThreadPool:ThreadProc()
+System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+
+Finished song-scan-thread after 104 ms. Loaded 0 songs. Errors: 0, Warnings: 0.
+<>c__DisplayClass33_0:<ScanFilesAsynchronously>b__0(PoolHandle)
+ThreadPool:ThreadProc()
+System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+
+Server listening for connect request on 0.0.0.0:34567
+ServerSideConnectRequestManager:ServerAcceptMessageFromClient()
+ServerSideConnectRequestManager:<StartSingleton>b__14_0(PoolHandle)
+ThreadPool:ThreadProc()
+System.Threading.ExecutionContext:RunInternal(ExecutionContext, ContextCallback, Object, Boolean)
+
+Starting HttpListener on 192.168.64.7:6789
+SimpleHttpServerForUnity.HttpServer:StartHttpListener()
+UltraStarPlayHttpServer:Start()
+
+[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+UnloadTime: 10.697930 ms
+SceneInjectionManager - Analyzing scene MainScene took 5 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:AnalyzeScene()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+SceneInjectionManager - Creating bindings took 0 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:CreateBindings()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+SceneInjectionManager - Injecting scripts took 4 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:InjectScriptsThatNeedInjection()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+SceneInjectionManager - Analyzing, binding and injecting scene took 11 ms
+UniInject.SceneInjectionManager:StopAndLogTime(Stopwatch, String)
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Updated 1 ITranslator instances in scene took 7 ms
+ApplyTranslationsOnSceneInjectionFinished:UpdateTranslatorsInScene()
+UniInject.SceneInjectionManager:DoSceneInjection()
+
+Changing scenes took 0 ms
+<>c__DisplayClass14_0:<StartSingleton>b__1(SceneChangedEvent)
+UniRx.InternalUtil.ListObserver`1:OnNext(T)
+
+Getting tags from: https://api.github.com/repos/UltraStar-Deluxe/Play/tags
+NewVersionChecker:StartGetTagsRequest(String)
+
+Unloading 5 unused Assets / (0 B). Loaded Objects now: 2338.
+Memory consumption went from 94.8 MB to 94.8 MB.
+Total: 32.647125 ms (FindLiveObjects: 0.772025 ms CreateObjectMapping: 0.135952 ms MarkObjects: 31.703204 ms  DeleteObjects: 0.034495 ms)
+
+UITK PROBE scene=LoadingScene screen=1334x750 uiDocuments=1 cameras=2
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE bg go='BackgroundCameraWithBackgroundImageControl' enabled=True active=True cam=True mat=[bg-dynamic] background shader=UltraStar Play/Background Shader supported=True keywords='_DITHERING,_ANIMATE,_GRADIENT_LINEAR' transitionTime=1 uiTex= 1334x750 rampTex=
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE target= 1334x750 id=-94 alphaPixels=39463/142928
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE doc go='UIDocument' active=True enabled=True panelSettings=PanelSettings theme=UltraStarPlayMainTheme tree=MainSceneUi sort=0 root children=1 all=36 visibleWithSize=35 rootBound=(x:0.00, y:0.00, width:800.00, height:449.78) styleSheets=0 panel=True
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE <TemplateContainer name='UIDocument-container' classes='unity-ui-document__root'> bound=(x:0.00, y:0.00, width:800.00, height:449.78) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE   <VisualElement name='background' classes=''> bound=(x:0.00, y:0.00, width:800.00, height:449.78) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE     <VisualElement name='logo' classes=''> bound=(x:0.00, y:10.19, width:800.00, height:89.96) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=True
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE     <VisualElement name='' classes=''> bound=(x:10.19, y:10.19, width:779.61, height:429.39) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE       <VisualElement name='titleContainer' classes=''> bound=(x:20.39, y:92.35, width:759.22, height:51.57) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <VisualElement name='titleImageAndText' classes=''> bound=(x:20.39, y:92.35, width:158.92, height:51.57) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE       <VisualElement name='space' classes='mainSceneButtonSpacer'> bound=(x:395.20, y:143.93, width:9.60, height:9.60) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE       <VisualElement name='buttonRow' classes=''> bound=(x:20.39, y:153.52, width:759.22, height:92.35) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <Button name='startButton' classes='unity-text-element unity-button startButtonClass mainSceneButton'> bound=(x:164.92, y:153.52, width:310.05, height:92.35) display=Flex vis=Visible opacity=1 bg=RGBA(0.360, 0.680, 0.878, 1.000) bgImage=False text='Sing' font=NONE color=RGBA(0.898, 0.898, 0.898, 1.000)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <VisualElement name='space' classes='mainSceneButtonSpacer'> bound=(x:474.96, y:153.52, width:10.19, height:10.19) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <Button name='partyButton' classes='unity-text-element unity-button mainSceneButton'> bound=(x:485.16, y:153.52, width:149.93, height:92.35) display=Flex vis=Visible opacity=1 bg=RGBA(0.200, 0.600, 0.847, 1.000) bgImage=False text='Party' font=NONE color=RGBA(0.898, 0.898, 0.898, 1.000)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE scene=MainScene screen=1334x750 uiDocuments=1 cameras=2
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE bg go='BackgroundCameraWithBackgroundImageControl' enabled=True active=True cam=True mat=[bg-dynamic] background shader=UltraStar Play/Background Shader supported=True keywords='_DITHERING,_ANIMATE,_GRADIENT_LINEAR' transitionTime=1 uiTex= 1334x750 rampTex=
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE target= 1334x750 id=-94 alphaPixels=39463/142928
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE doc go='UIDocument' active=True enabled=True panelSettings=PanelSettings theme=UltraStarPlayMainTheme tree=MainSceneUi sort=0 root children=1 all=36 visibleWithSize=35 rootBound=(x:0.00, y:0.00, width:800.00, height:449.78) styleSheets=0 panel=True
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE <TemplateContainer name='UIDocument-container' classes='unity-ui-document__root'> bound=(x:0.00, y:0.00, width:800.00, height:449.78) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE   <VisualElement name='background' classes=''> bound=(x:0.00, y:0.00, width:800.00, height:449.78) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE     <VisualElement name='logo' classes=''> bound=(x:0.00, y:10.19, width:800.00, height:89.96) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=True
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE     <VisualElement name='' classes=''> bound=(x:10.19, y:10.19, width:779.61, height:429.39) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE       <VisualElement name='titleContainer' classes=''> bound=(x:20.39, y:92.35, width:759.22, height:51.57) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <VisualElement name='titleImageAndText' classes=''> bound=(x:20.39, y:92.35, width:158.92, height:51.57) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE       <VisualElement name='space' classes='mainSceneButtonSpacer'> bound=(x:395.20, y:143.93, width:9.60, height:9.60) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE       <VisualElement name='buttonRow' classes=''> bound=(x:20.39, y:153.52, width:759.22, height:92.35) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <Button name='startButton' classes='unity-text-element unity-button startButtonClass mainSceneButton'> bound=(x:164.92, y:153.52, width:310.05, height:92.35) display=Flex vis=Visible opacity=1 bg=RGBA(0.360, 0.680, 0.878, 1.000) bgImage=False text='Sing' font=NONE color=RGBA(0.898, 0.898, 0.898, 1.000)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <VisualElement name='space' classes='mainSceneButtonSpacer'> bound=(x:474.96, y:153.52, width:10.19, height:10.19) display=Flex vis=Visible opacity=1 bg=RGBA(0.000, 0.000, 0.000, 0.000) bgImage=False
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+UITK PROBE         <Button name='partyButton' classes='unity-text-element unity-button mainSceneButton'> bound=(x:485.16, y:153.52, width:149.93, height:92.35) display=Flex vis=Visible opacity=1 bg=RGBA(0.200, 0.600, 0.847, 1.000) bgImage=False text='Party' font=NONE color=RGBA(0.898, 0.898, 0.898, 1.000)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+UitkProbe:Walk(VisualElement, Int32, Int32&)
+<Dump>d__2:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+Getting version file from: https://raw.githubusercontent.com/UltraStar-Deluxe/Play/v1.7.1-beta1/UltraStar%20Play/Assets/VERSION.txt
+NewVersionChecker:StartGetRemoteVersionFileRequest(String)
+UniRx.Operators.FromCoroutine:OnNext(T)
+UniRx.<AsObservableCore>d__2`1:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+
+Getting version file from 'https://raw.githubusercontent.com/UltraStar-Deluxe/Play/v1.7.1-beta1/UltraStar%20Play/Assets/VERSION.txt' has result ProtocolError.
+HTTP/1.1 404 Not Found
+NewVersionChecker:UpdateGetRemoteVersionFileRequest(UnityWebRequest)
+UniRx.Operators.FromCoroutine:OnNext(T)
+UniRx.<AsObservableCore>d__2`1:MoveNext()
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr)
+

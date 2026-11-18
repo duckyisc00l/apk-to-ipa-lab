@@ -1,0 +1,2 @@
+xcodebuild (simulator) exit 0
+** BUILD SUCCEEDED **
