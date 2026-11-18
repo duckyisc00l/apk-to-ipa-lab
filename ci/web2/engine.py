@@ -82,14 +82,11 @@ if engine.startswith("RPG Maker"):
                 if u != base and u.lower() == base.lower():
                     bad.append(f"{f} (data says '{u}')")
     out.append("file-name case mismatches (break on a real iPhone only): " + (", ".join(sorted(set(bad))[:20]) or "none"))
-    # WebKit fixes, loaded before the engine: PIXI 4 (MV) draws maps black on WebKit's WebGL with its VAO extension, so
-    # PIXI is told there is none (it has its own fallback). MV_RENDER=canvas also forces MV's canvas renderer
-    # (MV reads "?canvas" from the address). Scene changes and a lost WebGL context go to the console (the
-    # simulator run logs console errors).
+    # Loaded before the engine. In the iPhone Simulator MV's WebGL map (pixi-tilemap shader) fails: "Could not
+    # initialize shader", WebGL context lost, black map. MV_RENDER=canvas forces MV's canvas renderer (MV reads
+    # "?canvas" from the address); the map then draws. Scene changes and a lost WebGL context go to the console.
     canvas = os.environ.get("MV_RENDER") == "canvas"
     fix = """(function () {
-  var ge = WebGLRenderingContext.prototype.getExtension;
-  WebGLRenderingContext.prototype.getExtension = function (n) { return n === 'OES_vertex_array_object' ? null : ge.apply(this, arguments); };
   if (%s) history.replaceState(null, '', location.pathname + '?canvas');
   document.addEventListener('webglcontextlost', function () { console.error('[mv] WebGL context lost'); }, true);
   var last;
@@ -104,7 +101,7 @@ if engine.startswith("RPG Maker"):
     if "ios-fixes.js" not in t:
         t = t.replace("<script", '<script type="text/javascript" src="js/ios-fixes.js"></script>\n        <script', 1)
         open(ip, "w").write(t)
-    out.append("FIX: js/ios-fixes.js before the engine: PIXI without the WebGL VAO extension" + ("; canvas renderer forced" if canvas else "") + "; scene log")
+    out.append("FIX: js/ios-fixes.js before the engine: scene log" + ("; canvas renderer forced" if canvas else ""))
 elif engine == "GDevelop":
     gd = open(os.path.join(www, "data.js"), errors="ignore").read() if has("data.js") else ""
     m = re.search(r'"sizeOnStartupMode"\s*:\s*"(\w*)"', gd)

@@ -37,14 +37,7 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // http://127.0.0.1:<port> first: WebKit gives pages from a custom scheme (app://) no working IndexedDB.
-        LoopbackServer.shared.start { [weak self] ok in
-            if !ok { NSLog("[web] loopback server did not start: using app://local (IndexedDB won't work)") }
-            self?.webView.load(URLRequest(url: ok ? LoopbackServer.shared.startURL : LocalSchemeHandler.startURL))
-        }
-        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { _ in
-            if !LoopbackServer.shared.ready { LoopbackServer.shared.start { _ in } }   // iOS can close the socket while the app sleeps
-        }
+        webView.load(URLRequest(url: LocalSchemeHandler.startURL))
     }
 
     override var prefersStatusBarHidden: Bool { true }
@@ -74,7 +67,6 @@ final class GameViewController: UIViewController, WKNavigationDelegate, WKUIDele
     func webView(_ webView: WKWebView, decidePolicyFor action: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = action.request.url, let scheme = url.scheme?.lowercased() else { return decisionHandler(.allow) }
-        if LoopbackServer.shared.owns(url) { return decisionHandler(.allow) }
         if ["http", "https", "mailto", "tel"].contains(scheme) && action.targetFrame?.isMainFrame != false {
             UIApplication.shared.open(url)
             return decisionHandler(.cancel)
