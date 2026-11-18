@@ -81,7 +81,8 @@ jobs:
     needs: recover
     # the iOS workload follows the newest Xcode (26.x): an older Xcode fails with MT4162 "not available in iOS 18.5"
     runs-on: macos-26
-    timeout-minutes: 90
+    # a Release build of a MAUI app took 58 min for the simulator and 20 min for the device on macos-26
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
