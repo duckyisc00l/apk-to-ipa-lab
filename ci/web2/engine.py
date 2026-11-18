@@ -124,6 +124,25 @@ elif engine == "GDevelop":
     ext_dir = os.path.join(www, "Extensions")
     out.append("Extensions folder: " + (", ".join(sorted(os.listdir(ext_dir))) if os.path.isdir(ext_dir) else "none"))
 
+# Orientation when the Android manifest leaves it open: a web manifest's "orientation", or a "rotate your device"
+# notice in index.html/CSS (Shadow Runner, Phaser: shown in portrait, so the game never showed in the simulator).
+plist = os.path.join(proj, "App", "Info.plist")
+pt = open(plist).read()
+if "Portrait" in pt and "Landscape" in pt:
+    want = None
+    if has("manifest.json"):
+        m = re.search(r'"orientation"\s*:\s*"(\w+)', open(os.path.join(www, "manifest.json"), errors="ignore").read())
+        if m and m.group(1).startswith(("landscape", "portrait")): want = m.group(1)[:9].rstrip("-")
+    if not want:
+        page = "".join(open(os.path.join(www, f), errors="ignore").read() for f in files if f.endswith((".html", ".css")) and f.count("/") < 2)
+        if re.search(r"rotate (your )?(device|phone|screen)|rotate-notice|orientation\s*:\s*portrait\)", page, re.I):
+            want = "landscape"
+    if want in ("landscape", "portrait"):
+        w = ("<string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string>"
+             if want == "landscape" else "<string>UIInterfaceOrientationPortrait</string>")
+        open(plist, "w").write(re.sub(r"(<key>UISupportedInterfaceOrientations[^<]*</key>\s*<array>).*?(</array>)", lambda m: m.group(1) + w + m.group(2), pt, flags=re.S))
+        out.append(f"FIX: orientation set to {want} (the web manifest or a 'rotate your device' notice asks for it; Android's manifest had none)")
+
 # native calls (step 2 grep) outside libraries
 js = [f for f in files if f.endswith(".js")]
 hits = {}
