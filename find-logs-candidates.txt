@@ -1,0 +1,14 @@
+MewX/cross-channel_chinese-localization_project moved.v1.01.basedon.v0.99 crosschannel-1.01-android.apk
+saber-nyan/ddlc-android v0.0.4 DokiDokiLiteratureClub-0.0.4-release.apk
+saber-nyan/test-renpy-vn v1.0.0 testrenpyvn-1.0.0-release.apk
+Reset171/RenPlay 0.3.1 app-arm64-v8a-release.apk
+AdvancedAppCreator/adult-game-manager-releases v1.0 AdultGameManager-1.0-release.apk
+AdvancedAppCreator/adult-game-manager v2.10.41 adult-game-manager-2.10.41.apk
+JXZ666/slgking v0.29.0 slgking-android-0.29.0.apk
+Neibce/PLUTO-Android v0.9.22 app-release.apk
+ComeCatchMoonLa/April-Unnamed-Tree v1.0.0 April-Unnamed-Tree-android-v1.0.0.apk
+HanHugo/RenPyForge v1.5.3 RenPyForge-1.5.3.apk
+Sirpixelalot/Rentool 1.7.3 app-release.apk
+Unkzittys/TherapyWithDrAlbertKrueger_AndroidPort 1.0.2 TherapyWithDrAlbertKrueger.apk
+Weiss-UltimateSavior/Tyranor-Next beta-1.72 app-release.apk
+playferry/PlayFerryApp v0.0.1-alpha PlayFerry-alpha-v0.0.1.apk

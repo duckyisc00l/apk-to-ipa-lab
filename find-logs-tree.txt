@@ -1,0 +1,10 @@
+proj
+proj/game
+proj/game/script.rpyc
+proj/game/script_version.txt
+proj/game/screens.rpyc
+proj/game/cache
+proj/game/gui.rpyc
+proj/game/options.rpyc
+proj/game/tl
+proj/game/gui

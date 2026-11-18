@@ -1,0 +1,54 @@
+Got dlopen error on Foundation: dlopen(/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation, 0x0001): tried: '/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation' (no such file), '/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation' (no such file, not in dyld cache), '/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation' (no such file), '/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation' (no such file), '/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation' (no such file, not in dyld cache), '/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation' (no such file)
+Got fallback dlopen error on Foundation: dlopen(/Groups/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation, 0x0001): tried: '/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/Groups/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation' (no such file), '/Groups/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation' (no such file), '/Library/Developer/CoreSimulator/Volumes/iOS_23C54/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Foundation.framework/Versions/Current/Foundation' (no such file)
+2026-11-18 12:56:36.234 test-renpy-vn[11420:37885] Traceback (most recent call last):
+2026-11-18 12:56:36.235 test-renpy-vn[11420:37885]   File "renpy/bootstrap.py", line 337, in bootstrap
+2026-11-18 12:56:36.236 test-renpy-vn[11420:37885]   File "renpy/bootstrap.py", line 148, in get_alternate_base
+2026-11-18 12:56:36.237 test-renpy-vn[11420:37885]   File "lib/python2.7/pyobjus/objc_py_types.py", line 185, in enum
+2026-11-18 12:56:36.238 test-renpy-vn[11420:37885] TypeError: type() argument 1 must be string, not unicode
+2026-11-18 12:56:36.349 test-renpy-vn[11420:37885] iOS device idiom 0
+2026-11-18 12:56:36.350 test-renpy-vn[11420:37885] Version: Ren'Py 7.8.7.25031702
+2026-11-18 12:56:36.350 test-renpy-vn[11420:37885] Mobile search paths: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/64953BDE-2E16-4B57-895E-FD6094ADA4CB/test-renpy-vn.app/base/game /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Bundle/Application/64953BDE-2E16-4B57-895E-FD6094ADA4CB/test-renpy-vn.app/base/renpy/common
+2026-11-18 12:56:36.368 test-renpy-vn[11420:37885] Early init took 0.88s
+2026-11-18 12:56:36.432 test-renpy-vn[11420:37885] Loading error handling took 0.06s
+2026-11-18 12:56:36.798 test-renpy-vn[11420:37885] Loading script took 0.37s
+2026-11-18 12:56:37.211 test-renpy-vn[11420:37885] Saving to /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/0C7EB824-DCBB-4215-86DE-48E8C40BADC0/Documents
+2026-11-18 12:56:37.245 test-renpy-vn[11420:37885] Saving to /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/0C7EB824-DCBB-4215-86DE-48E8C40BADC0/Documents
+2026-11-18 12:56:37.328 test-renpy-vn[11420:37885] Loading save slot metadata took 0.53s
+2026-11-18 12:56:37.329 test-renpy-vn[11420:37885] Loading persistent took 0.00s
+2026-11-18 12:56:37.408 test-renpy-vn[11420:37885] Set script version to: (6, 99, 13)
+2026-11-18 12:56:37.439 test-renpy-vn[11420:37885] Running init code took 0.11s
+2026-11-18 12:56:37.543 test-renpy-vn[11420:37885] Loading analysis data took 0.10s
+2026-11-18 12:56:37.549 test-renpy-vn[11420:37885] Analyze and compile ATL took 0.00s
+2026-11-18 12:56:37.579 test-renpy-vn[11420:37885] Reloading save slot metadata took 0.03s
+2026-11-18 12:56:37.580 test-renpy-vn[11420:37885] Index archives took 0.00s
+2026-11-18 12:56:37.581 test-renpy-vn[11420:37885] Dump and make backups took 0.00s
+2026-11-18 12:56:37.582 test-renpy-vn[11420:37885] Cleaning cache took 0.00s
+2026-11-18 12:56:37.583 test-renpy-vn[11420:37885] Making clean stores took 0.00s
+2026-11-18 12:56:37.711 test-renpy-vn[11420:37885] Initial gc took 0.13s
+2026-11-18 12:56:37.712 test-renpy-vn[11420:37885] DPI scale factor: 1.000000
+2026-11-18 12:56:38.182 test-renpy-vn[11420:37885] Creating interface object took 0.47s
+2026-11-18 12:56:38.183 test-renpy-vn[11420:37885] Cleaning stores took 0.00s
+2026-11-18 12:56:38.184 test-renpy-vn[11420:37885] Init translation took 0.00s
+2026-11-18 12:56:38.188 test-renpy-vn[11420:37885] Build styles took 0.00s
+2026-11-18 12:56:38.247 test-renpy-vn[11420:37885] Load screen analysis took 0.06s
+2026-11-18 12:56:38.250 test-renpy-vn[11420:37885] Analyze screens took 0.00s
+2026-11-18 12:56:38.250 test-renpy-vn[11420:37885] Save screen analysis took 0.00s
+2026-11-18 12:56:38.451 test-renpy-vn[11420:37885] Prepare screens took 0.20s
+2026-11-18 12:56:38.451 test-renpy-vn[11420:37885] Save pyanalysis. took 0.00s
+2026-11-18 12:56:38.451 test-renpy-vn[11420:37885] Save bytecode. took 0.00s
+2026-11-18 12:56:38.454 test-renpy-vn[11420:37885] Running _start took 0.00s
+2026-11-18 12:56:49.546 test-renpy-vn[11420:37885] You need UIApplicationSupportsIndirectInputEvents in your Info.plist for mouse support
+2026-11-18 12:56:49.562 test-renpy-vn[11420:37885] Interface start took 11.11s
+2026-11-18 12:56:49.591 test-renpy-vn[11420:37885] Initializing gles2 renderer:
+2026-11-18 12:56:49.592 test-renpy-vn[11420:37885] primary display bounds: (0, 0, 667, 375)
+2026-11-18 12:56:49.593 test-renpy-vn[11420:37885] swap interval: 1 frames
+2026-11-18 12:56:49.593 test-renpy-vn[11420:37885] Fullscreen mode.
+2026-11-18 12:56:52.280 test-renpy-vn[11420:37885] Vendor: 'Google Inc.'
+2026-11-18 12:56:52.280 test-renpy-vn[11420:37885] Renderer: 'ANGLE (Metal Renderer: Apple iOS simulator GPU)'
+2026-11-18 12:56:52.280 test-renpy-vn[11420:37885] Version: 'OpenGL ES 3.0.0 (ANGLE 2.1.0.ffc603fabdfe)'
+2026-11-18 12:56:52.281 test-renpy-vn[11420:37885] Display Info: None
+2026-11-18 12:56:52.282 test-renpy-vn[11420:37885] Screen sizes: virtual=(1280, 720) physical=(667, 375) drawable=(1334, 750)
+2026-11-18 12:56:52.285 test-renpy-vn[11420:37885] Could not open 'cache/shaders.txt':
+2026-11-18 12:56:52.285 test-renpy-vn[11420:37885] Maximum texture size: 4096x4096
+2026-11-18 12:57:03.683 test-renpy-vn[11420:37885] Unbalanced calls to begin/end appearance transitions for <SDL_uikitviewcontroller: 0x1119b5e00>.
+2026-11-18 12:57:03.685 test-renpy-vn[11420:37885] Unbalanced calls to begin/end appearance transitions for <SDL_uikitviewcontroller: 0x1119b5e00>.

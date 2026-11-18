@@ -1,0 +1,300 @@
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stddef-F1KEN5GU9KDJZWL8UQD69CS5M.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-6EJ4UK1MIS8O4PZJNTMKHTBDT.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-6EJ4UK1MIS8O4PZJNTMKHTBDT.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-BPL4R8OJCEZGN0KXCAZAB3LVV.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-BPL4R8OJCEZGN0KXCAZAB3LVV.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_time-58G6AKALEQV2BQ5YI3RY5Z98U.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_time-58G6AKALEQV2BQ5YI3RY5Z98U.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_errno-5QAYS980NHNHSDJYIAZYYF4R1.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_errno-5QAYS980NHNHSDJYIAZYYF4R1.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wchar-6JC9SS0C6CJ4TB9VF0U8ECQGT.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wchar-6JC9SS0C6CJ4TB9VF0U8ECQGT.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-9P4JAZQLCNTR04KTVMYF96ZSR.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-9P4JAZQLCNTR04KTVMYF96ZSR.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/netinet_in-8RXFIUY8LFMMACX2LLT3Q0AC5.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/netinet_in-8RXFIUY8LFMMACX2LLT3Q0AC5.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_signal-BN8K6ONVA2GWWJQ3LGF13T3L1.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_signal-BN8K6ONVA2GWWJQ3LGF13T3L1.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/nl_types-8DC375CCLG8BHB1QIXV2L0958.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/nl_types-8DC375CCLG8BHB1QIXV2L0958.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/pthread-8GDAQB80JD06KQ1Y6PMUZE844.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/pthread-8GDAQB80JD06KQ1Y6PMUZE844.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-4HMRJ3VZ8N36WGDTWN054N9HU.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-4HMRJ3VZ8N36WGDTWN054N9HU.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_resource-2DZ34ET0ACKVF41T8PM3EC4TD.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_resource-2DZ34ET0ACKVF41T8PM3EC4TD.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_string-AT2RGN33ZJ7MB5ZZ4OPV86ABP.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_string-AT2RGN33ZJ7MB5ZZ4OPV86ABP.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_sys_select-EKYD7L1BBAHPUD90I9AWOTTXP.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_sys_select-EKYD7L1BBAHPUD90I9AWOTTXP.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-51ZRQNDAJNU330EU39J7A67LQ.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-51ZRQNDAJNU330EU39J7A67LQ.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-CPMZV82YH2LIJSR7LOH3E9D0O.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-CPMZV82YH2LIJSR7LOH3E9D0O.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_types-9MNA0JPO5DUAU16QPX0XFE5QC.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_types-9MNA0JPO5DUAU16QPX0XFE5QC.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-64EFA9U2T1YSZGO2H3F1V6SQV.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-64EFA9U2T1YSZGO2H3F1V6SQV.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/unistd-9HCT18JYCLVSRNGG940WOVZ89.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/unistd-9HCT18JYCLVSRNGG940WOVZ89.scan
+
+ScanDependencies /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/IAPHelper.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    
+    Using response file: /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    builtin-ScanDependencies -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.o.scan -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.d --serialize-diagnostics /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.dia -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/IAPHelper.m -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.o
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-1M2A71OSKCPB5X5J73SZP6P5B.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-1M2A71OSKCPB5X5J73SZP6P5B.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Darwin-4D7WZP1CDY6FBALLJ3U13Y2IF.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Darwin-4D7WZP1CDY6FBALLJ3U13Y2IF.scan
+
+CompileC /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/main.o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/main.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    
+    Using response file: /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
+    
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wquoted-include-in-framework-header -Werror\=deprecated-objc-isa-usage -Werror\=objc-root-class -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/main.d --serialize-diagnostics /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/main.dia -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/main.c -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/main.o
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ObjectiveC-51YPG8HQGFNXFXP2CM8EVIHZ8.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ObjectiveC-51YPG8HQGFNXFXP2CM8EVIHZ8.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_object-CWRB7VWX6RXJZXB5CXVVPT6GB.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_object-CWRB7VWX6RXJZXB5CXVVPT6GB.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_workgroup-DKZ7VCOA4UJSW1MFBE0L7T2D8.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_workgroup-DKZ7VCOA4UJSW1MFBE0L7T2D8.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Dispatch-38I5BAK0B8CGOZKNTE1NDSAPY.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Dispatch-38I5BAK0B8CGOZKNTE1NDSAPY.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreFoundation-BAAEKRBL2IWGCGTJPGJB9Q1EX.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreFoundation-BAAEKRBL2IWGCGTJPGJB9Q1EX.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/XPC-4QF80ZMHFG6HWWT03JIF9FQDZ.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/XPC-4QF80ZMHFG6HWWT03JIF9FQDZ.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreGraphics-D81PD2KVNOEJ2Z3VN2XLAKA8V.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreGraphics-D81PD2KVNOEJ2Z3VN2XLAKA8V.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreAudioTypes-C3WSINU1238H2ZSKIG3TITS2T.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreAudioTypes-C3WSINU1238H2ZSKIG3TITS2T.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CFNetwork-3SXTL20FXYN8MVYR6ZL0P8L1O.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CFNetwork-3SXTL20FXYN8MVYR6ZL0P8L1O.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreAudio-1YWW2ONN061FIPCWTVOLZGZJ9.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreAudio-1YWW2ONN061FIPCWTVOLZGZJ9.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ImageIO-8OL55VZ97RGKHL7KDCX3P0OZC.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ImageIO-8OL55VZ97RGKHL7KDCX3P0OZC.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreText-8DWHC3MH3X5I6KQSOXPU2QOUL.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreText-8DWHC3MH3X5I6KQSOXPU2QOUL.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Security-61MR0D7C8OI4RFJEGZZ6KTM44.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Security-61MR0D7C8OI4RFJEGZZ6KTM44.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Foundation-BK0LG788CMUOEQ02ET18CGZK8.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Foundation-BK0LG788CMUOEQ02ET18CGZK8.scan
+
+CompileC /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/Log.o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Log.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    
+    Using response file: /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/Log.d --serialize-diagnostics /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/Log.dia -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Log.m -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/Log.o
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/FileProvider-AGIITDX79DCL4TB54LD9CYJKL.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/FileProvider-AGIITDX79DCL4TB54LD9CYJKL.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/UserNotifications-CIO1ALUA4QN5N2INIWO5PM3JA.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/UserNotifications-CIO1ALUA4QN5N2INIWO5PM3JA.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreMIDI-BMB3VAJY8VZ344CCJJQUX2G36.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreMIDI-BMB3VAJY8VZ344CCJJQUX2G36.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Symbols-6ZPPJL4NRAX0RNQW2UEWKISQB.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Symbols-6ZPPJL4NRAX0RNQW2UEWKISQB.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/UniformTypeIdentifiers-3P253FI4AH9ZUFO43E0SZ118T.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/UniformTypeIdentifiers-3P253FI4AH9ZUFO43E0SZ118T.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/IOSurface-ERFJE6KHEX881CR3CCWLY1809.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/IOSurface-ERFJE6KHEX881CR3CCWLY1809.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AudioToolbox-BPC3LEDM82SK9OLSGZZFTZPK1.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AudioToolbox-BPC3LEDM82SK9OLSGZZFTZPK1.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Metal-2BL48T4YUAVLDN96N7G0AQ1LE.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Metal-2BL48T4YUAVLDN96N7G0AQ1LE.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/OpenGLES-7JDHEZ9VXW1JVQTEKFXVIL3BI.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/OpenGLES-7JDHEZ9VXW1JVQTEKFXVIL3BI.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreVideo-1EEZ8LBC9ZELWMX8B6ZIXZS88.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreVideo-1EEZ8LBC9ZELWMX8B6ZIXZS88.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreImage-EP43P6X237WQVMV75N7T37LG3.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreImage-EP43P6X237WQVMV75N7T37LG3.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/QuartzCore-EAWK23HNCKDROMN4Q1BC5UZHU.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/QuartzCore-EAWK23HNCKDROMN4Q1BC5UZHU.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreMedia-EID3M7DU5WK9NV56MY43XN0WX.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreMedia-EID3M7DU5WK9NV56MY43XN0WX.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/UIKit-4QKNKA2BPOCYQ37ETAPBXLOJD.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/UIKit-4QKNKA2BPOCYQ37ETAPBXLOJD.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/MediaToolbox-8FWXUKEIV3T85HJGYUSFAVPTF.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/MediaToolbox-8FWXUKEIV3T85HJGYUSFAVPTF.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AVFAudio-CQB7GOJHNEMPF88XW5XVXGE9B.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AVFAudio-CQB7GOJHNEMPF88XW5XVXGE9B.scan
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AVFoundation-ETL65EFFOB0J1K2WU9HMGVC1B.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AVFoundation-ETL65EFFOB0J1K2WU9HMGVC1B.scan
+
+CompileC /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/VideoPlayer.o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/VideoPlayer.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    
+    Using response file: /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/VideoPlayer.d --serialize-diagnostics /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/VideoPlayer.dia -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/VideoPlayer.m -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/VideoPlayer.o
+
+PrecompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/StoreKit-AXEO7OFWYHCKTXO13NSSVVC79.scan
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-precompileModule /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/StoreKit-AXEO7OFWYHCKTXO13NSSVVC79.scan
+
+CompileC /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/IAPHelper.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    
+    Using response file: /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Werror\=return-type -Wunreachable-code -Wquoted-include-in-framework-header -Wno-implicit-atomic-properties -Werror\=deprecated-objc-isa-usage -Wno-objc-interface-ivars -Werror\=objc-root-class -Wno-arc-repeated-use-of-weak -Wimplicit-retain-self -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-float-conversion -Wnon-literal-null-conversion -Wobjc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wdeprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Winfinite-recursion -Wcomma -Wblock-capture-autoreleasing -Wstrict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.d --serialize-diagnostics /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.dia -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/IAPHelper.m -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/IAPHelper.o
+
+Ld /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/test-renpy-vn normal (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios13.0 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -Os -L/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos -L/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release -F/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos -filelist /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/test-renpy-vn.LinkFileList -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/test-renpy-vn_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Objects-normal/arm64/test-renpy-vn_dependency_info.dat -fobjc-arc -fobjc-link-runtime -lrenpython -lrenpy -lpython2.7 -lavformat -lavcodec -lswscale -lswresample -lavutil -lSDL2_image -lSDL2 -lavif -laom -lyuv -lturbojpeg -lpng16 -lwebp -lharfbuzz -lbrotlidec -lfribidi -lfreetype -lffi -lssl -lcrypto -llzma -lbz2 -lz -framework CoreMotion -framework ImageIO -framework GameController -framework QuartzCore -framework AudioToolbox -framework CoreServices -framework CoreGraphics -framework Foundation -framework UIKit -framework MetalANGLE -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/test-renpy-vn
+
+LinkStoryboards (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --module test_renpy_vn --target-device iphone --target-device ipad --minimum-deployment-target 13.0 --output-format human-readable-text --link /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Launch\ Screen.storyboardc
+
+LinkAssetCatalog /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Media.xcassets (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-linkAssetCatalog --thinned /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app --plist-output /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/AppIcon76x76@2x~ipad.png (in target 'test-renpy-vn' from project 'test-renpy-vn')
+note: Emplaced /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/AppIcon60x60@2x.png (in target 'test-renpy-vn' from project 'test-renpy-vn')
+note: Emplaced /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Assets.car (in target 'test-renpy-vn' from project 'test-renpy-vn')
+
+Copy /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Frameworks/MetalANGLE.framework /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Frameworks/MetalANGLE.xcframework/ios-arm64_armv7/MetalANGLE.framework (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -strip-unsigned-binaries -strip-deterministic -bitcode-strip all -bitcode-strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -remove-static-executable /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Frameworks/MetalANGLE.xcframework/ios-arm64_armv7/MetalANGLE.framework /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Frameworks
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -D -S -no_atom_info /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Frameworks/MetalANGLE.xcframework/ios-arm64_armv7/MetalANGLE.framework/MetalANGLE -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Frameworks/MetalANGLE.framework/MetalANGLE/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Frameworks/MetalANGLE.framework/MetalANGLE -r -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Frameworks/MetalANGLE.framework/MetalANGLE
+ProcessInfoPlistFile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Info.plist /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Info.plist (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-infoPlistUtility /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/Launch\ Screen-SBPartialInfo.plist -additionalcontentfile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Intermediates.noindex/test-renpy-vn.build/Release-iphoneos/test-renpy-vn.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Frameworks/MetalANGLE.framework -requiredArchitecture arm64 -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/Info.plist
+
+GenerateDSYMFile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app.dSYM /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/test-renpy-vn (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app/test-renpy-vn -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app.dSYM
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libavcodec.a(mpegvideo.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libavcodec.a(videodsp.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libavutil.a(cpu.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libswresample.a(resample.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libswscale.a(hscale.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libswscale.a(output.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libswscale.a(rgb2rgb.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libswscale.a(swscale.o)
+warning: (arm64)  skipping debug map object with duplicate name and timestamp: 1970-01-01 00:00:00.000000000 /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/prebuilt/release/libswscale.a(swscale_unscaled.o)
+
+RegisterExecutionPolicyException /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-RegisterExecutionPolicyException /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app
+
+Validate /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    builtin-validationUtility /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app -validate-for-store -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app (in target 'test-renpy-vn' from project 'test-renpy-vn')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode
+    /usr/bin/touch -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/xcode/build/Build/Products/Release-iphoneos/test-renpy-vn.app
+
+** BUILD SUCCEEDED **
+

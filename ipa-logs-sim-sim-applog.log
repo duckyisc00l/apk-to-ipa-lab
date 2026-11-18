@@ -1,0 +1,300 @@
+2026-11-18 12:56:48.172 Df test-renpy-vn[11420:9861] [com.apple.PlugInKit:discovery] [d 0F3C0A12-0BC5-43C5-B93C-828CF6C2FBB2] <PKHost:0x60000173a040> Beginning discovery for flags: 0, point: com.apple.AudioUnit
+2026-11-18 12:56:48.176 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] [d 0F3C0A12-0BC5-43C5-B93C-828CF6C2FBB2] <PKHost:0x60000173a040> Completed discovery. Final # of matches: 0
+2026-11-18 12:56:48.177 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002602fa0> delivering update to host (0 plugins)
+2026-11-18 12:56:48.177 A  test-renpy-vn[11420:99e0] (ExtensionFoundation) discovering extensions
+2026-11-18 12:56:48.177 Df test-renpy-vn[11420:99e0] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit";
+}, extensionSet {(
+)}
+2026-11-18 12:56:48.177 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002602fa0> installing watchers for continuous discovery
+2026-11-18 12:56:48.178 Df test-renpy-vn[11420:99e0] [com.apple.launchservices:appinstallation] registering for distributed notification com.apple.LaunchServices.pluginsregistered in this process
+2026-11-18 12:56:48.179 A  test-renpy-vn[11420:9861] (PlugInKit) continuous-discovery
+2026-11-18 12:56:48.179 Df test-renpy-vn[11420:99e0] [com.apple.xpc:connection] [0x117722540] activating connection: mach=true listener=false peer=false name=com.apple.distributed_notifications@1v3
+2026-11-18 12:56:48.179 Df test-renpy-vn[11420:9861] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002606dc0> created discovery driver
+2026-11-18 12:56:48.181 Df test-renpy-vn[11420:99e0] [com.apple.launchservices:appinstallation] registering for distributed notification com.apple.LaunchServices.pluginsunregistered in this process
+2026-11-18 12:56:48.181 Df test-renpy-vn[11420:9861] [com.apple.PlugInKit:discovery] [d 8F2DF6EC-B8F7-4009-8E2B-3AD247D24269] <PKHost:0x60000173a040> Beginning discovery for flags: 0, point: com.apple.AudioUnit-UI
+2026-11-18 12:56:48.184 Df test-renpy-vn[11420:9475] [com.apple.coreaudio:aqme]           AQMixEngine.cpp:733   AQMEDevice (0x1157dd818) has neither a defaultOutStreamClient nor a defaultInStreamClient
+2026-11-18 12:56:48.193 Df test-renpy-vn[11420:99e0] [com.apple.launchservices:progress] Establishing xpc connection to lsd
+2026-11-18 12:56:48.193 Df test-renpy-vn[11420:99e0] [com.apple.xpc:connection] [0x10ef0ad00] activating connection: mach=true listener=false peer=false name=com.apple.lsd.xpc
+2026-11-18 12:56:48.195 Df test-renpy-vn[11420:99e2] [com.apple.launchservices:progress] Received LSWorkspaceObserverPing, xpc connection established
+2026-11-18 12:56:48.196 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] [d 8F2DF6EC-B8F7-4009-8E2B-3AD247D24269] <PKHost:0x60000173a040> Completed discovery. Final # of matches: 0
+2026-11-18 12:56:48.196 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002606dc0> delivering update to host (0 plugins)
+2026-11-18 12:56:48.197 A  test-renpy-vn[11420:99e0] (ExtensionFoundation) discovering extensions
+2026-11-18 12:56:48.198 Df test-renpy-vn[11420:99e0] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit-UI";
+}, extensionSet {(
+)}
+2026-11-18 12:56:48.199 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x600002606dc0> installing watchers for continuous discovery
+2026-11-18 12:56:48.199 A  test-renpy-vn[11420:9861] (PlugInKit) continuous-discovery
+2026-11-18 12:56:48.201 Df test-renpy-vn[11420:9861] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x6000026067c0> created discovery driver
+2026-11-18 12:56:48.202 Df test-renpy-vn[11420:9861] [com.apple.PlugInKit:discovery] [d F7FE7D69-0927-42AD-A4B1-CE1364B40DE4] <PKHost:0x60000173a040> Beginning discovery for flags: 0, point: com.apple.AudioUnit-Speech
+2026-11-18 12:56:48.211 Df test-renpy-vn[11420:99e0] [com.apple.PlugInKit:discovery] [d F7FE7D69-0927-42AD-A4B1-CE1364B40DE4] <PKHost:0x60000173a040> Completed discovery. Final # of matches: 4
+2026-11-18 12:56:48.211 Df test-renpy-vn[11420:947a] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x6000026067c0> delivering update to host (4 plugins)
+2026-11-18 12:56:48.212 A  test-renpy-vn[11420:947a] (ExtensionFoundation) discovering extensions
+2026-11-18 12:56:48.220 Df test-renpy-vn[11420:947a] [com.apple.extensionkit:NSExtension] discovered extensions: attributes {
+    NSExtensionPointName = "com.apple.AudioUnit-Speech";
+}, extensionSet {(
+    <EXConcreteExtension: 0x60000390e7d0> {id = com.apple.speech.MacinTalkFramework.MacinTalkAUSP},
+    <EXConcreteExtension: 0x600003909fb0> {id = com.apple.ax.MauiTTSSupport.MauiAUSP},
+    <EXConcreteExtension: 0x60000390e700> {id = com.apple.texttospeech.SiriAUSP},
+    <EXConcreteExtension: 0x60000390e8a0> {id = com.apple.ax.KonaTTSSupport.KonaSynthesizer}
+)}
+2026-11-18 12:56:48.221 Df test-renpy-vn[11420:947a] [com.apple.PlugInKit:discovery] <PKDiscoveryDriver:0x6000026067c0> installing watchers for continuous discovery
+2026-11-18 12:56:48.236 Df test-renpy-vn[11420:9475] [com.apple.coreaudio:EnhanceDialogueProcessor] EnhanceDialogueProcessor.cpp:226   EnhanceDialogueProcessor() - Product does not support Enhance Dialogue
+2026-11-18 12:56:48.236 Df test-renpy-vn[11420:9475] [com.apple.coreaudio:EnhanceDialogueProcessor] EnhanceDialogueProcessor.cpp:226   EnhanceDialogueProcessor() - Product does not support Enhance Dialogue
+2026-11-18 12:56:48.236 Df test-renpy-vn[11420:9475] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000c3c180, from  2 ch,  44100 Hz, Float32, deinterleaved to  2 ch,  44100 Hz, Float32, interleaved
+2026-11-18 12:56:48.246 Df test-renpy-vn[11420:947a] [com.apple.coreaudio:SpatialMgr] SpatializationManager.cpp:1459  Could not load preset file, invalid model/product name!
+2026-11-18 12:56:48.246 Df test-renpy-vn[11420:947a] [com.apple.coreaudio:aqme]        MEMixerChannel.cpp:3254  2-channel audiovisual content is NOT eligible for spatialization
+2026-11-18 12:56:48.247 Df test-renpy-vn[11420:947a] [com.apple.coreaudio:aqme]  MEDeviceStreamClient.cpp:245   AQME Default-InputOutput: client starting: <CA_UISoundClientBase@0x1184d59d0>; running count now 1
+2026-11-18 12:56:48.247 Df test-renpy-vn[11420:947a] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2849  FetchAndLogFrameSize starting IO deviceID=96, frame size is 512
+2026-11-18 12:56:48.249 Df test-renpy-vn[11420:947a] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2655  aqmeio@0x11193c618: set input stream usage to 0 on device 96, err = 0
+2026-11-18 12:56:48.253 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:aqme]              AQIONode.cpp:693   client <AudioQueueObject@0x111944400; ; [11420]; play> is NOT Now Playing eligible
+2026-11-18 12:56:48.253 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:3236  CheckSpatialization: aq@0x111944400 automatic spatialization check: spatialize=0
+2026-11-18 12:56:48.253 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:3249  CheckSpatialization: aq@0x111944400 CheckSpatialization mAutomaticSpatialization=1, mSpatializationEnabled=0 mContentRequiresAUSpatialMixer=0 mHasMetadata=0 mIsOffline=0 STSLabel valid:0 is stereo: 1
+2026-11-18 12:56:48.363 Df test-renpy-vn[11420:947a] [com.apple.coreaudio:aqme]            AQMEIO_HAL.cpp:2818  aqmeio@0x11193c618, device 96 (iOSSimulatorAudioDevice-11420-0), AudioDeviceStart (err 0)
+2026-11-18 12:56:48.379 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:10012 SetLoudnessFromLM: -> aq@0x111944400:
+2026-11-18 12:56:48.388 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:10122 SetLoudnessFromLM: is CoreAudioServices/LoudnessManager enabled? yes
+2026-11-18 12:56:48.390 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:10125 SetLoudnessFromLM: is CoreAudioServices/LoudnessManagerV2 enabled? yes
+2026-11-18 12:56:48.390 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:10128 SetLoudnessFromLM: is CoreAudioServices/lm-disable-hardware-check on? no
+2026-11-18 12:56:48.392 E  test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1755  ReadPListFile: unable to open stream for LoudnessManager plist
+2026-11-18 12:56:48.392 E  test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1261  GetHardwarePlatformKey: cannot get acoustic ID
+2026-11-18 12:56:48.392 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1387  GetHardwarePlatformKey: GetHardwarePlatformKey(): hardware platform key is iPhone
+2026-11-18 12:56:48.398 E  test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-18 12:56:48.398 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:10131 SetLoudnessFromLM: is hardware supported? no
+2026-11-18 12:56:48.398 E  test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]        LoudnessManager.mm:1215  IsHardwareSupported: no plist loaded, returning false
+2026-11-18 12:56:48.399 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:10141 SetLoudnessFromLM: hardware not supported, Loudness Manager disabled
+2026-11-18 12:56:48.400 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AudioConverter]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000c2e580, from  2 ch,  48000 Hz, Float32, interleaved to  2 ch,  48000 Hz, Float32, deinterleaved
+2026-11-18 12:56:48.406 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:aqme]              AQIONode.cpp:693   client <AudioQueueObject@0x111944400; ; [11420]; play> is NOT Now Playing eligible
+2026-11-18 12:56:48.409 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:AQ]      AudioQueueObject.cpp:5762  ApplyParameters: aq@0x111944400 volume 1.000 1.000 1.000 1.000 1.000 1.000, 1.000
+2026-11-18 12:56:48.409 Df test-renpy-vn[11420:9861] [com.apple.coreaudio:aqme]  MEDeviceStreamClient.cpp:245   AQME Default-InputOutput: client starting: <AudioQueueObject@0x111944400; ; [11420]; play>; running count now 2
+2026-11-18 12:56:48.428 Df test-renpy-vn[11420:93fd] [com.apple.gamecontroller:Session] Creating the shared game controller session...
+2026-11-18 12:56:48.430 Df test-renpy-vn[11420:9866] [com.apple.coreaudio:default] AQSTL aq(0x111944400) start time resolved to: 5082 ioTS st: 5082 ht: 844.377268
+2026-11-18 12:56:48.473 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:56:48.549 Df test-renpy-vn[11420:99e2] (libAudioDSP.dylib) cannot migrate AudioUnit assets for current process
+2026-11-18 12:56:49.070 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:56:49.290 Df test-renpy-vn[11420:93fd] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260e5e0; process scope; status: target> was:none
+2026-11-18 12:56:49.290 A  test-renpy-vn[11420:93fd] (GameController) [GCDeviceSession] Activate
+2026-11-18 12:56:49.291 Df test-renpy-vn[11420:93fd] You need UIApplicationSupportsIndirectInputEvents in your Info.plist for mouse support
+2026-11-18 12:56:49.307 Df test-renpy-vn[11420:93fd] Interface start took 11.11s
+2026-11-18 12:56:49.336 Df test-renpy-vn[11420:93fd] 
+2026-11-18 12:56:49.336 Df test-renpy-vn[11420:93fd] Initializing gles2 renderer:
+2026-11-18 12:56:49.337 Df test-renpy-vn[11420:93fd] primary display bounds: (0, 0, 667, 375)
+2026-11-18 12:56:49.337 Df test-renpy-vn[11420:93fd] swap interval: 1 frames
+2026-11-18 12:56:49.338 Df test-renpy-vn[11420:93fd] Fullscreen mode.
+2026-11-18 12:56:49.357 Df test-renpy-vn[11420:99e2] [com.apple.xpc:connection] [0x1157a5e50] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-11-18 12:56:51.957 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-18 12:56:51.957 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x110109d50: Window became key in scene: SDL_uikitwindow: 0x11558f4e0; contextId: 0xB684D35: reason: UIWindowScene: 0x110109d50: Window requested to become key in scene: 0x11558f4e0
+2026-11-18 12:56:51.957 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x110109d50; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x11558f4e0; reason: UIWindowScene: 0x110109d50: Window requested to become key in scene: 0x11558f4e0
+2026-11-18 12:56:51.957 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:KeyWindow] Window did become application key: SDL_uikitwindow: 0x11558f4e0; contextId: 0xB684D35; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.domain.test-renpy-vn-default
+2026-11-18 12:56:51.958 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDeferring] [0x600002909960] Begin local event deferring requested for token: 0x6000026183c0; environments: 1; reason: UIWindowScene: 0x110109d50: Begin event deferring in keyboardFocus for window: 0x11558f4e0
+2026-11-18 12:56:51.966 Df test-renpy-vn[11420:99e2] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x6000026060a0; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.domain.test-renpy-vn-default; status: ancestor> was:target
+2026-11-18 12:56:51.993 Df test-renpy-vn[11420:93fd] [com.apple.xpc:connection] [0x11779e450] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-11-18 12:56:51.994 Df test-renpy-vn[11420:93fd] [com.apple.xpc:connection] [0x117785d50] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-11-18 12:56:51.995 Df test-renpy-vn[11420:93fd] [com.apple.xpc:connection] [0x10ed79ae0] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-11-18 12:56:52.023 Df test-renpy-vn[11420:93fd] Vendor: 'Google Inc.'
+2026-11-18 12:56:52.023 Df test-renpy-vn[11420:93fd] Renderer: 'ANGLE (Metal Renderer: Apple iOS simulator GPU)'
+2026-11-18 12:56:52.024 Df test-renpy-vn[11420:93fd] Version: 'OpenGL ES 3.0.0 (ANGLE 2.1.0.ffc603fabdfe)'
+2026-11-18 12:56:52.024 Df test-renpy-vn[11420:93fd] Display Info: None
+2026-11-18 12:56:52.025 Df test-renpy-vn[11420:93fd] Screen sizes: virtual=(1280, 720) physical=(667, 375) drawable=(1334, 750)
+2026-11-18 12:56:52.028 Df test-renpy-vn[11420:93fd] Could not open 'cache/shaders.txt':
+2026-11-18 12:56:52.029 Df test-renpy-vn[11420:93fd] Maximum texture size: 4096x4096
+2026-11-18 12:56:52.208 E  test-renpy-vn[11420:93fd] (libCoreFSCache.dylib) fopen failed for data file: errno = 2 (No such file or directory)
+2026-11-18 12:56:52.208 E  test-renpy-vn[11420:93fd] (libCoreFSCache.dylib) Errors found! Invalidating cache...
+2026-11-18 12:56:52.210 Df test-renpy-vn[11420:93fd] [com.apple.xpc:connection] [0x1101afd80] activating connection: mach=false listener=false peer=false name=com.apple.MTLCompilerService
+2026-11-18 12:56:56.322 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:02.824 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.245 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:03.325 Df test-renpy-vn[11420:93fd] [com.apple.FrontBoard:SceneExtension] Realizing settings extension SBUISecureRenderingSettingsExtension on FBSSceneSettings
+2026-11-18 12:57:03.327 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x110109d50> (D07C23F9-9DE5-4136-8057-1467E15737DE)
+2026-11-18 12:57:03.329 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x110109d50> (D07C23F9-9DE5-4136-8057-1467E15737DE)
+2026-11-18 12:57:03.330 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.domain.test-renpy-vn-default  persistentID: D07C23F9-9DE5-4136-8057-1467E15737DE
+2026-11-18 12:57:03.330 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-18 12:57:03.330 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-18 12:57:03.332 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-18 12:57:03.333 A  test-renpy-vn[11420:93fd] (GameController) Notify ApplicationDidBecomeActive
+2026-11-18 12:57:03.347 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-18 12:57:03.348 Df test-renpy-vn[11420:93fd] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-18 12:57:03.409 Df test-renpy-vn[11420:93fd] [com.apple.gamecontroller:Session] Connected devices changed (2 added, 0 removed) -> [2] {(
+    <GCController 0x600003d08690 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x6000002e9fa0 'Generic Keyboard'>
+)}
+2026-11-18 12:57:03.411 Df test-renpy-vn[11420:93fd] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-18 12:57:03.412 Df test-renpy-vn[11420:93fd] [com.apple.gamecontroller:Session] Connected devices changed (0 added, 0 removed) -> [2] {(
+    <GCController 0x600003d08690 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x6000002e9fa0 'Generic Keyboard'>
+)}
+2026-11-18 12:57:03.412 Df test-renpy-vn[11420:93fd] [com.apple.gamecontroller:Session] Connected devices changed (0 added, 0 removed) -> [2] {(
+    <GCController 0x600003d08690 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x6000002e9fa0 'Generic Keyboard'>
+)}
+2026-11-18 12:57:03.413 A  test-renpy-vn[11420:93fd] (GameControllerFoundation) [HID Event System Client] Activate
+2026-11-18 12:57:03.413 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDeferring] [0x600002909960] Scene target of event deferring environments did update: scene: 0x110109d50; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-18 12:57:03.413 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x110109d50; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.domain.test-renpy-vn-default
+2026-11-18 12:57:03.414 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-18 12:57:03.420 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-18 12:57:03.421 Df test-renpy-vn[11420:93fd] (UIKitCore) Unbalanced calls to begin/end appearance transitions for <SDL_uikitviewcontroller: 0x1119b5e00>.
+2026-11-18 12:57:03.422 Df test-renpy-vn[11420:93fd] (UIKitCore) Unbalanced calls to begin/end appearance transitions for <SDL_uikitviewcontroller: 0x1119b5e00>.
+2026-11-18 12:57:03.504 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.511 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.517 E  test-renpy-vn[11420:93fd] (libCoreFSCache.dylib) fopen failed for data file: errno = 2 (No such file or directory)
+2026-11-18 12:57:03.517 E  test-renpy-vn[11420:93fd] (libCoreFSCache.dylib) Errors found! Invalidating cache...
+2026-11-18 12:57:03.518 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.571 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.597 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.626 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:03.631 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:04.036 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:04.181 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:04.181 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:04.646 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:04.648 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:06.421 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:06.821 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:06.890 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:07.799 Df test-renpy-vn[11420:93fd] [com.apple.xpc:connection] [0x1101a9750] activating connection: mach=true listener=false peer=false name=com.apple.IOSurface.Remote
+2026-11-18 12:57:07.801 Df test-renpy-vn[11420:93fd] (libMobileGestalt.dylib) Failed to copyDeviceTreeProperty(IODeviceTree:/arm-io soc-generation)
+2026-11-18 12:57:07.801 Df test-renpy-vn[11420:93fd] (libMobileGestalt.dylib) Failed to get current SOC Generation string
+2026-11-18 12:57:07.918 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.116 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.150 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.155 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.160 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.164 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.190 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:08.479 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:09.010 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:09.014 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:09.018 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:09.023 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:57:09.186 Df test-renpy-vn[11420:93fd] [com.apple.network:activity] <nw_activity 50:1 [2FE62F7B-A9C9-455F-969E-12A973D9BC67] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 39082ms
+2026-11-18 12:57:09.186 Df test-renpy-vn[11420:93fd] [com.apple.network:activity] <nw_activity 50:2 [5B0765AF-F65D-4C68-AE38-458031134498] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 39082ms
+2026-11-18 12:57:09.186 Df test-renpy-vn[11420:93fd] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [2FE62F7B-A9C9-455F-969E-12A973D9BC67] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-18 12:57:09.186 Df test-renpy-vn[11420:93fd] [com.apple.network:activity] Unset the global parent activity
+2026-11-18 12:57:13.166 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:18.147 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:18.260 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:19.942 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:19.978 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:57.131 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:57:59.908 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:13.323 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:26.621 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:27.317 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:32.082 A  test-renpy-vn[11420:99e5] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-18 12:58:37.123 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:38.480 Df test-renpy-vn[11420:93fd] [com.apple.BackBoard:Display] [FBSDisplaySource 1-1] silently connecting raw configuration: <FBSDisplayConfiguration: 0x600003d4dd10; Main; mode: "375x667@2x 60Hz p3 SDR">
+2026-11-18 12:58:38.546 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:41.674 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:43.281 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:43.311 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:57.680 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:58.200 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:58:58.647 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:59:09.135 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:59:18.845 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.domain.test-renpy-vn-default
+2026-11-18 12:59:18.855 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:18.856 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:18.856 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:19.006 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:19.006 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:19.006 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:19.007 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 12:59:19.119 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:59:19.197 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:59:19.329 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:59:20.154 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:59:20.183 A  test-renpy-vn[11420:93fd] (Metal) compiling shader
+2026-11-18 12:59:22.468 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:59:26.083 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.domain.test-renpy-vn-default
+2026-11-18 12:59:26.083 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:26.083 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:26.083 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:26.084 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:26.084 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:26.084 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:26.116 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 12:59:35.493 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:59:38.506 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:59:38.541 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 12:59:49.134 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.domain.test-renpy-vn-default
+2026-11-18 12:59:49.134 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:49.135 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:49.135 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:49.149 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:49.149 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:49.149 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:49.178 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 12:59:59.046 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.domain.test-renpy-vn-default
+2026-11-18 12:59:59.046 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:59.046 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:59.046 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:59.055 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 12:59:59.055 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 12:59:59.055 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 12:59:59.808 E  test-renpy-vn[11420:93fd] [com.apple.UIKit:SystemGestureGate] <0x1182ad780> Gesture: System gesture gate timed out.
+2026-11-18 13:00:00.211 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:00:01.640 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:00:02.738 Df test-renpy-vn[11420:93fd] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.domain.test-renpy-vn-default
+2026-11-18 13:00:02.738 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:00:02.738 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:00:02.739 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 13:00:02.749 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-18 13:00:02.749 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-18 13:00:02.749 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <SDL_uikitwindow: 0x11558f4e0>; contextId: 0xB684D35
+2026-11-18 13:00:03.489 E  test-renpy-vn[11420:93fd] [com.apple.UIKit:SystemGestureGate] <0x1182ad780> Gesture: System gesture gate timed out.
+2026-11-18 13:00:07.110 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:00:10.918 Df test-renpy-vn[11420:93fd] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d08e10; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-18 13:00:16.832 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:00:22.445 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:04.532 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:04.557 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:07.751 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:08.959 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:12.933 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:14.949 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:26.814 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:26.824 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:28.330 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:35.447 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:35.561 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:36.395 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:36.491 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:37.830 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:40.550 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:40.550 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:40.551 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:40.551 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:52.126 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:52.127 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:52.138 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:56.391 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:56.838 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:56.839 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:01:57.144 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:00.144 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:04.001 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:06.913 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:07.862 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:07.953 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:08.920 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:09.064 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:09.153 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:12.418 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:12.464 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:14.194 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:16.925 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:24.547 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:26.065 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:26.981 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:35.685 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:47.032 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:48.139 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:48.248 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:50.144 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:52.298 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:02:53.925 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:03:07.309 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:03:07.338 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:03:16.632 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:03:16.678 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
+2026-11-18 13:03:47.849 E  test-renpy-vn[11420:9775] [com.apple.coreaudio:AMCP]          HALC_ProxyIOContext.cpp:1623  HALC_ProxyIOContext::IOWorkLoop: skipping cycle due to overload
