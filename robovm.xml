@@ -1,0 +1,22 @@
+<config>
+  <executableName>${app.executable}</executableName>
+  <mainClass>${app.mainclass}</mainClass>
+  <os>ios</os>
+  <target>ios</target>
+  <iosInfoPList>Info.plist.xml</iosInfoPList>
+  <treeShaker>conservative</treeShaker>
+  <resources><resource><directory>assets</directory><skipPngCrush>true</skipPngCrush></resource></resources>
+  <forceLinkClasses>
+    <pattern>j$.util.**</pattern><pattern>com.esotericsoftware.**</pattern><pattern>com.simple.**</pattern><pattern>org.objenesis.**</pattern><pattern>j$.lang.**</pattern>
+    <pattern>com.badlogic.gdx.scenes.scene2d.ui.*</pattern>
+    <pattern>com.badlogic.gdx.graphics.g3d.particles.**</pattern>
+    <pattern>com.android.okhttp.HttpHandler</pattern>
+    <pattern>com.android.okhttp.HttpsHandler</pattern>
+    <pattern>com.android.org.conscrypt.**</pattern>
+  </forceLinkClasses>
+  <frameworks>
+    <framework>UIKit</framework><framework>OpenGLES</framework><framework>QuartzCore</framework>
+    <framework>CoreGraphics</framework><framework>OpenAL</framework><framework>AudioToolbox</framework>
+    <framework>AVFoundation</framework><framework>GameController</framework>
+  </frameworks>
+</config>

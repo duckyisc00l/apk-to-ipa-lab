@@ -1,0 +1,6 @@
+2026-11-18 00:23:04.243 GdxTris[15528:48469] [debug] IOSApplication: iOS version: 26.2
+2026-11-18 00:23:04.244 GdxTris[15528:48469] [debug] IOSApplication: Running in 64-bit mode
+2026-11-18 00:23:04.259 GdxTris[15528:48469] [debug] IOSApplication: Pixels per point: 2.0
+2026-11-18 00:23:04.328 GdxTris[15528:48469] [debug] IOSApplication: Status bar is not visible
+2026-11-18 00:23:04.328 GdxTris[15528:48469] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-18 00:23:04.496 GdxTris[15528:48469] [debug] IOSGraphics: Display: ppi=264, density=1.65
