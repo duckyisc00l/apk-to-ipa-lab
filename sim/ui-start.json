@@ -1,0 +1,622 @@
+[
+  {
+    "enabled" : true,
+    "children" : [
+      {
+        "content_required" : false,
+        "type" : "Group",
+        "AXUniqueId" : null,
+        "enabled" : true,
+        "role_description" : "group",
+        "subrole" : null,
+        "AXValue" : null,
+        "traits" : [
+
+        ],
+        "children" : [
+          {
+            "custom_actions" : [
+
+            ],
+            "role_description" : "group",
+            "AXUniqueId" : null,
+            "title" : null,
+            "content_required" : false,
+            "role" : "AXGroup",
+            "frame" : {
+              "height" : 667,
+              "x" : 0,
+              "y" : 0,
+              "width" : 375
+            },
+            "enabled" : true,
+            "children" : [
+              {
+                "traits" : [
+
+                ],
+                "children" : [
+                  {
+                    "content_required" : false,
+                    "traits" : [
+
+                    ],
+                    "help" : null,
+                    "title" : null,
+                    "subrole" : null,
+                    "children" : [
+                      {
+                        "role_description" : "group",
+                        "AXLabel" : null,
+                        "type" : "Group",
+                        "content_required" : false,
+                        "AXValue" : null,
+                        "pid" : 7277,
+                        "enabled" : true,
+                        "traits" : [
+
+                        ],
+                        "AXUniqueId" : null,
+                        "title" : null,
+                        "role" : "AXGroup",
+                        "children" : [
+                          {
+                            "help" : null,
+                            "AXLabel" : "Ricochlime",
+                            "subrole" : null,
+                            "AXFrame" : "{{41.75, 96}, {291.5, 56.5}}",
+                            "pid" : 7277,
+                            "AXValue" : null,
+                            "AXUniqueId" : null,
+                            "frame" : {
+                              "height" : 56.5,
+                              "x" : 41.75,
+                              "y" : 96,
+                              "width" : 291.5
+                            },
+                            "custom_actions" : [
+
+                            ],
+                            "enabled" : true,
+                            "role_description" : "text",
+                            "content_required" : false,
+                            "type" : "StaticText",
+                            "children" : [
+
+                            ],
+                            "title" : null,
+                            "traits" : [
+
+                            ],
+                            "role" : "AXStaticText"
+                          },
+                          {
+                            "content_required" : false,
+                            "pid" : 7277,
+                            "role" : "AXImage",
+                            "custom_actions" : [
+
+                            ],
+                            "help" : null,
+                            "frame" : {
+                              "height" : 26,
+                              "x" : 160.5,
+                              "y" : 183,
+                              "width" : 15.5
+                            },
+                            "AXLabel" : "Song",
+                            "enabled" : true,
+                            "role_description" : "image",
+                            "AXUniqueId" : "music.note",
+                            "type" : "Image",
+                            "traits" : [
+
+                            ],
+                            "AXFrame" : "{{160.5, 183}, {15.5, 26}}",
+                            "subrole" : null,
+                            "title" : null,
+                            "children" : [
+
+                            ],
+                            "AXValue" : null
+                          },
+                          {
+                            "enabled" : true,
+                            "traits" : [
+
+                            ],
+                            "AXUniqueId" : "bell.fill",
+                            "AXLabel" : "Notifications",
+                            "children" : [
+
+                            ],
+                            "subrole" : null,
+                            "role" : "AXImage",
+                            "frame" : {
+                              "height" : 27,
+                              "x" : 191.5,
+                              "y" : 182.5,
+                              "width" : 24
+                            },
+                            "content_required" : false,
+                            "type" : "Image",
+                            "title" : null,
+                            "pid" : 7277,
+                            "AXValue" : null,
+                            "AXFrame" : "{{191.5, 182.5}, {24, 27}}",
+                            "custom_actions" : [
+
+                            ],
+                            "role_description" : "image",
+                            "help" : null
+                          },
+                          {
+                            "AXValue" : null,
+                            "traits" : [
+
+                            ],
+                            "frame" : {
+                              "height" : 61.5,
+                              "x" : 111.5,
+                              "y" : 259.5,
+                              "width" : 152.5
+                            },
+                            "role" : "AXButton",
+                            "content_required" : false,
+                            "AXLabel" : "Play",
+                            "custom_actions" : [
+
+                            ],
+                            "AXUniqueId" : null,
+                            "enabled" : true,
+                            "children" : [
+                              {
+                                "children" : [
+
+                                ],
+                                "AXLabel" : "Play",
+                                "AXUniqueId" : "play.fill",
+                                "AXValue" : null,
+                                "frame" : {
+                                  "height" : 21.5,
+                                  "x" : 136,
+                                  "y" : 279.5,
+                                  "width" : 19.5
+                                },
+                                "AXFrame" : "{{136, 279.5}, {19.5, 21.5}}",
+                                "type" : "Image",
+                                "subrole" : null,
+                                "traits" : [
+
+                                ],
+                                "title" : null,
+                                "enabled" : true,
+                                "role_description" : "image",
+                                "pid" : 7277,
+                                "custom_actions" : [
+
+                                ],
+                                "content_required" : false,
+                                "role" : "AXImage",
+                                "help" : null
+                              },
+                              {
+                                "children" : [
+
+                                ],
+                                "title" : null,
+                                "role_description" : "text",
+                                "AXValue" : null,
+                                "enabled" : true,
+                                "AXUniqueId" : null,
+                                "AXLabel" : "PLAY",
+                                "AXFrame" : "{{173.75, 281.75}, {68, 17}}",
+                                "traits" : [
+
+                                ],
+                                "help" : null,
+                                "subrole" : null,
+                                "content_required" : false,
+                                "custom_actions" : [
+
+                                ],
+                                "role" : "AXStaticText",
+                                "type" : "StaticText",
+                                "pid" : 7277,
+                                "frame" : {
+                                  "height" : 17,
+                                  "x" : 173.75,
+                                  "y" : 281.75,
+                                  "width" : 68
+                                }
+                              }
+                            ],
+                            "help" : null,
+                            "subrole" : null,
+                            "type" : "Button",
+                            "title" : null,
+                            "role_description" : "button",
+                            "AXFrame" : "{{111.5, 259.5}, {152.5, 61.5}}",
+                            "pid" : 7277
+                          },
+                          {
+                            "role" : "AXButton",
+                            "pid" : 7277,
+                            "children" : [
+                              {
+                                "traits" : [
+
+                                ],
+                                "AXLabel" : "Shopping Cart",
+                                "children" : [
+
+                                ],
+                                "AXValue" : null,
+                                "AXUniqueId" : "cart.fill",
+                                "custom_actions" : [
+
+                                ],
+                                "AXFrame" : "{{131.5, 369}, {26, 23}}",
+                                "subrole" : null,
+                                "enabled" : true,
+                                "help" : null,
+                                "type" : "Image",
+                                "content_required" : false,
+                                "frame" : {
+                                  "height" : 23,
+                                  "x" : 131.5,
+                                  "y" : 369,
+                                  "width" : 26
+                                },
+                                "role_description" : "image",
+                                "role" : "AXImage",
+                                "title" : null,
+                                "pid" : 7277
+                              },
+                              {
+                                "type" : "StaticText",
+                                "enabled" : true,
+                                "traits" : [
+
+                                ],
+                                "custom_actions" : [
+
+                                ],
+                                "AXFrame" : "{{177.75, 372}, {68, 17}}",
+                                "role_description" : "text",
+                                "AXValue" : null,
+                                "subrole" : null,
+                                "AXUniqueId" : null,
+                                "frame" : {
+                                  "height" : 17,
+                                  "x" : 177.75,
+                                  "y" : 372,
+                                  "width" : 68
+                                },
+                                "children" : [
+
+                                ],
+                                "pid" : 7277,
+                                "role" : "AXStaticText",
+                                "AXLabel" : "SHOP",
+                                "help" : null,
+                                "title" : null,
+                                "content_required" : false
+                              }
+                            ],
+                            "AXFrame" : "{{107.5, 349}, {160.5, 63}}",
+                            "custom_actions" : [
+
+                            ],
+                            "type" : "Button",
+                            "content_required" : false,
+                            "AXUniqueId" : null,
+                            "traits" : [
+
+                            ],
+                            "AXLabel" : "Shop",
+                            "title" : null,
+                            "AXValue" : null,
+                            "frame" : {
+                              "height" : 63,
+                              "x" : 107.5,
+                              "y" : 349,
+                              "width" : 160.5
+                            },
+                            "subrole" : null,
+                            "role_description" : "button",
+                            "enabled" : true,
+                            "help" : null
+                          },
+                          {
+                            "AXLabel" : "Tutorial",
+                            "AXUniqueId" : null,
+                            "role_description" : "button",
+                            "custom_actions" : [
+
+                            ],
+                            "frame" : {
+                              "height" : 61.5,
+                              "x" : 75.5,
+                              "y" : 440,
+                              "width" : 224.5
+                            },
+                            "enabled" : true,
+                            "pid" : 7277,
+                            "subrole" : null,
+                            "help" : null,
+                            "AXValue" : null,
+                            "children" : [
+                              {
+                                "children" : [
+
+                                ],
+                                "type" : "Image",
+                                "AXValue" : null,
+                                "pid" : 7277,
+                                "role_description" : "image",
+                                "traits" : [
+
+                                ],
+                                "AXFrame" : "{{100, 460}, {21.5, 21.5}}",
+                                "custom_actions" : [
+
+                                ],
+                                "help" : null,
+                                "frame" : {
+                                  "height" : 21.5,
+                                  "x" : 100,
+                                  "y" : 460,
+                                  "width" : 21.5
+                                },
+                                "enabled" : true,
+                                "subrole" : null,
+                                "title" : null,
+                                "role" : "AXImage",
+                                "content_required" : false,
+                                "AXUniqueId" : "questionmark.square.fill",
+                                "AXLabel" : "questionmark.square.fill"
+                              },
+                              {
+                                "AXUniqueId" : null,
+                                "role_description" : "text",
+                                "enabled" : true,
+                                "traits" : [
+
+                                ],
+                                "role" : "AXStaticText",
+                                "frame" : {
+                                  "height" : 17,
+                                  "x" : 141.75,
+                                  "y" : 462.25,
+                                  "width" : 136
+                                },
+                                "type" : "StaticText",
+                                "custom_actions" : [
+
+                                ],
+                                "title" : null,
+                                "help" : null,
+                                "AXFrame" : "{{141.75, 462.25}, {136, 17}}",
+                                "pid" : 7277,
+                                "subrole" : null,
+                                "AXLabel" : "TUTORIAL",
+                                "AXValue" : null,
+                                "content_required" : false,
+                                "children" : [
+
+                                ]
+                              }
+                            ],
+                            "role" : "AXButton",
+                            "content_required" : false,
+                            "AXFrame" : "{{75.5, 440}, {224.5, 61.5}}",
+                            "type" : "Button",
+                            "title" : null,
+                            "traits" : [
+
+                            ]
+                          },
+                          {
+                            "enabled" : true,
+                            "custom_actions" : [
+
+                            ],
+                            "role_description" : "button",
+                            "AXFrame" : "{{69.5, 529.5}, {236.5, 61.5}}",
+                            "help" : null,
+                            "AXValue" : null,
+                            "content_required" : false,
+                            "frame" : {
+                              "height" : 61.5,
+                              "x" : 69.5,
+                              "y" : 529.5,
+                              "width" : 236.5
+                            },
+                            "pid" : 7277,
+                            "subrole" : null,
+                            "children" : [
+                              {
+                                "frame" : {
+                                  "height" : 21.5,
+                                  "x" : 94,
+                                  "y" : 549.5,
+                                  "width" : 33.5
+                                },
+                                "pid" : 7277,
+                                "subrole" : null,
+                                "AXValue" : null,
+                                "AXUniqueId" : "gamecontroller.fill",
+                                "AXFrame" : "{{94, 549.5}, {33.5, 21.5}}",
+                                "help" : null,
+                                "traits" : [
+
+                                ],
+                                "enabled" : true,
+                                "custom_actions" : [
+
+                                ],
+                                "role" : "AXImage",
+                                "content_required" : false,
+                                "AXLabel" : "Game Controller",
+                                "type" : "Image",
+                                "role_description" : "image",
+                                "title" : null,
+                                "children" : [
+
+                                ]
+                              },
+                              {
+                                "content_required" : false,
+                                "role_description" : "text",
+                                "AXUniqueId" : null,
+                                "children" : [
+
+                                ],
+                                "custom_actions" : [
+
+                                ],
+                                "role" : "AXStaticText",
+                                "enabled" : true,
+                                "pid" : 7277,
+                                "subrole" : null,
+                                "AXFrame" : "{{147.75, 551.75}, {136, 17}}",
+                                "AXLabel" : "SETTINGS",
+                                "type" : "StaticText",
+                                "traits" : [
+
+                                ],
+                                "help" : null,
+                                "frame" : {
+                                  "height" : 17,
+                                  "x" : 147.75,
+                                  "y" : 551.75,
+                                  "width" : 136
+                                },
+                                "AXValue" : null,
+                                "title" : null
+                              }
+                            ],
+                            "title" : null,
+                            "traits" : [
+
+                            ],
+                            "AXUniqueId" : null,
+                            "role" : "AXButton",
+                            "type" : "Button",
+                            "AXLabel" : "Settings"
+                          }
+                        ],
+                        "help" : null,
+                        "frame" : {
+                          "height" : 667,
+                          "x" : 0,
+                          "y" : 0,
+                          "width" : 375
+                        },
+                        "subrole" : null,
+                        "AXFrame" : "{{0, 0}, {375, 667}}",
+                        "custom_actions" : [
+
+                        ]
+                      }
+                    ],
+                    "custom_actions" : [
+
+                    ],
+                    "AXLabel" : null,
+                    "role_description" : "group",
+                    "enabled" : true,
+                    "frame" : {
+                      "height" : 667,
+                      "x" : 0,
+                      "y" : 0,
+                      "width" : 375
+                    },
+                    "type" : "Group",
+                    "pid" : 7277,
+                    "role" : "AXGroup",
+                    "AXFrame" : "{{0, 0}, {375, 667}}",
+                    "AXValue" : null,
+                    "AXUniqueId" : null
+                  }
+                ],
+                "custom_actions" : [
+
+                ],
+                "AXLabel" : null,
+                "title" : null,
+                "role" : "AXGroup",
+                "subrole" : null,
+                "AXUniqueId" : null,
+                "AXValue" : null,
+                "content_required" : false,
+                "role_description" : "group",
+                "pid" : 7277,
+                "frame" : {
+                  "height" : 667,
+                  "x" : 0,
+                  "y" : 0,
+                  "width" : 375
+                },
+                "AXFrame" : "{{0, 0}, {375, 667}}",
+                "type" : "Group",
+                "enabled" : true,
+                "help" : null
+              }
+            ],
+            "help" : null,
+            "subrole" : null,
+            "traits" : [
+
+            ],
+            "AXFrame" : "{{0, 0}, {375, 667}}",
+            "AXValue" : null,
+            "type" : "Group",
+            "pid" : 7277,
+            "AXLabel" : null
+          }
+        ],
+        "AXLabel" : null,
+        "pid" : 7277,
+        "custom_actions" : [
+
+        ],
+        "AXFrame" : "{{0, 0}, {375, 667}}",
+        "role" : "AXGroup",
+        "title" : null,
+        "help" : null,
+        "frame" : {
+          "height" : 667,
+          "x" : 0,
+          "y" : 0,
+          "width" : 375
+        }
+      }
+    ],
+    "frame" : {
+      "height" : 667,
+      "x" : 0,
+      "y" : 0,
+      "width" : 375
+    },
+    "AXLabel" : "Ricochlime",
+    "AXUniqueId" : null,
+    "content_required" : false,
+    "type" : "Application",
+    "custom_actions" : [
+
+    ],
+    "subrole" : null,
+    "pid" : 7277,
+    "AXValue" : null,
+    "AXFrame" : "{{0, 0}, {375, 667}}",
+    "role_description" : "application",
+    "help" : null,
+    "traits" : [
+
+    ],
+    "title" : null,
+    "role" : "AXApplication"
+  }
+]

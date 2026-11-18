@@ -1,0 +1,2 @@
+2026-11-18 13:19:24.613 App[7277:27550] void * _Nullable NSMapGet(NSMapTable * _Nonnull, const void * _Nullable): map table argument is NULL
+IOSurfaceClientSetSurfaceNotify failed e00002c7
