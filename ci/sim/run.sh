@@ -96,9 +96,11 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
     UI "$OUT/ui-start.json"
     read -r SW SH < <(python3 "$HERE/ui.py" size "$OUT/ui-start.json" || echo "0 0")
     # raw portrait points for AXe 1.6.0, or when the tree timed out (LÖVE): from a screenshot (2x below 1000 pixels wide, else 3x)
-    if [ -n "${SIM_AXE_VERSION:-}" ] || [ "$SW" = 0 ]; then
-      xcrun simctl io "$UDID" screenshot /tmp/simsize.png > /dev/null 2>&1
-      read -r SW SH < <(python3 -c "import struct,sys;d=open('/tmp/simsize.png','rb').read(24);w,h=struct.unpack('>II',d[16:24]);k=2 if w<1000 else 3;print(w//k,h//k)")
+    # also when the tree's size isn't the screen's: an app without a UIScene (GameMaker) gave 390x844 on an iPhone SE (375x667)
+    xcrun simctl io "$UDID" screenshot /tmp/simsize.png > /dev/null 2>&1
+    read -r PW PH < <(python3 -c "import struct,sys;d=open('/tmp/simsize.png','rb').read(24);w,h=struct.unpack('>II',d[16:24]);k=2 if w<1000 else 3;print(w//k,h//k)" 2>/dev/null || echo "0 0")
+    if [ -n "${SIM_AXE_VERSION:-}" ] || [ "$SW" = 0 ] || { [ "$PW" != 0 ] && [ "$SW $SH" != "$PW $PH" ] && [ "$SW $SH" != "$PH $PW" ]; }; then
+      SW=$PW; SH=$PH
     fi
     echo "screen: ${SW}x${SH} points (steps may give X and Y in points or as 50%)" >> "$OUT/sim.md"
     P() { case "$1" in *%) awk -v v="${1%\%}" -v t="$2" 'BEGIN{printf "%d", v*t/100}';; *) echo "$1";; esac; }
