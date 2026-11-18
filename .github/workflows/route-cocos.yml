@@ -98,6 +98,16 @@ jobs:
           sed -i '' 's/CCLOG(/cocos2d::log(/g' $M/CCLuaStack.cpp $M/Cocos2dxLuaLoader.cpp
           sed -i '' 's/    if (engine->executeScriptFile("main.lua"))/    cocos2d::log("lab: running main.lua"); if (engine->executeScriptFile("main.lua"))/' proj/frameworks/runtime-src/Classes/AppDelegate.cpp
           grep -c 'lab: running main.lua' proj/frameworks/runtime-src/Classes/AppDelegate.cpp | sed 's/^/- main.lua log line added: /' | tee -a out/cocos.md
+          # lab probe: every 5 s print whether the main loop runs, the running scene and the GL frame size (the simulator showed only black)
+          cat >> proj/src/main.lua <<'LUA'
+          local d = cc.Director:getInstance()
+          d:getScheduler():scheduleScriptFunc(function()
+            local s, v = d:getRunningScene(), d:getOpenGLView()
+            local f = v and v:getFrameSize() or {width = -1, height = -1}
+            release_print(string.format("lab: frames %d scene %s children %d frame %dx%d visible %dx%d", d:getTotalFrames(), tostring(s),
+              s and s:getChildrenCount() or -1, f.width, f.height, d:getVisibleSize().width, d:getVisibleSize().height))
+          end, 5, false)
+          LUA
           # Xcode 16 refuses iOS 6-8 deployment targets
           find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
           xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
@@ -105,7 +115,7 @@ jobs:
         continue-on-error: true
         run: |
           SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"; du -sh "$APP"' \
-            ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim 40
+            ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim 60
       - name: Build for iPhone (unsigned) and package the IPA
         run: |
           set +e
