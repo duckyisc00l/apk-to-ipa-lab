@@ -55,7 +55,7 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq cmake libsdl2-dev libopenal-dev libgl1-mesa-dev libgl1-mesa-dri xvfb >/dev/null
           git clone -q --depth 1 --recurse-submodules https://github.com/ButterscotchRunner/Butterscotch engine
           echo "engine: $(git -C engine log -1 --format='%h %ad' --date=short)" | tee -a out/gamemaker.md
-          cmake -S engine -B engine/build -DBACKEND=sdl2 -DCMAKE_BUILD_TYPE=Release > out/cmake.log 2>&1
+          cmake -S engine -B engine/build -DBACKEND=sdl2 -DCMAKE_BUILD_TYPE=RelWithDebInfo > out/cmake.log 2>&1
           cmake --build engine/build -j4 > out/build.log 2>&1; echo "build exit $?" | tee -a out/gamemaker.md
           find engine/build -maxdepth 2 -type f -perm -u+x -name 'butterscotch*' | tee -a out/gamemaker.md
       - name: Run the game and take screenshots
@@ -70,6 +70,21 @@ jobs:
           done
           echo "unknown functions: $(grep -c . out/unknown-functions.txt)" | tee -a out/gamemaker.md
           ls -la out/*.png 2>/dev/null | tee -a out/gamemaker.md
+      - name: Tap test (mouse clicks through xdotool, under gdb so a crash prints a backtrace)
+        run: |
+          sudo apt-get install -y -qq xdotool gdb imagemagick > /dev/null
+          BIN=$(find engine/build -maxdepth 2 -type f -perm -u+x -name 'butterscotch*' | head -1)
+          Xvfb :9 -screen 0 1200x1200x24 & sleep 2; export DISPLAY=:9 SDL_AUDIODRIVER=dummy ALSOFT_DRIVERS=null
+          # half-size window: game pixel (x, y) is window pixel (x/2, y/2). Legendary Chess: e2 = (604,1400), e4 = (604,1144)
+          timeout 120 gdb -q -batch -ex run -ex bt -ex "info registers rip" --args "$BIN" --os-type android --window-size 540x1080 "$DATA" > out/tap-gdb.log 2>&1 &
+          sleep 12; W=$(xdotool search --name . | tail -1); echo "window $W $(xdotool getwindowgeometry $W | tr '\n' ' ')" | tee -a out/gamemaker.md
+          click() { xdotool mousemove --window $W $1 $2; sleep 0.3; xdotool mousedown 1; sleep 0.15; xdotool mouseup 1; sleep 1.5; }
+          import -window root out/tap-0.png
+          click 302 700; import -window root out/tap-1-selected.png
+          click 302 572; import -window root out/tap-2-e4.png
+          click 302 380; click 302 508; import -window root out/tap-3-e5.png
+          sleep 3; pkill -f butterscotch || true; sleep 2
+          echo "tap test: $(grep -c . out/tap-gdb.log) log lines; signals: $(grep -E 'SIG|signal' out/tap-gdb.log | head -3 | tr '\n' ' ')" | tee -a out/gamemaker.md
       - name: Publish to branch r-gamemaker
         if: always()
         run: |
@@ -79,7 +94,7 @@ jobs:
           cp -r /tmp/r/. . && git add -A && git commit -qm "gamemaker ${{ github.run_number }}" && git push -f origin r-gamemaker
 
   ios:
-    if: github.event_name == 'push' || contains(inputs.jobs, 'ios') || contains(inputs.jobs, 'both')
+    if: contains(inputs.jobs, 'ios') || contains(inputs.jobs, 'both')   # Mac minutes: only when asked
     runs-on: macos-15-intel
     timeout-minutes: 75
     env:

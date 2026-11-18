@@ -17,6 +17,9 @@
 #include "stb_ds.h"
 #include "log.h"
 #include "ios_runner.h"
+#include <signal.h>
+#include <unistd.h>
+#include <execinfo.h>
 
 static Runner* gRunner = nullptr;
 static GLuint gHostFramebuffer = 0;
@@ -45,12 +48,31 @@ static bool iosGetWindowSize(int32_t* outW, int32_t* outH) {
     return true;
 }
 
+// A crash prints the signal, the frame, the room and a native backtrace to stderr and game-log.txt.
+static void crashHandler(int sig) {
+    char buf[160];
+    int n = snprintf(buf, sizeof(buf), "\n==== CRASH signal %d frame %d room %s ====\n", sig, gRunner ? (int) gRunner->frameCount : -1,
+        gRunner && gRunner->currentRoom ? gRunner->currentRoom->name : "?");
+    write(2, buf, (size_t) n);
+    void* frames[48];
+    int count = backtrace(frames, 48);
+    backtrace_symbols_fd(frames, count, 2);
+    if (gLog != nullptr) { fputs(buf, gLog); fflush(gLog); backtrace_symbols_fd(frames, count, fileno(gLog)); }
+    signal(sig, SIG_DFL);
+    raise(sig);
+}
+
+static void logExit(void) { fprintf(stderr, "IOSRunner: process exiting (frame %d)\n", gRunner ? (int) gRunner->frameCount : -1); }
+
 static void iosSetWindowTitle(const char* title) { (void) title; }
 
 bool IOSRunner_start(const char* dataWinPath, const char* savesPath, const char* logPath, uint32_t hostFramebuffer) {
     if (gRunner != nullptr) return false;
     if (logPath != nullptr) gLog = fopen(logPath, "w");
     gHostFramebuffer = hostFramebuffer;
+    static const int sigs[] = {SIGSEGV, SIGBUS, SIGILL, SIGFPE, SIGABRT, SIGTRAP};
+    for (size_t i = 0; i < sizeof(sigs) / sizeof(sigs[0]); i++) signal(sigs[i], crashHandler);
+    atexit(logExit);
     if (mkdir(savesPath, 0777) != 0 && errno != EEXIST) logWarn("Could not create saves dir %s: %s\n", savesPath, strerror(errno));
 
     DataWin* dataWin = DataWin_parse(dataWinPath, (DataWinParserOptions) {
@@ -122,7 +144,8 @@ void IOSRunner_beginFrame(void) {
 
 int IOSRunner_step(int winW, int winH, float deltaTime) {
     Runner* runner = gRunner;
-    if (runner == nullptr || runner->shouldExit) return 1;
+    if (runner == nullptr) return 1;
+    if (runner->shouldExit) { logInfo("IOSRunner: the game asked to quit (game_end)\n"); return 1; }
     runner->deltaTime = deltaTime * 1000000;
     Runner_step(runner);
     if (deltaTime < 0.0f) deltaTime = 0.0f;
