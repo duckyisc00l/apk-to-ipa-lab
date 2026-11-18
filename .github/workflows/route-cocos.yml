@@ -64,6 +64,7 @@ jobs:
           curl -sSL --fail -o deps.zip "https://github.com/cocos2d/cocos2d-x-3rd-party-libs-bin/archive/$dep.zip" && unzip -qo deps.zip -d deps
           cp -R deps/*/. engine/external/ && rm -rf deps deps.zip; echo "- third-party libs: $dep" | tee -a out/cocos.md
           lipo -info engine/external/lua/luajit/prebuilt/ios/libluajit.a | tee -a out/cocos.md
+          ci/cocos/retag-sim.sh engine | tee -a out/cocos.md
           python3 -I ci/cocos/bindings.py "$SO" engine apk/assets/src | tee -a out/cocos.md
       - name: Make the iOS project from the engine's Lua template with the APK's scripts and resources
         run: |
