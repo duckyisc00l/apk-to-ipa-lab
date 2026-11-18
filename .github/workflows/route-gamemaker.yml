@@ -53,7 +53,8 @@ jobs:
       - name: Build the Butterscotch runner (Linux, SDL2)
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq cmake libsdl2-dev libopenal-dev libgl1-mesa-dev libgl1-mesa-dri xvfb >/dev/null
-          git clone -q --depth 1 --recurse-submodules https://github.com/ButterscotchRunner/Butterscotch engine
+          mkdir engine && cd engine && git init -q && git fetch -q --depth 1 https://github.com/ButterscotchRunner/Butterscotch ad34ff419de41bed2fa91b1d2ebd3ecfa586ff89 && git checkout -q FETCH_HEAD && cd ..
+          python3 -I ci/gamemaker/fix_vm.py engine | tee -a out/gamemaker.md
           echo "engine: $(git -C engine log -1 --format='%h %ad' --date=short)" | tee -a out/gamemaker.md
           cmake -S engine -B engine/build -DBACKEND=sdl2 -DCMAKE_BUILD_TYPE=RelWithDebInfo > out/cmake.log 2>&1
           cmake --build engine/build -j4 > out/build.log 2>&1; echo "build exit $?" | tee -a out/gamemaker.md
@@ -113,6 +114,7 @@ jobs:
       - name: Build Butterscotch for iPhone and for the Simulator (static library, PLATFORM=ios)
         run: |
           mkdir engine && cd engine && git init -q && git fetch -q --depth 1 https://github.com/ButterscotchRunner/Butterscotch $BS_COMMIT && git checkout -q FETCH_HEAD && cd ..
+          python3 -I ci/gamemaker/fix_vm.py engine | tee -a out/ios.md
           python3 -I ci/gamemaker/ios/patch_engine.py engine | tee -a out/ios.md
           common="-DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY -DCMAKE_BUILD_TYPE=Release
             -DPLATFORM=ios -DENABLE_MODERN_GL=ON -DENABLE_LEGACY_GL=OFF -DAUDIO_BACKEND=miniaudio -DVIDEO_BACKEND=none"
