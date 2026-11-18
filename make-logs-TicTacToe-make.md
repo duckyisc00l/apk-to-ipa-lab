@@ -1,0 +1,5 @@
+- kind: cordova; web folder: assets/www
+- name: Tic-Tac-Toe; version 1.1.1 (10101); orientation: unspecified
+- Cordova plugins in the app (their native side is missing on iOS; check each): cordova-plugin-device, cordova-plugin-ionic-keyboard, cordova-plugin-ionic-webview, cordova-plugin-screen-orientation, cordova-plugin-splashscreen, cordova-plugin-statusbar, cordova-sqlite-storage, es6-promise-plugin
+- icon from res/mipmap-anydpi-v26/ic_launcher.xml
+- web files: 1442

@@ -1,0 +1,29 @@
+[
+ {
+  "libs": [],
+  "engine": "Web (Capacitor)",
+  "variant": "",
+  "engine_id": "web-capacitor",
+  "tags": [
+   "web-capacitor",
+   "web"
+  ],
+  "evidence": [
+   "assets/capacitor.config.json"
+  ],
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/public in a Swift web view"
+  },
+  "arches": [],
+  "arm64": false,
+  "game": "jupiutrera__open-chess",
+  "file": "open-chess-v0.9.1.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/jupiutrera__open-chess",
+  "protection": []
+ }
+]
