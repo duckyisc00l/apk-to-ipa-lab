@@ -1,0 +1,13 @@
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/ci/sim/run.sh: line 14: 27245 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/ci/sim/run.sh: line 14: 28217 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+✓ Tap at (241.0, 671.0) completed successfully
+✓ Tap at (103.0, 617.0) completed successfully
+✓ Tap at (359.0, 671.0) completed successfully
+✓ Tap at (379.0, 617.0) completed successfully
+Error: No accessibility element matched --label 'Return'. Make sure the app is on the expected screen, then run `axe describe-ui --udid <SIMULATOR_UDID>` and prefer --id when available.
+✓ Tap at (350.0, 779.0) completed successfully
+✓ Tap at (122.0, 671.0) completed successfully
+✓ Tap at (300.0, 617.0) completed successfully
+✓ Tap at (142.0, 617.0) completed successfully
+Error: No accessibility element matched --label 'Return'. Make sure the app is on the expected screen, then run `axe describe-ui --udid <SIMULATOR_UDID>` and prefer --id when available.
+✓ Tap at (350.0, 779.0) completed successfully

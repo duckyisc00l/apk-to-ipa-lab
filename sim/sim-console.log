@@ -1,0 +1,14 @@
+2026-11-18 05:35:03.554 love[20935:58536] You need UIApplicationSupportsIndirectInputEvents in your Info.plist for mouse support
+Layout [1]: 0x0 -> 0x2FFF
+Layout [2]: 0x3000 -> 0x5FFF
+Layout [3]: 0x6000 -> 0x15FFF
+2026-11-18 05:35:04.519 love[20935:58536] Unbalanced calls to begin/end appearance transitions for <SDL_uikitviewcontroller: 0x103994500>.
+2026-11-18 05:35:04.519 love[20935:58536] Unbalanced calls to begin/end appearance transitions for <SDL_uikitviewcontroller: 0x103994500>.
+Joystick Connected ! Gamepad: true, ID: 1, GUID: 0500a5d0ac05000001000000cf076d01, Name: Gamepad
+------------------------------
+- libcurl is not available
+- luasec is not available
+- https is not available
+------------------------------
+Creating LIKO-12_Source.love
+objc[20935]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x11b6f4310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x11b7b8398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
