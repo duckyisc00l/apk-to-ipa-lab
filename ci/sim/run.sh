@@ -35,10 +35,6 @@ xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev
 # skip iOS's one-time "slide to type" keyboard tip: it covers the keyboard and AXe can't tap it (another process)
 for dom in com.apple.keyboard.ContinuousPath com.apple.Preferences; do
   xcrun simctl spawn "$UDID" defaults write "$dom" DidShowContinuousPathIntroduction -bool true 2>/dev/null; done
-# no autocorrect or word suggestions: games read the keyboard's text as it comes, and LÖVE (SDL) got each letter
-# replaced by the next one while the suggestion bar was on (LIKO-12 showed "h", then "l", then "p" for "help")
-for k in KeyboardAutocorrection KeyboardPrediction KeyboardAutocapitalization KeyboardCheckSpelling; do
-  xcrun simctl spawn "$UDID" defaults write com.apple.Preferences "$k" -bool false 2>/dev/null; done
 export SIMCTL_CHILD_NSUnbufferedIO=YES   # passed to the app: Foundation output not held back
 sleep 15   # let the home screen finish starting, or the first launch is refused too
 xcrun simctl install "$UDID" "$APP" || { echo "INSTALL FAILED" | tee -a "$OUT/sim.md"; exit 1; }
