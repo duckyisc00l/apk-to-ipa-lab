@@ -1,28 +1,30 @@
 # axe: v1.6.0
 # ROTA (Godot 3) is landscape-only: drawn turned on the portrait screen, content right = screen top.
 # AXe 1.6.0 taps raw portrait points, so % here are of the portrait screen (any iPhone).
-# First tap shows the touch buttons; X (accept/jump) at the game's bottom right = (86%, 7%);
+# First tap shows the touch buttons; X (accept/jump) at the game's bottom right = (84%, 9%);
 # the d-pad (game's bottom left) is around (76%, 86%), its right arrow at (76%, 79%).
-# Press buttons with a short swipe on the spot (held 0.2 s): a plain tap was mostly missed by Godot's TouchScreenButton.
+# Swipes on the X button did not leave the title (run 23). Try a held touch, then the keyboard (X = ui_accept).
 shot 0-title
 tap 50% 50%
 wait 2
 shot 1-touch-controls
-swipe 86% 7% 86% 8%
+hold 84% 9% 0.4
 wait 3
-shot 2-main-menu
-swipe 86% 7% 86% 8%
+shot 2-after-hold-x
+key x
 wait 3
-shot 3-file-menu
-swipe 86% 7% 86% 8%
+shot 3-after-key-x
+key return
+wait 3
+shot 4-after-key-return
+key x
 wait 8
-shot 4-in-game
-swipe 76% 79% 76% 80%
-swipe 76% 79% 76% 80%
-swipe 76% 79% 76% 80%
-swipe 76% 79% 76% 80%
+shot 5-after-key-x-2
+hold 76% 79% 1.5
 wait 1
-shot 5-walked-right
-swipe 86% 7% 86% 8%
+shot 6-held-right
+key right
+key right
+key x
 wait 1
-shot 6-jump
+shot 7-keys-right-jump

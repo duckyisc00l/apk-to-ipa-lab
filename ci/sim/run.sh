@@ -2,7 +2,7 @@
 # Run an iPhone app in Apple's iPhone Simulator on a GitHub Mac (there are no real iPhones on GitHub).
 # Usage: ci/sim/run.sh <path to .app built for the simulator> <out dir> [seconds to wait, default 25] [input steps]
 # The optional steps file has one step per line (AXe does the input; X and Y in points, or as a % of the screen):
-#   tap X Y | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | softtype TEXT (on-screen keys) | key NAME (return, escape,
+#   tap X Y | hold X Y [SECONDS] | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | softtype TEXT (on-screen keys) | key NAME (return, escape,
 #   backspace, tab, space, up/down/left/right, a letter, or a HID number) | wait SECONDS | shot NAME |
 #   ui NAME (save the accessibility tree, list its texts) | uiat X Y (the element at one point) | relaunch (quit and restart the app) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
 # Writes <out>/sim.md (a summary line first; then launched? still running? crash? each step), <out>/sim-<n>s.png
@@ -121,6 +121,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
         tap) RUN "tap $a $b" axe tap -x "$(P "$a" "$SW")" -y "$(P "$b" "$SH")" --udid "$UDID";;
         swipe) RUN "swipe $a,$b -> $c,$d" axe swipe --start-x "$(P "$a" "$SW")" --start-y "$(P "$b" "$SH")" \
                  --end-x "$(P "$c" "$SW")" --end-y "$(P "$d" "$SH")" --duration 0.2 --udid "$UDID";;
+        hold) RUN "hold $a $b ${c:-0.3}s" axe touch -x "$(P "$a" "$SW")" -y "$(P "$b" "$SH")" --down --up --delay "${c:-0.3}" --udid "$UDID";;   # touch down, wait, up (for buttons that miss quick taps)
         tapon)   # by accessibility label; if AXe refuses (none, or several), tap the first match's centre
           if timeout 40 axe tap --label "$arg" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null; then
             echo "tapon \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))

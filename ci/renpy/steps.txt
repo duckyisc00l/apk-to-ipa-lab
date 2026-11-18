@@ -3,6 +3,9 @@
 # AXe 1.6.0 taps raw portrait points; % of the portrait screen. On the iPhone SE (16:9, no bars) the main
 # menu's "Start" is at (63%, 6.5%). Then tap the middle to advance the dialogue.
 shot 0-menu
+# The first tap on Start did nothing in run 14 (the menu stayed): tap it twice.
+tap 63% 6%
+wait 2
 tap 63% 6%
 wait 3
 shot 1-after-start
