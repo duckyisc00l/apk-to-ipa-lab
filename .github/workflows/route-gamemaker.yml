@@ -52,7 +52,8 @@ jobs:
           E
       - name: Build the Butterscotch runner (Linux, SDL2)
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq cmake libsdl2-dev libopenal-dev libgl1-mesa-dev libgl1-mesa-dri xvfb >/dev/null
+          sudo rm -f /var/lib/man-db/auto-update   # man-db's trigger made apt-get take over 6 minutes
+          sudo apt-get update -qq && sudo apt-get install -y -qq cmake libsdl2-dev libopenal-dev libgl1-mesa-dev libgl1-mesa-dri xvfb xdotool gdb imagemagick >/dev/null
           mkdir engine && cd engine && git init -q && git fetch -q --depth 1 https://github.com/ButterscotchRunner/Butterscotch ad34ff419de41bed2fa91b1d2ebd3ecfa586ff89 && git checkout -q FETCH_HEAD && cd ..
           python3 -I ci/gamemaker/fix_vm.py engine | tee -a out/gamemaker.md
           echo "engine: $(git -C engine log -1 --format='%h %ad' --date=short)" | tee -a out/gamemaker.md
@@ -74,7 +75,6 @@ jobs:
       - name: Tap test (mouse clicks through xdotool, under gdb so a crash prints a backtrace)
         timeout-minutes: 6   # gdb ignores the stop signal while the game runs: kill it outright
         run: |
-          sudo apt-get install -y -qq xdotool gdb imagemagick > /dev/null
           BIN=$(find engine/build -maxdepth 2 -type f -perm -u+x -name 'butterscotch*' | head -1)
           Xvfb :9 -screen 0 1500x2400x24 & sleep 2; export DISPLAY=:9 SDL_AUDIODRIVER=dummy ALSOFT_DRIVERS=null
           # the game resizes its window to 1080x2160, so window pixels are game pixels. Legendary Chess: e2 = (604,1400), e4 = (604,1144)
@@ -85,6 +85,7 @@ jobs:
           click 604 1400; import -window root out/tap-1-selected.png
           click 604 1144; import -window root out/tap-2-e4.png
           click 604 760; click 604 1016; import -window root out/tap-3-e5.png
+          click 120 1700; sleep 2; import -window root out/tap-4-reset.png   # Reset pops the undo history (variable_clone copies)
           sleep 3; pkill -9 -f butterscotch || true; pkill -9 gdb || true; pkill -9 Xvfb || true; sleep 2
           echo "tap test: $(grep -c . out/tap-gdb.log) log lines; signals: $(grep -E 'SIG|signal' out/tap-gdb.log | head -3 | tr '\n' ' ')" | tee -a out/gamemaker.md
       - name: Publish to branch r-gamemaker
