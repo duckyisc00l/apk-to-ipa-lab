@@ -78,7 +78,8 @@ jobs:
             # Live2D's Cubism SDK isn't open source and isn't in the repo: build without it
             sed -i '' 's/#define USE_LIVE2D_SPRITE 1/#define USE_LIVE2D_SPRITE 0/' $C/AppDelegate.cpp
             # the template's Xcode project only compiles AppDelegate.cpp: pull the game's other .cpp files in through it
-            for f in $C/*.cpp; do b=$(basename $f); [ $b = AppDelegate.cpp ] || echo "#include \"$b\"" >> $C/AppDelegate.cpp; done
+            # ActionShake.h defines macros B and BM, which break rapidjson's templates in the next file: undefine them after each one
+            for f in $C/*.cpp; do b=$(basename $f); [ $b = AppDelegate.cpp ] || printf '#include "%s"\n#undef B\n#undef BM\n' "$b" >> $C/AppDelegate.cpp; done
             echo "- native: the game's own C++ added ($(ls $C | tr '\n' ' ')); Live2D left out" | tee -a out/cocos.md
           else echo "- native: stock engine" | tee -a out/cocos.md; fi
           # Xcode 16 clang: bullet's SSE shuffle masks must fit in 8 bits (bt_splat_ps(y, 0x80) gives 10880); older clang cut them down silently
@@ -96,7 +97,7 @@ jobs:
         continue-on-error: true
         run: |
           SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"; du -sh "$APP"' \
-            ci/sim/build-and-run.sh proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj HelloLua-mobile out/sim 40
+            ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim 40
       - name: Build for iPhone (unsigned) and package the IPA
         run: |
           set +e
