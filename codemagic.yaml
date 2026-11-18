@@ -1,0 +1,20 @@
+# Codemagic: a second Mac builder, separate from GitHub's queue (free plan: 500 Mac minutes a month).
+# One general workflow: it runs the script named in CM_SCRIPT (with CM_ARGS) and keeps everything in out/.
+# Start it from the workspace with ci/cm/run.sh (Codemagic REST API; token in ~/.cm/token, never committed).
+workflows:
+  mac-script:
+    name: Mac script
+    instance_type: mac_mini_m2
+    max_build_duration: 120
+    environment:
+      xcode: latest
+    scripts:
+      - name: Run the job script
+        script: |
+          mkdir -p out
+          echo "script: $CM_SCRIPT $CM_ARGS" | tee out/cm-job.txt
+          set +e
+          bash "$CM_SCRIPT" $CM_ARGS 2>&1 | tee out/cm-job.log
+          echo "exit: ${PIPESTATUS[0]}" | tee -a out/cm-job.txt
+    artifacts:
+      - out/**
