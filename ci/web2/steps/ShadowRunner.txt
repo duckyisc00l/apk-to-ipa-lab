@@ -1,0 +1,19 @@
+# axe: v1.6.0
+# Phaser game in a Capacitor app: title, then taps in the middle (start, jump), then a relaunch
+shot 0-title
+tap 50% 50%
+wait 3
+shot 1-after-tap
+tap 50% 60%
+wait 0.5
+tap 50% 60%
+wait 0.5
+tap 50% 60%
+wait 2
+shot 2-playing
+tap 50% 60%
+wait 5
+shot 3-later
+relaunch
+wait 10
+shot 4-relaunched

@@ -1,14 +1,12 @@
 import Foundation
 import WebKit
 
-/// Serves the web folder from the app bundle under app://local/...
+/// Serves the web folder from the app bundle under app://local/... (the fallback when LoopbackServer can't start).
 /// For Cordova apps, requests for cordova.js get the iOS bridge instead.
 final class LocalSchemeHandler: NSObject, WKURLSchemeHandler {
     static let scheme = "app"
     static let startURL = URL(string: "app://local/\(AppConfig.startPage)")!
     static var isCordova: Bool { AppConfig.kind == "cordova" }
-
-    private let root = Bundle.main.resourceURL!.appendingPathComponent("www", isDirectory: true).standardizedFileURL
 
     private static let mime: [String: String] = [
         "html": "text/html", "htm": "text/html", "js": "text/javascript", "mjs": "text/javascript", "css": "text/css",
@@ -18,16 +16,17 @@ final class LocalSchemeHandler: NSObject, WKURLSchemeHandler {
         "ttf": "font/ttf", "otf": "font/otf", "woff": "font/woff", "woff2": "font/woff2", "wasm": "application/wasm",
     ]
 
-    func webView(_ webView: WKWebView, start task: WKURLSchemeTask) {
-        guard let url = task.request.url else { return }
-        var path = url.path.removingPercentEncoding ?? url.path
+    /// The file for a request path (percent-encoded, query already removed), shared with LoopbackServer.
+    /// Returns the data (nil: 404) and the path it came from (the start page for router paths).
+    static func content(for urlPath: String) -> (Data?, String) {
+        var path = urlPath.removingPercentEncoding ?? urlPath
         while path.hasPrefix("/") { path.removeFirst() }
         if path.isEmpty { path = AppConfig.startPage }
-
+        let root = Bundle.main.resourceURL!.appendingPathComponent("www", isDirectory: true).standardizedFileURL
         var data: Data?
-        if Self.isCordova && path.hasSuffix("cordova.js") {
+        if isCordova && path.hasSuffix("cordova.js") {
             data = (BridgeScript.common + "\n" + BridgeScript.cordova).data(using: .utf8)
-        } else if Self.isCordova && path.hasSuffix("cordova_plugins.js") {
+        } else if isCordova && path.hasSuffix("cordova_plugins.js") {
             data = "cordova.define('cordova/plugin_list', function(require, exports, module) { module.exports = []; });".data(using: .utf8)
         } else {
             let file = root.appendingPathComponent(path).standardizedFileURL
@@ -39,11 +38,21 @@ final class LocalSchemeHandler: NSObject, WKURLSchemeHandler {
                 path = AppConfig.startPage
             }
         }
+        return (data, path)
+    }
+
+    static func mimeType(_ path: String) -> String {
         let ext = (path as NSString).pathExtension.lowercased()
-        var type = Self.mime[ext] ?? "application/octet-stream"
+        var type = mime[ext] ?? "application/octet-stream"
         if ["html", "htm", "js", "mjs", "css", "json", "txt", "xml", "svg"].contains(ext) { type += "; charset=utf-8" }
+        return type
+    }
+
+    func webView(_ webView: WKWebView, start task: WKURLSchemeTask) {
+        guard let url = task.request.url else { return }
+        let (data, path) = Self.content(for: url.path)
         let response = HTTPURLResponse(url: url, statusCode: data == nil ? 404 : 200, httpVersion: "HTTP/1.1",
-                                       headerFields: ["Content-Type": type, "Content-Length": String(data?.count ?? 0),
+                                       headerFields: ["Content-Type": Self.mimeType(path), "Content-Length": String(data?.count ?? 0),
                                                       "Access-Control-Allow-Origin": "*", "Cache-Control": "no-cache"])!
         task.didReceive(response)
         task.didReceive(data ?? Data())

@@ -3,7 +3,7 @@ import SwiftUI
 // The play screen: a grid of log monsters (log_normal / log_green / log_gold, 24x24 frames), the player
 // (character_subset, 17x23 frames) at the bottom, drag to aim, release to fire bullets that ricochet.
 struct Monster: Identifiable { let id = UUID(); var col: Int; var row: Int; var hp: Int; var kind: String }
-struct Bullet { var p: CGPoint; var v: CGVector }
+struct Bullet { var p: CGPoint; var v: CGVector; var wait: Int }   // wait: frames before it leaves (one after another, like the original)
 
 final class Game: ObservableObject {
     static let cols = 8
@@ -24,13 +24,14 @@ final class Game: ObservableObject {
     }
     func fire(from: CGPoint, to: CGPoint, cell: CGFloat) {
         let dx = to.x - from.x, dy = min(to.y - from.y, -10), l = hypot(dx, dy)
-        let v = CGVector(dx: dx / l * cell * 0.5, dy: dy / l * cell * 0.5)
-        for i in 0..<ammo { bullets.append(Bullet(p: CGPoint(x: from.x, y: from.y + CGFloat(i) * cell * 0.4), v: v)) }
+        let v = CGVector(dx: dx / l * cell * 0.3, dy: dy / l * cell * 0.3)
+        for i in 0..<ammo { bullets.append(Bullet(p: from, v: v, wait: i * 6)) }
     }
     func step(size: CGSize, cell: CGFloat, top: CGFloat) {
         guard !bullets.isEmpty else { return }
         var keep: [Bullet] = []
         for var b in bullets {
+            if b.wait > 0 { b.wait -= 1; keep.append(b); continue }
             b.p.x += b.v.dx; b.p.y += b.v.dy
             if b.p.x < 0 || b.p.x > size.width { b.v.dx = -b.v.dx; b.p.x = min(max(b.p.x, 0), size.width) }
             if b.p.y < top { b.v.dy = -b.v.dy; b.p.y = top }
@@ -93,7 +94,7 @@ struct PlayView: View {
                                 for i in 1..<14 { let p = CGPoint(x: player.x + dx / l * CGFloat(i) * cell * 0.5, y: player.y + dy / l * CGFloat(i) * cell * 0.5)
                                     ctx.fill(Path(ellipseIn: CGRect(x: p.x - 5, y: p.y - 5, width: 10, height: 10)), with: .color(.white)) }
                             }
-                            for b in game.bullets { ctx.fill(Path(ellipseIn: CGRect(x: b.p.x - 6, y: b.p.y - 6, width: 12, height: 12)), with: .color(.white)) }
+                            for b in game.bullets where b.wait == 0 { ctx.fill(Path(ellipseIn: CGRect(x: b.p.x - 6, y: b.p.y - 6, width: 12, height: 12)), with: .color(.white)) }
                             if let p = frames["player"] {
                                 ctx.draw(Image(decorative: p, scale: 1).interpolation(.none), in: CGRect(x: player.x - cell * 0.37, y: player.y - cell * 0.5, width: cell * 0.74, height: cell)) }
                         }

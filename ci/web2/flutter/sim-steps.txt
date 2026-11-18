@@ -4,7 +4,15 @@ tapon Play
 wait 2
 shot 1-play
 swipe 50% 85% 30% 40%
-wait 1
+wait 0.3
 shot 2-shooting
 wait 6
 shot 3-after-shot
+swipe 50% 85% 70% 35%
+wait 8
+shot 4-second-turn
+relaunch
+wait 4
+tapon Play
+wait 2
+shot 5-after-relaunch

@@ -157,7 +157,7 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
         type) RUN "type \"$arg\"" axe type "$arg" --udid "$UDID";;
         key) RUN "key $arg" axe key "$(KEY "$a")" --udid "$UDID";;
         wait) sleep "$a";;
-        relaunch) xcrun simctl terminate "$UDID" "$BID" > /dev/null 2>&1; sleep 2   # quit and start again: do saves survive?
+        relaunch) timeout 60 xcrun simctl terminate "$UDID" "$BID" > /dev/null 2>&1; sleep 2   # quit and start again: do saves survive?
           RUN "relaunch" xcrun simctl launch "$UDID" "$BID";;
         shot) xcrun simctl io "$UDID" screenshot "$OUT/sim-$a.png" > /dev/null 2>&1 && echo "shot $a" >> "$OUT/sim.md";;
         uiat) timeout 60 axe describe-ui --point "$(P "$a" "$SW"),$(P "$b" "$SH")" --udid "$UDID" > "$OUT/ui-at.json" 2>> "$OUT/input.log" < /dev/null

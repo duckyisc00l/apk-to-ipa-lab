@@ -19,10 +19,13 @@ jobs:
           - { repo: "yoimerdr/ludens", name: "LudensMV" }
           - { repo: "RedEdge967/Doctor-Strange", name: "DoctorStrange" }
           - { repo: "killflex/flappybird-c3", name: "FlappyC3" }
+          - { repo: "yoimerdr/ludens", name: "LudensMVCanvas", mv: "canvas" }
+          - { repo: "aria0939/shadow-runner-pixel-adventure", name: "ShadowRunner" }
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
+      MV_RENDER: ${{ matrix.app.mv }}
     steps:
       - uses: actions/checkout@v4
       - name: Download and unpack
@@ -57,7 +60,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        name: [LudensMV, DoctorStrange, FlappyC3]
+        name: [LudensMV, DoctorStrange, FlappyC3, LudensMVCanvas, ShadowRunner]
     runs-on: macos-15-intel
     timeout-minutes: 50
     env:
@@ -85,6 +88,7 @@ jobs:
       - name: Run it in the iPhone Simulator with input steps
         if: inputs.only == '' || inputs.only == matrix.name
         continue-on-error: true
+        timeout-minutes: 25
         run: |
           steps="$PWD/lab/ci/web2/steps/${{ matrix.name }}.txt"
           export SIM_DEVICE="iPhone SE" SIM_AXE_VERSION=$(grep -m1 -oE '^# axe: v[0-9.]+' "$steps" | cut -d' ' -f3)
