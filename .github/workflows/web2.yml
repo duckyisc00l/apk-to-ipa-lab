@@ -4,7 +4,7 @@ name: web2
 on:
   workflow_dispatch:
     inputs:
-      only: { description: "one app name, or empty for all", default: "" }
+      only: { description: "app names (space-separated), or empty for all", default: "" }
 permissions:
   contents: write
 concurrency:
@@ -29,13 +29,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download and unpack
-        if: inputs.only == '' || inputs.only == matrix.app.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.app.name))
         run: |
           echo "${{ matrix.app.repo }}" > /tmp/one.txt; CANDIDATES=/tmp/one.txt MAX_GAMES=1 python3 ci/scout.py > /dev/null
           python3 ci/detect.py dl work > /dev/null; cp "$(find dl -name '*.apk' | head -1)" app.apk
           find "$(ls -d work/*/ | head -1)" -name index.html | head -5 | tee out/index-files.txt
       - name: Make the iOS project (steps 2-3) + engine fixes
-        if: inputs.only == '' || inputs.only == matrix.app.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.app.name))
         run: |
           sudo apt-get install -y -qq ffmpeg > /dev/null 2>&1
           pip install -q --break-system-packages androguard pillow playwright 2>&1 | tail -1
@@ -44,13 +44,13 @@ jobs:
           cp proj/App/www/index.html out/www-index.html; cp proj/App/Info.plist out/
           (cd proj/App/www && find . -type f | sed 's#^\./##' | awk -F/ '{print $1"/"$2}' | sort | uniq -c | sort -rn | head -40) > out/www-tree.txt
       - name: Test in a phone-sized browser (step 5)
-        if: inputs.only == '' || inputs.only == matrix.app.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.app.name))
         continue-on-error: true
         run: |
           python3 -m playwright install --with-deps chromium > /dev/null 2>&1
           python3 ci/web/test.py proj out/test | tail -60 > out/test.txt
       - uses: actions/upload-artifact@v4
-        if: inputs.only == '' || inputs.only == matrix.app.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.app.name))
         with: { name: "proj-${{ matrix.app.name }}", path: proj }
       - uses: actions/upload-artifact@v4
         if: always()
@@ -67,13 +67,13 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
-        if: inputs.only == '' || inputs.only == matrix.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.name))
         with: { path: lab, sparse-checkout: ci }
       - uses: actions/download-artifact@v4
-        if: inputs.only == '' || inputs.only == matrix.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.name))
         with: { name: "proj-${{ matrix.name }}", path: proj }
       - name: Build unsigned IPA
-        if: inputs.only == '' || inputs.only == matrix.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.name))
         run: |
           mkdir -p out; brew install xcodegen > /dev/null 2>&1; cd proj && xcodegen generate > ../out/xcodegen.log 2>&1
           set +e
@@ -86,7 +86,7 @@ jobs:
           cd .. && ls -la *.ipa | tee -a out/ipa.md
           gh release create "${{ matrix.name }}-web2-${{ github.run_number }}" "${{ matrix.name }}.ipa" -R "${{ github.repository }}" --prerelease --notes "Unsigned IPA (lab test: HTML5 engine on the web route)." || true
       - name: Run it in the iPhone Simulator with input steps
-        if: inputs.only == '' || inputs.only == matrix.name
+        if: inputs.only == '' || contains(format(' {0} ', inputs.only), format(' {0} ', matrix.name))
         continue-on-error: true
         timeout-minutes: 25
         run: |
