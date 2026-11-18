@@ -1,0 +1,45 @@
+{
+ "rn": "0.71.8",
+ "cutoff": "2023-06-21T15:42:42.791000+00:00",
+ "install": {
+  "@react-native-async-storage/async-storage": "1.18.2",
+  "@react-native-masked-view/masked-view": "0.2.9",
+  "react-native-safe-area-context": "4.6.2",
+  "react-native-device-info": "10.6.0",
+  "react-native-gesture-handler": "2.12.0",
+  "react-native-reanimated": "2.17.0",
+  "react-native-screens": "3.21.1",
+  "react-native-vector-icons": "9.2.0",
+  "react-native-sqlite-storage": "6.0.1"
+ },
+ "skipped_removed": [],
+ "unknown": [
+  "ExpoDriver",
+  "ExpoQueryRunner",
+  "RCTActivityIndicatorView",
+  "RCTAnimation",
+  "RCTDeviceEventEmitter",
+  "RCTEventEmitter",
+  "RCTImageSource",
+  "RCTInputAccessoryView",
+  "RCTLog",
+  "RCTNativeAppEventEmitter",
+  "RCTNetworking",
+  "RCTRawText",
+  "RCTScrollContentView",
+  "RCTSlider",
+  "RCTTextInlineImage",
+  "RNCAndroidDialogPicker",
+  "RNCAndroidDropdownPicker",
+  "RNDFLLayoutAnimationConfigStash",
+  "RNGestureHandlerRootView",
+  "RNRenderer",
+  "RNSFullWindowOverlay",
+  "RNSScreenNavigationContainer",
+  "RNSScreenStackHeaderConfig",
+  "RNSScreenStackHeaderSubview",
+  "RNSSearchBar"
+ ]
+}
+INSTALL=@react-native-async-storage/async-storage@1.18.2 @react-native-masked-view/masked-view@0.2.9 react-native-safe-area-context@4.6.2 react-native-device-info@10.6.0 react-native-gesture-handler@2.12.0 react-native-reanimated@2.17.0 react-native-screens@3.21.1 react-native-vector-icons@9.2.0 react-native-sqlite-storage@6.0.1
+STUB=ExpoDriver ExpoQueryRunner RCTActivityIndicatorView RCTAnimation RCTDeviceEventEmitter RCTEventEmitter RCTImageSource RCTInputAccessoryView RCTLog RCTNativeAppEventEmitter RCTNetworking RCTRawText RCTScrollContentView RCTSlider RCTTextInlineImage RNCAndroidDialogPicker RNCAndroidDropdownPicker RNDFLLayoutAnimationConfigStash RNGestureHandlerRootView RNRenderer RNSFullWindowOverlay RNSScreenNavigationContainer RNSScreenStackHeaderConfig RNSScreenStackHeaderSubview RNSSearchBar

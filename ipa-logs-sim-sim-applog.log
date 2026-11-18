@@ -1,0 +1,179 @@
+2026-11-18 05:30:09.957 Df Host[76823:2fb00] [com.apple.xpc:connection] [0x106406c10] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-18 05:30:09.957 Df Host[76823:2fac0] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-18 05:30:09.959 Df Host[76823:2fb01] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-18 05:30:09.960 Df Host[76823:2fb01] [com.apple.xpc:connection] [0x1065051b0] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-18 05:30:09.966 A  Host[76823:2fb00] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-18 05:30:10.044 Df Host[76823:2fafe] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-11-18 05:30:10.044 Df Host[76823:2fafe] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-11-18 05:30:10.050 Df Host[76823:2fafe] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x60000210aa30>
+2026-11-18 05:30:10.052 Df Host[76823:2fafe] [com.apple.runningboard:connection] Initializing connection
+2026-11-18 05:30:10.054 Df Host[76823:2fafe] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-18 05:30:10.055 Df Host[76823:2fb05] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-18 05:30:10.055 Df Host[76823:2fb05] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-18 05:30:10.056 Df Host[76823:2fb05] [com.apple.xpc:connection] [0x105e058d0] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-18 05:30:10.077 A  Host[76823:2fb04] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:10.093 Df Host[76823:2fb05] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-18 05:30:10.093 Df Host[76823:2fb05] [com.apple.runningboard:connection] Identity resolved as app<com.duckyisc00l.multiduperstopwatch((null))>
+2026-11-18 05:30:10.106 Df Host[76823:2fafe] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x60000210aa30>
+2026-11-18 05:30:10.116 Df Host[76823:2fafe] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x60000170cbc0>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 3554 (elapsed = 0).
+2026-11-18 05:30:10.119 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-11-18 05:30:10.132 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-11-18 05:30:10.133 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-11-18 05:30:10.134 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-11-18 05:30:10.134 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-11-18 05:30:10.140 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-11-18 05:30:10.141 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-11-18 05:30:10.142 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-11-18 05:30:10.143 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-11-18 05:30:10.144 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-11-18 05:30:10.145 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-11-18 05:30:10.145 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-11-18 05:30:10.146 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-11-18 05:30:10.147 Df Host[76823:2fac0] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-11-18 05:30:10.147 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-11-18 05:30:10.147 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-18 05:30:10.148 Df Host[76823:2fac0] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-11-18 05:30:10.148 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-18 05:30:10.152 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-18 05:30:10.152 Df Host[76823:2fac0] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-11-18 05:30:10.153 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-18 05:30:10.155 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-18 05:30:10.156 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-18 05:30:10.157 Df Host[76823:2fac0] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x60000020bac0; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-18 05:30:10.157 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-18 05:30:10.158 Df Host[76823:2fac0] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x600003008480 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-18 05:30:10.159 Df Host[76823:2fac0] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x600003008480 com.apple.frontboard.systemappservices> sent handshake
+2026-11-18 05:30:10.159 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-18 05:30:10.160 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-18 05:30:10.161 Df Host[76823:2fac0] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x600000214420>
+2026-11-18 05:30:10.161 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-18 05:30:10.162 Df Host[76823:2fafe] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-18 05:30:10.164 Df Host[76823:2fb05] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-18 05:30:10.167 Df Host[76823:2fb05] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-18 05:30:10.179 Df Host[76823:2fac0] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x1065063c0> for initial
+2026-11-18 05:30:10.180 Df Host[76823:2fac0] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x1065063c0> for CADisplay KVO
+2026-11-18 05:30:10.185 Df Host[76823:2fac0] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-18 05:30:10.187 Df Host[76823:2fac0] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-18 05:30:10.189 Df Host[76823:2fb05] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-18 05:30:10.191 Df Host[76823:2fb05] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-18 05:30:10.191 Df Host[76823:2fb05] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-18 05:30:10.204 Df Host[76823:2fac0] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-18 05:30:10.204 Df Host[76823:2fac0] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-18 05:30:10.205 Df Host[76823:2fac0] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-18 05:30:10.205 Df Host[76823:2fac0] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-18 05:30:10.208 Df Host[76823:2fac0] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-18 05:30:10.214 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-18 05:30:10.214 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x60000210aa30>
+2026-11-18 05:30:10.214 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x60000210aa30>
+2026-11-18 05:30:10.214 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x600001722400>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 3554 (elapsed = 0).
+2026-11-18 05:30:10.215 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 1024 -> 1056; animating application lifecycle event: 1
+2026-11-18 05:30:10.217 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.217 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.219 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.219 Df Host[76823:2fac0] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x600002915a40>; with scene: <UIWindowScene: 0x10650ae80>
+2026-11-18 05:30:10.220 Df Host[76823:2fac0] [com.apple.BacklightServices:scenes] 0x600000c0b600 setDelegate:<0x600000c141e0 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.duckyisc00l.multiduperstopwatch-default
+2026-11-18 05:30:10.221 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.221 Df Host[76823:2fac0] [com.apple.UIKit:EventDeferring] [0x600002910310] Initialized with scene: <UIWindowScene: 0x10650ae80>; behavior: <_UIEventDeferringBehavior_iOS: 0x60000021c3c0>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-18 05:30:10.222 Df Host[76823:2fac0] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-18 05:30:10.222 Df Host[76823:2fac0] [com.apple.xpc:connection] [0x105d06940] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-18 05:30:10.226 Df Host[76823:2fb04] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-18 05:30:10.227 Df Host[76823:2fac0] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x600002608600; process scope; status: target> was:none
+2026-11-18 05:30:10.227 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-18 05:30:10.227 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x10650ae80; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.multiduperstopwatch-default
+2026-11-18 05:30:10.227 Df Host[76823:2fac0] [com.apple.UIKit:EventDeferring] [0x600002910310] Scene target of event deferring environments did update: scene: 0x10650ae80; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-18 05:30:10.227 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10650ae80; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.multiduperstopwatch-default
+2026-11-18 05:30:10.227 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c108d0: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-18 05:30:10.228 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-18 05:30:10.228 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10650ae80; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x10650ae80: Window scene became target of keyboard environment
+2026-11-18 05:30:10.229 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.230 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.235 F  Host[76823:2fac0] [com.apple.runtime-issues:UIKit App Config] `UIScene` lifecycle will soon be required. Failure to adopt will result in an assert in the future.
+2026-11-18 05:30:10.235 A  Host[76823:2fac0] (libsystem_trace.dylib) Activity for state dumps
+2026-11-18 05:30:10.235 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.242 Df Host[76823:2fac0] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.multiduperstopwatch-default  persistentID: 3CF84D48-9E0C-4F54-836C-DB0B10246102
+2026-11-18 05:30:10.243 Df Host[76823:2fac0] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 1056
+2026-11-18 05:30:10.244 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1056 -> 3104; animating application lifecycle event: 1
+2026-11-18 05:30:10.245 Df Host[76823:2fac0] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-18 05:30:10.246 Df Host[76823:2fac0] [com.apple.xpc:connection] [0x105d04780] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-18 05:30:10.264 Df Host[76823:2fac0] HERMES-PRELUDE: 10447 bytes
+2026-11-18 05:30:10.267 Df Host[76823:2fac0] HERMES-PRELUDE: with Reanimated
+2026-11-18 05:30:10.311 Df Host[76823:2fb0f] HERMES-PRELUDE: ran
+2026-11-18 05:30:10.327 Df Host[76823:2fac0] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102) Scene updated orientation preferences: none -> ( Pu Ll Lr )
+2026-11-18 05:30:10.338 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-18 05:30:10.338 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x10650ae80: Window became key in scene: UIWindow: 0x105e0b590; contextId: 0xDAE8B188: reason: UIWindowScene: 0x10650ae80: Window requested to become key in scene: 0x105e0b590
+2026-11-18 05:30:10.338 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10650ae80; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x105e0b590; reason: UIWindowScene: 0x10650ae80: Window requested to become key in scene: 0x105e0b590
+2026-11-18 05:30:10.338 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x105e0b590; contextId: 0xDAE8B188; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.multiduperstopwatch-default
+2026-11-18 05:30:10.338 Df Host[76823:2fac0] [com.apple.UIKit:EventDeferring] [0x600002910310] Begin local event deferring requested for token: 0x600002605e60; environments: 1; reason: UIWindowScene: 0x10650ae80: Begin event deferring in keyboardFocus for window: 0x105e0b590
+2026-11-18 05:30:10.341 Df Host[76823:2fb05] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-18 05:30:10.351 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3104 -> 2080; animating application lifecycle event: 1
+2026-11-18 05:30:10.352 Df Host[76823:2fb05] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x600002608600; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.multiduperstopwatch-default; status: ancestor> was:target
+2026-11-18 05:30:10.355 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-18 05:30:10.355 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-18 05:30:10.355 Df Host[76823:2fac0] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-18 05:30:10.357 Df Host[76823:2fb04] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-18 05:30:10.358 Df Host[76823:2fb04] [com.apple.xpc:session] [0x600002104fa0] Session created.
+2026-11-18 05:30:10.358 Df Host[76823:2fb04] [com.apple.xpc:session] [0x600002104fa0] Session created from connection [0x10650e390]
+2026-11-18 05:30:10.358 Df Host[76823:2fb04] [com.apple.xpc:connection] [0x10650e390] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-18 05:30:10.358 Df Host[76823:2fb04] [com.apple.xpc:session] [0x600002104fa0] Session activated
+2026-11-18 05:30:10.361 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.376 Df Host[76823:2fac0] [com.apple.xpc:connection] [0x10650cec0] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-18 05:30:10.407 A  Host[76823:2fb1c] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:10.423 A  Host[76823:2fb04] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:10.518 A  Host[76823:2fb04] (RunningBoardServices) didChangeInheritances
+2026-11-18 05:30:10.598 Df Host[76823:2fb05] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-18 05:30:10.598 E  Host[76823:2fb05] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-11-18 05:30:10.612 Df Host[76823:2fac0] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [983C772C-3B56-4A20-A9E4-F7ECA891CEA7] (reporting strategy default)>
+2026-11-18 05:30:10.612 Df Host[76823:2fac0] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [77078C08-A667-482B-9D42-C0BA6E16949F] (reporting strategy default)>
+2026-11-18 05:30:10.612 Df Host[76823:2fac0] [com.apple.network:activity] Set activity <nw_activity 50:1 [983C772C-3B56-4A20-A9E4-F7ECA891CEA7] (reporting strategy default)> as the global parent
+2026-11-18 05:30:10.619 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-18 05:30:10.619 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x60000170cbc0>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 3554 (elapsed = 0), _expireHandler: (null)
+2026-11-18 05:30:10.619 Df Host[76823:2fac0] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x60000210aa30> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x60000170cbc0>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 3554 (elapsed = 0))
+2026-11-18 05:30:10.630 Df Host[76823:2fac0] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-18 05:30:10.631 Df Host[76823:2fac0] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-18 05:30:10.632 Df Host[76823:2fac0] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-18 05:30:10.639 Df Host[76823:2fac0] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.multiduperstopwatch-default  persistentID: 3CF84D48-9E0C-4F54-836C-DB0B10246102
+2026-11-18 05:30:10.643 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.651 Df Host[76823:2fac0] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/DE63B044-F027-4E66-A281-70AE2BF65D0B/Library/LocalDatabase
+2026-11-18 05:30:10.651 A  Host[76823:2fac0] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2026-11-18 05:30:10.651 E  Host[76823:2fac0] [com.apple.containermanager:unspecified] A NULL string is not a valid group container identifier.
+2026-11-18 05:30:10.651 E  Host[76823:2fac0] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: client sent invalid parameters
+2026-11-18 05:30:10.652 Df Host[76823:2fac0] [com.apple.UIKit:EventDeferring] [0x600002910310] Scene target of event deferring environments did update: scene: 0x10650ae80; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-18 05:30:10.652 Df Host[76823:2fac0] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10650ae80; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.multiduperstopwatch-default
+2026-11-18 05:30:10.659 Df Host[76823:2fac0] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10650ae80> (3CF84D48-9E0C-4F54-836C-DB0B10246102)
+2026-11-18 05:30:10.660 Df Host[76823:2fac0] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.multiduperstopwatch-default  persistentID: 3CF84D48-9E0C-4F54-836C-DB0B10246102
+2026-11-18 05:30:10.661 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-18 05:30:10.661 Df Host[76823:2fac0] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-18 05:30:10.663 Df Host[76823:2fac0] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-18 05:30:10.668 Df Host[76823:2fac0] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-18 05:30:10.669 Df Host[76823:2fac0] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-18 05:30:10.680 Df Host[76823:2fac0] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-18 05:30:10.706 Df Host[76823:2fac0] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-18 05:30:10.741 Df Host[76823:2fb04] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-11-18 05:30:10.742 Df Host[76823:2fb04] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x600001722400>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 3554 (elapsed = 0), _expireHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-18 05:30:10.742 Df Host[76823:2fb04] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x60000210aa30> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x600001722400>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 3554 (elapsed = 0))
+2026-11-18 05:30:10.742 Df Host[76823:2fb04] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x60000210aa30> for task identifier: 2
+2026-11-18 05:30:10.779 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["getConstants"]
+2026-11-18 05:30:10.779 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.lazilyLoadView ["getConstants"]
+2026-11-18 05:30:10.804 Df Host[76823:2fac0] [com.apple.network:activity] <nw_activity 50:1 [983C772C-3B56-4A20-A9E4-F7ECA891CEA7] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 2549ms
+2026-11-18 05:30:10.805 Df Host[76823:2fac0] [com.apple.network:activity] <nw_activity 50:2 [77078C08-A667-482B-9D42-C0BA6E16949F] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 2550ms
+2026-11-18 05:30:10.805 Df Host[76823:2fac0] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [983C772C-3B56-4A20-A9E4-F7ECA891CEA7] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-18 05:30:10.805 Df Host[76823:2fac0] [com.apple.network:activity] Unset the global parent activity
+2026-11-18 05:30:10.805 E  Host[76823:2fb04] [com.apple.app_launch_measurement:General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+2026-11-18 05:30:10.822 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["AndroidProgressBar"]
+2026-11-18 05:30:10.822 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.getConstantsForViewManager ["RCTView"]
+2026-11-18 05:30:10.826 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [3,"AndroidProgressBar",1,{"animating":true,"color":-15443791,"hidesWhenStopped":true,"height":48,"width":48}]
+2026-11-18 05:30:10.830 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [5,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"alignItems":"center","justifyContent":"center"}]
+2026-11-18 05:30:10.830 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [5,[3]]
+2026-11-18 05:30:10.830 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [7,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flex":1,"marginTop":"30%"}]
+2026-11-18 05:30:10.830 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [7,[5]]
+2026-11-18 05:30:10.830 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [9,"RCTView",1,{"collapsable":true,"accessibilityState":{},"accessibilityValue":{},"flex":1,"pointerEvents":"box-none"}]
+2026-11-18 05:30:10.830 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [9,[7]]
+2026-11-18 05:30:10.831 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.createView [13,"RCTView",1,{"accessibilityState":{},"accessibilityValue":{},"flex":1,"pointerEvents":"box-none"}]
+2026-11-18 05:30:10.831 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [13,[9]]
+2026-11-18 05:30:10.831 E  Host[76823:2fb0f] [com.facebook.react.log:javascript] RNTRACE UIManager.setChildren [1,[13]]
+2026-11-18 05:30:10.832 Df Host[76823:2fac0] [com.apple.UIKit:_UIVisualStyleRegistry] Warning: no visual style classes have been registered at all.
+2026-11-18 05:30:10.833 Df Host[76823:2fac0] [com.apple.UIKit:_UIVisualStyleRegistry] Warning: no visual style classes have been registered at all.
+2026-11-18 05:30:10.834 Df Host[76823:2fac0] [com.apple.UIKit:_UIVisualStyleRegistry] Note: no default visual style class registered as fallback for stylable class UIActivityIndicatorView
+2026-11-18 05:30:10.834 Df Host[76823:2fac0] [com.apple.UIKit:_UIVisualStyleRegistry] Note: no default visual style class registered as fallback for stylable class UIActivityIndicatorView
+2026-11-18 05:30:10.836 Df Host[76823:2fac0] [PrototypeTools:domain] Not observing PTDefaults on customer install.
+2026-11-18 05:30:11.318 A  Host[76823:2fb01] (RunningBoardServices) didChangeInheritances
