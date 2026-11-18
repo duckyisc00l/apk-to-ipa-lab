@@ -1,7 +1,7 @@
 # Ionic Tic-Tac-Toe (web route), one whole game against the computer. Cells by position (% of the screen):
 # columns 31% 50% 69%, rows 41% 50% 59%. The computer plays at random, so tap every cell: taken cells do nothing,
-# and after 9 cells the game is over (won, lost or drawn). A tap beside the Game Over box closes it, and the
-# button under the board goes back from "Restart Game" to "Start".
+# and after 9 cells the game is over (won, lost or drawn); the score boxes under the board show who won.
+# The Game Over box is gone by then (a tap beside it closes it), so the check is the screenshot and the score.
 wait 3
 shot 0-start
 tapon Start
@@ -30,5 +30,5 @@ shot 2-end
 tap 50% 20%
 wait 2
 shot 3-score
-expect Start
 ui score
+expect Restart Game
