@@ -79,7 +79,8 @@ jobs:
           git add -A && git commit -qm "dotnet recover ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet
   ios:
     needs: recover
-    runs-on: macos-15-intel
+    # the iOS workload follows the newest Xcode (26.x): an older Xcode fails with MT4162 "not available in iOS 18.5"
+    runs-on: macos-26
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
@@ -100,12 +101,11 @@ jobs:
           cd ios; dotnet --version | tee -a ../out-ios/build.md
           dotnet workload install maui-ios > ../out-ios/workload.log 2>&1; echo "workload install exit $?" | tee -a ../out-ios/build.md
           dotnet workload list 2>&1 | grep -iE 'ios|maui' | tee -a ../out-ios/build.md
-          # the Xcode this iOS workload was made for: from its own SDK version (e.g. 26.0.x -> Xcode 26.0)
-          v=$(ls ~/.dotnet/packs 2>/dev/null | grep -i "Microsoft.iOS.Sdk.net$major" | head -1); v=$(ls ~/.dotnet/packs/$v 2>/dev/null | sort -V | tail -1)
-          [ -n "$v" ] || { v=$(ls /usr/local/share/dotnet/packs/ | grep -i "Microsoft.iOS.Sdk.net$major" | head -1); v=$(ls /usr/local/share/dotnet/packs/$v | sort -V | tail -1); }
-          want=$(echo "$v" | sed -E 's/^([0-9]+)\.([0-9]+).*/\1.\2/'); echo "iOS SDK pack $v wants Xcode $want" | tee -a ../out-ios/build.md
+          # the workload's newest iOS pack for this .NET names the Xcode it was made for (Microsoft.iOS.Sdk.net9.0_26.5 -> Xcode 26.5)
+          packs="$(dirname "$(readlink -f "$(which dotnet)")")/packs"
+          want=$(ls "$packs" | grep "^Microsoft.iOS.Sdk.net$major.0_" | sed 's/.*_//' | sort -V | tail -1); echo "iOS SDK pack $want wants Xcode $want" | tee -a ../out-ios/build.md
           x=$(ls -d /Applications/Xcode_${want}*.app 2>/dev/null | head -1); [ -n "$x" ] || x=$(ls -d /Applications/Xcode_${want%%.*}.*.app 2>/dev/null | sort -V | tail -1)
-          [ -n "$x" ] && sudo xcode-select -s "$x"; xcodebuild -version | head -1 | tee -a ../out-ios/build.md
+          [ -n "$x" ] && sudo xcode-select -s "$x"; xcodebuild -version 2>/dev/null | head -1 | tee -a ../out-ios/build.md
       - name: Build for the iPhone Simulator and run it
         continue-on-error: true
         run: |
