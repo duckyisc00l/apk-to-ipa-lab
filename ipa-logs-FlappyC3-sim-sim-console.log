@@ -1,0 +1,2 @@
+2026-11-18 18:29:46.976 App[11948:39097] [web] console.error: [Construct] Failed to load audio 'media/swoosh.webm':  TypeError: null is not an object (evaluating 'this._audioDomHandler.DecodeAudioData')
+2026-11-18 18:29:46.981 App[11948:39097] [web] console.error: [Construct] Audio: error starting playback:  TypeError: null is not an object (evaluating 'this._audioDomHandler.GetAudioContext')

@@ -1,0 +1,5 @@
+Error: No translation object returned for simulator. This means you have likely specified a point onscreen that is invalid or invisible due to a fullscreen dialog
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/lab/ci/sim/run.sh: line 14: 17922 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/lab/ci/sim/run.sh: line 14: 18790 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/lab/ci/sim/run.sh: line 14: 20717 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"
+/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/lab/ci/sim/run.sh: line 14: 22111 Alarm clock: 14         perl -e 'alarm shift; exec @ARGV or exit 127' "$s" "$@"

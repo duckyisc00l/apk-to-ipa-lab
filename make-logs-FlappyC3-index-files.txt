@@ -1,0 +1,2 @@
+work/killflex__flappybird-c3/org/apache/cordova/allowlist/index.html
+work/killflex__flappybird-c3/assets/www/index.html

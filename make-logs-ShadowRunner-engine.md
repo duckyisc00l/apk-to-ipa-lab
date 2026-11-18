@@ -1,0 +1,4 @@
+- engine: Phaser
+- audio files by type: {}
+- FIX: orientation set to landscape (the web manifest or a 'rotate your device' notice asks for it; Android's manifest had none)
+- native calls found: {"navigator.vibrate": 3, "navigator.app": 2}

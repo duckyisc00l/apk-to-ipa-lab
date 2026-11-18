@@ -1,0 +1,5 @@
+- kind: cordova; web folder: assets/www
+- name: Flappy Bird; version 1.0.0 (1000000); orientation: portrait
+- Cordova plugins in the app (their native side is missing on iOS; check each): cordova-plugin-fullscreen
+- icon from res/u3.png
+- web files: 28
