@@ -4,6 +4,7 @@ Usage: python3 -I hermes-prelude.py <host AppDelegate.mm>
 A Hermes bundle is bytecode, so JS can't be put in front of it like a plain bundle. Instead the host app gives
 the bridge its own Hermes executor whose runtime installer evaluates <app>/prelude.js (plain JS, compiled by
 Hermes at run time) right after the bridge globals (nativeModuleProxy...) exist and before the bundle runs.
+Reanimated 2 is installed here too when its pod is there (its own copy of this method is replaced).
 Old architecture (bridge) only: React Native 0.70-0.75 with RCT_NEW_ARCH_ENABLED off, which is their default.
 """
 import re, sys
@@ -18,6 +19,10 @@ IMPORTS = """
 #import <React/RCTJSIExecutorRuntimeInstaller.h>
 #import <reacthermes/HermesExecutorFactory.h>
 #include <string>
+#if __has_include(<RNReanimated/REAInitializer.h>)
+#import <RNReanimated/REAInitializer.h>   // Reanimated 2 installs itself from this same method (UIResponder+Reanimated)
+#define HOST_REANIMATED 1
+#endif
 @interface AppDelegate () <RCTCxxBridgeDelegate>
 @end
 """
@@ -29,8 +34,7 @@ METHOD = """
   NSData *data = path ? [NSData dataWithContentsOfFile:path] : nil;
   std::string src = data ? std::string((const char *)data.bytes, data.length) : std::string();
   NSLog(@"HERMES-PRELUDE: %lu bytes", (unsigned long)src.size());
-  return std::make_unique<facebook::react::HermesExecutorFactory>(
-      facebook::react::RCTJSIExecutorRuntimeInstaller([src](facebook::jsi::Runtime &runtime) {
+  facebook::react::JSIExecutor::RuntimeInstaller prelude = [src](facebook::jsi::Runtime &runtime) {
         if (src.empty()) return;
         try {
           runtime.evaluateJavaScript(std::make_shared<facebook::jsi::StringBuffer>(src), "prelude.js");
@@ -38,7 +42,14 @@ METHOD = """
         } catch (const std::exception &e) {
           NSLog(@"HERMES-PRELUDE: failed: %s", e.what());
         }
-      }));
+      };
+#ifdef HOST_REANIMATED
+  // this method replaces Reanimated's own one, so install Reanimated here too (it runs the prelude after itself)
+  prelude = reanimated::REAJSIExecutorRuntimeInstaller(bridge, prelude);
+  NSLog(@"HERMES-PRELUDE: with Reanimated");
+#endif
+  return std::make_unique<facebook::react::HermesExecutorFactory>(
+      facebook::react::RCTJSIExecutorRuntimeInstaller(prelude));
 }
 """
 # imports after the AppDelegate header import; the method into the last @implementation (AppDelegate's)
