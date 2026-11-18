@@ -8,6 +8,7 @@ on:
       repo: { default: "HarmonyHoney/ROTA" }
       name: { default: "ROTA" }
       renderer: { description: "Godot 4: blank = the game's own, or gl_compatibility", default: "" }
+      inputlog: { description: "yes = add ci/godot/inputlog.gd (prints each touch and action to the console)", default: "" }
   push:
     branches: [main]
     paths: ["ci/godot/**", ".github/workflows/route-godot.yml"]
@@ -102,6 +103,17 @@ jobs:
           open(p,'w').write(t); print('mobile renderer set to',r)
           P
           fi
+      - name: Lab-only input log (prints where the game sees each touch)
+        if: ${{ inputs.inputlog != '' }}
+        run: |
+          cp ci/godot/inputlog.gd proj/lab_inputlog.gd
+          python3 - proj/project.godot <<'P'
+          import sys
+          p=sys.argv[1]; t=open(p).read(); line='LabInputLog="*res://lab_inputlog.gd"\n'
+          t=t.replace('[autoload]\n','[autoload]\n\n'+line,1) if '[autoload]' in t else t+'\n[autoload]\n\n'+line
+          open(p,'w').write(t)
+          P
+          grep -n LabInputLog proj/project.godot | tee -a out/ipa.md
       - name: Export the Xcode project
         run: |
           set +e
