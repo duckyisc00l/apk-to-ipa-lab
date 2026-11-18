@@ -42,6 +42,32 @@ def refs_and_version(path):
     return refs, (iv.split("+")[0] if iv else None)
 
 
+def asm_version(path):
+    try:
+        r = dnfile.dnPE(path).net.mdtables.Assembly.rows[0]
+        return f"{r.MajorVersion}.{r.MinorVersion}.{r.BuildNumber}.{r.RevisionNumber}"
+    except Exception:
+        return None
+
+
+def nuget_versions(pid):
+    import json, urllib.request
+    try:
+        return json.load(urllib.request.urlopen(f"https://api.nuget.org/v3-flatcontainer/{pid.lower()}/index.json", timeout=20))["versions"]
+    except Exception:
+        return None
+
+
+def pick_version(vs, *wanted):
+    # the informational and the assembly version can differ (1.0.0 vs 1.0.12.0): take the higher one NuGet has
+    hits = [c for w in wanted if w for c in (w, ".".join(w.split(".")[:3]), w[:-2] if w.endswith(".0") else None) if c and c in vs]
+    if hits:
+        return max(hits, key=lambda v: [int(x) if x.isdigit() else 0 for x in re.split(r"[.-]", v)])
+    major = next((w.split(".")[0] for w in wanted if w), None)
+    same = [v for v in vs if v.split(".")[0] == major and "-" not in v]
+    return same[-1] if same else None
+
+
 app = os.path.basename(os.path.normpath(rec))
 # ---------- 1. code
 ANDROID = re.compile(r"^\s*using (Android|AndroidX|Java|Xamarin\.Android|_Microsoft\.Android)\b|\[(Activity|Application|Service|BroadcastReceiver|IntentFilter)\(|"
@@ -80,10 +106,12 @@ for f in glob.glob(os.path.join(out, "src", "**", "*.cs"), recursive=True):
 # ---------- 2. libraries
 pkgs, dlls = {}, []
 STUBS = {"Plugin.AdMob": "Plugin.AdMob.cs", "Plugin.MauiMTAdmob": None}
-FW = re.compile(r"^(System\.|Microsoft\.(Extensions|CSharp|VisualBasic|Win32|Bcl)|mscorlib|netstandard|Mono\.|Java\.|Xamarin\.|_Microsoft|"
+FW = re.compile(r"^(System(\.|$)|Microsoft\.(Extensions|CSharp|VisualBasic|Win32|Bcl)|mscorlib|netstandard|Mono\.|Java\.|Xamarin\.|_Microsoft|"
                 r"Microsoft\.Maui|GoogleGson|Jsr305|Square\.|Kotlin)")
-NUGET_NAME = {"CommunityToolkit.Maui.Core": "CommunityToolkit.Maui", "Microsoft.Maui.Controls": None}
+NUGET_NAME = {"CommunityToolkit.Maui.Core": "CommunityToolkit.Maui", "Microsoft.Maui.Controls": None,
+              "BouncyCastle.Crypto": "Portable.BouncyCastle"}
 maui_ver = None
+plain, librefs = {}, set()
 for p in sorted(glob.glob(os.path.join(asm, "*.dll"))):
     n = os.path.basename(p)[:-4]
     refs, ver = refs_and_version(p)
@@ -97,11 +125,30 @@ for p in sorted(glob.glob(os.path.join(asm, "*.dll"))):
         log.append(f"stubbed {n} (ads are removed; empty stand-in keeps the pages compiling)"); continue
     if refs & {"Mono.Android", "Java.Interop", "Microsoft.Maui", "Microsoft.Maui.Controls", "Microsoft.Maui.Essentials"}:
         pid = NUGET_NAME.get(n, n)
+        # CommunityToolkit stamps its DLLs "1.0.0-pre1": pick the release made for this MAUI instead
+        if pid == "CommunityToolkit.Maui" and (not ver or ver.startswith("1.0.0")):
+            ver = {"8": "9.1.1", "9": "12.1.0", "10": "12.3.0"}.get((maui_ver or "9").split(".")[0], "12.1.0")
         if pid and pid not in pkgs:
             pkgs[pid] = ver
         log.append(f"NuGet {pid} {ver} (built for Android: {n})")
     else:
-        dlls.append(n); log.append(f"DLL from the APK: {n} {ver or ''}")
+        plain[n] = (ver, asm_version(p))
+    librefs |= refs
+# the APK's plain .NET DLLs were trimmed for that one build (members cut, references moved to System.Private.CoreLib):
+# compiling against them fails with CS0012. Take the top-level ones from NuGet; their dependencies come with them.
+for n, (ver, av) in sorted(plain.items()):
+    if n in librefs:
+        continue
+    pid = NUGET_NAME.get(n, n)
+    vs = nuget_versions(pid)
+    v = pick_version(vs, ver, av) if vs else None
+    if v:
+        pkgs[pid] = v; log.append(f"NuGet {pid} {v} (APK DLL {n} {ver}/{av})")
+    else:
+        dlls.append(n); log.append(f"DLL from the APK: {n} {ver or ''} (not on NuGet)")
+for n in sorted(plain):
+    if n in librefs and any(n in refs_and_version(os.path.join(asm, d + ".dll"))[0] for d in dlls):
+        dlls.append(n); log.append(f"DLL from the APK: {n} (needed by an APK DLL)")
 os.makedirs(os.path.join(out, "lib"), exist_ok=True)
 for n in dlls:
     shutil.copy(os.path.join(asm, n + ".dll"), os.path.join(out, "lib"))
@@ -150,7 +197,7 @@ for lit in sorted(set(re.findall(r'"([\w./-]+\.(?:png|jpg|jpeg|gif|svg))"', code
         log.append(f"image {lit}: not found in res/drawable*")
 icon = None
 for dpi in ("xxxhdpi", "xxhdpi", "xhdpi", "hdpi", "mdpi"):
-    hit = [n for n in names if re.fullmatch(rf"res/mipmap-{dpi}(-v\d+)?/(appicon|ic_launcher)\.png", n)]
+    hit = [n for n in names if re.fullmatch(rf"res/mipmap-{dpi}(-v\d+)?/(appicon|ic_launcher|launcher_foreground)\.png", n)]
     if hit:
         icon = "Resources/AppIcon/appicon.png"
         os.makedirs(os.path.join(out, "Resources", "AppIcon"), exist_ok=True)
@@ -190,6 +237,8 @@ public class Program
 }
 """)
 perms = ""
+# an icon key with no icon makes the build fail; MauiIcon writes Assets.xcassets/appicon.appiconset
+icon_key = "<key>XSAppIconAssets</key><string>Assets.xcassets/appicon.appiconset</string>\n" if icon else ""
 if re.search(r"Plugin\.BLE|Bluetooth", code):
     perms += "<key>NSBluetoothAlwaysUsageDescription</key><string>Used to read your scale.</string>\n"
 if re.search(r"Geolocation|Location", code):
@@ -202,8 +251,7 @@ open(os.path.join(ios, "Info.plist"), "w").write(f"""<?xml version="1.0" encodin
 <key>UILaunchScreen</key><dict/>
 <key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>
 <key>UISupportedInterfaceOrientations~ipad</key><array><string>UIInterfaceOrientationPortrait</string><string>UIInterfaceOrientationPortraitUpsideDown</string><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>
-<key>XSAppIconAssets</key><string>Assets.xcassets/appicon.appiconset</string>
-<key>ITSAppUsesNonExemptEncryption</key><false/>
+{icon_key}<key>ITSAppUsesNonExemptEncryption</key><false/>
 {perms}</dict></plist>
 """)
 
@@ -244,6 +292,7 @@ open(os.path.join(out, "App.csproj"), "w").write(f"""<Project Sdk="Microsoft.NET
     <NoWarn>$(NoWarn);CS0108;CS0114;CS0162;CS0168;CS0219;CS0414;CS0649;CS1998;CS4014;CS8632;XC0022;XC0023;MA0001</NoWarn>
     <MauiVersion>{maui_ver or ''}</MauiVersion>
     <EnableDefaultMauiItems>false</EnableDefaultMauiItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />

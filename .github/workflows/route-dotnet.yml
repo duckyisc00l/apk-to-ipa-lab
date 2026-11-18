@@ -101,8 +101,8 @@ jobs:
           dotnet workload install maui-ios > ../out-ios/workload.log 2>&1; echo "workload install exit $?" | tee -a ../out-ios/build.md
           dotnet workload list 2>&1 | grep -iE 'ios|maui' | tee -a ../out-ios/build.md
           # the Xcode this iOS workload was made for: from its own SDK version (e.g. 26.0.x -> Xcode 26.0)
-          v=$(ls ~/.dotnet/packs 2>/dev/null | grep -i 'Microsoft.iOS.Sdk' | head -1); v=$(ls ~/.dotnet/packs/$v 2>/dev/null | sort -V | tail -1)
-          [ -n "$v" ] || { v=$(ls /usr/local/share/dotnet/packs/ | grep -i Microsoft.iOS.Sdk | head -1); v=$(ls /usr/local/share/dotnet/packs/$v | sort -V | tail -1); }
+          v=$(ls ~/.dotnet/packs 2>/dev/null | grep -i "Microsoft.iOS.Sdk.net$major" | head -1); v=$(ls ~/.dotnet/packs/$v 2>/dev/null | sort -V | tail -1)
+          [ -n "$v" ] || { v=$(ls /usr/local/share/dotnet/packs/ | grep -i "Microsoft.iOS.Sdk.net$major" | head -1); v=$(ls /usr/local/share/dotnet/packs/$v | sort -V | tail -1); }
           want=$(echo "$v" | sed -E 's/^([0-9]+)\.([0-9]+).*/\1.\2/'); echo "iOS SDK pack $v wants Xcode $want" | tee -a ../out-ios/build.md
           x=$(ls -d /Applications/Xcode_${want}*.app 2>/dev/null | head -1); [ -n "$x" ] || x=$(ls -d /Applications/Xcode_${want%%.*}.*.app 2>/dev/null | sort -V | tail -1)
           [ -n "$x" ] && sudo xcode-select -s "$x"; xcodebuild -version | head -1 | tee -a ../out-ios/build.md
@@ -111,7 +111,7 @@ jobs:
         run: |
           cd ios; tfm=$(grep -o 'net[0-9]*\.0-ios' App.csproj | head -1)
           set +e
-          dotnet build App.csproj -f $tfm -c Release -r iossimulator-x64 -p:ValidateXcodeVersion=false -o simout > ../out-ios/sim-build.log 2>&1
+          dotnet build App.csproj -f $tfm -c Release -r iossimulator-$([ "$(uname -m)" = arm64 ] && echo arm64 || echo x64) -p:ValidateXcodeVersion=false -o simout > ../out-ios/sim-build.log 2>&1
           b=$?; echo "simulator build exit $b" | tee -a ../out-ios/build.md
           grep -E ' error ' ../out-ios/sim-build.log | sed -E 's#^.*/ios/##; s# \[.*##' | sort -u | head -80 | tee ../out-ios/sim-errors.md
           echo "distinct errors: $(grep -E ' error ' ../out-ios/sim-build.log | sed -E 's# \[.*##' | sort -u | wc -l)" | tee -a ../out-ios/build.md
@@ -133,7 +133,8 @@ jobs:
       - name: Publish to branch r-dotnet-ios
         if: always()
         run: |
-          mkdir -p /tmp/r; cp -R out-ios/. /tmp/r/; for f in /tmp/r/*.log; do tail -150 "$f" > "$f.t" && mv "$f.t" "$f"; done
-          [ -d ios ] && (cd ios && find . -name '*.cs' -path './src/*' | head -0; cp App.csproj /tmp/r/ ; cp -R Platforms /tmp/r/ ) 2>/dev/null
+          set +e
+          mkdir -p /tmp/r/project; cp -R out-ios/. /tmp/r/; for f in /tmp/r/*.log; do tail -150 "$f" > "$f.t" && mv "$f.t" "$f"; done
+          (cd ios && tar cf - --exclude lib --exclude bin --exclude obj --exclude simout --exclude Payload . | tar xf - -C /tmp/r/project)
           cd /tmp/r && git init -q -b r-dotnet-ios && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
           git add -A && git commit -qm "dotnet ios ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-dotnet-ios
