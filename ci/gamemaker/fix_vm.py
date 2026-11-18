@@ -72,9 +72,7 @@ new = """static RValue deepCloneValue(VMContext* ctx, RValue v, int32_t depth) {
             RValue* slot = IntRValueHashMap_getOrInsertUndefined(&dst->selfVars, e->key);
             *slot = deepCloneValue(ctx, e->value, depth - 1);
         }
-        RValue out = RValue_makeStructWeak(dst);
-        out.ownsReference = true;   // Runner_createStruct already counted this reference
-        return out;
+        return RValue_makeStructAndIncRef(dst);   // the struct list holds the first reference, the copy takes its own
     }
     return RValue_makeIndependent(v);
 }
