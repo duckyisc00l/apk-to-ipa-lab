@@ -2,8 +2,9 @@
 # ROTA (Godot 3) is landscape-only: drawn turned on the portrait screen, content right = screen top.
 # AXe 1.6.0 taps raw portrait points, so % here are of the portrait screen (any iPhone).
 # First tap shows the touch buttons; X (accept/jump) is drawn at the game's bottom right = (86%, 7%).
-# Godot 3 on iOS takes no hardware keys (run 25: key x did nothing). Swipes and holds on X left the title in place
-# (runs 23, 25): this run logs where Godot sees each touch (route-godot input inputlog=yes).
+# Godot 3 on iOS takes no hardware keys (run 25: key x did nothing). The first touches after launch arrive late
+# (UIKit's system gesture gate times out in the simulator), and X only works once the touch buttons are showing.
+# Run 27: three taps, then a 0.5 s hold on X opened the main menu (Play, Options, Credits, Quit).
 shot 0-title
 tap 50% 50%
 wait 2
@@ -15,7 +16,7 @@ wait 3
 shot 2-tap-x
 hold 86% 7% 0.5
 wait 3
-shot 3-hold-x
+shot 3-main-menu
 tap 10% 10%
 wait 1
 tap 90% 90%
