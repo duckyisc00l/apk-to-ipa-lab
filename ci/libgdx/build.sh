@@ -111,7 +111,7 @@ cat > $B/robovm.xml <<X
   <os>ios</os>
   <target>ios</target>
   <iosInfoPList>Info.plist.xml</iosInfoPList>
-  <treeShaker>${TREESHAKER:-none}</treeShaker>
+  <treeShaker>${TREESHAKER:-conservative}</treeShaker>
   <resources><resource><directory>assets</directory><skipPngCrush>true</skipPngCrush></resource></resources>
   <forceLinkClasses>
     $PKGS $SERVICES
