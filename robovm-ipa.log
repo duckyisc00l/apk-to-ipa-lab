@@ -1,0 +1,66 @@
+RoboVM has detected that you are running on a slow HDD. Please consider mounting a RAM disk.
+To create a 2GB RAM disk, run this in your terminal:
+SIZE=2048 ; diskutil erasevolume HFS+ 'RoboVM RAM Disk' `hdiutil attach -nomount ram://$((SIZE * 2048))`
+See http://docs.robovm.com/ for more info
+Warning: java.util.function.Consumer is a phantom class!
+Warning: java.util.Spliterator is a phantom class!
+Warning: java.util.function.Function is a phantom class!
+Warning: java.util.function.ToDoubleFunction is a phantom class!
+Warning: java.util.function.ToIntFunction is a phantom class!
+Warning: java.util.function.ToLongFunction is a phantom class!
+Warning: sun.misc.Cleaner is a phantom class!
+Warning: sun.nio.ch.DirectBuffer is a phantom class!
+Warning: java.beans.PropertyDescriptor is a phantom class!
+Warning: java.beans.Introspector is a phantom class!
+Warning: java.beans.BeanInfo is a phantom class!
+Warning: java.beans.IntrospectionException is a phantom class!
+Warning: java.util.function.BiFunction is a phantom class!
+Warning: java.util.function.BiConsumer is a phantom class!
+Warning: java.util.stream.DoubleStream is a phantom class!
+Warning: java.util.stream.IntStream is a phantom class!
+Warning: java.util.stream.LongStream is a phantom class!
+Warning: java.util.stream.Stream is a phantom class!
+Warning: java.util.function.Predicate is a phantom class!
+Warning: java.util.DoubleSummaryStatistics is a phantom class!
+Warning: java.util.IntSummaryStatistics is a phantom class!
+Warning: java.util.LongSummaryStatistics is a phantom class!
+Warning: java.util.Optional is a phantom class!
+Warning: java.util.OptionalDouble is a phantom class!
+Warning: java.util.OptionalInt is a phantom class!
+Warning: java.util.OptionalLong is a phantom class!
+Warning: java.util.function.IntPredicate is a phantom class!
+Warning: java.util.function.Supplier is a phantom class!
+Warning: java.util.function.ObjIntConsumer is a phantom class!
+Warning: java.util.function.IntFunction is a phantom class!
+Warning: java.util.function.IntConsumer is a phantom class!
+Warning: java.util.PrimitiveIterator$OfInt is a phantom class!
+Warning: java.util.function.IntUnaryOperator is a phantom class!
+Warning: java.util.function.IntToDoubleFunction is a phantom class!
+Warning: java.util.function.IntToLongFunction is a phantom class!
+Warning: java.util.stream.BaseStream is a phantom class!
+Warning: java.util.function.IntBinaryOperator is a phantom class!
+Warning: java.util.Spliterator$OfInt is a phantom class!
+Warning: java.util.function.LongPredicate is a phantom class!
+Warning: java.util.function.ObjLongConsumer is a phantom class!
+Warning: java.util.function.LongFunction is a phantom class!
+Warning: java.util.function.LongConsumer is a phantom class!
+Warning: java.util.PrimitiveIterator$OfLong is a phantom class!
+Warning: java.util.function.LongUnaryOperator is a phantom class!
+Warning: java.util.function.LongToDoubleFunction is a phantom class!
+Warning: java.util.function.LongToIntFunction is a phantom class!
+Warning: java.util.function.LongBinaryOperator is a phantom class!
+Warning: java.util.Spliterator$OfLong is a phantom class!
+Warning: java.util.function.DoublePredicate is a phantom class!
+Warning: java.util.function.ObjDoubleConsumer is a phantom class!
+Warning: java.util.function.DoubleFunction is a phantom class!
+Warning: java.util.function.DoubleConsumer is a phantom class!
+Warning: java.util.PrimitiveIterator$OfDouble is a phantom class!
+Warning: java.util.function.DoubleUnaryOperator is a phantom class!
+Warning: java.util.function.DoubleToIntFunction is a phantom class!
+Warning: java.util.function.DoubleToLongFunction is a phantom class!
+Warning: java.util.function.DoubleBinaryOperator is a phantom class!
+Warning: java.util.Spliterator$OfDouble is a phantom class!
+Warning: java.util.stream.Collector is a phantom class!
+Warning: java.util.function.BinaryOperator is a phantom class!
+Warning: java.util.Spliterator$OfPrimitive is a phantom class!
+Skipping code signing. The resulting app will be unsigned and will not run on unjailbroken devices

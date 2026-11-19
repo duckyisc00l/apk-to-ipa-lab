@@ -1,0 +1,13 @@
+2026-11-19 01:28:24.719 GdxTris[25529:70790] [debug] IOSApplication: iOS version: 26.2
+2026-11-19 01:28:24.720 GdxTris[25529:70790] [debug] IOSApplication: Running in 64-bit mode
+2026-11-19 01:28:24.738 GdxTris[25529:70790] [debug] IOSApplication: Pixels per point: 2.0
+2026-11-19 01:28:25.277 GdxTris[25529:70790] [debug] IOSApplication: Status bar is not visible
+2026-11-19 01:28:25.278 GdxTris[25529:70790] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-19 01:28:25.987 GdxTris[25529:70790] [debug] IOSGraphics: Display: ppi=264, density=1.65
+2026-11-19 01:28:25.996 GdxTris[25529:70790] lab: iPhone Simulator, sound off
+2026-11-19 01:28:26.039 GdxTris[25529:70790] [debug] IOSApplication: created
+2026-11-19 01:28:26.050 GdxTris[25529:70790] [debug] IOSApplication: Status bar is not visible
+2026-11-19 01:28:26.051 GdxTris[25529:70790] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-19 01:28:26.067 GdxTris[25529:70790] [info] ERROR: Failed to load data!
+java.io.FileNotFoundException: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/7B4F59DD-AE47-4F18-A321-246CE98B870C/Library/local/competitive-tetris-save-file: open failed: ENOENT (No such file or directory)
+2026-11-19 01:28:36.820 GdxTris[25529:70790] [debug] IOSApplication: resumed
