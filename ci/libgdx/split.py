@@ -52,6 +52,7 @@ def load(jar):
     return z, classes
 
 ANDROID = ("android/", "androidx/", "com/google/android/", "com/badlogic/gdx/backends/android/", "dalvik/")
+REAL_ANDROID = ("android/", "dalvik/", "com/badlogic/gdx/backends/android/")
 LIBS = ("com/badlogic/", "kotlin/", "kotlinx/", "javax/", "java/", "com/google/", "com/esotericsoftware/",
         "okhttp3/", "okio/", "com/squareup/", "org/intellij/", "org/jetbrains/", "org/json/", "org/slf4j/")
 
@@ -109,7 +110,10 @@ def core(jar, out, listener_txt, *maven):
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as o:
         for c, info in classes.items():
             nm = info[0]
-            if c.startswith(ANDROID) or c in drop or nm in provided: continue
+            if nm in provided or c in drop: continue
+            # androidx and Google helpers that don't build on Android classes are plain Java (R8 also puts its
+            # backport helpers, $$ExternalSynthetic..., there): keep them
+            if c.startswith(ANDROID) and (c.startswith(REAL_ANDROID) or any(x.startswith(REAL_ANDROID) for x in ancestors(classes, c))): continue
             o.writestr(nm, z.read(nm)); kept += 1
     m = a["main"][0] if a["main"] else ""
     open(listener_txt, "w").write(m.replace("/", ".") + "\n" + "\n".join(ctors(classes, m) if m else []) + "\n")

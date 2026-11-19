@@ -233,6 +233,11 @@ public class IOSLauncher extends IOSApplication.Delegate {
         IOSApplicationConfiguration config = new IOSApplicationConfiguration();
         config.orientationLandscape = @LAND@;
         config.orientationPortrait = @PORT@;
+        // Android games size their screens in pixels: ask libGDX for pixels too (not iOS points)
+        try {
+            java.lang.reflect.Field f = config.getClass().getField("hdpiMode");
+            f.set(config, Enum.valueOf((Class) f.getType(), "Pixels"));
+        } catch (Throwable t) { failed("hdpiMode", t); }
         final boolean simulator = System.getenv("SIMULATOR_DEVICE_NAME") != null || System.getenv("SIMULATOR_UDID") != null;
         return new IOSApplication(new Game(), config) {
             @Override

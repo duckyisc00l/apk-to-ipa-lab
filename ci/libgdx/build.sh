@@ -86,7 +86,8 @@ cat > $B/Info.plist.xml <<X
 X
 PKGS=$(python3 - $B/core.jar <<'P'
 import sys, zipfile, collections
-c = collections.Counter("/".join(n.split("/")[:2]) for n in zipfile.ZipFile(sys.argv[1]).namelist() if n.endswith(".class") and n.count("/") >= 2)
+c = collections.Counter("/".join(n.split("/")[:2]) for n in zipfile.ZipFile(sys.argv[1]).namelist() if n.endswith(".class") and n.count("/") >= 2
+                        and not n.startswith(("androidx/", "com/google/android/")))
 print("".join(f"<pattern>{p.replace('/', '.')}.**</pattern>" for p, _ in c.most_common(6)))
 P
 )
