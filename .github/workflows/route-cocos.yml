@@ -98,16 +98,6 @@ jobs:
           sed -i '' 's/CCLOG(/cocos2d::log(/g' $M/CCLuaStack.cpp $M/Cocos2dxLuaLoader.cpp
           sed -i '' 's/    if (engine->executeScriptFile("main.lua"))/    cocos2d::log("lab: running main.lua"); if (engine->executeScriptFile("main.lua"))/' proj/frameworks/runtime-src/Classes/AppDelegate.cpp
           grep -c 'lab: running main.lua' proj/frameworks/runtime-src/Classes/AppDelegate.cpp | sed 's/^/- main.lua log line added: /' | tee -a out/cocos.md
-          # lab probe: every 5 s print whether the main loop runs, the running scene and the GL frame size (the simulator showed only black)
-          cat >> proj/src/main.lua <<'LUA'
-          local d = cc.Director:getInstance()
-          d:getScheduler():scheduleScriptFunc(function()
-            local s, v = d:getRunningScene(), d:getOpenGLView()
-            local f = v and v:getFrameSize() or {width = -1, height = -1}
-            release_print(string.format("lab: frames %d scene %s children %d frame %dx%d visible %dx%d", d:getTotalFrames(), tostring(s),
-              s and s:getChildrenCount() or -1, f.width, f.height, d:getVisibleSize().width, d:getVisibleSize().height))
-          end, 5, false)
-          LUA
           # lab probes (black screen, timer never fires): trace requires, and log the main loop, the app's active state and the GL context
           { printf '%s\n' 'print = release_print' 'local _req = require' 'require = function(m) release_print("lab: require " .. tostring(m)); local r = _req(m); release_print("lab: required " .. tostring(m)); return r end'; cat proj/src/main.lua; } > /tmp/main.lua && mv /tmp/main.lua proj/src/main.lua
           python3 -I - proj/frameworks/cocos2d-x/cocos proj/frameworks/runtime-src/Classes/AppDelegate.cpp <<'PY' | tee -a out/cocos.md
@@ -128,11 +118,16 @@ jobs:
       - name: Build for the iPhone Simulator and run it
         continue-on-error: true
         run: |
-          SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"; du -sh "$APP"' \
-            ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim 60
+          # LuaJIT's x86_64 build keeps its objects in the low 2 GB of memory: on 64-bit Intel it needs the same link flags as
+          # cocos's Mac target, or the first script hangs or quits the app (black screen). The iPhone (arm64) build needs none.
+          SIM_XCODE_ARGS='OTHER_LDFLAGS="\$(inherited) -pagezero_size 10000 -image_base 100000000"' SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"; du -sh "$APP"' \
+            ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim 60 || true
+          grep -q 'build exit 0' out/sim/sim-build.md || { echo "- simulator build failed with the LuaJIT link flags: built without them" | tee -a out/cocos.md
+            SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"' \
+              ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim2 60 || true; }
           # lab: where is the main thread, and did the app become active?
           pid=$(pgrep -f 'HelloLua-mobile.app/HelloLua-mobile' | head -1); echo "pid $pid" > out/sim/sample.txt
-          [ -n "$pid" ] && sample "$pid" 2 -mayDie -file /tmp/sample.txt > /dev/null 2>&1; head -200 /tmp/sample.txt >> out/sim/sample.txt
+          [ -n "$pid" ] && sample "$pid" 2 -mayDie -file /tmp/sample.txt > /dev/null 2>&1; head -200 /tmp/sample.txt >> out/sim/sample.txt || true
           timeout 120 xcrun simctl spawn booted log show --last 3m --style compact --predicate 'process == "HelloLua-mobile" AND (eventMessage CONTAINS[c] "activ" OR eventMessage CONTAINS[c] "EAGL" OR eventMessage CONTAINS[c] "GL")' 2>/dev/null | tail -60 > out/sim/activation.log
       - name: Build for iPhone (unsigned) and package the IPA
         run: |
@@ -151,7 +146,7 @@ jobs:
         if: always()
         shell: bash {0}
         run: |
-          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp -R out/sim /tmp/r/ 2>/dev/null; tail -300 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
+          mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null; cp -R out/sim /tmp/r/ 2>/dev/null; cp -R out/sim2 /tmp/r/ 2>/dev/null; grep -E 'error:' out/sim/sim-build.log | sort -u | head -20 > /tmp/r/sim-link-errors.log; tail -300 out/xcodebuild.log > /tmp/r/xcodebuild-tail.log 2>/dev/null
           grep -E "error:|warning: .*(deprecated|unavailable)" out/sim/sim-build.log 2>/dev/null | sort -u | head -80 > /tmp/r/sim-build-errors.log; tail -100 out/sim/sim-build.log > /tmp/r/sim-build-tail.log 2>/dev/null
           rm -f /tmp/r/sim/sim-build.log
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
