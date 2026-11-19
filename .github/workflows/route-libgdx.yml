@@ -14,7 +14,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: route-libgdx
+  group: route-libgdx-${{ inputs.repo || 'default' }}-${{ inputs.mode || 'build' }}
   cancel-in-progress: true
 env:
   GH_TOKEN: ${{ github.token }}
@@ -79,7 +79,7 @@ jobs:
         run: |
           mkdir -p /tmp/r; cp out/*.md /tmp/r/ 2>/dev/null || true; cp -R out/sim /tmp/r/ 2>/dev/null || true
           for l in out/robovm-*.log; do [ -f "$l" ] && { grep -vE "^\[DEBUG\]" "$l" | tail -300 > /tmp/r/$(basename "$l"); }; done
-          cp /tmp/gdxios/launcher/lab/IOSLauncher.java /tmp/gdxios/robovm.xml /tmp/r/ 2>/dev/null || true
+          cp /tmp/gdxios/launcher/lab/*.java /tmp/gdxios/robovm.xml /tmp/r/ 2>/dev/null || true; find /tmp/gdxios/launcher/src -name '*.java' -exec cp {} /tmp/r/ \; 2>/dev/null || true
           git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
-          git checkout --orphan r-libgdx && git rm -rfq . && rm -rf ci dl work out
-          cp -r /tmp/r/. . && git add -A && git commit -qm "libgdx build ${{ github.run_number }}" && git push -f origin r-libgdx
+          git checkout --orphan r-libgdx-$NAME && git rm -rfq . && rm -rf ci dl work out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "libgdx build $NAME ${{ github.run_number }}" && git push -f origin r-libgdx-$NAME

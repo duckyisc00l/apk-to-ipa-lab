@@ -45,63 +45,14 @@ o=$("$AAPT2" dump xmltree --file AndroidManifest.xml "$APK" 2>/dev/null | grep -
 case "$o" in 0|6|8|11|landscape|sensorLandscape) LAND=true; PORT=false;; 1|7|9|12|portrait|sensorPortrait) LAND=false; PORT=true;; *) LAND=true; PORT=true;; esac
 echo "orientation from manifest: '${o:-none}' -> landscape=$LAND portrait=$PORT" | tee -a "$MD"
 
-# 5. The iOS launcher: start the game's own ApplicationListener with libGDX's iOS backend
-ARGS=$(python3 - "$CTOR" <<'P'
-import re, sys
-d = sys.argv[1]
-if not d: print(""); sys.exit()
-params = re.findall(r"\[*(?:[ZBCSIJFD]|L[^;]+;)", d[1:d.index(")")])
-prim = {"Z": "false", "B": "(byte)0", "C": "'\\0'", "S": "(short)0", "I": "0", "J": "0L", "F": "0f", "D": "0d"}
-out = []
-for p in params:
-    if p in prim: out.append(prim[p])
-    elif p.startswith("["): out.append("null")
-    else:
-        t = p[1:-1].replace("/", ".").replace("$", ".")
-        out.append(f"stub({t}.class)")
-print(", ".join(out))
-P
-)
-echo "launcher: new $MAIN($ARGS)  (constructor $CTOR)" | tee -a "$MD"
-cat > $B/launcher/lab/IOSLauncher.java <<J
-package lab;
-import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
-import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
-import org.robovm.apple.foundation.NSAutoreleasePool;
-import org.robovm.apple.uikit.UIApplication;
-import java.lang.reflect.*;
-public class IOSLauncher extends IOSApplication.Delegate {
-    // A platform interface the Android launcher passed in: answer every call with an empty value.
-    @SuppressWarnings("unchecked")
-    static <T> T stub(Class<T> c) {
-        if (!c.isInterface()) return null;
-        return (T) Proxy.newProxyInstance(c.getClassLoader(), new Class<?>[]{c}, new InvocationHandler() {
-            public Object invoke(Object p, Method m, Object[] a) {
-                Class<?> r = m.getReturnType();
-                if (m.getName().equals("toString")) return "ios-stub";
-                if (r == boolean.class) return false;
-                if (r == int.class) return 0; if (r == long.class) return 0L; if (r == float.class) return 0f;
-                if (r == double.class) return 0d; if (r == short.class) return (short)0; if (r == byte.class) return (byte)0;
-                if (r == char.class) return '\0'; if (r == String.class) return "";
-                return null;
-            }
-        });
-    }
-    @Override
-    protected IOSApplication createApplication() {
-        IOSApplicationConfiguration config = new IOSApplicationConfiguration();
-        config.orientationLandscape = $LAND;
-        config.orientationPortrait = $PORT;
-        return new IOSApplication(new $MAIN($ARGS), config);
-    }
-    public static void main(String[] argv) {
-        NSAutoreleasePool pool = new NSAutoreleasePool();
-        UIApplication.main(argv, null, IOSLauncher.class);
-        pool.close();
-    }
-}
-J
-javac -nowarn --release 8 -cp "$B/core.jar$CP:$RCP" -d $B/launcher $B/launcher/lab/IOSLauncher.java 2>&1 | tail -20 | tee -a "$MD"
+# 5. The iOS launcher: the game's own ApplicationListener on libGDX's iOS backend (ci/libgdx/launcher.py).
+# Optional per-game hook ci/libgdx/games/<name>.java: Java statements the Android launcher ran before making the game
+# (read them in the decompiled Android launcher); @VERSION_NAME@ and @VERSION_CODE@ come from the manifest.
+VC=$("$AAPT2" dump badging "$APK" 2>/dev/null | sed -n "s/.*versionCode='\([0-9]*\)'.*/\1/p" | head -1); VN=$("$AAPT2" dump badging "$APK" 2>/dev/null | sed -n "s/.*versionName='\([^']*\)'.*/\1/p" | head -1)
+HOOK=""; if [ -f "$HERE/games/$NAME.java" ]; then sed -e "s/@VERSION_NAME@/${VN:-1.0}/g" -e "s/@VERSION_CODE@/${VC:-1}/g" "$HERE/games/$NAME.java" > $B/hook.java; HOOK=$B/hook.java; fi
+echo "version: ${VN:-?} (${VC:-?})" | tee -a "$MD"
+python3 "$HERE/launcher.py" $B/apk.jar $B/core.jar "$B/core.jar$CP:$RCP" $B/launcher $LAND $PORT $HOOK 2>&1 | grep -v "^Picked up" | tee -a "$MD"
+[ -f $B/launcher/lab/IOSLauncher.class ] || exit 1
 
 # 6. App files: the APK's assets/ at the top of the app (where libGDX's Gdx.files.internal looks on iOS)
 cp -R "$G/assets" $B/assets 2>/dev/null || mkdir -p $B/assets

@@ -12,7 +12,7 @@ import re, struct, sys, zipfile
 from collections import Counter
 
 def parse(data):
-    """-> (name, super, interfaces, [ (method name, descriptor) ], set of referenced class names, strings)"""
+    """-> (name, super, interfaces, [ (method name, descriptor, access) ], set of referenced class names, strings, class access)"""
     p = 10; n = struct.unpack(">H", data[8:10])[0]; cp = [None] * n; i = 1
     while i < n:
         t = data[p]
@@ -40,7 +40,7 @@ def parse(data):
     _, p = members(p); methods, p = members(p)
     refs = {u(e[1]) for e in cp if e and e[0] == 7}
     strs = [u(e[1]) for e in cp if e and e[0] == 8]
-    return cls(this), cls(sup), ifs, methods, refs, strs
+    return cls(this), cls(sup), ifs, methods, refs, strs, acc
 
 def load(jar):
     z = zipfile.ZipFile(jar); classes = {}
@@ -84,7 +84,7 @@ def analyse(classes):
                 obf=round(short / max(1, len(game)), 2), packages=pk)
 
 def ctors(classes, c):
-    return [d for (n, d, a) in classes[c][3] if n == "<init>"]
+    return [d for (n, d, a) in classes[c][3] if n == "<init>" and not a & 0x1002]  # not private or synthetic
 
 def report(jar, out):
     _, classes = load(jar); a = analyse(classes)
