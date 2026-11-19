@@ -1,0 +1,22 @@
+<config>
+  <executableName>${app.executable}</executableName>
+  <mainClass>${app.mainclass}</mainClass>
+  <os>ios</os>
+  <target>ios</target>
+  <iosInfoPList>Info.plist.xml</iosInfoPList>
+  <treeShaker>none</treeShaker>
+  <resources><resource><directory>assets</directory><skipPngCrush>true</skipPngCrush></resource></resources>
+  <forceLinkClasses>
+    <pattern>com.unciv.**</pattern><pattern>kotlin.reflect.**</pattern><pattern>io.ktor.**</pattern><pattern>kotlinx.coroutines.**</pattern><pattern>j$.util.**</pattern><pattern>kotlinx.serialization.**</pattern> <pattern>io.ktor.client.engine.cio.CIOEngineContainer</pattern><pattern>io.ktor.serialization.kotlinx.json.KotlinxSerializationJsonExtensionProvider</pattern><pattern>kotlin.reflect.jvm.internal.impl.km.jvm.internal.JvmMetadataExtensions</pattern><pattern>kotlin.reflect.jvm.internal.impl.load.java.ErasedOverridabilityCondition</pattern><pattern>kotlin.reflect.jvm.internal.impl.load.java.FieldOverridabilityCondition</pattern><pattern>kotlin.reflect.jvm.internal.impl.load.java.JavaIncompatibilityRulesOverridabilityCondition</pattern><pattern>kotlin.reflect.jvm.internal.impl.serialization.deserialization.builtins.BuiltInsLoaderImpl</pattern><pattern>kotlinx.coroutines.android.AndroidDispatcherFactory</pattern><pattern>kotlinx.coroutines.android.AndroidExceptionPreHandler</pattern>
+    <pattern>com.badlogic.gdx.scenes.scene2d.ui.*</pattern>
+    <pattern>com.badlogic.gdx.graphics.g3d.particles.**</pattern>
+    <pattern>com.android.okhttp.HttpHandler</pattern>
+    <pattern>com.android.okhttp.HttpsHandler</pattern>
+    <pattern>com.android.org.conscrypt.**</pattern>
+  </forceLinkClasses>
+  <frameworks>
+    <framework>UIKit</framework><framework>OpenGLES</framework><framework>QuartzCore</framework>
+    <framework>CoreGraphics</framework><framework>OpenAL</framework><framework>AudioToolbox</framework>
+    <framework>AVFoundation</framework><framework>GameController</framework>
+  </frameworks>
+</config>

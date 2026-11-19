@@ -1,0 +1,300 @@
+Compiling org.robovm.apple.metal.MTLMultisampleDepthResolveFilter (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLMultisampleStencilResolveFilter (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLRenderPassAttachmentDescriptor (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLRenderPassColorAttachmentDescriptor (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLRenderPassSampleBufferAttachmentDescriptor (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLResourceStatePassSampleBufferAttachmentDescriptor (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLStepFunction (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLVertexFormat (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLVertexStepFunction (ios x86_64-simulator release)
+Compiling org.robovm.apple.scenekit.SCNAnimatable$ObjCProxy (ios x86_64-simulator release)
+Compiling org.robovm.apple.scenekit.SCNAnimationPlayer (ios x86_64-simulator release)
+Compiling androidx.collection.MutableMapEntry (ios x86_64-simulator release)
+Compiling androidx.collection.MutableObjectList$MutableObjectListIterator (ios x86_64-simulator release)
+Compiling androidx.collection.MutableObjectList$SubList (ios x86_64-simulator release)
+Compiling kotlin.collections.ArrayAsCollection (ios x86_64-simulator release)
+Compiling kotlin.collections.CollectionsKt__CollectionsJVMKt (ios x86_64-simulator release)
+Compiling kotlin.collections.CollectionsKt__CollectionsKt$binarySearchBy$1 (ios x86_64-simulator release)
+Compiling kotlin.text.StringsKt__RegexExtensionsJVMKt (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUMessageChannel$ObjCProxy$$BlockMarshaler0 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUNodeConnection (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUNodeRenderCallback (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterAutomationEventType (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUScheduledAudioFileRegion$CompletionListener (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUScheduledAudioSlice$CompletionListener (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioComponentInstance$AudioComponentInstancePtr (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioComponentValidationResult (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFile (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.NoteParamsControlValue (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.NoteParamsControlValue$NoteParamsControlValuePtr (ios x86_64-simulator release)
+Compiling org.robovm.apple.avfoundation.AVAudioBitRateStrategy$Marshaler (ios x86_64-simulator release)
+Compiling org.robovm.apple.avfoundation.AVAudioBitRateStrategy$Values (ios x86_64-simulator release)
+Compiling org.robovm.apple.avfoundation.AVSampleRateConverterAlgorithm$Marshaler (ios x86_64-simulator release)
+Compiling org.robovm.apple.avfoundation.AVSampleRateConverterAlgorithm$Values (ios x86_64-simulator release)
+Compiling org.robovm.apple.coreaudio.AudioChannelCoordinate (ios x86_64-simulator release)
+Compiling org.robovm.apple.coreaudio.AudioChannelFlags (ios x86_64-simulator release)
+Compiling org.robovm.apple.coreaudio.AudioChannelLabel (ios x86_64-simulator release)
+Compiling org.robovm.apple.coreaudio.SMPTEStateFlags (ios x86_64-simulator release)
+Compiling org.robovm.apple.coreaudio.SMPTETimeType (ios x86_64-simulator release)
+Compiling org.robovm.apple.coremidi.MIDIDriver (ios x86_64-simulator release)
+Compiling org.robovm.apple.coremidi.MIDINotificationMessageID (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLClearColor (ios x86_64-simulator release)
+Compiling org.robovm.apple.metal.MTLLoadAction (ios x86_64-simulator release)
+Compiling kotlin.collections.builders.ListBuilder (ios x86_64-simulator release)
+Compiling kotlin.text.StringsKt__IndentKt (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler0 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler1 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler2 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler3 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler4 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler5 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler6 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterNode$$BlockMarshaler7 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFile$AudioFilePtr (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFile$Callbacks (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFileFlags (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFilePermissions (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFileProperty (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AudioFileType (ios x86_64-simulator release)
+Compiling org.robovm.apple.coreaudio.AudioStreamPacketDescription (ios x86_64-simulator release)
+Compiling org.robovm.apple.coremidi.MIDIDeviceList (ios x86_64-simulator release)
+Compiling org.robovm.apple.coremidi.MIDIDriverInterface (ios x86_64-simulator release)
+Compiling kotlin.collections.builders.ListBuilder$BuilderSubList (ios x86_64-simulator release)
+Compiling kotlin.collections.builders.ListBuilder$Companion (ios x86_64-simulator release)
+Compiling kotlin.collections.builders.ListBuilder$Itr (ios x86_64-simulator release)
+Compiling kotlin.text.StringsKt__AppendableKt (ios x86_64-simulator release)
+Compiling kotlin.text.StringsKt__IndentKt$$ExternalSyntheticLambda0 (ios x86_64-simulator release)
+Compiling kotlin.text.StringsKt__IndentKt$$ExternalSyntheticLambda1 (ios x86_64-simulator release)
+Compiling kotlin.text.StringsKt__IndentKt$$ExternalSyntheticLambda2 (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AUParameterAutomationEvent (ios x86_64-simulator release)
+Compiling org.robovm.apple.audiotoolbox.AURecordedParameterEvent (ios x86_64-simulator release)
+Compiling kotlin.collections.builders.ListBuilder$BuilderSubList$Itr (ios x86_64-simulator release)
+Compiled 20657 classes in 286.12 seconds
+Linking 20657 classes (ios x86_64-simulator release)
+163527 methods out of 163527 included in the executable
+Building ios binary /var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/robovm9827359992780109691.tmp/Unciv
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -o /var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/robovm9827359992780109691.tmp/Unciv -Wl,-filelist,/var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/robovm9827359992780109691.tmp/objects0 -L /private/tmp/gdxios/robovm-2.3.24/lib/vm/ios/x86_64-simulator -ObjC -exported_symbols_list /var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/robovm9827359992780109691.tmp/exported_symbols -Wl,-no_implicit_dylibs -Wl,-dead_strip -F/Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs -F/Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/gdx.xcframework/ios-arm64_x86_64-simulator -F/Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/ObjectAL.xcframework/ios-arm64_x86_64-simulator -L/usr/lib/swift -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/iphonesimulator -L/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/iphonesimulator -fPIC --target=x86_64-apple-ios13.0-simulator -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/robovm9827359992780109691.tmp/Entitlements-Simulated.plist -lrobovm-bc -force_load /private/tmp/gdxios/robovm-2.3.24/lib/vm/ios/x86_64-simulator/librobovm-rt.a -lrobovm-core -lgc -lpthread -ldl -lm -lz -liconv -lsqlite3 -framework Foundation -framework OpenGLES -framework gdx -framework ObjectAL -framework UIKit -framework 
+    OpenGLES -framework QuartzCore -framework CoreGraphics -framework OpenAL -framework AudioToolbox -framework AVFoundation -framework GameController -framework MobileCoreServices -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks
+Linked 20657 classes in 23.50 seconds
+Installing ios binary to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/boot/robovm-rt.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/classes0.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/core.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/gdx-1.14.2.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/gdx-backend-robovm-1.14.2.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/gdx-platform-1.14.2-natives-ios.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/robovm-objc.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/robovm-cocoatouch.jar
+Creating stripped archive file /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/lib/boot/robovm-cacerts-full.jar
+Copying resource /private/tmp/gdxios/assets/Icons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/TileImprovements.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Buildings.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Difficulties.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/UnitPromotions.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/CityStateTypes.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Quests.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Techs.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Policies.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Nations.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Specialists.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/UnitTypes.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Units.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/GlobalUniques.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/ModOptions.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/TileResources.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Ruins.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Speeds.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Terrains.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/VictoryTypes.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Vanilla/Eras.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Vanilla
+Copying resource /private/tmp/gdxios/assets/jsons/ModCategories.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons
+Copying resource /private/tmp/gdxios/assets/jsons/Tutorials.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/TileImprovements.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Buildings.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Difficulties.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/UnitPromotions.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/CityStateTypes.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Quests.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Techs.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Policies.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Events.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Nations.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Specialists.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/UnitNameGroups.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/UnitTypes.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Units.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/GlobalUniques.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Religions.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/ModOptions.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/TileResources.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Personalities.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Ruins.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Speeds.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Terrains.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Beliefs.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/VictoryTypes.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/Civ V - Gods & Kings/Eras.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/Civ V - Gods & Kings
+Copying resource /private/tmp/gdxios/assets/jsons/WesnothImportMappings.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons
+Copying resource /private/tmp/gdxios/assets/jsons/TileSets/Minimal.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/TileSets
+Copying resource /private/tmp/gdxios/assets/jsons/TileSets/HexaRealm.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/TileSets
+Copying resource /private/tmp/gdxios/assets/jsons/TileSets/FantasyHex.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/TileSets
+Copying resource /private/tmp/gdxios/assets/jsons/translations/completionPercentages.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Korean.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Brazilian_Portuguese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Swedish.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Traditional_Chinese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Czech.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Turkish.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Indonesian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Bosnian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Spanish.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Bangla.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Dutch.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Zulu.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Vietnamese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Croatian instructions.md to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Rusyn.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Catalan.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Greek.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/German.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Galician.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Malay.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Navajo.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Latin.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Thai.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Italian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Belarusian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Lithuanian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Simplified_Chinese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Maltese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Portuguese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Russian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Hindi.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Romanian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/French.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Toki_Pona.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Persian instructions.txt to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Persian_(Pinglish-DIN).properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Ukrainian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Japanese.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Filipino.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Afrikaans.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/template.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Norwegian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Croatian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Polish.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Persian_(Pinglish-UN).properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Esperanto.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Finnish.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Bulgarian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/Hungarian.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/jsons/translations/English.properties to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/jsons/translations
+Copying resource /private/tmp/gdxios/assets/UnitPromotionIcons.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/EasterEggs.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/ExcludedModAuthors.txt to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Flags.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/UnitActionIcons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/ConstructionIcons.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/dexopt/baseline.profm to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/dexopt
+Copying resource /private/tmp/gdxios/assets/dexopt/baseline.prof to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/dexopt
+Copying resource /private/tmp/gdxios/assets/ReligionIcons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Tech.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/EasterEggs.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Tilesets.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Skin.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/AbsoluteUnits.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/sounds/construction.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityInformation.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/whoosh.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityRenaissance.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/wagon.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/shipguns.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/coin.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/tankshot.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/bombard.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityClassical.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/artillery.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/click.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/swap.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/bombing.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/upgrade.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/jetgun.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/notification1.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityModern.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/setup.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/WLTK.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cannon.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/notification2.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/nonmetalhit.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/chimes.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/shipCannonVolley.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/shot.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/throw.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/crossbow.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/nuke_long.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/promote.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/choir.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityAtomic.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/arrow.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityMedieval.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/fortify.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/horse.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/slider.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/metalhit.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/paper.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/machinegun.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cavalry.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/elephant.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityAncient.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/gdrAttack.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/policy.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/nuke.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/fire.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/torpedo.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/missile.mp3 to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityIndustrial.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/sounds/cityFuture.ogg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/sounds
+Copying resource /private/tmp/gdxios/assets/ExtraImages/banner.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages
+Copying resource /private/tmp/gdxios/assets/ExtraImages/World_Screen.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Icons/Unciv32.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Icons
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Icons/Unciv128.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Icons
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Found city.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Pick construction.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Create a trade route.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Reassign worked tiles.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Conquer a city.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Construct an improvement.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Enter city screen.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Move an air unit.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Move unit.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Pick technology.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Meet another civilization.jpg to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Open the options table.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/Pass a turn.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/ExtraImages/Tutorials/See your stats breakdown.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/ExtraImages/Tutorials
+Copying resource /private/tmp/gdxios/assets/PolicyIcons.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/ReligionIcons.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Icons.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/NationIcons.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/UnitPromotionIcons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/PolicyIcons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Skin.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Tilesets.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Skin.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Flags.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/effects/fireworks.p to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/effects
+Copying resource /private/tmp/gdxios/assets/ConstructionIcons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/NationIcons.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/AbsoluteUnits.atlas to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Atlases.json to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /private/tmp/gdxios/assets/Tech.png to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying framework gdx from /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/gdx.xcframework/ios-arm64_x86_64-simulator/gdx.framework to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/gdx.xcframework/ios-arm64_x86_64-simulator/gdx.framework/gdx to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/Frameworks/gdx.framework
+Copying resource /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/gdx.xcframework/ios-arm64_x86_64-simulator/gdx.framework/Info.plist to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/Frameworks/gdx.framework
+Copying framework ObjectAL from /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/ObjectAL.xcframework/ios-arm64_x86_64-simulator/ObjectAL.framework to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+Copying resource /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/ObjectAL.xcframework/ios-arm64_x86_64-simulator/ObjectAL.framework/_CodeSignature/CodeResources to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/Frameworks/ObjectAL.framework/_CodeSignature
+Copying resource /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/ObjectAL.xcframework/ios-arm64_x86_64-simulator/ObjectAL.framework/ObjectAL to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/Frameworks/ObjectAL.framework
+Copying resource /Users/runner/.robovm/cache/ios/x86_64-simulator/release/private/tmp/gdxios/m/gdx-platform-1.14.2-natives-ios.jar.extracted/META-INF/robovm/ios/libs/ObjectAL.xcframework/ios-arm64_x86_64-simulator/ObjectAL.framework/Info.plist to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/Frameworks/ObjectAL.framework
+Installing Info.plist to /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app.dSYM /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/Unciv.app/Unciv
