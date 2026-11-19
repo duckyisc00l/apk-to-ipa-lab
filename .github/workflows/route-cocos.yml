@@ -108,6 +108,20 @@ jobs:
               s and s:getChildrenCount() or -1, f.width, f.height, d:getVisibleSize().width, d:getVisibleSize().height))
           end, 5, false)
           LUA
+          # lab probes (black screen, timer never fires): trace requires, and log the main loop, the app's active state and the GL context
+          { printf '%s\n' 'print = release_print' 'local _req = require' 'require = function(m) release_print("lab: require " .. tostring(m)); local r = _req(m); release_print("lab: required " .. tostring(m)); return r end'; cat proj/src/main.lua; } > /tmp/main.lua && mv /tmp/main.lua proj/src/main.lua
+          python3 -I - proj/frameworks/cocos2d-x/cocos proj/frameworks/runtime-src/Classes/AppDelegate.cpp <<'PY' | tee -a out/cocos.md
+          import sys
+          c, ad = sys.argv[1], sys.argv[2]
+          def sub(f, a, b):
+              t = open(f, encoding='latin-1').read(); n = t.count(a); open(f, 'w', encoding='latin-1').write(t.replace(a, b, 1)); print('- probe', f.split('/')[-1], n)
+          sub(c + '/base/CCDirector.cpp', 'void Director::mainLoop()\n{', 'void Director::mainLoop()\n{\n    static int labN = 0; if (labN++ % 300 == 0) cocos2d::log("lab: Director::mainLoop call %d", labN);')
+          sub(c + '/platform/ios/CCDirectorCaller-ios.mm', '-(void) doCaller: (id) sender\n{', '-(void) doCaller: (id) sender\n{\n    static int labN = 0; if (labN++ % 120 == 0) printf("lab: doCaller %d isAppActive %d appState %d\\n", labN, (int)isAppActive, (int)[UIApplication sharedApplication].applicationState); fflush(stdout);')
+          sub(c + '/platform/ios/CCDirectorCaller-ios.mm', '    isAppActive = YES;\n}', '    isAppActive = YES;\n    printf("lab: appDidBecomeActive\\n"); fflush(stdout);\n}')
+          sub(c + '/platform/ios/CCDirectorCaller-ios.mm', '-(void) startMainLoop\n{', '-(void) startMainLoop\n{\n    printf("lab: startMainLoop\\n"); fflush(stdout);')
+          sub(c + '/platform/ios/CCES2Renderer-ios.m', '        if (!context_ || ![EAGLContext setCurrentContext:context_] )', '        printf("lab: EAGLContext %p\\n", context_); fflush(stdout);\n        if (!context_ || ![EAGLContext setCurrentContext:context_] )')
+          sub(ad, 'if (engine->executeScriptFile("main.lua"))', 'int labRet = engine->executeScriptFile("main.lua"); cocos2d::log("lab: main.lua returned %d", labRet);\n    if (labRet)')
+          PY
           # Xcode 16 refuses iOS 6-8 deployment targets
           find proj -name project.pbxproj -exec sed -i '' -E 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]+;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' {} +
           xcodebuild -list -project proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj | tee -a out/cocos.md
@@ -116,6 +130,10 @@ jobs:
         run: |
           SIM_ARCHS=x86_64 SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.sakumai" "$APP/Info.plist"; du -sh "$APP"' \
             ci/sim/build-and-run.sh "$PWD/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj" HelloLua-mobile out/sim 60
+          # lab: where is the main thread, and did the app become active?
+          pid=$(pgrep -f 'HelloLua-mobile.app/HelloLua-mobile' | head -1); echo "pid $pid" > out/sim/sample.txt
+          [ -n "$pid" ] && sample "$pid" 2 -mayDie -file /tmp/sample.txt > /dev/null 2>&1; head -200 /tmp/sample.txt >> out/sim/sample.txt
+          timeout 120 xcrun simctl spawn booted log show --last 3m --style compact --predicate 'process == "HelloLua-mobile" AND (eventMessage CONTAINS[c] "activ" OR eventMessage CONTAINS[c] "EAGL" OR eventMessage CONTAINS[c] "GL")' 2>/dev/null | tail -60 > out/sim/activation.log
       - name: Build for iPhone (unsigned) and package the IPA
         run: |
           set +e
