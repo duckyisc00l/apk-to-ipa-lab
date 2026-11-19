@@ -36,6 +36,19 @@ RVM=$B/robovm-$RVM_VERSION; RCP="$RVM/lib/robovm-rt.jar:$RVM/lib/robovm-objc.jar
 
 # 3. The game's core: everything but the Android side and libGDX's own classes (the Maven jars replace those)
 python3 "$HERE/split.py" core $B/apk.jar $B/core.jar $B/listener.txt $MAVENJARS | tee -a "$MD"
+# Java services (ServiceLoader: ktor engines, kotlinx helpers) are files in the APK's META-INF/services, not in classes.dex
+SERVICES=$(python3 - "$APK" $B/core.jar <<'PY'
+import sys, zipfile
+apk = zipfile.ZipFile(sys.argv[1]); out = zipfile.ZipFile(sys.argv[2], "a"); have = set(out.namelist()); pats = []
+for n in apk.namelist():
+    if n.startswith("META-INF/services/") and not n.endswith("/") and n not in have:
+        d = apk.read(n); out.writestr(n, d)
+        pats += [l.split("#")[0].strip() for l in d.decode("utf-8", "replace").splitlines() if l.split("#")[0].strip()]
+out.close()
+print("".join(f"<pattern>{c}</pattern>" for c in sorted(set(pats))))
+PY
+)
+echo "Java services from the APK: $(echo "$SERVICES" | grep -o '<pattern>' | wc -l | tr -d ' ') classes" | tee -a "$MD"
 MAIN=$(head -1 $B/listener.txt); CTOR=$(sed -n 2p $B/listener.txt)
 [ -n "$MAIN" ] || { echo "no ApplicationListener found" | tee -a "$MD"; exit 1; }
 
@@ -98,10 +111,10 @@ cat > $B/robovm.xml <<X
   <os>ios</os>
   <target>ios</target>
   <iosInfoPList>Info.plist.xml</iosInfoPList>
-  <treeShaker>conservative</treeShaker>
+  <treeShaker>${TREESHAKER:-none}</treeShaker>
   <resources><resource><directory>assets</directory><skipPngCrush>true</skipPngCrush></resource></resources>
   <forceLinkClasses>
-    $PKGS
+    $PKGS $SERVICES
     <pattern>com.badlogic.gdx.scenes.scene2d.ui.*</pattern>
     <pattern>com.badlogic.gdx.graphics.g3d.particles.**</pattern>
     <pattern>com.android.okhttp.HttpHandler</pattern>
