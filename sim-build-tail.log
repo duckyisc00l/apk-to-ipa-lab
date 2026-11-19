@@ -1,0 +1,100 @@
+    export SYSTEM_DEVELOPER_TOOLS_DOC_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/ADC\ Reference\ Library/documentation/DeveloperTools
+    export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/ADC\ Reference\ Library/releasenotes/DeveloperTools
+    export SYSTEM_DEVELOPER_USR_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/usr
+    export SYSTEM_DEVELOPER_UTILITIES_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/Applications/Utilities
+    export SYSTEM_DEXT_INSTALL_PATH\=/System/Library/DriverExtensions
+    export SYSTEM_DOCUMENTATION_DIR\=/Library/Documentation
+    export SYSTEM_EXTENSIONS_FOLDER_PATH\=HelloLua-mobile.app/SystemExtensions
+    export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_NO\=HelloLua-mobile.app/Library/SystemExtensions
+    export SYSTEM_EXTENSIONS_FOLDER_PATH_SHALLOW_BUNDLE_YES\=HelloLua-mobile.app/SystemExtensions
+    export SYSTEM_KEXT_INSTALL_PATH\=/System/Library/Extensions
+    export SYSTEM_LIBRARY_DIR\=/System/Library
+    export TAPI_DEMANGLE\=YES
+    export TAPI_ENABLE_PROJECT_HEADERS\=NO
+    export TAPI_LANGUAGE\=objective-c
+    export TAPI_LANGUAGE_STANDARD\=compiler-default
+    export TAPI_USE_SRCROOT\=YES
+    export TAPI_VERIFY_MODE\=Pedantic
+    export TARGETED_DEVICE_FAMILY\=1,2
+    export TARGETNAME\=HelloLua-mobile
+    export TARGET_BUILD_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator
+    export TARGET_NAME\=HelloLua-mobile
+    export TARGET_TEMP_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/HelloLua.build/Release-iphonesimulator/HelloLua-mobile.build
+    export TEMP_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/HelloLua.build/Release-iphonesimulator/HelloLua-mobile.build
+    export TEMP_FILES_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/HelloLua.build/Release-iphonesimulator/HelloLua-mobile.build
+    export TEMP_FILE_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/HelloLua.build/Release-iphonesimulator/HelloLua-mobile.build
+    export TEMP_ROOT\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex
+    export TEMP_SANDBOX_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/TemporaryTaskSandboxes
+    export TEST_FRAMEWORK_SEARCH_PATHS\=\ /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks\ /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.5.sdk/Developer/Library/Frameworks
+    export TEST_LIBRARY_SEARCH_PATHS\=\ /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib
+    export TOOLCHAINS\=com.apple.dt.toolchain.XcodeDefault
+    export TOOLCHAIN_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+    export TREAT_MISSING_BASELINES_AS_TEST_FAILURES\=NO
+    export TREAT_MISSING_SCRIPT_PHASE_OUTPUTS_AS_ERRORS\=NO
+    export UID\=501
+    export UNINSTALLED_PRODUCTS_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/UninstalledProducts
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH\=HelloLua-mobile.app
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_NO\=HelloLua-mobile.app/Resources
+    export UNLOCALIZED_RESOURCES_FOLDER_PATH_SHALLOW_BUNDLE_YES\=HelloLua-mobile.app
+    export UNSTRIPPED_PRODUCT\=NO
+    export USER\=runner
+    export USER_APPS_DIR\=/Users/runner/Applications
+    export USER_HEADER_SEARCH_PATHS\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/cocos/audio/include\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/cocos\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/extensions\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/external\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/external/chipmunk/include/chipmunk\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/external/lua/luajit/include\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/external/lua/tolua\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/tools/simulator/libsimulator/lib\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/tools/simulator/libsimulator/lib/protobuf-lite\ /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/../../cocos2d-x/cocos/editor-support\ \ 
+    export USER_LIBRARY_DIR\=/Users/runner/Library
+    export USE_DYNAMIC_NO_PIC\=YES
+    export USE_HEADERMAP\=YES
+    export USE_HEADER_SYMLINKS\=NO
+    export VALIDATE_DEVELOPMENT_ASSET_PATHS\=YES_ERROR
+    export VALIDATE_PRODUCT\=YES
+    export VALID_ARCHS\=arm64\ arm64e\ x86_64
+    export VERBOSE_PBXCP\=NO
+    export VERSIONPLIST_PATH\=HelloLua-mobile.app/version.plist
+    export VERSION_INFO_BUILDER\=runner
+    export VERSION_INFO_FILE\=HelloLua-mobile_vers.c
+    export VERSION_INFO_STRING\=\"@\(\#\)PROGRAM:HelloLua-mobile\ \ PROJECT:HelloLua-\"
+    export WORKSPACE_DIR\=/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/HelloLua.xcodeproj
+    export WRAPPER_EXTENSION\=app
+    export WRAPPER_NAME\=HelloLua-mobile.app
+    export WRAPPER_SUFFIX\=.app
+    export WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES\=NO
+    export XCODE_APP_SUPPORT_DIR\=/Applications/Xcode_16.4.app/Contents/Developer/Library/Xcode
+    export XCODE_PRODUCT_BUILD_VERSION\=16F6
+    export XCODE_VERSION_ACTUAL\=1640
+    export XCODE_VERSION_MAJOR\=1600
+    export XCODE_VERSION_MINOR\=1640
+    export XPCSERVICES_FOLDER_PATH\=HelloLua-mobile.app/XPCServices
+    export YACC\=yacc
+    export _DISCOVER_COMMAND_LINE_LINKER_INPUTS\=YES
+    export _DISCOVER_COMMAND_LINE_LINKER_INPUTS_INCLUDE_WL\=YES
+    export _WRAPPER_CONTENTS_DIR_SHALLOW_BUNDLE_NO\=/Contents
+    export _WRAPPER_PARENT_PATH_SHALLOW_BUNDLE_NO\=/..
+    export _WRAPPER_RESOURCES_DIR_SHALLOW_BUNDLE_NO\=/Resources
+    export __DIAGNOSE_DEPRECATED_ARCHS\=YES
+    export __IS_NOT_MACOS\=YES
+    export __IS_NOT_MACOS_macosx\=NO
+    export __IS_NOT_SIMULATOR\=NO
+    export __IS_NOT_SIMULATOR_simulator\=NO
+    export arch\=undefined_arch
+    export variant\=normal
+    /bin/sh -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Intermediates.noindex/HelloLua.build/Release-iphonesimulator/HelloLua-mobile.build/Script-3EC988201966433500A45E0E.sh
+
+GenerateDSYMFile /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app.dSYM /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app/HelloLua-mobile (in target 'HelloLua-mobile' from project 'HelloLua')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac
+    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app/HelloLua-mobile -o /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app.dSYM
+
+RegisterExecutionPolicyException /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app (in target 'HelloLua-mobile' from project 'HelloLua')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac
+    builtin-RegisterExecutionPolicyException /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app
+
+Validate /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app (in target 'HelloLua-mobile' from project 'HelloLua')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac
+    builtin-validationUtility /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app -validate-for-store -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app (in target 'HelloLua-mobile' from project 'HelloLua')
+    cd /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac
+    /usr/bin/touch -c /Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/proj/frameworks/runtime-src/proj.ios_mac/simdd/Build/Products/Release-iphonesimulator/HelloLua-mobile.app
+
+warning: Traditional headermap style is no longer supported; please migrate to using separate headermaps and set 'ALWAYS_SEARCH_USER_PATHS' to NO. (in target 'HelloLua-mobile' from project 'HelloLua')
+warning: Run script build phase 'Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'HelloLua-mobile' from project 'HelloLua')
+** BUILD SUCCEEDED **
+

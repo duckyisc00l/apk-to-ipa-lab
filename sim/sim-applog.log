@@ -1,0 +1,108 @@
+2026-11-19 02:39:09.438 Df HelloLua-mobile[19818:ecac] [com.apple.xpc:connection] [0x129043c0] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-19 02:39:09.445 Df HelloLua-mobile[19818:ecac] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-11-19 02:39:09.445 Df HelloLua-mobile[19818:ecac] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-11-19 02:39:09.445 Df HelloLua-mobile[19818:ecac] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x6000021026c0>
+2026-11-19 02:39:09.445 Df HelloLua-mobile[19818:ecac] [com.apple.runningboard:connection] Initializing connection
+2026-11-19 02:39:09.445 Df HelloLua-mobile[19818:ecac] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-19 02:39:09.446 Df HelloLua-mobile[19818:ecad] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-19 02:39:09.446 Df HelloLua-mobile[19818:ecad] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-19 02:39:09.446 Df HelloLua-mobile[19818:ecad] [com.apple.xpc:connection] [0x10f04a00] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-19 02:39:09.448 A  HelloLua-mobile[19818:ecaf] (RunningBoardServices) didChangeInheritances
+2026-11-19 02:39:09.450 Df HelloLua-mobile[19818:ecad] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-19 02:39:09.450 Df HelloLua-mobile[19818:ecad] [com.apple.runningboard:connection] Identity resolved as app<com.duckyisc00l.sakumai((null))>
+2026-11-19 02:39:09.451 Df HelloLua-mobile[19818:ecac] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x6000021026c0>
+2026-11-19 02:39:09.451 Df HelloLua-mobile[19818:ecac] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x600001709440>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 941 (elapsed = 0).
+2026-11-19 02:39:09.452 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-11-19 02:39:09.495 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-11-19 02:39:09.496 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-11-19 02:39:09.496 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-11-19 02:39:09.496 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-11-19 02:39:09.504 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-11-19 02:39:09.505 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-11-19 02:39:09.505 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-11-19 02:39:09.505 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-11-19 02:39:09.509 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-11-19 02:39:09.510 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-11-19 02:39:09.515 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-11-19 02:39:09.516 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-11-19 02:39:09.516 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-19 02:39:09.517 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-19 02:39:09.519 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-19 02:39:09.520 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-19 02:39:09.521 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-19 02:39:09.521 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-19 02:39:09.521 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-19 02:39:09.526 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-19 02:39:09.526 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-19 02:39:09.527 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-19 02:39:09.527 Df HelloLua-mobile[19818:ecac] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-19 02:39:09.538 A  HelloLua-mobile[19818:ecad] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-19 02:39:09.539 Df HelloLua-mobile[19818:eca6] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-19 02:39:09.541 Df HelloLua-mobile[19818:ecae] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-19 02:39:09.542 Df HelloLua-mobile[19818:ecae] [com.apple.xpc:connection] [0x10f063c0] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-19 02:39:09.554 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-11-19 02:39:09.554 Df HelloLua-mobile[19818:eca6] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-11-19 02:39:09.554 Df HelloLua-mobile[19818:eca6] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-11-19 02:39:09.556 Df HelloLua-mobile[19818:eca6] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-11-19 02:39:09.557 Df HelloLua-mobile[19818:eca6] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x600000211ea0; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-19 02:39:09.557 Df HelloLua-mobile[19818:eca6] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x600003008120 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-19 02:39:09.557 Df HelloLua-mobile[19818:eca6] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x600003008120 com.apple.frontboard.systemappservices> sent handshake
+2026-11-19 02:39:09.558 Df HelloLua-mobile[19818:eca6] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x600000206a40>
+2026-11-19 02:39:09.560 Df HelloLua-mobile[19818:ecae] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-19 02:39:09.562 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x12906320> for initial
+2026-11-19 02:39:09.562 Df HelloLua-mobile[19818:ecae] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-19 02:39:09.562 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x12906320> for CADisplay KVO
+2026-11-19 02:39:09.565 Df HelloLua-mobile[19818:eca6] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-19 02:39:09.565 Df HelloLua-mobile[19818:eca6] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-19 02:39:09.571 Df HelloLua-mobile[19818:ecae] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-19 02:39:09.571 Df HelloLua-mobile[19818:eca6] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-19 02:39:09.572 Df HelloLua-mobile[19818:ecae] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-19 02:39:09.572 Df HelloLua-mobile[19818:eca6] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-19 02:39:09.572 Df HelloLua-mobile[19818:ecae] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-19 02:39:09.572 Df HelloLua-mobile[19818:eca6] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-19 02:39:09.572 Df HelloLua-mobile[19818:eca6] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-19 02:39:09.574 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-19 02:39:09.577 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-19 02:39:09.577 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x6000021026c0>
+2026-11-19 02:39:09.577 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x6000021026c0>
+2026-11-19 02:39:09.577 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x600001716140>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 941 (elapsed = 0).
+2026-11-19 02:39:09.578 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 1024 -> 1056; animating application lifecycle event: 1
+2026-11-19 02:39:09.579 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.579 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.580 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.580 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x60000290f950>; with scene: <UIWindowScene: 0x12907750>
+2026-11-19 02:39:09.580 Df HelloLua-mobile[19818:eca6] [com.apple.BacklightServices:scenes] 0x600000c18b10 setDelegate:<0x600000c02250 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.duckyisc00l.sakumai-default
+2026-11-19 02:39:09.581 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.581 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:EventDeferring] [0x6000029015e0] Initialized with scene: <UIWindowScene: 0x12907750>; behavior: <_UIEventDeferringBehavior_iOS: 0x6000002128c0>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-19 02:39:09.582 Df HelloLua-mobile[19818:eca6] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-19 02:39:09.582 Df HelloLua-mobile[19818:eca6] [com.apple.xpc:connection] [0x10f073e0] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-19 02:39:09.584 Df HelloLua-mobile[19818:ecad] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-19 02:39:09.584 Df HelloLua-mobile[19818:eca6] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260f420; process scope; status: target> was:none
+2026-11-19 02:39:09.584 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-19 02:39:09.585 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x12907750; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.sakumai-default
+2026-11-19 02:39:09.585 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:EventDeferring] [0x6000029015e0] Scene target of event deferring environments did update: scene: 0x12907750; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-19 02:39:09.585 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x12907750; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.sakumai-default
+2026-11-19 02:39:09.585 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c152c0: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-19 02:39:09.585 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-19 02:39:09.586 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x12907750; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x12907750: Window scene became target of keyboard environment
+2026-11-19 02:39:09.586 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.587 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.589 F  HelloLua-mobile[19818:eca6] [com.apple.runtime-issues:UIKit App Config] `UIScene` lifecycle will soon be required. Failure to adopt will result in an assert in the future.
+2026-11-19 02:39:09.589 A  HelloLua-mobile[19818:eca6] (libsystem_trace.dylib) Activity for state dumps
+2026-11-19 02:39:09.589 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD)
+2026-11-19 02:39:09.590 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.sakumai-default  persistentID: 64E15D3A-3589-419A-838F-352A088897BD
+2026-11-19 02:39:09.590 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 1056
+2026-11-19 02:39:09.590 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1056 -> 3104; animating application lifecycle event: 1
+2026-11-19 02:39:09.591 Df HelloLua-mobile[19818:eca6] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-19 02:39:09.591 Df HelloLua-mobile[19818:eca6] [com.apple.xpc:connection] [0x1280b860] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-19 02:39:10.110 Df HelloLua-mobile[19818:ecb2] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-11-19 02:39:10.268 Df HelloLua-mobile[19818:ecb2] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x600001716140>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 941 (elapsed = 1), _expireHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-19 02:39:10.268 Df HelloLua-mobile[19818:ecb2] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x6000021026c0> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x600001716140>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 941 (elapsed = 1))
+2026-11-19 02:39:10.322 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:Orientation] <UIWindowScene: 0x12907750> (64E15D3A-3589-419A-838F-352A088897BD) Scene updated orientation preferences: none -> ( Ll Lr )
+2026-11-19 02:39:10.323 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-19 02:39:10.323 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x12907750: Window became key in scene: UIWindow: 0x10f0ba80; contextId: 0x22662136: reason: UIWindowScene: 0x12907750: Window requested to become key in scene: 0x10f0ba80
+2026-11-19 02:39:10.323 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x12907750; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x10f0ba80; reason: UIWindowScene: 0x12907750: Window requested to become key in scene: 0x10f0ba80
+2026-11-19 02:39:10.323 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x10f0ba80; contextId: 0x22662136; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.sakumai-default
+2026-11-19 02:39:10.323 Df HelloLua-mobile[19818:eca6] [com.apple.UIKit:EventDeferring] [0x6000029015e0] Begin local event deferring requested for token: 0x60000260e580; environments: 1; reason: UIWindowScene: 0x12907750: Begin event deferring in keyboardFocus for window: 0x10f0ba80
+2026-11-19 02:39:10.326 Df HelloLua-mobile[19818:ecb2] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-19 02:39:10.336 Df HelloLua-mobile[19818:ecb2] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x60000260f420; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.sakumai-default; status: ancestor> was:target
