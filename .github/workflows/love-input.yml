@@ -1,0 +1,50 @@
+name: love-input
+# LÖVE typing on iPhone: does text reach the game? Builds LÖVE's iOS app for the Simulator and runs a tiny probe game
+# (ci/love/textprobe) three ways: A plain (never asks for the keyboard), B with ci/love/shim.sh (the fix).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/love-input.yml", "ci/love/**", "ci/sim/steps/textprobe-*"]
+permissions:
+  contents: write
+concurrency:
+  group: love-input
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  run:
+    runs-on: macos-15-intel
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: LÖVE 11.5 source and Apple libraries
+        run: |
+          mkdir -p out
+          git clone -q --depth 1 --branch 11.5 https://github.com/love2d/love love 2>&1 | tail -1
+          url=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/love2d/love/releases/tags/11.5 | python3 -c "import json,sys;print([a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if 'apple-libraries' in a['name']][0])")
+          curl -sSL -o apple.zip "$url" && unzip -qo apple.zip -d applelibs
+          src=$(find applelibs -maxdepth 3 -type d -path '*iOS/libraries' | head -1)
+          mkdir -p love/platform/xcode/ios && cp -R "$src" love/platform/xcode/ios/
+          (cd ci/love/textprobe && zip -qr ../../../probe.love .)
+          ci/love/shim.sh probe.love probe-shim.love
+          unzip -l probe-shim.love | tee out/shim-contents.txt
+      - name: A, plain probe (no setTextInput call)
+        continue-on-error: true
+        run: |
+          SIM_PRE_RUN='cp probe.love "$APP/game.love"' ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/A-plain 20 ci/sim/steps/textprobe-nokb.txt
+          grep -E '^(TI|KP):' out/A-plain/sim-console.log out/A-plain/sim-applog.log | tee -a out/events.txt || echo "A: no TI/KP events reached the game" | tee -a out/events.txt
+      - name: B, probe with the keyboard shim
+        continue-on-error: true
+        run: |
+          SIM_PRE_RUN='cp probe-shim.love "$APP/game.love"' ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/B-shim 20 ci/sim/steps/textprobe-kb.txt
+          grep -E '^(TI|KP):' out/B-shim/sim-console.log out/B-shim/sim-applog.log | tee -a out/events.txt || echo "B: no TI/KP events reached the game" | tee -a out/events.txt
+      - name: Publish to branch r-love-input
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp -R out/. /tmp/r/ 2>/dev/null || true
+          find /tmp/r -name '*.mp4*' -delete
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-love-input && git rm -rfq . && rm -rf ci dl work out love applelibs *.zip *.love
+          cp -r /tmp/r/. . && git add -A && git commit -qm "love-input ${{ github.run_number }}" && git push -f origin r-love-input

@@ -1,0 +1,11 @@
+# game turns text input on at a touch: keyboard comes up; hardware-key typing (AXe type) vs on-screen keys (softtype)
+shot 0
+tap 50% 30%
+wait 3
+shot 1-after-tap
+type abc
+wait 3
+shot 2-after-hwtype
+softtype xyz
+wait 3
+shot 3-after-softtype
