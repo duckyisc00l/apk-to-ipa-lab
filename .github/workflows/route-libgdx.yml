@@ -8,6 +8,7 @@ on:
       mode: { default: "build", description: "build, or scout (list libGDX games with APKs in ci/libgdx/candidates.txt)" }
       repo: { default: "Smooth-E/gdxtris" }
       name: { default: "GdxTris" }
+      wait: { default: "40", description: "seconds to watch the app in the Simulator" }
   push:
     branches: [main]
     paths: [".github/workflows/route-libgdx.yml"]
@@ -67,7 +68,7 @@ jobs:
         run: ci/libgdx/build.sh "$APK" "work/$GAME" "$NAME" out
       - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
         continue-on-error: true
-        run: ci/sim/run.sh "out/sim-app/$NAME.app" out/sim 40
+        run: ci/sim/run.sh "out/sim-app/$NAME.app" out/sim "${{ inputs.wait || 40 }}"
       - name: Release the unsigned IPA
         continue-on-error: true
         run: |

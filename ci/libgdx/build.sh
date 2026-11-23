@@ -67,8 +67,19 @@ echo "version: ${VN:-?} (${VC:-?})" | tee -a "$MD"
 python3 "$HERE/launcher.py" $B/apk.jar $B/core.jar "$B/core.jar$CP:$RCP" $B/launcher $LAND $PORT $HOOK 2>&1 | grep -v "^Picked up" | tee -a "$MD"
 [ -f $B/launcher/lab/IOSLauncher.class ] || exit 1
 
+# 5b. Java methods MobiVM's runtime lacks (Locale.forLanguageTag ...): scan every java.*/javax.* call in the game's Java,
+# point the ones lab.Compat has a stand-in for at it (ci/libgdx/compat/), list the rest in compat.md, and write the list of
+# JDK calls into the app (lab-jdkrefs.txt) so the Simulator log says which ones the runtime really lacks ("lab-diag").
+ASMJAR=$(get org/ow2/asm/asm/9.7/asm-9.7.jar)
+mkdir -p $B/compat && javac -nowarn --release 8 -d $B/compat "$HERE/compat/lab/Compat.java" 2>&1 | grep -v "^Picked up" || true
+javac -nowarn -cp "$ASMJAR:$B/compat" -d $B/compat "$HERE/compat/Rewrite.java" 2>&1 | grep -v "^Picked up" || true
+java -cp "$ASMJAR:$B/compat" Rewrite "$RVM/lib/robovm-rt.jar" $B/core.jar "$OUT/compat.md" $B/jdkrefs.txt $B/core-compat.jar 2>&1 | grep -v "^Picked up" | tee -a "$MD"
+head -40 "$OUT/compat.md" | tee -a "$MD"
+mv $B/core-compat.jar $B/core.jar
+
 # 6. App files: the APK's assets/ at the top of the app (where libGDX's Gdx.files.internal looks on iOS)
 cp -R "$G/assets" $B/assets 2>/dev/null || mkdir -p $B/assets
+cp $B/jdkrefs.txt $B/assets/lab-jdkrefs.txt
 ORIENT=""
 $PORT && ORIENT="$ORIENT<string>UIInterfaceOrientationPortrait</string>"
 $LAND && ORIENT="$ORIENT<string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string>"
