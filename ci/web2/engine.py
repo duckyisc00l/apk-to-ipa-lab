@@ -6,6 +6,10 @@ Usage: python3 -I ci/web2/engine.py <project dir>
   only .ogg, convert to .m4a with ffmpeg so music and sounds play.
 - Real iPhones have case-sensitive file names (the simulator and Windows don't): list references in the game's
   data whose case doesn't match the file.
+- Construct 3: on Safari/iOS the audio plugin plays "music" as sound and, each time it creates a music buffer,
+  releases every other music buffer (ReleaseAllMusicBuffers), even ones still loading. A project that keeps its
+  sound effects in the Music folder then fails: "this._audioDomHandler is null" (DecodeAudioData / GetAudioContext)
+  and the game stays on its start screen. scripts/main.js is patched to keep those buffers.
 - nw.js leftovers (package.json with "main", node-only plugins) are listed.
 """
 import json, os, re, subprocess, sys
@@ -120,6 +124,18 @@ elif engine == "GDevelop":
             open(plist, "w").write(t2); out.append(f"FIX: orientation set to the GDevelop project's '{o.group(1)}' (manifest had none)")
     ext_dir = os.path.join(www, "Extensions")
     out.append("Extensions folder: " + (", ".join(sorted(os.listdir(ext_dir))) if os.path.isdir(ext_dir) else "none"))
+
+if engine == "Construct":
+    mj = os.path.join(www, "scripts", "main.js")
+    if os.path.exists(mj):
+        mt = open(mj, errors="ignore").read()
+        pat = re.compile(r"if\((\w+)&&\(this\._playMusicAsSound\|\|this\._hasAnySoftwareDecodedMusic\)\)this\.ReleaseAllMusicBuffers\(\);")
+        mt2, n = pat.subn("/* ios: keep other music buffers (releasing them breaks loads in progress) */", mt)
+        if n:
+            open(mj, "w").write(mt2)
+            out.append(f"FIX: Construct scripts/main.js: music-as-sound no longer releases the other music buffers ({n} place; fixes 'this._audioDomHandler is null' when sounds sit in the Music folder)")
+        else:
+            out.append("Construct: ReleaseAllMusicBuffers call not found in scripts/main.js (other runtime version or already fine)")
 
 # Orientation when the Android manifest leaves it open: a web manifest's "orientation", or a "rotate your device"
 # notice in index.html/CSS (Shadow Runner, Phaser: shown in portrait, so the game never showed in the simulator).
