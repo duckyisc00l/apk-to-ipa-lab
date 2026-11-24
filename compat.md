@@ -1,0 +1,91 @@
+## Java calls MobiVM's runtime lacks (rewritten where lab.Compat has a helper)
+rewritten to helpers: 5 calls, 2 methods
+- fixed  java/util/Locale.forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;  x2
+- fixed  java/util/Locale.toLanguageTag()Ljava/lang/String;  x3
+- NO HELPER  java/io/File.toPath()Ljava/nio/file/Path;  x2
+- NO HELPER  java/nio/channels/DatagramChannel.bind(Ljava/net/SocketAddress;)Ljava/nio/channels/DatagramChannel;  x1
+- NO HELPER  java/nio/channels/DatagramChannel.getLocalAddress()Ljava/net/SocketAddress;  x1
+- NO HELPER  java/nio/channels/DatagramChannel.getRemoteAddress()Ljava/net/SocketAddress;  x1
+- NO HELPER  java/nio/channels/DatagramChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/DatagramChannel;  x1
+- NO HELPER  java/nio/channels/ServerSocketChannel.bind(Ljava/net/SocketAddress;I)Ljava/nio/channels/ServerSocketChannel;  x1
+- NO HELPER  java/nio/channels/ServerSocketChannel.getLocalAddress()Ljava/net/SocketAddress;  x1
+- NO HELPER  java/nio/channels/ServerSocketChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;  x1
+- NO HELPER  java/nio/channels/SocketChannel.getLocalAddress()Ljava/net/SocketAddress;  x1
+- NO HELPER  java/nio/channels/SocketChannel.getRemoteAddress()Ljava/net/SocketAddress;  x1
+- NO HELPER  java/nio/channels/SocketChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/SocketChannel;  x1
+- NO HELPER  java/nio/channels/SocketChannel.shutdownInput()Ljava/nio/channels/SocketChannel;  x1
+- NO HELPER  java/nio/channels/SocketChannel.shutdownOutput()Ljava/nio/channels/SocketChannel;  x1
+- NO HELPER  java/security/SecureRandom.getInstanceStrong()Ljava/security/SecureRandom;  x1
+- NO HELPER  java/util/Locale.getDefault(Ljava/util/Locale$Category;)Ljava/util/Locale;  x1
+- NO HELPER  java/util/Locale.getScript()Ljava/lang/String;  x3
+- NO HELPER  java/util/Locale.getUnicodeLocaleType(Ljava/lang/String;)Ljava/lang/String;  x1
+- NO HELPER  java/util/regex/Matcher.end(Ljava/lang/String;)I  x1
+- NO HELPER  java/util/regex/Matcher.group(Ljava/lang/String;)Ljava/lang/String;  x1
+- NO HELPER  java/util/regex/Matcher.start(Ljava/lang/String;)I  x1
+- class not in rt  java/lang/ClassValue  x3
+- class not in rt  java/lang/instrument/Instrumentation  x1
+- class not in rt  java/lang/management/GarbageCollectorMXBean  x1
+- class not in rt  java/lang/management/ManagementFactory  x2
+- class not in rt  java/lang/management/RuntimeMXBean  x1
+- class not in rt  java/net/StandardProtocolFamily  x1
+- class not in rt  java/nio/channels/SeekableByteChannel  x2
+- class not in rt  java/nio/file/DirectoryStream  x1
+- class not in rt  java/nio/file/FileSystem  x2
+- class not in rt  java/nio/file/FileSystemException  x4
+- class not in rt  java/nio/file/FileSystemLoopException  x1
+- class not in rt  java/nio/file/Files  x52
+- class not in rt  java/nio/file/InvalidPathException  x1
+- class not in rt  java/nio/file/NoSuchFileException  x1
+- class not in rt  java/nio/file/Path  x17
+- class not in rt  java/nio/file/Paths  x3
+- class not in rt  java/nio/file/SecureDirectoryStream  x5
+- class not in rt  java/nio/file/SimpleFileVisitor  x8
+- class not in rt  java/nio/file/attribute/BasicFileAttributeView  x1
+- class not in rt  java/nio/file/attribute/BasicFileAttributes  x2
+- class not in rt  java/nio/file/attribute/DosFileAttributes  x1
+- class not in rt  java/time/Duration  x3
+- class not in rt  java/util/Optional  x4
+- class not in rt  java/util/OptionalDouble  x4
+- class not in rt  java/util/OptionalInt  x4
+- class not in rt  java/util/OptionalLong  x4
+- class not in rt  java/util/PrimitiveIterator$OfDouble  x6
+- class not in rt  java/util/PrimitiveIterator$OfInt  x6
+- class not in rt  java/util/PrimitiveIterator$OfLong  x6
+- class not in rt  java/util/Spliterator  x30
+- class not in rt  java/util/Spliterator$OfDouble  x9
+- class not in rt  java/util/Spliterator$OfInt  x9
+- class not in rt  java/util/Spliterator$OfLong  x9
+- class not in rt  java/util/Spliterator$OfPrimitive  x4
+- class not in rt  java/util/concurrent/CompletableFuture  x7
+- class not in rt  java/util/concurrent/CompletionException  x1
+- class not in rt  java/util/concurrent/CompletionStage  x2
+- class not in rt  java/util/function/BiConsumer  x12
+- class not in rt  java/util/function/BiFunction  x19
+- class not in rt  java/util/function/BinaryOperator  x7
+- class not in rt  java/util/function/BooleanSupplier  x1
+- class not in rt  java/util/function/Consumer  x55
+- class not in rt  java/util/function/DoubleBinaryOperator  x2
+- class not in rt  java/util/function/DoubleConsumer  x17
+- class not in rt  java/util/function/DoubleFunction  x3
+- class not in rt  java/util/function/Function  x21
+- class not in rt  java/util/function/IntBinaryOperator  x2
+- class not in rt  java/util/function/IntConsumer  x17
+- class not in rt  java/util/function/IntFunction  x12
+- class not in rt  java/util/function/LongBinaryOperator  x2
+- class not in rt  java/util/function/LongConsumer  x18
+- class not in rt  java/util/function/LongFunction  x4
+- class not in rt  java/util/function/ObjDoubleConsumer  x1
+- class not in rt  java/util/function/ObjIntConsumer  x1
+- class not in rt  java/util/function/ObjLongConsumer  x1
+- class not in rt  java/util/function/Predicate  x17
+- class not in rt  java/util/function/Supplier  x22
+- class not in rt  java/util/function/ToDoubleFunction  x3
+- class not in rt  java/util/function/ToIntFunction  x3
+- class not in rt  java/util/function/ToLongFunction  x3
+- class not in rt  java/util/function/UnaryOperator  x1
+- class not in rt  java/util/stream/BaseStream  x28
+- class not in rt  java/util/stream/Collector  x5
+- class not in rt  java/util/stream/DoubleStream  x39
+- class not in rt  java/util/stream/IntStream  x41
+- class not in rt  java/util/stream/LongStream  x40
+- class not in rt  java/util/stream/Stream  x35

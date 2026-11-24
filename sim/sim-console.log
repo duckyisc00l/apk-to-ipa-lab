@@ -1,0 +1,456 @@
+2026-11-24 00:55:40.909 Unciv[19672:59768] [debug] IOSApplication: iOS version: 26.2
+2026-11-24 00:55:40.910 Unciv[19672:59768] [debug] IOSApplication: Running in 64-bit mode
+2026-11-24 00:55:40.927 Unciv[19672:59768] [debug] IOSApplication: Pixels per point: 2.0
+2026-11-24 00:55:40.984 Unciv[19672:59768] [debug] IOSApplication: Status bar is not visible
+2026-11-24 00:55:40.985 Unciv[19672:59768] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 00:55:41.113 Unciv[19672:59768] [debug] IOSGraphics: Display: ppi=264, density=1.65
+2026-11-24 00:55:41.118 Unciv[19672:59768] lab: iPhone Simulator, sound off
+2026-11-24 00:55:41.152 Unciv[19672:59768] [debug] IOSApplication: created
+2026-11-24 00:55:41.174 Unciv[19672:59845] lab-diag: MISSING java/io/File.toPath()Ljava/nio/file/Path;
+2026-11-24 00:55:41.183 Unciv[19672:59845] lab-diag: MISSING CLASS java/lang/ClassValue
+2026-11-24 00:55:41.194 Unciv[19672:59845] lab-diag: MISSING CLASS java/lang/instrument/Instrumentation
+2026-11-24 00:55:41.194 Unciv[19672:59768] 2026-11-24T00:55:41.188Z [main] [UncivFiles] Creating UncivFiles, localStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Library/local/, externalStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Documents/
+2026-11-24 00:55:41.195 Unciv[19672:59845] lab-diag: MISSING CLASS java/lang/management/GarbageCollectorMXBean
+2026-11-24 00:55:41.195 Unciv[19672:59845] lab-diag: MISSING CLASS java/lang/management/ManagementFactory
+2026-11-24 00:55:41.195 Unciv[19672:59845] lab-diag: MISSING CLASS java/lang/management/ManagementFactory
+2026-11-24 00:55:41.195 Unciv[19672:59845] lab-diag: MISSING CLASS java/lang/management/RuntimeMXBean
+2026-11-24 00:55:41.207 Unciv[19672:59845] lab-diag: MISSING CLASS java/net/StandardProtocolFamily
+2026-11-24 00:55:41.208 Unciv[19672:59768] lab: PlatformDisplay.setScreenMode has no iOS version, returned an empty value
+2026-11-24 00:55:41.218 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/DatagramChannel.bind(Ljava/net/SocketAddress;)Ljava/nio/channels/DatagramChannel;
+2026-11-24 00:55:41.218 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/DatagramChannel.getLocalAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.219 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/DatagramChannel.getRemoteAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.219 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/DatagramChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/DatagramChannel;
+2026-11-24 00:55:41.219 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/channels/SeekableByteChannel
+2026-11-24 00:55:41.220 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/channels/SeekableByteChannel
+2026-11-24 00:55:41.221 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/ServerSocketChannel.bind(Ljava/net/SocketAddress;I)Ljava/nio/channels/ServerSocketChannel;
+2026-11-24 00:55:41.221 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/ServerSocketChannel.getLocalAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.221 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/ServerSocketChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;
+2026-11-24 00:55:41.222 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/SocketChannel.getLocalAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.222 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/SocketChannel.getRemoteAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.223 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/SocketChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/SocketChannel;
+2026-11-24 00:55:41.223 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/SocketChannel.shutdownInput()Ljava/nio/channels/SocketChannel;
+2026-11-24 00:55:41.223 Unciv[19672:59845] lab-diag: MISSING java/nio/channels/SocketChannel.shutdownOutput()Ljava/nio/channels/SocketChannel;
+2026-11-24 00:55:41.226 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/DirectoryStream
+2026-11-24 00:55:41.226 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/FileSystem
+2026-11-24 00:55:41.226 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/FileSystem
+2026-11-24 00:55:41.227 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/FileSystemException
+2026-11-24 00:55:41.227 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/FileSystemException
+2026-11-24 00:55:41.227 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/FileSystemException
+2026-11-24 00:55:41.227 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/FileSystemLoopException
+2026-11-24 00:55:41.228 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.228 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.228 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.230 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.230 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.230 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.234 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.234 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.234 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.235 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.235 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.235 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.237 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.237 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.237 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.241 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/InvalidPathException
+2026-11-24 00:55:41.241 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/NoSuchFileException
+2026-11-24 00:55:41.241 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.245 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.245 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.246 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.246 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Paths
+2026-11-24 00:55:41.247 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/Paths
+2026-11-24 00:55:41.247 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.247 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.248 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.248 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.249 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.249 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.249 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.251 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/attribute/BasicFileAttributeView
+2026-11-24 00:55:41.251 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/attribute/BasicFileAttributes
+2026-11-24 00:55:41.251 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/attribute/BasicFileAttributes
+2026-11-24 00:55:41.251 Unciv[19672:59845] lab-diag: MISSING CLASS java/nio/file/attribute/DosFileAttributes
+2026-11-24 00:55:41.253 Unciv[19672:59845] lab-diag: MISSING java/security/SecureRandom.getInstanceStrong()Ljava/security/SecureRandom;
+2026-11-24 00:55:41.258 Unciv[19672:59845] lab-diag: MISSING CLASS java/time/Duration
+2026-11-24 00:55:41.258 Unciv[19672:59845] lab-diag: MISSING CLASS java/time/Duration
+2026-11-24 00:55:41.259 Unciv[19672:59845] lab-diag: MISSING CLASS java/time/Duration
+2026-11-24 00:55:41.264 Unciv[19672:59768] 2026-11-24T00:55:41.264Z [main] [UncivGame] Setting new screen: com.unciv.ui.screens.GameStartScreen@12736500, screenStack: [com.unciv.ui.screens.GameStartScreen@12736500]
+2026-11-24 00:55:41.275 Unciv[19672:59845] lab-diag: MISSING java/util/Locale.forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;
+2026-11-24 00:55:41.275 Unciv[19672:59845] lab-diag: MISSING java/util/Locale.getDefault(Ljava/util/Locale$Category;)Ljava/util/Locale;
+2026-11-24 00:55:41.276 Unciv[19672:59845] lab-diag: MISSING java/util/Locale.getScript()Ljava/lang/String;
+2026-11-24 00:55:41.276 Unciv[19672:59845] lab-diag: MISSING java/util/Locale.getUnicodeLocaleType(Ljava/lang/String;)Ljava/lang/String;
+2026-11-24 00:55:41.276 Unciv[19672:59845] lab-diag: MISSING java/util/Locale.toLanguageTag()Ljava/lang/String;
+2026-11-24 00:55:41.277 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.277 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.278 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.278 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.278 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.278 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.279 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.279 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.279 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.281 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.281 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.281 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.282 Unciv[19672:59866] SLF4J(W): No SLF4J providers were found.
+2026-11-24 00:55:41.282 Unciv[19672:59866] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+2026-11-24 00:55:41.282 Unciv[19672:59845] SLF4J(W): No SLF4J providers were found.lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.282 Unciv[19672:59866] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+2026-11-24 00:55:41.282 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.283 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.283 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.283 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.284 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.284 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.284 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.284 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.285 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.285 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.285 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.286 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.286 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.286 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.287 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.287 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.287 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.292 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.298 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.298 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.298 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.299 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.299 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.299 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.299 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.301 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.301 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.301 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.302 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.302 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.302 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.304 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.304 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.304 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.315 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.315 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.315 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.316 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.316 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.316 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.317 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.317 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletionException
+2026-11-24 00:55:41.317 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletionStage
+2026-11-24 00:55:41.317 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CompletionStage
+2026-11-24 00:55:41.322 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/concurrent/CopyOnWriteArraySet
+2026-11-24 00:55:41.334 Unciv[19672:59845] lab-diag: MISSING java/util/regex/Matcher.end(Ljava/lang/String;)I
+2026-11-24 00:55:41.335 Unciv[19672:59845] lab-diag: MISSING java/util/regex/Matcher.group(Ljava/lang/String;)Ljava/lang/String;
+2026-11-24 00:55:41.335 Unciv[19672:59845] lab-diag: MISSING java/util/regex/Matcher.start(Ljava/lang/String;)I
+2026-11-24 00:55:41.336 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.336 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.336 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.336 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.337 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.337 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.337 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.338 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.338 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.339 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.339 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.339 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.340 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.340 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.340 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.342 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.390 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.451 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.468 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.468 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.469 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.469 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.469 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.470 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.470 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.472 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.472 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.474 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.476 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.476 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.478 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.478 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.478 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.478 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.479 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.479 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.480 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.480 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.480 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.482 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.482 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.482 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.483 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.483 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.486 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.486 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.487 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.487 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.487 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.488 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.489 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.489 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.489 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.490 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.490 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.491 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.491 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.492 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.492 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.492 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.493 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.493 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.493 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.495 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.495 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.495 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.496 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.496 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.496 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.497 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.497 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.503 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.504 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.504 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.505 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.505 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.510 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.510 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.511 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.511 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.511 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.512 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.512 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.513 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.513 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.513 Unciv[19672:59845] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.517 Unciv[19672:59845] lab-diag: checked 2369 JDK methods the game calls, 376 missing at run time
+2026-11-24 00:55:41.596 Unciv[19672:59768] [debug] IOSApplication: Status bar is not visible
+2026-11-24 00:55:41.596 Unciv[19672:59768] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 00:55:41.642 Unciv[19672:59768] [debug] IOSApplication: resumed
+2026-11-24 00:55:41.642 Unciv[19672:59768] lab: IOSAudio.didBecomeActive has no iOS version, returned an empty value
+2026-11-24 00:55:41.770 Unciv[19672:59866] 2026-11-24T00:55:41.770Z [threadpool-daemon-1] [UncivFiles] Getting saves from folder MultiplayerGames, externalStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Documents/
+2026-11-24 00:55:41.771 Unciv[19672:59866] 2026-11-24T00:55:41.770Z [threadpool-daemon-1] [UncivFiles] Local files: [], external files: []
+2026-11-24 00:55:41.842 Unciv[19672:59768] 2026-11-24T00:55:41.841Z [main] [ImageGetter] Loading AbsoluteUnits = AbsoluteUnits.atlas
+2026-11-24 00:55:41.954 Unciv[19672:59768] 2026-11-24T00:55:41.954Z [main] [ImageGetter] Loading ConstructionIcons = ConstructionIcons.atlas
+2026-11-24 00:55:42.083 Unciv[19672:59768] 2026-11-24T00:55:42.083Z [main] [ImageGetter] Loading EasterEggs = EasterEggs.atlas
+2026-11-24 00:55:42.095 Unciv[19672:59768] 2026-11-24T00:55:42.095Z [main] [ImageGetter] Loading Flags = Flags.atlas
+2026-11-24 00:55:42.224 Unciv[19672:59768] 2026-11-24T00:55:42.224Z [main] [ImageGetter] Loading Icons = Icons.atlas
+2026-11-24 00:55:42.320 Unciv[19672:59768] 2026-11-24T00:55:42.320Z [main] [ImageGetter] Loading NationIcons = NationIcons.atlas
+2026-11-24 00:55:42.412 Unciv[19672:59768] 2026-11-24T00:55:42.412Z [main] [ImageGetter] Loading PolicyIcons = PolicyIcons.atlas
+2026-11-24 00:55:42.428 Unciv[19672:59768] 2026-11-24T00:55:42.428Z [main] [ImageGetter] Loading ReligionIcons = ReligionIcons.atlas
+2026-11-24 00:55:42.441 Unciv[19672:59768] 2026-11-24T00:55:42.441Z [main] [ImageGetter] Loading Skin = Skin.atlas
+2026-11-24 00:55:42.444 Unciv[19672:59768] 2026-11-24T00:55:42.444Z [main] [ImageGetter] Loading Tech = Tech.atlas
+2026-11-24 00:55:42.511 Unciv[19672:59768] 2026-11-24T00:55:42.511Z [main] [ImageGetter] Loading Tilesets = Tilesets.atlas
+2026-11-24 00:55:42.662 Unciv[19672:59768] 2026-11-24T00:55:42.662Z [main] [ImageGetter] Loading UnitPromotionIcons = UnitPromotionIcons.atlas
+2026-11-24 00:55:42.886 Unciv[19672:59866] Loaded 2 rulesets in 144ms
+2026-11-24 00:55:43.690 Unciv[19672:59768] 2026-11-24T00:55:43.690Z [main] [UncivGame] Setting new screen: com.unciv.ui.screens.LanguagePickerScreen@275e2d80, screenStack: [com.unciv.ui.screens.LanguagePickerScreen@275e2d80]
+2026-11-24 00:55:50.488 Unciv[19672:59866] 2026-11-24T00:55:50.487Z [threadpool-daemon-1] [UncivGame$create] Couldn't connect to server: CertPathValidator PKIX implementation not found
+2026-11-24 00:58:49.235 Unciv[19672:59768] void * _Nullable NSMapGet(NSMapTable * _Nonnull, const void * _Nullable): map table argument is NULL
+2026-11-24 00:58:58.153 Unciv[19672:59768] 2026-11-24T00:58:58.153Z [main] [DiacriticSupport$Companion] Length 2 - example हि
+2026-11-24 00:58:58.154 Unciv[19672:59768] 2026-11-24T00:58:58.154Z [main] [DiacriticSupport$Companion] Length 3 - example বাং
+2026-11-24 00:58:58.188 Unciv[19672:59768] 2026-11-24T00:58:58.188Z [main] [SoundPlayer] Sound cache cleared
+2026-11-24 00:58:58.200 Unciv[19672:59866] 2026-11-24T00:58:58.200Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=click)
+2026-11-24 00:58:58.201 Unciv[19672:59866] 2026-11-24T00:58:58.201Z [threadpool-daemon-1] [SoundPlayer] Sound click loaded from sounds/click.mp3
+2026-11-24 00:58:58.202 Unciv[19672:59866] lab: IOSAudio.newSound has no iOS version, returned an empty value
+2026-11-24 00:58:58.213 Unciv[19672:59866] 2026-11-24T00:58:58.213Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=whoosh)
+2026-11-24 00:58:58.213 Unciv[19672:59866] 2026-11-24T00:58:58.213Z [threadpool-daemon-1] [SoundPlayer] Sound whoosh loaded from sounds/whoosh.mp3
+2026-11-24 00:58:58.243 Unciv[19672:59866] 2026-11-24T00:58:58.243Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=construction)
+2026-11-24 00:58:58.244 Unciv[19672:59866] 2026-11-24T00:58:58.244Z [threadpool-daemon-1] [SoundPlayer] Sound construction loaded from sounds/construction.mp3
+2026-11-24 00:58:58.255 Unciv[19672:59866] 2026-11-24T00:58:58.255Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=promote)
+2026-11-24 00:58:58.256 Unciv[19672:59866] 2026-11-24T00:58:58.256Z [threadpool-daemon-1] [SoundPlayer] Sound promote loaded from sounds/promote.mp3
+2026-11-24 00:58:58.268 Unciv[19672:59866] 2026-11-24T00:58:58.268Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=upgrade)
+2026-11-24 00:58:58.269 Unciv[19672:59866] 2026-11-24T00:58:58.269Z [threadpool-daemon-1] [SoundPlayer] Sound upgrade loaded from sounds/upgrade.mp3
+2026-11-24 00:58:58.281 Unciv[19672:59866] 2026-11-24T00:58:58.280Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=coin)
+2026-11-24 00:58:58.281 Unciv[19672:59866] 2026-11-24T00:58:58.281Z [threadpool-daemon-1] [SoundPlayer] Sound coin loaded from sounds/coin.mp3
+2026-11-24 00:58:58.292 Unciv[19672:59866] 2026-11-24T00:58:58.292Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=chimes)
+2026-11-24 00:58:58.292 Unciv[19672:59866] 2026-11-24T00:58:58.292Z [threadpool-daemon-1] [SoundPlayer] Sound chimes loaded from sounds/chimes.mp3
+2026-11-24 00:58:58.303 Unciv[19672:59866] 2026-11-24T00:58:58.303Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=choir)
+2026-11-24 00:58:58.304 Unciv[19672:59866] 2026-11-24T00:58:58.304Z [threadpool-daemon-1] [SoundPlayer] Sound choir loaded from sounds/choir.mp3
+2026-11-24 00:58:58.325 Unciv[19672:59768] 2026-11-24T00:58:58.325Z [main] [UncivFiles] Getting save Autosave from folder SaveFiles, preferExternal: false
+2026-11-24 00:58:58.326 Unciv[19672:59768] 2026-11-24T00:58:58.326Z [main] [UncivFiles] Save found: SaveFiles/Autosave
+2026-11-24 00:58:58.344 Unciv[19672:59866] 2026-11-24T00:58:58.344Z [threadpool-daemon-1] [MapElevationGenerator] Mountain-like generation
+2026-11-24 00:58:58.347 Unciv[19672:59866] 2026-11-24T00:58:58.347Z [threadpool-daemon-1] [MapElevationGenerator] Hill-like generation
+2026-11-24 00:58:58.365 Unciv[19672:59768] 2026-11-24T00:58:58.365Z [main] [UncivGame] Setting new screen: com.unciv.ui.screens.mainmenuscreen.MainMenuScreen@19a2f150, screenStack: [com.unciv.ui.screens.mainmenuscreen.MainMenuScreen@19a2f150]
+2026-11-24 00:58:58.370 Unciv[19672:59866] 2026-11-24T00:58:58.370Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Rock of Gibraltar
+2026-11-24 00:58:58.384 Unciv[19672:59866] 2026-11-24T00:58:58.383Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Mount Fuji
+2026-11-24 00:58:58.384 Unciv[19672:59866] 2026-11-24T00:58:58.384Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Barringer Crater
+2026-11-24 00:58:58.384 Unciv[19672:59866] 2026-11-24T00:58:58.384Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Great Barrier Reef
+2026-11-24 00:58:58.385 Unciv[19672:59866] 2026-11-24T00:58:58.385Z [threadpool-daemon-1] [NaturalWonderGenerator] Natural Wonder Krakatoa @HexCoord(x=-3, y=-8)
+2026-11-24 00:58:58.385 Unciv[19672:59866] 2026-11-24T00:58:58.385Z [threadpool-daemon-1] [NaturalWonderGenerator] Natural Wonders for this game: [Krakatoa]
+2026-11-24 00:58:58.424 Unciv[19672:59866] 2026-11-24T00:58:58.423Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 3 < initial 4
+2026-11-24 00:58:58.441 Unciv[19672:59866] 2026-11-24T00:58:58.441Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 3 < initial 4
+2026-11-24 00:58:58.445 Unciv[19672:59866] 2026-11-24T00:58:58.444Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 7 < initial 9
+2026-11-24 00:58:59.014 Unciv[19672:59768] lab: Sound.play has no iOS version, returned an empty value
+2026-11-24 01:00:41.909 Unciv[19672:59866] 2026-11-24T01:00:41.909Z [threadpool-daemon-1] [UncivFiles] Getting saves from folder MultiplayerGames, externalStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Documents/
+2026-11-24 01:00:41.911 Unciv[19672:59866] 2026-11-24T01:00:41.911Z [threadpool-daemon-1] [UncivFiles] Local files: [], external files: []
+2026-11-24 01:01:49.568 Unciv[19672:59866] 2026-11-24T01:01:49.568Z [threadpool-daemon-1] [MapElevationGenerator] Mountain-like generation
+2026-11-24 01:01:49.571 Unciv[19672:59866] 2026-11-24T01:01:49.571Z [threadpool-daemon-1] [MapElevationGenerator] Hill-like generation
+2026-11-24 01:01:49.599 Unciv[19672:59866] 2026-11-24T01:01:49.599Z [threadpool-daemon-1] [NaturalWonderGenerator] Natural Wonder Grand Mesa @HexCoord(x=2, y=0)
+2026-11-24 01:01:49.599 Unciv[19672:59866] 2026-11-24T01:01:49.599Z [threadpool-daemon-1] [NaturalWonderGenerator] Natural Wonders for this game: [Grand Mesa]
+2026-11-24 01:01:49.603 Unciv[19672:59866] 2026-11-24T01:01:49.603Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 3 < initial 4
+2026-11-24 01:01:49.608 Unciv[19672:59866] 2026-11-24T01:01:49.608Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 8 < initial 15

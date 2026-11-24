@@ -1,0 +1,638 @@
+2026-11-24 00:55:40.562 Df Unciv[19672:e978] [com.apple.xpc:connection] [0x10ec04f80] activating connection: mach=true listener=false peer=false name=com.apple.cfprefsd.daemon
+2026-11-24 00:55:40.826 A  Unciv[19672:e9a2] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-11-24 00:55:40.828 Df Unciv[19672:e978] (libMobileGestalt.dylib) No persisted cache on this platform.
+2026-11-24 00:55:40.832 Df Unciv[19672:e9a3] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-24 00:55:40.832 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Creating new assertion because there is no existing background assertion.
+2026-11-24 00:55:40.832 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Creating new background assertion
+2026-11-24 00:55:40.833 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Created new background assertion <BKSProcessAssertion: 0x60000210e5d0>
+2026-11-24 00:55:40.833 Df Unciv[19672:e992] [com.apple.runningboard:connection] Initializing connection
+2026-11-24 00:55:40.833 Df Unciv[19672:e9a3] [com.apple.xpc:connection] [0x10ec06470] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-24 00:55:40.833 Df Unciv[19672:e992] [com.apple.runningboard:process] Removing all cached process handles
+2026-11-24 00:55:40.833 Df Unciv[19672:e9a2] [com.apple.runningboard:connection] Sending handshake request attempt #1 to server
+2026-11-24 00:55:40.835 Df Unciv[19672:e992] [com.apple.runningboard:connection] Creating connection to com.apple.runningboard
+2026-11-24 00:55:40.839 Df Unciv[19672:e992] [com.apple.xpc:connection] [0x10ee04940] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-11-24 00:55:40.841 A  Unciv[19672:e9a4] (RunningBoardServices) didChangeInheritances
+2026-11-24 00:55:40.842 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason added: 10; deactivation reasons: 0 -> 1024; animating application lifecycle event: 0
+2026-11-24 00:55:40.842 Df Unciv[19672:e9a2] [com.apple.runningboard:connection] Handshake succeeded
+2026-11-24 00:55:40.842 Df Unciv[19672:e9a2] [com.apple.runningboard:connection] Identity resolved as app<com.duckyisc00l.unciv((null))>
+2026-11-24 00:55:40.842 Df Unciv[19672:e978] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.open
+2026-11-24 00:55:40.843 Df Unciv[19672:e978] [com.apple.BoardServices:Injection] activating monitor for service com.apple.frontboard.workspace-service
+2026-11-24 00:55:40.843 Df Unciv[19672:e978] [com.apple.FrontBoard:Common] FBSWorkspace registering source: com.apple.frontboard.systemappservices
+2026-11-24 00:55:40.844 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x60000210e5d0>
+2026-11-24 00:55:40.844 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x60000170d980>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 1692 (elapsed = 0).
+2026-11-24 00:55:40.845 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UIApplicationSceneKeyboardSettings on FBSSceneSettings
+2026-11-24 00:55:40.846 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneOcclusionSettings> on FBSSceneSettings
+2026-11-24 00:55:40.846 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneInterfaceProtectionSettings> on FBSSceneSettings
+2026-11-24 00:55:40.847 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferencesHostSettingsExtension on FBSSceneSettings
+2026-11-24 00:55:40.847 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneSafeAreaSettingsExtension on FBSSceneSettings
+2026-11-24 00:55:40.847 Df Unciv[19672:e978] [com.apple.FrontBoard:Common] FBSWorkspace connected to endpoint : <BSServiceConnectionEndpoint: 0x60000020b700; target: com.apple.frontboard.systemappservices; service: com.apple.frontboard.workspace-service>
+2026-11-24 00:55:40.848 Df Unciv[19672:e978] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030001b0 com.apple.frontboard.systemappservices> attempting immediate handshake from activate
+2026-11-24 00:55:40.848 Df Unciv[19672:e978] [com.apple.FrontBoard:Common] <FBSWorkspaceScenesClient:0x6000030001b0 com.apple.frontboard.systemappservices> sent handshake
+2026-11-24 00:55:40.848 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneLayoutPreferenceClientSettingsExtension on FBSSceneClientSettings
+2026-11-24 00:55:40.848 Df Unciv[19672:e978] [com.apple.runningboard:general] Added observer for process assertions expiration warning: <_RBSExpirationWarningClient: 0x600000201d00>
+2026-11-24 00:55:40.848 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIHomeAffordanceHostSceneSettings> on FBSSceneSettings
+2026-11-24 00:55:40.849 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISystemShellSceneHostingEnvironmentSettings on FBSSceneSettings
+2026-11-24 00:55:40.849 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneRenderingEnvironmentSettings on FBSSceneSettings
+2026-11-24 00:55:40.850 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneRenderingEnvironmentClientSettings> on FBSSceneClientSettings
+2026-11-24 00:55:40.851 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneTransitioningHostSettings> on FBSSceneSettings
+2026-11-24 00:55:40.851 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneFocusSystemSettings> on FBSSceneSettings
+2026-11-24 00:55:40.851 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationSettingsExtension on FBSSceneSettings
+2026-11-24 00:55:40.852 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneOrientationClientSettingsExtension on FBSSceneClientSettings
+2026-11-24 00:55:40.852 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneWindowingControlClientSettings on FBSSceneClientSettings
+2026-11-24 00:55:40.852 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingContentSizePreferenceClientSettings> on FBSSceneClientSettings
+2026-11-24 00:55:40.853 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension _UISceneHostingTraitCollectionPropagationSettings on FBSSceneSettings
+2026-11-24 00:55:40.854 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationSettings> on FBSSceneSettings
+2026-11-24 00:55:40.855 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingSheetPresentationClientSettings> on FBSSceneClientSettings
+2026-11-24 00:55:40.855 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingEventDeferringSettings> on FBSSceneSettings
+2026-11-24 00:55:40.856 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneSettings
+2026-11-24 00:55:40.856 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <UIKit__UITypedKeyValueSceneSettings> on FBSSceneClientSettings
+2026-11-24 00:55:40.856 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneHostingViewControllerPreferencePropagationClientSettings> on FBSSceneClientSettings
+2026-11-24 00:55:40.857 Df Unciv[19672:e992] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneZoomTransitionSettings> on FBSSceneSettings
+2026-11-24 00:55:40.857 Df Unciv[19672:e9a2] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneSettingsCore on FBSSceneSettings
+2026-11-24 00:55:40.859 Df Unciv[19672:e9a2] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneClientSettingsCore on FBSSceneClientSettings
+2026-11-24 00:55:40.862 Df Unciv[19672:e978] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x10ed07170> for initial
+2026-11-24 00:55:40.862 Df Unciv[19672:e978] [com.apple.UIKit:UIScreen] Evaluated capturing state as 0 on <UIScreen: 0x10ed07170> for CADisplay KVO
+2026-11-24 00:55:40.864 Df Unciv[19672:e978] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 1, category name = (null)
+2026-11-24 00:55:40.865 Df Unciv[19672:e978] [com.apple.Accessibility:AXSupportCommon] Read CategoryName: per-app = 0, category name = (null)
+2026-11-24 00:55:40.870 Df Unciv[19672:e9a2] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneSettings setting counterpart class: UIApplicationSceneSettings
+2026-11-24 00:55:40.879 Df Unciv[19672:e9a2] [com.apple.FrontBoard:SceneExtension] UIMutableApplicationSceneClientSettings setting counterpart class: UIApplicationSceneClientSettings
+2026-11-24 00:55:40.879 Df Unciv[19672:e9a2] [com.apple.FrontBoard:SceneExtension] Realizing settings extension FBSSceneTransitionContextCore on FBSSceneTransitionContext
+2026-11-24 00:55:40.880 Df Unciv[19672:e978] [com.apple.dt.xctest:Default] Registering for test daemon availability notify post.
+2026-11-24 00:55:40.880 Df Unciv[19672:e978] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-24 00:55:40.881 Df Unciv[19672:e978] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-24 00:55:40.881 Df Unciv[19672:e978] [com.apple.dt.xctest:Default] notify_get_state check indicated test daemon not ready.
+2026-11-24 00:55:40.882 Df Unciv[19672:e978] [com.apple.UIKit:UpdateScheduler] Selected display: name=LCD (PurpleMain), id=1
+2026-11-24 00:55:40.886 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Will add backgroundTask with taskName: Persistent SceneSession Map Update, expirationHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-24 00:55:40.886 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Reusing background assertion <BKSProcessAssertion: 0x60000210e5d0>
+2026-11-24 00:55:40.886 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Incrementing reference count for background assertion <BKSProcessAssertion: 0x60000210e5d0>
+2026-11-24 00:55:40.886 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Created background task <_UIBackgroundTaskInfo: 0x60000171e200>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 1692 (elapsed = 0).
+2026-11-24 00:55:40.886 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason added: 5; deactivation reasons: 1024 -> 1056; animating application lifecycle event: 1
+2026-11-24 00:55:40.887 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.887 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 1 -> 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.888 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.888 Df Unciv[19672:e978] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifier: 0x600002910bd0>; with scene: <UIWindowScene: 0x10ee0bf90>
+2026-11-24 00:55:40.888 Df Unciv[19672:e978] [com.apple.BacklightServices:scenes] 0x600000c1d0b0 setDelegate:<0x600000c1d170 _UIBacklightEnvironment> hasDelegate:YES for environment:sceneID:com.duckyisc00l.unciv-default
+2026-11-24 00:55:40.889 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.889 Df Unciv[19672:e978] [com.apple.UIKit:EventDeferring] [0x600002910b60] Initialized with scene: <UIWindowScene: 0x10ee0bf90>; behavior: <_UIEventDeferringBehavior_iOS: 0x600000206d80>; availableForProcess: 1, systemShellManagesKeyboardFocus: 1
+2026-11-24 00:55:40.889 Df Unciv[19672:e978] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-24 00:55:40.889 Df Unciv[19672:e978] [com.apple.xpc:connection] [0x10ea07640] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-11-24 00:55:40.892 Df Unciv[19672:e9a2] [com.apple.BackBoard:EventDelivery] BKSHIDEventObserver - connection activation
+2026-11-24 00:55:40.892 Df Unciv[19672:e978] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x6000026101e0; process scope; status: target> was:none
+2026-11-24 00:55:40.892 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to LastOneWins
+2026-11-24 00:55:40.892 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Scene target of keyboard event deferring environment did change: 1; scene: UIWindowScene: 0x10ee0bf90; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.unciv-default
+2026-11-24 00:55:40.893 Df Unciv[19672:e978] [com.apple.UIKit:EventDeferring] [0x600002910b60] Scene target of event deferring environments did update: scene: 0x10ee0bf90; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-24 00:55:40.893 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10ee0bf90; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.unciv-default
+2026-11-24 00:55:40.893 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Stack[KeyWindow] 0x600000c14a80: Taking no further action for migration from LastOneWins -> SystemShellManaged as there are no scenes
+2026-11-24 00:55:40.893 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Setting default evaluation strategy for UIUserInterfaceIdiomPhone to SystemShellManaged
+2026-11-24 00:55:40.893 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Key window needs update: 0; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10ee0bf90; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x0; reason: UIWindowScene: 0x10ee0bf90: Window scene became target of keyboard environment
+2026-11-24 00:55:40.894 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.895 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.897 F  Unciv[19672:e978] [com.apple.runtime-issues:UIKit App Config] `UIScene` lifecycle will soon be required. Failure to adopt will result in an assert in the future.
+2026-11-24 00:55:40.897 A  Unciv[19672:e978] (libsystem_trace.dylib) Activity for state dumps
+2026-11-24 00:55:40.898 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:40.898 Df Unciv[19672:e978] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.unciv-default  persistentID: CC13879A-9C29-437D-A999-482C61B1AEB9
+2026-11-24 00:55:40.898 Df Unciv[19672:e978] [com.apple.UIKit:Application] Ignoring already applied deactivation reason: 5; deactivation reasons: 1056
+2026-11-24 00:55:40.899 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason added: 11; deactivation reasons: 1056 -> 3104; animating application lifecycle event: 1
+2026-11-24 00:55:40.899 Df Unciv[19672:e978] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-24 00:55:40.899 Df Unciv[19672:e978] [com.apple.xpc:connection] [0x10ee070a0] activating connection: mach=true listener=false peer=false name=com.apple.UIKit.KeyboardManagement.hosted
+2026-11-24 00:55:40.909 Df Unciv[19672:e978] [debug] IOSApplication: iOS version: 26.2
+2026-11-24 00:55:40.910 Df Unciv[19672:e978] [debug] IOSApplication: Running in 64-bit mode
+2026-11-24 00:55:40.927 Df Unciv[19672:e978] [debug] IOSApplication: Pixels per point: 2.0
+2026-11-24 00:55:40.972 Df Unciv[19672:e978] [com.apple.UIKit:Orientation] <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9) Scene updated orientation preferences: none -> ( Pu Ll Lr )
+2026-11-24 00:55:40.972 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Key window API is scene-level: YES
+2026-11-24 00:55:40.973 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] UIWindowScene: 0x10ee0bf90: Window became key in scene: UIWindow: 0x10ea09a80; contextId: 0x3A16A73F: reason: UIWindowScene: 0x10ee0bf90: Window requested to become key in scene: 0x10ea09a80
+2026-11-24 00:55:40.973 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Key window needs update: 1; currentKeyWindowScene: 0x0; evaluatedKeyWindowScene: 0x10ee0bf90; currentApplicationKeyWindow: 0x0; evaluatedApplicationKeyWindow: 0x10ea09a80; reason: UIWindowScene: 0x10ee0bf90: Window requested to become key in scene: 0x10ea09a80
+2026-11-24 00:55:40.973 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Window did become application key: UIWindow: 0x10ea09a80; contextId: 0x3A16A73F; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.unciv-default
+2026-11-24 00:55:40.973 Df Unciv[19672:e978] [com.apple.UIKit:EventDeferring] [0x600002910b60] Begin local event deferring requested for token: 0x6000026110e0; environments: 1; reason: UIWindowScene: 0x10ee0bf90: Begin event deferring in keyboardFocus for window: 0x10ea09a80
+2026-11-24 00:55:40.974 Df Unciv[19672:e9a7] [com.apple.BackBoard:EventDelivery] BKSHIDEventDeliveryManager - connection activation
+2026-11-24 00:55:40.977 Df Unciv[19672:e9a7] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x6000026101e0; token: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.unciv-default; status: ancestor> was:target
+2026-11-24 00:55:40.984 Df Unciv[19672:e978] [debug] IOSApplication: Status bar is not visible
+2026-11-24 00:55:40.985 Df Unciv[19672:e978] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 00:55:41.113 Df Unciv[19672:e978] [debug] IOSGraphics: Display: ppi=264, density=1.65
+2026-11-24 00:55:41.118 Df Unciv[19672:e978] lab: iPhone Simulator, sound off
+2026-11-24 00:55:41.152 Df Unciv[19672:e978] [debug] IOSApplication: created
+2026-11-24 00:55:41.173 Df Unciv[19672:e9c5] lab-diag: MISSING java/io/File.toPath()Ljava/nio/file/Path;
+2026-11-24 00:55:41.183 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/lang/ClassValue
+2026-11-24 00:55:41.194 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/lang/instrument/Instrumentation
+2026-11-24 00:55:41.194 Df Unciv[19672:e978] 2026-11-24T00:55:41.188Z [main] [UncivFiles] Creating UncivFiles, localStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Library/local/, externalStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Documents/
+2026-11-24 00:55:41.195 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/lang/management/GarbageCollectorMXBean
+2026-11-24 00:55:41.195 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/lang/management/ManagementFactory
+2026-11-24 00:55:41.195 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/lang/management/ManagementFactory
+2026-11-24 00:55:41.195 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/lang/management/RuntimeMXBean
+2026-11-24 00:55:41.207 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/net/StandardProtocolFamily
+2026-11-24 00:55:41.208 Df Unciv[19672:e978] lab: PlatformDisplay.setScreenMode has no iOS version, returned an empty value
+2026-11-24 00:55:41.218 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/DatagramChannel.bind(Ljava/net/SocketAddress;)Ljava/nio/channels/DatagramChannel;
+2026-11-24 00:55:41.218 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/DatagramChannel.getLocalAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.219 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/DatagramChannel.getRemoteAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.219 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/DatagramChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/DatagramChannel;
+2026-11-24 00:55:41.219 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/channels/SeekableByteChannel
+2026-11-24 00:55:41.220 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/channels/SeekableByteChannel
+2026-11-24 00:55:41.220 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/ServerSocketChannel.bind(Ljava/net/SocketAddress;I)Ljava/nio/channels/ServerSocketChannel;
+2026-11-24 00:55:41.221 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/ServerSocketChannel.getLocalAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.221 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/ServerSocketChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;
+2026-11-24 00:55:41.222 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/SocketChannel.getLocalAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.222 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/SocketChannel.getRemoteAddress()Ljava/net/SocketAddress;
+2026-11-24 00:55:41.223 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/SocketChannel.setOption(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/SocketChannel;
+2026-11-24 00:55:41.223 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/SocketChannel.shutdownInput()Ljava/nio/channels/SocketChannel;
+2026-11-24 00:55:41.223 Df Unciv[19672:e9c5] lab-diag: MISSING java/nio/channels/SocketChannel.shutdownOutput()Ljava/nio/channels/SocketChannel;
+2026-11-24 00:55:41.226 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/DirectoryStream
+2026-11-24 00:55:41.226 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/FileSystem
+2026-11-24 00:55:41.226 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/FileSystem
+2026-11-24 00:55:41.227 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/FileSystemException
+2026-11-24 00:55:41.227 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/FileSystemException
+2026-11-24 00:55:41.227 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/FileSystemException
+2026-11-24 00:55:41.227 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/FileSystemLoopException
+2026-11-24 00:55:41.228 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.228 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.228 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.228 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.229 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.230 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.230 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.230 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.231 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.232 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.233 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.234 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.234 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.234 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.235 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.235 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.235 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.236 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.237 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.237 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.237 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.238 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.239 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Files
+2026-11-24 00:55:41.240 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/InvalidPathException
+2026-11-24 00:55:41.241 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/NoSuchFileException
+2026-11-24 00:55:41.241 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.241 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.242 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.243 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.244 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.245 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.245 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.245 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Path
+2026-11-24 00:55:41.246 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Paths
+2026-11-24 00:55:41.247 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/Paths
+2026-11-24 00:55:41.247 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.247 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.248 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.248 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.248 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SecureDirectoryStream
+2026-11-24 00:55:41.249 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.249 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/SimpleFileVisitor
+2026-11-24 00:55:41.250 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/attribute/BasicFileAttributeView
+2026-11-24 00:55:41.251 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/attribute/BasicFileAttributes
+2026-11-24 00:55:41.251 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/attribute/BasicFileAttributes
+2026-11-24 00:55:41.251 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/nio/file/attribute/DosFileAttributes
+2026-11-24 00:55:41.253 Df Unciv[19672:e9c5] lab-diag: MISSING java/security/SecureRandom.getInstanceStrong()Ljava/security/SecureRandom;
+2026-11-24 00:55:41.258 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/time/Duration
+2026-11-24 00:55:41.258 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/time/Duration
+2026-11-24 00:55:41.258 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/time/Duration
+2026-11-24 00:55:41.264 Df Unciv[19672:e978] 2026-11-24T00:55:41.264Z [main] [UncivGame] Setting new screen: com.unciv.ui.screens.GameStartScreen@12736500, screenStack: [com.unciv.ui.screens.GameStartScreen@12736500]
+2026-11-24 00:55:41.275 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/Locale.forLanguageTag(Ljava/lang/String;)Ljava/util/Locale;
+2026-11-24 00:55:41.275 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/Locale.getDefault(Ljava/util/Locale$Category;)Ljava/util/Locale;
+2026-11-24 00:55:41.276 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/Locale.getScript()Ljava/lang/String;
+2026-11-24 00:55:41.276 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/Locale.getUnicodeLocaleType(Ljava/lang/String;)Ljava/lang/String;
+2026-11-24 00:55:41.276 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/Locale.toLanguageTag()Ljava/lang/String;
+2026-11-24 00:55:41.277 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.277 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.278 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.278 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Optional
+2026-11-24 00:55:41.278 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.278 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.279 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.279 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalDouble
+2026-11-24 00:55:41.279 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalInt
+2026-11-24 00:55:41.280 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.281 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.281 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.281 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/OptionalLong
+2026-11-24 00:55:41.282 Df Unciv[19672:e9da] SLF4J(W): No SLF4J providers were found.
+2026-11-24 00:55:41.282 Df Unciv[19672:e9c5] SLF4J(W): No SLF4J providers were found.lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.282 Df Unciv[19672:e9da] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+2026-11-24 00:55:41.282 Df Unciv[19672:e9da] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+2026-11-24 00:55:41.282 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.283 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.283 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.283 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.284 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfDouble
+2026-11-24 00:55:41.284 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.284 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.284 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.285 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.285 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.285 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfInt
+2026-11-24 00:55:41.286 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.286 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.286 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.286 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.287 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.287 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/PrimitiveIterator$OfLong
+2026-11-24 00:55:41.292 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.294 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.295 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator
+2026-11-24 00:55:41.296 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.297 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.298 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.298 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.298 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfDouble
+2026-11-24 00:55:41.299 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.299 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.299 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.299 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.300 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfInt
+2026-11-24 00:55:41.301 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.301 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.301 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.302 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.302 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.302 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfLong
+2026-11-24 00:55:41.303 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.304 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.304 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.304 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/Spliterator$OfPrimitive
+2026-11-24 00:55:41.314 Df Unciv[19672:e9df] [com.apple.network:] networkd_settings_read_from_file initialized networkd settings by reading plist directly
+2026-11-24 00:55:41.314 Df Unciv[19672:e9df] [com.apple.network:] networkd_settings_read_from_file initialized networkd settings by reading plist directly
+2026-11-24 00:55:41.314 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.315 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.315 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.315 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.316 Df Unciv[19672:e9df] [com.apple.network:path] nw_path_libinfo_path_check [6A3B0D31-5EE7-49A9-A9C1-054192F55DE8 Hostname#59b3c2a0:0 tcp, legacy-socket, attribution: developer]
+	libinfo check path: satisfied (Path is satisfied), interface: en0
+2026-11-24 00:55:41.316 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.316 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.316 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletableFuture
+2026-11-24 00:55:41.317 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletionException
+2026-11-24 00:55:41.317 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletionStage
+2026-11-24 00:55:41.317 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CompletionStage
+2026-11-24 00:55:41.322 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/concurrent/CopyOnWriteArraySet
+2026-11-24 00:55:41.334 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/regex/Matcher.end(Ljava/lang/String;)I
+2026-11-24 00:55:41.335 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/regex/Matcher.group(Ljava/lang/String;)Ljava/lang/String;
+2026-11-24 00:55:41.335 Df Unciv[19672:e9c5] lab-diag: MISSING java/util/regex/Matcher.start(Ljava/lang/String;)I
+2026-11-24 00:55:41.336 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.336 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.336 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.336 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.337 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.337 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.337 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.338 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/BaseStream
+2026-11-24 00:55:41.338 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.338 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.339 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.339 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.340 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Collector
+2026-11-24 00:55:41.340 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.340 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.340 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.341 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.342 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.390 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.402 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 2
+2026-11-24 00:55:41.402 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Ending task with identifier 2 and description: <_UIBackgroundTaskInfo: 0x60000171e200>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 1692 (elapsed = 1), _expireHandler: <__NSGlobalBlock__: 0x7ff840854ae0>
+2026-11-24 00:55:41.402 Df Unciv[19672:e992] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x60000210e5d0> (used by background task with identifier 2: <_UIBackgroundTaskInfo: 0x60000171e200>: taskID = 2, taskName = Persistent SceneSession Map Update, creationTime = 1692 (elapsed = 1))
+2026-11-24 00:55:41.440 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.458 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason removed: 10; deactivation reasons: 3104 -> 2080; animating application lifecycle event: 1
+2026-11-24 00:55:41.466 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason added: 12; deactivation reasons: 2080 -> 6176; animating application lifecycle event: 1
+2026-11-24 00:55:41.468 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.468 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.469 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.469 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.469 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.470 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.470 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.471 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.472 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.472 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.473 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.474 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.474 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.475 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.476 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.476 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.477 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/DoubleStream
+2026-11-24 00:55:41.478 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.478 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.478 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.478 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.479 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.479 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.480 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.480 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.480 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.481 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.482 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.482 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.482 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.483 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.483 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.484 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.485 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.486 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.486 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.487 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.487 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.487 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.488 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.489 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.489 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.489 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.490 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.490 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.491 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.491 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.491 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/IntStream
+2026-11-24 00:55:41.492 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.492 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.493 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.493 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.493 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.494 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.495 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.495 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.496 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.496 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.496 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.497 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.497 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.498 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.499 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.500 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.501 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.502 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/LongStream
+2026-11-24 00:55:41.503 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.503 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.504 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.504 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.505 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.505 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.506 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.507 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.508 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.509 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.510 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.510 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.511 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.511 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.511 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.512 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.512 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.512 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.513 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.513 Df Unciv[19672:e9c5] lab-diag: MISSING CLASS java/util/stream/Stream
+2026-11-24 00:55:41.516 Df Unciv[19672:e9c5] lab-diag: checked 2369 JDK methods the game calls, 376 missing at run time
+2026-11-24 00:55:41.520 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason removed: 11; deactivation reasons: 6176 -> 4128; animating application lifecycle event: 1
+2026-11-24 00:55:41.520 Df Unciv[19672:e978] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UISceneIntelligenceSupportSettings> on FBSSceneSettings
+2026-11-24 00:55:41.523 Df Unciv[19672:e9a4] [com.apple.UIIntelligenceSupport:xpc] establishing connection to agent
+2026-11-24 00:55:41.524 Df Unciv[19672:e9a4] [com.apple.xpc:session] [0x6000021ac780] Session created.
+2026-11-24 00:55:41.524 Df Unciv[19672:e9a4] [com.apple.xpc:session] [0x6000021ac780] Session created from connection [0x10ea322a0]
+2026-11-24 00:55:41.524 Df Unciv[19672:e9a4] [com.apple.xpc:connection] [0x10ea322a0] activating connection: mach=true listener=false peer=false name=com.apple.uiintelligencesupport.agent
+2026-11-24 00:55:41.524 Df Unciv[19672:e9a4] [com.apple.xpc:session] [0x6000021ac780] Session activated
+2026-11-24 00:55:41.593 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:41.596 Df Unciv[19672:e978] [debug] IOSApplication: Status bar is not visible
+2026-11-24 00:55:41.596 Df Unciv[19672:e978] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 00:55:41.605 Df Unciv[19672:e978] [com.apple.xpc:connection] [0x10ee078d0] activating connection: mach=true listener=false peer=false name=com.apple.lsd.mapdb
+2026-11-24 00:55:41.623 A  Unciv[19672:e992] (RunningBoardServices) didChangeInheritances
+2026-11-24 00:55:41.629 A  Unciv[19672:e9a4] (RunningBoardServices) didChangeInheritances
+2026-11-24 00:55:41.633 Df Unciv[19672:e978] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:1 [3B97556B-3294-408D-B560-749CF5E2CFD6] (reporting strategy default)>
+2026-11-24 00:55:41.633 Df Unciv[19672:e978] [com.apple.network:activity] Create activity from XPC object <nw_activity 50:2 [EE329C5C-FDA6-4C80-97B0-D0CBF8560665] (reporting strategy default)>
+2026-11-24 00:55:41.633 Df Unciv[19672:e978] [com.apple.network:activity] Set activity <nw_activity 50:1 [3B97556B-3294-408D-B560-749CF5E2CFD6] (reporting strategy default)> as the global parent
+2026-11-24 00:55:41.634 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Ending background task with UIBackgroundTaskIdentifier: 1
+2026-11-24 00:55:41.634 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Ending task with identifier 1 and description: <_UIBackgroundTaskInfo: 0x60000170d980>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 1692 (elapsed = 1), _expireHandler: (null)
+2026-11-24 00:55:41.634 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Decrementing reference count for assertion <BKSProcessAssertion: 0x60000210e5d0> (used by background task with identifier 1: <_UIBackgroundTaskInfo: 0x60000170d980>: taskID = 1, taskName = Launch Background Task for Coalescing, creationTime = 1692 (elapsed = 1))
+2026-11-24 00:55:41.634 Df Unciv[19672:e978] [com.apple.UIKit:BackgroundTask] Will invalidate assertion: <BKSProcessAssertion: 0x60000210e5d0> for task identifier: 1
+2026-11-24 00:55:41.635 Df Unciv[19672:e978] [com.apple.UIKit:EventDeferring] [0x600002910b60] Scene target of event deferring environments did update: scene: 0x10ee0bf90; current systemShellManagesKeyboardFocus: 1; systemShellManagesKeyboardFocusForScene: 1; eligibleForRecordRemoval: 1;
+2026-11-24 00:55:41.635 Df Unciv[19672:e978] [com.apple.UIKit:KeyWindow] Scene became target of keyboard event deferring environment: UIWindowScene: 0x10ee0bf90; scene identity: com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.duckyisc00l.unciv-default
+2026-11-24 00:55:41.636 Df Unciv[19672:e978] [com.apple.Accessibility:AXCommon] Read Per-App on Init: Smart invert = (null)
+2026-11-24 00:55:41.637 Df Unciv[19672:e978] [com.apple.UIKit:EventBus] Event Timing Profile for Touch: not found, path="/System/Library/EventTimingProfiles/Sim.Touch.plist"
+2026-11-24 00:55:41.637 Df Unciv[19672:e978] [com.apple.UIKit:EventBus] Event Timing Profile for Pencil: not found, path="/System/Library/EventTimingProfiles/Sim.Pencil.plist"
+2026-11-24 00:55:41.638 Df Unciv[19672:e978] [com.apple.UIKit:UpdateScheduler] Target list changed: <CADisplay:LCD PurpleMain>
+2026-11-24 00:55:41.639 Df Unciv[19672:e978] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.unciv-default  persistentID: CC13879A-9C29-437D-A999-482C61B1AEB9
+2026-11-24 00:55:41.640 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:41.641 Df Unciv[19672:e978] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 1, <UIWindowScene: 0x10ee0bf90> (CC13879A-9C29-437D-A999-482C61B1AEB9)
+2026-11-24 00:55:41.641 Df Unciv[19672:e978] [com.apple.UIKit:AppLifecycle] sceneOfRecord: sceneID: sceneID:com.duckyisc00l.unciv-default  persistentID: CC13879A-9C29-437D-A999-482C61B1AEB9
+2026-11-24 00:55:41.641 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason removed: 12; deactivation reasons: 4128 -> 32; animating application lifecycle event: 1
+2026-11-24 00:55:41.641 Df Unciv[19672:e978] [com.apple.KeyboardArbiter:Client] Send setDeactivating: N (-DeactivationReason:SuspendedEventsOnly)
+2026-11-24 00:55:41.642 Df Unciv[19672:e978] [com.apple.UIKit:Application] Deactivation reason removed: 5; deactivation reasons: 32 -> 0; animating application lifecycle event: 0
+2026-11-24 00:55:41.642 Df Unciv[19672:e978] [debug] IOSApplication: resumed
+2026-11-24 00:55:41.642 Df Unciv[19672:e978] lab: IOSAudio.didBecomeActive has no iOS version, returned an empty value
+2026-11-24 00:55:41.645 Df Unciv[19672:e978] [com.apple.KeyboardArbiter:Client] startConnection
+2026-11-24 00:55:41.645 Df Unciv[19672:e978] [com.apple.KeyboardArbiter:Client] handleKeyboardChange: set currentKeyboard:N (wasKeyboard:N)
+2026-11-24 00:55:41.647 Df Unciv[19672:e978] [com.apple.UIKit:KeyboardArbiterClientLog] isWritingToolsHandlingKeyboardTracking:Y (WT ready:Y, Arbiter ready:Y)
+2026-11-24 00:55:41.731 A  Unciv[19672:e992] (RunningBoardServices) didChangeInheritances
+2026-11-24 00:55:41.770 Df Unciv[19672:e9da] 2026-11-24T00:55:41.770Z [threadpool-daemon-1] [UncivFiles] Getting saves from folder MultiplayerGames, externalStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Documents/
+2026-11-24 00:55:41.770 Df Unciv[19672:e9da] 2026-11-24T00:55:41.770Z [threadpool-daemon-1] [UncivFiles] Local files: [], external files: []
+2026-11-24 00:55:41.842 Df Unciv[19672:e978] 2026-11-24T00:55:41.841Z [main] [ImageGetter] Loading AbsoluteUnits = AbsoluteUnits.atlas
+2026-11-24 00:55:41.954 Df Unciv[19672:e978] 2026-11-24T00:55:41.954Z [main] [ImageGetter] Loading ConstructionIcons = ConstructionIcons.atlas
+2026-11-24 00:55:41.984 A  Unciv[19672:e9a8] (RunningBoardServices) didChangeInheritances
+2026-11-24 00:55:42.083 Df Unciv[19672:e978] 2026-11-24T00:55:42.083Z [main] [ImageGetter] Loading EasterEggs = EasterEggs.atlas
+2026-11-24 00:55:42.095 Df Unciv[19672:e978] 2026-11-24T00:55:42.095Z [main] [ImageGetter] Loading Flags = Flags.atlas
+2026-11-24 00:55:42.224 Df Unciv[19672:e978] 2026-11-24T00:55:42.224Z [main] [ImageGetter] Loading Icons = Icons.atlas
+2026-11-24 00:55:42.320 Df Unciv[19672:e978] 2026-11-24T00:55:42.320Z [main] [ImageGetter] Loading NationIcons = NationIcons.atlas
+2026-11-24 00:55:42.412 Df Unciv[19672:e978] 2026-11-24T00:55:42.412Z [main] [ImageGetter] Loading PolicyIcons = PolicyIcons.atlas
+2026-11-24 00:55:42.428 Df Unciv[19672:e978] 2026-11-24T00:55:42.428Z [main] [ImageGetter] Loading ReligionIcons = ReligionIcons.atlas
+2026-11-24 00:55:42.441 Df Unciv[19672:e978] 2026-11-24T00:55:42.441Z [main] [ImageGetter] Loading Skin = Skin.atlas
+2026-11-24 00:55:42.444 Df Unciv[19672:e978] 2026-11-24T00:55:42.444Z [main] [ImageGetter] Loading Tech = Tech.atlas
+2026-11-24 00:55:42.511 Df Unciv[19672:e978] 2026-11-24T00:55:42.511Z [main] [ImageGetter] Loading Tilesets = Tilesets.atlas
+2026-11-24 00:55:42.662 Df Unciv[19672:e978] 2026-11-24T00:55:42.662Z [main] [ImageGetter] Loading UnitPromotionIcons = UnitPromotionIcons.atlas
+2026-11-24 00:55:42.682 Df Unciv[19672:e9a3] [com.apple.xpc:connection] [0x10ed0d950] activating connection: mach=true listener=false peer=false name=com.apple.fontservicesd
+2026-11-24 00:55:42.877 Df Unciv[19672:e978] [com.apple.network:activity] <nw_activity 50:1 [3B97556B-3294-408D-B560-749CF5E2CFD6] (global parent) (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 3346ms
+2026-11-24 00:55:42.878 Df Unciv[19672:e978] [com.apple.network:activity] <nw_activity 50:2 [EE329C5C-FDA6-4C80-97B0-D0CBF8560665] (reporting strategy default) complete (reason success)> complete with reason 2 (success), duration 3346ms
+2026-11-24 00:55:42.878 Df Unciv[19672:e978] [com.apple.network:activity] Unsetting the global parent activity <nw_activity 50:1 [3B97556B-3294-408D-B560-749CF5E2CFD6] (global parent) (reporting strategy default) complete (reason success)>
+2026-11-24 00:55:42.878 Df Unciv[19672:e978] [com.apple.network:activity] Unset the global parent activity
+2026-11-24 00:55:42.886 Df Unciv[19672:e9da] Loaded 2 rulesets in 144ms
+2026-11-24 00:55:43.370 Df Unciv[19672:e9f8] [com.apple.network:path] nw_path_libinfo_path_check [BF89BAC8-3FF0-45BF-9DA5-010A3845C162 Hostname#59b3c2a0:0 tcp, legacy-socket, attribution: developer]
+	libinfo check path: satisfied (Path is satisfied), interface: en0
+2026-11-24 00:55:43.690 Df Unciv[19672:e978] 2026-11-24T00:55:43.690Z [main] [UncivGame] Setting new screen: com.unciv.ui.screens.LanguagePickerScreen@275e2d80, screenStack: [com.unciv.ui.screens.LanguagePickerScreen@275e2d80]
+2026-11-24 00:55:45.971 Df Unciv[19672:eb0a] [com.apple.network:path] nw_path_libinfo_path_check [187594FA-4DF3-44EF-BC08-93F74334BF72 Hostname#59b3c2a0:0 tcp, legacy-socket, attribution: developer]
+	libinfo check path: satisfied (Path is satisfied), interface: en0
+2026-11-24 00:55:50.372 Df Unciv[19672:e9f6] [com.apple.network:path] nw_path_libinfo_path_check [42304F90-4931-4A27-916A-6A0993B2E81D Hostname#59b3c2a0:0 tcp, legacy-socket, attribution: developer]
+	libinfo check path: satisfied (Path is satisfied), interface: en0
+2026-11-24 00:55:50.488 Df Unciv[19672:e9da] 2026-11-24T00:55:50.487Z [threadpool-daemon-1] [UncivGame$create] Couldn't connect to server: CertPathValidator PKIX implementation not found
+2026-11-24 00:58:46.835 A  Unciv[19672:e9a2] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-11-24 00:58:49.235 Df Unciv[19672:e978] (Foundation) void * _Nullable NSMapGet(NSMapTable * _Nonnull, const void * _Nullable): map table argument is NULL
+2026-11-24 00:58:49.691 Df Unciv[19672:e978] [com.apple.BackBoard:Display] [FBSDisplaySource 1-1] silently connecting raw configuration: <FBSDisplayConfiguration: 0x600003d0dc20; Main; mode: "375x667@2x 60Hz p3 SDR">
+2026-11-24 00:58:58.041 Df Unciv[19672:e978] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.unciv-default
+2026-11-24 00:58:58.042 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d43840; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:58:58.043 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:58:58.043 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10ea09a80>; contextId: 0x3A16A73F
+2026-11-24 00:58:58.148 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d43840; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:58:58.148 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:58:58.148 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10ea09a80>; contextId: 0x3A16A73F
+2026-11-24 00:58:58.148 Df Unciv[19672:e978] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d43840; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-24 00:58:58.153 Df Unciv[19672:e978] 2026-11-24T00:58:58.153Z [main] [DiacriticSupport$Companion] Length 2 - example हि
+2026-11-24 00:58:58.154 Df Unciv[19672:e978] 2026-11-24T00:58:58.154Z [main] [DiacriticSupport$Companion] Length 3 - example বাং
+2026-11-24 00:58:58.188 Df Unciv[19672:e978] 2026-11-24T00:58:58.188Z [main] [SoundPlayer] Sound cache cleared
+2026-11-24 00:58:58.200 Df Unciv[19672:e9da] 2026-11-24T00:58:58.200Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=click)
+2026-11-24 00:58:58.201 Df Unciv[19672:e9da] 2026-11-24T00:58:58.201Z [threadpool-daemon-1] [SoundPlayer] Sound click loaded from sounds/click.mp3
+2026-11-24 00:58:58.202 Df Unciv[19672:e9da] lab: IOSAudio.newSound has no iOS version, returned an empty value
+2026-11-24 00:58:58.213 Df Unciv[19672:e9da] 2026-11-24T00:58:58.213Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=whoosh)
+2026-11-24 00:58:58.213 Df Unciv[19672:e9da] 2026-11-24T00:58:58.213Z [threadpool-daemon-1] [SoundPlayer] Sound whoosh loaded from sounds/whoosh.mp3
+2026-11-24 00:58:58.243 Df Unciv[19672:e9da] 2026-11-24T00:58:58.243Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=construction)
+2026-11-24 00:58:58.244 Df Unciv[19672:e9da] 2026-11-24T00:58:58.244Z [threadpool-daemon-1] [SoundPlayer] Sound construction loaded from sounds/construction.mp3
+2026-11-24 00:58:58.255 Df Unciv[19672:e9da] 2026-11-24T00:58:58.255Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=promote)
+2026-11-24 00:58:58.256 Df Unciv[19672:e9da] 2026-11-24T00:58:58.256Z [threadpool-daemon-1] [SoundPlayer] Sound promote loaded from sounds/promote.mp3
+2026-11-24 00:58:58.268 Df Unciv[19672:e9da] 2026-11-24T00:58:58.268Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=upgrade)
+2026-11-24 00:58:58.269 Df Unciv[19672:e9da] 2026-11-24T00:58:58.269Z [threadpool-daemon-1] [SoundPlayer] Sound upgrade loaded from sounds/upgrade.mp3
+2026-11-24 00:58:58.280 Df Unciv[19672:e9da] 2026-11-24T00:58:58.280Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=coin)
+2026-11-24 00:58:58.281 Df Unciv[19672:e9da] 2026-11-24T00:58:58.281Z [threadpool-daemon-1] [SoundPlayer] Sound coin loaded from sounds/coin.mp3
+2026-11-24 00:58:58.292 Df Unciv[19672:e9da] 2026-11-24T00:58:58.292Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=chimes)
+2026-11-24 00:58:58.292 Df Unciv[19672:e9da] 2026-11-24T00:58:58.292Z [threadpool-daemon-1] [SoundPlayer] Sound chimes loaded from sounds/chimes.mp3
+2026-11-24 00:58:58.303 Df Unciv[19672:e9da] 2026-11-24T00:58:58.303Z [threadpool-daemon-1] [SoundPlayer$Preloader] Preload UncivSound(fileName=choir)
+2026-11-24 00:58:58.304 Df Unciv[19672:e9da] 2026-11-24T00:58:58.304Z [threadpool-daemon-1] [SoundPlayer] Sound choir loaded from sounds/choir.mp3
+2026-11-24 00:58:58.325 Df Unciv[19672:e978] 2026-11-24T00:58:58.325Z [main] [UncivFiles] Getting save Autosave from folder SaveFiles, preferExternal: false
+2026-11-24 00:58:58.326 Df Unciv[19672:e978] 2026-11-24T00:58:58.326Z [main] [UncivFiles] Save found: SaveFiles/Autosave
+2026-11-24 00:58:58.344 Df Unciv[19672:e9da] 2026-11-24T00:58:58.344Z [threadpool-daemon-1] [MapElevationGenerator] Mountain-like generation
+2026-11-24 00:58:58.344 Df Unciv[19672:e978] [com.apple.gamecontroller:Session] Creating the shared game controller session...
+2026-11-24 00:58:58.347 Df Unciv[19672:e9da] 2026-11-24T00:58:58.347Z [threadpool-daemon-1] [MapElevationGenerator] Hill-like generation
+2026-11-24 00:58:58.351 Df Unciv[19672:e978] [com.apple.BackBoard:EventDelivery] policyStatus:<BKSHIDEventDeliveryPolicyObserver: 0x600002607720; process scope; status: target> was:none
+2026-11-24 00:58:58.352 A  Unciv[19672:e978] (GameController) [GCDeviceSession] Activate
+2026-11-24 00:58:58.365 Df Unciv[19672:e978] 2026-11-24T00:58:58.365Z [main] [UncivGame] Setting new screen: com.unciv.ui.screens.mainmenuscreen.MainMenuScreen@19a2f150, screenStack: [com.unciv.ui.screens.mainmenuscreen.MainMenuScreen@19a2f150]
+2026-11-24 00:58:58.370 Df Unciv[19672:e9da] 2026-11-24T00:58:58.370Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Rock of Gibraltar
+2026-11-24 00:58:58.384 Df Unciv[19672:e9da] 2026-11-24T00:58:58.383Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Mount Fuji
+2026-11-24 00:58:58.384 Df Unciv[19672:e9da] 2026-11-24T00:58:58.384Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Barringer Crater
+2026-11-24 00:58:58.384 Df Unciv[19672:e9da] 2026-11-24T00:58:58.384Z [threadpool-daemon-1] [NaturalWonderGenerator] No suitable location for Great Barrier Reef
+2026-11-24 00:58:58.385 Df Unciv[19672:e9da] 2026-11-24T00:58:58.385Z [threadpool-daemon-1] [NaturalWonderGenerator] Natural Wonder Krakatoa @HexCoord(x=-3, y=-8)
+2026-11-24 00:58:58.385 Df Unciv[19672:e9da] 2026-11-24T00:58:58.385Z [threadpool-daemon-1] [NaturalWonderGenerator] Natural Wonders for this game: [Krakatoa]
+2026-11-24 00:58:58.423 Df Unciv[19672:e9da] 2026-11-24T00:58:58.423Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 3 < initial 4
+2026-11-24 00:58:58.441 Df Unciv[19672:e9da] 2026-11-24T00:58:58.441Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 3 < initial 4
+2026-11-24 00:58:58.444 Df Unciv[19672:e9da] 2026-11-24T00:58:58.444Z [threadpool-daemon-1] [MapGenerationRandomness] chooseSpreadOutLocations: distance 7 < initial 9
+2026-11-24 00:58:59.004 Df Unciv[19672:e978] [com.apple.gamecontroller:Session] Connected devices changed (2 added, 0 removed) -> [2] {(
+    <GCController 0x600003d0d590 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x6000002e3400 'Generic Keyboard'>
+)}
+2026-11-24 00:58:59.005 Df Unciv[19672:e978] [com.apple.CoreAnalytics:client] No XPC connection in Simulator
+2026-11-24 00:58:59.006 Df Unciv[19672:e978] [com.apple.gamecontroller:Session] Connected devices changed (0 added, 0 removed) -> [2] {(
+    <GCController 0x600003d0d590 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x6000002e3400 'Generic Keyboard'>
+)}
+2026-11-24 00:58:59.006 Df Unciv[19672:e978] [com.apple.gamecontroller:Session] Connected devices changed (0 added, 0 removed) -> [2] {(
+    <GCController 0x600003d0d590 'MFi'/'Gamepad'>,
+    <GCKeyboard 0x6000002e3400 'Generic Keyboard'>
+)}
+2026-11-24 00:58:59.006 A  Unciv[19672:e978] (GameControllerFoundation) [HID Event System Client] Activate
+2026-11-24 00:58:59.014 Df Unciv[19672:e978] lab: Sound.play has no iOS version, returned an empty value
+2026-11-24 01:00:41.909 Df Unciv[19672:e9da] 2026-11-24T01:00:41.909Z [threadpool-daemon-1] [UncivFiles] Getting saves from folder MultiplayerGames, externalStoragePath: /Users/runner/Library/Developer/CoreSimulator/Devices/B0784041-4057-4B9E-85B9-5C63C5C0D0B2/data/Containers/Data/Application/C5BE76DE-A254-476D-94CA-C706CD624D69/Documents/
+2026-11-24 01:00:41.911 Df Unciv[19672:e9da] 2026-11-24T01:00:41.911Z [threadpool-daemon-1] [UncivFiles] Local files: [], external files: []
