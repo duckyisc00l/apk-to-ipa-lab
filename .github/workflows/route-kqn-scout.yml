@@ -1,0 +1,23 @@
+name: route-kqn-scout
+# Find open-source Kivy / Qt / NativeScript apps that have an APK in their releases (ubuntu only, no Mac).
+on:
+  workflow_dispatch:
+    inputs:
+      engine: { description: "kivy | qt | nativescript", required: true, default: kivy }
+      queries: { description: "GitHub search queries, separated by ;", required: true, default: "topic:kivy" }
+permissions: { contents: write }
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env: { GH_TOKEN: "${{ github.token }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p out; IFS=';' read -ra Q <<< "${{ inputs.queries }}"
+          python3 -I ci/kqn/scout.py "${{ inputs.engine }}" "${Q[@]}" 2>&1 | tee out/scout.log
+      - name: Publish
+        if: always()
+        run: |
+          mkdir -p /tmp/r && cp out/* /tmp/r/; cd /tmp/r && git init -q -b r-kqn-scout-${{ inputs.engine }} && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm "scout ${{ inputs.engine }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-kqn-scout-${{ inputs.engine }}
