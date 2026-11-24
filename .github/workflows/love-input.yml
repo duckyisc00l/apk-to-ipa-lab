@@ -33,12 +33,12 @@ jobs:
       - name: A, plain probe (no setTextInput call)
         continue-on-error: true
         run: |
-          SIM_PRE_RUN='cp probe.love "$APP/game.love"' ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/A-plain 20 ci/sim/steps/textprobe-nokb.txt
+          SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Delete :UISupportedInterfaceOrientations" -c "Add :UISupportedInterfaceOrientations array" -c "Add :UISupportedInterfaceOrientations:0 string UIInterfaceOrientationPortrait" "$APP/Info.plist"; cp probe.love "$APP/game.love"' ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/A-plain 20 ci/sim/steps/textprobe-nokb.txt
           grep -E '^(TI|KP):' out/A-plain/sim-console.log out/A-plain/sim-applog.log | tee -a out/events.txt || echo "A: no TI/KP events reached the game" | tee -a out/events.txt
       - name: B, probe with the keyboard shim
         continue-on-error: true
         run: |
-          SIM_PRE_RUN='cp probe-shim.love "$APP/game.love"' ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/B-shim 20 ci/sim/steps/textprobe-kb.txt
+          SIM_PRE_RUN='/usr/libexec/PlistBuddy -c "Delete :UISupportedInterfaceOrientations" -c "Add :UISupportedInterfaceOrientations array" -c "Add :UISupportedInterfaceOrientations:0 string UIInterfaceOrientationPortrait" "$APP/Info.plist"; cp probe-shim.love "$APP/game.love"' ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/B-shim 20 ci/sim/steps/textprobe-kb.txt
           grep -E '^(TI|KP):' out/B-shim/sim-console.log out/B-shim/sim-applog.log | tee -a out/events.txt || echo "B: no TI/KP events reached the game" | tee -a out/events.txt
       - name: Publish to branch r-love-input
         if: always()
