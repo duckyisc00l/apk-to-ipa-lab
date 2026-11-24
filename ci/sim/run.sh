@@ -2,7 +2,7 @@
 # Run an iPhone app in Apple's iPhone Simulator on a GitHub Mac (there are no real iPhones on GitHub).
 # Usage: ci/sim/run.sh <path to .app built for the simulator> <out dir> [seconds to wait, default 25] [input steps]
 # The optional steps file has one step per line (AXe does the input; X and Y in points, or as a % of the screen):
-#   tap X Y | hold X Y [SECONDS] | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | type TEXT | softtype TEXT (on-screen keys) | key NAME (return, escape,
+#   tap X Y | hold X Y [SECONDS] | swipe X1 Y1 X2 Y2 | tapon LABEL (accessibility label) | trytap LABEL (same, but no failure if absent) | type TEXT | softtype TEXT (on-screen keys) | key NAME (return, escape,
 #   backspace, tab, space, up/down/left/right, a letter, or a HID number) | wait SECONDS | shot NAME |
 #   ui NAME (save the accessibility tree, list its texts) | uiat X Y (the element at one point) | relaunch (quit and restart the app) | expect TEXT (the text must be on screen: PASS/FAIL) | # comment
 # Writes <out>/sim.md (a summary line first; then launched? still running? crash? each step), <out>/sim-<n>s.png
@@ -34,7 +34,8 @@ codesign --force --sign - --timestamp=none "$APP" 2>&1 | tail -1
 xcrun simctl boot "$UDID" 2>/dev/null; xcrun simctl bootstatus "$UDID" -b > /dev/null
 # skip iOS's one-time "slide to type" keyboard tip: it covers the keyboard and AXe can't tap it (another process)
 for dom in com.apple.keyboard.ContinuousPath com.apple.Preferences; do
-  xcrun simctl spawn "$UDID" defaults write "$dom" DidShowContinuousPathIntroduction -bool true 2>/dev/null; done
+  xcrun simctl spawn "$UDID" defaults write "$dom" DidShowContinuousPathIntroduction -bool true 2>/dev/null
+  xcrun simctl spawn "$UDID" defaults write "$dom" KeyboardContinuousPathEnabled -bool false 2>/dev/null; done
 export SIMCTL_CHILD_NSUnbufferedIO=YES   # passed to the app: Foundation output not held back
 sleep 15   # let the home screen finish starting, or the first launch is refused too
 xcrun simctl install "$UDID" "$APP" || { echo "INSTALL FAILED" | tee -a "$OUT/sim.md"; exit 1; }
@@ -154,6 +155,8 @@ if [ -n "$STEPS" ] && [ -f "$STEPS" ]; then
             else bad="$bad$ch"; fi; sleep 0.3; done
           if [ -z "$bad" ]; then echo "softtype \"$arg\"" >> "$OUT/sim.md"; SN=$((SN+1))
           else echo "softtype \"$arg\" FAILED for: $bad (keyboard not up?)" >> "$OUT/sim.md"; SF=$((SF+1)); fi;;
+        trytap)   # tap the element with this label if it is there; no failure if not (e.g. iOS's one-time keyboard tip "Continue")
+          timeout 40 axe tap --label "$arg" --udid "$UDID" >> "$OUT/input.log" 2>&1 < /dev/null && echo "trytap \"$arg\": tapped" >> "$OUT/sim.md" || echo "trytap \"$arg\": not there" >> "$OUT/sim.md";;
         type) RUN "type \"$arg\"" axe type "$arg" --udid "$UDID";;
         key) RUN "key $arg" axe key "$(KEY "$a")" --udid "$UDID";;
         wait) sleep "$a";;

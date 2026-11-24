@@ -3,6 +3,9 @@ shot 0
 tap 50% 30%
 wait 4
 shot 1-after-tap
+trytap Continue
+wait 2
+shot 1b-tip
 softtype hello
 wait 4
 shot 2-after-softtype
