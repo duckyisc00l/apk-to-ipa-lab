@@ -1,0 +1,6 @@
+lbryio/lbry-android | MIT | 2391* | 0.17.1 | browser-0.17.1-release__arm64.apk | 52061 KB | Python (python-for-android, no Kivy) 
+GVCoder09/NoDPI4Android | GPL-3.0 | 475* | v2.0 | NoDPI-2.0.apk | 1871 KB | native (Java/Kotlin only) Kotlin + Jetpack Compose, helper libs: libandroidx.graphics.path.so libdatastore_shared_counter.so
+HelloZeroNet/ZeroNet-kivy | GPL-2.0 | 284* | v0.6.5.2 | zeronet-0.6.5.2-release-stable-arm64-v8a.apk | 18077 KB | Kivy (Python) 
+AndreMiras/PyWallet | MIT | 61* | v20200524 | pywallet-2020.0524-arm64-v8a-release.apk | 26115 KB | Kivy (Python) 
+AndreMiras/QrScan | MIT | 61* | v20190911 | qrscan-2019.0911-arm64-v8a-release.apk | 15309 KB | Kivy (Python) 
+daslearning-org/image-to-animation-offline | MIT | 58* | v0.3.1 | img2sketch-0.3.1.apk | 58429 KB | Kivy (Python) 
