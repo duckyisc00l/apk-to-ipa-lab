@@ -4,11 +4,14 @@
 # Gradle compiles the game and prints the iOS module's runtime classpath; the MobiVM compiler (same one the Gradle
 # plugin uses) then builds the simulator app and the unsigned IPA, with the project's own robovm.xml and Info.plist.
 # Writes <out>/source.md, <out>/sim-app/<Name>.app (Simulator, x86_64) and <out>/ipa/*.ipa (arm64, unsigned).
+# Env: SIM_ARCH=arm64-simulator builds the simulator app for an Apple-chip Mac (default x86_64-simulator, for GitHub's Intel Mac);
+#      SKIP_IPA=1 skips the phone IPA build (saves ~6 min); PATCH=<script> runs "<script> <source dir>" before the build.
 set -uo pipefail
 SRC="$(cd "$1" && pwd)"; NAME="$2"; mkdir -p "$3"; OUT="$(cd "$3" && pwd)"; IOS="${4:-ios}"; MD="$OUT/source.md"
 RVM_VERSION="${RVM_VERSION:-$(sed -n "s/.*robovmVersion *= *['\"]\([0-9.]*\)['\"].*/\1/p" "$SRC/build.gradle" | head -1)}"; RVM_VERSION="${RVM_VERSION:-2.3.24}"
 echo "source: $SRC, iOS module: $IOS, MobiVM $RVM_VERSION" | tee "$MD"
 cd "$SRC"
+[ -n "${PATCH:-}" ] && { bash "$PATCH" "$SRC" 2>&1 | tee -a "$MD"; }
 # 1. Gradle: compile, write robovm.properties (the module's own task), print the runtime classpath
 cat > /tmp/cp.init.gradle <<'G'
 allprojects { afterEvaluate { p ->
@@ -35,12 +38,13 @@ cp robovm.xml /tmp/robovm.orig.xml
 sed -i '' -e '/<arch>/d' robovm.xml     # the command line gives the architecture (simulator and phone)
 # 3. Simulator app (Intel) and unsigned IPA (arm64)
 t0=$(date +%s)
-"$RVM/bin/robovm" -verbose -properties robovm.properties -config robovm.xml -os ios -arch x86_64-simulator \
+"$RVM/bin/robovm" -verbose -properties robovm.properties -config robovm.xml -os ios -arch "${SIM_ARCH:-x86_64-simulator}" \
   -cp "$CP" -d "$OUT/sim-app/$NAME.app" > "$OUT/robovm-sim.log" 2>&1
 rs=$?; echo "simulator build exit $rs in $(( $(date +%s) - t0 )) s" | tee -a "$MD"
 grep -E "ERROR|error:|FAILED" "$OUT/robovm-sim.log" | head -30 | tee -a "$MD"
 # the compiler names the app after executableName (IOSLauncher): rename to <Name>.app if needed
 ls "$OUT/sim-app" | tee -a "$MD"
+[ -n "${SKIP_IPA:-}" ] && { echo "IPA build skipped" | tee -a "$MD"; [ "$rs" = 0 ]; exit; }
 t0=$(date +%s)
 "$RVM/bin/robovm" -properties robovm.properties -config robovm.xml -os ios -arch arm64 -skipsign -createipa \
   -cp "$CP" -d "$OUT/ipa" > "$OUT/robovm-ipa.log" 2>&1

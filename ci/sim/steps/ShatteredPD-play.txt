@@ -1,0 +1,35 @@
+# Shattered Pixel Dungeon from source: let it settle, dismiss the controller dialog, pick the Warrior, start, walk a bit
+shot a0-launch
+wait 8
+shot a1-8s
+wait 12
+shot a2-20s
+tap 50% 60%
+wait 5
+shot b0-menu-5s
+wait 10
+shot b1-menu-15s
+tap 50% 92%
+wait 4
+shot c0-hero-4s
+wait 8
+shot c1-hero-12s
+tap 8% 96%
+wait 3
+shot c2-warrior-picked
+tap 50% 88%
+wait 3
+shot d0-start
+wait 12
+shot d1-level-loading
+wait 10
+shot d2-level
+tap 50% 40%
+wait 2
+shot e0-step1
+tap 50% 30%
+wait 2
+shot e1-step2
+tap 60% 50%
+wait 2
+shot e2-step3
