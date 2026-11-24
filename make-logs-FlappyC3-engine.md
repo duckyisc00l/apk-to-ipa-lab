@@ -1,0 +1,4 @@
+- engine: Construct
+- audio files by type: {}
+- FIX: Construct scripts/main.js: music-as-sound no longer releases the other music buffers (1 place; fixes 'this._audioDomHandler is null' when sounds sit in the Music folder)
+- native calls found: {"require(\"fs\")": 1, "require(\"path\")": 1, "resolveLocalFileSystemURL": 1}

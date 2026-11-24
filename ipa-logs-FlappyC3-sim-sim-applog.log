@@ -1,0 +1,200 @@
+2026-11-24 00:11:04.506 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] SourceBufferParserWebM::~SourceBufferParserWebM(13438601533758702237)
+2026-11-24 00:11:04.506 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] WebMParser::~WebMParser(13438601533758702237)
+2026-11-24 00:11:04.506 Df App[23392:10c29] [com.apple.coreaudio:ac] WebContent[23432]         ACOpusDecoder.cpp:156   (0x103830040) Input format:  2 ch,  48000 Hz, opus (0x00000000) 0 bits/channel, 0 bytes/packet, 0 frames/packet, 0 bytes/frame
+2026-11-24 00:11:04.506 Df App[23392:10c29] [com.apple.coreaudio:ac] WebContent[23432]         ACOpusDecoder.cpp:159   (0x103830040) Output format:  2 ch,  48000 Hz, Float32, interleaved
+2026-11-24 00:11:04.506 Df App[23392:10c29] [com.apple.coreaudio:AudioConverter] WebContent[23432]        AudioConverter.cpp:1067  Created a new in process converter -> 0x600000c60960, from  2 ch,  48000 Hz, opus (0x00000000) 0 bits/channel, 0 bytes/packet, 0 frames/packet, 0 bytes/frame to  2 ch,  48000 Hz, Float32, deinterleaved
+2026-11-24 00:11:04.506 Df App[23392:10c29] [com.apple.coreaudio:AudioConverter] WebContent[23432] AudioConverter -> 0x600000c60960: The in-process SetProperty call returned 1886547824 for property 1886547309 with size 4.
+2026-11-24 00:11:04.507 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createGain(5820624863821283351)
+2026-11-24 00:11:04.507 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234190)
+2026-11-24 00:11:04.507 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234204) name = gain, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:04.507 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::setChannelCount(5820624863821234190) 2
+2026-11-24 00:11:04.507 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::setChannelCountMode(5820624863821234190) 0
+2026-11-24 00:11:04.507 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::setChannelInterpretation(5820624863821234190) 0
+2026-11-24 00:11:04.508 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234190) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:11:04.508 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:11:04.508 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234191)
+2026-11-24 00:11:04.508 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234205) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:04.509 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234206) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:04.509 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234191) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:11:04.509 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234191) when = 0, offset = 0, duration = 0
+2026-11-24 00:11:04.511 E  App[23392:14562] [com.apple.runningboard:assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}>
+2026-11-24 00:11:04.512 E  App[23392:14562] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebKit Media Playback' for process with PID=23432, error: Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}
+2026-11-24 00:11:04.512 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::processAssertionWasInvalidated() PID=23432
+2026-11-24 00:11:06.461 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Releasing MediaPlayback assertion for WebProcess
+2026-11-24 00:11:06.462 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::updateAudibleMediaAssertions: Starting timer to clear audible activity in 5 seconds because we are no longer playing audio
+2026-11-24 00:11:06.462 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:11:06.463 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: UIProcess starting timer to release a foreground assertion in 10 seconds if audio doesn't start to play
+2026-11-24 00:11:06.627 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234191)
+2026-11-24 00:11:06.627 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234189)
+2026-11-24 00:11:06.627 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234187)
+2026-11-24 00:11:06.627 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234186)
+2026-11-24 00:11:06.627 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234185)
+2026-11-24 00:11:06.627 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234179)
+2026-11-24 00:11:06.763 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234181)
+2026-11-24 00:11:10.330 Df App[23392:10b80] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.flappyc3-default
+2026-11-24 00:11:10.330 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:11:10.330 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:11:10.330 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a809c40>; contextId: 0xC30A3957
+2026-11-24 00:11:10.334 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:11:10.334 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234192)
+2026-11-24 00:11:10.334 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234207) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:10.334 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234208) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:10.334 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234192) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:11:10.334 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234192) when = 0, offset = 0, duration = 0
+2026-11-24 00:11:10.340 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:11:10.340 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:11:10.340 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:11:10.347 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Taking MediaPlayback assertion for WebProcess
+2026-11-24 00:11:10.347 Df App[23392:10b80] [com.apple.WebKit:Process] AssertionCapability::AssertionCapability: taking assertion MediaPlayback
+2026-11-24 00:11:10.347 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion() Failed to create capability MediaPlayback
+2026-11-24 00:11:10.347 Df App[23392:14562] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Trying to take RBS assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:11:10.347 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: Cancelling timer to release foreground assertion
+2026-11-24 00:11:10.350 E  App[23392:14562] [com.apple.runningboard:assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}>
+2026-11-24 00:11:10.350 E  App[23392:14562] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebKit Media Playback' for process with PID=23432, error: Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}
+2026-11-24 00:11:10.351 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::processAssertionWasInvalidated() PID=23432
+2026-11-24 00:11:10.412 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-24 00:11:10.818 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:11:10.818 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234193)
+2026-11-24 00:11:10.818 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234209) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:10.818 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234210) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:10.818 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234193) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:11:10.818 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234193) when = 0, offset = 0, duration = 0
+2026-11-24 00:11:11.027 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:11:11.027 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234194)
+2026-11-24 00:11:11.028 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234211) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:11.028 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234212) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:11:11.028 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234194) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:11:11.028 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234194) when = 0, offset = 0, duration = 0
+2026-11-24 00:11:11.245 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:11:11.245 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:11:11.245 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a809c40>; contextId: 0xC30A3957
+2026-11-24 00:11:11.246 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:11:11.246 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:11:12.347 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Releasing MediaPlayback assertion for WebProcess
+2026-11-24 00:11:12.348 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::updateAudibleMediaAssertions: Starting timer to clear audible activity in 5 seconds because we are no longer playing audio
+2026-11-24 00:11:12.348 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:11:12.364 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: UIProcess starting timer to release a foreground assertion in 10 seconds if audio doesn't start to play
+2026-11-24 00:11:17.059 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234193)
+2026-11-24 00:11:17.154 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234192)
+2026-11-24 00:11:17.155 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234194)
+2026-11-24 00:11:17.349 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::clearAudibleActivity: The number of processes playing audible media is now zero. Releasing UI process assertion.
+2026-11-24 00:11:17.349 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23435
+2026-11-24 00:11:22.366 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::clearAudibleActivity: UIProcess is releasing a foreground assertion because we are no longer playing audio
+2026-11-24 00:11:22.366 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180e42d0 - [PID=23432, throttler=0x1180c8150] ProcessThrottler::Activity::invalidate: Ending foreground activity / 'View is playing audio'
+2026-11-24 00:12:38.032 Df App[23392:10b80] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.flappyc3-default
+2026-11-24 00:12:38.033 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:12:38.033 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:12:38.033 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a809c40>; contextId: 0xC30A3957
+2026-11-24 00:12:38.042 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:12:38.042 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234195)
+2026-11-24 00:12:38.042 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234213) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:38.042 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234214) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:38.042 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234195) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:12:38.042 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234195) when = 0, offset = 0, duration = 0
+2026-11-24 00:12:38.046 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:38.046 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:38.046 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:38.057 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Taking MediaPlayback assertion for WebProcess
+2026-11-24 00:12:38.057 Df App[23392:10b80] [com.apple.WebKit:Process] AssertionCapability::AssertionCapability: taking assertion MediaPlayback
+2026-11-24 00:12:38.057 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion() Failed to create capability MediaPlayback
+2026-11-24 00:12:38.057 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::updateAudibleMediaAssertions: The number of processes playing audible media is now greater than zero. Taking UI process assertion.
+2026-11-24 00:12:38.057 Df App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Trying to take RBS assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:12:38.057 Df App[23392:10b80] [com.apple.WebKit:Process] AssertionCapability::AssertionCapability: taking assertion MediaPlayback
+2026-11-24 00:12:38.057 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion() Failed to create capability MediaPlayback
+2026-11-24 00:12:38.058 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: UIProcess is taking a foreground assertion because we are playing audio
+2026-11-24 00:12:38.058 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180e4120 - [PID=23432, throttler=0x1180c8150] ProcessThrottler::Activity::Activity: Starting foreground activity / 'View is playing audio'
+2026-11-24 00:12:38.060 E  App[23392:14e99] [com.apple.runningboard:assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}>
+2026-11-24 00:12:38.061 E  App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebKit Media Playback' for process with PID=23432, error: Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}
+2026-11-24 00:12:38.061 Df App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion::acquireSync Trying to take RBS assertion 'WebKit Media Playback' for process with PID=23435
+2026-11-24 00:12:38.061 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::processAssertionWasInvalidated() PID=23432
+2026-11-24 00:12:38.072 E  App[23392:14e99] [com.apple.runningboard:assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}>
+2026-11-24 00:12:38.072 E  App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebKit Media Playback' for process with PID=23435, error: Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}
+2026-11-24 00:12:38.073 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion::processAssertionWasInvalidated() PID=23435
+2026-11-24 00:12:38.112 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-24 00:12:38.538 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:12:38.538 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234196)
+2026-11-24 00:12:38.538 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234215) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:38.538 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234216) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:38.539 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234196) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:12:38.539 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234196) when = 0, offset = 0, duration = 0
+2026-11-24 00:12:38.734 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:12:38.735 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234197)
+2026-11-24 00:12:38.735 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234217) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:38.735 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234218) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:38.735 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234197) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:12:38.735 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234197) when = 0, offset = 0, duration = 0
+2026-11-24 00:12:39.529 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:12:39.529 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:12:39.529 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a809c40>; contextId: 0xC30A3957
+2026-11-24 00:12:39.531 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:39.531 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:40.057 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Releasing MediaPlayback assertion for WebProcess
+2026-11-24 00:12:40.058 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::updateAudibleMediaAssertions: Starting timer to clear audible activity in 5 seconds because we are no longer playing audio
+2026-11-24 00:12:40.058 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:12:40.060 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: UIProcess starting timer to release a foreground assertion in 10 seconds if audio doesn't start to play
+2026-11-24 00:12:41.267 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234197)
+2026-11-24 00:12:41.267 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234196)
+2026-11-24 00:12:41.267 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234195)
+2026-11-24 00:12:45.059 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::clearAudibleActivity: The number of processes playing audible media is now zero. Releasing UI process assertion.
+2026-11-24 00:12:45.060 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23435
+2026-11-24 00:12:50.064 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::clearAudibleActivity: UIProcess is releasing a foreground assertion because we are no longer playing audio
+2026-11-24 00:12:50.065 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180e4120 - [PID=23432, throttler=0x1180c8150] ProcessThrottler::Activity::invalidate: Ending foreground activity / 'View is playing audio'
+2026-11-24 00:12:54.148 Df App[23392:10b80] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.duckyisc00l.flappyc3-default
+2026-11-24 00:12:54.148 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:12:54.149 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:12:54.149 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a809c40>; contextId: 0xC30A3957
+2026-11-24 00:12:54.159 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:12:54.159 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234198)
+2026-11-24 00:12:54.159 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234219) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:54.159 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234220) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:54.159 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234198) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:12:54.160 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234198) when = 0, offset = 0, duration = 0
+2026-11-24 00:12:54.171 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Taking MediaPlayback assertion for WebProcess
+2026-11-24 00:12:54.171 Df App[23392:10b80] [com.apple.WebKit:Process] AssertionCapability::AssertionCapability: taking assertion MediaPlayback
+2026-11-24 00:12:54.171 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion() Failed to create capability MediaPlayback
+2026-11-24 00:12:54.171 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::updateAudibleMediaAssertions: The number of processes playing audible media is now greater than zero. Taking UI process assertion.
+2026-11-24 00:12:54.171 Df App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Trying to take RBS assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:12:54.171 Df App[23392:10b80] [com.apple.WebKit:Process] AssertionCapability::AssertionCapability: taking assertion MediaPlayback
+2026-11-24 00:12:54.171 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion() Failed to create capability MediaPlayback
+2026-11-24 00:12:54.174 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:54.176 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:54.176 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:54.177 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: UIProcess is taking a foreground assertion because we are playing audio
+2026-11-24 00:12:54.178 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180e4120 - [PID=23432, throttler=0x1180c8150] ProcessThrottler::Activity::Activity: Starting foreground activity / 'View is playing audio'
+2026-11-24 00:12:54.180 E  App[23392:14e99] [com.apple.runningboard:assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}>
+2026-11-24 00:12:54.181 E  App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebKit Media Playback' for process with PID=23432, error: Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}
+2026-11-24 00:12:54.181 Df App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion::acquireSync Trying to take RBS assertion 'WebKit Media Playback' for process with PID=23435
+2026-11-24 00:12:54.181 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ProcessAssertion::processAssertionWasInvalidated() PID=23432
+2026-11-24 00:12:54.183 E  App[23392:14e99] [com.apple.runningboard:assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}>
+2026-11-24 00:12:54.183 E  App[23392:14e99] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'WebKit Media Playback' for process with PID=23435, error: Error Domain=RBSServiceErrorDomain Code=1 "(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)" UserInfo={NSLocalizedFailureReason=(originator doesn't have entitlement com.apple.runningboard.assertions.webkit AND originator doesn't have entitlement com.apple.multitasking.systemappassertions)}
+2026-11-24 00:12:54.184 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ProcessAssertion::processAssertionWasInvalidated() PID=23435
+2026-11-24 00:12:54.245 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-11-24 00:12:54.716 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:12:54.716 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234199)
+2026-11-24 00:12:54.716 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234221) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:54.716 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234222) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:54.716 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234199) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:12:54.716 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234199) when = 0, offset = 0, duration = 0
+2026-11-24 00:12:54.936 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] BaseAudioContext::createBufferSource(5820624863821283351)
+2026-11-24 00:12:54.936 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::AudioNode(5820624863821234200)
+2026-11-24 00:12:54.936 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234223) name = detune, value = 0, default = 0, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:54.937 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioParam::AudioParam(5820624863821234224) name = playbackRate, value = 1, default = 1, min = -3.4028235e+38, max = 3.4028235e+38
+2026-11-24 00:12:54.937 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::connect(5820624863821234200) NodeTypeGain, output = 0, input = 0
+2026-11-24 00:12:54.937 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::startPlaying(5820624863821234200) when = 0, offset = 0, duration = 0
+2026-11-24 00:12:55.914 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x600003d2cf00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-11-24 00:12:55.915 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-11-24 00:12:55.915 Df App[23392:10b80] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a809c40>; contextId: 0xC30A3957
+2026-11-24 00:12:55.916 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:55.916 A  App[23392:10b80] (UIKitCore) send gesture actions
+2026-11-24 00:12:56.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180c80c0 - [PID=23432] WebProcessProxy::updateAudibleMediaAssertions: Releasing MediaPlayback assertion for WebProcess
+2026-11-24 00:12:56.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::updateAudibleMediaAssertions: Starting timer to clear audible activity in 5 seconds because we are no longer playing audio
+2026-11-24 00:12:56.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc0b0 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23432
+2026-11-24 00:12:56.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::updateThrottleState: UIProcess starting timer to release a foreground assertion in 10 seconds if audio doesn't start to play
+2026-11-24 00:12:57.454 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234199)
+2026-11-24 00:12:57.558 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234198)
+2026-11-24 00:12:57.558 Df App[23392:10c29] [com.apple.WebKit:Media] WebContent[23432] AudioNode::~AudioNode(5820624863821234200)
+2026-11-24 00:13:01.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b01e008 - WebProcessPool::clearAudibleActivity: The number of processes playing audible media is now zero. Releasing UI process assertion.
+2026-11-24 00:13:01.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1181dc160 - ~ProcessAssertion: Releasing process assertion 'WebKit Media Playback' for process with PID=23435
+2026-11-24 00:13:06.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x10b020020 - [pageProxyID=7, webPageID=8, PID=23432] WebPageProxy::clearAudibleActivity: UIProcess is releasing a foreground assertion because we are no longer playing audio
+2026-11-24 00:13:06.180 Df App[23392:10b80] [com.apple.WebKit:ProcessSuspension] 0x1180e4120 - [PID=23432, throttler=0x1180c8150] ProcessThrottler::Activity::invalidate: Ending foreground activity / 'View is playing audio'
+2026-11-24 00:15:15.759 Df App[23392:10c29] (WebKit) WebContent[23432] cannot migrate AudioUnit assets for current process

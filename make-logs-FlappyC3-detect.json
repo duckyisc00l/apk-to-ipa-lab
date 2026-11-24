@@ -1,0 +1,31 @@
+[
+ {
+  "libs": [],
+  "engine": "Web (Cordova)",
+  "variant": "construct3",
+  "engine_id": "web-cordova",
+  "tags": [
+   "web-cordova",
+   "web",
+   "construct3"
+  ],
+  "evidence": [
+   "assets/www/index.html",
+   "assets/www/cordova.js"
+  ],
+  "route": {
+   "kind": "run unchanged",
+   "step": "2-5",
+   "what": "web folder assets/www in a Swift web view"
+  },
+  "arches": [],
+  "arm64": false,
+  "game": "killflex__flappybird-c3",
+  "file": "flappybird-release.apk",
+  "notes": [
+   "1 APK(s)"
+  ],
+  "root": "work/killflex__flappybird-c3",
+  "protection": []
+ }
+]
