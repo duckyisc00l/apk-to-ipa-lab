@@ -1,0 +1,55 @@
+name: route-source-libgdx
+# "If the app's source is public, build from source": clone an open-source libGDX game at the tag of the release
+# the user has, build its OWN iOS module with MobiVM (RoboVM) unsigned (simulator app + unsigned IPA), and run it
+# in the iPhone Simulator. Needs no APK at all, so R8 renaming is not a problem. Default: Shattered Pixel Dungeon.
+on:
+  workflow_dispatch:
+    inputs:
+      repo: { default: "00-Evan/shattered-pixel-dungeon", description: "GitHub owner/name of the open-source game" }
+      tag: { default: "v4.0.2", description: "tag (or branch) matching the release version; see git ls-remote --tags" }
+      name: { default: "ShatteredPD" }
+      ios: { default: "ios", description: "Gradle module of the project's own iOS target" }
+      steps: { default: "ShatteredPD-source", description: "ci/sim/steps/<this>.txt" }
+      wait: { default: "40" }
+permissions:
+  contents: write
+concurrency:
+  group: route-source-libgdx-${{ inputs.name || 'ShatteredPD' }}
+  cancel-in-progress: true
+env:
+  GH_TOKEN: ${{ github.token }}
+  NAME: ${{ inputs.name || 'ShatteredPD' }}
+  REPO: ${{ inputs.repo || '00-Evan/shattered-pixel-dungeon' }}
+  TAG: ${{ inputs.tag || 'v4.0.2' }}
+jobs:
+  build:
+    runs-on: macos-15-intel
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v5
+        with: { distribution: temurin, java-version: "21" }
+      - name: Clone the game's source at the release tag
+        run: |
+          git clone --depth 1 --branch "$TAG" "https://github.com/$REPO" /tmp/src
+          git -C /tmp/src log -1 --format='%H %s' | tee -a /tmp/head.txt
+          echo "GRADLE_JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
+      - name: Build its own iOS module with MobiVM (simulator app + unsigned IPA)
+        run: ci/libgdx/source-build.sh /tmp/src "$NAME" out "${{ inputs.ios || 'ios' }}"
+      - name: Run it in the iPhone Simulator
+        continue-on-error: true
+        run: |
+          S=ci/sim/steps/${{ inputs.steps || 'ShatteredPD-source' }}.txt; [ -f "$S" ] || S=""
+          APP=$(ls -d out/sim-app/*.app | head -1)
+          ci/sim/run.sh "$APP" out/sim "${{ inputs.wait || 40 }}" $S
+      - name: Publish to branch r-spd
+        if: always()
+        run: |
+          mkdir -p /tmp/r; cp out/*.md out/*.log /tmp/r/ 2>/dev/null || true; cp -R out/sim /tmp/r/ 2>/dev/null || true
+          cp /tmp/head.txt /tmp/r/ 2>/dev/null || true
+          for l in out/robovm-*.log; do [ -f "$l" ] && { grep -vE "^\[DEBUG\]" "$l" | tail -300 > /tmp/r/$(basename "$l"); }; done
+          ls out/ipa/*.ipa > /tmp/r/ipa.txt 2>&1 && ls -la out/ipa/*.ipa >> /tmp/r/ipa.txt
+          { echo "# $REPO @ $TAG"; grep -h SUMMARY out/sim/sim.md 2>/dev/null; cat out/source.md; } > /tmp/r/SUMMARY.md
+          git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git checkout --orphan r-spd && git rm -rfq . && rm -rf ci dl work out
+          cp -r /tmp/r/. . && git add -A && git commit -qm "source libgdx build $NAME ${{ github.run_number }}" && git push -f origin r-spd

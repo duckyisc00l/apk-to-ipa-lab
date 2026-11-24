@@ -1,0 +1,10 @@
+# Shattered Pixel Dungeon built from source: title screen, then try the start button (bottom centre; first guess)
+shot 0-title
+wait 5
+shot 1-title
+tap 50% 85%
+wait 6
+shot 2-after-tap
+tap 50% 75%
+wait 6
+shot 3-after-tap2
