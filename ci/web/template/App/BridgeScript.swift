@@ -38,67 +38,34 @@ enum BridgeScript {
   console.error = function () { try { window.nativeCall('log', { text: 'console.error: ' + Array.prototype.join.call(arguments, ' ').slice(0, 500) }).catch(function () {}); } catch (x) {} return cerr.apply(console, arguments); };
   console.warn = function () { try { window.nativeCall('log', { text: 'console.warn: ' + Array.prototype.join.call(arguments, ' ').slice(0, 300) }).catch(function () {}); } catch (x) {} return cwarn.apply(console, arguments); };
 
-  // IndexedDB diagnostics (temporary): log the exact errors of the page's own cursors and run a self test.
+  // WebKit bug: IDBIndex.openKeyCursor / openCursor with direction "nextunique" fails with
+  // "UnknownError: Unable to open cursor" (the app's puzzle list never loads). Open a plain "next"
+  // cursor instead and skip the repeated keys before the page sees them. (Cursor errors are logged.)
   (function () {
     var L = function (t) { try { window.nativeCall('log', { text: 'IDB: ' + t }).catch(function () {}); } catch (x) {} };
-    var E = function (e) { return e ? (e.name + ': ' + e.message) : String(e); };
-    L('origin=' + location.origin + ' secure=' + window.isSecureContext + ' idb=' + (typeof indexedDB) + ' ua=' + navigator.userAgent.slice(-40));
     try {
       ['openCursor', 'openKeyCursor'].forEach(function (m) {
         [window.IDBObjectStore, window.IDBIndex].forEach(function (C) {
           if (!C || !C.prototype[m]) return;
           var o = C.prototype[m];
-          C.prototype[m] = function () {
-            var r, self = this, a = [].slice.call(arguments);
-            try { r = o.apply(this, arguments); } catch (x) { L(C.name + '.' + m + ' threw ' + E(x) + ' on ' + self.name + ' args=' + JSON.stringify(a)); throw x; }
-            r.addEventListener('error', function () { L(C.name + '.' + m + ' error ' + E(r.error) + ' on ' + self.name + ' args=' + JSON.stringify(a)); });
+          C.prototype[m] = function (range, dir) {
+            var args = [].slice.call(arguments), unique = (dir === 'nextunique' && C === window.IDBIndex);
+            if (unique) args[1] = 'next';
+            var r = o.apply(this, args), name = this.name;
+            if (unique) {
+              var have = false, last;
+              r.addEventListener('success', function (ev) {
+                var c = r.result; if (!c) return;
+                if (have && indexedDB.cmp(c.key, last) === 0) { ev.stopImmediatePropagation(); c.continue(); return; }
+                have = true; last = c.key;
+              });
+            }
+            r.addEventListener('error', function () { L(C.name + '.' + m + ' error ' + (r.error && r.error.message) + ' on ' + name + ' dir=' + dir); });
             return r;
           };
         });
       });
-    } catch (x) { L('hook failed ' + E(x)); }
-    var selfTest = function () {
-      var req; try { req = indexedDB.open('__probe', 1); } catch (x) { return L('open threw ' + E(x)); }
-      req.onupgradeneeded = function () { var s = req.result.createObjectStore('s', { keyPath: 'id' }); s.createIndex('v', 'v'); L('probe upgrade ok'); };
-      req.onerror = function () { L('probe open error ' + E(req.error)); };
-      req.onblocked = function () { L('probe open blocked'); };
-      req.onsuccess = function () {
-        var db = req.result, tx = db.transaction('s', 'readwrite'), s = tx.objectStore('s');
-        for (var i = 0; i < 50; i++) s.put({ id: i, v: i % 5 });
-        tx.onerror = function () { L('probe write error ' + E(tx.error)); };
-        tx.oncomplete = function () {
-          var n = 0, c = db.transaction('s').objectStore('s').index('v').openCursor(IDBKeyRange.bound(1, 3));
-          c.onsuccess = function () { var k = c.result; if (k) { n++; k.continue(); } else L('probe cursor ok n=' + n); };
-          c.onerror = function () { L('probe cursor error ' + E(c.error)); };
-        };
-      };
-    };
-    var dump = function () {
-      if (!indexedDB.databases) return L('no indexedDB.databases()');
-      indexedDB.databases().then(function (list) {
-        L('databases: ' + JSON.stringify(list));
-        list.forEach(function (d) {
-          if (d.name === '__probe') return;
-          var r = indexedDB.open(d.name);
-          r.onerror = function () { L('open ' + d.name + ' error ' + E(r.error)); };
-          r.onsuccess = function () {
-            var db = r.result, names = [].slice.call(db.objectStoreNames);
-            L('db ' + d.name + ' v' + db.version + ' stores=' + names.join(','));
-            names.forEach(function (n) {
-              try {
-                var st = db.transaction(n).objectStore(n);
-                L('store ' + n + ' keyPath=' + JSON.stringify(st.keyPath) + ' indexes=' + [].slice.call(st.indexNames).join(','));
-                var cnt = st.count(); cnt.onsuccess = function () { L('store ' + n + ' count=' + cnt.result); }; cnt.onerror = function () { L('store ' + n + ' count error ' + E(cnt.error)); };
-                var c = st.openCursor(); c.onsuccess = function () { L('store ' + n + ' plain cursor ' + (c.result ? 'has row' : 'empty')); };
-                c.onerror = function () { L('store ' + n + ' plain cursor ERROR ' + E(c.error)); };
-              } catch (x) { L('store ' + n + ' threw ' + E(x)); }
-            });
-            db.close();
-          };
-        });
-      }, function (e) { L('databases() failed ' + E(e)); });
-    };
-    try { selfTest(); setTimeout(dump, 6000); setTimeout(dump, 14000); } catch (x) { L('selftest threw ' + E(x)); }
+    } catch (x) { L('cursor fix failed ' + x); }
   })();
 })();
 """#
