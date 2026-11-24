@@ -8,6 +8,7 @@ on:
     inputs:
       repo: { description: "owner/repo with an APK release", default: "codeAbinash/english-dictionary-rn" }
       tag: { description: "release tag (blank = latest with an APK)", default: "" }
+      steps: { description: "Simulator input steps file in the repo (blank = just wait and look)", default: "" }
 permissions:
   contents: write
 concurrency:
@@ -151,7 +152,10 @@ jobs:
           export CCC_OVERRIDE_OPTIONS='^-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION=1' SKIP_BUNDLING=1 SIM_ARCHS=x86_64   # Intel Mac: one simulator arch
           BID="com.duckyisc00l.$(echo "${PKG:-$APPNAME}" | tr -cd 'A-Za-z0-9.' | awk -F. '{print $NF}')"
           export SIM_PRE_RUN="RN_TRACE=1 ci/rn/fill-app.sh \"\$APP\" rn Host \"$KIND\" \"$BID\" \"${LABEL:-$APPNAME}\""
-          ci/sim/build-and-run.sh "$(ls -d Host/ios/*.xcworkspace | head -1)" Host out/sim 40
+          ci/sim/build-and-run.sh "$(ls -d Host/ios/*.xcworkspace | head -1)" Host out/sim 40 "${{ inputs.steps }}"
+      - name: Keep the app's trace lines (the published log is cut to its last 200 lines)
+        if: always()
+        run: grep -aE "RNTRACE|APPLOG|HERMES-PRELUDE" out/sim/sim-applog.log out/sim/sim-console.log 2>/dev/null | sed -E 's/^[^ ]+ +[0-9:.-]+ +[0-9:.-]* *//' | head -600 > out/sim-rntrace.log || true
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: ipa-logs, path: out }

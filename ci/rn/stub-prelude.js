@@ -107,17 +107,35 @@
       return noop;
     } });
   }
-  // lab only (fill-app.sh sets __RN_TRACE for simulator runs): log the first native calls with their arguments
-  var traceLeft = 400;
+  // lab only (fill-app.sh sets __RN_TRACE for simulator runs): log the first native calls of every module
+  // with their arguments, and when a callback the app handed to native code is called back (a call that
+  // never shows a "cb" line is a native method that never replied: what a spinner usually waits for).
+  var traceLeft = {}, QUIET = /^(ExceptionsManager|Timing|LogBox|DevSettings|PlatformConstants|SourceCode|DeviceInfo)$/;
+  function tr(msg) { try { console.error('RNTRACE ' + String(msg).slice(0, 500)); } catch (e) {} }
   function traced(name, mod) {
+    if (QUIET.test(name)) return mod;
     return new Proxy(mod, { get: function (t, k) {
       var v = t[k];
       if (typeof v !== 'function' || typeof k !== 'string' || /^(getConstants|addListener|removeListeners)$/.test(k)) return v;
       return function () {
-        if (traceLeft-- > 0) { try { console.error('RNTRACE ' + name + '.' + k + ' ' + JSON.stringify([].slice.call(arguments).map(function (a) { return typeof a === 'function' ? 'fn' : a; })).slice(0, 400)); } catch (e) {} }
-        return v.apply(t, arguments);
+        var n = traceLeft[name] = (traceLeft[name] === undefined ? (name === 'UIManager' ? 30 : 150) : traceLeft[name]) - 1;
+        var args = [].slice.call(arguments).map(function (a, i) {
+          if (typeof a !== 'function') return a;
+          if (n >= 0) { var f = a; return function () { tr('cb ' + name + '.' + String(k) + ' arg' + i + ' ' + JSON.stringify([].slice.call(arguments)).slice(0, 200)); return f.apply(this, arguments); }; }
+          return a;
+        });
+        if (n >= 0) { try { tr(name + '.' + k + ' ' + JSON.stringify(args.map(function (a) { return typeof a === 'function' ? 'fn' : a; })).slice(0, 400)); } catch (e) {} }
+        var r = v.apply(t, args);
+        if (n >= 0 && r && typeof r.then === 'function') r.then(function (x) { tr('resolved ' + name + '.' + k); }, function (e) { tr('REJECTED ' + name + '.' + k + ' ' + e); });
+        return r;
       };
     } });
+  }
+  if (g.__RN_TRACE) {
+    // the app's own console.* (the logger service writes to console.debug) and rejected promises nobody handles
+    try { var hook = g.nativeLoggingHook; if (hook) g.nativeLoggingHook = function (m, l) { return hook('APPLOG ' + m, 3); }; } catch (e) {}
+    try { if (g.HermesInternal && g.HermesInternal.enablePromiseRejectionTracker) g.HermesInternal.enablePromiseRejectionTracker({ allRejections: true,
+      onUnhandled: function (id, e) { tr('UNHANDLED REJECTION ' + (e && (e.stack || e.message) || e)); }, onHandled: function () {} }); } catch (e) {}
   }
   function wrap(real) {
     return new Proxy({}, { get: function (t, k) {
@@ -126,7 +144,7 @@
       var m = real ? real[k] : undefined, out;
       if (m != null) {
         out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
-        if (g.__RN_TRACE && k === 'UIManager') out = traced(k, out);   // not ExceptionsManager: logging an error reports one
+        if (g.__RN_TRACE) out = traced(k, out);   // (traced() skips ExceptionsManager: logging an error reports one)
       } else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
       else if (STUBS.indexOf(k) >= 0 || STUB_RE.test(k)) out = stub(k);
       else return m;

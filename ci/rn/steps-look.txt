@@ -1,0 +1,4 @@
+wait 6
+shot 1-after6
+wait 10
+shot 2-after16
