@@ -77,7 +77,8 @@ jobs:
       - name: Put game.love inside the app and package the IPA
         run: |
           app=$(find love/platform/xcode/dd/Build/Products -maxdepth 2 -name '*.app' | head -1); echo "app: $app" | tee -a out/love.md
-          cp game.love "$app/"
+          ci/love/shim.sh game.love game-shim.love   # iOS only shows the keyboard after setTextInput(true): the shim asks for it on first touch
+          cp game-shim.love "$app/game.love"
           /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $NAME" "$app/Info.plist" 2>/dev/null || /usr/libexec/PlistBuddy -c "Add :CFBundleDisplayName string $NAME" "$app/Info.plist"
           /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$app/Info.plist"
           mkdir -p Payload && cp -R "$app" Payload/ && zip -qry "$NAME.ipa" Payload && ls -la "$NAME.ipa" | tee -a out/love.md
@@ -86,7 +87,7 @@ jobs:
         continue-on-error: true
         run: |
           export NAME
-          SIM_PRE_RUN='cp game.love "$APP/"; /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$APP/Info.plist"' \
+          ci/love/shim.sh game.love game-shim.love; SIM_PRE_RUN='cp game-shim.love "$APP/game.love"; /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.duckyisc00l.$(echo $NAME | tr A-Z a-z)" "$APP/Info.plist"' \
             ci/sim/build-and-run.sh love/platform/xcode/love.xcodeproj love-ios out/sim 30 "ci/sim/steps/$NAME.txt"
       - name: Publish to branch r-love
         if: always()
