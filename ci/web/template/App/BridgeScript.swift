@@ -37,6 +37,36 @@ enum BridgeScript {
   var cerr = console.error, cwarn = console.warn;
   console.error = function () { try { window.nativeCall('log', { text: 'console.error: ' + Array.prototype.join.call(arguments, ' ').slice(0, 500) }).catch(function () {}); } catch (x) {} return cerr.apply(console, arguments); };
   console.warn = function () { try { window.nativeCall('log', { text: 'console.warn: ' + Array.prototype.join.call(arguments, ' ').slice(0, 300) }).catch(function () {}); } catch (x) {} return cwarn.apply(console, arguments); };
+
+  // WebKit bug: IDBIndex.openKeyCursor / openCursor with direction "nextunique" fails with
+  // "UnknownError: Unable to open cursor" (the app's puzzle list never loads). Open a plain "next"
+  // cursor instead and skip the repeated keys before the page sees them. (Cursor errors are logged.)
+  (function () {
+    var L = function (t) { try { window.nativeCall('log', { text: 'IDB: ' + t }).catch(function () {}); } catch (x) {} };
+    try {
+      ['openCursor', 'openKeyCursor'].forEach(function (m) {
+        [window.IDBObjectStore, window.IDBIndex].forEach(function (C) {
+          if (!C || !C.prototype[m]) return;
+          var o = C.prototype[m];
+          C.prototype[m] = function (range, dir) {
+            var args = [].slice.call(arguments), unique = (dir === 'nextunique' && C === window.IDBIndex);
+            if (unique) args[1] = 'next';
+            var r = o.apply(this, args), name = this.name;
+            if (unique) {
+              var have = false, last;
+              r.addEventListener('success', function (ev) {
+                var c = r.result; if (!c) return;
+                if (have && indexedDB.cmp(c.key, last) === 0) { ev.stopImmediatePropagation(); c.continue(); return; }
+                have = true; last = c.key;
+              });
+            }
+            r.addEventListener('error', function () { L(C.name + '.' + m + ' error ' + (r.error && r.error.message) + ' on ' + name + ' dir=' + dir); });
+            return r;
+          };
+        });
+      });
+    } catch (x) { L('cursor fix failed ' + x); }
+  })();
 })();
 """#
 
