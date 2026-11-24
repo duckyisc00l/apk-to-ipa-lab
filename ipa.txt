@@ -1,0 +1,2 @@
+out/ipa/IOSLauncher.ipa
+-rw-rw-rw-  1 runner  staff  73509609 Nov 24 11:31 out/ipa/IOSLauncher.ipa

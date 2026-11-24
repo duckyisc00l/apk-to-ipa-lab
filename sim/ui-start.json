@@ -1,0 +1,148 @@
+[
+  {
+    "pid" : 30596,
+    "role" : "AXApplication",
+    "help" : null,
+    "role_description" : "application",
+    "frame" : {
+      "x" : 0,
+      "y" : 0,
+      "width" : 375,
+      "height" : 667
+    },
+    "type" : "Application",
+    "enabled" : true,
+    "AXUniqueId" : null,
+    "AXValue" : null,
+    "AXFrame" : "{{0, 0}, {375, 667}}",
+    "subrole" : null,
+    "content_required" : false,
+    "AXLabel" : "Shattered Pixel Dungeon",
+    "title" : null,
+    "children" : [
+      {
+        "role" : "AXGroup",
+        "children" : [
+          {
+            "custom_actions" : [
+
+            ],
+            "children" : [
+              {
+                "custom_actions" : [
+
+                ],
+                "frame" : {
+                  "x" : 0,
+                  "y" : 0,
+                  "width" : 375,
+                  "height" : 667
+                },
+                "help" : null,
+                "AXFrame" : "{{0, 0}, {375, 667}}",
+                "content_required" : false,
+                "AXLabel" : null,
+                "enabled" : true,
+                "type" : "Group",
+                "AXValue" : null,
+                "role_description" : "group",
+                "AXUniqueId" : null,
+                "title" : null,
+                "subrole" : null,
+                "role" : "AXGroup",
+                "pid" : 30596,
+                "traits" : [
+
+                ],
+                "children" : [
+                  {
+                    "custom_actions" : [
+
+                    ],
+                    "content_required" : false,
+                    "enabled" : true,
+                    "children" : [
+
+                    ],
+                    "help" : null,
+                    "AXUniqueId" : null,
+                    "AXLabel" : null,
+                    "frame" : {
+                      "x" : 0,
+                      "y" : 0,
+                      "width" : 375,
+                      "height" : 667
+                    },
+                    "AXValue" : null,
+                    "type" : "Group",
+                    "role" : "AXGroup",
+                    "AXFrame" : "{{0, 0}, {375, 667}}",
+                    "traits" : [
+
+                    ],
+                    "pid" : 30596,
+                    "title" : null,
+                    "role_description" : "group",
+                    "subrole" : null
+                  }
+                ]
+              }
+            ],
+            "subrole" : null,
+            "content_required" : false,
+            "role" : "AXGroup",
+            "frame" : {
+              "x" : 0,
+              "y" : 0,
+              "width" : 375,
+              "height" : 667
+            },
+            "help" : null,
+            "AXLabel" : null,
+            "role_description" : "group",
+            "enabled" : true,
+            "pid" : 30596,
+            "type" : "Group",
+            "traits" : [
+
+            ],
+            "title" : null,
+            "AXValue" : null,
+            "AXUniqueId" : null,
+            "AXFrame" : "{{0, 0}, {375, 667}}"
+          }
+        ],
+        "subrole" : null,
+        "enabled" : true,
+        "pid" : 30596,
+        "type" : "Group",
+        "frame" : {
+          "x" : 0,
+          "y" : 0,
+          "width" : 375,
+          "height" : 667
+        },
+        "AXLabel" : null,
+        "help" : null,
+        "title" : null,
+        "AXValue" : null,
+        "AXUniqueId" : null,
+        "traits" : [
+
+        ],
+        "role_description" : "group",
+        "custom_actions" : [
+
+        ],
+        "content_required" : false,
+        "AXFrame" : "{{0, 0}, {375, 667}}"
+      }
+    ],
+    "custom_actions" : [
+
+    ],
+    "traits" : [
+
+    ]
+  }
+]

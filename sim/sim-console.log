@@ -1,0 +1,23 @@
+2026-11-24 11:36:28.812 IOSLauncher[30596:84705] [debug] IOSApplication: iOS version: 26.2
+2026-11-24 11:36:28.812 IOSLauncher[30596:84705] [debug] IOSApplication: Running in 64-bit mode
+2026-11-24 11:36:28.834 IOSLauncher[30596:84705] [debug] IOSApplication: Pixels per point: 2.0
+2026-11-24 11:36:29.078 IOSLauncher[30596:84705] [debug] IOSApplication: Status bar is visible (height = 20.0)
+2026-11-24 11:36:29.079 IOSLauncher[30596:84705] [debug] IOSApplication: Computed bounds are x=0 y=20 w=375 h=647 bbW= 750 bbH= 1294
+2026-11-24 11:36:29.165 IOSLauncher[30596:84705] MGLKViewController resume
+2026-11-24 11:36:29.200 IOSLauncher[30596:84705] [debug] IOSGraphics: Display: ppi=460, density=2.875
+2026-11-24 11:36:30.038 IOSLauncher[30596:84705] [debug] IOSApplication: created
+2026-11-24 11:36:30.043 IOSLauncher[30596:84705] [info] Controllers: added manager for application, 1 managers active
+2026-11-24 11:36:35.580 IOSLauncher[30596:84705] [debug] IOSApplication: Status bar is not visible
+2026-11-24 11:36:35.581 IOSLauncher[30596:84705] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 11:36:35.850 IOSLauncher[30596:84705] MGLKViewController viewDidAppear
+2026-11-24 11:36:35.853 IOSLauncher[30596:84705] [debug] IOSApplication: resumed
+2026-11-24 11:36:35.854 IOSLauncher[30596:84705] MGLKViewController appDidBecomeActive:
+2026-11-24 11:39:28.231 IOSLauncher[30596:84705] void * _Nullable NSMapGet(NSMapTable * _Nonnull, const void * _Nullable): map table argument is NULL
+2026-11-24 11:40:00.531 IOSLauncher[30596:84705] [debug] IOSApplication: Status bar is not visible
+2026-11-24 11:40:00.532 IOSLauncher[30596:84705] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 11:40:34.822 IOSLauncher[30596:84705] [debug] IOSApplication: Status bar is not visible
+2026-11-24 11:40:34.823 IOSLauncher[30596:84705] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 11:40:51.919 IOSLauncher[30596:84705] [debug] IOSApplication: Status bar is not visible
+2026-11-24 11:40:51.920 IOSLauncher[30596:84705] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
+2026-11-24 11:41:00.570 IOSLauncher[30596:84705] [debug] IOSApplication: Status bar is not visible
+2026-11-24 11:41:00.570 IOSLauncher[30596:84705] [debug] IOSApplication: Computed bounds are x=0 y=0 w=375 h=667 bbW= 750 bbH= 1334
