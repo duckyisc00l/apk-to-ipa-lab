@@ -3,6 +3,7 @@
 # Works on any Mac (Codemagic runs it through ci/cm/run.sh). Results in out/.
 set -u
 ROOT=$PWD; mkdir -p out
+command -v axe >/dev/null || { brew update --quiet >/dev/null 2>&1; brew tap cameroncooke/axe >/dev/null 2>&1; brew install cameroncooke/axe/axe > out/axe-install.log 2>&1; tail -3 out/axe-install.log; }
 git clone -q --depth 1 --branch 11.5 https://github.com/love2d/love love 2>&1 | tail -1
 url=$(curl -sSL https://api.github.com/repos/love2d/love/releases/tags/11.5 | python3 -c "import json,sys;print([a['browser_download_url'] for a in json.load(sys.stdin)['assets'] if 'apple-libraries' in a['name']][0])")
 curl -sSL -o apple.zip "$url" && unzip -qo apple.zip -d applelibs
