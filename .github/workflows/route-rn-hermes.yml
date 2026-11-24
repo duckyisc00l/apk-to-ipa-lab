@@ -155,7 +155,9 @@ jobs:
           ci/sim/build-and-run.sh "$(ls -d Host/ios/*.xcworkspace | head -1)" Host out/sim 40 "${{ inputs.steps }}"
       - name: Keep the app's trace lines (the published log is cut to its last 200 lines)
         if: always()
-        run: grep -aE "RNTRACE|APPLOG|HERMES-PRELUDE" out/sim/sim-applog.log out/sim/sim-console.log 2>/dev/null | sed -E 's/^[^ ]+ +[0-9:.-]+ +[0-9:.-]* *//' | head -600 > out/sim-rntrace.log || true
+        run: |
+          # app trace lines (a rejection's stack continues on the next lines); Reanimated's node graph floods, so it is left out
+          cat out/sim/sim-applog.log out/sim/sim-console.log 2>/dev/null | grep -aE -A14 "RNTRACE UNHANDLED|RNTRACE LENIENT|RNTRACE [A-Za-z]+\.[A-Za-z]+ |HERMES-PRELUDE|APPLOG [^R]" | grep -av "ReanimatedModule\.\(createNode\|connectNodes\)" | sed -E 's/\(address at [^)]*\//(at /' | head -700 > out/sim-rntrace.log || true
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: ipa-logs, path: out }

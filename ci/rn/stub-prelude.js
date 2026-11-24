@@ -98,12 +98,31 @@
     DeviceEventManager: function () { return {}; }, FrescoModule: function () { return {}; },
     AccessibilityInfo: function () { return {}; }, HeadlessJsTaskSupport: function () { return {}; }
   };
+  // Android-only SETTINGS (constants) a real iOS module lacks, with the iOS value that means the same.
+  // Why this table exists: lenient() below answers every unknown lower-case name with a function, because a
+  // missing Android-only METHOD must not crash. But a missing CONSTANT then reads as a function too, and the app
+  // does string work on it ("lng = NativeModules.I18nManager.localeIdentifier" -> i18next: "undefined is not
+  // a function", the app's first screen never leaves its spinner). Constants whose value is a string or number
+  // belong here.
+  var ANDROID_CONSTANTS = {
+    I18nManager: { localeIdentifier: function (r) {
+      var st = r.SettingsManager && r.SettingsManager.settings, l = st && (st.AppleLocale || (st.AppleLanguages && st.AppleLanguages[0]));
+      return l ? String(l).replace('-', '_') : 'en_US'; } }
+  };
+  function androidConstants(name, real, r) {
+    var t = ANDROID_CONSTANTS[name], o = null;
+    if (!t) return null;
+    Object.keys(t).forEach(function (k) { if (real[k] === undefined) { o = o || {}; try { o[k] = t[k](r); } catch (e) {} } });
+    return o;
+  }
   // a real module with Android-only methods missing: those answer "nothing" instead of crashing
-  function lenient(real, extra) {
+  var seenLenient = {};
+  function lenient(real, extra, name) {
     return new Proxy(real, { get: function (t, k) {
       if (extra && k in extra) return extra[k];
       var v = t[k];
       if (v !== undefined || typeof k !== 'string' || k === 'then' || !/^[a-z]/.test(k)) return v;
+      if (g.__RN_TRACE && !seenLenient[name + '.' + k] && (seenLenient[name + '.' + k] = 1)) tr('LENIENT: ' + name + '.' + k + ' is missing on iOS, answered with a no-op function (if the app reads it as a value, add it to ANDROID_CONSTANTS)');
       return noop;
     } });
   }
@@ -143,9 +162,9 @@
       if (k in cache) return cache[k];
       var m = real ? real[k] : undefined, out;
       if (m != null) {
-        out = lenient(m, k === 'UIManager' ? uiManager(m) : null);
+        out = lenient(m, k === 'UIManager' ? uiManager(m) : androidConstants(k, m, real), k);
         if (g.__RN_TRACE) out = traced(k, out);   // (traced() skips ExceptionsManager: logging an error reports one)
-      } else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x) : x; }
+      } else if (ANDROID[k]) { var x = ANDROID[k](real); out = x ? lenient(x, null, k) : x; }
       else if (STUBS.indexOf(k) >= 0 || STUB_RE.test(k)) out = stub(k);
       else return m;
       return (cache[k] = out);
