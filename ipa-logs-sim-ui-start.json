@@ -1,0 +1,200 @@
+                                                    "role" : "AXGroup",
+                                                    "custom_actions" : [
+
+                                                    ],
+                                                    "title" : null,
+                                                    "pid" : 53704,
+                                                    "help" : null,
+                                                    "AXUniqueId" : null,
+                                                    "enabled" : true,
+                                                    "type" : "Group",
+                                                    "AXFrame" : "{{0, 0}, {375, 667}}",
+                                                    "content_required" : false
+                                                  }
+                                                ],
+                                                "AXFrame" : "{{0, 0}, {375, 667}}",
+                                                "role_description" : "group",
+                                                "pid" : 53704,
+                                                "AXLabel" : "Create project - or - Open project Menu Home  Close drawer  Home  Create project  Project list  Reports  Application settings  About...  Exit 0 pages 0 pages",
+                                                "custom_actions" : [
+
+                                                ],
+                                                "title" : null,
+                                                "help" : null,
+                                                "enabled" : true,
+                                                "subrole" : null,
+                                                "AXUniqueId" : null,
+                                                "traits" : [
+
+                                                ],
+                                                "content_required" : false,
+                                                "type" : "Group",
+                                                "role" : "AXGroup",
+                                                "AXValue" : null
+                                              }
+                                            ]
+                                          }
+                                        ],
+                                        "type" : "Group",
+                                        "AXLabel" : "Create project - or - Open project Menu Home  Close drawer  Home  Create project  Project list  Reports  Application settings  About...  Exit 0 pages 0 pages",
+                                        "role_description" : "group",
+                                        "help" : null,
+                                        "frame" : {
+                                          "x" : 0,
+                                          "width" : 375,
+                                          "height" : 667,
+                                          "y" : 0
+                                        }
+                                      }
+                                    ],
+                                    "traits" : [
+
+                                    ],
+                                    "AXValue" : null,
+                                    "AXFrame" : "{{0, 0}, {375, 667}}",
+                                    "type" : "Group",
+                                    "title" : null,
+                                    "frame" : {
+                                      "x" : 0,
+                                      "width" : 375,
+                                      "height" : 667,
+                                      "y" : 0
+                                    },
+                                    "enabled" : true,
+                                    "subrole" : null,
+                                    "AXLabel" : "Create project - or - Open project Menu Home  Close drawer  Home  Create project  Project list  Reports  Application settings  About...  Exit 0 pages 0 pages",
+                                    "help" : null,
+                                    "pid" : 53704,
+                                    "role" : "AXGroup"
+                                  }
+                                ],
+                                "role_description" : "group",
+                                "traits" : [
+
+                                ],
+                                "role" : "AXGroup",
+                                "pid" : 53704,
+                                "AXFrame" : "{{0, 0}, {375, 667}}",
+                                "help" : null,
+                                "title" : null
+                              }
+                            ],
+                            "AXValue" : null,
+                            "role" : "AXGroup",
+                            "help" : null,
+                            "title" : null,
+                            "AXLabel" : "Create project - or - Open project Menu Home  Close drawer  Home  Create project  Project list  Reports  Application settings  About...  Exit 0 pages 0 pages",
+                            "pid" : 53704,
+                            "AXFrame" : "{{0, 0}, {375, 667}}",
+                            "AXUniqueId" : null,
+                            "frame" : {
+                              "height" : 667,
+                              "width" : 375,
+                              "x" : 0,
+                              "y" : 0
+                            },
+                            "role_description" : "group",
+                            "traits" : [
+
+                            ]
+                          }
+                        ],
+                        "AXLabel" : "Create project - or - Open project Menu Home  Close drawer  Home  Create project  Project list  Reports  Application settings  About...  Exit 0 pages 0 pages",
+                        "pid" : 53704,
+                        "traits" : [
+
+                        ],
+                        "role_description" : "group",
+                        "type" : "Group"
+                      }
+                    ],
+                    "AXFrame" : "{{0, 0}, {375, 667}}",
+                    "help" : null,
+                    "role_description" : "group",
+                    "frame" : {
+                      "height" : 667,
+                      "width" : 375,
+                      "x" : 0,
+                      "y" : 0
+                    },
+                    "content_required" : false,
+                    "AXUniqueId" : null,
+                    "custom_actions" : [
+
+                    ],
+                    "type" : "Group",
+                    "subrole" : null,
+                    "AXLabel" : null,
+                    "title" : null,
+                    "traits" : [
+
+                    ],
+                    "role" : "AXGroup",
+                    "AXValue" : null,
+                    "pid" : 53704
+                  }
+                ],
+                "enabled" : true,
+                "AXLabel" : null,
+                "AXFrame" : "{{0, 0}, {375, 667}}",
+                "title" : null,
+                "traits" : [
+
+                ]
+              }
+            ],
+            "AXLabel" : null,
+            "type" : "Group",
+            "traits" : [
+
+            ],
+            "AXFrame" : "{{0, 0}, {375, 667}}",
+            "frame" : {
+              "height" : 667,
+              "width" : 375,
+              "x" : 0,
+              "y" : 0
+            },
+            "content_required" : false,
+            "pid" : 53704,
+            "custom_actions" : [
+
+            ],
+            "role" : "AXGroup",
+            "subrole" : null,
+            "role_description" : "group",
+            "help" : null,
+            "AXValue" : null,
+            "AXUniqueId" : null
+          }
+        ],
+        "help" : null,
+        "type" : "Group",
+        "role" : "AXGroup",
+        "enabled" : true,
+        "AXValue" : null,
+        "pid" : 53704,
+        "role_description" : "group",
+        "AXFrame" : "{{0, 0}, {375, 667}}"
+      }
+    ],
+    "traits" : [
+
+    ],
+    "content_required" : false,
+    "AXUniqueId" : null,
+    "role_description" : "application",
+    "role" : "AXApplication",
+    "subrole" : null,
+    "custom_actions" : [
+
+    ],
+    "frame" : {
+      "height" : 667,
+      "width" : 375,
+      "x" : 0,
+      "y" : 0
+    },
+    "pid" : 53704
+  }
+]

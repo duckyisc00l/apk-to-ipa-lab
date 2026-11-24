@@ -1,0 +1,22 @@
+- bundle: assets/index.android.bundle
+- size: 3517448
+- kind: hermes
+- hermes_bytecode_version: 90
+- hermes_strings: 18740
+- rn_version: 0.71.8
+- rn_prerelease: None
+- rn_version_from: dex Lcom/facebook/react/modules/systeminfo/ReactNativeVersion;
+- debug_dex_seqs: [['Lcom/facebook/react/modules/systeminfo/ReactNativeVersion;-><clinit>', 0, 71, 8, 'major', 'minor', 'patch', 'prerelease', 0]]
+- app_name: MultiDuperStopwatch
+- app_name_from: Lru/nemiro/apps/multiduperstopwatch/MainActivity;
+- new_architecture: True
+- engine_lib: hermes
+- native_core: ['RCTImageView', 'RCTModalHostView', 'RCTMultilineTextInputView', 'RCTRefreshControl', 'RCTSafeAreaView', 'RCTScrollView', 'RCTSinglelineTextInputView', 'RCTSwitch', 'RCTText', 'RCTView', 'RCTVirtualText']
+- native_third_party: ['ExpoDriver', 'ExpoQueryRunner', 'RCTActivityIndicatorView', 'RCTAnimation', 'RCTDeviceEventEmitter', 'RCTEventEmitter', 'RCTImageSource', 'RCTInputAccessoryView', 'RCTLog', 'RCTNativeAppEventEmitter', 'RCTNetworking', 'RCTRawText', 'RCTScrollContentView', 'RCTSlider', 'RCTTextInlineImage', 'RNCAndroidDialogPicker', 'RNCAndroidDropdownPicker', 'RNCAsyncStorage', 'RNCMaskedView', 'RNCSafeAreaContext', 'RNCSafeAreaProvider', 'RNCSafeAreaView', 'RNDFLLayoutAnimationConfigStash', 'RNDeviceInfo', 'RNGestureHandlerButton', 'RNGestureHandlerModule', 'RNGestureHandlerRootView', 'RNReanimated', 'RNRenderer', 'RNSFullWindowOverlay', 'RNSScreen', 'RNSScreenContainer', 'RNSScreenNavigationContainer', 'RNSScreenStack', 'RNSScreenStackHeaderConfig', 'RNSScreenStackHeaderSubview', 'RNSSearchBar', 'RNVectorIconsManager', 'RNVectorIconsModule']
+- images: {'registrations': 0, 'copied': 0, 'missing': 0}
+- debug_version_ctx: []
+- debug_fb_ctx: []
+- debug_asset_ctx: ['ls"\n"slack"\n"slack-hash"\n"removeMany"\n"any_sha1"\n"_animationClass"\n"getSerialNumber"\n"getSerialNumberSync"\n"computeWindowedRenderLimits"\n"sass"\n"vest-patches"\n"__packager_asset"\n"getStateForRouteFocus"\n"customConfig"\n"utensils"\n"_currentActivityId"\n"currentActivityId"\n"door-closed"\n"dumbbell"\n"ellipsis-h"\n"setLayoutModeToStack"\n"forceReattach"\n"attachHandle"\n"simultaneousWi']
+- package: ru.nemiro.apps.multiduperstopwatch
+- label: Multi-duper Stopwatch
+- fonts: 16

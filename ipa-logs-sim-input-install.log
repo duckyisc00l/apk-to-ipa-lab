@@ -1,0 +1,15 @@
+[34m==>[0m [1mTapping cameroncooke/axe[0m
+Cloning into '/usr/local/Homebrew/Library/Taps/cameroncooke/homebrew-axe'...
+Tapped 1 formula (13 files, 28.6KB).
+::error::Failed to import: /usr/local/Homebrew/Library/Taps/hashicorp/homebrew-tap/Formula/vagrant.rb
+hashicorp/tap/vagrant: formula requires at least a URL
+::warning::On September 12, 2023, AWS will no longer maintain the Homebrew installer for nightly version of AWS SAM CLI (aws/tap/aws-sam-cli-nightly). %0A        For AWS supported installations, use the first-party installers (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/manage-sam-cli-versions.html#manage-sam-cli-versions-nightly-build).
+::warning::On September 12, 2023, AWS will no longer maintain the Homebrew installer for AWS SAM CLI (aws/tap/aws-sam-cli). %0A        For AWS supported installations, use the first-party installers (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html). %0A        To continue using Homebrew, use the community supported installer (https://formulae.brew.sh/formula/aws-sam-cli).
+Trusted tap: cameroncooke/axe
+[34m==>[0m [1mTrusted formula cameroncooke/axe/axe[0m
+[34m==>[0m [1mWould install 1 formula:[0m
+axe
+[32m==>[0m [1mFetching downloads for: [32maxe[39m[0m
+✔︎ Formula axe (2.1.1)
+[34m==>[0m [1mInstalling axe from cameroncooke/axe[0m
+🍺  /usr/local/Cellar/axe/2.1.1: 97 files, 88.7MB, built in 17 seconds
