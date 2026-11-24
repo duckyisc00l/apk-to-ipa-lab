@@ -1,0 +1,8 @@
+Archive:  probe-shim.love
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     1068  11-24-2026 03:42   main_game.lua
+      437  11-24-2026 03:42   main.lua
+       80  11-24-2026 03:42   conf.lua
+---------                     -------
+     1585                     3 files
