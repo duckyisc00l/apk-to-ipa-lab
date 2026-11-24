@@ -68,7 +68,9 @@ jobs:
         run: ci/libgdx/build.sh "$APK" "work/$GAME" "$NAME" out
       - name: Run it in the iPhone Simulator (launch, screenshots, crash check)
         continue-on-error: true
-        run: ci/sim/run.sh "out/sim-app/$NAME.app" out/sim "${{ inputs.wait || 40 }}"
+        run: |
+          S=ci/sim/steps/$NAME.txt; [ -f "$S" ] || S=""
+          ci/sim/run.sh "out/sim-app/$NAME.app" out/sim "${{ inputs.wait || 40 }}" $S
       - name: Release the unsigned IPA
         continue-on-error: true
         run: |

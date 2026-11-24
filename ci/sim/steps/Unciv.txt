@@ -1,0 +1,7 @@
+# Unciv (libGDX route): first run shows the language picker; English is preselected, "Pick language" is at the bottom right.
+shot 0-language
+tap 327 620
+wait 25
+shot 1-after-pick
+wait 20
+shot 2-main-menu
