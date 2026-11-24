@@ -24,3 +24,8 @@ drwxrwxrwx  23 runner  staff       736 Nov 24 11:31 IOSLauncher.app
 drwxrwxrwx   3 runner  staff        96 Nov 24 11:31 IOSLauncher.app.dSYM
 -rw-rw-rw-   1 runner  staff  73509609 Nov 24 11:31 IOSLauncher.ipa
 193M	/Users/runner/work/apk-to-ipa-lab/apk-to-ipa-lab/out/sim-app/ShatteredPD.app
+
+## Result (3 Mac runs)
+- Run 1: built, crashed NoClassDefFoundError (project jars not built; fixed in source-build.sh).
+- Run 2: title screen (sim-run2-title-with-controller-dialog.png; a controller-info dialog shows over it, some of its glyphs missing).
+- Run 3: dismissed the dialog (tap 50% 60%), reached the menu, tapped the bottom button: "Choose Your Hero" screen (sim-3-tap-75.png, sim-4-tap-55.png). App still running, no crash.
