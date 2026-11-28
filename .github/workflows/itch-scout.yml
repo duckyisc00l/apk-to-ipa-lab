@@ -28,7 +28,8 @@ jobs:
             echo "## $(basename "$f")"; ls -l "$f"; file "$f"
             d="x/$(basename "$f")"; mkdir -p "$d"
             case "$f" in
-              *.apk|*.xapk|*.apkm|*.aab|*.zip) python3 ci/unpack.py "$f" "$d" >/dev/null 2>&1 || unzip -qo "$f" -d "$d" || true;;
+              *.zip) unzip -qo "$f" -d "$d" || 7z x -y -o"$d" "$f" >/dev/null || true;;
+              *.apk|*.xapk|*.apkm|*.aab) python3 ci/unpack.py "$f" "$d" >/dev/null 2>&1 || unzip -qo "$f" -d "$d" || true;;
               *.rar) sudo apt-get install -y -q unrar >/dev/null 2>&1; unrar x -o+ -inul "$f" "$d/" || 7z x -y -o"$d" "$f" >/dev/null || true;;
               *.7z|*.exe) 7z x -y -o"$d" "$f" >/dev/null || true;;
             esac
@@ -48,8 +49,11 @@ jobs:
             for exe in $(find "$d" -maxdepth 3 -iname '*.exe' | head -3); do echo "### strings $exe"; strings -n 8 "$exe" | grep -iE 'godot|unity|gamemaker|yoyo|renpy|construct|electron|nw\.js|unreal|clickteam|rpg maker|version [0-9]' | sort | uniq -c | sort -rn | head -15; done
             for pck in $(find "$d" -iname '*.pck' | head -2); do echo "### pck $pck"; head -c 32 "$pck" | xxd; done
           done
-          if [ -d work/web ]; then echo '## browser build'; find work/web -type f -printf '%s %P\n' | sort -rn | head -40; head -c 4000 work/web/index.html; fi
-          for g in $(find x -name globalgamemanagers -o -name 'data.unity3d' | head -2); do echo "### unity version $g"; strings -n 6 "$g" | grep -m2 -E '^[0-9]{4}\.[0-9]+\.[0-9]+[abfp][0-9]+'; done
+          if [ -d work/web ]; then echo '## browser build'; find work/web -type f -printf '%s %P\n' | sort -rn | head -40; for b in work/web/Build/*; do echo "-- $b"; file "$b"; head -c 16 "$b" | xxd | head -1; done
+            fw=$(ls work/web/Build/*.framework.js 2>/dev/null | head -1); [ -n "$fw" ] && { echo '### webgl framework hints'; grep -oE 'requestPointerLock|movementX|ontouchstart|TouchEvent|navigator\.getGamepads|JS_FileSystem_Sync|idbfs|IDBFS|WebGL2|webgl2' "$fw" | sort | uniq -c; }
+            dat=$(ls work/web/Build/*.data 2>/dev/null | head -1); [ -n "$dat" ] && { echo '### webgl data version'; strings -n 6 "$dat" | grep -m3 -E '^[0-9]{4}\.[0-9]+\.[0-9]+[abfp][0-9]+'; strings -n 6 "$dat" | grep -m5 -iE 'InputSystem|Input System|UnityEngine.Input'; }
+          fi
+          for g in $(find x work/web -name globalgamemanagers -o -name 'data.unity3d' | head -2); do echo "### unity version $g"; strings -n 6 "$g" | grep -m2 -E '^[0-9]{4}\.[0-9]+\.[0-9]+[abfp][0-9]+'; done
           echo '### unity backend'; find x -iname GameAssembly.dll -o -iname Assembly-CSharp.dll -o -iname 'global-metadata.dat' -o -iname 'mono*.dll' | head
           for m in $(find x -iname global-metadata.dat | head -1); do head -c 8 "$m" | xxd; done
           echo '### managed dlls'; find x -path '*Managed*' -iname '*.dll' -printf '%f\n' | sort | head -80

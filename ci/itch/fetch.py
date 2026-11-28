@@ -73,7 +73,7 @@ for fr in info['iframe'][:1]:
         rel = todo.pop(0)
         if rel in seen or len(seen) > 400: continue
         seen.add(rel)
-        try: b = get(urllib.parse.urljoin(base, rel))
+        try: b = get(urllib.parse.urljoin(base, urllib.parse.quote(rel)))
         except Exception as e: info.setdefault('web_errors', []).append([rel, repr(e)]); continue
         fn = os.path.join(d, rel); os.makedirs(os.path.dirname(fn), exist_ok=True); open(fn, 'wb').write(b); got.append([rel, len(b)])
         if rel.endswith(('.html', '.js', '.css', '.json')) and len(b) < 3_000_000:
