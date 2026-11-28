@@ -5,6 +5,7 @@ on:
     inputs:
       url: { required: true }
       slug: { required: true }
+      files: { required: false, default: '' }
 permissions:
   contents: write
 jobs:
@@ -36,6 +37,7 @@ jobs:
       - name: Snippets around input calls
         run: |
           for f in $(grep -rlE 'GetButton|GetAxis|GetKey|GetMouseButton|Cursor.lockState' src | head -25); do echo "=== $f"; grep -nE 'GetButton|GetAxis|GetKey|GetMouseButton|Cursor\.lockState|Cursor\.visible' "$f" | head -20; done > out/calls.md
+          for n in ${{ inputs.files }}; do f=$(find src -name "$n.cs" | head -1); [ -n "$f" ] && grep -nE 'KeyCode|Input\.|Mouse|Key\b|public .*(bool|float|KeyCode) |touch|Raycast|Interact|OnMouse|Cursor' "$f" | head -60 | sed "s#^#$n: #"; done > out/extra.md; cat out/extra.md
           head -300 out/calls.md
       - name: Publish
         if: always()
