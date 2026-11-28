@@ -1,0 +1,68 @@
+{
+ "url": "https://piripiripiri.itch.io/overnight-interview",
+ "title": "Overnight Interview by piripiripiri",
+ "table": {
+  "Updated": "11 hours ago",
+  "Status": "In development",
+  "Platforms": "HTML5 ,  Windows",
+  "Rating": "Rated 4.6 out of 5 stars                           (193  total ratings )",
+  "Author": "piripiripiri",
+  "Genre": "Simulation ,  Interactive Fiction",
+  "Made with": "Unity",
+  "Tags": "Atmospheric ,  Dark Humor ,  First-Person ,  Funny ,  Horror ,  Psychological Horror ,  Short ,  Story Rich",
+  "Links": "Steam",
+  "Content": "No generative AI was used",
+  "he;lpp": "",
+  "": ""
+ },
+ "price": [],
+ "iframe": [
+  "https://html-classic.itch.zone/html/14488253-1386396/index.html"
+ ],
+ "uploads_on_page": [
+  {
+   "id": "14900997",
+   "name": "overnight-interview-win.zip"
+  }
+ ],
+ "sizes": [
+  "204 MB"
+ ],
+ "downloads": [
+  {
+   "name": "overnight-interview-win.zip",
+   "bytes": 214243103,
+   "path": "work/files/overnight-interview-win.zip"
+  }
+ ],
+ "web_files": [
+  [
+   "index.html",
+   5432
+  ],
+  [
+   "TemplateData/favicon.ico",
+   2305
+  ],
+  [
+   "TemplateData/style.css",
+   1448
+  ],
+  [
+   "Build/WebGL Build.loader.js",
+   17875
+  ],
+  [
+   "Build/WebGL Build.data",
+   202190481
+  ],
+  [
+   "Build/WebGL Build.framework.js",
+   479833
+  ],
+  [
+   "Build/WebGL Build.wasm",
+   60127443
+  ]
+ ]
+}
