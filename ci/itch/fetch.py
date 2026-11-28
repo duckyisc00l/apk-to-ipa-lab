@@ -25,7 +25,7 @@ rows = re.findall(r'<tr><td>(.*?)</td><td>(.*?)</td></tr>', page, re.S)
 info['table'] = {re.sub('<[^>]+>', '', a).strip(): re.sub('<[^>]+>', ' ', b).strip() for a, b in rows}
 info['price'] = re.findall(r'class="(?:price_value|buy_message)"[^>]*>(.*?)<', page)[:3]
 info['iframe'] = re.findall(r'(https?://[^"\' ]*(?:itch\.zone|hwcdn\.net)[^"\' ]*index\.html)', html.unescape(page))[:3]
-ups = re.findall(r'data-upload_id="(\d+)".*?<strong[^>]*class="name"[^>]*title="([^"]*)"', page, re.S)
+ups = re.findall(r'data-upload_id="(\d+)"[^>]*class="button download_btn".*?<strong[^>]*?title="([^"]*)"', page, re.S)
 info['uploads_on_page'] = [{'id': i, 'name': html.unescape(n)} for i, n in ups]
 sizes = re.findall(r'class="file_size"><span>([^<]*)<', page); info['sizes'] = sizes
 info['downloads'] = []
@@ -56,7 +56,7 @@ if not ok:
             dp = get(j['url']).decode('utf-8', 'replace'); open(out + '/download.html', 'w').write(dp)
             key = j['url'].rstrip('/').split('/')[-1]
             m2 = re.search(r'name="csrf_token" value="([^"]+)"', dp); c2 = (m2 and m2.group(1)) or csrf
-            ups2 = re.findall(r'data-upload_id="(\d+)".*?class="name"[^>]*title="([^"]*)"', dp, re.S)
+            ups2 = re.findall(r'data-upload_id="(\d+)"[^>]*class="button download_btn".*?<strong[^>]*?title="([^"]*)"', dp, re.S)
             info['uploads_on_download_page'] = [{'id': i, 'name': html.unescape(n)} for i, n in ups2]
             for i, n in ups2:
                 try:
@@ -65,5 +65,23 @@ if not ok:
                     else: info.setdefault('errors', []).append(['key', i, j2])
                 except Exception as e: info.setdefault('errors', []).append(['key', i, repr(e)])
     except Exception as e: info.setdefault('errors', []).append(['download_url', repr(e)])
+# 3) browser (HTML5) build: mirror index.html and every file it names
+for fr in info['iframe'][:1]:
+    base = fr.rsplit('/', 1)[0] + '/'; d = out + '/web'; os.makedirs(d, exist_ok=True)
+    seen, todo, got = set(), ['index.html'], []
+    while todo:
+        rel = todo.pop(0)
+        if rel in seen or len(seen) > 400: continue
+        seen.add(rel)
+        try: b = get(urllib.parse.urljoin(base, rel))
+        except Exception as e: info.setdefault('web_errors', []).append([rel, repr(e)]); continue
+        fn = os.path.join(d, rel); os.makedirs(os.path.dirname(fn), exist_ok=True); open(fn, 'wb').write(b); got.append([rel, len(b)])
+        if rel.endswith(('.html', '.js', '.css', '.json')) and len(b) < 3_000_000:
+            t = b.decode('utf-8', 'replace')
+            for m in re.findall(r'["\'(]((?:Build|TemplateData|StreamingAssets)/[^"\')?#]+)', t): todo.append(m)
+            bu = re.search(r'buildUrl\s*=\s*["\']([^"\']+)', t)
+            if bu:
+                for m in re.findall(r'buildUrl\s*\+\s*["\']/?([^"\']+)', t): todo.append(bu.group(1).rstrip('/') + '/' + m.lstrip('/'))
+    info['web_files'] = got
 json.dump(info, open(out + '/info.json', 'w'), indent=1)
 print(json.dumps(info, indent=1))
