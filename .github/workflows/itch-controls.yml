@@ -1,0 +1,44 @@
+name: itch-controls
+# Which keys and buttons a Unity PC game reads (Mono): ILSpy on Assembly-CSharp, grep input calls. Publishes only the call list.
+on:
+  workflow_dispatch:
+    inputs:
+      url: { required: true }
+      slug: { required: true }
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env: { GH_TOKEN: "${{ github.token }}" }
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 ci/itch/fetch.py "${{ inputs.url }}" work > /dev/null
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: "8.0.x" }
+      - name: Decompile and list input calls
+        run: |
+          mkdir -p out x; z=$(ls work/files/*.zip | head -1); unzip -qo "$z" -d x
+          dotnet tool install -g ilspycmd --version 8.2.0.7535 > /dev/null 2>&1 || dotnet tool install -g ilspycmd > /dev/null
+          export PATH="$PATH:$HOME/.dotnet/tools"
+          dll=$(find x -name Assembly-CSharp.dll | head -1); ilspycmd -p -o src "$dll" > /dev/null 2>&1 || ilspycmd -o src "$dll" > /dev/null
+          {
+          echo "## script files"; find src -name '*.cs' | wc -l
+          echo "## input calls (file: call)"
+          grep -rhoE '(GetButton(Down|Up)?|GetAxis(Raw)?|GetNegativeButton(Down)?|GetKey(Down|Up)?|GetMouseButton(Down|Up)?)\("[^"]*"|KeyCode\.[A-Za-z0-9]+|Keyboard\.current\.[a-zA-Z0-9]+|Mouse\.current\.[a-zA-Z0-9]+|Cursor\.lockState *= *CursorLockMode\.[A-Za-z]+|Input\.(mousePosition|GetAxis|touchCount|touches)|ReInput\.[a-zA-Z.]+|RewiredConsts?\.[A-Za-z.]+|Action\.[A-Z][A-Za-z_]+' src | sort | uniq -c | sort -rn | head -120
+          echo "## rewired action ids"; grep -rhE 'const int [A-Za-z_]+ *= *[0-9]+' src | head -60
+          echo "## per file"; grep -rlE 'GetButton|GetAxis|GetKey|GetMouseButton' src | head -40
+          echo "## class list"; find src -name '*.cs' -printf '%f\n' | sort | head -200
+          echo "## data strings"; for f in x/*_Data/level0 x/*_Data/globalgamemanagers x/*_Data/resources.assets; do strings -n 4 "$f" | grep -iE '^(Move|Look|Interact|Jump|Sprint|Run|Crouch|Pause|Menu|Use|Flash|Torch|Phone|Submit|Cancel|Horizontal|Vertical|Mouse ?[XY]|Fire|Grab|Inspect|Zoom|Lean|Skip|Talk|Answer)[A-Za-z ]{0,20}$' | sort | uniq -c | sort -rn | head -40; done
+          } > out/controls.md 2>&1
+          cat out/controls.md | head -250
+      - name: Snippets around input calls
+        run: |
+          for f in $(grep -rlE 'GetButton|GetAxis|GetKey|GetMouseButton|Cursor.lockState' src | head -25); do echo "=== $f"; grep -nE 'GetButton|GetAxis|GetKey|GetMouseButton|Cursor\.lockState|Cursor\.visible' "$f" | head -20; done > out/calls.md
+          head -300 out/calls.md
+      - name: Publish
+        if: always()
+        run: |
+          cd out && git init -q -b r-controls-${{ inputs.slug }} && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          git add -A && git commit -qm controls && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-controls-${{ inputs.slug }}
