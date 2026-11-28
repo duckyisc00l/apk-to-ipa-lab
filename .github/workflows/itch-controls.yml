@@ -11,7 +11,7 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    env: { GH_TOKEN: "${{ github.token }}" }
+    env: { GH_TOKEN: "${{ github.token }}", DOTNET_ROLL_FORWARD: Major }
     steps:
       - uses: actions/checkout@v4
       - run: python3 ci/itch/fetch.py "${{ inputs.url }}" work > /dev/null
@@ -22,7 +22,7 @@ jobs:
           mkdir -p out x; z=$(ls work/files/*.zip | head -1); unzip -qo "$z" -d x
           dotnet tool install -g ilspycmd --version 8.2.0.7535 > /dev/null 2>&1 || dotnet tool install -g ilspycmd > /dev/null
           export PATH="$PATH:$HOME/.dotnet/tools"
-          dll=$(find x -name Assembly-CSharp.dll | head -1); ilspycmd -p -o src "$dll" > /dev/null 2>&1 || ilspycmd -o src "$dll" > /dev/null
+          dll=$(find x -name Assembly-CSharp.dll | head -1); ilspycmd -p -o src "$dll" > /dev/null 2>&1 || ilspycmd -o src "$dll" > src.cs; mkdir -p src; [ -f src.cs ] && mv src.cs src/all.cs || true
           {
           echo "## script files"; find src -name '*.cs' | wc -l
           echo "## input calls (file: call)"
