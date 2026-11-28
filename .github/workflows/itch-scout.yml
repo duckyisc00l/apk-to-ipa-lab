@@ -1,0 +1,58 @@
+name: itch-scout
+# Download an itch.io game on the runner, name its engine, publish only a report (no game files) to r-itch-<slug>.
+on:
+  workflow_dispatch:
+    inputs:
+      url: { description: itch.io game page, required: true }
+      slug: { description: short name, required: true }
+permissions:
+  contents: write
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch
+        run: python3 ci/itch/fetch.py "${{ inputs.url }}" work
+      - name: Inspect
+        if: always()
+        run: |
+          mkdir -p out; cp work/info.json out/ 2>/dev/null || true
+          pip install --break-system-packages -q androguard 2>/dev/null || pip install -q androguard || true
+          {
+          for f in work/files/*; do
+            [ -f "$f" ] || continue
+            echo "## $(basename "$f")"; ls -l "$f"; file "$f"
+            d="x/$(basename "$f")"; mkdir -p "$d"
+            case "$f" in
+              *.apk|*.xapk|*.apkm|*.aab|*.zip) python3 ci/unpack.py "$f" "$d" >/dev/null 2>&1 || unzip -qo "$f" -d "$d" || true;;
+              *.rar) sudo apt-get install -y -q unrar >/dev/null 2>&1; unrar x -o+ -inul "$f" "$d/" || 7z x -y -o"$d" "$f" >/dev/null || true;;
+              *.7z|*.exe) 7z x -y -o"$d" "$f" >/dev/null || true;;
+            esac
+            echo '### top files by size'; find "$d" -type f -printf '%s %P\n' | sort -rn | head -40
+            echo '### file types'; find "$d" -type f | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -25
+            echo '### engine hints'; find "$d" -type f \( -iname '*.pck' -o -iname 'data.win' -o -iname 'game.droid' -o -iname '*UnityPlayer*' -o -iname 'globalgamemanagers' -o -iname 'libunity.so' -o -iname 'libyoyo.so' -o -iname 'libgodot*' -o -iname '*.rpa' -o -iname '*.rpyc' -o -iname 'index.html' -o -iname 'c3runtime.js' -o -iname 'rpg_core.js' -o -iname 'package.json' -o -iname '*.love' -o -iname '*.pak' -o -iname 'GameAssembly.dll' -o -iname 'Assembly-CSharp.dll' -o -iname 'libUE4.so' -o -iname '*.uproject' \) -printf '%P\n' | head -40
+            for apk in $(find "$d" "$f" -maxdepth 2 -iname '*.apk' 2>/dev/null | head -3); do
+              echo "### detect $apk"; python3 ci/detect.py "$apk" 2>&1 | tail -25 || true
+              python3 - "$apk" <<'PY' 2>/dev/null || true
+          import sys
+          try: from androguard.core.apk import APK
+          except ImportError: from androguard.core.bytecodes.apk import APK
+          a=APK(sys.argv[1]); print('app', a.get_app_name(), a.get_package(), a.get_androidversion_name(), a.get_androidversion_code())
+          import re; x=a.get_android_manifest_axml().get_xml().decode(); print('orientation', re.findall(r'screenOrientation="([^"]+)"', x)[:3])
+          PY
+            done
+            for exe in $(find "$d" -maxdepth 3 -iname '*.exe' | head -3); do echo "### strings $exe"; strings -n 8 "$exe" | grep -iE 'godot|unity|gamemaker|yoyo|renpy|construct|electron|nw\.js|unreal|clickteam|rpg maker|version [0-9]' | sort | uniq -c | sort -rn | head -15; done
+            for pck in $(find "$d" -iname '*.pck' | head -2); do echo "### pck $pck"; head -c 32 "$pck" | xxd; done
+          done
+          } > out/report.md 2>&1
+          cat out/report.md | head -300
+      - name: Publish report
+        if: always()
+        run: |
+          cd out && git init -q -b r-itch-${{ inputs.slug }} && git config user.name lab-bot && git config user.email lab-bot@users.noreply.github.com
+          cp ../work/page.html . 2>/dev/null || true
+          git add -A && git commit -qm "itch scout ${{ github.run_number }}" && git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" r-itch-${{ inputs.slug }}
